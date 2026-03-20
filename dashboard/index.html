@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>andresblitz — Analytics Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Syne+Mono&family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <style>
+    /* ─── Design tokens ─────────────────────────────────────────── */
+    :root {
+      --bg:    #06060a;
+      --fg:    #f0ede6;
+      --gold:  #c9992a;
+      --gold2: #7a5c14;
+      --muted: #2e2b26;
+      --soft:  #7a7268;
+      --green: #3ecf7a;
+      --red:   #e84040;
+      --blue:  #4fa8e8;
+      --card-bg: #0e0d11;
+      --card-border: rgba(201,153,42,0.18);
+      --radius: 14px;
+      --gap: 16px;
+    }
+
+    /* ─── Reset & base ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 15px; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─── Login screen ──────────────────────────────────────────── */
+    #login-screen {
+      position: fixed; inset: 0;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .login-box {
+      width: 100%; max-width: 400px;
+      padding: 48px 40px;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      display: flex; flex-direction: column; gap: 24px;
+    }
+
+    .login-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--fg);
+      letter-spacing: -0.02em;
+    }
+
+    .login-logo span { color: var(--gold); }
+
+    .login-subtitle {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .login-field {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+
+    .login-field label {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--soft);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .login-field input {
+      background: rgba(201,153,42,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: var(--fg);
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .login-field input:focus {
+      border-color: var(--gold);
+    }
+
+    .login-btn {
+      background: var(--gold);
+      border: none;
+      border-radius: 8px;
+      color: var(--bg);
+      cursor: pointer;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 13px 24px;
+      transition: background 0.2s, transform 0.1s;
+      width: 100%;
+    }
+
+    .login-btn:hover { background: #e0ad30; }
+    .login-btn:active { transform: scale(0.98); }
+
+    .login-error {
+      color: var(--red);
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.75rem;
+      text-align: center;
+      min-height: 1em;
+      transition: opacity 0.2s;
+    }
+
+    /* Gold ring spinner (shared) */
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .spinner {
+      width: 22px; height: 22px;
+      border: 2.5px solid rgba(201,153,42,0.2);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* ─── App shell ─────────────────────────────────────────────── */
+    #app {
+      display: none;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    /* ─── Header ────────────────────────────────────────────────── */
+    .dash-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .dash-header-left { display: flex; flex-direction: column; gap: 4px; }
+
+    .dash-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--fg);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .dash-title em { color: var(--gold); font-style: italic; }
+
+    .dash-subtitle {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--soft);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .dash-header-right {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+
+    .last-updated-badge {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--soft);
+      letter-spacing: 0.06em;
+      background: var(--muted);
+      padding: 6px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--card-border);
+    }
+
+    .refresh-btn {
+      background: rgba(201,153,42,0.1);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: var(--gold);
+      cursor: pointer;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 8px 16px;
+      transition: background 0.2s, border-color 0.2s;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .refresh-btn:hover {
+      background: rgba(201,153,42,0.18);
+      border-color: var(--gold);
+    }
+
+    .refresh-btn svg { width: 14px; height: 14px; }
+
+    .refresh-btn.spinning svg {
+      animation: spin 0.8s linear infinite;
+    }
+
+    /* ─── Grid rows ─────────────────────────────────────────────── */
+    .grid-row {
+      display: grid;
+      gap: var(--gap);
+      margin-bottom: var(--gap);
+    }
+
+    .row-stats-4   { grid-template-columns: repeat(4, 1fr); }
+    .row-trend-2   { grid-template-columns: 2fr 1fr; }
+    .row-perf      { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+    .row-gh        { grid-template-columns: 1fr 1fr 1fr 1fr; }
+    .row-mixed     { grid-template-columns: 1.6fr 0.8fr 1fr; }
+    .row-bottom    { grid-template-columns: 1fr 1fr; }
+
+    /* ─── Card base ─────────────────────────────────────────────── */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,153,42,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .card:hover { border-color: rgba(201,153,42,0.35); }
+
+    .card-label {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .card-value {
+      font-family: 'Fraunces', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--fg);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .card-value.sm { font-size: 1.7rem; }
+    .card-value.xs { font-size: 1.3rem; }
+
+    .card-sub {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--soft);
+    }
+
+    .card-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--fg);
+      opacity: 0.85;
+    }
+
+    /* stat badge */
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      border-radius: 100px;
+    }
+
+    .badge-green { background: rgba(62,207,122,0.12); color: var(--green); }
+    .badge-red   { background: rgba(232,64,64,0.12); color: var(--red); }
+    .badge-gold  { background: rgba(201,153,42,0.12); color: var(--gold); }
+    .badge-blue  { background: rgba(79,168,232,0.12); color: var(--blue); }
+
+    .card-loading {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 60px;
+    }
+
+    /* chart wrapper */
+    .chart-wrap {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .chart-wrap canvas { width: 100% !important; }
+
+    /* card chart — full height */
+    .card.chart-card {
+      min-height: 260px;
+    }
+
+    .card.chart-card .chart-wrap {
+      min-height: 200px;
+    }
+
+    /* ─── Vitals grid ───────────────────────────────────────────── */
+    .vitals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .vital-item {
+      background: rgba(201,153,42,0.05);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+
+    .vital-label {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .vital-value {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .vital-value.good  { color: var(--green); }
+    .vital-value.needs { color: var(--gold); }
+    .vital-value.poor  { color: var(--red); }
+
+    .vital-bar-wrap {
+      height: 3px;
+      background: var(--muted);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .vital-bar {
+      height: 100%;
+      border-radius: 100px;
+      background: var(--green);
+      transition: width 0.6s ease;
+    }
+
+    .vital-bar.needs { background: var(--gold); }
+    .vital-bar.poor  { background: var(--red); }
+
+    /* ─── Perf score ring ───────────────────────────────────────── */
+    .score-ring-wrap {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 10px; flex: 1;
+    }
+
+    .score-ring {
+      position: relative;
+      width: 90px; height: 90px;
+    }
+
+    .score-ring svg { transform: rotate(-90deg); }
+
+    .score-ring-val {
+      position: absolute;
+      inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+
+    /* ─── Popular pages ─────────────────────────────────────────── */
+    .page-list {
+      display: flex; flex-direction: column; gap: 8px;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .page-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px;
+      background: rgba(201,153,42,0.04);
+      border: 1px solid rgba(201,153,42,0.09);
+      border-radius: 8px;
+    }
+
+    .page-rank {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--soft);
+      width: 18px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .page-path {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--fg);
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .page-count {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .page-bar-bg {
+      height: 3px;
+      background: var(--muted);
+      border-radius: 100px;
+      margin-top: 4px;
+      overflow: hidden;
+    }
+
+    .page-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold2), var(--gold));
+      border-radius: 100px;
+      transition: width 0.6s ease;
+    }
+
+    /* ─── Location card ─────────────────────────────────────────── */
+    .location-grid {
+      display: flex; flex-direction: column; gap: 8px; flex: 1;
+    }
+
+    .loc-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 7px;
+      border-bottom: 1px solid rgba(201,153,42,0.08);
+    }
+
+    .loc-row:last-child { border-bottom: none; }
+
+    .loc-key {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .loc-val {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--fg);
+      text-align: right;
+      max-width: 60%;
+    }
+
+    /* ─── Best days ─────────────────────────────────────────────── */
+    .days-list {
+      display: flex; flex-direction: column; gap: 7px; flex: 1;
+    }
+
+    .day-item {
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    .day-name {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--soft);
+      width: 30px;
+      flex-shrink: 0;
+    }
+
+    .day-bar-wrap {
+      flex: 1;
+      height: 6px;
+      background: var(--muted);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .day-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold2), var(--gold));
+      border-radius: 100px;
+      transition: width 0.6s ease;
+    }
+
+    .day-count {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--gold);
+      width: 28px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* ─── Quick actions ─────────────────────────────────────────── */
+    .actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .action-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 14px;
+      background: rgba(201,153,42,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      color: var(--fg);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, transform 0.1s;
+      cursor: pointer;
+    }
+
+    .action-btn:hover {
+      background: rgba(201,153,42,0.14);
+      border-color: var(--gold);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .action-btn svg {
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+
+    /* ─── Uptime ─────────────────────────────────────────────────── */
+    .uptime-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse-dot 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .uptime-dot.offline { background: var(--red); box-shadow: 0 0 8px var(--red); }
+
+    /* ─── Scrollbar ─────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--soft); }
+
+    /* ─── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .row-perf    { grid-template-columns: 1fr 1fr 1fr; }
+      .row-gh      { grid-template-columns: 1fr 1fr; }
+      .row-mixed   { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      #app { padding: 16px 12px 48px; }
+      .row-stats-4 { grid-template-columns: 1fr 1fr; }
+      .row-trend-2 { grid-template-columns: 1fr; }
+      .row-perf    { grid-template-columns: 1fr 1fr; }
+      .row-gh      { grid-template-columns: 1fr 1fr; }
+      .row-mixed   { grid-template-columns: 1fr; }
+      .row-bottom  { grid-template-columns: 1fr; }
+      .vitals-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .actions-grid { grid-template-columns: 1fr; }
+      .card-value  { font-size: 1.9rem; }
+    }
+
+    @media (max-width: 480px) {
+      .row-stats-4 { grid-template-columns: 1fr 1fr; }
+      .vitals-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Thin gold rule under header ──────────────────────────── */
+    .header-rule {
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold2), transparent);
+      margin-bottom: 28px;
+      opacity: 0.5;
+    }
+
+    /* glow accent on big stat cards */
+    .card.stat-card::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; right: -30px;
+      width: 100px; height: 100px;
+      background: radial-gradient(circle, rgba(201,153,42,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* section heading */
+    .section-label {
+      font-family: 'Syne Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 4px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ LOGIN SCREEN ═══════════════════════════ -->
+<div id="login-screen">
+  <div class="login-box">
+    <div>
+      <div class="login-logo">andres<span>blitz</span></div>
+      <div style="height:8px"></div>
+      <div class="login-subtitle">Analytics Dashboard — Private</div>
+    </div>
+
+    <div class="login-field">
+      <label for="pass-input">Password</label>
+      <input
+        type="password"
+        id="pass-input"
+        placeholder="Enter dashboard password"
+        autocomplete="current-password"
+        autofocus
+      />
+    </div>
+
+    <button class="login-btn" id="login-btn">Unlock Dashboard</button>
+    <div class="login-error" id="login-error"></div>
+
+    <div style="font-family:'Syne Mono',monospace; font-size:0.62rem; color:var(--soft); text-align:center; margin-top:-8px;">
+      andresblitz.com · GitHub Pages analytics
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ DASHBOARD APP ══════════════════════════ -->
+<div id="app">
+
+  <!-- Header -->
+  <header class="dash-header">
+    <div class="dash-header-left">
+      <h1 class="dash-title">Site <em>Analytics</em></h1>
+      <p class="dash-subtitle">andresblitz.com · personal dashboard</p>
+    </div>
+    <div class="dash-header-right">
+      <span class="last-updated-badge" id="header-updated">Loading data…</span>
+      <button class="refresh-btn" id="refresh-btn" onclick="refreshAll()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+        </svg>
+        Refresh All
+      </button>
+    </div>
+  </header>
+
+  <div class="header-rule"></div>
+
+  <!-- ─── ROW 1: Big stats ──────────────────────────────────────── -->
+  <div class="section-label">Traffic · Today</div>
+  <div class="grid-row row-stats-4">
+
+    <!-- 1. Views Today -->
+    <div class="card stat-card" id="card-views-today">
+      <div class="card-label">Views Today</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 2. Unique Visitors Today -->
+    <div class="card stat-card" id="card-uniques-today">
+      <div class="card-label">Unique Visitors Today</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 3. Total Views (14d) -->
+    <div class="card stat-card" id="card-total-views">
+      <div class="card-label">Total Views · 14 Days</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 6. Week-over-Week Growth -->
+    <div class="card stat-card" id="card-wow-growth">
+      <div class="card-label">Week-over-Week Growth</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+  </div>
+
+  <!-- ─── ROW 2: Charts ─────────────────────────────────────────── -->
+  <div class="section-label">Traffic Trend</div>
+  <div class="grid-row row-trend-2">
+
+    <!-- 5. Traffic Trend chart -->
+    <div class="card chart-card" id="card-traffic-trend">
+      <div class="card-label">Traffic Trend · 14 Days</div>
+      <div class="card-loading" id="trend-loading"><div class="spinner"></div></div>
+      <div class="chart-wrap" id="trend-chart-wrap" style="display:none;">
+        <canvas id="chart-trend"></canvas>
+      </div>
+    </div>
+
+    <!-- 7. Top Referrers chart -->
+    <div class="card chart-card" id="card-referrers">
+      <div class="card-label">Top Referrers</div>
+      <div class="card-loading" id="ref-loading"><div class="spinner"></div></div>
+      <div class="chart-wrap" id="ref-chart-wrap" style="display:none;">
+        <canvas id="chart-referrers"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── ROW 3: Performance ────────────────────────────────────── -->
+  <div class="section-label">Performance &amp; Health</div>
+  <div class="grid-row row-perf">
+
+    <!-- 12. Performance Score -->
+    <div class="card" id="card-perf-score">
+      <div class="card-label">Performance Score</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 13. Core Web Vitals -->
+    <div class="card" id="card-web-vitals" style="grid-column: span 2;">
+      <div class="card-label">Core Web Vitals</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 16. Uptime Status -->
+    <div class="card" id="card-uptime">
+      <div class="card-label">Uptime Status</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 15. Page Response Time -->
+    <div class="card" id="card-response-time">
+      <div class="card-label">Page Response Time</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+  </div>
+
+  <!-- ─── ROW 4: GitHub ─────────────────────────────────────────── -->
+  <div class="section-label">GitHub Repository</div>
+  <div class="grid-row row-gh">
+
+    <!-- 9. GitHub Stars -->
+    <div class="card stat-card" id="card-gh-stars">
+      <div class="card-label">GitHub Stars</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 10. Forks & Watchers -->
+    <div class="card" id="card-gh-forks">
+      <div class="card-label">Forks &amp; Watchers</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 11. GitHub Followers -->
+    <div class="card stat-card" id="card-gh-followers">
+      <div class="card-label">GitHub Followers</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 18. Best Traffic Days -->
+    <div class="card" id="card-best-days">
+      <div class="card-label">Best Traffic Days</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+  </div>
+
+  <!-- ─── ROW 5: Pages / SEO / Location ─────────────────────────── -->
+  <div class="section-label">Pages · SEO · Visitor</div>
+  <div class="grid-row row-mixed">
+
+    <!-- 8. Popular Pages -->
+    <div class="card" id="card-popular-pages">
+      <div class="card-label">Popular Pages</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 14. SEO Score -->
+    <div class="card" id="card-seo-score">
+      <div class="card-label">SEO Score</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+    <!-- 17. Your Location -->
+    <div class="card" id="card-location">
+      <div class="card-label">Your Location</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+  </div>
+
+  <!-- ─── ROW 6: Bottom ─────────────────────────────────────────── -->
+  <div class="section-label">Actions &amp; Meta</div>
+  <div class="grid-row row-bottom">
+
+    <!-- 20. Quick Actions -->
+    <div class="card" id="card-quick-actions">
+      <div class="card-label">Quick Actions</div>
+      <div class="actions-grid">
+        <a class="action-btn" href="https://andresblitz.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          View Site
+        </a>
+        <a class="action-btn" href="https://github.com/blitzandres/andresblitz/edit/main/index.html" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+          Edit on GitHub
+        </a>
+        <a class="action-btn" href="https://github.com/blitzandres/andresblitz/actions/workflows/analytics.yml" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          Run Analytics Update
+        </a>
+        <a class="action-btn" href="https://github.com/blitzandres/andresblitz/graphs/traffic" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          View Repo Traffic
+        </a>
+      </div>
+    </div>
+
+    <!-- 19. Data Last Refreshed -->
+    <div class="card" id="card-last-refreshed">
+      <div class="card-label">Data Last Refreshed</div>
+      <div class="card-loading"><div class="spinner"></div></div>
+    </div>
+
+  </div>
+
+</div><!-- /#app -->
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   PASSWORD GATE
+   btoa('Blitz2026!') = 'QmxpdHoyMDI2IQ=='
+═══════════════════════════════════════════════════════════════════════ */
+
+const SESSION_KEY = 'andresblitz_dash_auth';
+
+function checkPass(p) {
+  return btoa(p) === 'QmxpdHoyMDI2IQ==';
+}
+
+function unlockDashboard() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  initDashboard();
+}
+
+document.getElementById('login-btn').addEventListener('click', attemptLogin);
+document.getElementById('pass-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') attemptLogin();
+});
+
+function attemptLogin() {
+  const p = document.getElementById('pass-input').value;
+  const errEl = document.getElementById('login-error');
+  if (checkPass(p)) {
+    sessionStorage.setItem(SESSION_KEY, 'true');
+    errEl.textContent = '';
+    unlockDashboard();
+  } else {
+    errEl.textContent = 'Incorrect password. Try again.';
+    document.getElementById('pass-input').value = '';
+    document.getElementById('pass-input').focus();
+    // Shake animation
+    const box = document.querySelector('.login-box');
+    box.style.animation = 'none';
+    box.offsetHeight; // reflow
+    box.style.animation = 'shake 0.35s ease';
+  }
+}
+
+// Add shake keyframe dynamically
+const shakeStyle = document.createElement('style');
+shakeStyle.textContent = `@keyframes shake {
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-8px)}
+  40%{transform:translateX(8px)}
+  60%{transform:translateX(-5px)}
+  80%{transform:translateX(5px)}
+}`;
+document.head.appendChild(shakeStyle);
+
+// Check sessionStorage on load
+if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+  unlockDashboard();
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CHART.JS GLOBAL DEFAULTS
+═══════════════════════════════════════════════════════════════════════ */
+
+const CHART_COLORS = {
+  gold: '#c9992a',
+  gold2: '#7a5c14',
+  soft: '#7a7268',
+  bg: 'transparent',
+  gridLine: 'rgba(201,153,42,0.1)',
+  green: '#3ecf7a',
+  red: '#e84040',
+  blue: '#4fa8e8',
+};
+
+function chartDefaults() {
+  Chart.defaults.color = CHART_COLORS.soft;
+  Chart.defaults.font.family = "'Syne Mono', monospace";
+  Chart.defaults.font.size = 10;
+  Chart.defaults.plugins.legend.display = false;
+  Chart.defaults.plugins.tooltip.backgroundColor = '#1a1914';
+  Chart.defaults.plugins.tooltip.borderColor = 'rgba(201,153,42,0.3)';
+  Chart.defaults.plugins.tooltip.borderWidth = 1;
+  Chart.defaults.plugins.tooltip.titleColor = '#f0ede6';
+  Chart.defaults.plugins.tooltip.bodyColor = '#7a7268';
+  Chart.defaults.plugins.tooltip.padding = 10;
+  Chart.defaults.plugins.tooltip.cornerRadius = 8;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   HELPERS
+═══════════════════════════════════════════════════════════════════════ */
+
+function setCardContent(id, html) {
+  const card = document.getElementById(id);
+  // Remove loading spinner if present
+  const loader = card.querySelector('.card-loading');
+  if (loader) loader.remove();
+  // Append/replace
+  const tmp = document.createElement('div');
+  tmp.style.cssText = 'display:contents';
+  tmp.innerHTML = html;
+  card.appendChild(tmp);
+}
+
+function setCardError(id, msg) {
+  setCardContent(id, `<div class="card-sub" style="color:var(--soft);">${msg}</div>`);
+}
+
+function fmt(n) {
+  if (n == null || n === undefined) return '—';
+  if (typeof n !== 'number') n = Number(n);
+  if (isNaN(n)) return '—';
+  if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n/1000).toFixed(1) + 'k';
+  return n.toString();
+}
+
+function fmtMs(ms) {
+  if (ms < 1000) return ms + ' ms';
+  return (ms/1000).toFixed(2) + ' s';
+}
+
+function scoreColor(s) {
+  if (s >= 90) return CHART_COLORS.green;
+  if (s >= 50) return CHART_COLORS.gold;
+  return CHART_COLORS.red;
+}
+
+function scoreBadgeClass(s) {
+  if (s >= 90) return 'badge-green';
+  if (s >= 50) return 'badge-gold';
+  return 'badge-red';
+}
+
+function todayStr() {
+  return new Date().toISOString().slice(0,10);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DATA FETCHING
+═══════════════════════════════════════════════════════════════════════ */
+
+const DATA = {
+  views: null,
+  referrers: null,
+  paths: null,
+  repo: null,
+};
+
+async function fetchJSON(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  return r.json();
+}
+
+async function loadLocalData() {
+  const base = window.location.pathname.replace(/\/dashboard\/.*$/, '/dashboard');
+  const root = base.endsWith('/dashboard') ? base : '/dashboard';
+
+  try { DATA.views     = await fetchJSON(root + '/data/views.json'); }     catch(e) { DATA.views = {count:0,uniques:0,views:[]}; }
+  try { DATA.referrers = await fetchJSON(root + '/data/referrers.json'); } catch(e) { DATA.referrers = []; }
+  try { DATA.paths     = await fetchJSON(root + '/data/paths.json'); }     catch(e) { DATA.paths = []; }
+  try { DATA.repo      = await fetchJSON(root + '/data/repo.json'); }      catch(e) { DATA.repo = {}; }
+
+  // Also try last-updated.json
+  try {
+    const lu = await fetchJSON(root + '/data/last-updated.json');
+    DATA.lastUpdated = lu.updated || null;
+  } catch(e) { DATA.lastUpdated = null; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CARD RENDERERS
+═══════════════════════════════════════════════════════════════════════ */
+
+/* 1 & 2 & 3 & 4 — from views.json */
+function renderTrafficStats() {
+  const v = DATA.views;
+  const views = Array.isArray(v?.views) ? v.views : [];
+  const today = todayStr();
+
+  // Try to find today's entry
+  let todayViews = 0, todayUniques = 0;
+  const todayEntry = views.find(e => e.timestamp && e.timestamp.startsWith(today));
+  if (todayEntry) {
+    todayViews   = todayEntry.count   || 0;
+    todayUniques = todayEntry.uniques || 0;
+  } else if (views.length) {
+    // Fall back to last entry
+    const last = views[views.length - 1];
+    todayViews   = last.count   || 0;
+    todayUniques = last.uniques || 0;
+  }
+
+  const totalViews   = views.reduce((s,e) => s + (e.count   || 0), 0);
+  const totalUniques = views.reduce((s,e) => s + (e.uniques || 0), 0);
+
+  setCardContent('card-views-today', `
+    <div class="card-value">${fmt(todayViews)}</div>
+    <div class="card-sub">page views</div>
+  `);
+
+  setCardContent('card-uniques-today', `
+    <div class="card-value">${fmt(todayUniques)}</div>
+    <div class="card-sub">unique visitors</div>
+  `);
+
+  setCardContent('card-total-views', `
+    <div class="card-value">${fmt(totalViews)}</div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <span class="card-sub">${fmt(totalUniques)} uniques</span>
+      <span class="badge badge-gold">${views.length}d of data</span>
+    </div>
+  `);
+
+  // 6 — week-over-week
+  renderWoWGrowth(views);
+}
+
+function renderWoWGrowth(views) {
+  if (!views.length) {
+    setCardContent('card-wow-growth', `
+      <div class="card-value" style="color:var(--soft);">—</div>
+      <div class="card-sub">no data yet</div>
+    `);
+    return;
+  }
+
+  const sorted = [...views].sort((a,b) => a.timestamp < b.timestamp ? -1 : 1);
+  const len = sorted.length;
+  const half = Math.floor(len / 2);
+  const last7  = sorted.slice(Math.max(0, len - 7));
+  const prior7 = sorted.slice(Math.max(0, len - 14), Math.max(0, len - 7));
+
+  const sumLast  = last7.reduce((s,e)  => s + (e.count || 0), 0);
+  const sumPrior = prior7.reduce((s,e) => s + (e.count || 0), 0);
+
+  let pct, arrow, cls;
+  if (sumPrior === 0) {
+    pct = sumLast > 0 ? 100 : 0;
+    arrow = sumLast > 0 ? '↑' : '—';
+    cls = sumLast > 0 ? 'var(--green)' : 'var(--soft)';
+  } else {
+    pct = Math.round(((sumLast - sumPrior) / sumPrior) * 100);
+    arrow = pct >= 0 ? '↑' : '↓';
+    cls = pct >= 0 ? 'var(--green)' : 'var(--red)';
+  }
+
+  const sign = pct >= 0 ? '+' : '';
+  const badgeCls = pct >= 0 ? 'badge-green' : 'badge-red';
+
+  setCardContent('card-wow-growth', `
+    <div class="card-value" style="color:${cls};">${sign}${pct}%</div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <span class="card-sub">vs prior 7 days</span>
+      <span class="badge ${badgeCls}">${arrow} ${fmt(sumLast)} views</span>
+    </div>
+  `);
+}
+
+/* 5 — Traffic Trend chart */
+function renderTrendChart() {
+  const v = DATA.views;
+  const views = Array.isArray(v?.views) ? v.views : [];
+
+  document.getElementById('trend-loading').style.display = 'none';
+
+  if (!views.length) {
+    document.getElementById('trend-chart-wrap').style.display = 'flex';
+    document.getElementById('trend-chart-wrap').innerHTML =
+      '<div style="color:var(--soft);font-size:0.8rem;font-family:\'Syne Mono\',monospace;margin:auto;">No traffic data yet</div>';
+    return;
+  }
+
+  const sorted = [...views].sort((a,b) => a.timestamp < b.timestamp ? -1 : 1);
+  const labels  = sorted.map(e => {
+    const d = new Date(e.timestamp);
+    return d.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+  });
+  const counts  = sorted.map(e => e.count   || 0);
+  const uniques = sorted.map(e => e.uniques || 0);
+
+  document.getElementById('trend-chart-wrap').style.display = 'block';
+  const ctx = document.getElementById('chart-trend').getContext('2d');
+
+  const gradFill = ctx.createLinearGradient(0, 0, 0, 200);
+  gradFill.addColorStop(0, 'rgba(201,153,42,0.25)');
+  gradFill.addColorStop(1, 'rgba(201,153,42,0.01)');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Views',
+          data: counts,
+          borderColor: CHART_COLORS.gold,
+          borderWidth: 2,
+          backgroundColor: gradFill,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: CHART_COLORS.gold,
+          pointRadius: 3,
+          pointHoverRadius: 5,
+        },
+        {
+          label: 'Uniques',
+          data: uniques,
+          borderColor: CHART_COLORS.blue,
+          borderWidth: 1.5,
+          backgroundColor: 'transparent',
+          fill: false,
+          tension: 0.4,
+          pointBackgroundColor: CHART_COLORS.blue,
+          pointRadius: 2,
+          pointHoverRadius: 4,
+          borderDash: [4, 3],
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          align: 'end',
+          labels: {
+            boxWidth: 10,
+            padding: 12,
+            color: CHART_COLORS.soft,
+            font: { size: 10 },
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: CHART_COLORS.gridLine, drawBorder: false },
+          ticks: { maxRotation: 0, color: CHART_COLORS.soft },
+          border: { display: false },
+        },
+        y: {
+          grid: { color: CHART_COLORS.gridLine, drawBorder: false },
+          ticks: { color: CHART_COLORS.soft, callback: v => fmt(v) },
+          border: { display: false },
+          beginAtZero: true,
+        }
+      }
+    }
+  });
+}
+
+/* 7 — Top Referrers chart */
+function renderReferrersChart() {
+  const refs = Array.isArray(DATA.referrers) ? DATA.referrers : [];
+
+  document.getElementById('ref-loading').style.display = 'none';
+
+  if (!refs.length) {
+    document.getElementById('ref-chart-wrap').style.display = 'flex';
+    document.getElementById('ref-chart-wrap').innerHTML =
+      '<div style="color:var(--soft);font-size:0.8rem;font-family:\'Syne Mono\',monospace;margin:auto;">No referrer data yet</div>';
+    return;
+  }
+
+  const top = refs.slice(0, 8);
+  const labels = top.map(r => r.referrer || 'Direct');
+  const counts = top.map(r => r.count || 0);
+
+  document.getElementById('ref-chart-wrap').style.display = 'block';
+  const ctx = document.getElementById('chart-referrers').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Visits',
+        data: counts,
+        backgroundColor: labels.map((_, i) =>
+          `rgba(201,153,42,${0.9 - i * 0.08})`
+        ),
+        borderColor: 'transparent',
+        borderRadius: 5,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+      },
+      scales: {
+        x: {
+          grid: { color: CHART_COLORS.gridLine, drawBorder: false },
+          ticks: { color: CHART_COLORS.soft, callback: v => fmt(v) },
+          border: { display: false },
+          beginAtZero: true,
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            color: CHART_COLORS.soft,
+            callback: function(val) {
+              const lbl = this.getLabelForValue(val);
+              return lbl.length > 22 ? lbl.slice(0,20) + '…' : lbl;
+            }
+          },
+          border: { display: false },
+        }
+      }
+    }
+  });
+}
+
+/* 8 — Popular Pages */
+function renderPopularPages() {
+  const paths = Array.isArray(DATA.paths) ? DATA.paths : [];
+
+  if (!paths.length) {
+    setCardContent('card-popular-pages', `
+      <div class="card-sub" style="color:var(--soft);">No path data yet</div>
+    `);
+    return;
+  }
+
+  const top = paths.slice(0, 6);
+  const maxCount = Math.max(...top.map(p => p.count || 0), 1);
+
+  const items = top.map((p, i) => {
+    const pct = Math.round(((p.count || 0) / maxCount) * 100);
+    return `
+      <div class="page-item">
+        <span class="page-rank">${i+1}</span>
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="page-path">${p.path || '/'}</span>
+            <span class="page-count">${fmt(p.count)}</span>
+          </div>
+          <div class="page-bar-bg">
+            <div class="page-bar" style="width:${pct}%"></div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  setCardContent('card-popular-pages', `
+    <div class="page-list">${items}</div>
+  `);
+}
+
+/* 18 — Best Traffic Days */
+function renderBestDays() {
+  const v = DATA.views;
+  const views = Array.isArray(v?.views) ? v.views : [];
+
+  if (!views.length) {
+    setCardContent('card-best-days', `
+      <div class="card-sub" style="color:var(--soft);">No data yet</div>
+    `);
+    return;
+  }
+
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const counts = new Array(7).fill(0);
+  const totals = new Array(7).fill(0);
+
+  views.forEach(e => {
+    if (!e.timestamp) return;
+    const d = new Date(e.timestamp);
+    const dow = d.getDay();
+    counts[dow] += (e.count || 0);
+    totals[dow]++;
+  });
+
+  // Average per day
+  const avgs = counts.map((c, i) => totals[i] ? Math.round(c / totals[i]) : 0);
+  const maxAvg = Math.max(...avgs, 1);
+
+  const sorted = days.map((name, i) => ({ name, avg: avgs[i] }))
+                     .sort((a,b) => b.avg - a.avg);
+
+  const items = sorted.map(({name, avg}) => {
+    const pct = Math.round((avg / maxAvg) * 100);
+    return `
+      <div class="day-item">
+        <span class="day-name">${name}</span>
+        <div class="day-bar-wrap"><div class="day-bar" style="width:${pct}%"></div></div>
+        <span class="day-count">${fmt(avg)}</span>
+      </div>
+    `;
+  }).join('');
+
+  setCardContent('card-best-days', `
+    <div class="days-list">${items}</div>
+  `);
+}
+
+/* 19 — Data Last Refreshed */
+function renderLastRefreshed() {
+  const ts = DATA.lastUpdated || DATA.repo?.updated_at;
+
+  if (!ts) {
+    setCardContent('card-last-refreshed', `
+      <div class="card-value xs" style="color:var(--soft);">—</div>
+      <div class="card-sub">Run the GitHub Actions workflow to populate data</div>
+      <div class="card-sub" style="margin-top:auto;">
+        <a href="https://github.com/blitzandres/andresblitz/actions/workflows/analytics.yml" target="_blank" rel="noopener" style="color:var(--gold);">→ Trigger workflow</a>
+      </div>
+    `);
+    return;
+  }
+
+  const d = new Date(ts);
+  const formatted = d.toLocaleString('en-US', {
+    dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC'
+  });
+  const relative = timeAgo(d);
+
+  setCardContent('card-last-refreshed', `
+    <div class="card-value xs">${relative}</div>
+    <div class="card-sub">${formatted} UTC</div>
+    <div style="margin-top:auto;padding-top:12px;border-top:1px solid rgba(201,153,42,0.1);">
+      <div class="card-sub">Updated by GitHub Actions workflow</div>
+      <div class="card-sub" style="margin-top:4px;">
+        <a href="https://github.com/blitzandres/andresblitz/actions" target="_blank" rel="noopener" style="color:var(--gold);">→ View action runs</a>
+      </div>
+    </div>
+  `);
+
+  // Update header badge
+  document.getElementById('header-updated').textContent = 'Data: ' + relative;
+}
+
+function timeAgo(d) {
+  const diff = Date.now() - d.getTime();
+  const mins  = Math.floor(diff / 60000);
+  const hours = Math.floor(diff / 3600000);
+  const days  = Math.floor(diff / 86400000);
+  if (mins  < 1)  return 'just now';
+  if (mins  < 60) return `${mins}m ago`;
+  if (hours < 24) return `${hours}h ago`;
+  return `${days}d ago`;
+}
+
+/* ─── LIVE API CALLS ─────────────────────────────────────────────────── */
+
+/* 9 & 10 — GitHub Stars, Forks, Watchers */
+async function fetchGitHubRepo() {
+  try {
+    const data = await fetchJSON('https://api.github.com/repos/blitzandres/andresblitz');
+
+    setCardContent('card-gh-stars', `
+      <div class="card-value">${fmt(data.stargazers_count)}</div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--gold)" stroke="none">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <span class="card-sub">stars on GitHub</span>
+      </div>
+    `);
+
+    setCardContent('card-gh-forks', `
+      <div style="display:flex;gap:24px;align-items:flex-end;">
+        <div>
+          <div class="card-label" style="margin-bottom:6px;">Forks</div>
+          <div class="card-value sm">${fmt(data.forks_count)}</div>
+        </div>
+        <div>
+          <div class="card-label" style="margin-bottom:6px;">Watchers</div>
+          <div class="card-value sm">${fmt(data.watchers_count)}</div>
+        </div>
+      </div>
+      <div class="card-sub">${data.open_issues_count || 0} open issues</div>
+    `);
+
+  } catch(e) {
+    setCardError('card-gh-stars', 'GitHub API unavailable');
+    setCardError('card-gh-forks', 'GitHub API unavailable');
+  }
+}
+
+/* 11 — GitHub Followers */
+async function fetchGitHubUser() {
+  try {
+    const data = await fetchJSON('https://api.github.com/users/blitzandres');
+
+    setCardContent('card-gh-followers', `
+      <div class="card-value">${fmt(data.followers)}</div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <span class="card-sub">followers</span>
+        <span class="badge badge-gold">${fmt(data.following)} following</span>
+      </div>
+      <div class="card-sub" style="margin-top:auto;">${fmt(data.public_repos)} public repos</div>
+    `);
+
+  } catch(e) {
+    setCardError('card-gh-followers', 'GitHub API unavailable');
+  }
+}
+
+/* 12, 13, 14 — PageSpeed Insights */
+async function fetchPageSpeed() {
+  const baseUrl = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+  const target  = 'https://andresblitz.com';
+
+  async function fetchCategory(strategy, category) {
+    const url = `${baseUrl}?url=${encodeURIComponent(target)}&strategy=${strategy}&category=${category}`;
+    return fetchJSON(url);
+  }
+
+  // Fire both in parallel
+  let perfData, seoData;
+
+  try {
+    [perfData, seoData] = await Promise.all([
+      fetchCategory('mobile', 'performance'),
+      fetchCategory('mobile', 'seo'),
+    ]);
+  } catch(e) {
+    setCardError('card-perf-score', 'PageSpeed unavailable');
+    setCardError('card-web-vitals', 'PageSpeed unavailable');
+    setCardError('card-seo-score', 'PageSpeed unavailable');
+    return;
+  }
+
+  // 12 — Performance Score
+  try {
+    const score = Math.round((perfData.lighthouseResult.categories.performance.score || 0) * 100);
+    const col = scoreColor(score);
+
+    setCardContent('card-perf-score', `
+      <div class="score-ring-wrap">
+        <div class="score-ring">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="rgba(201,153,42,0.1)" stroke-width="6"/>
+            <circle cx="45" cy="45" r="38" fill="none"
+              stroke="${col}" stroke-width="6"
+              stroke-dasharray="${Math.round(2*Math.PI*38)}"
+              stroke-dashoffset="${Math.round(2*Math.PI*38 * (1 - score/100))}"
+              stroke-linecap="round"
+              style="transition:stroke-dashoffset 1s ease"/>
+          </svg>
+          <div class="score-ring-val" style="color:${col};">${score}</div>
+        </div>
+        <div class="card-sub">mobile perf</div>
+      </div>
+    `);
+  } catch(e) {
+    setCardError('card-perf-score', 'Score unavailable');
+  }
+
+  // 13 — Core Web Vitals
+  try {
+    const aud = perfData.lighthouseResult.audits;
+    const lcp = aud['largest-contentful-paint'];
+    const cls = aud['cumulative-layout-shift'];
+    const fcp = aud['first-contentful-paint'];
+
+    function vitalClass(id, val) {
+      if (id === 'lcp') return val < 2.5 ? 'good' : val < 4.0 ? 'needs' : 'poor';
+      if (id === 'cls') return val < 0.1 ? 'good' : val < 0.25 ? 'needs' : 'poor';
+      if (id === 'fcp') return val < 1.8 ? 'good' : val < 3.0 ? 'needs' : 'poor';
+      return 'good';
+    }
+
+    function vitalPct(id, val) {
+      if (id === 'lcp') return Math.max(0, Math.min(100, 100 - (val / 6) * 100));
+      if (id === 'cls') return Math.max(0, Math.min(100, 100 - (val / 0.5) * 100));
+      if (id === 'fcp') return Math.max(0, Math.min(100, 100 - (val / 5) * 100));
+      return 50;
+    }
+
+    const lcpVal = lcp?.numericValue ? (lcp.numericValue / 1000).toFixed(2) : '—';
+    const clsVal = cls?.numericValue !== undefined ? cls.numericValue.toFixed(3) : '—';
+    const fcpVal = fcp?.numericValue ? (fcp.numericValue / 1000).toFixed(2) : '—';
+
+    const lcpN = parseFloat(lcpVal);
+    const clsN = parseFloat(clsVal);
+    const fcpN = parseFloat(fcpVal);
+
+    const lcpCls = isNaN(lcpN) ? 'good' : vitalClass('lcp', lcpN);
+    const clsCls = isNaN(clsN) ? 'good' : vitalClass('cls', clsN);
+    const fcpCls = isNaN(fcpN) ? 'good' : vitalClass('fcp', fcpN);
+
+    setCardContent('card-web-vitals', `
+      <div class="vitals-grid">
+        <div class="vital-item">
+          <div class="vital-label">LCP</div>
+          <div class="vital-value ${lcpCls}">${lcpVal}s</div>
+          <div class="vital-bar-wrap"><div class="vital-bar ${lcpCls}" style="width:${isNaN(lcpN)?50:vitalPct('lcp',lcpN)}%"></div></div>
+          <div class="vital-label" style="margin-top:2px;">Largest Paint</div>
+        </div>
+        <div class="vital-item">
+          <div class="vital-label">CLS</div>
+          <div class="vital-value ${clsCls}">${clsVal}</div>
+          <div class="vital-bar-wrap"><div class="vital-bar ${clsCls}" style="width:${isNaN(clsN)?50:vitalPct('cls',clsN)}%"></div></div>
+          <div class="vital-label" style="margin-top:2px;">Layout Shift</div>
+        </div>
+        <div class="vital-item">
+          <div class="vital-label">FCP</div>
+          <div class="vital-value ${fcpCls}">${fcpVal}s</div>
+          <div class="vital-bar-wrap"><div class="vital-bar ${fcpCls}" style="width:${isNaN(fcpN)?50:vitalPct('fcp',fcpN)}%"></div></div>
+          <div class="vital-label" style="margin-top:2px;">First Paint</div>
+        </div>
+      </div>
+    `);
+
+  } catch(e) {
+    setCardError('card-web-vitals', 'Vitals unavailable');
+  }
+
+  // 14 — SEO Score
+  try {
+    const score = Math.round((seoData.lighthouseResult.categories.seo.score || 0) * 100);
+    const col = scoreColor(score);
+    const badgeCls = scoreBadgeClass(score);
+
+    setCardContent('card-seo-score', `
+      <div class="score-ring-wrap">
+        <div class="score-ring">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="rgba(201,153,42,0.1)" stroke-width="6"/>
+            <circle cx="45" cy="45" r="38" fill="none"
+              stroke="${col}" stroke-width="6"
+              stroke-dasharray="${Math.round(2*Math.PI*38)}"
+              stroke-dashoffset="${Math.round(2*Math.PI*38 * (1 - score/100))}"
+              stroke-linecap="round"
+              style="transition:stroke-dashoffset 1s ease"/>
+          </svg>
+          <div class="score-ring-val" style="color:${col};">${score}</div>
+        </div>
+        <div class="card-sub">seo · mobile</div>
+        <span class="badge ${badgeCls}" style="margin-top:4px;">${score >= 90 ? 'Excellent' : score >= 50 ? 'Needs Work' : 'Poor'}</span>
+      </div>
+    `);
+
+  } catch(e) {
+    setCardError('card-seo-score', 'SEO data unavailable');
+  }
+}
+
+/* 15 & 16 — Response Time + Uptime */
+async function fetchResponseTime() {
+  const t0 = Date.now();
+  let ms = null;
+  let ok = false;
+
+  try {
+    const r = await fetch('https://andresblitz.com/?_=' + t0, { cache: 'no-store', mode: 'no-cors' });
+    ms = Date.now() - t0;
+    ok = true; // no-cors always resolves if site is reachable
+  } catch(e) {
+    ms = Date.now() - t0;
+    ok = false;
+  }
+
+  // Response Time card
+  setCardContent('card-response-time', `
+    <div class="card-value sm">${ms != null ? fmtMs(ms) : '—'}</div>
+    <div class="card-sub">TTFB to andresblitz.com</div>
+    <div style="margin-top:auto;">
+      <span class="badge ${ok ? 'badge-green' : 'badge-red'}">${ok ? 'Reachable' : 'Unreachable'}</span>
+    </div>
+  `);
+
+  // Uptime card
+  setCardContent('card-uptime', `
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="uptime-dot ${ok ? '' : 'offline'}"></div>
+      <div class="card-value sm" style="color:${ok ? 'var(--green)' : 'var(--red)'};">
+        ${ok ? 'Online' : 'Offline'}
+      </div>
+    </div>
+    <div class="card-sub">${ms != null ? fmtMs(ms) : '—'} response</div>
+    <div class="card-sub" style="margin-top:auto;">andresblitz.com</div>
+  `);
+}
+
+/* 17 — Location */
+async function fetchLocation() {
+  try {
+    const d = await fetchJSON('https://ipapi.co/json/');
+
+    const rows = [
+      { k: 'IP',      v: d.ip || '—' },
+      { k: 'City',    v: d.city || '—' },
+      { k: 'Region',  v: d.region || '—' },
+      { k: 'Country', v: (d.country_name || '—') + (d.country ? ' ' + countryFlag(d.country) : '') },
+      { k: 'ISP',     v: d.org || d.isp || '—' },
+      { k: 'TZ',      v: d.timezone || '—' },
+    ];
+
+    const html = rows.map(r => `
+      <div class="loc-row">
+        <span class="loc-key">${r.k}</span>
+        <span class="loc-val">${r.v}</span>
+      </div>
+    `).join('');
+
+    setCardContent('card-location', `
+      <div class="location-grid">${html}</div>
+    `);
+
+  } catch(e) {
+    setCardError('card-location', 'Location unavailable');
+  }
+}
+
+function countryFlag(cc) {
+  // Convert country code to flag emoji
+  try {
+    return cc.toUpperCase().split('').map(c =>
+      String.fromCodePoint(0x1F1E6 - 65 + c.charCodeAt(0))
+    ).join('');
+  } catch { return ''; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   INIT & REFRESH
+═══════════════════════════════════════════════════════════════════════ */
+
+let refreshing = false;
+
+async function initDashboard() {
+  chartDefaults();
+  await refreshAll();
+}
+
+async function refreshAll() {
+  if (refreshing) return;
+  refreshing = true;
+
+  const btn = document.getElementById('refresh-btn');
+  btn.classList.add('spinning');
+  btn.disabled = true;
+
+  document.getElementById('header-updated').textContent = 'Refreshing…';
+
+  // Load local JSON data first
+  await loadLocalData();
+
+  // Render from local data
+  renderTrafficStats();
+  renderTrendChart();
+  renderReferrersChart();
+  renderPopularPages();
+  renderBestDays();
+  renderLastRefreshed();
+
+  // Fire live API calls in parallel
+  await Promise.allSettled([
+    fetchGitHubRepo(),
+    fetchGitHubUser(),
+    fetchPageSpeed(),
+    fetchResponseTime(),
+    fetchLocation(),
+  ]);
+
+  // Update header timestamp
+  const now = new Date().toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
+  document.getElementById('header-updated').textContent = 'Refreshed at ' + now;
+
+  btn.classList.remove('spinning');
+  btn.disabled = false;
+  refreshing = false;
+}
+</script>
+</body>
+</html>
