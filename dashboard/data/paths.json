@@ -1,5 +1,62 @@
-{
-  "message": "Resource not accessible by integration",
-  "documentation_url": "https://docs.github.com/rest/metrics/traffic#get-top-referral-paths",
-  "status": "403"
-}
+[
+  {
+    "path": "/blitzandres/andresblitz",
+    "title": "blitzandres/andresblitz",
+    "count": 16,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/commit/9498e2bdaa4513049b7b7590cfda45bc49154c5d",
+    "title": "Add files via upload · blitzandres/andresblitz@9498e2b",
+    "count": 7,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/tree/9498e2bdaa4513049b7b7590cfda45bc49154c5d",
+    "title": "blitzandres/andresblitz at 9498e2bdaa4513049b7b7590cfda45bc49154c5d",
+    "count": 6,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/blob/main/andres-blitz (2).html",
+    "title": "blitzandres/andresblitz",
+    "count": 5,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/delete/main/andres-blitz (2).html",
+    "title": "andresblitz/andres-blitz (2).html at main · blitzandres/andresblitz",
+    "count": 3,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/upload",
+    "title": "Processing your files…",
+    "count": 3,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/actions/new",
+    "title": "Create new workflow · blitzandres/andresblitz",
+    "count": 1,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/blame/main/andres-blitz (2).html",
+    "title": "andresblitz/andres-blitz (2).html at main · blitzandres/andresblitz",
+    "count": 1,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/blob/9498e2bdaa4513049b7b7590cfda45bc49154c5d/andres-blitz (2).html",
+    "title": "blitzandres/andresblitz at 9498e2bdaa4513049b7b7590cfda45bc49154c5d",
+    "count": 1,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/commits",
+    "title": "Commits · blitzandres/andresblitz",
+    "count": 1,
+    "uniques": 1
+  }
+]
