@@ -2,7 +2,7 @@
   {
     "path": "/blitzandres/andresblitz",
     "title": "blitzandres/andresblitz",
-    "count": 16,
+    "count": 19,
     "uniques": 1
   },
   {
@@ -24,6 +24,12 @@
     "uniques": 1
   },
   {
+    "path": "/blitzandres/andresblitz/blob/main/index.html",
+    "title": "blitzandres/andresblitz",
+    "count": 5,
+    "uniques": 1
+  },
+  {
     "path": "/blitzandres/andresblitz/delete/main/andres-blitz (2).html",
     "title": "andresblitz/andres-blitz (2).html at main · blitzandres/andresblitz",
     "count": 3,
@@ -36,26 +42,20 @@
     "uniques": 1
   },
   {
+    "path": "/blitzandres/andresblitz/tree/main",
+    "title": "Deleting andresblitz/andres-blitz (2).html at main · blitzandres/andresblitz",
+    "count": 2,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/actions",
+    "title": "Workflow runs · blitzandres/andresblitz",
+    "count": 1,
+    "uniques": 1
+  },
+  {
     "path": "/blitzandres/andresblitz/actions/new",
     "title": "Create new workflow · blitzandres/andresblitz",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/blame/main/andres-blitz (2).html",
-    "title": "andresblitz/andres-blitz (2).html at main · blitzandres/andresblitz",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/blob/9498e2bdaa4513049b7b7590cfda45bc49154c5d/andres-blitz (2).html",
-    "title": "blitzandres/andresblitz at 9498e2bdaa4513049b7b7590cfda45bc49154c5d",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/commits",
-    "title": "Commits · blitzandres/andresblitz",
     "count": 1,
     "uniques": 1
   }
