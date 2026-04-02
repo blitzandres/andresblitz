@@ -1,37 +1,37 @@
 [
   {
     "path": "/blitzandres/andresblitz",
-    "title": "blitzandres/andresblitz",
+    "title": "Overview",
     "count": 6,
     "uniques": 1
   },
   {
     "path": "/blitzandres/andresblitz/blob/main/index.html",
-    "title": "blitzandres/andresblitz",
+    "title": "/blob/main/index.html",
     "count": 5,
     "uniques": 1
   },
   {
     "path": "/blitzandres/andresblitz/actions",
-    "title": "Workflow runs · blitzandres/andresblitz",
+    "title": "/actions",
     "count": 1,
     "uniques": 1
   },
   {
     "path": "/blitzandres/andresblitz/blame/main/index.html",
-    "title": "andresblitz/index.html at main · blitzandres/andresblitz",
+    "title": "/blame/main/index.html",
     "count": 1,
     "uniques": 1
   },
   {
     "path": "/blitzandres/andresblitz/edit/main/index.html",
-    "title": "andresblitz/index.html at main · blitzandres/andresblitz",
+    "title": "/edit/main/index.html",
     "count": 1,
     "uniques": 1
   },
   {
     "path": "/blitzandres/andresblitz/tree/main",
-    "title": "andresblitz/index.html at main · blitzandres/andresblitz",
+    "title": "/tree/main",
     "count": 1,
     "uniques": 1
   }
