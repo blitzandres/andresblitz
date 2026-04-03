@@ -164,6 +164,18 @@ footer{border-top:1px solid var(--muted);padding:28px 5vw;display:flex;justify-c
 .sr.on{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
+/* ── GSAP PROGRESS BAR ──────────────── */
+#gsap-progress{position:fixed;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;z-index:1000;pointer-events:none;box-shadow:0 0 6px rgba(201,153,42,.5)}
+
+/* ── LINE REVEAL ────────────────────── */
+.wrw{overflow:hidden;display:inline-block;vertical-align:top;line-height:inherit}
+.wri{display:inline-block;transform:translateY(110%)}
+
+/* ── FEATURES HORIZ PIN ─────────────── */
+#features.gsap-horiz{overflow:hidden}
+#features.gsap-horiz .fstrip{overflow:visible;will-change:transform}
+#features.gsap-horiz .dot-nav{display:none}
+
 /* ── RESPONSIVE ─────────────────────── */
 @media(max-width:780px){
   #about{flex-direction:column;min-height:auto;padding-top:60px;padding-bottom:60px}
@@ -200,6 +212,8 @@ footer{border-top:1px solid var(--muted);padding:28px 5vw;display:flex;justify-c
     </a>
   </div>
 </nav>
+
+<div id="gsap-progress"></div>
 
 <!-- ═══ HERO ════════════════════════════════ -->
 <section id="hero">
@@ -373,23 +387,12 @@ footer{border-top:1px solid var(--muted);padding:28px 5vw;display:flex;justify-c
 // ── INTRO DISMISS ───────────────────────
 setTimeout(()=>document.getElementById('intro').classList.add('hide'),2300);
 
-// ── YEAR / NAV / REVEAL ─────────────────
+// ── YEAR / NAV ──────────────────────────
 document.getElementById('yr').textContent=new Date().getFullYear();
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>60));
-const sro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.1});
-document.querySelectorAll('.sr').forEach(el=>sro.observe(el));
 
 // ── VISITOR COUNT ───────────────────────
 (()=>{const base=5241,k='ab_v4';let v=+(localStorage.getItem(k)||0)+1;localStorage.setItem(k,v);let d=base+v-60,el=document.getElementById('vc');const t=setInterval(()=>{d++;el.textContent=d.toLocaleString();if(d>=base+v)clearInterval(t)},22);})();
-
-// ── COUNT UP ────────────────────────────
-function countUp(el,target,dur=1200){const s=performance.now();(function f(n){el.textContent=Math.round(Math.min((n-s)/dur,1)*target);if(n-s<dur)requestAnimationFrame(f);})(s);}
-const cob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){countUp(document.getElementById('cy'),12);countUp(document.getElementById('ci'),6);cob.disconnect();}}),{threshold:.3});
-cob.observe(document.getElementById('about'));
-
-// ── SKILL BARS ──────────────────────────
-const bob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sk-fill').forEach(b=>b.style.transform=`scaleX(${b.dataset.w})`);bob.disconnect();}}),{threshold:.25});
-bob.observe(document.getElementById('about'));
 
 // ── ROCKET CANVAS ───────────────────────
 (function(){
@@ -646,6 +649,173 @@ function copyLink(){
   document.addEventListener('keydown',e=>{keys[e.key]=true;if(e.key===' ')e.preventDefault();if(e.key==='p'||e.key==='P'){if(gSt==='playing')gSt='paused';else if(gSt==='paused')gSt='playing';}if(e.key===' '){if(gSt==='idle'||gSt==='dead')reset();else if(gSt==='win'){lv++;mkInvaders();iSpd=.38+lv*.05;buls=[];eBuls=[];gSt='playing';}}});
   document.addEventListener('keyup',e=>{keys[e.key]=false;});
   gc.addEventListener('click',()=>{if(gSt==='idle'||gSt==='dead')reset();else if(gSt==='win'){lv++;mkInvaders();iSpd=.38+lv*.05;buls=[];eBuls=[];gSt='playing';}});
+})();
+</script>
+
+<!-- ═══ GSAP SCROLL MAGIC ══════════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ── HELPER: wrap innerHTML lines in overflow-hidden reveal spans ──────────
+  function wrapLines(el){
+    const parts=el.innerHTML.split('<br>');
+    el.innerHTML=parts.map(p=>`<span class="wrw"><span class="wri">${p}</span></span>`).join('<br>');
+    return el.querySelectorAll('.wri');
+  }
+
+  // ── CLEAR .sr FROM CUSTOM-ANIMATED ELEMENTS ──────────────────────────────
+  // Prevents the generic .sr fade-up from conflicting with targeted animations
+  ['h2.sec-h2','.conn-h2','.game-hdr','#gw','.share-title','.fh h2','.facts','.skills'].forEach(sel=>{
+    document.querySelectorAll(sel).forEach(el=>{
+      el.classList.remove('sr','d1','d2','d3','d4');
+      gsap.set(el,{opacity:1,y:0});
+    });
+  });
+
+  // ── GOLD PROGRESS BAR ────────────────────────────────────────────────────
+  ScrollTrigger.create({
+    start:0, end:'max',
+    onUpdate:s=>gsap.set('#gsap-progress',{scaleX:s.progress})
+  });
+
+  // ── HERO PARALLAX — 3 layers at different speeds ──────────────────────────
+  gsap.timeline({
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}
+  })
+    .to('.hero-grid',   {y:-160, ease:'none'}, 0)
+    .to('.hero-glow',   {y:-100, ease:'none'}, 0)
+    .to('h1.hname',     {y:-55, opacity:0.15, ease:'none'}, 0)
+    .to(['.heyebrow','.htag','.hctas','.hstat','.hscroll'], {y:-42, opacity:0, ease:'none'}, 0);
+
+  // ── GENERIC .sr REVEALS (replaces old IntersectionObserver) ──────────────
+  gsap.utils.toArray('.sr').forEach(el=>{
+    let d=0;
+    if(el.classList.contains('d2')) d=0.1;
+    else if(el.classList.contains('d3')) d=0.2;
+    else if(el.classList.contains('d4')) d=0.3;
+    gsap.fromTo(el,
+      {opacity:0, y:28},
+      {opacity:1, y:0, duration:0.72, delay:d, ease:'power3.out',
+       scrollTrigger:{trigger:el, start:'top 90%', toggleActions:'play none none none'}}
+    );
+  });
+
+  // ── ABOUT HEADING — line-by-line reveal ──────────────────────────────────
+  const secH2=document.querySelector('h2.sec-h2');
+  if(secH2){
+    gsap.to(wrapLines(secH2),{
+      y:0, stagger:0.15, duration:0.9, ease:'power4.out',
+      scrollTrigger:{trigger:secH2, start:'top 82%', toggleActions:'play none none none'}
+    });
+  }
+
+  // ── ABOUT COUNTERS — scrubbed directly to scroll position ────────────────
+  const cyEl=document.getElementById('cy'), ciEl=document.getElementById('ci');
+  if(cyEl&&ciEl){
+    ScrollTrigger.create({
+      trigger:'#about', start:'top 55%', end:'center 30%', scrub:1,
+      onUpdate:s=>{
+        cyEl.textContent=Math.round(s.progress*12);
+        ciEl.textContent=Math.round(s.progress*6);
+      }
+    });
+  }
+
+  // ── SKILL BARS ───────────────────────────────────────────────────────────
+  gsap.utils.toArray('.sk-fill').forEach(b=>{
+    gsap.set(b,{scaleX:0});
+    gsap.to(b,{
+      scaleX:parseFloat(b.dataset.w), duration:1.4, ease:'power2.out',
+      scrollTrigger:{trigger:b, start:'top 90%', toggleActions:'play none none none'}
+    });
+  });
+
+  // ── FEATURES HEADING REVEAL ──────────────────────────────────────────────
+  const fhH2=document.querySelector('.fh h2');
+  if(fhH2){
+    const orig=fhH2.innerHTML;
+    fhH2.innerHTML=`<span class="wrw"><span class="wri">${orig}</span></span>`;
+    gsap.to(fhH2.querySelector('.wri'),{
+      y:0, duration:0.9, ease:'power4.out',
+      scrollTrigger:{trigger:'.fh', start:'top 85%', toggleActions:'play none none none'}
+    });
+  }
+
+  // ── FEATURES HORIZONTAL SCROLL (desktop only) ────────────────────────────
+  const feat=document.getElementById('features'), fstrip=document.getElementById('fs');
+  if(feat&&fstrip&&window.innerWidth>780){
+    feat.classList.add('gsap-horiz');
+
+    // Cards stagger in when section enters
+    gsap.from('.fc',{
+      opacity:0, y:32, stagger:0.1, duration:0.6, ease:'power2.out',
+      scrollTrigger:{trigger:feat, start:'top 85%', toggleActions:'play none none none'}
+    });
+
+    // Pin section + translate strip horizontally on scroll
+    const getD=()=>-(fstrip.scrollWidth - fstrip.offsetWidth - 1);
+    gsap.to(fstrip,{
+      x:getD, ease:'none',
+      scrollTrigger:{
+        trigger:feat, pin:true, scrub:1.2,
+        start:'top top',
+        end:()=>'+='+ Math.abs(getD()),
+        anticipatePin:1, invalidateOnRefresh:true
+      }
+    });
+  }
+
+  // ── GAME — glitch title scramble + canvas slide ───────────────────────────
+  function glitch(el){
+    const orig=el.textContent, pool='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
+    let f=0, total=22;
+    const iv=setInterval(()=>{
+      el.textContent=orig.split('').map((c,i)=>{
+        if(c===' ') return ' ';
+        return i<Math.floor((f/total)*orig.length) ? c : pool[Math.floor(Math.random()*pool.length)];
+      }).join('');
+      if(++f>total){ el.textContent=orig; clearInterval(iv); }
+    },55);
+  }
+  const gameH2=document.querySelector('.game-hdr h2');
+  if(gameH2){
+    gsap.set('.game-hdr',{opacity:1});
+    ScrollTrigger.create({
+      trigger:'#game', start:'top 78%', once:true,
+      onEnter:()=>{
+        glitch(gameH2);
+        gsap.from('#gw',{y:44, opacity:0, duration:0.85, ease:'power3.out', delay:0.25});
+      }
+    });
+  }
+
+  // ── SHARE TITLE — line reveal ─────────────────────────────────────────────
+  const shareT=document.querySelector('.share-title');
+  if(shareT){
+    gsap.to(wrapLines(shareT),{
+      y:0, stagger:0.14, duration:0.75, ease:'power3.out',
+      scrollTrigger:{trigger:shareT, start:'top 86%', toggleActions:'play none none none'}
+    });
+  }
+
+  // ── SHARE BUTTONS — stagger up ────────────────────────────────────────────
+  gsap.from('.share-btn',{
+    y:28, opacity:0, stagger:0.065, duration:0.5, ease:'power2.out',
+    scrollTrigger:{trigger:'.share-buttons-wrapper', start:'top 85%', toggleActions:'play none none none'}
+  });
+
+  // ── CONNECT HEADING — line reveal ────────────────────────────────────────
+  const connH2=document.querySelector('.conn-h2');
+  if(connH2){
+    gsap.to(wrapLines(connH2),{
+      y:0, stagger:0.18, duration:0.9, ease:'power4.out',
+      scrollTrigger:{trigger:connH2, start:'top 85%', toggleActions:'play none none none'}
+    });
+  }
+
 })();
 </script>
 </body>
