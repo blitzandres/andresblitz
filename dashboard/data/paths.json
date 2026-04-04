@@ -2,36 +2,12 @@
   {
     "path": "/blitzandres/andresblitz",
     "title": "Overview",
-    "count": 6,
+    "count": 3,
     "uniques": 1
   },
   {
-    "path": "/blitzandres/andresblitz/blob/main/index.html",
-    "title": "/blob/main/index.html",
-    "count": 5,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/actions",
-    "title": "/actions",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/blame/main/index.html",
-    "title": "/blame/main/index.html",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/edit/main/index.html",
-    "title": "/edit/main/index.html",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/tree/main",
-    "title": "/tree/main",
+    "path": "/blitzandres/andresblitz/actions/workflows/analytics.yml",
+    "title": "/actions/workflows/analytics.yml",
     "count": 1,
     "uniques": 1
   }
