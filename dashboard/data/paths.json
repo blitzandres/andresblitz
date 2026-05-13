@@ -2,42 +2,6 @@
   {
     "path": "/blitzandres/andresblitz",
     "title": "Overview",
-    "count": 2,
-    "uniques": 2
-  },
-  {
-    "path": "/blitzandres/andresblitz/tree/main/.github/workflows",
-    "title": "/tree/main/.github/workflows",
-    "count": 2,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/blob/main/CNAME",
-    "title": "/blob/main/CNAME",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/blob/main/andres-blitz (2).html",
-    "title": "/blob/main/andres-blitz (2).html",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/blob/main/dashboard/index.html",
-    "title": "/blob/main/dashboard/index.html",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/blob/main/index.html",
-    "title": "/blob/main/index.html",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/blitzandres/andresblitz/tree/main/dashboard",
-    "title": "/tree/main/dashboard",
     "count": 1,
     "uniques": 1
   }
