@@ -185,7 +185,77 @@ const S = {
   set specRes(v)  { LS.set('q_specres', v); },
   get players()   { return LS.get('q_players') || []; },
   set players(v)  { LS.set('q_players', v); },
+  get apiKey()    { return LS.get('q_apikey'); },
+  set apiKey(v)   { LS.set('q_apikey', v); },
+  get lastSync()  { return LS.get('q_lastsync'); },
+  set lastSync(v) { LS.set('q_lastsync', v); },
 };
+
+// ── LIVE SCORES ───────────────────────────────────────────────
+// API: api-sports.io (api-football.com) — league 1 = FIFA World Cup
+// Key lives in localStorage only — never in source code
+const TEAM_NORM = {
+  'Korea Republic':       'South Korea',
+  "Côte d'Ivoire":        'Ivory Coast',
+  'Ivory Coast':          'Ivory Coast',
+  'Czech Republic':       'Czechia',
+  'Turkey':               'Türkiye',
+  'Curacao':              'Curaçao',
+  'Congo DR':             'DR Congo',
+  'Bosnia-Herzegovina':   'Bosnia and Herzegovina',
+  'USA':                  'United States',
+  'United States':        'United States',
+};
+function normTeam(n) { return TEAM_NORM[n] || n; }
+
+function lastSyncLabel() {
+  const ls = S.lastSync;
+  if (!ls) return 'Never';
+  const m = Math.floor((Date.now() - new Date(ls)) / 60000);
+  if (m < 1) return 'Just now';
+  if (m < 60) return `${m}m ago`;
+  return `${Math.floor(m/60)}h ago`;
+}
+
+async function fetchLiveResults(showToast = true) {
+  const key = S.apiKey;
+  if (!key) return;
+  document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Syncing…');
+  try {
+    const r = await fetch(
+      'https://v3.football.api-sports.io/fixtures?league=1&season=2026&status=FT',
+      { headers: { 'x-apisports-key': key } }
+    );
+    if (r.status === 401) { if (showToast) toast('⚠ Invalid API key — re-enter in Share tab'); return; }
+    if (r.status === 429) { if (showToast) toast('Rate limited — try again in a minute'); return; }
+    if (!r.ok) throw new Error(`API ${r.status}`);
+    const data = await r.json();
+    const results = S.results;
+    let updated = 0;
+    for (const fx of (data.response || [])) {
+      const fh = fx.goals?.home;
+      const fa = fx.goals?.away;
+      if (fh == null || fa == null) continue;
+      const home = normTeam(fx.teams?.home?.name);
+      const away = normTeam(fx.teams?.away?.name);
+      const m = MATCHES.find(x => x.h === home && x.a === away);
+      if (!m) continue;
+      if (results[m.id]?.h === fh && results[m.id]?.a === fa) continue;
+      results[m.id] = { h: fh, a: fa };
+      updated++;
+    }
+    if (updated > 0) {
+      S.results = results;
+      if (tab === 'standings' || tab === 'results') render();
+    }
+    S.lastSync = new Date().toISOString();
+    document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Just now');
+    if (showToast) toast(updated > 0 ? `✅ ${updated} result${updated !== 1 ? 's' : ''} updated` : '✅ All up to date');
+  } catch(e) {
+    document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Failed');
+    if (showToast) toast(`⚠ Sync failed: ${e.message}`);
+  }
+}
 
 // ── TOURNAMENT STATS (computed from entered results) ──────────
 function computeStats(results) {
@@ -633,7 +703,14 @@ function resultsHTML() {
         <h2>📊 Results</h2>
         <span class="q-badge">${Object.keys(res).length}/72</span>
       </div>
-      <p class="q-desc">Enter actual scores after each match. Export after you enter results — friends import your file to update their leaderboard.</p>
+      ${S.apiKey
+        ? `<div class="q-live-bar">
+            <span class="q-live-dot"></span>
+            <span>Live sync active</span>
+            <span class="q-sync-time">${lastSyncLabel()}</span>
+            <button class="q-btn xs" id="sync-now-btn">Sync Now</button>
+           </div>`
+        : `<div class="q-info-callout">⚡ Auto-fill results: set up <strong>Live Score Sync</strong> in the Share tab.</div>`}
 
       <div class="q-awards-block">
         <h3>🏆 Final Awards <span style="font-weight:400;color:var(--soft);font-size:11px">· after Jul 19</span></h3>
@@ -668,6 +745,7 @@ function resultsHTML() {
 }
 
 function bindResults() {
+  document.getElementById('sync-now-btn')?.addEventListener('click', () => fetchLiveResults(true));
   document.querySelectorAll('.q-res-in').forEach(inp => {
     inp.addEventListener('input', () => {
       const mid = inp.dataset.mid, side = inp.dataset.side, val = inp.value.trim();
@@ -736,6 +814,21 @@ function shareHTML() {
              </div>`}
       </div>
 
+      <div class="q-share-block">
+        <h3>🔴 Live Score Sync</h3>
+        <p>Scores fill in automatically as matches finish — no manual entry needed. Uses a free API from <strong>api-sports.io</strong>.</p>
+        <ol class="q-steps">
+          <li class="q-step">Go to <strong>api-sports.io</strong> → register free</li>
+          <li class="q-step">Copy your API Key from your dashboard</li>
+          <li class="q-step">Paste it below and tap Save</li>
+        </ol>
+        <div class="q-api-row">
+          <input type="text" id="api-key-in" class="q-text-in" placeholder="Paste API token here" value="${S.apiKey || ''}">
+          <button class="q-btn sm" id="save-api-key">Save & Sync</button>
+        </div>
+        ${S.apiKey ? `<div class="q-api-status">🟢 Active · Last sync: <span class="q-sync-time">${lastSyncLabel()}</span></div>` : ''}
+      </div>
+
       <div class="q-share-block danger-zone">
         <h3>Reset</h3>
         <p>Clears your nickname and all data. Cannot be undone.</p>
@@ -749,6 +842,13 @@ function bindShare() {
   document.getElementById('import-file')?.addEventListener('change', e => importData(e.target.files[0]));
   document.getElementById('reset-btn')?.addEventListener('click', () => {
     if (confirm('Reset all your data? This cannot be undone.')) { localStorage.clear(); location.reload(); }
+  });
+  document.getElementById('save-api-key')?.addEventListener('click', () => {
+    const key = document.getElementById('api-key-in')?.value.trim();
+    if (!key) { toast('Paste your API key first'); return; }
+    S.apiKey = key;
+    toast('Key saved — syncing now…');
+    fetchLiveResults(true).then(() => render());
   });
   document.querySelectorAll('[data-remove]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -812,4 +912,10 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => navigate(btn.dataset.tab))
   );
   render();
+  // Auto-sync on load if key set and last sync > 5 minutes ago
+  if (S.apiKey) {
+    const ls = S.lastSync;
+    const stale = !ls || (Date.now() - new Date(ls)) > 5 * 60 * 1000;
+    if (stale) fetchLiveResults(false);
+  }
 });
