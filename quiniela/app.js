@@ -416,6 +416,12 @@ function picksHTML() {
   const mdDates = { 1:[], 2:[], 3:[] };
   Object.keys(byDate).sort().forEach(d => mdDates[matchday(byDate[d][0])].push(d));
   const mdLabel = ['','Matchday 1 · Jun 11–17','Matchday 2 · Jun 18–23','Matchday 3 · Jun 24–27'];
+  const mdDesc  = [
+    '',
+    'Opening round — each group plays their first match',
+    'Second round — the table starts to take shape',
+    '⚠ Final round — all group matches kick off simultaneously'
+  ];
 
   return `
     <div class="q-section">
@@ -423,6 +429,13 @@ function picksHTML() {
         <h2>⚽ My Picks</h2>
         <span class="q-badge">${filled}/72</span>
       </div>
+
+      <div class="q-phase-legend">
+        <div class="q-phase-pill" data-md="1"><span class="q-phase-pill-dot"></span>Phase 1</div>
+        <div class="q-phase-pill" data-md="2"><span class="q-phase-pill-dot"></span>Phase 2</div>
+        <div class="q-phase-pill" data-md="3"><span class="q-phase-pill-dot"></span>Phase 3 · Simultaneous</div>
+      </div>
+
       <div class="q-scoring-legend">
         <span class="leg"><span class="leg-dot exact"></span>5pts exact</span>
         <span class="leg"><span class="leg-dot diff"></span>4pts result+diff</span>
@@ -434,9 +447,12 @@ function picksHTML() {
         const mdFilled  = mdMatches.filter(m => preds[m.id]?.h != null && preds[m.id]?.a != null).length;
         const pct = Math.round((mdFilled / mdMatches.length) * 100);
         return `
-          <div class="q-matchday">
+          <div class="q-matchday" data-md="${md}">
             <div class="q-matchday-hdr">
-              <h3>${mdLabel[md]}</h3>
+              <div class="q-md-label-group">
+                <h3>${mdLabel[md]}</h3>
+                <span class="q-md-desc">${mdDesc[md]}</span>
+              </div>
               <div class="q-md-bar"><div class="q-md-fill" style="width:${pct}%"></div></div>
               <span class="q-md-pct">${mdFilled}/${mdMatches.length}</span>
             </div>
