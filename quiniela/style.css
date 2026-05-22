@@ -362,9 +362,11 @@ body {
   border: 1px solid var(--muted);
   border-radius: var(--r);
   padding: 13px 14px;
-  transition: border-color .2s;
+  transition: border-color .2s, background .15s;
   min-height: 52px;
+  cursor: pointer;
 }
+.q-row:active { background: var(--bg3); }
 .q-row.is-me {
   border-color: var(--gold2);
   background: var(--gold3);
@@ -386,6 +388,7 @@ body {
 .q-pts { font-size: 18px; font-weight: 800; color: var(--gold); flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .q-pts small { font-size: 10px; color: var(--soft); font-weight: 400; margin-left: 1px; }
 .q-pred-count { font-family: 'Syne Mono', monospace; font-size: 10px; color: var(--soft); flex-shrink: 0; }
+.q-view-arrow { font-size: 12px; color: var(--muted2); flex-shrink: 0; }
 
 .q-hint {
   text-align: center;
@@ -396,6 +399,96 @@ body {
   line-height: 1.8;
   letter-spacing: .04em;
 }
+
+/* ── PLAYER DETAIL VIEW ──────────────────────────────────── */
+.q-back-btn {
+  background: none;
+  border: 1px solid var(--muted);
+  border-radius: 20px;
+  color: var(--soft);
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  cursor: pointer;
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  touch-action: manipulation;
+}
+.q-back-btn:active { background: var(--bg3); }
+.q-player-detail-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.q-player-detail-hdr h2 { font-size: 22px; font-weight: 800; }
+.q-player-total { font-size: 28px; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; }
+.q-player-total small { font-size: 12px; color: var(--soft); font-weight: 400; }
+
+.q-specials-card {
+  background: var(--bg2);
+  border: 1px solid var(--muted);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.q-spec-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+.q-spec-row span:first-child { color: var(--soft); font-size: 11px; width: 90px; flex-shrink: 0; }
+.q-spec-row span:nth-child(2) { flex: 1; font-weight: 700; }
+
+.q-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--muted);
+  font-size: 12px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.q-detail-row:last-child { border-bottom: none; }
+.q-detail-teams { flex: 1; font-size: 11px; color: var(--soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.q-detail-teams b { color: var(--fg); font-weight: 600; }
+.q-detail-pred { font-family: 'Syne Mono', monospace; font-size: 13px; font-weight: 700; color: var(--fg); flex-shrink: 0; min-width: 28px; text-align: center; }
+.q-detail-res { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--soft); flex-shrink: 0; }
+.q-detail-row.exact .q-detail-pred { color: var(--gold); }
+.q-detail-row.diff  .q-detail-pred { color: var(--green); }
+.q-detail-row.win   .q-detail-pred { color: var(--blue); }
+.q-detail-row.zero  .q-detail-pred { color: var(--red); opacity: .7; }
+
+/* ── MATCH ODDS BAR ──────────────────────────────────────── */
+.q-odds { margin-top: 10px; }
+.q-odds-bar {
+  display: flex;
+  height: 5px;
+  border-radius: 3px;
+  overflow: hidden;
+  gap: 1px;
+}
+.q-odds-home { background: #3b82f6; transition: width .4s ease-out; }
+.q-odds-draw { background: var(--muted2); transition: width .4s ease-out; }
+.q-odds-away { background: #f59e0b; transition: width .4s ease-out; }
+.q-odds-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--soft);
+  margin-top: 4px;
+  font-family: 'Syne Mono', monospace;
+}
+.q-odds-labels span:first-child { color: #3b82f6; }
+.q-odds-labels span:last-child  { color: #f59e0b; }
 
 /* ── NEWS LINK ───────────────────────────────────────────── */
 .q-news-link {

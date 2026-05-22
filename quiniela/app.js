@@ -193,7 +193,7 @@ const S = {
 
 // ── LIVE SCORES ───────────────────────────────────────────────
 // API: api-sports.io (api-football.com) — league 1 = FIFA World Cup
-// Key lives in localStorage only — never in source code
+const DEFAULT_API_KEY = 'fa6cc4a79c8cab4bdd3a078d0eacec7e';
 const TEAM_NORM = {
   'Korea Republic':       'South Korea',
   "Côte d'Ivoire":        'Ivory Coast',
@@ -218,7 +218,7 @@ function lastSyncLabel() {
 }
 
 async function fetchLiveResults(showToast = true) {
-  const key = S.apiKey;
+  const key = S.apiKey || DEFAULT_API_KEY;
   if (!key) return;
   document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Syncing…');
   try {
@@ -326,13 +326,36 @@ function startTicker() {
 
 // ── ROUTER ────────────────────────────────────────────────────
 let tab = 'standings';
+let viewingPlayer = null;
 
 function navigate(t) {
   tab = t;
+  viewingPlayer = null;
   document.querySelectorAll('.q-tab-btn').forEach(b =>
     b.classList.toggle('active', b.dataset.tab === t)
   );
   render();
+}
+
+// ── GROUP CONSENSUS ODDS ──────────────────────────────────────
+function matchOdds(mid, players) {
+  const all = players || allPlayers();
+  const picks = all.map(p => p.preds[mid]).filter(p => p?.h != null && p?.a != null);
+  if (picks.length < 2) return null;
+  let home = 0, draw = 0, away = 0;
+  for (const p of picks) {
+    const d = p.h - p.a;
+    if (d > 0) home++;
+    else if (d === 0) draw++;
+    else away++;
+  }
+  const n = picks.length;
+  return {
+    home: Math.round(home / n * 100),
+    draw: Math.round(draw / n * 100),
+    away: Math.round(away / n * 100),
+    n,
+  };
 }
 
 // ── RENDER ────────────────────────────────────────────────────
@@ -344,8 +367,16 @@ function render() {
   const badge = document.getElementById('player-badge');
   if (badge) badge.textContent = S.nick;
 
+  if (viewingPlayer) {
+    app.innerHTML = playerPicksHTML(viewingPlayer);
+    document.getElementById('back-btn')?.addEventListener('click', () => {
+      viewingPlayer = null; render();
+    });
+    return;
+  }
+
   switch (tab) {
-    case 'standings': app.innerHTML = standingsHTML(); startTicker(); break;
+    case 'standings': app.innerHTML = standingsHTML(); startTicker(); bindStandings(); break;
     case 'picks':     app.innerHTML = picksHTML();     bindPicks();   break;
     case 'specials':  app.innerHTML = specialsHTML();  bindSpecials();break;
     case 'results':   app.innerHTML = resultsHTML();   bindResults(); break;
@@ -453,14 +484,15 @@ function standingsHTML() {
         ? `<div class="q-empty">No players yet.<br>Go to <strong>Share</strong> to import your friends' picks.</div>`
         : `<div class="q-table">
             ${ranked.map((p, i) => `
-              <div class="q-row ${p.nick === me ? 'is-me' : ''}">
+              <div class="q-row ${p.nick === me ? 'is-me' : ''}" data-view-player="${p.nick}">
                 <span class="q-rank">${medals[i] || i+1}</span>
                 <span class="q-pname">${p.nick === me ? '⭐ ' : ''}${p.nick}</span>
                 <span class="q-pts">${p.total}<small>pts</small></span>
                 <span class="q-pred-count">${p.filled}/72</span>
+                <span class="q-view-arrow">→</span>
               </div>`).join('')}
           </div>
-          <div class="q-hint">5pts exact · 4pts result+diff · 3pts result · +10 champion · +5 runner-up · +5 top scorer</div>`
+          <div class="q-hint">Tap a player to see their picks · 5pts exact · 4pts result+diff · 3pts result</div>`
       }
     </div>`;
 }
@@ -470,11 +502,84 @@ function allPlayers() {
   return [me, ...S.players.filter(p => p.nick !== S.nick)];
 }
 
+function bindStandings() {
+  document.querySelectorAll('[data-view-player]').forEach(row => {
+    row.addEventListener('click', () => {
+      viewingPlayer = row.dataset.viewPlayer;
+      render();
+    });
+  });
+}
+
+// ── VIEW: PLAYER PICKS DETAIL ─────────────────────────────────
+function playerPicksHTML(nick) {
+  const all    = allPlayers();
+  const player = all.find(p => p.nick === nick);
+  if (!player) return `<div class="q-section"><button class="q-back-btn" id="back-btn">← Back</button></div>`;
+
+  const results = S.results;
+  const specRes = S.specRes;
+  const sp      = player.specials || {};
+
+  const mPts      = MATCHES.reduce((sum, m) => sum + (scoreMatch(player.preds[m.id], results[m.id]) ?? 0), 0);
+  const champPts  = specRes.champion  && sp.champion  === specRes.champion  ? 10 : 0;
+  const runnerPts = specRes.runnerUp  && sp.runnerUp  === specRes.runnerUp  ? 5  : 0;
+  const scorerPts = specRes.topScorer && sp.topScorer?.toLowerCase() === specRes.topScorer?.toLowerCase() ? 5 : 0;
+  const total     = mPts + champPts + runnerPts + scorerPts;
+
+  const mdLabel = ['', 'Phase 1 · Jun 11–17', 'Phase 2 · Jun 18–23', 'Phase 3 · Jun 24–27'];
+
+  return `
+    <div class="q-section">
+      <button class="q-back-btn" id="back-btn">← Standings</button>
+      <div class="q-player-detail-hdr">
+        <h2>${nick === S.nick ? '⭐ ' : ''}${nick}</h2>
+        <div class="q-player-total">${total}<small>pts</small></div>
+      </div>
+
+      ${sp.champion || sp.runnerUp || sp.topScorer ? `
+        <div class="q-specials-card">
+          ${sp.champion  ? `<div class="q-spec-row"><span>🏆 Champion</span><span>${flag(sp.champion)} ${sp.champion}</span>${champPts  ? `<span class="q-pts-badge exact">+10pts</span>` : ''}</div>` : ''}
+          ${sp.runnerUp  ? `<div class="q-spec-row"><span>🥈 Runner-up</span><span>${flag(sp.runnerUp)} ${sp.runnerUp}</span>${runnerPts ? `<span class="q-pts-badge exact">+5pts</span>`  : ''}</div>` : ''}
+          ${sp.topScorer ? `<div class="q-spec-row"><span>👟 Top Scorer</span><span>${sp.topScorer}</span>${scorerPts ? `<span class="q-pts-badge exact">+5pts</span>` : ''}</div>` : ''}
+        </div>` : ''}
+
+      ${[1,2,3].map(md => {
+        const mdMatches = MATCHES.filter(m => matchday(m) === md);
+        const mdPts = mdMatches.reduce((sum, m) => sum + (scoreMatch(player.preds[m.id], results[m.id]) ?? 0), 0);
+        return `
+          <div class="q-matchday" data-md="${md}">
+            <div class="q-matchday-hdr">
+              <div class="q-md-label-group"><h3>${mdLabel[md]}</h3></div>
+              <div class="q-md-bar" style="flex:1"></div>
+              <span class="q-md-pct">${mdPts}pts</span>
+            </div>
+            ${mdMatches.map(m => {
+              const pred   = player.preds[m.id];
+              const result = results[m.id];
+              const pts    = scoreMatch(pred, result);
+              const hasPred = pred?.h != null && pred?.a != null;
+              const cls = pts !== null ? ptsBadgeClass(pts) : '';
+              return `
+                <div class="q-detail-row ${cls}">
+                  <span class="q-group-badge">GRP ${m.g}</span>
+                  <span class="q-detail-teams">${flag(m.h)} <b>${m.h}</b> v ${flag(m.a)} <b>${m.a}</b></span>
+                  <span class="q-detail-pred">${hasPred ? `${pred.h}–${pred.a}` : '—'}</span>
+                  ${result ? `<span class="q-detail-res">${result.h}–${result.a}</span>` : ''}
+                  ${pts !== null ? `<span class="q-pts-badge ${cls}">${pts > 0 ? '+' : ''}${pts}</span>` : ''}
+                </div>`;
+            }).join('')}
+          </div>`;
+      }).join('')}
+    </div>`;
+}
+
 // ── VIEW: MY PICKS ────────────────────────────────────────────
 function picksHTML() {
   const preds   = S.preds;
   const results = S.results;
   const filled  = Object.keys(preds).filter(id => preds[id]?.h != null && preds[id]?.a != null).length;
+  const allP    = allPlayers();
 
   // Group by date
   const byDate = {};
@@ -528,7 +633,7 @@ function picksHTML() {
             </div>
             ${mdDates[md].map(d => `
               <div class="q-date-divider">${fmtDate(d)}</div>
-              ${byDate[d].map(m => matchCardHTML(m, preds, results)).join('')}
+              ${byDate[d].map(m => matchCardHTML(m, preds, results, allP)).join('')}
             `).join('')}
           </div>`;
       }).join('')}
@@ -536,11 +641,12 @@ function picksHTML() {
 }
 
 // ── MATCH CARD WITH STEPPER ───────────────────────────────────
-function matchCardHTML(m, preds, results) {
+function matchCardHTML(m, preds, results, allP) {
   const locked = isLocked(m);
   const pred   = preds[m.id] || {};
   const result = results[m.id];
   const pts    = (result && pred.h != null && pred.a != null) ? scoreMatch(pred, result) : null;
+  const odds   = matchOdds(m.id, allP);
 
   const hVal = pred.h ?? 0;
   const aVal = pred.a ?? 0;
@@ -575,6 +681,19 @@ function matchCardHTML(m, preds, results) {
         </div>
       </div>
       ${result ? `<div class="q-actual-result">Result · ${flag(m.h)} ${result.h} – ${result.a} ${flag(m.a)}</div>` : ''}
+      ${odds ? `
+        <div class="q-odds">
+          <div class="q-odds-bar">
+            <div class="q-odds-home" style="width:${odds.home}%"></div>
+            <div class="q-odds-draw" style="width:${odds.draw}%"></div>
+            <div class="q-odds-away" style="width:${odds.away}%"></div>
+          </div>
+          <div class="q-odds-labels">
+            <span>${odds.home}% ${m.h.split(' ')[0]}</span>
+            <span>${odds.draw}% Draw</span>
+            <span>${m.a.split(' ')[0]} ${odds.away}%</span>
+          </div>
+        </div>` : ''}
     </div>`;
 }
 
@@ -911,11 +1030,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.q-tab-btn').forEach(btn =>
     btn.addEventListener('click', () => navigate(btn.dataset.tab))
   );
+  // Seed API key so everyone gets live scores without any setup
+  if (!S.apiKey) S.apiKey = DEFAULT_API_KEY;
   render();
-  // Auto-sync on load if key set and last sync > 5 minutes ago
-  if (S.apiKey) {
-    const ls = S.lastSync;
-    const stale = !ls || (Date.now() - new Date(ls)) > 5 * 60 * 1000;
-    if (stale) fetchLiveResults(false);
-  }
+  // Auto-sync on load if last sync > 5 minutes ago
+  const ls = S.lastSync;
+  if (!ls || (Date.now() - new Date(ls)) > 5 * 60 * 1000) fetchLiveResults(false);
 });
