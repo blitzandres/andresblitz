@@ -858,6 +858,24 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
 .q-btn.sm { min-height: 44px; font-size: 12px; }
 .q-btn.xs { min-height: 36px; font-size: 11px; width: auto; padding: 0 12px; display: inline-flex; }
 
+/* ── LOADING SCREEN ──────────────────────────────────────── */
+.q-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: calc(100dvh - var(--head-h) - var(--nav-h));
+  color: var(--soft);
+  font-size: 14px;
+  font-family: 'Syne Mono', monospace;
+  letter-spacing: .08em;
+}
+.q-loading-ball {
+  font-size: 40px;
+  animation: spin 1.5s linear infinite;
+}
+
 /* ── LOGIN ───────────────────────────────────────────────── */
 .q-login {
   display: flex;
@@ -886,6 +904,24 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
 .q-login-card h2 { font-size: 24px; font-weight: 800; color: var(--gold); margin-bottom: 5px; }
 .q-subtitle { color: var(--soft); font-size: 12px; margin-bottom: 28px; font-family: 'Syne Mono', monospace; letter-spacing: .07em; line-height: 1.6; }
 #login-form { display: flex; flex-direction: column; gap: 12px; }
+.q-login-note {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--soft);
+  line-height: 1.7;
+  font-family: 'Syne Mono', monospace;
+}
+.q-login-err {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: var(--red2);
+  border: 1px solid rgba(239,68,68,.3);
+  border-radius: var(--r);
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+}
 
 /* ── RESULTS TAB ─────────────────────────────────────────── */
 .q-awards-block {
@@ -948,6 +984,32 @@ input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
 
 .q-results-header { display: flex; align-items: center; justify-content: space-between; margin: 0 0 12px; }
 .q-results-header h3 { font-size: 14px; font-weight: 800; }
+
+/* ── POOL / INVITE ───────────────────────────────────────── */
+.q-invite-url {
+  font-family: 'Syne Mono', monospace;
+  font-size: 13px;
+  background: var(--bg3);
+  border: 1px solid var(--muted);
+  border-radius: var(--r);
+  padding: 13px 14px;
+  color: var(--gold);
+  letter-spacing: .04em;
+  word-break: break-all;
+  margin-top: 4px;
+}
+.q-pool-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.q-pool-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg3);
+  border-radius: var(--r);
+  min-height: 44px;
+}
+.q-pool-name { flex: 1; font-size: 13px; font-weight: 700; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.q-pool-picks { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--soft); flex-shrink: 0; }
 
 /* ── SHARE ───────────────────────────────────────────────── */
 .q-instructions {

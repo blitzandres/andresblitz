@@ -1,7 +1,7 @@
 'use strict';
 // ─────────────────────────────────────────────────────────────
-//  QUINIELA 2026 — World Cup Prediction Pool v2
-//  See metadata.json for full documentation.
+//  QUINIELA 2026 — World Cup Prediction Pool v3
+//  Firebase backend: real accounts, real-time sync, no JSON sharing.
 //  Delete /quiniela/ folder + nav link after July 19 2026.
 // ─────────────────────────────────────────────────────────────
 
@@ -61,7 +61,6 @@ const GROUPS = {
 
 // ── ALL 72 GROUP STAGE MATCHES ────────────────────────────────
 const MATCHES = [
-  // ── Matchday 1 (Jun 11–17) ──────────────────────────────
   {id:1,  g:'A', h:'Mexico',                  a:'South Africa',            d:'2026-06-11', t:'15:00 ET'},
   {id:2,  g:'A', h:'South Korea',             a:'Czechia',                 d:'2026-06-11', t:'22:00 ET'},
   {id:3,  g:'B', h:'Canada',                  a:'Bosnia and Herzegovina',  d:'2026-06-12', t:'15:00 ET'},
@@ -86,7 +85,6 @@ const MATCHES = [
   {id:22, g:'L', h:'England',                 a:'Croatia',                 d:'2026-06-17', t:'16:00 ET'},
   {id:23, g:'L', h:'Ghana',                   a:'Panama',                  d:'2026-06-17', t:'19:00 ET'},
   {id:24, g:'K', h:'Uzbekistan',              a:'Colombia',                d:'2026-06-17', t:'22:00 ET'},
-  // ── Matchday 2 (Jun 18–23) ──────────────────────────────
   {id:25, g:'A', h:'Czechia',                 a:'South Africa',            d:'2026-06-18', t:'12:00 ET'},
   {id:26, g:'B', h:'Switzerland',             a:'Bosnia and Herzegovina',  d:'2026-06-18', t:'15:00 ET'},
   {id:27, g:'B', h:'Canada',                  a:'Qatar',                   d:'2026-06-18', t:'18:00 ET'},
@@ -111,7 +109,6 @@ const MATCHES = [
   {id:46, g:'L', h:'England',                 a:'Ghana',                   d:'2026-06-23', t:'16:00 ET'},
   {id:47, g:'L', h:'Panama',                  a:'Croatia',                 d:'2026-06-23', t:'19:00 ET'},
   {id:48, g:'K', h:'Colombia',                a:'DR Congo',                d:'2026-06-23', t:'22:00 ET'},
-  // ── Matchday 3 (Jun 24–27, simultaneous per group) ──────
   {id:49, g:'B', h:'Switzerland',             a:'Canada',                  d:'2026-06-24', t:'15:00 ET'},
   {id:50, g:'B', h:'Bosnia and Herzegovina',  a:'Qatar',                   d:'2026-06-24', t:'15:00 ET'},
   {id:51, g:'C', h:'Brazil',                  a:'Scotland',                d:'2026-06-24', t:'18:00 ET'},
@@ -138,6 +135,196 @@ const MATCHES = [
   {id:72, g:'J', h:'Algeria',                 a:'Austria',                 d:'2026-06-27', t:'22:00 ET'},
 ];
 
+// ── FIREBASE ──────────────────────────────────────────────────
+const FIREBASE_CONFIG = {
+  apiKey:            'AIzaSyDn2UORWWThh0IPrqSTA47rNxwK7mFIINY',
+  authDomain:        'quiniela-2026-e7990.firebaseapp.com',
+  projectId:         'quiniela-2026-e7990',
+  storageBucket:     'quiniela-2026-e7990.firebasestorage.app',
+  messagingSenderId: '835456036580',
+  appId:             '1:835456036580:web:1a2f8f510e38a1178ac6f1',
+};
+firebase.initializeApp(FIREBASE_CONFIG);
+const db = firebase.firestore();
+
+// ── IN-MEMORY STATE ───────────────────────────────────────────
+const STATE = {
+  nick:     null,
+  preds:    {},
+  specials: {},
+  results:  {},
+  specRes:  {},
+  players:  [], // other players loaded from Firestore
+};
+
+// ── PIN AUTH ──────────────────────────────────────────────────
+async function hashPin(nick, pin) {
+  const msg = `${nick.toLowerCase()}:${pin}`;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function loginWithPin(nick, pin) {
+  const hash = await hashPin(nick, pin);
+  const ref  = db.collection('players').doc(nick);
+  const snap = await ref.get();
+  if (!snap.exists) {
+    await ref.set({ pin_hash: hash, preds: {}, specials: {}, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+    return { ok: true, isNew: true, hash };
+  }
+  const data = snap.data();
+  if (data.pin_hash !== hash) return { ok: false, error: 'Wrong PIN — try again' };
+  STATE.preds    = data.preds    || {};
+  STATE.specials = data.specials || {};
+  return { ok: true, isNew: false, hash };
+}
+
+async function tryAutoLogin() {
+  const nick = localStorage.getItem('q_session_nick');
+  const hash = localStorage.getItem('q_session_hash');
+  if (!nick || !hash) return false;
+  try {
+    const snap = await db.collection('players').doc(nick).get();
+    if (!snap.exists || snap.data().pin_hash !== hash) {
+      localStorage.removeItem('q_session_nick');
+      localStorage.removeItem('q_session_hash');
+      return false;
+    }
+    const data      = snap.data();
+    STATE.nick      = nick;
+    STATE.preds     = data.preds    || {};
+    STATE.specials  = data.specials || {};
+    return true;
+  } catch { return false; }
+}
+
+function logout() {
+  stopListeners();
+  Object.assign(STATE, { nick: null, preds: {}, specials: {}, results: {}, specRes: {}, players: [] });
+  localStorage.removeItem('q_session_nick');
+  localStorage.removeItem('q_session_hash');
+  tab = 'standings';
+  viewingPlayer = null;
+  render();
+}
+
+// ── DB WRITES ─────────────────────────────────────────────────
+let picksTimer = null;
+function savePreds() {
+  clearTimeout(picksTimer);
+  picksTimer = setTimeout(() => {
+    db.collection('players').doc(STATE.nick).update({
+      preds: STATE.preds,
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+    }).catch(() => {});
+  }, 800);
+}
+
+function saveSpecials() {
+  db.collection('players').doc(STATE.nick).update({
+    specials: STATE.specials,
+    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+  }).catch(() => {});
+}
+
+let resultsTimer = null;
+function saveResults() {
+  clearTimeout(resultsTimer);
+  resultsTimer = setTimeout(() => {
+    db.collection('tournament').doc('state').set(
+      { results: STATE.results, specRes: STATE.specRes },
+      { merge: true }
+    ).catch(() => {});
+  }, 1000);
+}
+
+// ── REAL-TIME LISTENERS ───────────────────────────────────────
+let unsubAll = [];
+
+function startListeners() {
+  const unsubP = db.collection('players').onSnapshot(snap => {
+    STATE.players = snap.docs
+      .filter(d => d.id !== STATE.nick)
+      .map(d => { const x = d.data(); return { nick: d.id, preds: x.preds || {}, specials: x.specials || {} }; });
+    if (tab === 'standings' && !viewingPlayer) render();
+    if (tab === 'picks') render(); // refresh odds bars
+  });
+
+  const unsubT = db.collection('tournament').doc('state').onSnapshot(snap => {
+    if (snap.exists) {
+      const d = snap.data();
+      STATE.results = d.results || {};
+      STATE.specRes = d.specRes || {};
+    }
+    // Only auto-re-render tabs that display results (not the results entry tab itself)
+    if (tab === 'standings' && !viewingPlayer) render();
+    if (tab === 'picks') render();
+  });
+
+  unsubAll = [unsubP, unsubT];
+}
+
+function stopListeners() {
+  unsubAll.forEach(u => u());
+  unsubAll = [];
+}
+
+// ── LIVE SCORES (api-sports.io) ───────────────────────────────
+const DEFAULT_API_KEY = 'fa6cc4a79c8cab4bdd3a078d0eacec7e';
+const TEAM_NORM = {
+  'Korea Republic': 'South Korea', "Côte d'Ivoire": 'Ivory Coast',
+  'Ivory Coast': 'Ivory Coast', 'Czech Republic': 'Czechia',
+  'Turkey': 'Türkiye', 'Curacao': 'Curaçao', 'Congo DR': 'DR Congo',
+  'Bosnia-Herzegovina': 'Bosnia and Herzegovina', 'USA': 'United States',
+};
+function normTeam(n) { return TEAM_NORM[n] || n; }
+
+function lastSyncLabel() {
+  const ls = localStorage.getItem('q_lastsync');
+  if (!ls) return 'Never';
+  const m = Math.floor((Date.now() - new Date(ls)) / 60000);
+  if (m < 1) return 'Just now';
+  if (m < 60) return `${m}m ago`;
+  return `${Math.floor(m / 60)}h ago`;
+}
+
+async function fetchLiveResults(showToast = true) {
+  document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Syncing…');
+  try {
+    const r = await fetch(
+      'https://v3.football.api-sports.io/fixtures?league=1&season=2026&status=FT',
+      { headers: { 'x-apisports-key': DEFAULT_API_KEY } }
+    );
+    if (r.status === 401) { if (showToast) toast('⚠ API key invalid'); return; }
+    if (r.status === 429) { if (showToast) toast('Rate limited — try again soon'); return; }
+    if (!r.ok) throw new Error(`API ${r.status}`);
+    const data    = await r.json();
+    const results = { ...STATE.results };
+    let updated   = 0;
+    for (const fx of (data.response || [])) {
+      const fh = fx.goals?.home, fa = fx.goals?.away;
+      if (fh == null || fa == null) continue;
+      const home = normTeam(fx.teams?.home?.name);
+      const away = normTeam(fx.teams?.away?.name);
+      const m = MATCHES.find(x => x.h === home && x.a === away);
+      if (!m) continue;
+      if (results[m.id]?.h === fh && results[m.id]?.a === fa) continue;
+      results[m.id] = { h: fh, a: fa };
+      updated++;
+    }
+    if (updated > 0) {
+      STATE.results = results;
+      saveResults(); // writes to Firestore → onSnapshot updates everyone
+    }
+    localStorage.setItem('q_lastsync', new Date().toISOString());
+    document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Just now');
+    if (showToast) toast(updated > 0 ? `✅ ${updated} result${updated !== 1 ? 's' : ''} updated` : '✅ All up to date');
+  } catch(e) {
+    document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Failed');
+    if (showToast) toast(`⚠ Sync failed: ${e.message}`);
+  }
+}
+
 // ── SCORING ───────────────────────────────────────────────────
 function scoreMatch(pred, result) {
   if (!pred || pred.h == null || pred.a == null) return null;
@@ -161,110 +348,16 @@ function matchday(m) {
 }
 function todayStr() {
   const d = new Date();
-  return d.getFullYear() + '-'
-    + String(d.getMonth()+1).padStart(2,'0') + '-'
-    + String(d.getDate()).padStart(2,'0');
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
 }
 function isLocked(m) { return m.d <= todayStr(); }
 
-// ── STORAGE ───────────────────────────────────────────────────
-const LS = {
-  get: k => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
-  set: (k, v) => localStorage.setItem(k, JSON.stringify(v)),
-};
-const S = {
-  get nick()      { return LS.get('q_nick'); },
-  set nick(v)     { LS.set('q_nick', v); },
-  get preds()     { return LS.get('q_preds')   || {}; },
-  set preds(v)    { LS.set('q_preds', v); },
-  get specials()  { return LS.get('q_specials') || {}; },
-  set specials(v) { LS.set('q_specials', v); },
-  get results()   { return LS.get('q_results') || {}; },
-  set results(v)  { LS.set('q_results', v); },
-  get specRes()   { return LS.get('q_specres') || {}; },
-  set specRes(v)  { LS.set('q_specres', v); },
-  get players()   { return LS.get('q_players') || []; },
-  set players(v)  { LS.set('q_players', v); },
-  get apiKey()    { return LS.get('q_apikey'); },
-  set apiKey(v)   { LS.set('q_apikey', v); },
-  get lastSync()  { return LS.get('q_lastsync'); },
-  set lastSync(v) { LS.set('q_lastsync', v); },
-};
-
-// ── LIVE SCORES ───────────────────────────────────────────────
-// API: api-sports.io (api-football.com) — league 1 = FIFA World Cup
-const DEFAULT_API_KEY = 'fa6cc4a79c8cab4bdd3a078d0eacec7e';
-const TEAM_NORM = {
-  'Korea Republic':       'South Korea',
-  "Côte d'Ivoire":        'Ivory Coast',
-  'Ivory Coast':          'Ivory Coast',
-  'Czech Republic':       'Czechia',
-  'Turkey':               'Türkiye',
-  'Curacao':              'Curaçao',
-  'Congo DR':             'DR Congo',
-  'Bosnia-Herzegovina':   'Bosnia and Herzegovina',
-  'USA':                  'United States',
-  'United States':        'United States',
-};
-function normTeam(n) { return TEAM_NORM[n] || n; }
-
-function lastSyncLabel() {
-  const ls = S.lastSync;
-  if (!ls) return 'Never';
-  const m = Math.floor((Date.now() - new Date(ls)) / 60000);
-  if (m < 1) return 'Just now';
-  if (m < 60) return `${m}m ago`;
-  return `${Math.floor(m/60)}h ago`;
-}
-
-async function fetchLiveResults(showToast = true) {
-  const key = S.apiKey || DEFAULT_API_KEY;
-  if (!key) return;
-  document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Syncing…');
-  try {
-    const r = await fetch(
-      'https://v3.football.api-sports.io/fixtures?league=1&season=2026&status=FT',
-      { headers: { 'x-apisports-key': key } }
-    );
-    if (r.status === 401) { if (showToast) toast('⚠ Invalid API key — re-enter in Share tab'); return; }
-    if (r.status === 429) { if (showToast) toast('Rate limited — try again in a minute'); return; }
-    if (!r.ok) throw new Error(`API ${r.status}`);
-    const data = await r.json();
-    const results = S.results;
-    let updated = 0;
-    for (const fx of (data.response || [])) {
-      const fh = fx.goals?.home;
-      const fa = fx.goals?.away;
-      if (fh == null || fa == null) continue;
-      const home = normTeam(fx.teams?.home?.name);
-      const away = normTeam(fx.teams?.away?.name);
-      const m = MATCHES.find(x => x.h === home && x.a === away);
-      if (!m) continue;
-      if (results[m.id]?.h === fh && results[m.id]?.a === fa) continue;
-      results[m.id] = { h: fh, a: fa };
-      updated++;
-    }
-    if (updated > 0) {
-      S.results = results;
-      if (tab === 'standings' || tab === 'results') render();
-    }
-    S.lastSync = new Date().toISOString();
-    document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Just now');
-    if (showToast) toast(updated > 0 ? `✅ ${updated} result${updated !== 1 ? 's' : ''} updated` : '✅ All up to date');
-  } catch(e) {
-    document.querySelectorAll('.q-sync-time').forEach(el => el.textContent = 'Failed');
-    if (showToast) toast(`⚠ Sync failed: ${e.message}`);
-  }
-}
-
-// ── TOURNAMENT STATS (computed from entered results) ──────────
+// ── TOURNAMENT STATS ──────────────────────────────────────────
 function computeStats(results) {
   const res = Object.values(results).filter(r => r.h != null && r.a != null);
   if (!res.length) return null;
   const goals = res.map(r => r.h + r.a);
   const total = goals.reduce((s,g) => s + g, 0);
-  const max   = Math.max(...goals);
-  // top scoring team
   const tg = {};
   MATCHES.forEach(m => {
     const r = results[m.id];
@@ -273,13 +366,7 @@ function computeStats(results) {
     tg[m.a] = (tg[m.a]||0) + r.a;
   });
   const top = Object.entries(tg).sort((a,b) => b[1]-a[1])[0];
-  return {
-    played: res.length,
-    total,
-    avg: (total / res.length).toFixed(1),
-    max,
-    topTeam: top ? `${flag(top[0])} ${top[1]}g` : '—',
-  };
+  return { played: res.length, total, avg: (total/res.length).toFixed(1), topTeam: top ? `${flag(top[0])} ${top[1]}g` : '—' };
 }
 
 // ── NEXT MATCH COUNTDOWN ──────────────────────────────────────
@@ -290,37 +377,27 @@ function nextMatch() {
   upcoming.sort((a,b) => a.d.localeCompare(b.d) || a.t.localeCompare(b.t));
   return upcoming[0];
 }
-
 function countdownStr(m) {
   const [h, min] = m.t.split(':').map(s => parseInt(s,10));
   const [y, mo, d] = m.d.split('-').map(Number);
-  // Approximate ET as UTC-4
   const kickoff = Date.UTC(y, mo-1, d, h+4, min);
   const diff = kickoff - Date.now();
   if (diff <= 0) return 'Kick-off!';
-  const days    = Math.floor(diff / 86400000);
-  const hours   = Math.floor((diff % 86400000) / 3600000);
-  const minutes = Math.floor((diff % 3600000) / 60000);
+  const days = Math.floor(diff/86400000), hours = Math.floor((diff%86400000)/3600000), minutes = Math.floor((diff%3600000)/60000);
   if (days > 0) return `${days}d ${hours}h`;
   if (hours > 0) return `${hours}h ${minutes}m`;
   return `${minutes}m`;
 }
 
-// ── TICKER STATE ──────────────────────────────────────────────
-let tickerIdx = 0;
-let tickerTimer = null;
-
+// ── TICKER ────────────────────────────────────────────────────
+let tickerIdx = 0, tickerTimer = null;
 function startTicker() {
   clearInterval(tickerTimer);
   const el = document.getElementById('ticker-text');
   if (!el) return;
   tickerTimer = setInterval(() => {
     el.classList.add('fade');
-    setTimeout(() => {
-      tickerIdx = (tickerIdx + 1) % TICKER_FACTS.length;
-      el.textContent = TICKER_FACTS[tickerIdx];
-      el.classList.remove('fade');
-    }, 300);
+    setTimeout(() => { tickerIdx = (tickerIdx+1) % TICKER_FACTS.length; el.textContent = TICKER_FACTS[tickerIdx]; el.classList.remove('fade'); }, 300);
   }, 5000);
 }
 
@@ -331,50 +408,34 @@ let viewingPlayer = null;
 function navigate(t) {
   tab = t;
   viewingPlayer = null;
-  document.querySelectorAll('.q-tab-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.tab === t)
-  );
+  document.querySelectorAll('.q-tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
   render();
 }
 
 // ── GROUP CONSENSUS ODDS ──────────────────────────────────────
 function matchOdds(mid, players) {
-  const all = players || allPlayers();
-  const picks = all.map(p => p.preds[mid]).filter(p => p?.h != null && p?.a != null);
+  const picks = (players || allPlayers()).map(p => p.preds[mid]).filter(p => p?.h != null && p?.a != null);
   if (picks.length < 2) return null;
   let home = 0, draw = 0, away = 0;
-  for (const p of picks) {
-    const d = p.h - p.a;
-    if (d > 0) home++;
-    else if (d === 0) draw++;
-    else away++;
-  }
+  for (const p of picks) { const d = p.h - p.a; if (d > 0) home++; else if (d === 0) draw++; else away++; }
   const n = picks.length;
-  return {
-    home: Math.round(home / n * 100),
-    draw: Math.round(draw / n * 100),
-    away: Math.round(away / n * 100),
-    n,
-  };
+  return { home: Math.round(home/n*100), draw: Math.round(draw/n*100), away: Math.round(away/n*100), n };
 }
 
 // ── RENDER ────────────────────────────────────────────────────
 function render() {
   clearInterval(tickerTimer);
   const app = document.getElementById('q-app');
-  if (!S.nick) { app.innerHTML = loginHTML(); bindLogin(); return; }
+  if (!STATE.nick) { app.innerHTML = loginHTML(); bindLogin(); return; }
 
   const badge = document.getElementById('player-badge');
-  if (badge) badge.textContent = S.nick;
+  if (badge) badge.textContent = STATE.nick;
 
   if (viewingPlayer) {
     app.innerHTML = playerPicksHTML(viewingPlayer);
-    document.getElementById('back-btn')?.addEventListener('click', () => {
-      viewingPlayer = null; render();
-    });
+    document.getElementById('back-btn')?.addEventListener('click', () => { viewingPlayer = null; render(); });
     return;
   }
-
   switch (tab) {
     case 'standings': app.innerHTML = standingsHTML(); startTicker(); bindStandings(); break;
     case 'picks':     app.innerHTML = picksHTML();     bindPicks();   break;
@@ -393,224 +454,168 @@ function loginHTML() {
         <h2>Quiniela 2026</h2>
         <p class="q-subtitle">World Cup · Jun 11 – Jul 19<br>12 friends · 72 matches · zero drama</p>
         <form id="login-form">
-          <input type="text" id="nick-input" placeholder="Your nickname" maxlength="20" autocomplete="off" required>
-          <button type="submit" class="q-btn">Enter the Pool →</button>
+          <input type="text"  id="nick-input" placeholder="Nickname"     maxlength="20" autocomplete="username"  required>
+          <input type="tel"   id="pin-input"  placeholder="4-digit PIN"  maxlength="4"  inputmode="numeric" pattern="[0-9]{4}" autocomplete="current-password" required>
+          <button type="submit" class="q-btn" id="login-btn">Enter the Pool →</button>
         </form>
+        <p class="q-login-note">First time? Pick any nickname + PIN to create your account.<br>Coming back? Use the same details from any device.</p>
+        <div id="login-err" class="q-login-err" style="display:none"></div>
       </div>
     </div>`;
 }
+
 function bindLogin() {
-  document.getElementById('login-form').addEventListener('submit', e => {
+  document.getElementById('login-form').addEventListener('submit', async e => {
     e.preventDefault();
-    const v = document.getElementById('nick-input').value.trim();
-    if (v) { S.nick = v; render(); }
+    const nick = document.getElementById('nick-input').value.trim();
+    const pin  = document.getElementById('pin-input').value.trim();
+    const err  = document.getElementById('login-err');
+    const btn  = document.getElementById('login-btn');
+    if (!/^\d{4}$/.test(pin)) { err.textContent = 'PIN must be exactly 4 digits'; err.style.display='block'; return; }
+    btn.disabled = true; btn.textContent = 'Checking…';
+    try {
+      const result = await loginWithPin(nick, pin);
+      if (!result.ok) {
+        err.textContent = result.error; err.style.display = 'block';
+        btn.disabled = false; btn.textContent = 'Enter the Pool →';
+        return;
+      }
+      STATE.nick = nick;
+      localStorage.setItem('q_session_nick', nick);
+      localStorage.setItem('q_session_hash', result.hash);
+      startListeners();
+      render();
+      toast(result.isNew ? `Welcome, ${nick}! 🎉` : `Welcome back, ${nick}! ⚽`);
+      const ls = localStorage.getItem('q_lastsync');
+      if (!ls || (Date.now() - new Date(ls)) > 5*60*1000) fetchLiveResults(false);
+    } catch(e) {
+      err.textContent = 'Connection error — check your internet'; err.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Enter the Pool →';
+    }
   });
 }
 
 // ── VIEW: STANDINGS ───────────────────────────────────────────
 function standingsHTML() {
-  const results = S.results;
-  const specRes = S.specRes;
-  const hasRes  = Object.keys(results).length > 0;
-  const all     = allPlayers();
-  const stats   = computeStats(results);
-  const nxt     = nextMatch();
-
+  const results = STATE.results, specRes = STATE.specRes;
+  const all = allPlayers(), stats = computeStats(results), nxt = nextMatch();
   const ranked = all.map(p => {
-    const mPts = MATCHES.reduce((sum, m) => {
-      const s = scoreMatch(p.preds[m.id], results[m.id]);
-      return sum + (s ?? 0);
-    }, 0);
+    const mPts = MATCHES.reduce((sum,m) => sum + (scoreMatch(p.preds[m.id], results[m.id]) ?? 0), 0);
     const champPts  = specRes.champion  && p.specials?.champion  === specRes.champion  ? 10 : 0;
     const runnerPts = specRes.runnerUp  && p.specials?.runnerUp  === specRes.runnerUp  ? 5  : 0;
     const scorerPts = specRes.topScorer && p.specials?.topScorer?.toLowerCase() === specRes.topScorer?.toLowerCase() ? 5 : 0;
-    return { ...p, total: mPts + champPts + runnerPts + scorerPts, filled: Object.keys(p.preds).length };
+    return { ...p, total: mPts+champPts+runnerPts+scorerPts, filled: Object.keys(p.preds).length };
   }).sort((a,b) => b.total - a.total);
-
-  const me = S.nick;
-  const medals = ['🥇','🥈','🥉'];
-
+  const me = STATE.nick, medals = ['🥇','🥈','🥉'];
   return `
     <div class="q-section">
-      <div class="q-section-header">
-        <h2>🏆 Standings</h2>
-        <span class="q-badge">${ranked.length} players</span>
-      </div>
-
-      <!-- TICKER -->
-      <div class="q-ticker">
-        <span class="q-ticker-label">Live</span>
-        <span class="q-ticker-text" id="ticker-text">${TICKER_FACTS[tickerIdx]}</span>
-      </div>
-
-      <!-- NEWS LINK -->
-      <a class="q-news-link" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noopener">
-        📰 FIFA Official World Cup 2026 News
-        <span>→</span>
-      </a>
-
-      <!-- NEXT MATCH COUNTDOWN -->
-      ${nxt ? `
-        <div class="q-countdown">
-          <div class="q-countdown-icon">${flag(nxt.h)}</div>
-          <div class="q-countdown-info">
-            <div class="q-countdown-match">${nxt.h} vs ${nxt.a}</div>
-            <div class="q-countdown-when">Group ${nxt.g} · ${nxt.d.slice(5).replace('-','/')} · ${nxt.t}</div>
-          </div>
-          <div class="q-countdown-time" id="countdown-val">${countdownStr(nxt)}</div>
-        </div>` : ''}
-
-      <!-- TOURNAMENT STATS (only when results exist) -->
-      ${stats ? `
-        <div class="q-stats-row">
-          <div class="q-stat-card">
-            <div class="q-stat-num">${stats.total}</div>
-            <div class="q-stat-label">Goals</div>
-          </div>
-          <div class="q-stat-card">
-            <div class="q-stat-num">${stats.avg}</div>
-            <div class="q-stat-label">per match</div>
-          </div>
-          <div class="q-stat-card">
-            <div class="q-stat-num" style="font-size:14px">${stats.topTeam}</div>
-            <div class="q-stat-label">top scorer</div>
-          </div>
-        </div>` : ''}
-
-      ${!hasRes ? `<div class="q-info">No results yet — enter scores in the Results tab to see the leaderboard update.</div>` : ''}
-
-      <!-- LEADERBOARD -->
+      <div class="q-section-header"><h2>🏆 Standings</h2><span class="q-badge">${ranked.length} players</span></div>
+      <div class="q-ticker"><span class="q-ticker-label">Live</span><span class="q-ticker-text" id="ticker-text">${TICKER_FACTS[tickerIdx]}</span></div>
+      <a class="q-news-link" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noopener">📰 FIFA Official World Cup 2026 News <span>→</span></a>
+      ${nxt ? `<div class="q-countdown">
+        <div class="q-countdown-icon">${flag(nxt.h)}</div>
+        <div class="q-countdown-info"><div class="q-countdown-match">${nxt.h} vs ${nxt.a}</div><div class="q-countdown-when">Group ${nxt.g} · ${nxt.d.slice(5).replace('-','/')} · ${nxt.t}</div></div>
+        <div class="q-countdown-time" id="countdown-val">${countdownStr(nxt)}</div>
+      </div>` : ''}
+      ${stats ? `<div class="q-stats-row">
+        <div class="q-stat-card"><div class="q-stat-num">${stats.total}</div><div class="q-stat-label">Goals</div></div>
+        <div class="q-stat-card"><div class="q-stat-num">${stats.avg}</div><div class="q-stat-label">per match</div></div>
+        <div class="q-stat-card"><div class="q-stat-num" style="font-size:14px">${stats.topTeam}</div><div class="q-stat-label">top scorer</div></div>
+      </div>` : ''}
+      ${!Object.keys(results).length ? `<div class="q-info">No results yet — live scores auto-fill once matches are played.</div>` : ''}
       ${ranked.length === 0
-        ? `<div class="q-empty">No players yet.<br>Go to <strong>Share</strong> to import your friends' picks.</div>`
+        ? `<div class="q-empty">No players yet.<br>Share <strong>andresblitz.com/quiniela/</strong> with your friends.</div>`
         : `<div class="q-table">
-            ${ranked.map((p, i) => `
-              <div class="q-row ${p.nick === me ? 'is-me' : ''}" data-view-player="${p.nick}">
-                <span class="q-rank">${medals[i] || i+1}</span>
-                <span class="q-pname">${p.nick === me ? '⭐ ' : ''}${p.nick}</span>
+            ${ranked.map((p,i) => `
+              <div class="q-row ${p.nick===me?'is-me':''}" data-view-player="${p.nick}">
+                <span class="q-rank">${medals[i]||i+1}</span>
+                <span class="q-pname">${p.nick===me?'⭐ ':''}${p.nick}</span>
                 <span class="q-pts">${p.total}<small>pts</small></span>
                 <span class="q-pred-count">${p.filled}/72</span>
                 <span class="q-view-arrow">→</span>
               </div>`).join('')}
           </div>
-          <div class="q-hint">Tap a player to see their picks · 5pts exact · 4pts result+diff · 3pts result</div>`
-      }
+          <div class="q-hint">Tap a player to see their picks · 5pts exact · 4pts result+diff · 3pts result</div>`}
     </div>`;
 }
 
 function allPlayers() {
-  const me = { nick: S.nick, preds: S.preds, specials: S.specials };
-  return [me, ...S.players.filter(p => p.nick !== S.nick)];
+  return [{ nick: STATE.nick, preds: STATE.preds, specials: STATE.specials }, ...STATE.players];
 }
 
 function bindStandings() {
   document.querySelectorAll('[data-view-player]').forEach(row => {
-    row.addEventListener('click', () => {
-      viewingPlayer = row.dataset.viewPlayer;
-      render();
-    });
+    row.addEventListener('click', () => { viewingPlayer = row.dataset.viewPlayer; render(); });
   });
 }
 
 // ── VIEW: PLAYER PICKS DETAIL ─────────────────────────────────
 function playerPicksHTML(nick) {
-  const all    = allPlayers();
-  const player = all.find(p => p.nick === nick);
+  const player = allPlayers().find(p => p.nick === nick);
   if (!player) return `<div class="q-section"><button class="q-back-btn" id="back-btn">← Back</button></div>`;
-
-  const results = S.results;
-  const specRes = S.specRes;
-  const sp      = player.specials || {};
-
-  const mPts      = MATCHES.reduce((sum, m) => sum + (scoreMatch(player.preds[m.id], results[m.id]) ?? 0), 0);
+  const results = STATE.results, specRes = STATE.specRes, sp = player.specials || {};
+  const mPts      = MATCHES.reduce((sum,m) => sum + (scoreMatch(player.preds[m.id], results[m.id]) ?? 0), 0);
   const champPts  = specRes.champion  && sp.champion  === specRes.champion  ? 10 : 0;
   const runnerPts = specRes.runnerUp  && sp.runnerUp  === specRes.runnerUp  ? 5  : 0;
   const scorerPts = specRes.topScorer && sp.topScorer?.toLowerCase() === specRes.topScorer?.toLowerCase() ? 5 : 0;
-  const total     = mPts + champPts + runnerPts + scorerPts;
-
-  const mdLabel = ['', 'Phase 1 · Jun 11–17', 'Phase 2 · Jun 18–23', 'Phase 3 · Jun 24–27'];
-
+  const total = mPts + champPts + runnerPts + scorerPts;
+  const mdLabel = ['','Phase 1 · Jun 11–17','Phase 2 · Jun 18–23','Phase 3 · Jun 24–27'];
   return `
     <div class="q-section">
       <button class="q-back-btn" id="back-btn">← Standings</button>
       <div class="q-player-detail-hdr">
-        <h2>${nick === S.nick ? '⭐ ' : ''}${nick}</h2>
+        <h2>${nick===STATE.nick?'⭐ ':''}${nick}</h2>
         <div class="q-player-total">${total}<small>pts</small></div>
       </div>
-
-      ${sp.champion || sp.runnerUp || sp.topScorer ? `
-        <div class="q-specials-card">
-          ${sp.champion  ? `<div class="q-spec-row"><span>🏆 Champion</span><span>${flag(sp.champion)} ${sp.champion}</span>${champPts  ? `<span class="q-pts-badge exact">+10pts</span>` : ''}</div>` : ''}
-          ${sp.runnerUp  ? `<div class="q-spec-row"><span>🥈 Runner-up</span><span>${flag(sp.runnerUp)} ${sp.runnerUp}</span>${runnerPts ? `<span class="q-pts-badge exact">+5pts</span>`  : ''}</div>` : ''}
-          ${sp.topScorer ? `<div class="q-spec-row"><span>👟 Top Scorer</span><span>${sp.topScorer}</span>${scorerPts ? `<span class="q-pts-badge exact">+5pts</span>` : ''}</div>` : ''}
-        </div>` : ''}
-
+      ${sp.champion||sp.runnerUp||sp.topScorer ? `<div class="q-specials-card">
+        ${sp.champion  ? `<div class="q-spec-row"><span>🏆 Champion</span><span>${flag(sp.champion)} ${sp.champion}</span>${champPts?`<span class="q-pts-badge exact">+10pts</span>`:''}</div>` : ''}
+        ${sp.runnerUp  ? `<div class="q-spec-row"><span>🥈 Runner-up</span><span>${flag(sp.runnerUp)} ${sp.runnerUp}</span>${runnerPts?`<span class="q-pts-badge exact">+5pts</span>`:''}</div>` : ''}
+        ${sp.topScorer ? `<div class="q-spec-row"><span>👟 Top Scorer</span><span>${sp.topScorer}</span>${scorerPts?`<span class="q-pts-badge exact">+5pts</span>`:''}</div>` : ''}
+      </div>` : ''}
       ${[1,2,3].map(md => {
         const mdMatches = MATCHES.filter(m => matchday(m) === md);
-        const mdPts = mdMatches.reduce((sum, m) => sum + (scoreMatch(player.preds[m.id], results[m.id]) ?? 0), 0);
-        return `
-          <div class="q-matchday" data-md="${md}">
-            <div class="q-matchday-hdr">
-              <div class="q-md-label-group"><h3>${mdLabel[md]}</h3></div>
-              <div class="q-md-bar" style="flex:1"></div>
-              <span class="q-md-pct">${mdPts}pts</span>
-            </div>
-            ${mdMatches.map(m => {
-              const pred   = player.preds[m.id];
-              const result = results[m.id];
-              const pts    = scoreMatch(pred, result);
-              const hasPred = pred?.h != null && pred?.a != null;
-              const cls = pts !== null ? ptsBadgeClass(pts) : '';
-              return `
-                <div class="q-detail-row ${cls}">
-                  <span class="q-group-badge">GRP ${m.g}</span>
-                  <span class="q-detail-teams">${flag(m.h)} <b>${m.h}</b> v ${flag(m.a)} <b>${m.a}</b></span>
-                  <span class="q-detail-pred">${hasPred ? `${pred.h}–${pred.a}` : '—'}</span>
-                  ${result ? `<span class="q-detail-res">${result.h}–${result.a}</span>` : ''}
-                  ${pts !== null ? `<span class="q-pts-badge ${cls}">${pts > 0 ? '+' : ''}${pts}</span>` : ''}
-                </div>`;
-            }).join('')}
-          </div>`;
+        const mdPts = mdMatches.reduce((sum,m) => sum + (scoreMatch(player.preds[m.id], results[m.id]) ?? 0), 0);
+        return `<div class="q-matchday" data-md="${md}">
+          <div class="q-matchday-hdr">
+            <div class="q-md-label-group"><h3>${mdLabel[md]}</h3></div>
+            <div class="q-md-bar" style="flex:1"></div>
+            <span class="q-md-pct">${mdPts}pts</span>
+          </div>
+          ${mdMatches.map(m => {
+            const pred = player.preds[m.id], result = results[m.id], pts = scoreMatch(pred, result);
+            const hasPred = pred?.h != null && pred?.a != null, cls = pts !== null ? ptsBadgeClass(pts) : '';
+            return `<div class="q-detail-row ${cls}">
+              <span class="q-group-badge">GRP ${m.g}</span>
+              <span class="q-detail-teams">${flag(m.h)} <b>${m.h}</b> v ${flag(m.a)} <b>${m.a}</b></span>
+              <span class="q-detail-pred">${hasPred ? `${pred.h}–${pred.a}` : '—'}</span>
+              ${result ? `<span class="q-detail-res">${result.h}–${result.a}</span>` : ''}
+              ${pts !== null ? `<span class="q-pts-badge ${cls}">${pts>0?'+':''}${pts}</span>` : ''}
+            </div>`;
+          }).join('')}
+        </div>`;
       }).join('')}
     </div>`;
 }
 
 // ── VIEW: MY PICKS ────────────────────────────────────────────
 function picksHTML() {
-  const preds   = S.preds;
-  const results = S.results;
-  const filled  = Object.keys(preds).filter(id => preds[id]?.h != null && preds[id]?.a != null).length;
-  const allP    = allPlayers();
-
-  // Group by date
+  const preds = STATE.preds, results = STATE.results, allP = allPlayers();
+  const filled = Object.keys(preds).filter(id => preds[id]?.h != null && preds[id]?.a != null).length;
   const byDate = {};
   MATCHES.forEach(m => { if (!byDate[m.d]) byDate[m.d] = []; byDate[m.d].push(m); });
-
-  const fmtDate = d => new Date(d + 'T12:00:00').toLocaleDateString('en-US',
-    { weekday:'short', month:'short', day:'numeric' });
-
-  const mdDates = { 1:[], 2:[], 3:[] };
+  const fmtDate = d => new Date(d+'T12:00:00').toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'});
+  const mdDates = {1:[],2:[],3:[]};
   Object.keys(byDate).sort().forEach(d => mdDates[matchday(byDate[d][0])].push(d));
   const mdLabel = ['','Matchday 1 · Jun 11–17','Matchday 2 · Jun 18–23','Matchday 3 · Jun 24–27'];
-  const mdDesc  = [
-    '',
-    'Opening round — each group plays their first match',
-    'Second round — the table starts to take shape',
-    '⚠ Final round — all group matches kick off simultaneously'
-  ];
-
+  const mdDesc  = ['','Opening round — each group plays their first match','Second round — the table starts to take shape','⚠ Final round — all group matches kick off simultaneously'];
   return `
     <div class="q-section">
-      <div class="q-section-header">
-        <h2>⚽ My Picks</h2>
-        <span class="q-badge">${filled}/72</span>
-      </div>
-
+      <div class="q-section-header"><h2>⚽ My Picks</h2><span class="q-badge">${filled}/72</span></div>
       <div class="q-phase-legend">
         <div class="q-phase-pill" data-md="1"><span class="q-phase-pill-dot"></span>Phase 1</div>
         <div class="q-phase-pill" data-md="2"><span class="q-phase-pill-dot"></span>Phase 2</div>
         <div class="q-phase-pill" data-md="3"><span class="q-phase-pill-dot"></span>Phase 3 · Simultaneous</div>
       </div>
-
       <div class="q-scoring-legend">
         <span class="leg"><span class="leg-dot exact"></span>5pts exact</span>
         <span class="leg"><span class="leg-dot diff"></span>4pts result+diff</span>
@@ -620,80 +625,56 @@ function picksHTML() {
       ${[1,2,3].map(md => {
         const mdMatches = MATCHES.filter(m => matchday(m) === md);
         const mdFilled  = mdMatches.filter(m => preds[m.id]?.h != null && preds[m.id]?.a != null).length;
-        const pct = Math.round((mdFilled / mdMatches.length) * 100);
-        return `
-          <div class="q-matchday" data-md="${md}">
-            <div class="q-matchday-hdr">
-              <div class="q-md-label-group">
-                <h3>${mdLabel[md]}</h3>
-                <span class="q-md-desc">${mdDesc[md]}</span>
-              </div>
-              <div class="q-md-bar"><div class="q-md-fill" style="width:${pct}%"></div></div>
-              <span class="q-md-pct">${mdFilled}/${mdMatches.length}</span>
-            </div>
-            ${mdDates[md].map(d => `
-              <div class="q-date-divider">${fmtDate(d)}</div>
-              ${byDate[d].map(m => matchCardHTML(m, preds, results, allP)).join('')}
-            `).join('')}
-          </div>`;
+        const pct = Math.round((mdFilled/mdMatches.length)*100);
+        return `<div class="q-matchday" data-md="${md}">
+          <div class="q-matchday-hdr">
+            <div class="q-md-label-group"><h3>${mdLabel[md]}</h3><span class="q-md-desc">${mdDesc[md]}</span></div>
+            <div class="q-md-bar"><div class="q-md-fill" style="width:${pct}%"></div></div>
+            <span class="q-md-pct">${mdFilled}/${mdMatches.length}</span>
+          </div>
+          ${mdDates[md].map(d => `
+            <div class="q-date-divider">${fmtDate(d)}</div>
+            ${byDate[d].map(m => matchCardHTML(m, preds, results, allP)).join('')}
+          `).join('')}
+        </div>`;
       }).join('')}
     </div>`;
 }
 
-// ── MATCH CARD WITH STEPPER ───────────────────────────────────
 function matchCardHTML(m, preds, results, allP) {
-  const locked = isLocked(m);
-  const pred   = preds[m.id] || {};
-  const result = results[m.id];
-  const pts    = (result && pred.h != null && pred.a != null) ? scoreMatch(pred, result) : null;
-  const odds   = matchOdds(m.id, allP);
-
-  const hVal = pred.h ?? 0;
-  const aVal = pred.a ?? 0;
-
+  const locked = isLocked(m), pred = preds[m.id]||{}, result = results[m.id];
+  const pts = (result && pred.h != null && pred.a != null) ? scoreMatch(pred, result) : null;
+  const odds = matchOdds(m.id, allP), hVal = pred.h??0, aVal = pred.a??0;
   return `
-    <div class="q-match-card ${locked ? 'locked' : ''}" data-mid="${m.id}">
+    <div class="q-match-card ${locked?'locked':''}" data-mid="${m.id}">
       <div class="q-match-meta">
         <span class="q-group-badge">GRP ${m.g}</span>
         <span class="q-match-time">${m.t}</span>
-        ${locked ? '<span class="q-lock-icon">🔒</span>' : ''}
-        ${pts !== null ? `<span class="q-pts-badge ${ptsBadgeClass(pts)}">${pts > 0 ? '+' : ''}${pts}pts</span>` : ''}
+        ${locked?'<span class="q-lock-icon">🔒</span>':''}
+        ${pts !== null ? `<span class="q-pts-badge ${ptsBadgeClass(pts)}">${pts>0?'+':''}${pts}pts</span>` : ''}
       </div>
       <div class="q-match-teams">
-        <div class="q-team-home">
-          <span class="q-tname">${m.h}</span>
-          <span class="q-flag">${flag(m.h)}</span>
-        </div>
+        <div class="q-team-home"><span class="q-tname">${m.h}</span><span class="q-flag">${flag(m.h)}</span></div>
         <div class="q-score-pair">
           ${locked
-            ? `<div class="q-score-locked">
-                <span class="q-score-locked-val">${pred.h ?? '—'}</span>
-                <span class="q-score-sep">:</span>
-                <span class="q-score-locked-val">${pred.a ?? '—'}</span>
-               </div>`
-            : `${stepperHTML(m.id, 'h', hVal)}
-               <span class="q-score-sep">:</span>
-               ${stepperHTML(m.id, 'a', aVal)}`}
+            ? `<div class="q-score-locked"><span class="q-score-locked-val">${pred.h??'—'}</span><span class="q-score-sep">:</span><span class="q-score-locked-val">${pred.a??'—'}</span></div>`
+            : `${stepperHTML(m.id,'h',hVal)}<span class="q-score-sep">:</span>${stepperHTML(m.id,'a',aVal)}`}
         </div>
-        <div class="q-team-away">
-          <span class="q-flag">${flag(m.a)}</span>
-          <span class="q-tname">${m.a}</span>
-        </div>
+        <div class="q-team-away"><span class="q-flag">${flag(m.a)}</span><span class="q-tname">${m.a}</span></div>
       </div>
       ${result ? `<div class="q-actual-result">Result · ${flag(m.h)} ${result.h} – ${result.a} ${flag(m.a)}</div>` : ''}
-      ${odds ? `
-        <div class="q-odds">
-          <div class="q-odds-bar">
-            <div class="q-odds-home" style="width:${odds.home}%"></div>
-            <div class="q-odds-draw" style="width:${odds.draw}%"></div>
-            <div class="q-odds-away" style="width:${odds.away}%"></div>
-          </div>
-          <div class="q-odds-labels">
-            <span>${odds.home}% ${m.h.split(' ')[0]}</span>
-            <span>${odds.draw}% Draw</span>
-            <span>${m.a.split(' ')[0]} ${odds.away}%</span>
-          </div>
-        </div>` : ''}
+      ${odds ? `<div class="q-odds">
+        <div class="q-odds-bar">
+          <div class="q-odds-home" style="width:${odds.home}%"></div>
+          <div class="q-odds-draw" style="width:${odds.draw}%"></div>
+          <div class="q-odds-away" style="width:${odds.away}%"></div>
+        </div>
+        <div class="q-odds-labels">
+          <span>${odds.home}% ${m.h.split(' ')[0]}</span>
+          <span>${odds.draw}% Draw</span>
+          <span>${m.a.split(' ')[0]} ${odds.away}%</span>
+        </div>
+      </div>` : ''}
     </div>`;
 }
 
@@ -709,19 +690,18 @@ function bindPicks() {
   document.querySelectorAll('.q-step-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const stepper = btn.closest('.q-stepper');
-      const mid  = stepper.dataset.mid;
-      const side = stepper.dataset.side;
-      const dir  = btn.classList.contains('q-step-plus') ? 1 : -1;
-      const p    = S.preds;
-      if (!p[mid]) p[mid] = { h: 0, a: 0 };
+      const mid = stepper.dataset.mid, side = stepper.dataset.side;
+      const dir = btn.classList.contains('q-step-plus') ? 1 : -1;
+      const p = STATE.preds;
+      if (!p[mid]) p[mid] = { h:0, a:0 };
       if (p[mid].h == null) p[mid].h = 0;
       if (p[mid].a == null) p[mid].a = 0;
-      const cur  = p[mid][side];
-      const next = Math.max(0, Math.min(20, cur + dir));
+      const next = Math.max(0, Math.min(20, p[mid][side] + dir));
       p[mid][side] = next;
-      S.preds = p;
+      STATE.preds = p;
+      savePreds();
       stepper.querySelector('.q-step-val').textContent = next;
-      updatePtsBadge(mid, p, S.results);
+      updatePtsBadge(mid, p, STATE.results);
     });
   });
 }
@@ -730,62 +710,40 @@ function updatePtsBadge(mid, preds, results) {
   const card = document.querySelector(`.q-match-card[data-mid="${mid}"]`);
   if (!card) return;
   const existing = card.querySelector('.q-pts-badge');
-  const pred   = preds[mid];
-  const result = results[mid];
+  const pred = preds[mid], result = results[mid];
   if (!result || pred?.h == null || pred?.a == null) { if (existing) existing.remove(); return; }
   const pts = scoreMatch(pred, result);
   if (pts === null) { if (existing) existing.remove(); return; }
-  const cls = ptsBadgeClass(pts);
-  const txt = `${pts > 0 ? '+' : ''}${pts}pts`;
+  const cls = ptsBadgeClass(pts), txt = `${pts>0?'+':''}${pts}pts`;
   if (existing) { existing.className = `q-pts-badge ${cls}`; existing.textContent = txt; }
-  else {
-    const badge = document.createElement('span');
-    badge.className = `q-pts-badge ${cls}`;
-    badge.textContent = txt;
-    card.querySelector('.q-match-meta').appendChild(badge);
-  }
+  else { const b = document.createElement('span'); b.className=`q-pts-badge ${cls}`; b.textContent=txt; card.querySelector('.q-match-meta').appendChild(b); }
 }
 
 // ── VIEW: SPECIALS ────────────────────────────────────────────
 function specialsHTML() {
-  const sp     = S.specials;
-  const sr     = S.specRes;
-  const locked = isLocked(MATCHES[0]);
-  const opts   = key => ALL_TEAMS.map(t =>
-    `<option value="${t}" ${sp[key]===t?'selected':''}>${flag(t)} ${t}</option>`
-  ).join('');
-
+  const sp = STATE.specials, sr = STATE.specRes, locked = isLocked(MATCHES[0]);
+  const opts = key => ALL_TEAMS.map(t => `<option value="${t}" ${sp[key]===t?'selected':''}>${flag(t)} ${t}</option>`).join('');
   const card = (key, emoji, label, pts, isText) => {
-    const correct = sr[key] && (isText
-      ? sp[key]?.toLowerCase() === sr[key]?.toLowerCase()
-      : sp[key] === sr[key]);
+    const correct = sr[key] && (isText ? sp[key]?.toLowerCase()===sr[key]?.toLowerCase() : sp[key]===sr[key]);
     const wrong = sr[key] && sp[key] && !correct;
-    return `
-      <div class="q-special-card ${correct?'correct':wrong?'wrong':''}">
-        <div class="q-special-label">
-          <span>${emoji} ${label}</span>
-          <span class="q-special-pts">+${pts}pts</span>
-        </div>
-        ${locked
-          ? `<div class="q-special-pick">${sp[key] ? `${isText?'':flag(sp[key])} ${sp[key]}` : '<span style="color:var(--soft);font-size:13px">Not set</span>'}</div>`
-          : isText
-            ? `<input type="text" id="sp-${key}" class="q-text-in" value="${sp[key]||''}" placeholder="Player name">`
-            : `<select id="sp-${key}" class="q-select"><option value="">— Pick a team —</option>${opts(key)}</select>`}
-        ${sr[key] ? `<div class="q-special-verdict">Actual: ${isText?'':flag(sr[key])} ${sr[key]} ${correct?'✅ +'+pts+'pts':'❌'}</div>` : ''}
-      </div>`;
+    return `<div class="q-special-card ${correct?'correct':wrong?'wrong':''}">
+      <div class="q-special-label"><span>${emoji} ${label}</span><span class="q-special-pts">+${pts}pts</span></div>
+      ${locked
+        ? `<div class="q-special-pick">${sp[key]?`${isText?'':flag(sp[key])} ${sp[key]}`:'<span style="color:var(--soft);font-size:13px">Not set</span>'}</div>`
+        : isText
+          ? `<input type="text" id="sp-${key}" class="q-text-in" value="${sp[key]||''}" placeholder="Player name">`
+          : `<select id="sp-${key}" class="q-select"><option value="">— Pick a team —</option>${opts(key)}</select>`}
+      ${sr[key] ? `<div class="q-special-verdict">Actual: ${isText?'':flag(sr[key])} ${sr[key]} ${correct?'✅ +'+pts+'pts':'❌'}</div>` : ''}
+    </div>`;
   };
-
   return `
     <div class="q-section">
-      <div class="q-section-header">
-        <h2>⭐ Special Picks</h2>
-        <span class="q-badge">Locks Jun 11</span>
-      </div>
+      <div class="q-section-header"><h2>⭐ Special Picks</h2><span class="q-badge">Locks Jun 11</span></div>
       <p class="q-desc">Bonus points. Must be set before June 11 — after that they're locked in forever.</p>
       <div class="q-special-cards">
-        ${card('champion',  '🏆','World Cup Champion', 10, false)}
-        ${card('runnerUp',  '🥈','Runner-Up (Finalist)',5, false)}
-        ${card('topScorer', '👟','Top Goal Scorer',     5, true)}
+        ${card('champion','🏆','World Cup Champion',10,false)}
+        ${card('runnerUp','🥈','Runner-Up (Finalist)',5,false)}
+        ${card('topScorer','👟','Top Goal Scorer',5,true)}
       </div>
       ${!locked ? `<button class="q-btn" id="save-specials">Save Special Picks</button>` : ''}
     </div>`;
@@ -794,13 +752,14 @@ function specialsHTML() {
 function bindSpecials() {
   document.getElementById('save-specials')?.addEventListener('click', () => {
     const sp = {};
-    const c  = document.getElementById('sp-champion')?.value;
-    const r  = document.getElementById('sp-runnerUp')?.value;
-    const t  = document.getElementById('sp-topScorer')?.value.trim();
-    if (c) sp.champion  = c;
-    if (r) sp.runnerUp  = r;
+    const c = document.getElementById('sp-champion')?.value;
+    const r = document.getElementById('sp-runnerUp')?.value;
+    const t = document.getElementById('sp-topScorer')?.value.trim();
+    if (c) sp.champion = c;
+    if (r) sp.runnerUp = r;
     if (t) sp.topScorer = t;
-    S.specials = sp;
+    STATE.specials = sp;
+    saveSpecials();
     toast('Special picks saved ⭐');
     render();
   });
@@ -808,57 +767,35 @@ function bindSpecials() {
 
 // ── VIEW: RESULTS ─────────────────────────────────────────────
 function resultsHTML() {
-  const res = S.results;
-  const sr  = S.specRes;
-  const tOpts = key => ALL_TEAMS.map(t =>
-    `<option value="${t}" ${sr[key]===t?'selected':''}>${flag(t)} ${t}</option>`
-  ).join('');
-  const fmtDate = d => new Date(d+'T12:00:00').toLocaleDateString('en-US',
-    {weekday:'short', month:'short', day:'numeric'});
-
+  const res = STATE.results, sr = STATE.specRes;
+  const tOpts = key => ALL_TEAMS.map(t => `<option value="${t}" ${sr[key]===t?'selected':''}>${flag(t)} ${t}</option>`).join('');
+  const fmtDate = d => new Date(d+'T12:00:00').toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'});
   return `
     <div class="q-section">
-      <div class="q-section-header">
-        <h2>📊 Results</h2>
-        <span class="q-badge">${Object.keys(res).length}/72</span>
+      <div class="q-section-header"><h2>📊 Results</h2><span class="q-badge">${Object.keys(res).length}/72</span></div>
+      <div class="q-live-bar">
+        <span class="q-live-dot"></span>
+        <span>Live sync active</span>
+        <span class="q-sync-time">${lastSyncLabel()}</span>
+        <button class="q-btn xs" id="sync-now-btn">Sync Now</button>
       </div>
-      ${S.apiKey
-        ? `<div class="q-live-bar">
-            <span class="q-live-dot"></span>
-            <span>Live sync active</span>
-            <span class="q-sync-time">${lastSyncLabel()}</span>
-            <button class="q-btn xs" id="sync-now-btn">Sync Now</button>
-           </div>`
-        : `<div class="q-info-callout">⚡ Auto-fill results: set up <strong>Live Score Sync</strong> in the Share tab.</div>`}
-
       <div class="q-awards-block">
         <h3>🏆 Final Awards <span style="font-weight:400;color:var(--soft);font-size:11px">· after Jul 19</span></h3>
-        <div class="q-award-row">
-          <label>Champion</label>
-          <select id="res-champion" class="q-select sm"><option value="">— TBD —</option>${tOpts('champion')}</select>
-        </div>
-        <div class="q-award-row">
-          <label>Runner-Up</label>
-          <select id="res-runner" class="q-select sm"><option value="">— TBD —</option>${tOpts('runnerUp')}</select>
-        </div>
-        <div class="q-award-row">
-          <label>Top Scorer</label>
-          <input type="text" id="res-scorer" class="q-text-in sm" value="${sr.topScorer||''}" placeholder="Player name">
-        </div>
+        <div class="q-award-row"><label>Champion</label><select id="res-champion" class="q-select sm"><option value="">— TBD —</option>${tOpts('champion')}</select></div>
+        <div class="q-award-row"><label>Runner-Up</label><select id="res-runner" class="q-select sm"><option value="">— TBD —</option>${tOpts('runnerUp')}</select></div>
+        <div class="q-award-row"><label>Top Scorer</label><input type="text" id="res-scorer" class="q-text-in sm" value="${sr.topScorer||''}" placeholder="Player name"></div>
         <button class="q-btn sm" id="save-awards" style="margin-top:8px">Save Awards</button>
       </div>
-
       <div class="q-results-header"><h3>Group Stage Scores</h3></div>
       ${MATCHES.map(m => {
-        const r = res[m.id] || {};
-        return `
-          <div class="q-result-row ${!isLocked(m)?'future':''}">
-            <span class="q-result-matchlabel">${flag(m.h)} ${m.h} <em style="color:var(--soft)">vs</em> ${m.a} ${flag(m.a)}</span>
-            <span class="q-result-date">${fmtDate(m.d)}</span>
-            <input class="q-res-in" type="number" min="0" max="20" data-mid="${m.id}" data-side="h" value="${r.h??''}" placeholder="H">
-            <span class="q-res-sep">–</span>
-            <input class="q-res-in" type="number" min="0" max="20" data-mid="${m.id}" data-side="a" value="${r.a??''}" placeholder="A">
-          </div>`;
+        const r = res[m.id]||{};
+        return `<div class="q-result-row ${!isLocked(m)?'future':''}">
+          <span class="q-result-matchlabel">${flag(m.h)} ${m.h} <em style="color:var(--soft)">vs</em> ${m.a} ${flag(m.a)}</span>
+          <span class="q-result-date">${fmtDate(m.d)}</span>
+          <input class="q-res-in" type="number" min="0" max="20" data-mid="${m.id}" data-side="h" value="${r.h??''}" placeholder="H">
+          <span class="q-res-sep">–</span>
+          <input class="q-res-in" type="number" min="0" max="20" data-mid="${m.id}" data-side="a" value="${r.a??''}" placeholder="A">
+        </div>`;
       }).join('')}
     </div>`;
 }
@@ -868,172 +805,94 @@ function bindResults() {
   document.querySelectorAll('.q-res-in').forEach(inp => {
     inp.addEventListener('input', () => {
       const mid = inp.dataset.mid, side = inp.dataset.side, val = inp.value.trim();
-      const res = S.results;
+      const res = { ...STATE.results };
       if (!res[mid]) res[mid] = {};
       val === '' ? delete res[mid][side] : res[mid][side] = parseInt(val, 10);
-      if (res[mid].h == null && res[mid].a == null) delete res[mid];
-      S.results = res;
+      if (res[mid] && res[mid].h == null && res[mid].a == null) delete res[mid];
+      STATE.results = res;
+      saveResults(); // debounced write → Firestore → everyone's leaderboard updates
     });
   });
   document.getElementById('save-awards')?.addEventListener('click', () => {
     const sr = {};
-    const c  = document.getElementById('res-champion')?.value;
-    const r  = document.getElementById('res-runner')?.value;
-    const t  = document.getElementById('res-scorer')?.value.trim();
-    if (c) sr.champion  = c;
-    if (r) sr.runnerUp  = r;
+    const c = document.getElementById('res-champion')?.value;
+    const r = document.getElementById('res-runner')?.value;
+    const t = document.getElementById('res-scorer')?.value.trim();
+    if (c) sr.champion = c;
+    if (r) sr.runnerUp = r;
     if (t) sr.topScorer = t;
-    S.specRes = sr;
+    STATE.specRes = sr;
+    saveResults();
     toast('Awards saved 🏆');
   });
 }
 
-// ── VIEW: SHARE ───────────────────────────────────────────────
+// ── VIEW: SHARE → PLAYERS & ACCOUNT ──────────────────────────
 function shareHTML() {
-  const players = S.players;
+  const all = allPlayers();
   return `
     <div class="q-section">
-      <div class="q-section-header">
-        <h2>📤 Share & Sync</h2>
-      </div>
-      <div class="q-instructions">
-        <h3>How it works</h3>
-        <ol class="q-steps">
-          <li class="q-step">Everyone enters their picks then taps <strong>Download My Picks</strong>.</li>
-          <li class="q-step">Share the .json file in your WhatsApp or Telegram group.</li>
-          <li class="q-step">Each person imports all friends' files → leaderboard updates.</li>
-          <li class="q-step">After each match day, whoever enters results re-exports and shares again.</li>
-        </ol>
+      <div class="q-section-header"><h2>👥 The Pool</h2><span class="q-badge">${all.length} players</span></div>
+
+      <div class="q-share-block">
+        <h3>Invite a friend</h3>
+        <p>Share the link — they open it, enter any nickname + a 4-digit PIN, and appear in the leaderboard automatically. No imports needed.</p>
+        <div class="q-invite-url">andresblitz.com/quiniela/</div>
       </div>
 
       <div class="q-share-block">
-        <h3>⬇ Export My Data</h3>
-        <p>Downloads your picks, specials, and any results you've entered as a .json file.</p>
-        <button class="q-btn" id="export-btn">Download My Picks</button>
-      </div>
-
-      <div class="q-share-block">
-        <h3>⬆ Import a Friend's File</h3>
-        <p>Adds them to your leaderboard. Also merges any results they've entered. Import as many as you like.</p>
-        <label class="q-btn secondary" for="import-file">Choose JSON File</label>
-        <input type="file" id="import-file" accept=".json" style="display:none">
-      </div>
-
-      <div class="q-share-block">
-        <h3>Imported (${players.length})</h3>
-        ${players.length === 0
-          ? '<p class="q-muted">None yet.</p>'
-          : `<div class="q-imported-list">
-              ${players.map((p,i) => `
-                <div class="q-imported-row">
-                  <span class="q-imported-name">${p.nick}</span>
-                  <span class="q-imported-count">${Object.keys(p.preds||{}).length}/72</span>
-                  <button class="q-btn danger xs" data-remove="${i}">✕</button>
-                </div>`).join('')}
-             </div>`}
-      </div>
-
-      <div class="q-share-block">
-        <h3>🔴 Live Score Sync</h3>
-        <p>Scores fill in automatically as matches finish — no manual entry needed. Uses a free API from <strong>api-sports.io</strong>.</p>
-        <ol class="q-steps">
-          <li class="q-step">Go to <strong>api-sports.io</strong> → register free</li>
-          <li class="q-step">Copy your API Key from your dashboard</li>
-          <li class="q-step">Paste it below and tap Save</li>
-        </ol>
-        <div class="q-api-row">
-          <input type="text" id="api-key-in" class="q-text-in" placeholder="Paste API token here" value="${S.apiKey || ''}">
-          <button class="q-btn sm" id="save-api-key">Save & Sync</button>
+        <h3>Players (${all.length})</h3>
+        <div class="q-pool-list">
+          ${all.map(p => `
+            <div class="q-pool-row">
+              <span class="q-pool-name">${p.nick===STATE.nick?'⭐ ':''}${p.nick}</span>
+              <span class="q-pool-picks">${Object.keys(p.preds||{}).length}/72 picks</span>
+            </div>`).join('')}
         </div>
-        ${S.apiKey ? `<div class="q-api-status">🟢 Active · Last sync: <span class="q-sync-time">${lastSyncLabel()}</span></div>` : ''}
       </div>
 
       <div class="q-share-block danger-zone">
-        <h3>Reset</h3>
-        <p>Clears your nickname and all data. Cannot be undone.</p>
-        <button class="q-btn danger sm" id="reset-btn">Reset My Data</button>
+        <h3>Account</h3>
+        <p>Signed in as <strong>${STATE.nick}</strong> · your picks are saved to the cloud.</p>
+        <button class="q-btn secondary sm" id="logout-btn" style="margin-right:8px">Log Out</button>
+        <button class="q-btn danger sm" id="reset-btn">Delete My Account</button>
       </div>
     </div>`;
 }
 
 function bindShare() {
-  document.getElementById('export-btn')?.addEventListener('click', exportData);
-  document.getElementById('import-file')?.addEventListener('change', e => importData(e.target.files[0]));
-  document.getElementById('reset-btn')?.addEventListener('click', () => {
-    if (confirm('Reset all your data? This cannot be undone.')) { localStorage.clear(); location.reload(); }
+  document.getElementById('logout-btn')?.addEventListener('click', () => { logout(); toast('Logged out 👋'); });
+  document.getElementById('reset-btn')?.addEventListener('click', async () => {
+    if (!confirm('Delete your account and all picks? This cannot be undone.')) return;
+    await db.collection('players').doc(STATE.nick).delete().catch(() => {});
+    logout();
+    toast('Account deleted');
   });
-  document.getElementById('save-api-key')?.addEventListener('click', () => {
-    const key = document.getElementById('api-key-in')?.value.trim();
-    if (!key) { toast('Paste your API key first'); return; }
-    S.apiKey = key;
-    toast('Key saved — syncing now…');
-    fetchLiveResults(true).then(() => render());
-  });
-  document.querySelectorAll('[data-remove]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const players = S.players;
-      players.splice(parseInt(btn.dataset.remove), 1);
-      S.players = players;
-      render();
-    });
-  });
-}
-
-function exportData() {
-  const data = {
-    version: 1, nick: S.nick, exportedAt: new Date().toISOString(),
-    preds: S.preds, specials: S.specials, results: S.results, specRes: S.specRes,
-  };
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type:'application/json' }));
-  a.download = `quiniela2026-${S.nick.replace(/\s+/g,'_')}-${new Date().toISOString().slice(0,10)}.json`;
-  a.click();
-  toast('Exported! Share with the group 📤');
-}
-
-function importData(file) {
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    try {
-      const d = JSON.parse(e.target.result);
-      if (!d.nick || !d.preds) { toast('Invalid file ❌'); return; }
-      if (d.nick === S.nick) { toast("That's your own file 😄"); return; }
-      if (d.results && Object.keys(d.results).length) {
-        S.results = Object.assign(S.results, d.results);
-      }
-      if (d.specRes && Object.keys(d.specRes).length) {
-        S.specRes = Object.assign(S.specRes, d.specRes);
-      }
-      const players = S.players.filter(p => p.nick !== d.nick);
-      players.push({ nick: d.nick, preds: d.preds, specials: d.specials || {} });
-      S.players = players;
-      toast(`${d.nick} added to standings ✅`);
-      render();
-    } catch { toast('Could not read file ❌'); }
-  };
-  reader.readAsText(file);
 }
 
 // ── TOAST ─────────────────────────────────────────────────────
 function toast(msg) {
   const t = document.createElement('div');
-  t.className = 'q-toast';
-  t.textContent = msg;
+  t.className = 'q-toast'; t.textContent = msg;
   document.body.appendChild(t);
   requestAnimationFrame(() => t.classList.add('show'));
   setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 2800);
 }
 
 // ── INIT ──────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   document.querySelectorAll('.q-tab-btn').forEach(btn =>
     btn.addEventListener('click', () => navigate(btn.dataset.tab))
   );
-  // Seed API key so everyone gets live scores without any setup
-  if (!S.apiKey) S.apiKey = DEFAULT_API_KEY;
-  render();
-  // Auto-sync on load if last sync > 5 minutes ago
-  const ls = S.lastSync;
-  if (!ls || (Date.now() - new Date(ls)) > 5 * 60 * 1000) fetchLiveResults(false);
+  document.getElementById('q-app').innerHTML = '<div class="q-loading"><div class="q-loading-ball">⚽</div><div>Loading…</div></div>';
+
+  const autoLogged = await tryAutoLogin();
+  if (autoLogged) {
+    startListeners();
+    render();
+    const ls = localStorage.getItem('q_lastsync');
+    if (!ls || (Date.now() - new Date(ls)) > 5*60*1000) fetchLiveResults(false);
+  } else {
+    render();
+  }
 });
