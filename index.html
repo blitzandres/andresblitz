@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andrés Blitz — A Life in Motion</title>
-  <meta name="description" content="A walk through the chapters of Andrés Blitz. From Venezuela to Victoria, BC. Operations, sales, and now building in public.">
-  <link rel="canonical" href="https://andresblitz.com/">
+  <title>Andrés Blitz</title>
+  <meta name="description" content="Andrés Blitz — A direct walk through the chapters.">
 
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Fonts -->
+  <!-- Fonts - sharper, more modern -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- GSAP + ScrollTrigger + Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -22,18 +21,14 @@
 
   <style>
     :root {
-      --bg: #05070f;
-      --surface: #0a0f1e;
-      --surface-2: #111827;
+      --bg: #0a0a0a;
+      --surface: #121212;
       --accent: #3b82f6;
-      --accent-2: #22d3ee;
-      --text: #e2e8f0;
-      --text-muted: #64748b;
-      --border: rgba(148, 163, 184, 0.1);
+      --text: #f5f5f5;
+      --text-muted: #888888;
+      --line: #222222;
     }
 
-    * { box-sizing: border-box; }
-    
     body {
       background: var(--bg);
       color: var(--text);
@@ -41,46 +36,59 @@
     }
 
     .font-display {
-      font-family: 'Space Grotesk', 'Inter', sans-serif;
-      font-feature-settings: "ss02";
+      font-family: 'Instrument Sans', 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
     }
 
     .section {
-      padding-top: 120px;
-      padding-bottom: 120px;
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+
+    .nav {
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(12px);
     }
 
     .chapter-label {
-      font-size: 11px;
-      letter-spacing: 0.2em;
+      font-size: 10px;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--accent-2);
+      color: var(--accent);
       font-weight: 500;
     }
 
-    .nav-link {
-      transition: color 0.2s ease;
-    }
-    .nav-link:hover {
-      color: white;
-    }
-
-    .cosmic-bg {
-      background: radial-gradient(circle at 50% 20%, rgba(59,130,246,0.08) 0%, transparent 50%);
+    .big-headline {
+      font-size: clamp(52px, 7.2vw, 92px);
+      line-height: 0.92;
+      font-weight: 600;
+      letter-spacing: -0.035em;
     }
 
-    .starfield {
-      position: fixed;
-      inset: 0;
-      background-image: 
-        radial-gradient(1px 1px at 20px 30px, rgba(226,232,240,0.6), transparent),
-        radial-gradient(1px 1px at 40px 70px, rgba(226,232,240,0.4), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(226,232,240,0.5), transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(226,232,240,0.3), transparent);
-      background-size: 180px 120px;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.5;
+    .story {
+      font-size: 17px;
+      line-height: 1.72;
+      color: #d1d5db;
+      max-width: 620px;
+    }
+
+    .thin-rule {
+      height: 1px;
+      background: var(--line);
+    }
+
+    .edge-text {
+      color: #e5e5e5;
+    }
+
+    .minimal-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      transition: border-color 0.2s ease;
+    }
+    .minimal-card:hover {
+      border-color: #333;
     }
 
     .scroll-progress {
@@ -88,196 +96,128 @@
       top: 0;
       left: 0;
       height: 1px;
-      background: linear-gradient(to right, var(--accent), var(--accent-2));
+      background: var(--accent);
       z-index: 9999;
       transform-origin: left;
     }
 
-    .chapter {
-      position: relative;
-    }
-
-    .chapter-number {
+    .nav-link {
       font-size: 13px;
-      letter-spacing: 0.15em;
-      color: var(--accent-2);
-      font-weight: 500;
-      margin-bottom: 12px;
+      color: #999;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: white;
     }
 
-    .story-text {
-      font-size: 17px;
-      line-height: 1.75;
-      color: #cbd5e1;
-    }
-
-    .milestone {
-      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
-                  box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .milestone:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    }
-
-    .space-glow {
-      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.1),
-                  0 0 40px -10px rgba(59, 130, 246, 0.15);
-    }
-
-    .nav {
-      backdrop-filter: blur(20px);
-      background: rgba(5, 7, 15, 0.8);
-    }
-
-    .cosmic-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .cosmic-card:hover {
-      border-color: rgba(59, 130, 246, 0.3);
-      background: var(--surface-2);
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
+    .chapter-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #222, transparent);
     }
   </style>
 </head>
-<body class="antialiased overflow-x-hidden">
-  <!-- Scroll Progress -->
-  <div id="progress" class="scroll-progress" style="width: 0%"></div>
+<body class="antialiased">
 
-  <!-- Subtle Starfield -->
-  <div class="starfield"></div>
+  <!-- Progress -->
+  <div id="progress" class="scroll-progress" style="width:0%"></div>
 
   <!-- NAV -->
   <nav class="nav fixed top-0 left-0 right-0 z-50 border-b border-white/5">
-    <div class="max-w-6xl mx-auto px-8 flex items-center justify-between h-20">
-      <div class="flex items-center gap-3">
-        <div class="font-display text-xl font-semibold tracking-tighter">Andrés Blitz</div>
-        <div class="text-[10px] px-2 py-px rounded-full border border-white/10 text-white/40">VICTORIA, BC</div>
-      </div>
+    <div class="max-w-5xl mx-auto px-8 flex items-center justify-between h-[76px]">
+      <div class="font-display text-[21px] tracking-[-0.5px]">Andrés Blitz</div>
 
-      <div class="hidden md:flex items-center gap-9 text-sm">
-        <a href="#chapter-01" class="nav-link text-white/70 hover:text-white text-[13px]">01 — Origins</a>
-        <a href="#chapter-02" class="nav-link text-white/70 hover:text-white text-[13px]">02 — Operations</a>
-        <a href="#chapter-03" class="nav-link text-white/70 hover:text-white text-[13px]">03 — Velocity</a>
-        <a href="#chapter-04" class="nav-link text-white/70 hover:text-white text-[13px]">04 — Trajectory</a>
-        <a href="#game" class="nav-link text-white/70 hover:text-white text-[13px]">Play</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#c1" class="nav-link">01 Origins</a>
+        <a href="#c2" class="nav-link">02 Pressure</a>
+        <a href="#c3" class="nav-link">03 Velocity</a>
+        <a href="#c4" class="nav-link">04 Now</a>
+        <a href="#game" class="nav-link">Play</a>
       </div>
 
       <a href="mailto:info@andresblitz.com" 
-         class="px-5 py-2 rounded-full bg-white text-[#05070f] text-sm font-medium hover:bg-white/90 transition-colors">
-        Connect
+         class="text-sm px-6 h-9 rounded-full border border-white/30 hover:bg-white hover:text-black flex items-center transition-all">
+        Talk
       </a>
     </div>
   </nav>
 
-  <!-- HERO / SIGNAL -->
-  <section class="min-h-[100dvh] flex items-center relative pt-16">
-    <div class="max-w-5xl mx-auto px-8 relative z-10">
-      <div class="max-w-4xl">
-        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/10 text-xs tracking-[0.15em] text-white/50 mb-8">
-          A LIFE IN MOTION
-        </div>
+  <!-- HERO -->
+  <section class="min-h-[100dvh] flex items-center pt-16 border-b border-white/5">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="max-w-[860px]">
+        <div class="text-xs tracking-[3px] text-white/40 mb-6">VICTORIA, BRITISH COLUMBIA</div>
 
-        <h1 class="font-display text-[92px] md:text-[120px] leading-[0.88] tracking-[-5.5px] font-semibold">
-          New chapter.<br>
-          <span class="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">New altitude.</span>
+        <h1 class="font-display big-headline leading-none">
+          I don’t do<br>safe stories.
         </h1>
 
         <p class="mt-8 max-w-md text-2xl text-white/70 tracking-tight">
-          A walk through the chapters.<br>
-          From Venezuela to Victoria.
+          This is a walk through the chapters.<br>
+          No decoration. Just what actually happened.
         </p>
 
-        <div class="flex items-center gap-4 mt-12">
-          <a href="#chapter-01" 
-             class="group inline-flex items-center gap-3 px-8 h-14 rounded-full border border-white/20 hover:border-white/40 transition-all text-sm tracking-widest">
-            BEGIN THE JOURNEY
-            <span class="group-hover:translate-x-0.5 transition-transform">↓</span>
+        <div class="mt-12 flex items-center gap-4">
+          <a href="#c1" 
+             class="inline-flex items-center gap-2 px-7 h-12 rounded-full bg-white text-black text-sm font-medium tracking-wider hover:bg-white/90">
+            START
           </a>
           <a href="#game" 
-             class="inline-flex items-center gap-3 px-8 h-14 rounded-full border border-white/10 hover:bg-white/5 transition-all text-sm tracking-widest text-white/70">
-            SKIP TO THE GAME
+             class="inline-flex items-center gap-2 px-7 h-12 rounded-full border border-white/20 text-sm tracking-wider hover:bg-white/5">
+            JUMP TO THE GAME
           </a>
         </div>
       </div>
     </div>
-
-    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center text-[10px] tracking-[3px] text-white/30">
-      SCROLL TO BEGIN
-      <div class="h-px w-6 bg-white/20 mt-3"></div>
-    </div>
   </section>
 
-  <!-- CHAPTER 01 — IGNITION -->
-  <section id="chapter-01" class="chapter section border-t border-white/5 relative">
-    <div class="max-w-4xl mx-auto px-8">
-      <div class="chapter-number">CHAPTER 01 — IGNITION</div>
-      <h2 class="font-display text-6xl md:text-7xl leading-none tracking-[-2.5px] font-semibold">The beginning<br>was never quiet.</h2>
+  <!-- CHAPTER 01 — ORIGINS -->
+  <section id="c1" class="section">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="chapter-label mb-3">CHAPTER 01 — ORIGINS</div>
+      <h2 class="font-display big-headline tracking-[-1.5px]">Started in one<br>place. Had to move.</h2>
 
-      <div class="mt-12 grid md:grid-cols-12 gap-x-8 gap-y-12">
-        <div class="md:col-span-7 story-text">
-          Born in Venezuela. Studied business at Universidad Rafael Belloso Chacín. 
-          Graduated into a world that demanded movement. In 2014 I left everything I knew and landed in Canada with a BBA and two languages.
+      <div class="mt-10 grid md:grid-cols-12 gap-x-16 gap-y-10">
+        <div class="md:col-span-7 story">
+          Venezuela. Business school. Graduated. Then Canada. No safety net. 
+          Just a degree, two languages, and the understanding that nothing would be given.
         </div>
-        <div class="md:col-span-5 text-white/50 text-[15px]">
-          The first years were about learning the rules of a new country — 
-          customs, contracts, cold mornings, and how to build trust from zero.
+        <div class="md:col-span-5 text-sm text-white/50 leading-relaxed">
+          First jobs were about survival and learning the rules fast. 
+          Cashier. Customs. Small projects. Every role taught the same lesson: 
+          speed and precision matter more than comfort.
         </div>
       </div>
 
-      <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div class="cosmic-card rounded-2xl p-8">
-          <div class="text-xs tracking-[1px] text-white/40">2009 — 2014</div>
-          <div class="font-display text-3xl tracking-tight mt-6">BBA</div>
-          <div class="text-white/60 mt-1">Universidad Rafael Belloso Chacín</div>
-        </div>
-        <div class="cosmic-card rounded-2xl p-8">
-          <div class="text-xs tracking-[1px] text-white/40">2014 — 2016</div>
-          <div class="font-display text-3xl tracking-tight mt-6">New Country</div>
-          <div class="text-white/60 mt-1">Langara + Brighton College</div>
-        </div>
-        <div class="cosmic-card rounded-2xl p-8">
-          <div class="text-xs tracking-[1px] text-white/40">2013 — 2016</div>
-          <div class="font-display text-3xl tracking-tight mt-6">First Ground</div>
-          <div class="text-white/60 mt-1">Shoppers Drug Mart → Customs Broker</div>
-        </div>
+      <div class="mt-14 thin-rule"></div>
+
+      <div class="mt-10 text-xs tracking-widest text-white/40 flex flex-wrap gap-x-10 gap-y-2">
+        <div>2009 — 2014 <span class="text-white/30 mx-1">•</span> BBA, Venezuela</div>
+        <div>2014 <span class="text-white/30 mx-1">•</span> Landed in Canada</div>
+        <div>2015 — 2017 <span class="text-white/30 mx-1">•</span> Langara + First real roles</div>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 02 — FIRST ORBITS -->
-  <section id="chapter-02" class="chapter section border-t border-white/5 bg-[#05070f]">
-    <div class="max-w-4xl mx-auto px-8">
-      <div class="chapter-number">CHAPTER 02 — FIRST ORBITS</div>
-      <h2 class="font-display text-6xl md:text-7xl leading-none tracking-[-2.5px] font-semibold">Learning to carry<br>real weight.</h2>
+  <!-- CHAPTER 02 — PRESSURE -->
+  <section id="c2" class="section border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="chapter-label mb-3">CHAPTER 02 — PRESSURE</div>
+      <h2 class="font-display big-headline tracking-[-1.5px]">The work got<br>heavy. Fast.</h2>
 
-      <div class="mt-12 max-w-2xl story-text">
-        Project work in restoration. Then petroleum. 
-        Suddenly I was responsible for safety protocols, teams of ten, and multi-million dollar outcomes. 
-        This is where I learned that operations is not glamorous — it's discipline.
+      <div class="mt-10 max-w-[620px] story">
+        Petroleum sector. Real money. Real consequences. 
+        I was suddenly managing million-dollar projects, safety protocols, and teams where mistakes cost more than money.
       </div>
 
-      <div class="mt-12">
-        <div class="cosmic-card rounded-3xl p-9 md:p-12 space-y-8">
+      <div class="mt-14 minimal-card rounded-2xl p-9 md:p-12">
+        <div class="flex flex-col md:flex-row md:items-end gap-6 md:gap-12">
           <div>
-            <div class="uppercase tracking-[2px] text-xs text-white/40">2017 — 2020</div>
-            <div class="font-display text-4xl tracking-tight mt-3">Project Manager, Phoenix Petroleum</div>
+            <div class="text-xs tracking-[2px] text-white/40">2017 — 2020</div>
+            <div class="font-display text-4xl tracking-tight mt-2">Project Manager<br>Phoenix Petroleum</div>
           </div>
-          <div class="grid md:grid-cols-2 gap-8 text-[15px]">
-            <div class="text-white/70">
-              Managed a $5M infrastructure project from start to finish.<br>
-              Delivered 20% under budget with zero safety incidents.
-            </div>
-            <div class="text-white/50">
-              This chapter taught me how to protect people and capital at the same time. 
-              The pressure was constant. So was the pride when it worked.
-            </div>
+          <div class="text-sm text-white/60 max-w-md md:pb-1">
+            Delivered a $5M project 20% under budget with zero safety incidents. 
+            This is where I learned real operational discipline.
           </div>
         </div>
       </div>
@@ -285,132 +225,119 @@
   </section>
 
   <!-- CHAPTER 03 — VELOCITY -->
-  <section id="chapter-03" class="chapter section border-t border-white/5">
-    <div class="max-w-4xl mx-auto px-8">
-      <div class="chapter-number">CHAPTER 03 — VELOCITY</div>
-      <h2 class="font-display text-6xl md:text-7xl leading-none tracking-[-2.5px] font-semibold">When speed<br>meets precision.</h2>
+  <section id="c3" class="section border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="chapter-label mb-3">CHAPTER 03 — VELOCITY</div>
+      <h2 class="font-display big-headline tracking-[-1.5px]">Sales became<br>the proving ground.</h2>
 
-      <div class="mt-12 grid md:grid-cols-2 gap-12">
-        <div>
-          <div class="story-text">
-            2020 hit. The world slowed down. I chose to move faster.
-            Real estate became the arena. Then cars. Both rewarded the same thing: 
-            relentless execution and the ability to create trust in high-stakes moments.
-          </div>
+      <div class="mt-10 grid md:grid-cols-12 gap-x-16">
+        <div class="md:col-span-6 story">
+          Real estate. Then cars. Both brutal. Both honest. 
+          You either perform or you disappear. I chose to perform.
         </div>
-        <div class="space-y-6 text-sm text-white/70">
-          <div>Re/Max Crest Realty — partnered with BC Condos & Homes. 50+ open houses. Record months.</div>
-          <div>Harris Dodge — broke the all-time sales record: 170 cars in a single month.</div>
-          <div class="pt-4 border-t border-white/10 text-white/40">This was the chapter where I proved I could sell anything — if I believed in it.</div>
+        <div class="md:col-span-6 mt-8 md:mt-0 text-sm text-white/50 leading-relaxed">
+          Record months. Broken targets. The same intensity that worked in operations 
+          translated directly into sales. The numbers don’t lie.
         </div>
       </div>
 
-      <div class="mt-16">
-        <div class="text-xs tracking-[1px] text-white/40 mb-4">THE NUMBERS THAT MATTERED</div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <div class="milestone cosmic-card rounded-2xl p-7">
-            <div class="font-display text-5xl tracking-tighter">170</div>
-            <div class="text-xs mt-3 tracking-widest text-white/40">CARS IN ONE MONTH</div>
-          </div>
-          <div class="milestone cosmic-card rounded-2xl p-7">
-            <div class="font-display text-5xl tracking-tighter">30%</div>
-            <div class="text-xs mt-3 tracking-widest text-white/40">SALES GROWTH CONTRIBUTION</div>
-          </div>
-          <div class="milestone cosmic-card rounded-2xl p-7">
-            <div class="font-display text-5xl tracking-tighter">400+</div>
-            <div class="text-xs mt-3 tracking-widest text-white/40">TRANSACTIONS / MONTH</div>
-          </div>
-          <div class="milestone cosmic-card rounded-2xl p-7">
-            <div class="font-display text-5xl tracking-tighter">15+</div>
-            <div class="text-xs mt-3 tracking-widest text-white/40">YEARS ACROSS INDUSTRIES</div>
-          </div>
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="minimal-card rounded-xl px-7 py-8">
+          <div class="font-display text-6xl tracking-tighter">170</div>
+          <div class="text-xs mt-6 text-white/50 tracking-widest">CARS IN ONE MONTH<br><span class="text-white/30">— all-time record</span></div>
+        </div>
+        <div class="minimal-card rounded-xl px-7 py-8">
+          <div class="font-display text-6xl tracking-tighter">30%</div>
+          <div class="text-xs mt-6 text-white/50 tracking-widest">SALES GROWTH<br><span class="text-white/30">in one year</span></div>
+        </div>
+        <div class="minimal-card rounded-xl px-7 py-8">
+          <div class="font-display text-6xl tracking-tighter">400+</div>
+          <div class="text-xs mt-6 text-white/50 tracking-widest">TRANSACTIONS<br><span class="text-white/30">per month</span></div>
+        </div>
+        <div class="minimal-card rounded-xl px-7 py-8">
+          <div class="font-display text-6xl tracking-tighter">15+</div>
+          <div class="text-xs mt-6 text-white/50 tracking-widest">YEARS<br><span class="text-white/30">across industries</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 04 — CURRENT TRAJECTORY -->
-  <section id="chapter-04" class="chapter section border-t border-white/5 bg-[#05070f]">
-    <div class="max-w-4xl mx-auto px-8">
-      <div class="chapter-number">CHAPTER 04 — CURRENT TRAJECTORY</div>
-      <h2 class="font-display text-6xl md:text-7xl leading-none tracking-[-2.5px] font-semibold">The builder<br>phase begins.</h2>
+  <!-- CHAPTER 04 — NOW -->
+  <section id="c4" class="section border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="chapter-label mb-3">CHAPTER 04 — CURRENT TRAJECTORY</div>
+      <h2 class="font-display big-headline tracking-[-1.5px]">Operations +<br>building in public.</h2>
 
-      <div class="mt-12 max-w-3xl story-text">
-        Today I run fleet operations at Avis Victoria while building in public. 
-        The same mind that once optimized petroleum logistics now writes code, ships tools, and studies how systems actually work.
+      <div class="mt-10 max-w-2xl story">
+        Today I run fleet operations while writing code and shipping tools. 
+        The same person who once optimized petroleum logistics now builds in the open.
       </div>
 
-      <div class="mt-10">
-        <div class="uppercase text-xs tracking-[1.5px] text-white/40 mb-4">WHAT I’M BUILDING NOW</div>
+      <div class="mt-12">
+        <div class="uppercase text-xs tracking-[2px] text-white/40 mb-4">WHAT I SHIP</div>
         <div class="grid md:grid-cols-2 gap-3">
-          <a href="https://github.com/blitzandres/lie-detector" target="_blank" class="cosmic-card group rounded-2xl p-8 block hover:border-white/20">
+          <a href="https://github.com/blitzandres/lie-detector" target="_blank" class="minimal-card group rounded-xl p-8 block">
             <div class="text-xs text-white/40">PYTHON</div>
-            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">Lie Detector</div>
-            <div class="text-white/60 mt-3 pr-6">Behavioral deception detection engine using 66 cues and Bayesian methods.</div>
+            <div class="font-display text-3xl tracking-tight mt-5 group-hover:text-white">Lie Detector</div>
+            <div class="text-white/50 mt-3 text-sm">Behavioral deception detection engine. 66 cues. Bayesian fusion.</div>
           </a>
-          <a href="https://github.com/blitzandres/netwatch" target="_blank" class="cosmic-card group rounded-2xl p-8 block hover:border-white/20">
+          <a href="https://github.com/blitzandres/netwatch" target="_blank" class="minimal-card group rounded-xl p-8 block">
             <div class="text-xs text-white/40">PYTHON + FLASK</div>
-            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">NetWatch</div>
-            <div class="text-white/60 mt-3 pr-6">Real-time local network monitoring with live device intelligence.</div>
+            <div class="font-display text-3xl tracking-tight mt-5 group-hover:text-white">NetWatch</div>
+            <div class="text-white/50 mt-3 text-sm">Real-time local network monitoring with live intelligence.</div>
           </a>
-          <a href="https://github.com/blitzandres/bluth-scan" target="_blank" class="cosmic-card group rounded-2xl p-8 block hover:border-white/20">
+          <a href="https://github.com/blitzandres/bluth-scan" target="_blank" class="minimal-card group rounded-xl p-8 block">
             <div class="text-xs text-white/40">PYTHON + 3D</div>
-            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">Bluth Scan</div>
-            <div class="text-white/60 mt-3 pr-6">Bluetooth scanner with neural 3D force-graph visualization.</div>
+            <div class="font-display text-3xl tracking-tight mt-5 group-hover:text-white">Bluth Scan</div>
+            <div class="text-white/50 mt-3 text-sm">Bluetooth scanner with neural 3D visualization.</div>
           </a>
-          <a href="https://github.com/blitzandres" target="_blank" class="cosmic-card group rounded-2xl p-8 flex flex-col justify-between hover:border-white/20">
+          <a href="https://github.com/blitzandres" target="_blank" class="minimal-card group rounded-xl p-8 flex flex-col justify-between">
             <div>
-              <div class="text-xs text-white/40">AND MORE</div>
-              <div class="font-display text-3xl tracking-tight mt-4">All Public Work</div>
+              <div class="text-xs text-white/40">ALL OF IT</div>
+              <div class="font-display text-3xl tracking-tight mt-5">Full GitHub</div>
             </div>
-            <div class="text-xs mt-8 text-white/40 group-hover:text-white transition-colors">github.com/blitzandres →</div>
+            <div class="text-xs text-white/40 mt-8 group-hover:text-white">github.com/blitzandres →</div>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SPACE INVADERS — THE PAUSE -->
+  <!-- SPACE INVADERS -->
   <section id="game" class="section border-t border-white/5">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <div class="mb-3 text-xs tracking-[2px] text-white/40">YOU MADE IT THIS FAR</div>
-      <h3 class="font-display text-6xl tracking-tighter font-semibold">SPACE INVADERS</h3>
-      <p class="text-white/50 mt-2">Every journey needs a moment to play.</p>
+    <div class="max-w-5xl mx-auto px-8 text-center">
+      <div class="text-xs tracking-[2px] text-white/40">YOU MADE IT THIS FAR</div>
+      <h3 class="font-display text-6xl tracking-[-1.5px] mt-3">SPACE INVADERS</h3>
+      <p class="text-white/50 mt-2 text-sm">Every serious journey needs a stupid game.</p>
 
       <div class="mt-10 inline-block">
-        <div id="game-container" class="rounded-xl overflow-hidden border border-white/10 bg-black/50">
+        <div class="rounded border border-white/10 overflow-hidden bg-black">
           <canvas id="game-canvas" width="580" height="360" class="block"></canvas>
-          <div class="bg-[#05070f] px-5 py-3 text-xs flex justify-between text-white/50 border-t border-white/10 font-mono">
-            <div>SCORE <span id="score" class="text-white/90 font-medium">00000</span></div>
-            <div>LEVEL <span id="level" class="text-white/90 font-medium">1</span></div>
-            <div>LIVES <span id="lives" class="text-white/90 font-medium">♥ ♥ ♥</span></div>
+          <div class="bg-[#0a0a0a] px-5 py-3 text-xs flex justify-between text-white/50 border-t border-white/10 font-mono tracking-widest">
+            <div>SCORE <span id="score" class="text-white">00000</span></div>
+            <div>LEVEL <span id="level" class="text-white">1</span></div>
+            <div>LIVES <span id="lives" class="text-white">♥ ♥ ♥</span></div>
           </div>
         </div>
       </div>
-
-      <div class="mt-4 text-[10px] tracking-widest text-white/30">← → MOVE &nbsp;&nbsp; SPACE SHOOT &nbsp;&nbsp; P PAUSE &nbsp;&nbsp; CLICK CANVAS TO START</div>
+      <div class="mt-4 text-[10px] tracking-[1.5px] text-white/30">← → / A D MOVE &nbsp;&nbsp; SPACE SHOOT &nbsp;&nbsp; P PAUSE &nbsp;&nbsp; CLICK TO START</div>
     </div>
   </section>
 
-  <!-- FINAL TRANSMISSION -->
+  <!-- FINAL -->
   <section class="section border-t border-white/5">
     <div class="max-w-3xl mx-auto px-8 text-center">
-      <div class="text-xs tracking-[2px] text-white/40">THE NEXT BURN</div>
-      <h2 class="font-display text-6xl md:text-7xl tracking-[-2px] leading-none mt-6">
-        The story is<br>still being written.
-      </h2>
-      <p class="mt-8 text-xl text-white/60 max-w-md mx-auto">
-        I’m looking for the next environment where operational complexity, technology, and real impact meet.
-      </p>
+      <div class="text-xs tracking-[2px] text-white/40">THE ONLY QUESTION LEFT</div>
+      <h2 class="font-display text-6xl md:text-7xl tracking-[-1.5px] mt-6 leading-none">What are we<br>building next?</h2>
 
       <div class="mt-10">
         <a href="mailto:info@andresblitz.com" 
-           class="inline-flex items-center justify-center px-10 h-14 rounded-full bg-white text-[#05070f] font-medium tracking-wider text-sm hover:bg-white/90 transition-colors">
-          LET’S TALK
+           class="inline-block px-10 h-14 rounded-full bg-white text-black font-medium text-sm tracking-wider hover:bg-white/90 transition-colors">
+          INFO@ANDRESBLITZ.COM
         </a>
       </div>
 
-      <div class="mt-20 flex justify-center gap-8 text-xs text-white/40">
+      <div class="mt-16 flex justify-center gap-9 text-xs text-white/40 tracking-widest">
         <a href="https://github.com/blitzandres" class="hover:text-white">GITHUB</a>
         <a href="https://x.com/andresblitz" class="hover:text-white">X</a>
         <a href="https://ca.linkedin.com/in/andresblitz" class="hover:text-white">LINKEDIN</a>
@@ -418,362 +345,196 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/5 py-8 text-center text-xs text-white/30 tracking-widest">
-    © <span id="year"></span> ANDRÉS BLITZ — VICTORIA, BC
+  <footer class="border-t border-white/5 py-8 text-center text-xs text-white/30 tracking-[2px]">
+    © <span id="year"></span> ANDRÉS BLITZ — NO DECORATION. JUST WORK.
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Tailwind config
+    // Tailwind
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Space Grotesk', 'Inter', 'sans-serif']
-          }
-        }
-      }
+      theme: { extend: { fontFamily: { display: ['Instrument Sans', 'Inter', 'sans-serif'] } } }
     };
 
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Lenis + GSAP
     gsap.registerPlugin(ScrollTrigger);
 
-    const lenis = new Lenis({
-      lerp: 0.08,
-      smooth: true,
-      wheelMultiplier: 0.9
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    const lenis = new Lenis({ lerp: 0.07, smooth: true, wheelMultiplier: 0.85 });
+    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
 
-    // Scroll progress bar
+    // Progress
     const progress = document.getElementById('progress');
     lenis.on('scroll', ({ scroll, limit }) => {
-      const p = Math.min((scroll / limit) * 100, 100);
-      progress.style.width = p + '%';
+      progress.style.width = Math.min((scroll / limit) * 100, 100) + '%';
     });
 
-    // Smooth anchor scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          lenis.scrollTo(target, { offset: -80, duration: 1.1 });
-        }
+    // Smooth anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: -70, duration: 1.0 }); }
       });
     });
 
-    // Fade in chapters on scroll
-    gsap.utils.toArray('.chapter').forEach((chapter, i) => {
-      gsap.to(chapter, {
-        opacity: 1,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: chapter,
-          start: 'top 78%',
-          once: true
-        }
-      });
-    });
-
-    // === SPACE INVADERS GAME ===
+    // === SPACE INVADERS (clean version) ===
     (function() {
-      const canvas = document.getElementById('game-canvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      const W = canvas.width;
-      const H = canvas.height;
+      const c = document.getElementById('game-canvas');
+      if (!c) return;
+      const ctx = c.getContext('2d');
+      const W = c.width, H = c.height;
 
-      let started = false, paused = false, gameOver = false;
-      let score = 0, level = 1, lives = 3;
-      let frame = 0, alienDir = 1, alienSpeed = 0.6;
-      let lastShot = 0, alienLastShot = 0;
-      let bullets = [], alienBullets = [];
+      let started = false, paused = false, over = false;
+      let score = 0, level = 1, lives = 3, frame = 0, dir = 1, speed = 0.65;
+      let lastShot = 0;
+      let bullets = [], aBullets = [];
       let keys = {};
-
-      const player = { x: W/2, y: H-42, w: 34, h: 14, speed: 4.2 };
-      const ROWS = 3, COLS = 8, AW = 28, AH = 20, HG = 12, VG = 12;
+      const p = { x: W/2, y: H-42, w: 34, h: 14 };
       let aliens = [], shields = [];
 
       function resetAliens() {
         aliens = [];
-        const sx = (W - (COLS * (AW + HG))) / 2 + AW / 2;
-        for (let r = 0; r < ROWS; r++) {
-          for (let c = 0; c < COLS; c++) {
-            aliens.push({ x: sx + c * (AW + HG), y: 48 + r * (AH + VG), alive: true });
-          }
-        }
-        alienDir = 1;
-        alienSpeed = 0.6 + (level - 1) * 0.14;
+        const sx = (W - 8 * 40) / 2 + 14;
+        for (let r = 0; r < 3; r++) for (let col = 0; col < 8; col++)
+          aliens.push({ x: sx + col * 40, y: 52 + r * 32, alive: true });
+        dir = 1; speed = 0.65 + (level - 1) * 0.13;
       }
-
       function resetShields() {
         shields = [];
         const g = (W - 4 * 36) / 5;
-        for (let i = 0; i < 4; i++) {
-          shields.push({ x: g + i * (36 + g), y: H - 82, hp: 5 });
-        }
+        for (let i = 0; i < 4; i++) shields.push({ x: g + i * (36 + g), y: H - 82, hp: 5 });
       }
-
-      function resetGame() {
-        score = 0; level = 1; lives = 3; frame = 0;
-        bullets = []; alienBullets = [];
-        gameOver = false; paused = false;
-        player.x = W / 2;
-        resetAliens();
-        resetShields();
-        updateHUD();
+      function reset() {
+        score = 0; level = 1; lives = 3; frame = 0; bullets = []; aBullets = [];
+        over = false; paused = false; p.x = W/2;
+        resetAliens(); resetShields(); updateHUD();
       }
-
       function updateHUD() {
         document.getElementById('score').textContent = score.toString().padStart(5, '0');
         document.getElementById('level').textContent = level;
         document.getElementById('lives').innerHTML = '♥ '.repeat(lives).trim();
       }
 
-      function drawPlayer() {
-        ctx.save();
-        ctx.translate(player.x, player.y);
-        ctx.fillStyle = '#e2e8f0';
-        ctx.fillRect(-player.w/2, -4, player.w, 8);
+      function draw() {
+        ctx.fillStyle = '#0a0a0a'; ctx.fillRect(0, 0, W, H);
+        ctx.strokeStyle = 'rgba(255,255,255,0.04)'; ctx.lineWidth = 1;
+        for (let x = 24; x < W; x += 24) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+
+        if (!started) {
+          ctx.fillStyle = '#888'; ctx.font = '13px Inter, system-ui'; ctx.textAlign = 'center';
+          ctx.fillText('CLICK TO START', W/2, H/2);
+          return;
+        }
+
+        // Player
+        ctx.fillStyle = '#f5f5f5';
+        ctx.fillRect(p.x - p.w/2, p.y - 4, p.w, 8);
         ctx.fillStyle = '#3b82f6';
-        ctx.fillRect(-4, -10, 8, 6);
-        ctx.restore();
-      }
+        ctx.fillRect(p.x - 4, p.y - 11, 8, 6);
 
-      function drawAliens() {
-        ctx.fillStyle = '#22d3ee';
-        aliens.forEach(a => {
-          if (!a.alive) return;
-          ctx.fillRect(a.x - AW/2, a.y - AH/2, AW, AH);
-          ctx.fillStyle = '#05070f';
-          ctx.fillRect(a.x - 6, a.y - 2, 4, 4);
-          ctx.fillRect(a.x + 2, a.y - 2, 4, 4);
-          ctx.fillStyle = '#22d3ee';
-        });
-      }
+        // Aliens
+        ctx.fillStyle = '#3b82f6';
+        aliens.forEach(a => { if (a.alive) ctx.fillRect(a.x - 14, a.y - 10, 28, 20); });
 
-      function drawBullets() {
-        ctx.fillStyle = '#e2e8f0';
-        bullets.forEach(b => ctx.fillRect(b.x - 1, b.y - 4, 2, 7));
-        ctx.fillStyle = '#f87171';
-        alienBullets.forEach(b => ctx.fillRect(b.x - 1.5, b.y - 4, 3, 7));
-      }
+        // Bullets
+        ctx.fillStyle = '#fff'; bullets.forEach(b => ctx.fillRect(b.x - 1, b.y - 5, 2, 8));
+        ctx.fillStyle = '#f87171'; aBullets.forEach(b => ctx.fillRect(b.x - 1.5, b.y - 4, 3, 7));
 
-      function drawShields() {
-        ctx.fillStyle = '#475569';
-        shields.forEach(s => {
-          if (s.hp <= 0) return;
-          ctx.globalAlpha = Math.max(0.3, s.hp / 5);
-          ctx.fillRect(s.x, s.y, 34, 12);
-          ctx.globalAlpha = 1;
-        });
+        // Shields
+        ctx.fillStyle = '#444';
+        shields.forEach(s => { if (s.hp > 0) { ctx.globalAlpha = s.hp / 5; ctx.fillRect(s.x, s.y, 34, 11); } });
+        ctx.globalAlpha = 1;
+
+        if (paused) { ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0,0,W,H); ctx.fillStyle='#fff'; ctx.font='600 15px Inter'; ctx.fillText('PAUSED', W/2, H/2); }
+        if (over) {
+          ctx.fillStyle = 'rgba(0,0,0,0.85)'; ctx.fillRect(0,0,W,H);
+          ctx.fillStyle = '#fff'; ctx.font = '600 16px Inter'; ctx.textAlign = 'center';
+          ctx.fillText('DONE', W/2, H/2 - 8);
+          ctx.fillStyle = '#666'; ctx.font = '13px Inter'; ctx.fillText('SCORE ' + score + '  —  CLICK TO RESTART', W/2, H/2 + 18);
+        }
       }
 
       function update() {
-        if (!started || paused || gameOver) return;
+        if (!started || paused || over) return;
 
-        // Player movement
-        if (keys['ArrowLeft'] || keys['a']) player.x -= player.speed;
-        if (keys['ArrowRight'] || keys['d']) player.x += player.speed;
-        player.x = Math.max(22, Math.min(W - 22, player.x));
+        if (keys['ArrowLeft'] || keys['a']) p.x -= 4.4;
+        if (keys['ArrowRight'] || keys['d']) p.x += 4.4;
+        p.x = Math.max(22, Math.min(W - 22, p.x));
 
-        // Player bullets
-        bullets.forEach((b, i) => { b.y -= 7.5; if (b.y < 0) bullets.splice(i, 1); });
+        bullets.forEach((b, i) => { b.y -= 8; if (b.y < 0) bullets.splice(i,1); });
 
-        // Alien movement
         let edge = false;
-        aliens.forEach(a => {
-          if (!a.alive) return;
-          a.x += alienDir * alienSpeed;
-          if (a.x < 26 || a.x > W - 26) edge = true;
-        });
-        if (edge) {
-          alienDir *= -1;
-          aliens.forEach(a => a.y += 18);
-        }
+        aliens.forEach(a => { if (!a.alive) return; a.x += dir * speed; if (a.x < 24 || a.x > W - 24) edge = true; });
+        if (edge) { dir *= -1; aliens.forEach(a => a.y += 16); }
 
-        // Alien shooting
-        if (frame % Math.max(38, 52 - level * 4) === 0) {
-          const alive = aliens.filter(a => a.alive);
-          if (alive.length) {
-            const shooter = alive[Math.floor(Math.random() * alive.length)];
-            alienBullets.push({ x: shooter.x, y: shooter.y + 12 });
+        if (frame % Math.max(36, 50 - level * 3) === 0) {
+          const live = aliens.filter(a => a.alive);
+          if (live.length) {
+            const s = live[Math.floor(Math.random() * live.length)];
+            aBullets.push({ x: s.x, y: s.y + 10 });
           }
         }
+        aBullets.forEach((b, i) => { b.y += 3.6; if (b.y > H) aBullets.splice(i,1); });
 
-        // Alien bullets
-        alienBullets.forEach((b, i) => {
-          b.y += 3.8;
-          if (b.y > H) alienBullets.splice(i, 1);
-        });
-
-        // Collisions: player bullets vs aliens
         bullets.forEach((b, bi) => {
           aliens.forEach(a => {
-            if (!a.alive) return;
-            if (Math.abs(b.x - a.x) < AW/2 && Math.abs(b.y - a.y) < AH/2) {
-              a.alive = false;
-              bullets.splice(bi, 1);
-              score += 12;
-              updateHUD();
+            if (a.alive && Math.abs(b.x - a.x) < 16 && Math.abs(b.y - a.y) < 12) {
+              a.alive = false; bullets.splice(bi, 1); score += 10; updateHUD();
             }
           });
         });
 
-        // Collisions: alien bullets vs player
-        alienBullets.forEach((b, i) => {
-          if (Math.abs(b.x - player.x) < 18 && Math.abs(b.y - player.y) < 14) {
-            alienBullets.splice(i, 1);
-            lives--;
-            updateHUD();
-            if (lives <= 0) gameOver = true;
+        aBullets.forEach((b, i) => {
+          if (Math.abs(b.x - p.x) < 18 && Math.abs(b.y - p.y) < 14) {
+            aBullets.splice(i, 1); lives--; updateHUD(); if (lives <= 0) over = true;
           }
         });
 
-        // Win condition
-        if (aliens.every(a => !a.alive)) {
-          level++;
-          resetAliens();
-          alienBullets = [];
-          updateHUD();
-        }
-
+        if (aliens.every(a => !a.alive)) { level++; resetAliens(); aBullets = []; updateHUD(); }
         frame++;
       }
 
-      function draw() {
-        ctx.fillStyle = '#05070f';
-        ctx.fillRect(0, 0, W, H);
+      function loop() { update(); draw(); requestAnimationFrame(loop); }
 
-        // Subtle grid
-        ctx.strokeStyle = 'rgba(148,163,184,0.06)';
-        ctx.lineWidth = 1;
-        for (let x = 30; x < W; x += 30) {
-          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
-        }
-
-        if (!started) {
-          ctx.fillStyle = '#e2e8f0';
-          ctx.font = '500 13px Inter, system-ui';
-          ctx.textAlign = 'center';
-          ctx.fillText('CLICK TO START', W/2, H/2 - 8);
-          ctx.fillStyle = '#64748b';
-          ctx.font = '12px Inter, system-ui';
-          ctx.fillText('ARROWS OR A/D TO MOVE  •  SPACE TO SHOOT', W/2, H/2 + 18);
-          return;
-        }
-
-        drawPlayer();
-        drawAliens();
-        drawBullets();
-        drawShields();
-
-        if (paused) {
-          ctx.fillStyle = 'rgba(0,0,0,0.6)';
-          ctx.fillRect(0, 0, W, H);
-          ctx.fillStyle = '#e2e8f0';
-          ctx.font = '600 15px Inter, system-ui';
-          ctx.textAlign = 'center';
-          ctx.fillText('PAUSED', W/2, H/2);
-        }
-
-        if (gameOver) {
-          ctx.fillStyle = 'rgba(5,7,15,0.85)';
-          ctx.fillRect(0, 0, W, H);
-          ctx.fillStyle = '#f1f5f9';
-          ctx.font = '600 17px Inter, system-ui';
-          ctx.textAlign = 'center';
-          ctx.fillText('MISSION COMPLETE', W/2, H/2 - 12);
-          ctx.fillStyle = '#64748b';
-          ctx.font = '13px Inter, system-ui';
-          ctx.fillText('SCORE ' + score, W/2, H/2 + 14);
-          ctx.fillText('CLICK TO RESTART', W/2, H/2 + 38);
-        }
-      }
-
-      function loop() {
-        update();
-        draw();
-        requestAnimationFrame(loop);
-      }
-
-      // Input
       window.addEventListener('keydown', e => {
         keys[e.key] = true;
-        if (e.key.toLowerCase() === 'p' && started && !gameOver) paused = !paused;
-        if ((e.key === ' ' || e.key === 'Spacebar') && started && !paused && !gameOver) {
+        if (e.key.toLowerCase() === 'p' && started && !over) paused = !paused;
+        if (e.key === ' ' && started && !paused && !over) {
           e.preventDefault();
-          const now = Date.now();
-          if (now - lastShot > 180) {
-            bullets.push({ x: player.x, y: player.y - 12 });
-            lastShot = now;
-          }
+          const t = Date.now();
+          if (t - lastShot > 160) { bullets.push({ x: p.x, y: p.y - 12 }); lastShot = t; }
         }
       });
       window.addEventListener('keyup', e => keys[e.key] = false);
 
-      canvas.addEventListener('click', () => {
-        if (!started) {
-          started = true;
-          resetGame();
-        } else if (gameOver) {
-          resetGame();
-        } else if (paused) {
-          paused = false;
+      c.addEventListener('click', () => { if (!started) { started = true; reset(); } else if (over) reset(); else if (paused) paused = false; });
+      c.addEventListener('mousedown', () => {
+        if (started && !paused && !over) {
+          const t = Date.now(); if (t - lastShot > 160) { bullets.push({ x: p.x, y: p.y - 12 }); lastShot = t; }
         }
       });
 
-      canvas.addEventListener('mousedown', () => {
-        if (started && !paused && !gameOver) {
-          const now = Date.now();
-          if (now - lastShot > 180) {
-            bullets.push({ x: player.x, y: player.y - 12 });
-            lastShot = now;
-          }
-        }
+      // Touch
+      let tx = 0;
+      c.addEventListener('touchstart', e => {
+        if (!started) { started = true; reset(); return; }
+        if (over) { reset(); return; }
+        tx = e.touches[0].clientX;
+        if (started && !paused && !over) bullets.push({ x: p.x, y: p.y - 12 });
       });
-
-      // Touch support
-      let touchStartX = 0;
-      canvas.addEventListener('touchstart', e => {
-        if (!started) {
-          started = true;
-          resetGame();
-          return;
-        }
-        if (gameOver) { resetGame(); return; }
-        touchStartX = e.touches[0].clientX;
-        if (started && !paused && !gameOver) {
-          bullets.push({ x: player.x, y: player.y - 12 });
-        }
-      });
-
-      canvas.addEventListener('touchmove', e => {
-        if (!started || paused || gameOver) return;
-        const dx = e.touches[0].clientX - touchStartX;
-        player.x = Math.max(22, Math.min(W - 22, W/2 + dx * 1.6));
+      c.addEventListener('touchmove', e => {
+        if (!started || paused || over) return;
+        p.x = Math.max(22, Math.min(W - 22, W/2 + (e.touches[0].clientX - tx) * 1.7));
       });
 
       loop();
     })();
 
-    // Subtle parallax on hero
-    window.addEventListener('mousemove', (e) => {
-      const hero = document.querySelector('section');
-      if (!hero) return;
-      const x = (e.clientX / window.innerWidth - 0.5) * 6;
-      const y = (e.clientY / window.innerHeight - 0.5) * 4;
-      hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+    // Subtle progress on hero
+    window.addEventListener('scroll', () => {
+      const h = document.querySelector('section');
+      if (h) h.style.opacity = Math.max(0.4, 1 - (window.scrollY / 600));
     });
   </script>
 </body>
