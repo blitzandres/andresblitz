@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andrés Blitz</title>
-  <meta name="description" content="Andrés Blitz — A direct walk through the chapters.">
+  <meta name="description" content="Andrés Blitz. Operations. Sales. Code. Still accelerating.">
 
-  <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Fonts - sharper, more modern -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- GSAP + ScrollTrigger + Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
@@ -22,110 +18,50 @@
   <style>
     :root {
       --bg: #0a0a0a;
-      --surface: #121212;
       --accent: #3b82f6;
       --text: #f5f5f5;
-      --text-muted: #888888;
-      --line: #222222;
+      --muted: #777777;
+      --line: #1f1f1f;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system_ui, sans-serif; }
+    .font-display { font-family: 'Instrument Sans', 'Inter', sans-serif; font-weight: 600; letter-spacing: -0.025em; }
+
+    .nav { background: rgba(10,10,10,0.96); backdrop-filter: blur(16px); }
+    .nav-link { font-size: 13px; color: #888; transition: color .2s ease; }
+    .nav-link:hover { color: white; }
+
+    .hero-headline {
+      font-size: clamp(68px, 8.8vw, 118px);
+      line-height: .88;
+      font-weight: 700;
+      letter-spacing: -0.045em;
     }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', system_ui, sans-serif;
-    }
+    .section { padding-top: 130px; padding-bottom: 130px; }
+    .story { font-size: 17px; line-height: 1.75; color: #d1d5db; }
+    .thin { height: 1px; background: var(--line); }
+    .minimal-card { border: 1px solid var(--line); background: #111; transition: border-color .2s; }
+    .minimal-card:hover { border-color: #333; }
 
-    .font-display {
-      font-family: 'Instrument Sans', 'Inter', sans-serif;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 1px; background: var(--accent); z-index: 9999; transform-origin: left; }
 
-    .section {
-      padding-top: 140px;
-      padding-bottom: 140px;
-    }
-
-    .nav {
-      background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(12px);
-    }
-
-    .chapter-label {
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .big-headline {
-      font-size: clamp(52px, 7.2vw, 92px);
-      line-height: 0.92;
-      font-weight: 600;
-      letter-spacing: -0.035em;
-    }
-
-    .story {
-      font-size: 17px;
-      line-height: 1.72;
-      color: #d1d5db;
-      max-width: 620px;
-    }
-
-    .thin-rule {
-      height: 1px;
-      background: var(--line);
-    }
-
-    .edge-text {
-      color: #e5e5e5;
-    }
-
-    .minimal-card {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      transition: border-color 0.2s ease;
-    }
-    .minimal-card:hover {
-      border-color: #333;
-    }
-
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 1px;
-      background: var(--accent);
-      z-index: 9999;
-      transform-origin: left;
-    }
-
-    .nav-link {
-      font-size: 13px;
-      color: #999;
-      transition: color 0.2s ease;
-    }
-    .nav-link:hover {
-      color: white;
-    }
-
-    .chapter-divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #222, transparent);
+    .hero-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.65;
+      pointer-events: none;
     }
   </style>
 </head>
-<body class="antialiased">
+<body>
 
-  <!-- Progress -->
   <div id="progress" class="scroll-progress" style="width:0%"></div>
 
   <!-- NAV -->
   <nav class="nav fixed top-0 left-0 right-0 z-50 border-b border-white/5">
     <div class="max-w-5xl mx-auto px-8 flex items-center justify-between h-[76px]">
       <div class="font-display text-[21px] tracking-[-0.5px]">Andrés Blitz</div>
-
       <div class="hidden md:flex items-center gap-8">
         <a href="#c1" class="nav-link">01 Origins</a>
         <a href="#c2" class="nav-link">02 Pressure</a>
@@ -133,169 +69,152 @@
         <a href="#c4" class="nav-link">04 Now</a>
         <a href="#game" class="nav-link">Play</a>
       </div>
-
-      <a href="mailto:info@andresblitz.com" 
-         class="text-sm px-6 h-9 rounded-full border border-white/30 hover:bg-white hover:text-black flex items-center transition-all">
-        Talk
-      </a>
+      <a href="mailto:info@andresblitz.com" class="text-sm px-6 h-9 rounded-full border border-white/30 hover:bg-white hover:text-black flex items-center transition-all">Talk</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="min-h-[100dvh] flex items-center pt-16 border-b border-white/5">
-    <div class="max-w-5xl mx-auto px-8">
-      <div class="max-w-[860px]">
-        <div class="text-xs tracking-[3px] text-white/40 mb-6">VICTORIA, BRITISH COLUMBIA</div>
+  <!-- HERO - MUCH STRONGER -->
+  <section class="relative min-h-[100dvh] flex items-center border-b border-white/5 overflow-hidden">
+    <!-- Subtle premium motion layer (trajectory / altitude) -->
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
 
-        <h1 class="font-display big-headline leading-none">
-          I don’t do<br>safe stories.
+    <div class="max-w-5xl mx-auto px-8 relative z-10 pt-12">
+      <div class="max-w-[980px]">
+        <!-- Location -->
+        <div class="flex items-center gap-3 text-xs tracking-[3px] text-white/40 mb-8">
+          <div>VICTORIA, BRITISH COLUMBIA</div>
+          <div class="h-px w-6 bg-white/20"></div>
+          <div>CANADA</div>
+        </div>
+
+        <!-- Main powerful statement -->
+        <h1 class="font-display hero-headline leading-none tracking-[-0.04em]">
+          I don’t build<br>portfolios.<br>I build momentum.
         </h1>
 
         <p class="mt-8 max-w-md text-2xl text-white/70 tracking-tight">
-          This is a walk through the chapters.<br>
-          No decoration. Just what actually happened.
+          15 years across real estate, petroleum, automotive, and code.<br>
+          Still accelerating.
         </p>
 
-        <div class="mt-12 flex items-center gap-4">
+        <div class="mt-14 flex flex-wrap items-center gap-4">
           <a href="#c1" 
-             class="inline-flex items-center gap-2 px-7 h-12 rounded-full bg-white text-black text-sm font-medium tracking-wider hover:bg-white/90">
-            START
+             class="inline-flex items-center justify-center px-8 h-14 rounded-full bg-white text-black text-sm font-medium tracking-wider hover:bg-white/90 active:scale-[0.985] transition-all">
+            BEGIN THE WALK
           </a>
           <a href="#game" 
-             class="inline-flex items-center gap-2 px-7 h-12 rounded-full border border-white/20 text-sm tracking-wider hover:bg-white/5">
-            JUMP TO THE GAME
+             class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-white/20 text-sm tracking-wider hover:bg-white/5 active:scale-[0.985] transition-all">
+            OR JUST PLAY THE GAME
           </a>
         </div>
+
+        <div class="absolute bottom-12 left-8 text-[10px] tracking-[2.5px] text-white/30 hidden md:block">SCROLL TO ENTER THE STORY</div>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 01 — ORIGINS -->
+  <!-- CHAPTER 01 -->
   <section id="c1" class="section">
     <div class="max-w-5xl mx-auto px-8">
-      <div class="chapter-label mb-3">CHAPTER 01 — ORIGINS</div>
-      <h2 class="font-display big-headline tracking-[-1.5px]">Started in one<br>place. Had to move.</h2>
-
-      <div class="mt-10 grid md:grid-cols-12 gap-x-16 gap-y-10">
-        <div class="md:col-span-7 story">
-          Venezuela. Business school. Graduated. Then Canada. No safety net. 
-          Just a degree, two languages, and the understanding that nothing would be given.
-        </div>
-        <div class="md:col-span-5 text-sm text-white/50 leading-relaxed">
-          First jobs were about survival and learning the rules fast. 
-          Cashier. Customs. Small projects. Every role taught the same lesson: 
-          speed and precision matter more than comfort.
-        </div>
-      </div>
-
-      <div class="mt-14 thin-rule"></div>
-
-      <div class="mt-10 text-xs tracking-widest text-white/40 flex flex-wrap gap-x-10 gap-y-2">
-        <div>2009 — 2014 <span class="text-white/30 mx-1">•</span> BBA, Venezuela</div>
-        <div>2014 <span class="text-white/30 mx-1">•</span> Landed in Canada</div>
-        <div>2015 — 2017 <span class="text-white/30 mx-1">•</span> Langara + First real roles</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 02 — PRESSURE -->
-  <section id="c2" class="section border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-8">
-      <div class="chapter-label mb-3">CHAPTER 02 — PRESSURE</div>
-      <h2 class="font-display big-headline tracking-[-1.5px]">The work got<br>heavy. Fast.</h2>
-
-      <div class="mt-10 max-w-[620px] story">
-        Petroleum sector. Real money. Real consequences. 
-        I was suddenly managing million-dollar projects, safety protocols, and teams where mistakes cost more than money.
-      </div>
-
-      <div class="mt-14 minimal-card rounded-2xl p-9 md:p-12">
-        <div class="flex flex-col md:flex-row md:items-end gap-6 md:gap-12">
-          <div>
-            <div class="text-xs tracking-[2px] text-white/40">2017 — 2020</div>
-            <div class="font-display text-4xl tracking-tight mt-2">Project Manager<br>Phoenix Petroleum</div>
-          </div>
-          <div class="text-sm text-white/60 max-w-md md:pb-1">
-            Delivered a $5M project 20% under budget with zero safety incidents. 
-            This is where I learned real operational discipline.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 03 — VELOCITY -->
-  <section id="c3" class="section border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-8">
-      <div class="chapter-label mb-3">CHAPTER 03 — VELOCITY</div>
-      <h2 class="font-display big-headline tracking-[-1.5px]">Sales became<br>the proving ground.</h2>
+      <div class="text-xs tracking-[3px] text-[#3b82f6] mb-3">CHAPTER 01 — ORIGINS</div>
+      <h2 class="font-display text-[68px] md:text-[82px] leading-[0.9] tracking-[-2.5px]">Started far away.<br>Had to move fast.</h2>
 
       <div class="mt-10 grid md:grid-cols-12 gap-x-16">
-        <div class="md:col-span-6 story">
-          Real estate. Then cars. Both brutal. Both honest. 
-          You either perform or you disappear. I chose to perform.
-        </div>
-        <div class="md:col-span-6 mt-8 md:mt-0 text-sm text-white/50 leading-relaxed">
-          Record months. Broken targets. The same intensity that worked in operations 
-          translated directly into sales. The numbers don’t lie.
-        </div>
+        <div class="md:col-span-7 story">Venezuela → Business school → Canada with nothing but a degree and two languages. The first years were about learning how to survive and execute in a completely new system.</div>
+        <div class="md:col-span-5 text-sm text-white/50 leading-relaxed mt-6 md:mt-0">Cashier. Customs broker. Small projects. Every single role taught the same thing: speed and precision beat comfort every time.</div>
       </div>
 
-      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div class="minimal-card rounded-xl px-7 py-8">
-          <div class="font-display text-6xl tracking-tighter">170</div>
-          <div class="text-xs mt-6 text-white/50 tracking-widest">CARS IN ONE MONTH<br><span class="text-white/30">— all-time record</span></div>
-        </div>
-        <div class="minimal-card rounded-xl px-7 py-8">
-          <div class="font-display text-6xl tracking-tighter">30%</div>
-          <div class="text-xs mt-6 text-white/50 tracking-widest">SALES GROWTH<br><span class="text-white/30">in one year</span></div>
-        </div>
-        <div class="minimal-card rounded-xl px-7 py-8">
-          <div class="font-display text-6xl tracking-tighter">400+</div>
-          <div class="text-xs mt-6 text-white/50 tracking-widest">TRANSACTIONS<br><span class="text-white/30">per month</span></div>
-        </div>
-        <div class="minimal-card rounded-xl px-7 py-8">
-          <div class="font-display text-6xl tracking-tighter">15+</div>
-          <div class="text-xs mt-6 text-white/50 tracking-widest">YEARS<br><span class="text-white/30">across industries</span></div>
+      <div class="mt-14 thin"></div>
+      <div class="mt-8 text-xs tracking-widest text-white/40 flex flex-wrap gap-x-10 gap-y-1">
+        <div>2009–2014 — BBA, Venezuela</div>
+        <div>2014 — Landed in Canada</div>
+        <div>2015–2017 — First real ground</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 02 -->
+  <section id="c2" class="section border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="text-xs tracking-[3px] text-[#3b82f6] mb-3">CHAPTER 02 — PRESSURE</div>
+      <h2 class="font-display text-[68px] md:text-[82px] leading-[0.9] tracking-[-2.5px]">The work got heavy.<br>Real heavy.</h2>
+
+      <div class="mt-10 max-w-2xl story">Petroleum. Real budgets. Real safety consequences. I went from small projects to managing multi-million dollar work with teams where mistakes actually cost lives and money.</div>
+
+      <div class="mt-12 minimal-card rounded-2xl p-9 md:p-12">
+        <div class="md:flex md:items-end gap-10">
+          <div>
+            <div class="text-xs tracking-[2px] text-white/40">2017 — 2020</div>
+            <div class="font-display text-4xl tracking-tight mt-3 leading-none">Project Manager<br>Phoenix Petroleum</div>
+          </div>
+          <div class="text-sm text-white/60 mt-6 md:mt-0 max-w-md">
+            $5M project. Delivered 20% under budget. Zero safety incidents. This is where I learned real operational discipline under pressure.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 04 — NOW -->
-  <section id="c4" class="section border-t border-white/5">
+  <!-- CHAPTER 03 -->
+  <section id="c3" class="section border-t border-white/5">
     <div class="max-w-5xl mx-auto px-8">
-      <div class="chapter-label mb-3">CHAPTER 04 — CURRENT TRAJECTORY</div>
-      <h2 class="font-display big-headline tracking-[-1.5px]">Operations +<br>building in public.</h2>
+      <div class="text-xs tracking-[3px] text-[#3b82f6] mb-3">CHAPTER 03 — VELOCITY</div>
+      <h2 class="font-display text-[68px] md:text-[82px] leading-[0.9] tracking-[-2.5px]">Sales became<br>the real test.</h2>
 
-      <div class="mt-10 max-w-2xl story">
-        Today I run fleet operations while writing code and shipping tools. 
-        The same person who once optimized petroleum logistics now builds in the open.
+      <div class="mt-10 grid md:grid-cols-12 gap-x-16">
+        <div class="md:col-span-6 story">Real estate. Then cars. Both unforgiving. You either hit numbers or you’re gone. I chose to hit numbers. Hard.</div>
+        <div class="md:col-span-6 text-sm text-white/50 mt-8 md:mt-0">Record months. Broken targets. The same intensity from operations translated directly into sales. The market doesn’t care about excuses.</div>
       </div>
 
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="minimal-card rounded-xl px-7 py-8">
+          <div class="font-display text-[56px] tracking-tighter">170</div>
+          <div class="text-xs mt-5 text-white/50 tracking-widest">CARS IN ONE MONTH — ALL-TIME RECORD</div>
+        </div>
+        <div class="minimal-card rounded-xl px-7 py-8">
+          <div class="font-display text-[56px] tracking-tighter">30%</div>
+          <div class="text-xs mt-5 text-white/50 tracking-widest">SALES GROWTH IN ONE YEAR</div>
+        </div>
+        <div class="minimal-card rounded-xl px-7 py-8">
+          <div class="font-display text-[56px] tracking-tighter">400+</div>
+          <div class="text-xs mt-5 text-white/50 tracking-widest">TRANSACTIONS PER MONTH</div>
+        </div>
+        <div class="minimal-card rounded-xl px-7 py-8">
+          <div class="font-display text-[56px] tracking-tighter">15+</div>
+          <div class="text-xs mt-5 text-white/50 tracking-widest">YEARS. FOUR INDUSTRIES.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 04 -->
+  <section id="c4" class="section border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="text-xs tracking-[3px] text-[#3b82f6] mb-3">CHAPTER 04 — CURRENT TRAJECTORY</div>
+      <h2 class="font-display text-[68px] md:text-[82px] leading-[0.9] tracking-[-2.5px]">Operations +<br>building in public.</h2>
+
+      <div class="mt-10 max-w-2xl story">Today I run fleet operations at scale while shipping code and tools in the open. The same person who once optimized petroleum logistics now writes, builds, and shares.</div>
+
       <div class="mt-12">
-        <div class="uppercase text-xs tracking-[2px] text-white/40 mb-4">WHAT I SHIP</div>
+        <div class="text-xs tracking-[2.5px] text-white/40 mb-4">WHAT I’M BUILDING RIGHT NOW</div>
         <div class="grid md:grid-cols-2 gap-3">
           <a href="https://github.com/blitzandres/lie-detector" target="_blank" class="minimal-card group rounded-xl p-8 block">
             <div class="text-xs text-white/40">PYTHON</div>
-            <div class="font-display text-3xl tracking-tight mt-5 group-hover:text-white">Lie Detector</div>
-            <div class="text-white/50 mt-3 text-sm">Behavioral deception detection engine. 66 cues. Bayesian fusion.</div>
+            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">Lie Detector</div>
+            <div class="text-white/50 mt-3 text-sm">Behavioral deception detection engine. 66 cues. Bayesian methods.</div>
           </a>
           <a href="https://github.com/blitzandres/netwatch" target="_blank" class="minimal-card group rounded-xl p-8 block">
             <div class="text-xs text-white/40">PYTHON + FLASK</div>
-            <div class="font-display text-3xl tracking-tight mt-5 group-hover:text-white">NetWatch</div>
+            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">NetWatch</div>
             <div class="text-white/50 mt-3 text-sm">Real-time local network monitoring with live intelligence.</div>
           </a>
           <a href="https://github.com/blitzandres/bluth-scan" target="_blank" class="minimal-card group rounded-xl p-8 block">
             <div class="text-xs text-white/40">PYTHON + 3D</div>
-            <div class="font-display text-3xl tracking-tight mt-5 group-hover:text-white">Bluth Scan</div>
+            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">Bluth Scan</div>
             <div class="text-white/50 mt-3 text-sm">Bluetooth scanner with neural 3D visualization.</div>
           </a>
           <a href="https://github.com/blitzandres" target="_blank" class="minimal-card group rounded-xl p-8 flex flex-col justify-between">
-            <div>
-              <div class="text-xs text-white/40">ALL OF IT</div>
-              <div class="font-display text-3xl tracking-tight mt-5">Full GitHub</div>
-            </div>
+            <div><div class="text-xs text-white/40">ALL OF IT</div><div class="font-display text-3xl tracking-tight mt-4">Full Archive</div></div>
             <div class="text-xs text-white/40 mt-8 group-hover:text-white">github.com/blitzandres →</div>
           </a>
         </div>
@@ -303,12 +222,12 @@
     </div>
   </section>
 
-  <!-- SPACE INVADERS -->
+  <!-- GAME -->
   <section id="game" class="section border-t border-white/5">
     <div class="max-w-5xl mx-auto px-8 text-center">
       <div class="text-xs tracking-[2px] text-white/40">YOU MADE IT THIS FAR</div>
       <h3 class="font-display text-6xl tracking-[-1.5px] mt-3">SPACE INVADERS</h3>
-      <p class="text-white/50 mt-2 text-sm">Every serious journey needs a stupid game.</p>
+      <p class="text-white/50 mt-1 text-sm">Every serious journey needs one stupid game.</p>
 
       <div class="mt-10 inline-block">
         <div class="rounded border border-white/10 overflow-hidden bg-black">
@@ -320,21 +239,18 @@
           </div>
         </div>
       </div>
-      <div class="mt-4 text-[10px] tracking-[1.5px] text-white/30">← → / A D MOVE &nbsp;&nbsp; SPACE SHOOT &nbsp;&nbsp; P PAUSE &nbsp;&nbsp; CLICK TO START</div>
+      <div class="mt-4 text-[10px] tracking-[1.5px] text-white/30">← → / A D MOVE • SPACE SHOOT • P PAUSE • CLICK TO START</div>
     </div>
   </section>
 
   <!-- FINAL -->
   <section class="section border-t border-white/5">
     <div class="max-w-3xl mx-auto px-8 text-center">
-      <div class="text-xs tracking-[2px] text-white/40">THE ONLY QUESTION LEFT</div>
+      <div class="text-xs tracking-[2px] text-white/40">THE ONLY REAL QUESTION</div>
       <h2 class="font-display text-6xl md:text-7xl tracking-[-1.5px] mt-6 leading-none">What are we<br>building next?</h2>
 
       <div class="mt-10">
-        <a href="mailto:info@andresblitz.com" 
-           class="inline-block px-10 h-14 rounded-full bg-white text-black font-medium text-sm tracking-wider hover:bg-white/90 transition-colors">
-          INFO@ANDRESBLITZ.COM
-        </a>
+        <a href="mailto:info@andresblitz.com" class="inline-flex items-center justify-center px-10 h-14 rounded-full bg-white text-black font-medium text-sm tracking-wider hover:bg-white/90">INFO@ANDRESBLITZ.COM</a>
       </div>
 
       <div class="mt-16 flex justify-center gap-9 text-xs text-white/40 tracking-widest">
@@ -346,31 +262,20 @@
   </section>
 
   <footer class="border-t border-white/5 py-8 text-center text-xs text-white/30 tracking-[2px]">
-    © <span id="year"></span> ANDRÉS BLITZ — NO DECORATION. JUST WORK.
+    © <span id="year"></span> ANDRÉS BLITZ — NO DECORATION. JUST MOMENTUM.
   </footer>
 
   <script>
-    // Tailwind
-    tailwind.config = {
-      theme: { extend: { fontFamily: { display: ['Instrument Sans', 'Inter', 'sans-serif'] } } }
-    };
-
+    tailwind.config = { theme: { extend: { fontFamily: { display: ['Instrument Sans', 'Inter', 'sans-serif'] } } } };
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Lenis + GSAP
     gsap.registerPlugin(ScrollTrigger);
-
     const lenis = new Lenis({ lerp: 0.07, smooth: true, wheelMultiplier: 0.85 });
-    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
 
-    // Progress
     const progress = document.getElementById('progress');
-    lenis.on('scroll', ({ scroll, limit }) => {
-      progress.style.width = Math.min((scroll / limit) * 100, 100) + '%';
-    });
+    lenis.on('scroll', ({ scroll, limit }) => { progress.style.width = Math.min((scroll / limit) * 100, 100) + '%'; });
 
-    // Smooth anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function(e) {
         const t = document.querySelector(this.getAttribute('href'));
@@ -378,7 +283,73 @@
       });
     });
 
-    // === SPACE INVADERS (clean version) ===
+    // === IMPROVED EYE-CATCHING HERO CANVAS (subtle trajectory) ===
+    (function() {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d', { alpha: true });
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const points = Array.from({ length: 7 }, () => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight * 0.7 + 80,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.12
+      }));
+
+      let mx = window.innerWidth * 0.6, my = window.innerHeight * 0.45;
+      window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = 'rgba(59,130,246,0.18)';
+        ctx.lineWidth = 1;
+
+        points.forEach((p, i) => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 60 || p.y > canvas.height * 0.75) p.vy *= -1;
+
+          // draw connections
+          for (let j = i + 1; j < points.length; j++) {
+            const q = points[j];
+            const dx = p.x - q.x, dy = p.y - q.y;
+            const d = Math.sqrt(dx*dx + dy*dy);
+            if (d < 280) {
+              ctx.globalAlpha = (280 - d) / 280 * 0.6;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.stroke();
+            }
+          }
+          ctx.globalAlpha = 0.5;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 1.2, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(59,130,246,0.5)';
+          ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+
+        // subtle mouse pull line
+        ctx.strokeStyle = 'rgba(59,130,246,0.09)';
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, points[0].y);
+        ctx.lineTo(mx * 0.6 + points[0].x * 0.4, my * 0.6 + points[0].y * 0.4);
+        ctx.stroke();
+
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // SPACE INVADERS (same clean version)
     (function() {
       const c = document.getElementById('game-canvas');
       if (!c) return;
@@ -418,30 +389,25 @@
 
       function draw() {
         ctx.fillStyle = '#0a0a0a'; ctx.fillRect(0, 0, W, H);
-        ctx.strokeStyle = 'rgba(255,255,255,0.04)'; ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgba(255,255,255,0.035)';
         for (let x = 24; x < W; x += 24) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
 
         if (!started) {
-          ctx.fillStyle = '#888'; ctx.font = '13px Inter, system-ui'; ctx.textAlign = 'center';
-          ctx.fillText('CLICK TO START', W/2, H/2);
-          return;
+          ctx.fillStyle = '#666'; ctx.font = '13px Inter, system-ui'; ctx.textAlign = 'center';
+          ctx.fillText('CLICK TO START', W/2, H/2); return;
         }
 
-        // Player
         ctx.fillStyle = '#f5f5f5';
         ctx.fillRect(p.x - p.w/2, p.y - 4, p.w, 8);
         ctx.fillStyle = '#3b82f6';
         ctx.fillRect(p.x - 4, p.y - 11, 8, 6);
 
-        // Aliens
         ctx.fillStyle = '#3b82f6';
         aliens.forEach(a => { if (a.alive) ctx.fillRect(a.x - 14, a.y - 10, 28, 20); });
 
-        // Bullets
         ctx.fillStyle = '#fff'; bullets.forEach(b => ctx.fillRect(b.x - 1, b.y - 5, 2, 8));
         ctx.fillStyle = '#f87171'; aBullets.forEach(b => ctx.fillRect(b.x - 1.5, b.y - 4, 3, 7));
 
-        // Shields
         ctx.fillStyle = '#444';
         shields.forEach(s => { if (s.hp > 0) { ctx.globalAlpha = s.hp / 5; ctx.fillRect(s.x, s.y, 34, 11); } });
         ctx.globalAlpha = 1;
@@ -450,7 +416,7 @@
         if (over) {
           ctx.fillStyle = 'rgba(0,0,0,0.85)'; ctx.fillRect(0,0,W,H);
           ctx.fillStyle = '#fff'; ctx.font = '600 16px Inter'; ctx.textAlign = 'center';
-          ctx.fillText('DONE', W/2, H/2 - 8);
+          ctx.fillText('MISSION COMPLETE', W/2, H/2 - 8);
           ctx.fillStyle = '#666'; ctx.font = '13px Inter'; ctx.fillText('SCORE ' + score + '  —  CLICK TO RESTART', W/2, H/2 + 18);
         }
       }
@@ -515,7 +481,6 @@
         }
       });
 
-      // Touch
       let tx = 0;
       c.addEventListener('touchstart', e => {
         if (!started) { started = true; reset(); return; }
@@ -530,12 +495,6 @@
 
       loop();
     })();
-
-    // Subtle progress on hero
-    window.addEventListener('scroll', () => {
-      const h = document.querySelector('section');
-      if (h) h.style.opacity = Math.max(0.4, 1 - (window.scrollY / 600));
-    });
   </script>
 </body>
 </html>
