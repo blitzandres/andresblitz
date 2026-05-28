@@ -1,864 +1,780 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrés Blitz — A Life in Motion</title>
+  <meta name="description" content="A walk through the chapters of Andrés Blitz. From Venezuela to Victoria, BC. Operations, sales, and now building in public.">
+  <link rel="canonical" href="https://andresblitz.com/">
 
-<!-- SEO META TAGS -->
-<title>Andrés Blitz | Sales Leader & Operations Expert | Victoria, BC Canada</title>
-<meta name="description" content="Andrés Blitz is a sales leader, operations expert, and tech strategist in Victoria, BC. 15+ years across real estate, petroleum, automotive, and operations. Building something new.">
-<meta name="keywords" content="sales leader Victoria BC, operations management, tech strategist Canada">
-<link rel="canonical" href="https://andresblitz.com/">
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://andresblitz.com/">
-<meta property="og:title" content="Andrés Blitz | Sales Leader & Operations Expert">
-<meta property="og:description" content="15+ years of proven results. Building something new in Victoria, BC.">
-<meta property="og:image" content="https://andresblitz.com/og-image-1200x630.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@andresblitz">
-<meta name="twitter:title" content="Andrés Blitz | Sales Leader & Operations Expert">
-<meta name="twitter:description" content="15+ years of proven results. Building something new in Victoria, BC.">
-<meta name="twitter:image" content="https://andresblitz.com/og-image-1200x630.jpg">
-<meta name="theme-color" content="#c9992a">
-<meta name="geo.position" content="48.4281;-123.3656">
-<meta name="geo.placename" content="Victoria, British Columbia, Canada">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Syne+Mono&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet">
+  <!-- GSAP + ScrollTrigger + Lenis -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-<!-- GSAP + ScrollTrigger + Lenis -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <style>
+    :root {
+      --bg: #05070f;
+      --surface: #0a0f1e;
+      --surface-2: #111827;
+      --accent: #3b82f6;
+      --accent-2: #22d3ee;
+      --text: #e2e8f0;
+      --text-muted: #64748b;
+      --border: rgba(148, 163, 184, 0.1);
+    }
 
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    * { box-sizing: border-box; }
+    
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system_ui, sans-serif;
+    }
 
-:root{
-  --bg:#06060a;
-  --bg-surface:#0e0e14;
-  --bg-elevated:#161620;
-  --fg:#f0ede6;
-  --gold:#c9992a;
-  --gold-light:#e8b84b;
-  --gold-muted:rgba(201,153,42,.25);
-  --border:rgba(255,255,255,0.07);
-  --border-gold:rgba(201,153,42,.45);
-  --soft:#8a8a9a;
-  --soft-2:#4a4a5a;
-  --green:#3ecf7a;
-  --font-serif:'Fraunces',serif;
-  --font-ui:'Syne',sans-serif;
-  --font-mono:'Syne Mono',monospace;
-  --container:1200px;
-  --gutter:5vw;
-}
+    .font-display {
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+      font-feature-settings: "ss02";
+    }
 
-html{overflow-x:hidden;scroll-behavior:auto}
-body{background:var(--bg);color:var(--fg);font-family:var(--font-ui);overflow-x:hidden;cursor:none}
+    .section {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
 
-/* Noise overlay */
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.022;pointer-events:none;z-index:900}
+    .chapter-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 500;
+    }
 
-/* ── CONTAINER ──────────── */
-.wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+    .nav-link {
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: white;
+    }
 
-/* ── CURSOR ─────────────── */
-#cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-radius .25s,background .25s;mix-blend-mode:normal}
-#cursor-ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(201,153,42,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .4s cubic-bezier(.34,1.56,.64,1),height .4s cubic-bezier(.34,1.56,.64,1),border-color .3s,opacity .3s}
-body.cur-hover #cursor{width:6px;height:6px;background:var(--gold-light)}
-body.cur-hover #cursor-ring{width:60px;height:60px;border-color:rgba(201,153,42,.7)}
-body.cur-text #cursor{width:2px;height:22px;border-radius:1px}
-body.cur-text #cursor-ring{opacity:0}
+    .cosmic-bg {
+      background: radial-gradient(circle at 50% 20%, rgba(59,130,246,0.08) 0%, transparent 50%);
+    }
 
-/* ── SCROLL PROGRESS ──── */
-#progress{position:fixed;top:0;left:0;right:0;height:1px;background:var(--gold);transform-origin:left;transform:scaleX(0);z-index:1000;box-shadow:0 0 10px rgba(201,153,42,.6);pointer-events:none}
+    .starfield {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, rgba(226,232,240,0.6), transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(226,232,240,0.4), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(226,232,240,0.5), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(226,232,240,0.3), transparent);
+      background-size: 180px 120px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.5;
+    }
 
-/* ── INTRO ──────────────── */
-#intro{position:fixed;inset:0;z-index:800;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;transition:opacity .9s ease,visibility .9s ease}
-#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
-.intro-canvas{position:absolute;inset:0}
-.intro-text{position:relative;z-index:2;text-align:center}
-.il{font-family:var(--font-serif);font-style:italic;font-size:clamp(64px,12vw,140px);line-height:.88;overflow:hidden}
-.il span{display:block;transform:translateY(110%);animation:su .72s cubic-bezier(.22,1,.36,1) forwards}
-.il:nth-child(2) span{animation-delay:.14s;color:var(--gold)}
-.isub{font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);margin-top:32px;opacity:0;animation:fu .6s .56s forwards}
-@keyframes su{to{transform:translateY(0)}}
-@keyframes fu{to{opacity:1}}
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--accent), var(--accent-2));
+      z-index: 9999;
+      transform-origin: left;
+    }
 
-/* ── NAV ────────────────── */
-nav{position:fixed;top:0;left:0;right:0;z-index:700;padding:22px var(--gutter);display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,padding .35s}
-nav.sc{background:rgba(6,6,10,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:16px var(--gutter)}
-.nl{font-family:var(--font-ui);font-weight:800;font-size:17px;letter-spacing:.07em}
-.nl em{color:var(--gold);font-style:normal}
-.nr{display:flex;gap:28px;align-items:center}
-.nra{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);text-decoration:none;transition:color .2s}
-.nra:hover{color:var(--fg)}
-.ncta{background:var(--gold);color:#12100a;font-family:var(--font-mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;padding:10px 24px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .22s,transform .2s}
-.ncta:hover{background:var(--gold-light);transform:translateY(-1px)}
+    .chapter {
+      position: relative;
+    }
 
-/* ── BUTTONS ────────────── */
-.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:#12100a;font-family:var(--font-mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;padding:14px 32px;text-decoration:none;border:none;cursor:pointer;transition:background .22s,transform .22s}
-.btn-p:hover{background:var(--gold-light);transform:translateY(-2px)}
-.btn-g{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--border-gold);color:var(--soft);font-family:var(--font-mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;padding:14px 32px;text-decoration:none;cursor:pointer;transition:border-color .22s,color .22s,background .22s}
-.btn-g:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,153,42,.05)}
+    .chapter-number {
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: var(--accent-2);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
 
-/* ── HERO ───────────────── */
-#hero{height:100vh;min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 var(--gutter);position:relative;overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,153,42,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,153,42,.025) 1px,transparent 1px);background-size:60px 60px}
-.hero-glow{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(201,153,42,.065) 0%,transparent 65%);pointer-events:none}
-.heyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--soft);margin-bottom:28px;position:relative;z-index:1;opacity:0;display:flex;align-items:center;gap:14px}
-.heyebrow::before,.heyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--soft-2)}
-.hname{font-family:var(--font-serif);font-style:italic;font-size:clamp(80px,15vw,186px);line-height:.82;font-weight:700;position:relative;z-index:1;letter-spacing:-.02em}
-.hname .n1{color:var(--fg);display:block;overflow:hidden}
-.hname .n2{color:var(--gold);display:block;padding-left:.06em;overflow:hidden}
-.hname .n1 span,.hname .n2 span{display:block;transform:translateY(110%)}
-.htag{font-family:var(--font-serif);font-style:italic;font-size:17px;color:var(--soft);margin-top:32px;max-width:400px;line-height:1.7;position:relative;z-index:1;opacity:0}
-.hctas{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;opacity:0}
-.hstat{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11px;color:var(--soft);letter-spacing:.13em;white-space:nowrap;z-index:1}
-.ld{width:7px;height:7px;background:var(--green);border-radius:50%;flex-shrink:0;animation:pl 2s infinite}
-@keyframes pl{0%,100%{box-shadow:0 0 0 0 rgba(62,207,122,.4)}50%{box-shadow:0 0 0 7px rgba(62,207,122,0)}}
-.hscroll{position:absolute;bottom:36px;right:var(--gutter);display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--font-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft-2);z-index:1}
-.hscroll-line{width:1px;height:52px;background:linear-gradient(var(--soft-2),transparent)}
+    .story-text {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #cbd5e1;
+    }
 
-/* ── SECTION LABELS ─────── */
-.sec-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
-.sec-eyebrow::after{content:'';display:block;width:40px;height:1px;background:var(--border-gold)}
-.sec-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.sec-h2{font-family:var(--font-serif);font-style:italic;font-size:clamp(36px,4.5vw,58px);line-height:1.05;color:var(--fg);margin-bottom:24px}
-.sec-p{color:var(--soft);font-size:16px;line-height:1.8;margin-bottom:18px;max-width:480px}
+    .milestone {
+      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+                  box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .milestone:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
 
-/* ── STATS ──────────────── */
-#stats{padding:100px 0;border-top:1px solid var(--border)}
-.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.bcard{background:var(--bg-surface);padding:36px 32px;position:relative;overflow:hidden;transition:background .3s}
-.bcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.22,1,.36,1)}
-.bcard:hover{background:var(--bg-elevated)}
-.bcard:hover::after{transform:scaleX(1)}
-.bcard--a{grid-column:span 4}
-.bcard--b{grid-column:span 4}
-.bcard--c{grid-column:span 4}
-.bcard--d{grid-column:span 6}
-.bcard--e{grid-column:span 6}
-.bcard-num{font-family:var(--font-serif);font-style:italic;font-size:clamp(52px,6vw,76px);color:var(--gold);line-height:1;margin-bottom:8px}
-.bcard-lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft-2)}
-.bcard-ico{width:28px;height:28px;color:var(--gold);margin-bottom:16px;opacity:.8}
-.bcard-title{font-family:var(--font-serif);font-style:italic;font-size:22px;color:var(--fg);margin-bottom:12px;line-height:1.2}
-.bcard-text{font-size:14px;line-height:1.78;color:var(--soft)}
+    .space-glow {
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.1),
+                  0 0 40px -10px rgba(59, 130, 246, 0.15);
+    }
 
-/* ── ABOUT ──────────────── */
-#about{padding:100px 0;border-top:1px solid var(--border)}
-.about-inner{display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:center}
-.about-vis{display:flex;align-items:center;justify-content:center}
-#rocketCanvas{display:block;width:340px;height:420px}
-.about-content{}
-.skills{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
-.sk-row{display:flex;align-items:center;gap:16px}
-.sk-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);width:120px;flex-shrink:0}
-.sk-track{flex:1;height:1px;background:var(--bg-elevated)}
-.sk-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
-.socs{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-.soc{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);text-decoration:none;border:1px solid var(--border);padding:10px 18px;transition:color .22s,border-color .22s,background .22s}
-.soc:hover{color:var(--gold);border-color:var(--border-gold);background:rgba(201,153,42,.04)}
+    .nav {
+      backdrop-filter: blur(20px);
+      background: rgba(5, 7, 15, 0.8);
+    }
 
-/* ── EXPERTISE ──────────── */
-#features{padding:100px 0;border-top:1px solid var(--border)}
-.fh{margin-bottom:56px}
-.fh h2{font-family:var(--font-serif);font-style:italic;font-size:clamp(32px,4vw,52px);line-height:1.08;color:var(--fg)}
-.fh h2 em{color:var(--gold)}
-.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.fc{background:var(--bg-surface);padding:48px 40px;position:relative;overflow:hidden;transition:background .3s}
-.fc::after{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .4s cubic-bezier(.22,1,.36,1)}
-.fc:hover{background:var(--bg-elevated)}
-.fc:hover::after{transform:scaleY(1)}
-.fc-num{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;color:var(--gold-muted);margin-bottom:28px}
-.fc-ico{width:26px;height:26px;color:var(--gold);margin-bottom:20px;display:block;opacity:.85}
-.fc-title{font-family:var(--font-serif);font-style:italic;font-size:22px;color:var(--fg);margin-bottom:14px;line-height:1.2}
-.fc-body{color:var(--soft);font-size:14px;line-height:1.78}
+    .cosmic-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .cosmic-card:hover {
+      border-color: rgba(59, 130, 246, 0.3);
+      background: var(--surface-2);
+    }
 
-/* ── PROJECTS ───────────── */
-#projects{padding:100px 0;border-top:1px solid var(--border)}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.pcard{background:var(--bg-surface);padding:40px 36px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .3s;text-decoration:none;color:inherit}
-.pcard::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,153,42,.05),transparent 55%);opacity:0;transition:opacity .3s}
-.pcard:hover{background:var(--bg-elevated)}
-.pcard:hover::before{opacity:1}
-.pcard-lang{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:8px}
-.pcard-lang::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.pcard-name{font-family:var(--font-serif);font-style:italic;font-size:22px;color:var(--fg);line-height:1.15;margin-bottom:14px}
-.pcard-desc{font-family:var(--font-ui);font-size:13px;line-height:1.75;color:var(--soft);flex:1}
-.pcard-footer{display:flex;align-items:center;justify-content:space-between;margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
-.pcard-repo{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft-2)}
-.pcard-arrow{width:32px;height:32px;border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:background .22s,transform .22s}
-.pcard:hover .pcard-arrow{background:var(--gold);color:#12100a;transform:translate(2px,-2px)}
-@media(max-width:960px){.pgrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.pgrid{grid-template-columns:1fr}}
-
-/* ── GAME ───────────────── */
-#game{padding:100px 0;border-top:1px solid var(--border)}
-.game-inner{display:flex;flex-direction:column;align-items:center}
-.game-hdr{margin-bottom:36px;text-align:center}
-.game-hdr h2{font-family:var(--font-ui);font-weight:800;font-size:clamp(28px,5vw,50px);letter-spacing:.06em;color:var(--fg)}
-.game-hdr p{font-family:var(--font-mono);font-size:11px;color:var(--soft);letter-spacing:.14em;text-transform:uppercase;margin-top:10px}
-#gw{border:1px solid var(--border);background:#030305;max-width:100%;overflow:hidden}
-#gc{display:block;max-width:100%}
-.ghud{display:flex;justify-content:space-between;padding:12px 20px;border-top:1px solid var(--border);background:var(--bg-surface)}
-.ghud span{font-family:var(--font-mono);font-size:11px;color:var(--soft);letter-spacing:.1em}
-.ghud b{color:var(--gold)}
-.gkeys{margin-top:16px;font-family:var(--font-mono);font-size:10px;color:var(--soft-2);letter-spacing:.08em}
-kbd{border:1px solid var(--border);padding:3px 9px;border-radius:2px;color:var(--soft);font-family:var(--font-mono);font-size:10px}
-
-/* ── SOCIAL SHARE ─────── */
-#share{padding:100px 0;border-top:1px solid var(--border);text-align:center}
-.share-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:inline-flex;align-items:center;gap:12px}
-.share-label::before,.share-label::after{content:'';display:block;width:32px;height:1px;background:var(--border-gold)}
-.share-title{font-family:var(--font-serif);font-style:italic;font-size:clamp(28px,4vw,48px);line-height:1.08;color:var(--fg);margin-bottom:36px}
-.share-title em{color:var(--gold)}
-.share-buttons-wrapper{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;max-width:860px;margin:0 auto}
-.share-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border:1px solid var(--border);background:transparent;color:var(--soft);font-family:var(--font-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .25s ease}
-.share-btn:hover{background:rgba(201,153,42,.07);color:var(--gold);border-color:var(--border-gold);transform:translateY(-2px)}
-
-/* ── CONNECT ────────────── */
-#connect{padding:120px 0;border-top:1px solid var(--border);position:relative;overflow:hidden;text-align:center}
-.conn-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201,153,42,.055),transparent 65%);pointer-events:none}
-.conn-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;position:relative;z-index:1;display:inline-flex;align-items:center;gap:12px}
-.conn-label::before,.conn-label::after{content:'';display:block;width:32px;height:1px;background:var(--border-gold)}
-.conn-h2{font-family:var(--font-serif);font-style:italic;font-size:clamp(44px,9vw,100px);line-height:.88;color:var(--fg);margin-bottom:20px;position:relative;z-index:1}
-.conn-h2 em{color:var(--gold)}
-.conn-sub{font-family:var(--font-serif);font-style:italic;color:var(--soft);font-size:18px;margin-bottom:44px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.65;position:relative;z-index:1}
-
-/* ── FOOTER ─────────────── */
-footer{border-top:1px solid var(--border);padding:32px var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.f-logo{font-family:var(--font-ui);font-weight:800;font-size:15px;letter-spacing:.07em}
-.f-logo em{color:var(--gold);font-style:normal}
-.f-copy{font-family:var(--font-mono);font-size:10px;color:var(--soft-2);letter-spacing:.1em}
-
-/* ── MAGNETIC ───────────── */
-.magnetic{display:inline-block}
-
-/* ── RESPONSIVE ─────────── */
-@media(max-width:960px){
-  .about-inner{grid-template-columns:1fr;gap:60px}
-  .about-vis{order:-1}
-  #rocketCanvas{width:280px;height:340px}
-  .fgrid{grid-template-columns:repeat(2,1fr)}
-  .bcard--a,.bcard--b,.bcard--c{grid-column:span 6}
-  .bcard--d,.bcard--e{grid-column:span 12}
-}
-@media(max-width:640px){
-  .fgrid{grid-template-columns:1fr}
-  .bcard--a,.bcard--b,.bcard--c,.bcard--d,.bcard--e{grid-column:span 12}
-  .nr .nra{display:none}
-  body{cursor:auto}
-  #cursor,#cursor-ring{display:none}
-  .hname{font-size:clamp(68px,20vw,120px)}
-}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-</style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  </style>
 </head>
-<body>
+<body class="antialiased overflow-x-hidden">
+  <!-- Scroll Progress -->
+  <div id="progress" class="scroll-progress" style="width: 0%"></div>
 
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
-<div id="progress"></div>
+  <!-- Subtle Starfield -->
+  <div class="starfield"></div>
 
-<!-- ═══ INTRO ═══ -->
-<div id="intro">
-  <canvas class="intro-canvas" id="introCanvas"></canvas>
-  <div class="intro-text">
-    <div class="il"><span>Andrés</span></div>
-    <div class="il"><span>Blitz</span></div>
-    <div class="isub">New chapter · New altitude</div>
-  </div>
-</div>
+  <!-- NAV -->
+  <nav class="nav fixed top-0 left-0 right-0 z-50 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-8 flex items-center justify-between h-20">
+      <div class="flex items-center gap-3">
+        <div class="font-display text-xl font-semibold tracking-tighter">Andrés Blitz</div>
+        <div class="text-[10px] px-2 py-px rounded-full border border-white/10 text-white/40">VICTORIA, BC</div>
+      </div>
 
-<!-- ═══ NAV ═══ -->
-<nav id="nav">
-  <div class="nl magnetic">Andrés <em>Blitz</em></div>
-  <div class="nr">
-    <a class="nra" href="#about">About</a>
-    <a class="nra" href="#features">Work</a>
-    <a class="nra" href="#projects">Projects</a>
-    <a class="nra" href="#game">Play</a>
-    <a class="nra" href="/quiniela/">⚽ Quiniela</a>
-    <a class="ncta magnetic" href="mailto:info@andresblitz.com">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Connect
-    </a>
-  </div>
-</nav>
+      <div class="hidden md:flex items-center gap-9 text-sm">
+        <a href="#chapter-01" class="nav-link text-white/70 hover:text-white text-[13px]">01 — Origins</a>
+        <a href="#chapter-02" class="nav-link text-white/70 hover:text-white text-[13px]">02 — Operations</a>
+        <a href="#chapter-03" class="nav-link text-white/70 hover:text-white text-[13px]">03 — Velocity</a>
+        <a href="#chapter-04" class="nav-link text-white/70 hover:text-white text-[13px]">04 — Trajectory</a>
+        <a href="#game" class="nav-link text-white/70 hover:text-white text-[13px]">Play</a>
+      </div>
 
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="heyebrow">Victoria, B.C. · Canada</div>
-  <h1 class="hname">
-    <span class="n1"><span>ANDRÉS</span></span>
-    <span class="n2"><span>BLITZ</span></span>
-  </h1>
-  <p class="htag">A new chapter. Built on experience,<br>fuelled by ambition, aimed at what's next.</p>
-  <div class="hctas">
-    <a class="btn-p magnetic" href="mailto:info@andresblitz.com">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Get in touch
-    </a>
-    <a class="btn-g magnetic" href="#about">Who I am ↓</a>
-  </div>
-  <div class="hstat"><div class="ld"></div><span id="vc">—</span>&nbsp;people visited</div>
-  <div class="hscroll">scroll<div class="hscroll-line"></div></div>
-</section>
-
-<!-- ═══ STATS ═══ -->
-<section id="stats">
-  <div class="wrap">
-    <div class="sec-eyebrow">By the numbers</div>
-    <div class="bento">
-      <div class="bcard bcard--a">
-        <div class="bcard-num" data-count="15" data-suffix="+">0</div>
-        <div class="bcard-lbl">Years of experience</div>
-      </div>
-      <div class="bcard bcard--b">
-        <div class="bcard-num" data-count="4" data-suffix="">0</div>
-        <div class="bcard-lbl">Industries navigated</div>
-      </div>
-      <div class="bcard bcard--c">
-        <div class="bcard-num" data-count="2" data-suffix="">0</div>
-        <div class="bcard-lbl">Languages fluent</div>
-      </div>
-      <div class="bcard bcard--d">
-        <svg class="bcard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-        </svg>
-        <div class="bcard-title">Multilingual & multicultural</div>
-        <div class="bcard-text">Fluent in Spanish and English. Educated across continents. I navigate diverse teams and markets with ease and authenticity.</div>
-      </div>
-      <div class="bcard bcard--e">
-        <svg class="bcard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-        </svg>
-        <div class="bcard-title">Tech-first mindset</div>
-        <div class="bcard-text">From AI tools to web development to cross-platform software — I leverage technology to do more with less, faster than most.</div>
-      </div>
+      <a href="mailto:info@andresblitz.com" 
+         class="px-5 py-2 rounded-full bg-white text-[#05070f] text-sm font-medium hover:bg-white/90 transition-colors">
+        Connect
+      </a>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ═══ ABOUT ═══ -->
-<section id="about">
-  <div class="wrap">
-    <div class="about-inner">
-      <div class="about-vis">
-        <canvas id="rocketCanvas" width="340" height="420"></canvas>
-      </div>
-      <div class="about-content">
-        <div class="sec-label">The person</div>
-        <h2 class="sec-h2">Many industries.<br><em style="color:var(--gold)">One constant.</em></h2>
-        <p class="sec-p">I've built expertise across real estate, petroleum, automotive, and operations — each sector demands different strategies, deeper problem-solving, and higher stakes. That's by design. I seek environments where operational complexity meets business impact, where decisions compound, and where execution determines outcomes.</p>
-        <p class="sec-p" style="margin-bottom:32px">I'm bilingual in Spanish and English, comfortable navigating boardrooms and operational floors with equal proficiency. My toolkit spans strategy, P&L management, technology implementation, and team scaling.</p>
-        <div class="skills">
-          <div class="sk-row"><div class="sk-label">Operations</div><div class="sk-track"><div class="sk-fill" data-w=".96"></div></div></div>
-          <div class="sk-row"><div class="sk-label">Sales & Growth</div><div class="sk-track"><div class="sk-fill" data-w=".94"></div></div></div>
-          <div class="sk-row"><div class="sk-label">Team Leadership</div><div class="sk-track"><div class="sk-fill" data-w=".88"></div></div></div>
-          <div class="sk-row"><div class="sk-label">Strategy</div><div class="sk-track"><div class="sk-fill" data-w=".85"></div></div></div>
-          <div class="sk-row"><div class="sk-label">Tech & Tools</div><div class="sk-track"><div class="sk-fill" data-w=".80"></div></div></div>
+  <!-- HERO / SIGNAL -->
+  <section class="min-h-[100dvh] flex items-center relative pt-16">
+    <div class="max-w-5xl mx-auto px-8 relative z-10">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/10 text-xs tracking-[0.15em] text-white/50 mb-8">
+          A LIFE IN MOTION
         </div>
-        <div class="socs">
-          <a class="soc" href="https://github.com/blitzandres" target="_blank" rel="noopener">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.25 3.37.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.67.41.35.78 1.03.78 2.08v3.08c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-            GitHub
+
+        <h1 class="font-display text-[92px] md:text-[120px] leading-[0.88] tracking-[-5.5px] font-semibold">
+          New chapter.<br>
+          <span class="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">New altitude.</span>
+        </h1>
+
+        <p class="mt-8 max-w-md text-2xl text-white/70 tracking-tight">
+          A walk through the chapters.<br>
+          From Venezuela to Victoria.
+        </p>
+
+        <div class="flex items-center gap-4 mt-12">
+          <a href="#chapter-01" 
+             class="group inline-flex items-center gap-3 px-8 h-14 rounded-full border border-white/20 hover:border-white/40 transition-all text-sm tracking-widest">
+            BEGIN THE JOURNEY
+            <span class="group-hover:translate-x-0.5 transition-transform">↓</span>
           </a>
-          <a class="soc" href="https://x.com/andresblitz" target="_blank" rel="noopener">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            X / Twitter
-          </a>
-          <a class="soc" href="https://facebook.com/andresblitz" target="_blank" rel="noopener">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            Facebook
-          </a>
-          <a class="soc" href="https://instagram.com/andresblitz" target="_blank" rel="noopener">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            Instagram
+          <a href="#game" 
+             class="inline-flex items-center gap-3 px-8 h-14 rounded-full border border-white/10 hover:bg-white/5 transition-all text-sm tracking-widest text-white/70">
+            SKIP TO THE GAME
           </a>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ═══ EXPERTISE ═══ -->
-<section id="features">
-  <div class="wrap">
-    <div class="fh">
-      <div class="sec-eyebrow">What I bring</div>
-      <h2>Built across industries,<br><em>sharp in every one.</em></h2>
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center text-[10px] tracking-[3px] text-white/30">
+      SCROLL TO BEGIN
+      <div class="h-px w-6 bg-white/20 mt-3"></div>
     </div>
-    <div class="fgrid">
-      <div class="fc">
-        <div class="fc-num">01</div>
-        <svg class="fc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        <div class="fc-title">Record-breaking in sales</div>
-        <div class="fc-body">I don't just hit targets — I reset them. Whether closing deals, growing revenue, or building client trust, the numbers follow the effort.</div>
+  </section>
+
+  <!-- CHAPTER 01 — IGNITION -->
+  <section id="chapter-01" class="chapter section border-t border-white/5 relative">
+    <div class="max-w-4xl mx-auto px-8">
+      <div class="chapter-number">CHAPTER 01 — IGNITION</div>
+      <h2 class="font-display text-6xl md:text-7xl leading-none tracking-[-2.5px] font-semibold">The beginning<br>was never quiet.</h2>
+
+      <div class="mt-12 grid md:grid-cols-12 gap-x-8 gap-y-12">
+        <div class="md:col-span-7 story-text">
+          Born in Venezuela. Studied business at Universidad Rafael Belloso Chacín. 
+          Graduated into a world that demanded movement. In 2014 I left everything I knew and landed in Canada with a BBA and two languages.
+        </div>
+        <div class="md:col-span-5 text-white/50 text-[15px]">
+          The first years were about learning the rules of a new country — 
+          customs, contracts, cold mornings, and how to build trust from zero.
+        </div>
       </div>
-      <div class="fc">
-        <div class="fc-num">02</div>
-        <svg class="fc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 7.76a6 6 0 0 0 0 8.49"/></svg>
-        <div class="fc-title">Operations that run tight</div>
-        <div class="fc-body">Fleet logistics, team management, budget control — I've run complex operations and delivered results under budget, on time, safely.</div>
+
+      <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="cosmic-card rounded-2xl p-8">
+          <div class="text-xs tracking-[1px] text-white/40">2009 — 2014</div>
+          <div class="font-display text-3xl tracking-tight mt-6">BBA</div>
+          <div class="text-white/60 mt-1">Universidad Rafael Belloso Chacín</div>
+        </div>
+        <div class="cosmic-card rounded-2xl p-8">
+          <div class="text-xs tracking-[1px] text-white/40">2014 — 2016</div>
+          <div class="font-display text-3xl tracking-tight mt-6">New Country</div>
+          <div class="text-white/60 mt-1">Langara + Brighton College</div>
+        </div>
+        <div class="cosmic-card rounded-2xl p-8">
+          <div class="text-xs tracking-[1px] text-white/40">2013 — 2016</div>
+          <div class="font-display text-3xl tracking-tight mt-6">First Ground</div>
+          <div class="text-white/60 mt-1">Shoppers Drug Mart → Customs Broker</div>
+        </div>
       </div>
-      <div class="fc">
-        <div class="fc-num">03</div>
-        <svg class="fc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <div class="fc-title">Multilingual & multicultural</div>
-        <div class="fc-body">Fluent in Spanish and English. Educated across continents. I navigate diverse teams and markets with ease and authenticity.</div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 02 — FIRST ORBITS -->
+  <section id="chapter-02" class="chapter section border-t border-white/5 bg-[#05070f]">
+    <div class="max-w-4xl mx-auto px-8">
+      <div class="chapter-number">CHAPTER 02 — FIRST ORBITS</div>
+      <h2 class="font-display text-6xl md:text-7xl leading-none tracking-[-2.5px] font-semibold">Learning to carry<br>real weight.</h2>
+
+      <div class="mt-12 max-w-2xl story-text">
+        Project work in restoration. Then petroleum. 
+        Suddenly I was responsible for safety protocols, teams of ten, and multi-million dollar outcomes. 
+        This is where I learned that operations is not glamorous — it's discipline.
       </div>
-      <div class="fc">
-        <div class="fc-num">04</div>
-        <svg class="fc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        <div class="fc-title">Tech-first mindset</div>
-        <div class="fc-body">From AI tools to web development to cross-platform software — I leverage technology to do more with less and faster than most.</div>
+
+      <div class="mt-12">
+        <div class="cosmic-card rounded-3xl p-9 md:p-12 space-y-8">
+          <div>
+            <div class="uppercase tracking-[2px] text-xs text-white/40">2017 — 2020</div>
+            <div class="font-display text-4xl tracking-tight mt-3">Project Manager, Phoenix Petroleum</div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 text-[15px]">
+            <div class="text-white/70">
+              Managed a $5M infrastructure project from start to finish.<br>
+              Delivered 20% under budget with zero safety incidents.
+            </div>
+            <div class="text-white/50">
+              This chapter taught me how to protect people and capital at the same time. 
+              The pressure was constant. So was the pride when it worked.
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="fc">
-        <div class="fc-num">05</div>
-        <svg class="fc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <div class="fc-title">Always launching forward</div>
-        <div class="fc-body">This page isn't a portfolio — it's a signal. I'm in the middle of building something new, and the trajectory only goes up.</div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 03 — VELOCITY -->
+  <section id="chapter-03" class="chapter section border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-8">
+      <div class="chapter-number">CHAPTER 03 — VELOCITY</div>
+      <h2 class="font-display text-6xl md:text-7xl leading-none tracking-[-2.5px] font-semibold">When speed<br>meets precision.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-12">
+        <div>
+          <div class="story-text">
+            2020 hit. The world slowed down. I chose to move faster.
+            Real estate became the arena. Then cars. Both rewarded the same thing: 
+            relentless execution and the ability to create trust in high-stakes moments.
+          </div>
+        </div>
+        <div class="space-y-6 text-sm text-white/70">
+          <div>Re/Max Crest Realty — partnered with BC Condos & Homes. 50+ open houses. Record months.</div>
+          <div>Harris Dodge — broke the all-time sales record: 170 cars in a single month.</div>
+          <div class="pt-4 border-t border-white/10 text-white/40">This was the chapter where I proved I could sell anything — if I believed in it.</div>
+        </div>
       </div>
-      <div class="fc" style="display:flex;flex-direction:column;justify-content:flex-end">
-        <div class="fc-num">— — —</div>
-        <div class="fc-title" style="font-size:32px;line-height:1;margin-top:auto">What's<br><em style="color:var(--gold)">next?</em></div>
-        <div class="fc-body" style="margin-top:16px">The next chapter is being written. Reach out if you want to be part of it.</div>
-        <a class="btn-p" href="mailto:info@andresblitz.com" style="margin-top:24px;width:fit-content;font-size:11px;padding:12px 24px">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Let's talk
+
+      <div class="mt-16">
+        <div class="text-xs tracking-[1px] text-white/40 mb-4">THE NUMBERS THAT MATTERED</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="milestone cosmic-card rounded-2xl p-7">
+            <div class="font-display text-5xl tracking-tighter">170</div>
+            <div class="text-xs mt-3 tracking-widest text-white/40">CARS IN ONE MONTH</div>
+          </div>
+          <div class="milestone cosmic-card rounded-2xl p-7">
+            <div class="font-display text-5xl tracking-tighter">30%</div>
+            <div class="text-xs mt-3 tracking-widest text-white/40">SALES GROWTH CONTRIBUTION</div>
+          </div>
+          <div class="milestone cosmic-card rounded-2xl p-7">
+            <div class="font-display text-5xl tracking-tighter">400+</div>
+            <div class="text-xs mt-3 tracking-widest text-white/40">TRANSACTIONS / MONTH</div>
+          </div>
+          <div class="milestone cosmic-card rounded-2xl p-7">
+            <div class="font-display text-5xl tracking-tighter">15+</div>
+            <div class="text-xs mt-3 tracking-widest text-white/40">YEARS ACROSS INDUSTRIES</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 04 — CURRENT TRAJECTORY -->
+  <section id="chapter-04" class="chapter section border-t border-white/5 bg-[#05070f]">
+    <div class="max-w-4xl mx-auto px-8">
+      <div class="chapter-number">CHAPTER 04 — CURRENT TRAJECTORY</div>
+      <h2 class="font-display text-6xl md:text-7xl leading-none tracking-[-2.5px] font-semibold">The builder<br>phase begins.</h2>
+
+      <div class="mt-12 max-w-3xl story-text">
+        Today I run fleet operations at Avis Victoria while building in public. 
+        The same mind that once optimized petroleum logistics now writes code, ships tools, and studies how systems actually work.
+      </div>
+
+      <div class="mt-10">
+        <div class="uppercase text-xs tracking-[1.5px] text-white/40 mb-4">WHAT I’M BUILDING NOW</div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <a href="https://github.com/blitzandres/lie-detector" target="_blank" class="cosmic-card group rounded-2xl p-8 block hover:border-white/20">
+            <div class="text-xs text-white/40">PYTHON</div>
+            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">Lie Detector</div>
+            <div class="text-white/60 mt-3 pr-6">Behavioral deception detection engine using 66 cues and Bayesian methods.</div>
+          </a>
+          <a href="https://github.com/blitzandres/netwatch" target="_blank" class="cosmic-card group rounded-2xl p-8 block hover:border-white/20">
+            <div class="text-xs text-white/40">PYTHON + FLASK</div>
+            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">NetWatch</div>
+            <div class="text-white/60 mt-3 pr-6">Real-time local network monitoring with live device intelligence.</div>
+          </a>
+          <a href="https://github.com/blitzandres/bluth-scan" target="_blank" class="cosmic-card group rounded-2xl p-8 block hover:border-white/20">
+            <div class="text-xs text-white/40">PYTHON + 3D</div>
+            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">Bluth Scan</div>
+            <div class="text-white/60 mt-3 pr-6">Bluetooth scanner with neural 3D force-graph visualization.</div>
+          </a>
+          <a href="https://github.com/blitzandres" target="_blank" class="cosmic-card group rounded-2xl p-8 flex flex-col justify-between hover:border-white/20">
+            <div>
+              <div class="text-xs text-white/40">AND MORE</div>
+              <div class="font-display text-3xl tracking-tight mt-4">All Public Work</div>
+            </div>
+            <div class="text-xs mt-8 text-white/40 group-hover:text-white transition-colors">github.com/blitzandres →</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACE INVADERS — THE PAUSE -->
+  <section id="game" class="section border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <div class="mb-3 text-xs tracking-[2px] text-white/40">YOU MADE IT THIS FAR</div>
+      <h3 class="font-display text-6xl tracking-tighter font-semibold">SPACE INVADERS</h3>
+      <p class="text-white/50 mt-2">Every journey needs a moment to play.</p>
+
+      <div class="mt-10 inline-block">
+        <div id="game-container" class="rounded-xl overflow-hidden border border-white/10 bg-black/50">
+          <canvas id="game-canvas" width="580" height="360" class="block"></canvas>
+          <div class="bg-[#05070f] px-5 py-3 text-xs flex justify-between text-white/50 border-t border-white/10 font-mono">
+            <div>SCORE <span id="score" class="text-white/90 font-medium">00000</span></div>
+            <div>LEVEL <span id="level" class="text-white/90 font-medium">1</span></div>
+            <div>LIVES <span id="lives" class="text-white/90 font-medium">♥ ♥ ♥</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 text-[10px] tracking-widest text-white/30">← → MOVE &nbsp;&nbsp; SPACE SHOOT &nbsp;&nbsp; P PAUSE &nbsp;&nbsp; CLICK CANVAS TO START</div>
+    </div>
+  </section>
+
+  <!-- FINAL TRANSMISSION -->
+  <section class="section border-t border-white/5">
+    <div class="max-w-3xl mx-auto px-8 text-center">
+      <div class="text-xs tracking-[2px] text-white/40">THE NEXT BURN</div>
+      <h2 class="font-display text-6xl md:text-7xl tracking-[-2px] leading-none mt-6">
+        The story is<br>still being written.
+      </h2>
+      <p class="mt-8 text-xl text-white/60 max-w-md mx-auto">
+        I’m looking for the next environment where operational complexity, technology, and real impact meet.
+      </p>
+
+      <div class="mt-10">
+        <a href="mailto:info@andresblitz.com" 
+           class="inline-flex items-center justify-center px-10 h-14 rounded-full bg-white text-[#05070f] font-medium tracking-wider text-sm hover:bg-white/90 transition-colors">
+          LET’S TALK
         </a>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══ PROJECTS ═══ -->
-<section id="projects">
-  <div class="wrap">
-    <div class="fh" style="margin-bottom:52px">
-      <div class="sec-eyebrow">Open source</div>
-      <h2>Things I've <em>actually built.</em></h2>
-    </div>
-    <div class="pgrid">
-
-      <a class="pcard" href="https://github.com/blitzandres/lie-detector" target="_blank" rel="noopener">
-        <div class="pcard-lang">Python</div>
-        <div class="pcard-name">Lie Detector</div>
-        <div class="pcard-desc">Open-source behavioral deception detection engine — 66 cues, Bayesian fusion, personal baseline calibration. Built for research and real-world use.</div>
-        <div class="pcard-footer">
-          <div class="pcard-repo">blitzandres/lie-detector</div>
-          <div class="pcard-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="pcard" href="https://github.com/blitzandres/netwatch" target="_blank" rel="noopener">
-        <div class="pcard-lang">Python · Flask</div>
-        <div class="pcard-name">NetWatch</div>
-        <div class="pcard-desc">Local network monitoring dashboard with real-time intel and repo scanning. Python Flask backend, single-page frontend with live device tracking.</div>
-        <div class="pcard-footer">
-          <div class="pcard-repo">blitzandres/netwatch</div>
-          <div class="pcard-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="pcard" href="https://github.com/blitzandres/bluth-scan" target="_blank" rel="noopener">
-        <div class="pcard-lang">Python · Flask-SocketIO</div>
-        <div class="pcard-name">Bluth Scan</div>
-        <div class="pcard-desc">Real-time Bluetooth scanner with 3D neural node visualization. Built on 3d-force-graph, Flask-SocketIO, and bleak — watching the invisible.</div>
-        <div class="pcard-footer">
-          <div class="pcard-repo">blitzandres/bluth-scan</div>
-          <div class="pcard-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="pcard" href="https://github.com/blitzandres/compute-share-pilot" target="_blank" rel="noopener">
-        <div class="pcard-lang">Python</div>
-        <div class="pcard-name">Compute Share Pilot</div>
-        <div class="pcard-desc">Trusted compute-sharing pilot for remote AI jobs. Explores distributed compute access with a focus on security, trust, and job orchestration.</div>
-        <div class="pcard-footer">
-          <div class="pcard-repo">blitzandres/compute-share-pilot</div>
-          <div class="pcard-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="pcard" href="https://github.com/blitzandres/iptv-player" target="_blank" rel="noopener">
-        <div class="pcard-lang">HTML · HLS.js</div>
-        <div class="pcard-name">IPTV Player</div>
-        <div class="pcard-desc">IPTV player for Latin America & USA — channel search, favorites, custom M3U playlists, and HLS.js streaming. Built for the diaspora.</div>
-        <div class="pcard-footer">
-          <div class="pcard-repo">blitzandres/iptv-player</div>
-          <div class="pcard-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="pcard" href="https://github.com/blitzandres" target="_blank" rel="noopener" style="justify-content:center;align-items:center;text-align:center;min-height:220px">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold);margin-bottom:16px;opacity:.7"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.25 3.37.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.67.41.35.78 1.03.78 2.08v3.08c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-        <div style="font-family:var(--font-serif);font-style:italic;font-size:19px;color:var(--fg);margin-bottom:8px">See all repos</div>
-        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft-2)">github.com/blitzandres</div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ GAME ═══ -->
-<section id="game">
-  <div class="wrap">
-    <div class="game-inner">
-      <div class="game-hdr">
-        <div class="sec-eyebrow" style="justify-content:center">You made it this far</div>
-        <h2>SPACE INVADERS</h2>
-        <p>Earn your exit</p>
+      <div class="mt-20 flex justify-center gap-8 text-xs text-white/40">
+        <a href="https://github.com/blitzandres" class="hover:text-white">GITHUB</a>
+        <a href="https://x.com/andresblitz" class="hover:text-white">X</a>
+        <a href="https://ca.linkedin.com/in/andresblitz" class="hover:text-white">LINKEDIN</a>
       </div>
-      <div id="gw">
-        <canvas id="gc" width="580" height="360"></canvas>
-        <div class="ghud">
-          <span>SCORE <b id="gs">0</b></span>
-          <span>LEVEL <b id="gl">1</b></span>
-          <span>LIVES <b id="glv">♥ ♥ ♥</b></span>
-        </div>
-      </div>
-      <div class="gkeys" style="margin-top:16px"><kbd>←</kbd> <kbd>→</kbd> Move &nbsp;·&nbsp; <kbd>SPACE</kbd> Shoot &nbsp;·&nbsp; <kbd>P</kbd> Pause &nbsp;·&nbsp; Click canvas to start</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ SOCIAL SHARE ═══ -->
-<section id="share">
-  <div class="wrap">
-    <div class="share-label">Share the wealth</div>
-    <h2 class="share-title">Spread the word<br><em>across the web</em></h2>
-    <div class="share-buttons-wrapper">
-      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://andresblitz.com/" target="_blank" rel="noopener">Facebook</a>
-      <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://andresblitz.com/" target="_blank" rel="noopener">X / Twitter</a>
-      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://andresblitz.com/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="share-btn" href="https://pinterest.com/pin/create/button/?url=https://andresblitz.com/" target="_blank" rel="noopener">Pinterest</a>
-      <a class="share-btn" href="https://wa.me/?text=Check%20out%20https://andresblitz.com/" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="share-btn" href="https://t.me/share/url?url=https://andresblitz.com/" target="_blank" rel="noopener">Telegram</a>
-      <a class="share-btn" href="mailto:?subject=Andr%C3%A9s%20Blitz&body=Check%20this%20out:%20https://andresblitz.com/">Email</a>
-      <button class="share-btn" onclick="copyLink()">Copy Link</button>
-    </div>
-  </div>
-</section>
+  <footer class="border-t border-white/5 py-8 text-center text-xs text-white/30 tracking-widest">
+    © <span id="year"></span> ANDRÉS BLITZ — VICTORIA, BC
+  </footer>
 
-<!-- ═══ CONNECT ═══ -->
-<section id="connect">
-  <div class="conn-glow"></div>
-  <div class="wrap" style="position:relative;z-index:1">
-    <div class="conn-label">Open for conversation</div>
-    <div class="conn-h2">Let's build<br><em>something real.</em></div>
-    <p class="conn-sub">Whether it's a project, an opportunity, or just a conversation worth having — the door is open.</p>
-    <a class="btn-p magnetic" href="mailto:info@andresblitz.com" style="font-size:13px;padding:17px 44px">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      info@andresblitz.com
-    </a>
-  </div>
-</section>
+  <!-- Scripts -->
+  <script>
+    // Tailwind config
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    };
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="f-logo">Andrés <em>Blitz</em></div>
-  <div class="f-copy">© <span id="yr">2025</span> — All rights reserved</div>
-</footer>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-/* ══ INTRO STARFIELD ══ */
-(function(){
-  const ic=document.getElementById('introCanvas');
-  if(!ic)return;
-  const ctx=ic.getContext('2d');
-  function resize(){ic.width=window.innerWidth;ic.height=window.innerHeight}
-  resize();window.addEventListener('resize',resize);
-  const stars=Array.from({length:200},()=>({x:Math.random()*ic.width,y:Math.random()*ic.height,r:Math.random()*1.4+.3,s:Math.random()*.6+.2}));
-  function draw(){ctx.clearRect(0,0,ic.width,ic.height);stars.forEach(s=>{s.y-=s.s;if(s.y<0)s.y=ic.height;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle='rgba(240,237,230,.5)';ctx.fill();});requestAnimationFrame(draw);}
-  draw();
-})();
-setTimeout(()=>document.getElementById('intro').classList.add('hide'),2400);
+    // Lenis + GSAP
+    gsap.registerPlugin(ScrollTrigger);
 
-/* ══ LENIS ══ */
-gsap.registerPlugin(ScrollTrigger);
-const lenis=new Lenis({lerp:.08,smooth:true});
-lenis.on('scroll',ScrollTrigger.update);
-gsap.ticker.add((t)=>lenis.raf(t*1000));
-gsap.ticker.lagSmoothing(0);
-
-/* ══ SCROLL PROGRESS ══ */
-gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:0}});
-
-/* ══ NAV ══ */
-document.getElementById('yr').textContent=new Date().getFullYear();
-lenis.on('scroll',({scroll})=>document.getElementById('nav').classList.toggle('sc',scroll>60));
-
-/* ══ CURSOR ══ */
-const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
-if(cur&&ring){
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;gsap.to(cur,{x:mx,y:my,duration:.07,ease:'none'});});
-  (function rl(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;gsap.set(ring,{x:rx,y:ry});requestAnimationFrame(rl);})();
-  document.querySelectorAll('a,button,.dot,.fc,.bcard,.soc,.share-btn,.pcard').forEach(el=>{
-    el.addEventListener('mouseenter',()=>document.body.classList.add('cur-hover'));
-    el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-hover'));
-  });
-  document.querySelectorAll('p,.bcard-text,.fc-body,.sec-p,.conn-sub').forEach(el=>{
-    el.addEventListener('mouseenter',()=>document.body.classList.add('cur-text'));
-    el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-text'));
-  });
-}
-
-/* ══ MAGNETIC ══ */
-document.querySelectorAll('.magnetic').forEach(el=>{
-  el.addEventListener('mousemove',e=>{
-    const r=el.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;
-    gsap.to(el,{x:x*.28,y:y*.28,duration:.5,ease:'power3.out'});
-  });
-  el.addEventListener('mouseleave',()=>gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,.4)'}));
-});
-
-/* ══ VISITOR COUNT ══ */
-(()=>{
-  const base=5241,k='ab_v5';
-  let v=+(localStorage.getItem(k)||0)+1;localStorage.setItem(k,v);
-  let d=base+v-60,el=document.getElementById('vc');
-  const t=setInterval(()=>{d++;el.textContent=d.toLocaleString();if(d>=base+v)clearInterval(t);},22);
-})();
-
-/* ══ HERO ANIMATIONS (after intro) ══ */
-setTimeout(()=>{
-  gsap.to('.heyebrow',{opacity:1,duration:.8,ease:'power3.out',delay:.1});
-  gsap.to('.hname .n1 span',{y:'0%',duration:1.1,ease:'power4.out',delay:.2});
-  gsap.to('.hname .n2 span',{y:'0%',duration:1.1,ease:'power4.out',delay:.36});
-  gsap.to('.htag',{opacity:1,duration:.8,ease:'power3.out',delay:.62});
-  gsap.to('.hctas',{opacity:1,duration:.7,ease:'power3.out',delay:.78});
-},2200);
-
-/* ══ SCROLL REVEALS ══ */
-// Stats section
-ScrollTrigger.create({trigger:'#stats',start:'top 85%',once:true,onEnter:()=>{
-  gsap.to('.sec-eyebrow',{opacity:1,y:0,duration:.7,ease:'power3.out'});
-  gsap.to('.bcard',{opacity:1,y:0,duration:.7,ease:'power3.out',stagger:.1,delay:.1});
-}});
-
-// Count-up
-document.querySelectorAll('.bcard-num[data-count]').forEach(el=>{
-  const target=+el.dataset.count,suffix=el.dataset.suffix||'';
-  ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:()=>{
-    const obj={val:0};
-    gsap.to(obj,{val:target,duration:1.8,ease:'power2.out',onUpdate(){el.textContent=Math.round(obj.val)+suffix;}});
-  }});
-});
-
-// About
-ScrollTrigger.create({trigger:'#about',start:'top 80%',once:true,onEnter:()=>{
-  gsap.to('.sec-label',{opacity:1,y:0,duration:.7,ease:'power3.out'});
-  gsap.to('.sec-h2',{opacity:1,y:0,duration:.9,ease:'power3.out',delay:.1});
-  gsap.to('.sec-p',{opacity:1,y:0,duration:.7,ease:'power3.out',stagger:.12,delay:.2});
-  gsap.to('.sk-row',{opacity:1,x:0,duration:.6,ease:'power3.out',stagger:.08,delay:.35,onComplete(){
-    document.querySelectorAll('.sk-fill').forEach(f=>f.style.transform=`scaleX(${f.dataset.w})`);
-  }});
-  gsap.to('.socs',{opacity:1,duration:.7,ease:'power3.out',delay:.6});
-}});
-
-// Features
-ScrollTrigger.create({trigger:'#features',start:'top 85%',once:true,onEnter:()=>{
-  gsap.to('.fh',{opacity:1,y:0,duration:.7,ease:'power3.out'});
-  gsap.to('.fc',{opacity:1,y:0,duration:.7,ease:'power3.out',stagger:.09,delay:.15});
-}});
-
-// Projects
-ScrollTrigger.create({trigger:'#projects',start:'top 85%',once:true,onEnter:()=>{
-  gsap.to('#projects .fh',{opacity:1,y:0,duration:.7,ease:'power3.out'});
-  gsap.to('.pcard',{opacity:1,y:0,duration:.7,ease:'power3.out',stagger:.09,delay:.15});
-}});
-gsap.set('.pcard',{opacity:0,y:28});
-
-// Game
-ScrollTrigger.create({trigger:'#game',start:'top 85%',once:true,onEnter:()=>{
-  gsap.to('.game-hdr',{opacity:1,y:0,duration:.7,ease:'power3.out'});
-  gsap.to('#gw',{opacity:1,y:0,duration:.7,ease:'power3.out',delay:.15});
-}});
-
-// Share
-ScrollTrigger.create({trigger:'#share',start:'top 85%',once:true,onEnter:()=>{
-  gsap.to('.share-label',{opacity:1,y:0,duration:.7,ease:'power3.out'});
-  gsap.to('.share-title',{opacity:1,y:0,duration:.7,ease:'power3.out',delay:.1});
-  gsap.to('.share-buttons-wrapper',{opacity:1,duration:.7,ease:'power3.out',delay:.2});
-}});
-
-// Connect
-ScrollTrigger.create({trigger:'#connect',start:'top 85%',once:true,onEnter:()=>{
-  gsap.to('.conn-label',{opacity:1,y:0,duration:.7,ease:'power3.out'});
-  gsap.to('.conn-h2',{opacity:1,y:0,duration:.9,ease:'power3.out',delay:.1});
-  gsap.to('.conn-sub',{opacity:1,y:0,duration:.7,ease:'power3.out',delay:.22});
-}});
-
-/* ══ INITIAL HIDDEN STATES ══ */
-gsap.set('.sec-label,.sec-h2',{opacity:0,y:20});
-gsap.set('.sec-p',{opacity:0,y:16});
-gsap.set('.sk-row',{opacity:0,x:-16});
-gsap.set('.socs',{opacity:0});
-gsap.set('.sec-eyebrow',{opacity:0,y:16});
-gsap.set('.bcard',{opacity:0,y:24});
-gsap.set('.fh',{opacity:0,y:20});
-gsap.set('.fc',{opacity:0,y:28});
-gsap.set('.game-hdr',{opacity:0,y:20});
-gsap.set('#gw',{opacity:0,y:16});
-gsap.set('.share-label,.share-title',{opacity:0,y:16});
-gsap.set('.share-buttons-wrapper',{opacity:0});
-gsap.set('.conn-label,.conn-h2,.conn-sub',{opacity:0,y:20});
-
-/* ══ ROCKET CANVAS ══ */
-(function(){
-  const rc=document.getElementById('rocketCanvas');if(!rc)return;
-  const ctx=rc.getContext('2d'),W=rc.width,H=rc.height;
-  let sp=0;
-  lenis.on('scroll',()=>{
-    const sec=document.getElementById('about'),rect=sec.getBoundingClientRect();
-    sp=1-Math.max(0,Math.min(1,(rect.top+100)/window.innerHeight));
-  });
-  const stars=Array.from({length:60},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+.2,speed:Math.random()*.8+.3,op:Math.random()}));
-  let fr=0;
-  function draw(){
-    fr++;ctx.clearRect(0,0,W,H);
-    const bg=ctx.createRadialGradient(W/2,H*.4,0,W/2,H*.4,H*.6);
-    bg.addColorStop(0,'rgba(15,12,25,.9)');bg.addColorStop(1,'rgba(6,6,10,0)');
-    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
-    const spd=1+sp*5;
-    stars.forEach(s=>{s.y+=s.speed*spd;if(s.y>H)s.y=0;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(240,237,230,${Math.min(.3+s.op*.5+sp*.3,1)})`;ctx.fill();});
-    const ry=H*.78-sp*(H*.52),rx=W/2,fl=Math.sin(fr*.18)*3,sw=Math.sin(fr*.04)*4*(1-sp*.5);
-    ctx.save();ctx.translate(rx+sw,ry);
-    const fh=28+sp*40+fl*2,fg=ctx.createRadialGradient(0,0,2,0,fh*.6,fh);
-    fg.addColorStop(0,'rgba(255,255,200,.95)');fg.addColorStop(.3,'rgba(255,160,40,.85)');fg.addColorStop(.7,'rgba(220,60,20,.5)');fg.addColorStop(1,'rgba(180,30,0,0)');
-    ctx.beginPath();ctx.moveTo(-10,12);ctx.quadraticCurveTo(-18+fl,fh*.5,0,fh+10+fl);ctx.quadraticCurveTo(18-fl,fh*.5,10,12);ctx.fillStyle=fg;ctx.fill();
-    const ih=16+sp*22+fl;ctx.beginPath();ctx.moveTo(-5,10);ctx.quadraticCurveTo(-8+fl*.5,ih*.5,0,ih+8);ctx.quadraticCurveTo(8-fl*.5,ih*.5,5,10);ctx.fillStyle='rgba(255,248,200,.9)';ctx.fill();
-    if(sp>.1){for(let i=0;i<5;i++){const px=(Math.random()-.5)*24,py=fh*.4+Math.random()*fh*.6,pr=Math.random()*2+.5;ctx.beginPath();ctx.arc(px,py,pr,0,Math.PI*2);ctx.fillStyle=`rgba(255,${120+Math.random()*100},${Math.random()*50},.7)`;ctx.fill();}}
-    const bg2=ctx.createLinearGradient(-18,0,18,0);bg2.addColorStop(0,'#1a1820');bg2.addColorStop(.35,'#3a3650');bg2.addColorStop(.5,'#5a5580');bg2.addColorStop(.65,'#3a3650');bg2.addColorStop(1,'#1a1820');
-    ctx.beginPath();ctx.moveTo(-14,12);ctx.lineTo(-16,-20);ctx.quadraticCurveTo(-16,-60,-14,-80);ctx.lineTo(14,-80);ctx.quadraticCurveTo(16,-60,16,-20);ctx.lineTo(14,12);ctx.closePath();ctx.fillStyle=bg2;ctx.fill();
-    ctx.beginPath();ctx.moveTo(-6,10);ctx.lineTo(-8,-20);ctx.quadraticCurveTo(-8,-55,-6,-72);ctx.lineTo(-2,-72);ctx.quadraticCurveTo(-4,-55,-4,-20);ctx.lineTo(-4,10);ctx.closePath();ctx.fillStyle='rgba(255,255,255,.08)';ctx.fill();
-    ctx.beginPath();ctx.moveTo(-15,-28);ctx.lineTo(15,-28);ctx.lineWidth=2;ctx.strokeStyle='rgba(201,153,42,.7)';ctx.stroke();
-    ctx.beginPath();ctx.moveTo(-15,-36);ctx.lineTo(15,-36);ctx.strokeStyle='rgba(201,153,42,.35)';ctx.stroke();
-    const ng=ctx.createLinearGradient(-12,-80,12,-80);ng.addColorStop(0,'#2a2845');ng.addColorStop(.5,'#c9992a');ng.addColorStop(1,'#2a2845');
-    ctx.beginPath();ctx.moveTo(-14,-80);ctx.quadraticCurveTo(-10,-120,0,-134);ctx.quadraticCurveTo(10,-120,14,-80);ctx.closePath();ctx.fillStyle=ng;ctx.fill();
-    ctx.beginPath();ctx.moveTo(-5,-82);ctx.quadraticCurveTo(-3,-112,0,-122);ctx.quadraticCurveTo(2,-112,3,-82);ctx.fillStyle='rgba(255,255,255,.12)';ctx.fill();
-    const wy=-56,wr=12;
-    ctx.beginPath();ctx.arc(0,wy,wr+5,0,Math.PI*2);ctx.fillStyle='rgba(79,168,232,.12)';ctx.fill();
-    ctx.beginPath();ctx.arc(0,wy,wr,0,Math.PI*2);ctx.strokeStyle='rgba(201,153,42,.8)';ctx.lineWidth=2;ctx.stroke();
-    const wg=ctx.createRadialGradient(-3,wy-3,1,0,wy,wr);wg.addColorStop(0,'rgba(140,200,255,.9)');wg.addColorStop(.5,'rgba(40,80,180,.8)');wg.addColorStop(1,'rgba(10,20,60,.9)');
-    ctx.beginPath();ctx.arc(0,wy,wr,0,Math.PI*2);ctx.fillStyle=wg;ctx.fill();
-    ctx.beginPath();ctx.arc(-4,wy-4,3.5,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.4)';ctx.fill();
-    [[-1],[1]].forEach(([s])=>{
-      const fg2=ctx.createLinearGradient(s*14,0,s*36,0);fg2.addColorStop(0,'#3a3650');fg2.addColorStop(1,'#1a1820');
-      ctx.beginPath();ctx.moveTo(s*14,12);ctx.lineTo(s*14,-18);ctx.lineTo(s*32,-8);ctx.lineTo(s*36,12);ctx.closePath();ctx.fillStyle=fg2;ctx.fill();ctx.strokeStyle='rgba(201,153,42,.4)';ctx.lineWidth=1;ctx.stroke();
+    const lenis = new Lenis({
+      lerp: 0.08,
+      smooth: true,
+      wheelMultiplier: 0.9
     });
-    const ag=ctx.createLinearGradient(-14,8,14,8);ag.addColorStop(0,'rgba(201,153,42,0)');ag.addColorStop(.5,'rgba(201,153,42,.6)');ag.addColorStop(1,'rgba(201,153,42,0)');
-    ctx.beginPath();ctx.moveTo(-14,12);ctx.lineTo(14,12);ctx.lineWidth=2;ctx.strokeStyle=ag;ctx.stroke();
-    ctx.restore();
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
 
-/* ══ SPACE INVADERS ══ */
-(function(){
-  const canvas=document.getElementById('gc');if(!canvas)return;
-  const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
-  const GOLD='#c9992a',FG='#f0ede6',BG='#030305',SOFT='#4a4a5a';
-  let started=false,paused=false,gameOver=false,score=0,level=1,lives=3,frame=0,alienDir=1,alienSpeed=.5;
-  let lastShot=0,alienLastShot=0,bullets=[],alienBullets=[];
-  const player={x:W/2,y:H-40,w:32,h:14,speed:4};
-  const ROWS=3,COLS=8,AW=28,AH=20,HG=12,VG=12;
-  let aliens=[],shields=[];
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
-  function resetAliens(){
-    aliens=[];
-    const sx=(W-(COLS*(AW+HG)))/2+AW/2;
-    for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++)aliens.push({x:sx+c*(AW+HG),y:44+r*(AH+VG),alive:true,t:r*COLS+c});
-    alienDir=1;alienSpeed=.5+level*.12;
-  }
-  function resetShields(){
-    shields=[];
-    const g=(W-4*36)/(4+1);
-    for(let i=0;i<4;i++)shields.push({x:g+i*(36+g),y:H-80,hp:5});
-  }
-  function reset(){score=0;level=1;lives=3;frame=0;alienSpeed=.5;bullets=[];alienBullets=[];gameOver=false;paused=false;player.x=W/2;resetAliens();resetShields();upHUD();}
-  function upHUD(){document.getElementById('gs').textContent=score;document.getElementById('gl').textContent=level;document.getElementById('glv').textContent='♥ '.repeat(lives).trim();}
+    // Scroll progress bar
+    const progress = document.getElementById('progress');
+    lenis.on('scroll', ({ scroll, limit }) => {
+      const p = Math.min((scroll / limit) * 100, 100);
+      progress.style.width = p + '%';
+    });
 
-  const keys={};
-  document.addEventListener('keydown',e=>{keys[e.code]=true;if(e.code==='KeyP'&&started&&!gameOver)paused=!paused;if(e.code==='Space')e.preventDefault();});
-  document.addEventListener('keyup',e=>keys[e.code]=false);
-  canvas.addEventListener('click',()=>{if(!started){started=true;reset();}else if(gameOver){reset();}});
+    // Smooth anchor scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          lenis.scrollTo(target, { offset: -80, duration: 1.1 });
+        }
+      });
+    });
 
-  function shoot(){const n=Date.now();if(n-lastShot<380)return;lastShot=n;bullets.push({x:player.x,y:player.y-8});}
-  function alienShoot(){const a=aliens.filter(x=>x.alive);if(!a.length)return;const al=a[Math.floor(Math.random()*a.length)];alienBullets.push({x:al.x,y:al.y+AH/2+2});}
+    // Fade in chapters on scroll
+    gsap.utils.toArray('.chapter').forEach((chapter, i) => {
+      gsap.to(chapter, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: chapter,
+          start: 'top 78%',
+          once: true
+        }
+      });
+    });
 
-  function drawAlien(x,y,t,f){
-    ctx.save();ctx.translate(x,y);const c=t%3;
-    if(c===0){ctx.fillStyle=GOLD;ctx.fillRect(-10,-6,20,12);ctx.fillRect(-14,-2+f*2,4,6);ctx.fillRect(10,-2+f*2,4,6);ctx.fillRect(-8,-10,4,4);ctx.fillRect(4,-10,4,4);ctx.clearRect(-4,-2,8,6);}
-    else if(c===1){ctx.fillStyle=FG;ctx.beginPath();ctx.ellipse(0,-2,9,7,0,0,Math.PI*2);ctx.fill();ctx.fillRect(-12,2-f,4,8+f);ctx.fillRect(-4,2-f,4,8+f);ctx.fillRect(4,2-f,4,8+f);ctx.fillStyle=BG;ctx.fillRect(-5,-4,4,4);ctx.fillRect(1,-4,4,4);}
-    else{ctx.fillStyle='#7a5c14';ctx.fillRect(-12,-6,24,12);ctx.fillRect(-14,-2,4,10);ctx.fillRect(10,-2,4,10);ctx.fillRect(-6,-10,12,4);ctx.fillStyle=BG;ctx.fillRect(-8,-2,5,5);ctx.fillRect(3,-2,5,5);}
-    ctx.restore();
-  }
+    // === SPACE INVADERS GAME ===
+    (function() {
+      const canvas = document.getElementById('game-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width;
+      const H = canvas.height;
 
-  function update(){
-    if(!started||paused||gameOver)return;
-    frame++;
-    if(keys['ArrowLeft']||keys['KeyA'])player.x=Math.max(player.w/2,player.x-player.speed);
-    if(keys['ArrowRight']||keys['KeyD'])player.x=Math.min(W-player.w/2,player.x+player.speed);
-    if(keys['Space'])shoot();
-    const alive=aliens.filter(a=>a.alive);
-    if(!alive.length){level++;alienSpeed=.5+level*.12;resetAliens();resetShields();upHUD();return;}
-    alive.forEach(a=>a.x+=alienDir*alienSpeed);
-    let edge=false;
-    alive.forEach(a=>{if(a.x>W-AW/2-8||a.x<AW/2+8)edge=true;});
-    if(edge){alienDir*=-1;alive.forEach(a=>a.y+=10);if(alive.some(a=>a.y>H-80)){gameOver=true;upHUD();return;}}
-    const n=Date.now();if(n-alienLastShot>Math.max(500,1600-level*120)){alienLastShot=n;alienShoot();}
-    bullets=bullets.filter(b=>{b.y-=9;return b.y>0;});
-    alienBullets=alienBullets.filter(b=>{b.y+=4;return b.y<H;});
-    bullets.forEach((b,bi)=>aliens.forEach(a=>{if(!a.alive)return;if(Math.abs(b.x-a.x)<AW/2&&Math.abs(b.y-a.y)<AH/2){a.alive=false;bullets.splice(bi,1);score+=10*(4-(a.t%3));upHUD();}}));
-    alienBullets.forEach((b,bi)=>{if(Math.abs(b.x-player.x)<player.w/2&&Math.abs(b.y-player.y)<player.h/2){alienBullets.splice(bi,1);lives--;upHUD();if(lives<=0)gameOver=true;}});
-    [...bullets,...alienBullets].forEach(b=>shields.forEach(s=>{if(s.hp<=0)return;if(b.x>s.x&&b.x<s.x+36&&b.y>s.y&&b.y<s.y+16)s.hp--;}));
-  }
+      let started = false, paused = false, gameOver = false;
+      let score = 0, level = 1, lives = 3;
+      let frame = 0, alienDir = 1, alienSpeed = 0.6;
+      let lastShot = 0, alienLastShot = 0;
+      let bullets = [], alienBullets = [];
+      let keys = {};
 
-  function drawG(){
-    ctx.fillStyle=BG;ctx.fillRect(0,0,W,H);
-    if(!started){ctx.fillStyle=GOLD;ctx.font="bold 26px 'Syne',sans-serif";ctx.textAlign='center';ctx.fillText('SPACE INVADERS',W/2,H/2-28);ctx.fillStyle=SOFT;ctx.font="12px 'Syne Mono',monospace";ctx.fillText('CLICK TO START',W/2,H/2+12);return;}
-    if(paused){ctx.fillStyle=FG;ctx.font="20px 'Syne',sans-serif";ctx.textAlign='center';ctx.fillText('PAUSED',W/2,H/2);return;}
-    if(gameOver){ctx.fillStyle=GOLD;ctx.font="bold 28px 'Syne',sans-serif";ctx.textAlign='center';ctx.fillText(lives<=0?'GAME OVER':'LEVEL CLEAR',W/2,H/2-20);ctx.fillStyle=SOFT;ctx.font="12px 'Syne Mono',monospace";ctx.fillText(`SCORE: ${score}  |  CLICK TO RESTART`,W/2,H/2+16);return;}
-    shields.forEach(s=>{if(s.hp<=0)return;ctx.fillStyle=`rgba(201,153,42,${(s.hp/5)*.7})`;ctx.fillRect(s.x,s.y,36,16);});
-    const f=Math.floor(frame/20)%2;
-    aliens.forEach(a=>{if(a.alive)drawAlien(a.x,a.y,a.t,f);});
-    ctx.fillStyle=GOLD;ctx.fillRect(player.x-player.w/2,player.y-player.h/2,player.w,player.h);ctx.fillRect(player.x-4,player.y-player.h/2-6,8,8);ctx.fillStyle=FG;ctx.fillRect(player.x-3,player.y-player.h/2-5,6,6);
-    bullets.forEach(b=>{ctx.fillStyle=GOLD;ctx.fillRect(b.x-1.5,b.y-5,3,10);});
-    alienBullets.forEach(b=>{ctx.fillStyle='#e84040';ctx.fillRect(b.x-1.5,b.y-5,3,10);});
-  }
+      const player = { x: W/2, y: H-42, w: 34, h: 14, speed: 4.2 };
+      const ROWS = 3, COLS = 8, AW = 28, AH = 20, HG = 12, VG = 12;
+      let aliens = [], shields = [];
 
-  function loop(){update();drawG();requestAnimationFrame(loop);}
-  loop();
-})();
+      function resetAliens() {
+        aliens = [];
+        const sx = (W - (COLS * (AW + HG))) / 2 + AW / 2;
+        for (let r = 0; r < ROWS; r++) {
+          for (let c = 0; c < COLS; c++) {
+            aliens.push({ x: sx + c * (AW + HG), y: 48 + r * (AH + VG), alive: true });
+          }
+        }
+        alienDir = 1;
+        alienSpeed = 0.6 + (level - 1) * 0.14;
+      }
 
-/* ══ COPY LINK ══ */
-function copyLink(){
-  navigator.clipboard.writeText('https://andresblitz.com/').then(()=>{
-    const btn=event.target,o=btn.textContent;btn.textContent='Copied!';
-    setTimeout(()=>btn.textContent=o,2000);
-  });
-}
-</script>
+      function resetShields() {
+        shields = [];
+        const g = (W - 4 * 36) / 5;
+        for (let i = 0; i < 4; i++) {
+          shields.push({ x: g + i * (36 + g), y: H - 82, hp: 5 });
+        }
+      }
+
+      function resetGame() {
+        score = 0; level = 1; lives = 3; frame = 0;
+        bullets = []; alienBullets = [];
+        gameOver = false; paused = false;
+        player.x = W / 2;
+        resetAliens();
+        resetShields();
+        updateHUD();
+      }
+
+      function updateHUD() {
+        document.getElementById('score').textContent = score.toString().padStart(5, '0');
+        document.getElementById('level').textContent = level;
+        document.getElementById('lives').innerHTML = '♥ '.repeat(lives).trim();
+      }
+
+      function drawPlayer() {
+        ctx.save();
+        ctx.translate(player.x, player.y);
+        ctx.fillStyle = '#e2e8f0';
+        ctx.fillRect(-player.w/2, -4, player.w, 8);
+        ctx.fillStyle = '#3b82f6';
+        ctx.fillRect(-4, -10, 8, 6);
+        ctx.restore();
+      }
+
+      function drawAliens() {
+        ctx.fillStyle = '#22d3ee';
+        aliens.forEach(a => {
+          if (!a.alive) return;
+          ctx.fillRect(a.x - AW/2, a.y - AH/2, AW, AH);
+          ctx.fillStyle = '#05070f';
+          ctx.fillRect(a.x - 6, a.y - 2, 4, 4);
+          ctx.fillRect(a.x + 2, a.y - 2, 4, 4);
+          ctx.fillStyle = '#22d3ee';
+        });
+      }
+
+      function drawBullets() {
+        ctx.fillStyle = '#e2e8f0';
+        bullets.forEach(b => ctx.fillRect(b.x - 1, b.y - 4, 2, 7));
+        ctx.fillStyle = '#f87171';
+        alienBullets.forEach(b => ctx.fillRect(b.x - 1.5, b.y - 4, 3, 7));
+      }
+
+      function drawShields() {
+        ctx.fillStyle = '#475569';
+        shields.forEach(s => {
+          if (s.hp <= 0) return;
+          ctx.globalAlpha = Math.max(0.3, s.hp / 5);
+          ctx.fillRect(s.x, s.y, 34, 12);
+          ctx.globalAlpha = 1;
+        });
+      }
+
+      function update() {
+        if (!started || paused || gameOver) return;
+
+        // Player movement
+        if (keys['ArrowLeft'] || keys['a']) player.x -= player.speed;
+        if (keys['ArrowRight'] || keys['d']) player.x += player.speed;
+        player.x = Math.max(22, Math.min(W - 22, player.x));
+
+        // Player bullets
+        bullets.forEach((b, i) => { b.y -= 7.5; if (b.y < 0) bullets.splice(i, 1); });
+
+        // Alien movement
+        let edge = false;
+        aliens.forEach(a => {
+          if (!a.alive) return;
+          a.x += alienDir * alienSpeed;
+          if (a.x < 26 || a.x > W - 26) edge = true;
+        });
+        if (edge) {
+          alienDir *= -1;
+          aliens.forEach(a => a.y += 18);
+        }
+
+        // Alien shooting
+        if (frame % Math.max(38, 52 - level * 4) === 0) {
+          const alive = aliens.filter(a => a.alive);
+          if (alive.length) {
+            const shooter = alive[Math.floor(Math.random() * alive.length)];
+            alienBullets.push({ x: shooter.x, y: shooter.y + 12 });
+          }
+        }
+
+        // Alien bullets
+        alienBullets.forEach((b, i) => {
+          b.y += 3.8;
+          if (b.y > H) alienBullets.splice(i, 1);
+        });
+
+        // Collisions: player bullets vs aliens
+        bullets.forEach((b, bi) => {
+          aliens.forEach(a => {
+            if (!a.alive) return;
+            if (Math.abs(b.x - a.x) < AW/2 && Math.abs(b.y - a.y) < AH/2) {
+              a.alive = false;
+              bullets.splice(bi, 1);
+              score += 12;
+              updateHUD();
+            }
+          });
+        });
+
+        // Collisions: alien bullets vs player
+        alienBullets.forEach((b, i) => {
+          if (Math.abs(b.x - player.x) < 18 && Math.abs(b.y - player.y) < 14) {
+            alienBullets.splice(i, 1);
+            lives--;
+            updateHUD();
+            if (lives <= 0) gameOver = true;
+          }
+        });
+
+        // Win condition
+        if (aliens.every(a => !a.alive)) {
+          level++;
+          resetAliens();
+          alienBullets = [];
+          updateHUD();
+        }
+
+        frame++;
+      }
+
+      function draw() {
+        ctx.fillStyle = '#05070f';
+        ctx.fillRect(0, 0, W, H);
+
+        // Subtle grid
+        ctx.strokeStyle = 'rgba(148,163,184,0.06)';
+        ctx.lineWidth = 1;
+        for (let x = 30; x < W; x += 30) {
+          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+        }
+
+        if (!started) {
+          ctx.fillStyle = '#e2e8f0';
+          ctx.font = '500 13px Inter, system-ui';
+          ctx.textAlign = 'center';
+          ctx.fillText('CLICK TO START', W/2, H/2 - 8);
+          ctx.fillStyle = '#64748b';
+          ctx.font = '12px Inter, system-ui';
+          ctx.fillText('ARROWS OR A/D TO MOVE  •  SPACE TO SHOOT', W/2, H/2 + 18);
+          return;
+        }
+
+        drawPlayer();
+        drawAliens();
+        drawBullets();
+        drawShields();
+
+        if (paused) {
+          ctx.fillStyle = 'rgba(0,0,0,0.6)';
+          ctx.fillRect(0, 0, W, H);
+          ctx.fillStyle = '#e2e8f0';
+          ctx.font = '600 15px Inter, system-ui';
+          ctx.textAlign = 'center';
+          ctx.fillText('PAUSED', W/2, H/2);
+        }
+
+        if (gameOver) {
+          ctx.fillStyle = 'rgba(5,7,15,0.85)';
+          ctx.fillRect(0, 0, W, H);
+          ctx.fillStyle = '#f1f5f9';
+          ctx.font = '600 17px Inter, system-ui';
+          ctx.textAlign = 'center';
+          ctx.fillText('MISSION COMPLETE', W/2, H/2 - 12);
+          ctx.fillStyle = '#64748b';
+          ctx.font = '13px Inter, system-ui';
+          ctx.fillText('SCORE ' + score, W/2, H/2 + 14);
+          ctx.fillText('CLICK TO RESTART', W/2, H/2 + 38);
+        }
+      }
+
+      function loop() {
+        update();
+        draw();
+        requestAnimationFrame(loop);
+      }
+
+      // Input
+      window.addEventListener('keydown', e => {
+        keys[e.key] = true;
+        if (e.key.toLowerCase() === 'p' && started && !gameOver) paused = !paused;
+        if ((e.key === ' ' || e.key === 'Spacebar') && started && !paused && !gameOver) {
+          e.preventDefault();
+          const now = Date.now();
+          if (now - lastShot > 180) {
+            bullets.push({ x: player.x, y: player.y - 12 });
+            lastShot = now;
+          }
+        }
+      });
+      window.addEventListener('keyup', e => keys[e.key] = false);
+
+      canvas.addEventListener('click', () => {
+        if (!started) {
+          started = true;
+          resetGame();
+        } else if (gameOver) {
+          resetGame();
+        } else if (paused) {
+          paused = false;
+        }
+      });
+
+      canvas.addEventListener('mousedown', () => {
+        if (started && !paused && !gameOver) {
+          const now = Date.now();
+          if (now - lastShot > 180) {
+            bullets.push({ x: player.x, y: player.y - 12 });
+            lastShot = now;
+          }
+        }
+      });
+
+      // Touch support
+      let touchStartX = 0;
+      canvas.addEventListener('touchstart', e => {
+        if (!started) {
+          started = true;
+          resetGame();
+          return;
+        }
+        if (gameOver) { resetGame(); return; }
+        touchStartX = e.touches[0].clientX;
+        if (started && !paused && !gameOver) {
+          bullets.push({ x: player.x, y: player.y - 12 });
+        }
+      });
+
+      canvas.addEventListener('touchmove', e => {
+        if (!started || paused || gameOver) return;
+        const dx = e.touches[0].clientX - touchStartX;
+        player.x = Math.max(22, Math.min(W - 22, W/2 + dx * 1.6));
+      });
+
+      loop();
+    })();
+
+    // Subtle parallax on hero
+    window.addEventListener('mousemove', (e) => {
+      const hero = document.querySelector('section');
+      if (!hero) return;
+      const x = (e.clientX / window.innerWidth - 0.5) * 6;
+      const y = (e.clientY / window.innerHeight - 0.5) * 4;
+      hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+    });
+  </script>
 </body>
 </html>
