@@ -1,500 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andrés Blitz</title>
-  <meta name="description" content="Andrés Blitz. Operations. Sales. Code. Still accelerating.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- SEO META TAGS -->
+<title>Andrés Blitz | Sales Leader & Operations Expert | Victoria, BC Canada</title>
+<meta name="description" content="Andrés Blitz is a sales leader, operations expert, and tech strategist in Victoria, BC. 15+ years across real estate, petroleum, automotive, and operations. Launching bold ideas into orbit." />
+<meta name="keywords" content="sales leader Victoria BC, operations management, tech strategist Canada" />
+<link rel="canonical" href="https://andresblitz.com/" />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://andresblitz.com/" />
+<meta property="og:title" content="Andrés Blitz | Sales Leader & Operations Expert" />
+<meta property="og:description" content="15+ years of proven results. Launching bold ideas into orbit from Victoria, BC." />
+<meta property="og:image" content="https://andresblitz.com/og-image-1200x630.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@andresblitz" />
+<meta name="twitter:title" content="Andrés Blitz | Sales Leader & Operations Expert" />
+<meta name="twitter:description" content="15+ years of proven results. Launching bold ideas into orbit from Victoria, BC." />
+<meta name="twitter:image" content="https://andresblitz.com/og-image-1200x630.jpg" />
+<meta name="theme-color" content="#010104" />
+<meta name="geo.position" content="48.4281;-123.3656" />
+<meta name="geo.placename" content="Victoria, British Columbia, Canada" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; background: #010104; color: #fff; }
 
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --accent: #3b82f6;
-      --text: #f5f5f5;
-      --muted: #777777;
-      --line: #1f1f1f;
-    }
-    body { background: var(--bg); color: var(--text); font-family: 'Inter', system_ui, sans-serif; }
-    .font-display { font-family: 'Instrument Sans', 'Inter', sans-serif; font-weight: 600; letter-spacing: -0.025em; }
+/* Scroll Space Scene */
+#scroll-scene-container {
+  position: fixed; inset: 0; z-index: -10;
+  background: #020208;
+}
+#scroll-scene-container canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+#scroll-scene-container .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.15); }
 
-    .nav { background: rgba(10,10,10,0.96); backdrop-filter: blur(16px); }
-    .nav-link { font-size: 13px; color: #888; transition: color .2s ease; }
-    .nav-link:hover { color: white; }
+/* Particles (foreground stars) */
+#particles-canvas {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 3;
+}
 
-    .hero-headline {
-      font-size: clamp(68px, 8.8vw, 118px);
-      line-height: .88;
-      font-weight: 700;
-      letter-spacing: -0.045em;
-    }
+/* Nav */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+}
+nav .logo { font-weight: 700; font-size: 1.25rem; color: #fff; letter-spacing: -0.025em; text-decoration: none; }
+nav .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+nav .nav-links a { font-size: 0.875rem; color: #d1d5db; text-decoration: none; transition: color 0.2s; }
+nav .nav-links a:hover { color: #fff; }
+nav .social { display: flex; align-items: center; gap: 1rem; }
+nav .social a { color: #d1d5db; transition: color 0.2s; }
+nav .social a:hover { color: #fff; }
+nav .social svg { width: 1.25rem; height: 1.25rem; }
 
-    .section { padding-top: 130px; padding-bottom: 130px; }
-    .story { font-size: 17px; line-height: 1.75; color: #d1d5db; }
-    .thin { height: 1px; background: var(--line); }
-    .minimal-card { border: 1px solid var(--line); background: #111; transition: border-color .2s; }
-    .minimal-card:hover { border-color: #333; }
+/* Hero */
+#hero {
+  position: relative; height: 100vh; width: 100%; display: flex; flex-direction: column;
+}
+#hero .gradient-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent, transparent);
+}
+#hero .content {
+  position: relative; z-index: 10; flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end; text-align: center;
+  padding: 0 1.5rem 6rem;
+}
+#hero .subtitle { font-size: 0.875rem; color: #9ca3af; margin-bottom: 1rem; letter-spacing: 0.05em; }
+#hero h1 { font-size: clamp(1.5rem, 5vw, 3.75rem); font-weight: 600; line-height: 1.15; max-width: 48rem; }
+#hero h1 .underlined {
+  position: relative; display: inline-block;
+}
+#hero h1 .underlined .line {
+  position: absolute; bottom: 0.25rem; left: 0; width: 100%; height: 10px;
+  background: #2C5C88; border-radius: 2px;
+}
+#hero h1 .underlined span { position: relative; }
+#hero .ctas {
+  display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center;
+}
+#hero .code-box {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: #12121c; border: 1px solid rgba(55,65,81,0.5);
+  border-radius: 0.5rem; padding: 0.875rem 2rem;
+}
+#hero .code-box .prompt { color: #4f8fd0; font-family: monospace; font-size: 0.875rem; }
+#hero .code-box code { font-size: 0.875rem; color: #e5e7eb; font-family: monospace; }
+#hero .code-box a { color: #e5e7eb; text-decoration: none; }
+#hero .cta-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #2C5C88; color: #fff; font-weight: 500; border-radius: 0.5rem;
+  padding: 0.875rem 2rem; font-size: 0.875rem; text-decoration: none; transition: background 0.2s;
+}
+#hero .cta-btn:hover { background: #3a7aad; }
+#hero .bounce-arrow {
+  position: relative; z-index: 10; display: flex; justify-content: center; padding-bottom: 2rem;
+}
+#hero .bounce-arrow svg { width: 1.5rem; height: 1.5rem; color: #6b7280; animation: bounce 1s infinite; }
 
-    .scroll-progress { position: fixed; top: 0; left: 0; height: 1px; background: var(--accent); z-index: 9999; transform-origin: left; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25%); }
+}
 
-    .hero-canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      opacity: 0.65;
-      pointer-events: none;
-    }
-  </style>
+/* Cards */
+#fixed-cards {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 4;
+  padding: 2rem 2.5rem; opacity: 0; pointer-events: none;
+}
+#fixed-cards .grid {
+  max-width: 72rem; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
+}
+#fixed-cards .card h3 { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+#fixed-cards .card p { color: #d1d5db; font-size: 0.875rem; line-height: 1.6; }
+
+/* Repo List */
+#repos {
+  position: relative; z-index: 10; max-width: 56rem; margin: 0 auto;
+  padding: 6rem 1.5rem 4rem;
+}
+#repos .section-label { font-size: 0.875rem; color: #9ca3af; letter-spacing: 0.05em; margin-bottom: 0.5rem; text-align: center; }
+#repos h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 700; text-align: center; margin-bottom: 3rem; }
+#repos .repo-list { display: flex; flex-direction: column; gap: 0.75rem; }
+#repos .repo {
+  display: flex; align-items: baseline; gap: 1rem;
+  background: rgba(10,14,26,0.55); border: 1px solid rgba(55,65,81,0.4);
+  border-radius: 0.75rem; padding: 1.1rem 1.5rem; text-decoration: none;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, border-color 0.2s, background 0.2s;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+#repos .repo.visible { opacity: 1; transform: translateY(0); }
+#repos .repo:hover { border-color: #2C5C88; background: rgba(20,30,50,0.65); }
+#repos .repo .name { color: #fff; font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
+#repos .repo .lang {
+  font-size: 0.7rem; color: #8fb8dd; font-family: monospace;
+  border: 1px solid rgba(44,92,136,0.6); border-radius: 999px; padding: 0.1rem 0.6rem; white-space: nowrap;
+}
+#repos .repo .desc { color: #9ca3af; font-size: 0.85rem; line-height: 1.5; flex: 1; }
+#repos .repo .arrow { color: #4f8fd0; font-size: 0.9rem; }
+
+/* Section 3 */
+#section-three {
+  position: relative; min-height: 100vh; display: flex; align-items: flex-end;
+  justify-content: center; padding: 0 2.5rem 8rem;
+}
+#section-three .inner {
+  position: relative; z-index: 10; display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  opacity: 0; transform: translateY(32px); filter: blur(8px);
+  transition: opacity 1s ease-out, transform 1s ease-out, filter 1s ease-out;
+}
+#section-three .inner.visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+#section-three .inner p { color: #d1d5db; font-size: 1rem; margin-bottom: 0.75rem; }
+#section-three .inner h2 { font-size: clamp(1.875rem, 6vw, 4.5rem); font-weight: 700; }
+#section-three .inner .links { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; }
+#section-three .inner .links a {
+  color: #d1d5db; text-decoration: none; font-size: 0.875rem;
+  border: 1px solid rgba(75,85,99,0.5); border-radius: 0.5rem; padding: 0.75rem 1.5rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+#section-three .inner .links a:hover { color: #fff; border-color: #2C5C88; }
+
+/* Content wrapper */
+#content { position: relative; z-index: 2; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  nav .nav-links { display: none; }
+  #hero .content { padding-bottom: 5rem; }
+  #hero h1 { font-size: 1.5rem; }
+  #hero .ctas { flex-direction: column; }
+  #fixed-cards .grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  #fixed-cards { padding: 1.5rem 1rem; }
+  #section-three { padding-bottom: 5rem; }
+  #repos .repo { flex-direction: column; gap: 0.5rem; }
+  #repos .repo .desc { flex: none; }
+}
+</style>
 </head>
 <body>
 
-  <div id="progress" class="scroll-progress" style="width:0%"></div>
+<!-- Scroll-Driven Space Scene -->
+<div id="scroll-scene-container">
+  <canvas id="scene-canvas"></canvas>
+  <div class="overlay"></div>
+</div>
 
-  <!-- NAV -->
-  <nav class="nav fixed top-0 left-0 right-0 z-50 border-b border-white/5">
-    <div class="max-w-5xl mx-auto px-8 flex items-center justify-between h-[76px]">
-      <div class="font-display text-[21px] tracking-[-0.5px]">Andrés Blitz</div>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#c1" class="nav-link">01 Origins</a>
-        <a href="#c2" class="nav-link">02 Pressure</a>
-        <a href="#c3" class="nav-link">03 Velocity</a>
-        <a href="#c4" class="nav-link">04 Now</a>
-        <a href="#game" class="nav-link">Play</a>
-      </div>
-      <a href="mailto:info@andresblitz.com" class="text-sm px-6 h-9 rounded-full border border-white/30 hover:bg-white hover:text-black flex items-center transition-all">Talk</a>
+<!-- Foreground Star Particles -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- Fixed Cards -->
+<div id="fixed-cards">
+  <div class="grid">
+    <div class="card">
+      <h3>Explore the Builds</h3>
+      <p>From network monitoring dashboards to AI behavioral analysis, the lab is always running. NetWatch, Lie Detector, IPTV Player and more — real tools, shipped open on GitHub.</p>
     </div>
-  </nav>
+    <div class="card">
+      <h3>Sales &amp; Operations</h3>
+      <p>15+ years leading sales teams and operations across real estate, petroleum, and automotive. Strategy, systems, and execution — the ground crew work done right so bold ideas can reach orbit.</p>
+    </div>
+    <div class="card">
+      <h3>Connect Everything</h3>
+      <p>Based in Victoria, BC. Always open to interesting missions — collaborations, ventures, or a good conversation about what's launching next.</p>
+    </div>
+  </div>
+</div>
 
-  <!-- HERO - MUCH STRONGER -->
-  <section class="relative min-h-[100dvh] flex items-center border-b border-white/5 overflow-hidden">
-    <!-- Subtle premium motion layer (trajectory / altitude) -->
-    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+<!-- Navigation -->
+<nav>
+  <div style="display:flex;align-items:center;gap:2rem;">
+    <a class="logo" href="/">andresblitz</a>
+    <div class="nav-links">
+      <a href="https://github.com/blitzandres" target="_blank" rel="noopener">Projects</a>
+      <a href="/quiniela/">Quiniela</a>
+    </div>
+  </div>
+  <div class="social">
+    <a href="https://github.com/blitzandres" target="_blank" rel="noopener" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+    <a href="https://instagram.com/andresblitz" target="_blank" rel="noopener" aria-label="Instagram"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a href="mailto:info@andresblitz.com" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></a>
+  </div>
+</nav>
 
-    <div class="max-w-5xl mx-auto px-8 relative z-10 pt-12">
-      <div class="max-w-[980px]">
-        <!-- Location -->
-        <div class="flex items-center gap-3 text-xs tracking-[3px] text-white/40 mb-8">
-          <div>VICTORIA, BRITISH COLUMBIA</div>
-          <div class="h-px w-6 bg-white/20"></div>
-          <div>CANADA</div>
+<!-- Main Content -->
+<div id="content">
+  <!-- Section 1: Hero -->
+  <section id="hero">
+    <div class="gradient-overlay"></div>
+    <div class="content">
+      <p class="subtitle">Mission Statement:</p>
+      <h1>
+        Launching bold ideas
+        <span class="underlined"><span class="line"></span><span>into orbit</span></span>
+        from Victoria, BC.
+      </h1>
+      <div class="ctas">
+        <div class="code-box">
+          <span class="prompt">&gt;</span>
+          <code><a href="mailto:info@andresblitz.com">info@andresblitz.com</a></code>
         </div>
-
-        <!-- Main powerful statement -->
-        <h1 class="font-display hero-headline leading-none tracking-[-0.04em]">
-          I build momentum.
-        </h1>
-
-        <p class="mt-8 max-w-md text-2xl text-white/70 tracking-tight">
-          15 years across real estate, petroleum, automotive, and code.<br>
-          Still accelerating.
-        </p>
-
-        <div class="mt-14 flex flex-wrap items-center gap-4">
-          <a href="#c1" 
-             class="inline-flex items-center justify-center px-8 h-14 rounded-full bg-white text-black text-sm font-medium tracking-wider hover:bg-white/90 active:scale-[0.985] transition-all">
-            BEGIN THE WALK
-          </a>
-          <a href="#game" 
-             class="inline-flex items-center justify-center px-8 h-14 rounded-full border border-white/20 text-sm tracking-wider hover:bg-white/5 active:scale-[0.985] transition-all">
-            OR JUST PLAY THE GAME
-          </a>
-        </div>
-
-        <div class="absolute bottom-12 left-8 text-[10px] tracking-[2.5px] text-white/30 hidden md:block">SCROLL TO ENTER THE STORY</div>
+        <a href="https://github.com/blitzandres" target="_blank" rel="noopener" class="cta-btn">View Projects <span>&rarr;</span></a>
       </div>
     </div>
-  </section>
-
-  <!-- CHAPTER 01 -->
-  <section id="c1" class="section">
-    <div class="max-w-5xl mx-auto px-8">
-      <div class="text-xs tracking-[3px] text-[#3b82f6] mb-3">CHAPTER 01 — ORIGINS</div>
-      <h2 class="font-display text-[68px] md:text-[82px] leading-[0.9] tracking-[-2.5px]">Started far away.<br>Moved fast.</h2>
-
-      <div class="mt-10 grid md:grid-cols-12 gap-x-16">
-        <div class="md:col-span-7 story">Venezuela → Business school → Canada with nothing but a degree and two languages. The first years were about learning how to survive and execute in a completely new system.</div>
-        <div class="md:col-span-5 text-sm text-white/50 leading-relaxed mt-6 md:mt-0">Cashier. Customs broker. Small projects. Every single role taught the same thing: speed and precision beat comfort every time.</div>
-      </div>
-
-      <div class="mt-14 thin"></div>
-      <div class="mt-8 text-xs tracking-widest text-white/40 flex flex-wrap gap-x-10 gap-y-1">
-        <div>2009–2014 — BBA, Venezuela</div>
-        <div>2014 — Landed in Canada</div>
-        <div>2015–2017 — First real ground</div>
-      </div>
+    <div class="bounce-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
     </div>
   </section>
 
-  <!-- CHAPTER 02 -->
-  <section id="c2" class="section border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-8">
-      <div class="text-xs tracking-[3px] text-[#3b82f6] mb-3">CHAPTER 02 — PRESSURE</div>
-      <h2 class="font-display text-[68px] md:text-[82px] leading-[0.9] tracking-[-2.5px]">The stakes were real.<br>Real high.</h2>
+  <!-- Spacer -->
+  <div style="height:150vh;"></div>
 
-      <div class="mt-10 max-w-2xl story">Petroleum. Real budgets. Real safety consequences. I went from small projects to managing multi-million dollar work with teams where execution actually mattered.</div>
+  <!-- Cards Trigger Zone -->
+  <div id="cards-trigger" style="height:200vh;"></div>
 
-      <div class="mt-12 minimal-card rounded-2xl p-9 md:p-12">
-        <div class="md:flex md:items-end gap-10">
-          <div>
-            <div class="text-xs tracking-[2px] text-white/40">2017 — 2020</div>
-            <div class="font-display text-4xl tracking-tight mt-3 leading-none">Project Manager<br>Phoenix Petroleum</div>
-          </div>
-          <div class="text-sm text-white/60 mt-6 md:mt-0 max-w-md">
-            $5M project. Delivered 20% under budget. Zero safety incidents. This is where I learned real operational discipline under pressure.
-          </div>
-        </div>
-      </div>
+  <!-- Spacer -->
+  <div style="height:100vh;"></div>
+
+  <!-- Section 2.5: Mission Log — all public repos -->
+  <section id="repos">
+    <p class="section-label">Mission Log:</p>
+    <h2>Every Launch on Record</h2>
+    <div class="repo-list">
+      <a class="repo" href="https://github.com/blitzandres/lie-detector" target="_blank" rel="noopener">
+        <span class="name">lie-detector</span><span class="lang">Python</span>
+        <span class="desc">Open-source behavioral deception detection engine — 66 cues, Bayesian fusion, personal baseline calibration.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/elevatron" target="_blank" rel="noopener">
+        <span class="name">elevatron</span><span class="lang">TeX</span>
+        <span class="desc">Concept study of a magnetically-pinched, laser-coupled beam as a dual conductor/structure for space access.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/sigspace" target="_blank" rel="noopener">
+        <span class="name">sigspace</span><span class="lang">HTML</span>
+        <span class="desc">SIGSPACE — real signal data as a video game world.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/iptv-player" target="_blank" rel="noopener">
+        <span class="name">iptv-player</span><span class="lang">HTML</span>
+        <span class="desc">IPTV player for Latin America &amp; USA — HLS.js, channel search, favorites, custom M3U playlists.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/compute-share-pilot" target="_blank" rel="noopener">
+        <span class="name">compute-share-pilot</span><span class="lang">Python</span>
+        <span class="desc">Trusted compute-sharing pilot for remote AI jobs.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/netwatch" target="_blank" rel="noopener">
+        <span class="name">netwatch</span><span class="lang">HTML</span>
+        <span class="desc">Local network monitoring dashboard — Python Flask, real-time intel, repo scanning.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/bluth-scan" target="_blank" rel="noopener">
+        <span class="name">bluth-scan</span><span class="lang">HTML</span>
+        <span class="desc">Real-time Bluetooth scanner with 3D neural node visualization (3d-force-graph + Flask-SocketIO + bleak).</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/andresblitz" target="_blank" rel="noopener">
+        <span class="name">andresblitz</span><span class="lang">HTML</span>
+        <span class="desc">This site — space-themed portfolio with a scroll-driven rocket launch, plus the World Cup Quiniela app.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/elite-island-movers" target="_blank" rel="noopener">
+        <span class="name">elite-island-movers</span><span class="lang">HTML</span>
+        <span class="desc">Website build for a Vancouver Island moving company.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/my-website" target="_blank" rel="noopener">
+        <span class="name">my-website</span><span class="lang">HTML</span>
+        <span class="desc">Earlier personal website experiments.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/condotwits" target="_blank" rel="noopener">
+        <span class="name">condotwits</span><span class="lang">PHP</span>
+        <span class="desc">Condo market chatter aggregator.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/Polemicalatina" target="_blank" rel="noopener">
+        <span class="name">Polemicalatina</span><span class="lang">HTML</span>
+        <span class="desc">Latin American commentary project.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/blitzandres.github.io" target="_blank" rel="noopener">
+        <span class="name">blitzandres.github.io</span><span class="lang">HTML</span>
+        <span class="desc">GitHub Pages home base.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/homesnewwest" target="_blank" rel="noopener">
+        <span class="name">homesnewwest</span><span class="lang">&mdash;</span>
+        <span class="desc">New Westminster real estate project.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/rep" target="_blank" rel="noopener">
+        <span class="name">rep</span><span class="lang">&mdash;</span>
+        <span class="desc">Sandbox repository.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="repo" href="https://github.com/blitzandres/testing-img" target="_blank" rel="noopener">
+        <span class="name">testing-img</span><span class="lang">&mdash;</span>
+        <span class="desc">Image hosting / imgbot testing.</span>
+        <span class="arrow">&rarr;</span>
+      </a>
     </div>
   </section>
 
-  <!-- CHAPTER 03 -->
-  <section id="c3" class="section border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-8">
-      <div class="text-xs tracking-[3px] text-[#3b82f6] mb-3">CHAPTER 03 — VELOCITY</div>
-      <h2 class="font-display text-[68px] md:text-[82px] leading-[0.9] tracking-[-2.5px]">Sales became<br>the proving ground.</h2>
-
-      <div class="mt-10 grid md:grid-cols-12 gap-x-16">
-        <div class="md:col-span-6 story">Real estate. Then cars. Both demanded everything. I chose to deliver.</div>
-        <div class="md:col-span-6 text-sm text-white/50 mt-8 md:mt-0">Record months. Broken targets. The same intensity from operations translated directly into sales. Results spoke louder than anything.</div>
-      </div>
-
-      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div class="minimal-card rounded-xl px-7 py-8">
-          <div class="font-display text-[56px] tracking-tighter">170</div>
-          <div class="text-xs mt-5 text-white/50 tracking-widest">CARS IN ONE MONTH — ALL-TIME RECORD</div>
-        </div>
-        <div class="minimal-card rounded-xl px-7 py-8">
-          <div class="font-display text-[56px] tracking-tighter">30%</div>
-          <div class="text-xs mt-5 text-white/50 tracking-widest">SALES GROWTH IN ONE YEAR</div>
-        </div>
-        <div class="minimal-card rounded-xl px-7 py-8">
-          <div class="font-display text-[56px] tracking-tighter">400+</div>
-          <div class="text-xs mt-5 text-white/50 tracking-widest">TRANSACTIONS PER MONTH</div>
-        </div>
-        <div class="minimal-card rounded-xl px-7 py-8">
-          <div class="font-display text-[56px] tracking-tighter">15+</div>
-          <div class="text-xs mt-5 text-white/50 tracking-widest">YEARS. FOUR INDUSTRIES.</div>
-        </div>
+  <!-- Section 3 -->
+  <section id="section-three">
+    <div class="inner" id="section-three-inner">
+      <p>Now arriving</p>
+      <h2>Andrés Blitz</h2>
+      <div class="links">
+        <a href="https://github.com/blitzandres" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://instagram.com/andresblitz" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:info@andresblitz.com">Email</a>
       </div>
     </div>
   </section>
+</div>
 
-  <!-- CHAPTER 04 -->
-  <section id="c4" class="section border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-8">
-      <div class="text-xs tracking-[3px] text-[#3b82f6] mb-3">CHAPTER 04 — CURRENT TRAJECTORY</div>
-      <h2 class="font-display text-[68px] md:text-[82px] leading-[0.9] tracking-[-2.5px]">Operations +<br>building in public.</h2>
+<script>
+(function() {
+  // ===================== SCROLL-DRIVEN SPACE SCENE =====================
+  // Replaces the video background: a procedural rocket launch driven by scroll.
+  // Progress 0 -> 1: Earth recedes below, star streaks accelerate, moon approaches.
+  const canvas = document.getElementById('scene-canvas');
+  const ctx = canvas.getContext('2d');
+  let W = 0, H = 0, DPR = 1;
+  let sceneStars = [];
 
-      <div class="mt-10 max-w-2xl story">Today I run fleet operations at scale while shipping code and tools in the open. The same person who once optimized petroleum logistics now writes, builds, and shares.</div>
+  function resizeScene() {
+    DPR = Math.min(devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = Math.round(W * DPR);
+    canvas.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    createSceneStars();
+  }
 
-      <div class="mt-12">
-        <div class="text-xs tracking-[2.5px] text-white/40 mb-4">WHAT I’M BUILDING RIGHT NOW</div>
-        <div class="grid md:grid-cols-2 gap-3">
-          <a href="https://github.com/blitzandres/lie-detector" target="_blank" class="minimal-card group rounded-xl p-8 block">
-            <div class="text-xs text-white/40">PYTHON</div>
-            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">Lie Detector</div>
-            <div class="text-white/50 mt-3 text-sm">Behavioral deception detection engine. 66 cues. Bayesian methods.</div>
-          </a>
-          <a href="https://github.com/blitzandres/netwatch" target="_blank" class="minimal-card group rounded-xl p-8 block">
-            <div class="text-xs text-white/40">PYTHON + FLASK</div>
-            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">NetWatch</div>
-            <div class="text-white/50 mt-3 text-sm">Real-time local network monitoring with live intelligence.</div>
-          </a>
-          <a href="https://github.com/blitzandres/bluth-scan" target="_blank" class="minimal-card group rounded-xl p-8 block">
-            <div class="text-xs text-white/40">PYTHON + 3D</div>
-            <div class="font-display text-3xl tracking-tight mt-4 group-hover:text-white">Bluth Scan</div>
-            <div class="text-white/50 mt-3 text-sm">Bluetooth scanner with neural 3D visualization.</div>
-          </a>
-          <a href="https://github.com/blitzandres" target="_blank" class="minimal-card group rounded-xl p-8 flex flex-col justify-between">
-            <div><div class="text-xs text-white/40">ALL OF IT</div><div class="font-display text-3xl tracking-tight mt-4">Full Archive</div></div>
-            <div class="text-xs text-white/40 mt-8 group-hover:text-white">github.com/blitzandres →</div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GAME -->
-  <section id="game" class="section border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-8 text-center">
-      <div class="text-xs tracking-[2px] text-white/40">YOU MADE IT THIS FAR</div>
-      <h3 class="font-display text-6xl tracking-[-1.5px] mt-3">SPACE INVADERS</h3>
-      <p class="text-white/50 mt-1 text-sm">Every serious journey needs one stupid game.</p>
-
-      <div class="mt-10 inline-block">
-        <div class="rounded border border-white/10 overflow-hidden bg-black">
-          <canvas id="game-canvas" width="580" height="360" class="block"></canvas>
-          <div class="bg-[#0a0a0a] px-5 py-3 text-xs flex justify-between text-white/50 border-t border-white/10 font-mono tracking-widest">
-            <div>SCORE <span id="score" class="text-white">00000</span></div>
-            <div>LEVEL <span id="level" class="text-white">1</span></div>
-            <div>LIVES <span id="lives" class="text-white">♥ ♥ ♥</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-4 text-[10px] tracking-[1.5px] text-white/30">← → / A D MOVE • SPACE SHOOT • P PAUSE • CLICK TO START</div>
-    </div>
-  </section>
-
-  <!-- FINAL -->
-  <section class="section border-t border-white/5">
-    <div class="max-w-3xl mx-auto px-8 text-center">
-      <div class="text-xs tracking-[2px] text-white/40">THE ONLY REAL QUESTION</div>
-      <h2 class="font-display text-6xl md:text-7xl tracking-[-1.5px] mt-6 leading-none">What are we<br>building next?</h2>
-
-      <div class="mt-10">
-        <a href="mailto:info@andresblitz.com" class="inline-flex items-center justify-center px-10 h-14 rounded-full bg-white text-black font-medium text-sm tracking-wider hover:bg-white/90">INFO@ANDRESBLITZ.COM</a>
-      </div>
-
-      <div class="mt-16 flex justify-center gap-9 text-xs text-white/40 tracking-widest">
-        <a href="https://github.com/blitzandres" class="hover:text-white">GITHUB</a>
-        <a href="https://x.com/andresblitz" class="hover:text-white">X</a>
-        <a href="https://ca.linkedin.com/in/andresblitz" class="hover:text-white">LINKEDIN</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="border-t border-white/5 py-8 text-center text-xs text-white/30 tracking-[2px]">
-    © <span id="year"></span> ANDRÉS BLITZ — NO DECORATION. JUST MOMENTUM.
-  </footer>
-
-  <script>
-    tailwind.config = { theme: { extend: { fontFamily: { display: ['Instrument Sans', 'Inter', 'sans-serif'] } } } };
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    gsap.registerPlugin(ScrollTrigger);
-    const lenis = new Lenis({ lerp: 0.07, smooth: true, wheelMultiplier: 0.85 });
-    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
-
-    const progress = document.getElementById('progress');
-    lenis.on('scroll', ({ scroll, limit }) => { progress.style.width = Math.min((scroll / limit) * 100, 100) + '%'; });
-
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', function(e) {
-        const t = document.querySelector(this.getAttribute('href'));
-        if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: -70, duration: 1.0 }); }
+  function createSceneStars() {
+    sceneStars = [];
+    const count = Math.floor((W * H) / 6000);
+    for (let i = 0; i < count; i++) {
+      sceneStars.push({
+        x: Math.random(),
+        y: Math.random(),
+        z: 0.3 + Math.random() * 0.7,
+        size: Math.random() * 1.4 + 0.4,
+        tw: Math.random() * Math.PI * 2
       });
+    }
+  }
+
+  function getProgress() {
+    const end = document.documentElement.scrollHeight - window.innerHeight;
+    if (end <= 0) return 0;
+    return Math.max(0, Math.min(1, window.scrollY / end));
+  }
+
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const ease = t => t * t * (3 - 2 * t);
+
+  function drawBackground(p) {
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#020208');
+    g.addColorStop(0.6, '#050514');
+    g.addColorStop(1, p < 0.4 ? '#0a1226' : '#06060f');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    let n1 = ctx.createRadialGradient(W * 0.25, H * 0.3, 0, W * 0.25, H * 0.3, H * 0.6);
+    n1.addColorStop(0, 'rgba(44,92,136,0.14)');
+    n1.addColorStop(1, 'rgba(44,92,136,0)');
+    ctx.fillStyle = n1;
+    ctx.fillRect(0, 0, W, H);
+
+    let n2 = ctx.createRadialGradient(W * 0.8, H * 0.65, 0, W * 0.8, H * 0.65, H * 0.55);
+    n2.addColorStop(0, 'rgba(90,60,150,0.10)');
+    n2.addColorStop(1, 'rgba(90,60,150,0)');
+    ctx.fillStyle = n2;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function drawSceneStars(p, t) {
+    const streak = p * 26; // stars stretch into streaks as ascent speeds up
+    for (const s of sceneStars) {
+      const y = ((s.y + p * s.z * 2.2) % 1) * H;
+      const x = s.x * W;
+      const alpha = (0.35 + 0.65 * Math.abs(Math.sin(s.tw + t * 0.0012))) * (0.4 + 0.6 * s.z);
+      const len = streak * s.z;
+      ctx.strokeStyle = `rgba(220,230,255,${alpha})`;
+      ctx.lineWidth = s.size;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x, y + Math.max(0.5, len));
+      ctx.stroke();
+    }
+  }
+
+  function drawEarth(p) {
+    const vis = 1 - clamp01(p / 0.45);
+    if (vis <= 0) return;
+    const R = H * 1.6;
+    const cy = H + R * 0.82 + ease(clamp01(p / 0.45)) * H * 1.6;
+    const cx = W / 2;
+
+    let atm = ctx.createRadialGradient(cx, cy, R * 0.96, cx, cy, R * 1.12);
+    atm.addColorStop(0, `rgba(90,160,255,${0.35 * vis})`);
+    atm.addColorStop(1, 'rgba(90,160,255,0)');
+    ctx.fillStyle = atm;
+    ctx.beginPath();
+    ctx.arc(cx, cy, R * 1.12, 0, Math.PI * 2);
+    ctx.fill();
+
+    let body = ctx.createRadialGradient(cx, cy - R * 0.2, R * 0.3, cx, cy, R);
+    body.addColorStop(0, `rgba(46,110,180,${0.95 * vis})`);
+    body.addColorStop(0.7, `rgba(20,60,110,${0.95 * vis})`);
+    body.addColorStop(1, `rgba(8,25,50,${0.95 * vis})`);
+    ctx.fillStyle = body;
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function drawMoon(p) {
+    const vis = clamp01((p - 0.62) / 0.28);
+    if (vis <= 0) return;
+    const r = H * 0.16 * (0.6 + 0.4 * vis);
+    const cx = W * 0.72;
+    const cy = H * 0.30 - vis * H * 0.08;
+
+    let glow = ctx.createRadialGradient(cx, cy, r * 0.8, cx, cy, r * 1.6);
+    glow.addColorStop(0, `rgba(200,210,230,${0.18 * vis})`);
+    glow.addColorStop(1, 'rgba(200,210,230,0)');
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r * 1.6, 0, Math.PI * 2);
+    ctx.fill();
+
+    let body = ctx.createRadialGradient(cx - r * 0.35, cy - r * 0.35, r * 0.2, cx, cy, r);
+    body.addColorStop(0, `rgba(226,230,238,${vis})`);
+    body.addColorStop(0.75, `rgba(160,168,182,${vis})`);
+    body.addColorStop(1, `rgba(95,102,118,${vis})`);
+    ctx.fillStyle = body;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = `rgba(120,128,144,${0.5 * vis})`;
+    const craters = [[-0.3, -0.15, 0.16], [0.25, 0.2, 0.12], [0.05, -0.4, 0.09], [-0.15, 0.42, 0.1], [0.45, -0.25, 0.07]];
+    for (const [ox, oy, cr] of craters) {
+      ctx.beginPath();
+      ctx.arc(cx + ox * r, cy + oy * r, cr * r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function drawRocket(p, t) {
+    const s = Math.min(W, H) * 0.028; // scale unit; rocket ~6.5 units tall
+    const cx = W / 2 + Math.sin(t * 0.0009) * s * 0.5;
+    const cy = H * 0.78 - ease(p) * H * 0.48;
+
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(Math.sin(t * 0.0011) * 0.02);
+
+    // Exhaust glow
+    const flick = 0.85 + Math.sin(t * 0.028) * 0.1 + Math.random() * 0.08;
+    const flameLen = s * (2.4 + p * 3.2) * flick;
+    let glow = ctx.createRadialGradient(0, s * 2.8, 0, 0, s * 2.8, flameLen * 1.2);
+    glow.addColorStop(0, 'rgba(255,170,60,0.35)');
+    glow.addColorStop(1, 'rgba(255,120,30,0)');
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(0, s * 2.8, flameLen * 1.2, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Flame
+    let fg = ctx.createLinearGradient(0, s * 2.6, 0, s * 2.6 + flameLen);
+    fg.addColorStop(0, 'rgba(255,255,255,0.95)');
+    fg.addColorStop(0.25, 'rgba(255,205,90,0.9)');
+    fg.addColorStop(0.65, 'rgba(255,110,35,0.55)');
+    fg.addColorStop(1, 'rgba(255,60,0,0)');
+    ctx.beginPath();
+    ctx.moveTo(-s * 0.55, s * 2.6);
+    ctx.quadraticCurveTo(-s * 0.75, s * 2.6 + flameLen * 0.5, 0, s * 2.6 + flameLen);
+    ctx.quadraticCurveTo(s * 0.75, s * 2.6 + flameLen * 0.5, s * 0.55, s * 2.6);
+    ctx.closePath();
+    ctx.fillStyle = fg;
+    ctx.fill();
+
+    // Fins
+    ctx.fillStyle = '#2C5C88';
+    ctx.beginPath();
+    ctx.moveTo(-s * 0.8, s * 1.2);
+    ctx.quadraticCurveTo(-s * 1.9, s * 2.3, -s * 1.7, s * 2.9);
+    ctx.lineTo(-s * 0.8, s * 2.4);
+    ctx.closePath();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(s * 0.8, s * 1.2);
+    ctx.quadraticCurveTo(s * 1.9, s * 2.3, s * 1.7, s * 2.9);
+    ctx.lineTo(s * 0.8, s * 2.4);
+    ctx.closePath();
+    ctx.fill();
+
+    // Body
+    let bg = ctx.createLinearGradient(-s * 0.9, 0, s * 0.9, 0);
+    bg.addColorStop(0, '#8d95a6');
+    bg.addColorStop(0.35, '#f2f4f8');
+    bg.addColorStop(0.65, '#e2e6ee');
+    bg.addColorStop(1, '#7c8494');
+    ctx.fillStyle = bg;
+    ctx.beginPath();
+    ctx.moveTo(0, -s * 3.4);
+    ctx.bezierCurveTo(s * 0.95, -s * 2.2, s * 0.9, s * 0.6, s * 0.7, s * 2.6);
+    ctx.lineTo(-s * 0.7, s * 2.6);
+    ctx.bezierCurveTo(-s * 0.9, s * 0.6, -s * 0.95, -s * 2.2, 0, -s * 3.4);
+    ctx.closePath();
+    ctx.fill();
+
+    // Nose cone
+    ctx.fillStyle = '#2C5C88';
+    ctx.beginPath();
+    ctx.moveTo(0, -s * 3.4);
+    ctx.bezierCurveTo(s * 0.62, -s * 2.65, s * 0.78, -s * 2.1, s * 0.82, -s * 1.7);
+    ctx.lineTo(-s * 0.82, -s * 1.7);
+    ctx.bezierCurveTo(-s * 0.78, -s * 2.1, -s * 0.62, -s * 2.65, 0, -s * 3.4);
+    ctx.closePath();
+    ctx.fill();
+
+    // Window
+    ctx.beginPath();
+    ctx.arc(0, -s * 0.5, s * 0.42, 0, Math.PI * 2);
+    ctx.fillStyle = '#1c2a3a';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(0, -s * 0.5, s * 0.3, 0, Math.PI * 2);
+    let wg = ctx.createRadialGradient(-s * 0.1, -s * 0.62, 0, 0, -s * 0.5, s * 0.3);
+    wg.addColorStop(0, '#cfe8ff');
+    wg.addColorStop(1, '#5a9fd6');
+    ctx.fillStyle = wg;
+    ctx.fill();
+
+    // Engine nozzle
+    ctx.fillStyle = '#3a4150';
+    ctx.beginPath();
+    ctx.moveTo(-s * 0.7, s * 2.6);
+    ctx.lineTo(s * 0.7, s * 2.6);
+    ctx.lineTo(s * 0.5, s * 2.95);
+    ctx.lineTo(-s * 0.5, s * 2.95);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function sceneTick(t) {
+    const p = getProgress();
+    drawBackground(p);
+    drawSceneStars(p, t);
+    drawMoon(p);
+    drawEarth(p);
+    drawRocket(p, t);
+    requestAnimationFrame(sceneTick);
+  }
+
+  resizeScene();
+  window.addEventListener('resize', resizeScene);
+  requestAnimationFrame(sceneTick);
+
+  // ===================== PARTICLES (foreground stardust) =====================
+  const pCanvas = document.getElementById('particles-canvas');
+  const pCtx = pCanvas.getContext('2d');
+  let particles = [];
+
+  function resizeParticles() {
+    pCanvas.width = window.innerWidth;
+    pCanvas.height = window.innerHeight;
+    createParticles();
+  }
+
+  function createParticles() {
+    particles = [];
+    const count = Math.floor((pCanvas.width * pCanvas.height) / 12000);
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * pCanvas.width,
+        y: Math.random() * pCanvas.height,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 1.5 + 0.5,
+        opacity: Math.random() * 0.6 + 0.2,
+        tw: Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  function animateParticles(t) {
+    pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+    for (const p of particles) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = pCanvas.width;
+      if (p.x > pCanvas.width) p.x = 0;
+      if (p.y < 0) p.y = pCanvas.height;
+      if (p.y > pCanvas.height) p.y = 0;
+      const twinkle = 0.6 + 0.4 * Math.sin(p.tw + t * 0.0015);
+      pCtx.beginPath();
+      pCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      pCtx.fillStyle = `rgba(255,255,255,${p.opacity * twinkle})`;
+      pCtx.fill();
+    }
+    requestAnimationFrame(animateParticles);
+  }
+
+  resizeParticles();
+  window.addEventListener('resize', resizeParticles);
+  requestAnimationFrame(animateParticles);
+
+  // ===================== HERO FADE =====================
+  function updateHeroOpacity() {
+    const fade = Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.3));
+    document.getElementById('hero').style.opacity = fade;
+  }
+  window.addEventListener('scroll', updateHeroOpacity, { passive: true });
+
+  // ===================== FIXED CARDS =====================
+  const fixedCards = document.getElementById('fixed-cards');
+  const cardsGrid = fixedCards.querySelector('.grid');
+
+  function tickCards() {
+    const trigger = document.getElementById('cards-trigger');
+    const rect = trigger.getBoundingClientRect();
+    const triggerTop = rect.top + window.scrollY;
+    const triggerHeight = rect.height;
+    const scrollY = window.scrollY;
+    const vh = window.innerHeight;
+
+    const start = triggerTop - vh * 0.5;
+    const end = triggerTop + triggerHeight - vh * 0.3;
+    const range = end - start;
+
+    let progress = range > 0 ? (scrollY - start) / range : 0;
+    progress = Math.max(0, Math.min(1, progress));
+
+    const isActive = scrollY >= start - vh * 0.2 && scrollY <= end + vh * 0.3;
+    const fadeIn = Math.min(1, Math.max(0, (scrollY - (start - vh * 0.2)) / (vh * 0.2)));
+    const fadeOut = Math.min(1, Math.max(0, (end + vh * 0.3 - scrollY) / (vh * 0.3)));
+    const containerOpacity = isActive ? Math.min(fadeIn, fadeOut) : 0;
+
+    fixedCards.style.opacity = containerOpacity;
+    fixedCards.style.pointerEvents = containerOpacity > 0.1 ? 'auto' : 'none';
+
+    const isMobile = window.innerWidth < 768;
+    const revealPct = progress * 130;
+    if (isMobile) {
+      cardsGrid.style.maskImage = `linear-gradient(to bottom, black ${revealPct}%, transparent ${revealPct + 20}%)`;
+      cardsGrid.style.webkitMaskImage = `linear-gradient(to bottom, black ${revealPct}%, transparent ${revealPct + 20}%)`;
+    } else {
+      cardsGrid.style.maskImage = `linear-gradient(to right, black ${revealPct}%, transparent ${revealPct + 15}%)`;
+      cardsGrid.style.webkitMaskImage = `linear-gradient(to right, black ${revealPct}%, transparent ${revealPct + 15}%)`;
+    }
+
+    requestAnimationFrame(tickCards);
+  }
+  requestAnimationFrame(tickCards);
+
+  // ===================== REPO LIST REVEAL =====================
+  const repoRows = document.querySelectorAll('#repos .repo');
+  const repoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${(i % 6) * 60}ms`;
+        entry.target.classList.add('visible');
+        repoObserver.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.1 });
+  repoRows.forEach(r => repoObserver.observe(r));
 
-    // === IMPROVED EYE-CATCHING HERO CANVAS (subtle trajectory) ===
-    (function() {
-      const canvas = document.getElementById('hero-canvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d', { alpha: true });
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      resize();
-      window.addEventListener('resize', resize);
-
-      const points = Array.from({ length: 7 }, () => ({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight * 0.7 + 80,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.12
-      }));
-
-      let mx = window.innerWidth * 0.6, my = window.innerHeight * 0.45;
-      window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = 'rgba(59,130,246,0.18)';
-        ctx.lineWidth = 1;
-
-        points.forEach((p, i) => {
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-          if (p.y < 60 || p.y > canvas.height * 0.75) p.vy *= -1;
-
-          // draw connections
-          for (let j = i + 1; j < points.length; j++) {
-            const q = points[j];
-            const dx = p.x - q.x, dy = p.y - q.y;
-            const d = Math.sqrt(dx*dx + dy*dy);
-            if (d < 280) {
-              ctx.globalAlpha = (280 - d) / 280 * 0.6;
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(q.x, q.y);
-              ctx.stroke();
-            }
-          }
-          ctx.globalAlpha = 0.5;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, 1.2, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(59,130,246,0.5)';
-          ctx.fill();
-        });
-        ctx.globalAlpha = 1;
-
-        // subtle mouse pull line
-        ctx.strokeStyle = 'rgba(59,130,246,0.09)';
-        ctx.beginPath();
-        ctx.moveTo(points[0].x, points[0].y);
-        ctx.lineTo(mx * 0.6 + points[0].x * 0.4, my * 0.6 + points[0].y * 0.4);
-        ctx.stroke();
-
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-
-    // SPACE INVADERS (same clean version)
-    (function() {
-      const c = document.getElementById('game-canvas');
-      if (!c) return;
-      const ctx = c.getContext('2d');
-      const W = c.width, H = c.height;
-
-      let started = false, paused = false, over = false;
-      let score = 0, level = 1, lives = 3, frame = 0, dir = 1, speed = 0.65;
-      let lastShot = 0;
-      let bullets = [], aBullets = [];
-      let keys = {};
-      const p = { x: W/2, y: H-42, w: 34, h: 14 };
-      let aliens = [], shields = [];
-
-      function resetAliens() {
-        aliens = [];
-        const sx = (W - 8 * 40) / 2 + 14;
-        for (let r = 0; r < 3; r++) for (let col = 0; col < 8; col++)
-          aliens.push({ x: sx + col * 40, y: 52 + r * 32, alive: true });
-        dir = 1; speed = 0.65 + (level - 1) * 0.13;
-      }
-      function resetShields() {
-        shields = [];
-        const g = (W - 4 * 36) / 5;
-        for (let i = 0; i < 4; i++) shields.push({ x: g + i * (36 + g), y: H - 82, hp: 5 });
-      }
-      function reset() {
-        score = 0; level = 1; lives = 3; frame = 0; bullets = []; aBullets = [];
-        over = false; paused = false; p.x = W/2;
-        resetAliens(); resetShields(); updateHUD();
-      }
-      function updateHUD() {
-        document.getElementById('score').textContent = score.toString().padStart(5, '0');
-        document.getElementById('level').textContent = level;
-        document.getElementById('lives').innerHTML = '♥ '.repeat(lives).trim();
-      }
-
-      function draw() {
-        ctx.fillStyle = '#0a0a0a'; ctx.fillRect(0, 0, W, H);
-        ctx.strokeStyle = 'rgba(255,255,255,0.035)';
-        for (let x = 24; x < W; x += 24) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
-
-        if (!started) {
-          ctx.fillStyle = '#666'; ctx.font = '13px Inter, system-ui'; ctx.textAlign = 'center';
-          ctx.fillText('CLICK TO START', W/2, H/2); return;
-        }
-
-        ctx.fillStyle = '#f5f5f5';
-        ctx.fillRect(p.x - p.w/2, p.y - 4, p.w, 8);
-        ctx.fillStyle = '#3b82f6';
-        ctx.fillRect(p.x - 4, p.y - 11, 8, 6);
-
-        ctx.fillStyle = '#3b82f6';
-        aliens.forEach(a => { if (a.alive) ctx.fillRect(a.x - 14, a.y - 10, 28, 20); });
-
-        ctx.fillStyle = '#fff'; bullets.forEach(b => ctx.fillRect(b.x - 1, b.y - 5, 2, 8));
-        ctx.fillStyle = '#f87171'; aBullets.forEach(b => ctx.fillRect(b.x - 1.5, b.y - 4, 3, 7));
-
-        ctx.fillStyle = '#444';
-        shields.forEach(s => { if (s.hp > 0) { ctx.globalAlpha = s.hp / 5; ctx.fillRect(s.x, s.y, 34, 11); } });
-        ctx.globalAlpha = 1;
-
-        if (paused) { ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0,0,W,H); ctx.fillStyle='#fff'; ctx.font='600 15px Inter'; ctx.fillText('PAUSED', W/2, H/2); }
-        if (over) {
-          ctx.fillStyle = 'rgba(0,0,0,0.85)'; ctx.fillRect(0,0,W,H);
-          ctx.fillStyle = '#fff'; ctx.font = '600 16px Inter'; ctx.textAlign = 'center';
-          ctx.fillText('MISSION COMPLETE', W/2, H/2 - 8);
-          ctx.fillStyle = '#666'; ctx.font = '13px Inter'; ctx.fillText('SCORE ' + score + '  —  CLICK TO RESTART', W/2, H/2 + 18);
-        }
-      }
-
-      function update() {
-        if (!started || paused || over) return;
-
-        if (keys['ArrowLeft'] || keys['a']) p.x -= 4.4;
-        if (keys['ArrowRight'] || keys['d']) p.x += 4.4;
-        p.x = Math.max(22, Math.min(W - 22, p.x));
-
-        bullets.forEach((b, i) => { b.y -= 8; if (b.y < 0) bullets.splice(i,1); });
-
-        let edge = false;
-        aliens.forEach(a => { if (!a.alive) return; a.x += dir * speed; if (a.x < 24 || a.x > W - 24) edge = true; });
-        if (edge) { dir *= -1; aliens.forEach(a => a.y += 16); }
-
-        if (frame % Math.max(36, 50 - level * 3) === 0) {
-          const live = aliens.filter(a => a.alive);
-          if (live.length) {
-            const s = live[Math.floor(Math.random() * live.length)];
-            aBullets.push({ x: s.x, y: s.y + 10 });
-          }
-        }
-        aBullets.forEach((b, i) => { b.y += 3.6; if (b.y > H) aBullets.splice(i,1); });
-
-        bullets.forEach((b, bi) => {
-          aliens.forEach(a => {
-            if (a.alive && Math.abs(b.x - a.x) < 16 && Math.abs(b.y - a.y) < 12) {
-              a.alive = false; bullets.splice(bi, 1); score += 10; updateHUD();
-            }
-          });
-        });
-
-        aBullets.forEach((b, i) => {
-          if (Math.abs(b.x - p.x) < 18 && Math.abs(b.y - p.y) < 14) {
-            aBullets.splice(i, 1); lives--; updateHUD(); if (lives <= 0) over = true;
-          }
-        });
-
-        if (aliens.every(a => !a.alive)) { level++; resetAliens(); aBullets = []; updateHUD(); }
-        frame++;
-      }
-
-      function loop() { update(); draw(); requestAnimationFrame(loop); }
-
-      window.addEventListener('keydown', e => {
-        keys[e.key] = true;
-        if (e.key.toLowerCase() === 'p' && started && !over) paused = !paused;
-        if (e.key === ' ' && started && !paused && !over) {
-          e.preventDefault();
-          const t = Date.now();
-          if (t - lastShot > 160) { bullets.push({ x: p.x, y: p.y - 12 }); lastShot = t; }
-        }
-      });
-      window.addEventListener('keyup', e => keys[e.key] = false);
-
-      c.addEventListener('click', () => { if (!started) { started = true; reset(); } else if (over) reset(); else if (paused) paused = false; });
-      c.addEventListener('mousedown', () => {
-        if (started && !paused && !over) {
-          const t = Date.now(); if (t - lastShot > 160) { bullets.push({ x: p.x, y: p.y - 12 }); lastShot = t; }
-        }
-      });
-
-      let tx = 0;
-      c.addEventListener('touchstart', e => {
-        if (!started) { started = true; reset(); return; }
-        if (over) { reset(); return; }
-        tx = e.touches[0].clientX;
-        if (started && !paused && !over) bullets.push({ x: p.x, y: p.y - 12 });
-      });
-      c.addEventListener('touchmove', e => {
-        if (!started || paused || over) return;
-        p.x = Math.max(22, Math.min(W - 22, W/2 + (e.touches[0].clientX - tx) * 1.7));
-      });
-
-      loop();
-    })();
-  </script>
+  // ===================== SECTION 3 INTERSECTION =====================
+  const sectionThreeInner = document.getElementById('section-three-inner');
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      sectionThreeInner.classList.add('visible');
+      observer.unobserve(sectionThreeInner);
+    }
+  }, { threshold: 0.15 });
+  observer.observe(sectionThreeInner);
+})();
+</script>
 </body>
 </html>
