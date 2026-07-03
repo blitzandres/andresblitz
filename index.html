@@ -486,5 +486,18 @@ footer {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
 </script>
+<script>
+// blitz-analytics (self-hosted, github.com/blitzandres/blitz-analytics).
+// Set BLITZ_ENDPOINT to the public URL of the collector to activate; empty = disabled.
+(function() {
+  var BLITZ_ENDPOINT = '';
+  if (!BLITZ_ENDPOINT) return;
+  var s = document.createElement('script');
+  s.src = BLITZ_ENDPOINT + '/t.js';
+  s.defer = true;
+  s.setAttribute('data-endpoint', BLITZ_ENDPOINT);
+  document.body.appendChild(s);
+})();
+</script>
 </body>
 </html>
