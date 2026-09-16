@@ -1,535 +1,615 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Andrés Blitz | Full-Time Trader · Sales &amp; Ops Leader | Victoria, BC</title>
-<meta name="description" content="Andrés Blitz is a full-time trader based in Victoria, BC, with 15+ years in sales leadership and operations across real estate, petroleum, and automotive. Builder of open-source tools." />
-<meta name="keywords" content="full-time trader Victoria BC, sales leader, operations, Andrés Blitz, open-source" />
+
+<!-- SEO META TAGS -->
+<title>Andrés Blitz | Full-Time Trader · Sales Leader & Operations Expert | Victoria, BC</title>
+<meta name="description" content="Andrés Blitz is a full-time trader in Victoria, BC, with 15+ years as a sales leader and operations expert across real estate, petroleum, automotive, and ops. Builder of open-source tools." />
+<meta name="keywords" content="full-time trader Victoria BC, sales leader, operations management, tech strategist Canada" />
 <link rel="canonical" href="https://andresblitz.com/" />
 <meta property="og:type" content="profile" />
 <meta property="og:url" content="https://andresblitz.com/" />
-<meta property="og:title" content="Andrés Blitz | Full-Time Trader · Sales &amp; Ops Leader" />
-<meta property="og:description" content="Full-time trader in Victoria, BC. 15+ years in sales leadership and operations. Building open-source tools." />
+<meta property="og:title" content="Andrés Blitz | Full-Time Trader · Sales Leader & Operations Expert" />
+<meta property="og:description" content="Full-time trader in Victoria, BC — with 15+ years in sales leadership and operations. Builder of open-source tools." />
 <meta property="og:image" content="https://andresblitz.com/assets/hero-markets.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@andresblitz" />
-<meta name="twitter:title" content="Andrés Blitz | Full-Time Trader · Sales &amp; Ops Leader" />
-<meta name="twitter:description" content="Full-time trader in Victoria, BC. 15+ years in sales leadership and operations." />
+<meta name="twitter:title" content="Andrés Blitz | Full-Time Trader · Sales Leader & Operations Expert" />
+<meta name="twitter:description" content="Full-time trader in Victoria, BC — with 15+ years in sales leadership and operations." />
 <meta name="twitter:image" content="https://andresblitz.com/assets/hero-markets.png" />
-<meta name="theme-color" content="#0a0a0a" />
+<meta name="theme-color" content="#05070f" />
 <meta name="geo.position" content="48.4281;-123.3656" />
 <meta name="geo.placename" content="Victoria, British Columbia, Canada" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        ink: '#0a0a0a',
-        panel: '#111111',
-        line: 'rgba(148,163,184,0.14)',
-        mute: '#97a3b8',
-        accent: '#3b82f6',
-        accent2: '#60a5fa',
-      },
-      fontFamily: {
-        display: ['Archivo', 'sans-serif'],
-        body: ['Space Grotesk', 'sans-serif'],
-      },
-      boxShadow: {
-        glow: '0 0 40px rgba(59,130,246,0.25)',
-      }
-    }
-  }
-}
-</script>
-<style>
-  :root { color-scheme: dark; }
-  html.lenis, html.lenis body { height: auto; }
-  .lenis.lenis-smooth { scroll-behavior: auto !important; }
-  body { font-family: 'Space Grotesk', sans-serif; background: #0a0a0a; color: #e7ecf5; }
-  h1,h2,h3,.font-display { font-family: 'Archivo', sans-serif; }
-  .text-gradient {
-    background: linear-gradient(120deg, #60a5fa, #3b82f6 45%, #93c5fd);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent; color: transparent;
-  }
-  .glass {
-    background: rgba(17,17,17,0.72);
-    border: 1px solid rgba(148,163,184,0.14);
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  }
-  .card-hover { transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .25s, box-shadow .35s; }
-  .card-hover:hover {
-    transform: translateY(-6px);
-    border-color: rgba(59,130,246,0.55);
-    box-shadow: 0 18px 50px rgba(59,130,246,0.14);
-  }
-  .hero-overlay {
-    background:
-      linear-gradient(180deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.55) 35%, rgba(10,10,10,0.88) 78%, #0a0a0a 100%),
-      radial-gradient(ellipse at 50% 20%, rgba(59,130,246,0.18), transparent 55%);
-  }
-  .chapter-num {
-    font-family: 'Space Grotesk', monospace;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-size: 0.72rem;
-    color: #3b82f6;
-  }
-  .reveal { opacity: 0; transform: translateY(28px); }
-  .motif-wrap img { width: 100%; height: auto; display: block; opacity: 0.85; mix-blend-mode: screen; }
-  #game-wrap { border: 1px solid rgba(148,163,184,0.14); background: #050505; border-radius: 1rem; overflow: hidden; }
-  canvas#gc { display: block; max-width: 100%; width: 100%; height: auto; }
-  .ghud { display:flex; justify-content:space-between; padding: 0.7rem 1rem; border-top: 1px solid rgba(148,163,184,0.14); background: #0a0a0a; font-size: 0.75rem; letter-spacing: 0.08em; color: #97a3b8; }
-  .ghud b { color: #60a5fa; font-weight: 600; }
-  kbd { border: 1px solid rgba(148,163,184,0.25); padding: 2px 7px; border-radius: 4px; color: #c7d2e0; font-size: 0.7rem; }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1 !important; transform: none !important; }
-    html { scroll-behavior: auto; }
-  }
-  :focus-visible { outline: 2px solid #3b82f6; outline-offset: 3px; }
-</style>
-</head>
-<body class="bg-ink text-[#e7ecf5] antialiased overflow-x-hidden">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 
-<!-- NAV -->
-<nav id="nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300">
-  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-    <a href="/" class="font-display font-bold tracking-tight text-[1.05rem] flex items-center gap-2" aria-label="Andrés Blitz home">
-      <span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-accent/15 border border-accent/30 text-accent text-xs">AB</span>
+<style>
+:root {
+  --bg: #05070f;
+  --surface: #0b101d;
+  --surface-hover: #111828;
+  --border: rgba(148,163,184,0.14);
+  --text: #e7ecf5;
+  --muted: #97a3b8;
+  --accent: #5b8def;
+  --accent-2: #a78bfa;
+  --accent-soft: rgba(91,141,239,0.12);
+  --grad: linear-gradient(120deg, #5b8def, #a78bfa);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Archivo', sans-serif; line-height: 1.15; }
+a { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Starfield background — single subtle layer */
+#stars {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+.page { position: relative; z-index: 1; }
+
+.container { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ============ NAV ============ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(5,7,15,0.78);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+nav .inner {
+  max-width: 72rem; margin: 0 auto; padding: 0 1.5rem;
+  height: 4rem; display: flex; align-items: center; justify-content: space-between;
+}
+nav .logo {
+  font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.05rem;
+  color: var(--text); text-decoration: none; letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+nav .logo svg { width: 1.15rem; height: 1.15rem; color: var(--accent); }
+nav .links { display: flex; align-items: center; gap: 0.5rem; }
+nav .links a {
+  font-size: 0.875rem; color: var(--muted); text-decoration: none;
+  padding: 0.5rem 0.9rem; border-radius: 0.5rem; transition: color 0.2s, background 0.2s;
+}
+nav .links a:hover { color: var(--text); background: var(--surface-hover); }
+nav .links a.btn {
+  color: #fff; background: var(--accent); font-weight: 500; margin-left: 0.35rem;
+}
+nav .links a.btn:hover { background: #6f9bf2; }
+
+/* ============ HERO ============ */
+#hero {
+  min-height: 100dvh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  padding: 6rem 1.5rem 4rem; position: relative;
+}
+#hero .badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.4rem 1rem; margin-bottom: 2rem;
+  background: rgba(11,16,29,0.55);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+#hero .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399; }
+#hero h1 {
+  font-size: clamp(2.9rem, 7.5vw, 5.5rem); font-weight: 700; letter-spacing: -0.035em;
+}
+#hero h1 .accent {
+  background: var(--grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+#hero .role {
+  margin-top: 1.25rem; font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--muted); max-width: 38rem;
+}
+#hero .stats {
+  display: flex; gap: 2.5rem; margin-top: 2.25rem; flex-wrap: wrap; justify-content: center;
+}
+#hero .stats .stat { text-align: center; }
+#hero .stats .stat b {
+  display: block; font-family: 'Archivo', sans-serif; font-size: 1.35rem;
+  font-weight: 700; letter-spacing: -0.02em; color: var(--text);
+}
+#hero .stats .stat span { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+#hero .ctas { display: flex; gap: 0.9rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; }
+#hero .ctas a {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-size: 0.95rem; font-weight: 500; text-decoration: none;
+  padding: 0.85rem 1.75rem; border-radius: 0.6rem; transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+#hero .ctas a svg { width: 1.05rem; height: 1.05rem; }
+#hero .ctas .primary { background: var(--grad); color: #fff; box-shadow: 0 8px 28px rgba(91,141,239,0.28); }
+#hero .ctas .primary:hover { filter: brightness(1.12); transform: translateY(-1px); }
+#hero .ctas .secondary { border: 1px solid var(--border); color: var(--text); background: rgba(11,16,29,0.6); }
+#hero .ctas .secondary:hover { border-color: var(--accent); transform: translateY(-1px); }
+#hero .scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  color: var(--muted);
+}
+#hero .scroll-hint svg { width: 1.25rem; height: 1.25rem; }
+
+/* ============ SECTIONS ============ */
+section { padding: 5.5rem 0; }
+.section-head { margin-bottom: 2.75rem; }
+.section-head .kicker {
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.6rem;
+}
+.section-head h2 { font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 700; letter-spacing: -0.02em; }
+.section-head p { color: var(--muted); margin-top: 0.75rem; max-width: 40rem; }
+
+/* Reveal on scroll (subtle, reduced-motion safe, no-JS safe) */
+.reveal { transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+.js .reveal { opacity: 0; transform: translateY(16px); }
+.js .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ============ PROJECTS GRID ============ */
+#projects .grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+}
+.card {
+  display: flex; flex-direction: column; gap: 0.7rem;
+  background: rgba(11,16,29,0.62); border: 1px solid var(--border);
+  border-radius: 1rem; padding: 1.5rem; text-decoration: none;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  border-color: rgba(91,141,239,0.55); background: var(--surface-hover);
+  transform: translateY(-4px); box-shadow: 0 14px 40px rgba(91,141,239,0.13);
+}
+.card .top { display: flex; align-items: center; justify-content: space-between; }
+.card .top svg:first-child {
+  width: 2.15rem; height: 2.15rem; color: var(--accent);
+  background: var(--accent-soft); border: 1px solid rgba(91,141,239,0.22);
+  padding: 0.45rem; border-radius: 0.6rem; box-sizing: border-box;
+}
+.card .top .ext { color: var(--muted); width: 1rem; height: 1rem; transition: color 0.25s, transform 0.25s; }
+.card:hover .top .ext { transform: translate(2px, -2px); }
+.card:hover .top .ext { color: var(--text); }
+.card h3 { font-size: 1.05rem; font-weight: 600; color: var(--text); }
+.card p { font-size: 0.875rem; color: var(--muted); flex: 1; }
+.card .meta { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--muted); }
+.card .meta .lang-dot { width: 9px; height: 9px; border-radius: 50%; }
+
+/* Compact list for remaining repos */
+#more-repos { margin-top: 2.5rem; }
+#more-repos h3 { font-size: 0.9rem; font-weight: 600; color: var(--muted); margin-bottom: 1rem; letter-spacing: 0.03em; }
+#more-repos .chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+#more-repos .chips a {
+  font-size: 0.82rem; color: var(--muted); text-decoration: none;
+  border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 1rem;
+  background: rgba(11,16,29,0.5); transition: color 0.2s, border-color 0.2s;
+}
+#more-repos .chips a:hover { color: var(--text); border-color: var(--accent); }
+
+/* ============ ABOUT STRIP ============ */
+#about .strip {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+}
+#about .item {
+  background: rgba(11,16,29,0.62); border: 1px solid var(--border);
+  border-radius: 1rem; padding: 1.5rem;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+#about .item svg {
+  width: 2.15rem; height: 2.15rem; color: var(--accent); margin-bottom: 0.9rem;
+  background: var(--accent-soft); border: 1px solid rgba(91,141,239,0.22);
+  padding: 0.45rem; border-radius: 0.6rem; box-sizing: border-box;
+}
+#about .item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.45rem; }
+#about .item p { font-size: 0.875rem; color: var(--muted); }
+
+/* ============ CONTACT ============ */
+#contact { padding-bottom: 4rem; }
+#contact .panel {
+  position: relative;
+  background: linear-gradient(180deg, rgba(11,16,29,0.85) 0%, rgba(91,141,239,0.08) 100%);
+  border: 1px solid transparent; border-radius: 1.25rem;
+  padding: 3.5rem 2rem; text-align: center;
+  background-clip: padding-box;
+}
+#contact .panel::before {
+  content: ''; position: absolute; inset: -1px; z-index: -1;
+  border-radius: 1.25rem;
+  background: linear-gradient(120deg, rgba(91,141,239,0.45), rgba(148,163,184,0.12) 40%, rgba(167,139,250,0.4));
+}
+#contact h2 { font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 700; letter-spacing: -0.02em; }
+#contact p { color: var(--muted); margin-top: 0.75rem; }
+#contact .email {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  margin-top: 1.75rem; font-size: 1rem; font-weight: 500;
+  color: #fff; background: var(--accent); text-decoration: none;
+  padding: 0.9rem 2rem; border-radius: 0.6rem; transition: background 0.2s;
+}
+#contact .email:hover { background: #6f9bf2; }
+#contact .email svg { width: 1.1rem; height: 1.1rem; }
+#contact .socials { display: flex; justify-content: center; gap: 1rem; margin-top: 1.75rem; }
+#contact .socials a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.75rem; height: 2.75rem; border-radius: 0.6rem;
+  border: 1px solid var(--border); color: var(--muted); transition: color 0.2s, border-color 0.2s;
+}
+#contact .socials a:hover { color: var(--text); border-color: var(--accent); }
+#contact .socials svg { width: 1.2rem; height: 1.2rem; }
+
+/* ============ FOOTER ============ */
+footer {
+  border-top: 1px solid var(--border); padding: 1.75rem 0;
+  text-align: center; font-size: 0.82rem; color: var(--muted);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  #projects .grid { grid-template-columns: repeat(2, 1fr); }
+  #about .strip { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  nav .links a:not(.btn) { display: none; }
+  #projects .grid { grid-template-columns: 1fr; }
+  section { padding: 4rem 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation: none !important; transition-duration: 0.01ms !important; }
+}
+
+/* Additive: hero image, about visual, 4-up strip/stats */
+#hero { position: relative; overflow: hidden; }
+#hero > *:not(.hero-media) { position: relative; z-index: 1; }
+.hero-media { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-media img {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
+  filter: saturate(1.08) contrast(1.05);
+}
+.hero-shade {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 18%, rgba(91,141,239,0.22), transparent 55%),
+    linear-gradient(180deg, rgba(5,7,15,0.5) 0%, rgba(5,7,15,0.78) 52%, var(--bg) 100%);
+}
+.about-visual {
+  margin-top: 2.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  max-width: 52rem;
+}
+.about-visual img { display: block; width: 100%; height: auto; }
+.contact-motif { margin: 0 auto 1.75rem; max-width: 28rem; opacity: 0.72; }
+@media (min-width: 900px) {
+  #about .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1100px) {
+  #about .strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 720px) {
+  #hero .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<div class="page">
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="inner">
+    <a class="logo" href="/" aria-label="Andrés Blitz home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
       andresblitz
     </a>
-    <div class="flex items-center gap-1 sm:gap-2">
-      <a href="#now" class="hidden sm:inline-block text-sm text-mute hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition">Now</a>
-      <a href="#story" class="hidden sm:inline-block text-sm text-mute hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition">Story</a>
-      <a href="#projects" class="hidden md:inline-block text-sm text-mute hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition">Projects</a>
-      <a href="#play" class="hidden md:inline-block text-sm text-mute hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition">Play</a>
-      <a href="#contact" class="ml-1 text-sm font-medium text-white bg-accent hover:bg-accent2 px-4 py-2 rounded-lg transition shadow-glow">Contact</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<header id="hero" class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
-  <div class="absolute inset-0">
-    <img src="assets/hero-markets.png" alt="" class="h-full w-full object-cover scale-105" aria-hidden="true" />
-    <div class="absolute inset-0 hero-overlay"></div>
+<!-- ============ HERO ============ -->
+<header id="hero">
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/hero-markets.png" alt="" />
+    <div class="hero-shade"></div>
   </div>
-  <div class="relative z-10 max-w-4xl mx-auto px-5 pt-28 pb-20 text-center">
-    <div class="hero-badge inline-flex items-center gap-2 text-xs sm:text-sm text-mute border border-white/10 rounded-full px-4 py-1.5 mb-8 glass">
-      <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]"></span>
-      Victoria, BC · Full-time trader
-    </div>
-    <h1 class="hero-title font-display font-extrabold tracking-[-0.04em] text-[clamp(2.8rem,8vw,5.75rem)] leading-[0.95]">
-      Andrés <span class="text-gradient">Blitz</span>
-    </h1>
-    <p class="hero-sub mt-6 text-[clamp(1.05rem,2.2vw,1.35rem)] text-[#c7d2e0] max-w-2xl mx-auto leading-relaxed">
-      Full-time trader — with 15+ years in sales leadership and operations.
-      Markets by day. Systems, teams, and open-source builds in the mix.
-    </p>
-    <div class="hero-stats mt-10 flex flex-wrap justify-center gap-8 sm:gap-12">
-      <div><div class="font-display text-2xl font-bold">Full-time</div><div class="text-[0.72rem] uppercase tracking-[0.14em] text-mute mt-1">Trader</div></div>
-      <div><div class="font-display text-2xl font-bold">15+</div><div class="text-[0.72rem] uppercase tracking-[0.14em] text-mute mt-1">Years sales &amp; ops</div></div>
-      <div><div class="font-display text-2xl font-bold">Victoria</div><div class="text-[0.72rem] uppercase tracking-[0.14em] text-mute mt-1">British Columbia</div></div>
-    </div>
-    <div class="hero-ctas mt-10 flex flex-wrap justify-center gap-3">
-      <a href="#now" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent2 px-6 py-3.5 text-sm font-semibold text-white shadow-glow hover:brightness-110 transition">
-        See what I'm doing now
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a href="https://github.com/blitzandres" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-black/40 px-6 py-3.5 text-sm font-medium text-white hover:border-accent transition">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        GitHub
-      </a>
-    </div>
+  <div class="badge"><span class="dot" aria-hidden="true"></span> Victoria, BC &middot; Canada &middot; Full-time trader</div>
+  <h1>Andr&eacute;s <span class="accent">Blitz</span></h1>
+  <p class="role">Full-time trader — and a sales leader &amp; operations expert with 15+ years of proven results across real estate, petroleum, and automotive. Still building open-source tools and web experiments on the side.</p>
+  <div class="stats">
+    <div class="stat"><b>Now</b><span>Full-time trader</span></div>
+    <div class="stat"><b>15+</b><span>Years in sales &amp; ops</span></div>
+    <div class="stat"><b>16</b><span>Open-source repos</span></div>
+    <div class="stat"><b>4</b><span>Industries led</span></div>
   </div>
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-mute animate-bounce" aria-hidden="true">
-    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+  <div class="ctas">
+    <a class="primary" href="#projects">
+      View Projects
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+    <a class="secondary" href="https://github.com/blitzandres" target="_blank" rel="noopener">
+      <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
   </div>
 </header>
 
-<!-- CHAPTER 04 / NOW (trading prominent) -->
-<section id="now" class="relative py-24 sm:py-32 border-t border-white/5">
-  <div class="max-w-6xl mx-auto px-5">
-    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-      <div class="reveal order-2 lg:order-1">
-        <p class="chapter-num mb-3">Chapter 04 · Now</p>
-        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight leading-[1.05]">
-          Full-time in the <span class="text-gradient">markets</span>
-        </h2>
-        <p class="mt-5 text-mute text-base sm:text-lg leading-relaxed max-w-xl">
-          Trading is the main focus now — reading price action, managing risk, and staying disciplined session after session.
-          The same instincts that built sales teams and operational systems: clarity under pressure, process over impulse, and long-horizon thinking.
-        </p>
-        <ul class="mt-8 space-y-3 text-sm sm:text-base text-[#c7d2e0]">
-          <li class="flex gap-3"><span class="text-accent mt-1">▸</span><span>Primary role: <strong class="text-white font-semibold">full-time trader</strong></span></li>
-          <li class="flex gap-3"><span class="text-accent mt-1">▸</span><span>Background: sales leadership &amp; operations across real estate, petroleum, and automotive</span></li>
-          <li class="flex gap-3"><span class="text-accent mt-1">▸</span><span>Based in Victoria, BC — building in public on GitHub</span></li>
-        </ul>
-        <a href="#contact" class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-accent2 hover:text-white transition">
-          Get in touch
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">Projects</p>
+      <h2>Open-source builds</h2>
+      <p>Every repo, shipped public on GitHub. The featured work up top — everything else below.</p>
+    </div>
+
+    <div class="grid">
+      <a class="card reveal" href="https://github.com/blitzandres/lie-detector" target="_blank" rel="noopener">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </div>
+        <h3>lie-detector</h3>
+        <p>Behavioral deception detection engine — 66 cues, Bayesian fusion, personal baseline calibration.</p>
+        <div class="meta"><span class="lang-dot" style="background:#3572A5"></span> Python</div>
+      </a>
+
+      <a class="card reveal" href="https://github.com/blitzandres/elevatron" target="_blank" rel="noopener">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </div>
+        <h3>elevatron</h3>
+        <p>Cited concept study of a magnetically-pinched, laser-coupled beam as dual conductor/structure for space access.</p>
+        <div class="meta"><span class="lang-dot" style="background:#3D6117"></span> TeX</div>
+      </a>
+
+      <a class="card reveal" href="https://github.com/blitzandres/sigspace" target="_blank" rel="noopener">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h3l3-9 4 18 3-9h3"/><circle cx="20" cy="12" r="2"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </div>
+        <h3>sigspace</h3>
+        <p>SIGSPACE — real signal data rendered as a video game world.</p>
+        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML</div>
+      </a>
+
+      <a class="card reveal" href="https://github.com/blitzandres/iptv-player" target="_blank" rel="noopener">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </div>
+        <h3>iptv-player</h3>
+        <p>IPTV player for Latin America &amp; USA — HLS.js, channel search, favorites, custom M3U playlists.</p>
+        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML</div>
+      </a>
+
+      <a class="card reveal" href="https://github.com/blitzandres/netwatch" target="_blank" rel="noopener">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </div>
+        <h3>netwatch</h3>
+        <p>Local network monitoring dashboard — Python Flask, real-time intel, repo scanning.</p>
+        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML / Flask</div>
+      </a>
+
+      <a class="card reveal" href="https://github.com/blitzandres/bluth-scan" target="_blank" rel="noopener">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </div>
+        <h3>bluth-scan</h3>
+        <p>Real-time Bluetooth scanner with 3D neural node visualization — 3d-force-graph, Flask-SocketIO, bleak.</p>
+        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML / Python</div>
+      </a>
+    </div>
+
+    <div id="more-repos" class="reveal">
+      <h3>More on GitHub</h3>
+      <div class="chips">
+        <a href="https://github.com/blitzandres/compute-share-pilot" target="_blank" rel="noopener">compute-share-pilot</a>
+        <a href="https://github.com/blitzandres/andresblitz" target="_blank" rel="noopener">andresblitz</a>
+        <a href="https://github.com/blitzandres/elite-island-movers" target="_blank" rel="noopener">elite-island-movers</a>
+        <a href="https://github.com/blitzandres/my-website" target="_blank" rel="noopener">my-website</a>
+        <a href="https://github.com/blitzandres/condotwits" target="_blank" rel="noopener">condotwits</a>
+        <a href="https://github.com/blitzandres/Polemicalatina" target="_blank" rel="noopener">Polemicalatina</a>
+        <a href="https://github.com/blitzandres/blitzandres.github.io" target="_blank" rel="noopener">blitzandres.github.io</a>
+        <a href="https://github.com/blitzandres/homesnewwest" target="_blank" rel="noopener">homesnewwest</a>
+        <a href="https://github.com/blitzandres/rep" target="_blank" rel="noopener">rep</a>
+        <a href="https://github.com/blitzandres/testing-img" target="_blank" rel="noopener">testing-img</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">About</p>
+      <h2>What I do</h2>
+    </div>
+    <div class="strip">
+      <div class="item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <h3>Trading</h3>
+        <p>Full-time trader — markets as the current focus, built on the same discipline from sales and ops.</p>
+      </div>
+      <div class="item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+        <h3>Sales Leadership</h3>
+        <p>15+ years leading teams across real estate, petroleum, and automotive — strategy through close.</p>
+      </div>
+      <div class="item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m7 20.66 1-1.73"/></svg>
+        <h3>Operations</h3>
+        <p>Systems and execution — building the processes that let organizations run without friction.</p>
+      </div>
+      <div class="item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <h3>Building</h3>
+        <p>Open-source tools, dashboards, and web experiments — everything shipped public on GitHub.</p>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <img src="assets/trading-focus.png" alt="Abstract trading and markets visual" width="960" height="540" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="about-visual reveal contact-motif">
+      <img src="assets/velocity-arc.png" alt="" width="800" height="600" loading="lazy" />
+    </div>
+    <div class="panel reveal">
+      <h2>Let's talk</h2>
+      <p>Collaborations, ventures, or a good conversation about what's next.</p>
+      <a class="email" href="mailto:info@andresblitz.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        info@andresblitz.com
+      </a>
+      <div class="socials">
+        <a href="https://github.com/blitzandres" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://instagram.com/andresblitz" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
       </div>
-      <div class="reveal order-1 lg:order-2">
-        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-glow">
-          <img src="assets/trading-focus.png" alt="Trading focus — charts and market workspace" class="w-full h-full object-cover aspect-[4/3]" />
-          <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-4 left-4 right-4">
-            <div class="glass rounded-xl px-4 py-3 text-sm">
-              <span class="text-accent font-medium">Now</span>
-              <span class="text-mute"> · Full-time trader · Victoria, BC</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- VELOCITY MOTIF -->
-<div class="motif-wrap max-w-5xl mx-auto px-5 py-6 reveal" aria-hidden="true">
-  <img src="assets/velocity-arc.png" alt="" class="rounded-xl opacity-70" />
-</div>
-
-<!-- STORY CHAPTERS -->
-<section id="story" class="py-20 sm:py-28 border-t border-white/5">
-  <div class="max-w-6xl mx-auto px-5">
-    <div class="reveal mb-14 max-w-2xl">
-      <p class="chapter-num mb-3">The arc</p>
-      <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Sales. Ops. Velocity. Markets.</h2>
-      <p class="mt-4 text-mute">Fifteen-plus years leading people and systems — now concentrated on trading full-time.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      <article class="reveal glass rounded-2xl p-6 card-hover">
-        <p class="chapter-num mb-4">Chapter 01</p>
-        <h3 class="font-display text-xl font-semibold">Sales leadership</h3>
-        <p class="mt-3 text-sm text-mute leading-relaxed">Leading teams across real estate, petroleum, and automotive — strategy through close, coaching under pressure, and results that stick.</p>
-      </article>
-      <article class="reveal glass rounded-2xl p-6 card-hover">
-        <p class="chapter-num mb-4">Chapter 02</p>
-        <h3 class="font-display text-xl font-semibold">Operations</h3>
-        <p class="mt-3 text-sm text-mute leading-relaxed">Building the processes that let organizations run without friction — systems, execution, and ownership when it matters.</p>
-      </article>
-      <article class="reveal glass rounded-2xl p-6 card-hover">
-        <p class="chapter-num mb-4">Chapter 03</p>
-        <h3 class="font-display text-xl font-semibold">Velocity</h3>
-        <p class="mt-3 text-sm text-mute leading-relaxed">Shipping open-source tools and web experiments — turning curiosity into working software, then iterating fast.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="py-20 sm:py-28 border-t border-white/5">
-  <div class="max-w-6xl mx-auto px-5">
-    <div class="reveal mb-12">
-      <p class="chapter-num mb-3">Open source</p>
-      <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Builds on GitHub</h2>
-      <p class="mt-4 text-mute max-w-xl">Featured work up top — full archive below. Everything shipped public.</p>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <a class="reveal glass rounded-2xl p-6 card-hover flex flex-col gap-3 no-underline" href="https://github.com/blitzandres/lie-detector" target="_blank" rel="noopener">
-        <div class="flex justify-between items-start">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 border border-accent/25 text-accent">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
-          </span>
-          <svg class="w-4 h-4 text-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3 class="font-display text-lg font-semibold text-white">lie-detector</h3>
-        <p class="text-sm text-mute flex-1">Behavioral deception detection engine — 66 cues, Bayesian fusion, personal baseline calibration.</p>
-        <span class="text-xs text-mute flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#3572A5]"></span> Python</span>
-      </a>
-      <a class="reveal glass rounded-2xl p-6 card-hover flex flex-col gap-3 no-underline" href="https://github.com/blitzandres/netwatch" target="_blank" rel="noopener">
-        <div class="flex justify-between items-start">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 border border-accent/25 text-accent">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
-          </span>
-          <svg class="w-4 h-4 text-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3 class="font-display text-lg font-semibold text-white">netwatch</h3>
-        <p class="text-sm text-mute flex-1">Local network monitoring dashboard — Python Flask, real-time intel, repo scanning.</p>
-        <span class="text-xs text-mute flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#e34c26]"></span> HTML / Flask</span>
-      </a>
-      <a class="reveal glass rounded-2xl p-6 card-hover flex flex-col gap-3 no-underline" href="https://github.com/blitzandres/bluth-scan" target="_blank" rel="noopener">
-        <div class="flex justify-between items-start">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 border border-accent/25 text-accent">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>
-          </span>
-          <svg class="w-4 h-4 text-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3 class="font-display text-lg font-semibold text-white">bluth-scan</h3>
-        <p class="text-sm text-mute flex-1">Real-time Bluetooth scanner with 3D neural node visualization — 3d-force-graph, Flask-SocketIO, bleak.</p>
-        <span class="text-xs text-mute flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#e34c26]"></span> HTML / Python</span>
-      </a>
-      <a class="reveal glass rounded-2xl p-6 card-hover flex flex-col gap-3 no-underline" href="https://github.com/blitzandres/elevatron" target="_blank" rel="noopener">
-        <div class="flex justify-between items-start">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 border border-accent/25 text-accent">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
-          </span>
-          <svg class="w-4 h-4 text-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3 class="font-display text-lg font-semibold text-white">elevatron</h3>
-        <p class="text-sm text-mute flex-1">Cited concept study of a magnetically-pinched, laser-coupled beam as dual conductor/structure for space access.</p>
-        <span class="text-xs text-mute flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#3D6117]"></span> TeX</span>
-      </a>
-      <a class="reveal glass rounded-2xl p-6 card-hover flex flex-col gap-3 no-underline" href="https://github.com/blitzandres/sigspace" target="_blank" rel="noopener">
-        <div class="flex justify-between items-start">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 border border-accent/25 text-accent">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h3l3-9 4 18 3-9h3"/><circle cx="20" cy="12" r="2"/></svg>
-          </span>
-          <svg class="w-4 h-4 text-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3 class="font-display text-lg font-semibold text-white">sigspace</h3>
-        <p class="text-sm text-mute flex-1">SIGSPACE — real signal data rendered as a video game world.</p>
-        <span class="text-xs text-mute flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#e34c26]"></span> HTML</span>
-      </a>
-      <a class="reveal glass rounded-2xl p-6 card-hover flex flex-col gap-3 no-underline" href="https://github.com/blitzandres/iptv-player" target="_blank" rel="noopener">
-        <div class="flex justify-between items-start">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 border border-accent/25 text-accent">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="15" x="2" y="7" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
-          </span>
-          <svg class="w-4 h-4 text-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3 class="font-display text-lg font-semibold text-white">iptv-player</h3>
-        <p class="text-sm text-mute flex-1">IPTV player for Latin America &amp; USA — HLS.js, channel search, favorites, custom M3U playlists.</p>
-        <span class="text-xs text-mute flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#e34c26]"></span> HTML</span>
-      </a>
-    </div>
-    <div class="reveal mt-10">
-      <h3 class="text-sm font-semibold text-mute tracking-wide mb-4">Full archive</h3>
-      <div class="flex flex-wrap gap-2">
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/compute-share-pilot" target="_blank" rel="noopener">compute-share-pilot</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/andresblitz" target="_blank" rel="noopener">andresblitz</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/elite-island-movers" target="_blank" rel="noopener">elite-island-movers</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/my-website" target="_blank" rel="noopener">my-website</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/condotwits" target="_blank" rel="noopener">condotwits</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/Polemicalatina" target="_blank" rel="noopener">Polemicalatina</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/blitzandres.github.io" target="_blank" rel="noopener">blitzandres.github.io</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/homesnewwest" target="_blank" rel="noopener">homesnewwest</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/rep" target="_blank" rel="noopener">rep</a>
-        <a class="text-xs text-mute border border-white/10 rounded-full px-3.5 py-2 hover:border-accent hover:text-white transition" href="https://github.com/blitzandres/testing-img" target="_blank" rel="noopener">testing-img</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SPACE INVADERS -->
-<section id="play" class="py-20 sm:py-28 border-t border-white/5">
-  <div class="max-w-3xl mx-auto px-5 text-center">
-    <div class="reveal mb-8">
-      <p class="chapter-num mb-3">Arcade</p>
-      <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Space Invaders</h2>
-      <p class="mt-3 text-mute text-sm">You made it this far — take a round. Click the canvas to start.</p>
-    </div>
-    <div id="game-wrap" class="reveal inline-block w-full max-w-[580px] text-left">
-      <canvas id="gc" width="580" height="360" aria-label="Space Invaders game canvas"></canvas>
-      <div class="ghud">
-        <span>SCORE <b id="gs">0</b></span>
-        <span>LEVEL <b id="gl">1</b></span>
-        <span>LIVES <b id="glv">♥ ♥ ♥</b></span>
-      </div>
-    </div>
-    <p class="reveal mt-4 text-xs text-mute tracking-wide">
-      <kbd>←</kbd> <kbd>→</kbd> Move · <kbd>SPACE</kbd> Shoot · <kbd>P</kbd> Pause
-    </p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="py-20 sm:py-28 border-t border-white/5">
-  <div class="max-w-3xl mx-auto px-5">
-    <div class="reveal relative rounded-3xl p-10 sm:p-14 text-center overflow-hidden border border-white/10 bg-gradient-to-b from-panel to-accent/10">
-      <div class="absolute inset-0 pointer-events-none opacity-40" style="background:radial-gradient(circle at 50% 0%, rgba(59,130,246,0.25), transparent 55%)"></div>
-      <div class="relative">
-        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Let's talk</h2>
-        <p class="mt-3 text-mute max-w-md mx-auto">Markets, ventures, collaborations — or a good conversation about what's next.</p>
-        <a href="mailto:info@andresblitz.com" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent hover:bg-accent2 text-white font-medium px-6 py-3.5 transition shadow-glow">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          info@andresblitz.com
-        </a>
-        <div class="mt-8 flex justify-center gap-3">
-          <a href="https://github.com/blitzandres" target="_blank" rel="noopener" aria-label="GitHub" class="h-11 w-11 inline-flex items-center justify-center rounded-xl border border-white/15 text-mute hover:text-white hover:border-accent transition">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-          <a href="https://x.com/andresblitz" target="_blank" rel="noopener" aria-label="X" class="h-11 w-11 inline-flex items-center justify-center rounded-xl border border-white/15 text-mute hover:text-white hover:border-accent transition">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/andresblitz" target="_blank" rel="noopener" aria-label="LinkedIn" class="h-11 w-11 inline-flex items-center justify-center rounded-xl border border-white/15 text-mute hover:text-white hover:border-accent transition">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1-.004-4.125 2.062 2.062 0 0 1 .004 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="border-t border-white/5 py-8 text-center text-sm text-mute">
-  <div class="max-w-6xl mx-auto px-5">&copy; <span id="yr">2026</span> Andrés Blitz · Victoria, BC, Canada</div>
+<footer>
+  <div class="container">&copy; 2026 Andr&eacute;s Blitz &middot; Victoria, BC, Canada</div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</div><!-- /.page -->
+
 <script>
-(function () {
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('glass', window.scrollY > 40);
-    nav.classList.toggle('border-b', window.scrollY > 40);
-    nav.classList.toggle('border-white/10', window.scrollY > 40);
-  });
+(function() {
+  // Subtle starfield: gentle twinkle only, static under reduced motion.
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let stars = [];
 
-  if (!reduce && window.Lenis) {
-    const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
-    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-    if (window.gsap && window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
-    }
-  }
-
-  if (!reduce && window.gsap) {
-    gsap.registerPlugin(ScrollTrigger);
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('.hero-badge', { y: 20, opacity: 0, duration: 0.7 })
-      .from('.hero-title', { y: 40, opacity: 0, duration: 0.9 }, '-=0.35')
-      .from('.hero-sub', { y: 24, opacity: 0, duration: 0.7 }, '-=0.45')
-      .from('.hero-stats > div', { y: 18, opacity: 0, stagger: 0.08, duration: 0.55 }, '-=0.35')
-      .from('.hero-ctas', { y: 16, opacity: 0, duration: 0.55 }, '-=0.25');
-    gsap.utils.toArray('.reveal').forEach((el) => {
-      gsap.to(el, {
-        opacity: 1, y: 0, duration: 0.85, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = [];
+    const count = Math.floor((canvas.width * canvas.height) / 14000);
+    for (let i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.1 + 0.3,
+        base: Math.random() * 0.5 + 0.15,
+        tw: Math.random() * Math.PI * 2
       });
-    });
-  } else {
-    document.querySelectorAll('.reveal').forEach((el) => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
+    }
+    if (reduceMotion) drawStatic();
   }
 
-  // Space Invaders (polished accents)
-  const gc2 = document.getElementById('gc'), gctx = gc2.getContext('2d'), GW = gc2.width, GH = gc2.height;
-  let gSt = 'idle', score = 0, lives = 3, lv = 1, buls = [], eBuls = [], invs = [], iDir = 1, iSpd = 0.35, eStT = 0;
-  const pl = { x: GW / 2, y: GH - 42, w: 30, h: 16, spd: 5 };
-  let keys2 = {}, lastSh = 0;
-  const ACC = '#3b82f6', ACC2 = '#60a5fa';
-  function mkInv() {
-    invs = [];
-    const rows = 3 + Math.min(lv - 1, 2), cols = 9;
-    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++)
-      invs.push({ x: 50 + c * 50, y: 42 + r * 34, w: 22, h: 14, alive: true, row: r });
-  }
-  function gUp() {
-    document.getElementById('gs').textContent = score;
-    document.getElementById('gl').textContent = lv;
-    document.getElementById('glv').textContent = '♥ '.repeat(lives).trim() || '—';
-  }
-  function gOvr(title, sub, col) {
-    gctx.fillStyle = 'rgba(5,5,5,0.82)'; gctx.fillRect(0, 0, GW, GH);
-    gctx.fillStyle = col; gctx.shadowColor = col; gctx.shadowBlur = 16;
-    gctx.font = "bold 30px Archivo, sans-serif"; gctx.textAlign = 'center';
-    gctx.fillText(title, GW / 2, GH / 2 - 12); gctx.shadowBlur = 0;
-    gctx.fillStyle = '#97a3b8'; gctx.font = "12px Space Grotesk, sans-serif";
-    gctx.fillText(sub, GW / 2, GH / 2 + 16);
-  }
-  function gLoop() {
-    requestAnimationFrame(gLoop);
-    gctx.fillStyle = '#050505'; gctx.fillRect(0, 0, GW, GH);
-    for (let i = 0; i < 50; i++) {
-      const sx = (i * 171) % GW, sy = (i * 113 + score * 0.2) % GH;
-      gctx.fillStyle = 'rgba(231,236,245,0.2)'; gctx.fillRect(sx, sy, 1, 1);
+  function drawStatic() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (const s of stars) {
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(231,236,245,${s.base})`;
+      ctx.fill();
     }
-    if (gSt === 'idle') { gOvr('SPACE INVADERS', 'Click or press SPACE to start', ACC2); return; }
-    if (gSt === 'dead') { gOvr('GAME OVER', 'Score: ' + score + ' — SPACE to retry', '#ef4444'); return; }
-    if (gSt === 'win') { gOvr('LEVEL ' + lv + ' CLEAR', 'SPACE for next wave', '#34d399'); return; }
-    if (gSt === 'paused') { gOvr('PAUSED', 'Press P to continue', ACC2); return; }
-    if (keys2.ArrowLeft || keys2.a) pl.x = Math.max(18, pl.x - pl.spd);
-    if (keys2.ArrowRight || keys2.d) pl.x = Math.min(GW - 18, pl.x + pl.spd);
-    const now = Date.now();
-    if ((keys2[' '] || keys2.Space) && now - lastSh > 230) { buls.push({ x: pl.x, y: pl.y - pl.h / 2 }); lastSh = now; }
-    buls = buls.filter(b => b.y > 0); buls.forEach(b => b.y -= 8);
-    eBuls = eBuls.filter(b => b.y < GH); eBuls.forEach(b => b.y += 3.5 + lv * 0.5);
-    const alive = invs.filter(i => i.alive); let edge = false;
-    alive.forEach(inv => inv.x += iDir * (iSpd + lv * 0.12 + (1 - alive.length / (invs.length || 1)) * 0.5));
-    alive.forEach(inv => { if (inv.x > GW - 22 || inv.x < 22) edge = true; });
-    if (edge) { iDir *= -1; alive.forEach(inv => inv.y += 14); }
-    eStT++;
-    if (eStT > Math.max(26, 68 - lv * 7) && alive.length) {
-      eStT = 0; const s = alive[Math.floor(Math.random() * alive.length)];
-      eBuls.push({ x: s.x, y: s.y + 9 });
+  }
+
+  // Occasional shooting star — one streak every ~9s, quick and quiet.
+  let shooter = null, nextShot = 4000;
+  function spawnShooter(t) {
+    const angle = Math.PI * (0.65 + Math.random() * 0.2);
+    shooter = {
+      x: canvas.width * (0.15 + Math.random() * 0.7),
+      y: canvas.height * Math.random() * 0.35,
+      vx: Math.cos(angle) * 9, vy: Math.sin(angle) * 9,
+      life: 1
+    };
+    nextShot = t + 7000 + Math.random() * 6000;
+  }
+
+  function tick(t) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (const s of stars) {
+      const a = s.base * (0.65 + 0.35 * Math.sin(s.tw + t * 0.0008));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(231,236,245,${a})`;
+      ctx.fill();
     }
-    buls.forEach((b, bi) => invs.forEach(inv => {
-      if (!inv.alive) return;
-      if (Math.abs(b.x - inv.x) < inv.w / 2 + 2 && Math.abs(b.y - inv.y) < inv.h / 2 + 6) {
-        inv.alive = false; buls.splice(bi, 1);
-        score += (inv.row === 0 ? 30 : inv.row === 1 ? 20 : 10); gUp();
+    if (!shooter && t > nextShot) spawnShooter(t);
+    if (shooter) {
+      const g = ctx.createLinearGradient(shooter.x, shooter.y, shooter.x - shooter.vx * 9, shooter.y - shooter.vy * 9);
+      g.addColorStop(0, `rgba(231,236,245,${0.75 * shooter.life})`);
+      g.addColorStop(1, 'rgba(231,236,245,0)');
+      ctx.strokeStyle = g;
+      ctx.lineWidth = 1.6;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(shooter.x, shooter.y);
+      ctx.lineTo(shooter.x - shooter.vx * 9, shooter.y - shooter.vy * 9);
+      ctx.stroke();
+      shooter.x += shooter.vx; shooter.y += shooter.vy;
+      shooter.life -= 0.02;
+      if (shooter.life <= 0) shooter = null;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  if (!reduceMotion) requestAnimationFrame(tick);
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       }
-    }));
-    eBuls.forEach((b, bi) => {
-      if (Math.abs(b.x - pl.x) < pl.w / 2 + 4 && Math.abs(b.y - pl.y) < pl.h / 2 + 7) {
-        eBuls.splice(bi, 1); lives--; gUp();
-        if (lives <= 0) { gSt = 'dead'; return; }
-        pl.x = GW / 2;
-      }
-    });
-    alive.forEach(inv => { if (inv.y > GH - 50) gSt = 'dead'; });
-    if (alive.length === 0) gSt = 'win';
-    gctx.fillStyle = ACC2; gctx.shadowColor = ACC2; gctx.shadowBlur = 8;
-    gctx.fillRect(pl.x - pl.w / 2, pl.y - pl.h / 2 + 4, pl.w, pl.h - 4);
-    gctx.fillRect(pl.x - 3, pl.y - pl.h / 2, 6, 7); gctx.shadowBlur = 0;
-    invs.forEach(inv => {
-      if (!inv.alive) return;
-      const col = inv.row === 0 ? '#ef4444' : inv.row === 1 ? ACC2 : '#38bdf8';
-      gctx.fillStyle = col; gctx.shadowColor = col; gctx.shadowBlur = 5;
-      gctx.fillRect(inv.x - inv.w / 2, inv.y - inv.h / 2, inv.w, inv.h);
-      gctx.fillRect(inv.x - inv.w / 2 - 3, inv.y + inv.h / 2 - 3, 3, 5);
-      gctx.fillRect(inv.x + inv.w / 2, inv.y + inv.h / 2 - 3, 3, 5);
-      gctx.fillStyle = '#050505'; gctx.shadowBlur = 0;
-      gctx.fillRect(inv.x - 4, inv.y - 2, 3, 3); gctx.fillRect(inv.x + 1, inv.y - 2, 3, 3);
-    });
-    buls.forEach(b => { gctx.fillStyle = ACC2; gctx.shadowColor = ACC2; gctx.shadowBlur = 6; gctx.fillRect(b.x - 1.5, b.y - 5, 3, 10); gctx.shadowBlur = 0; });
-    eBuls.forEach(b => { gctx.fillStyle = '#ef4444'; gctx.shadowColor = '#ef4444'; gctx.shadowBlur = 6; gctx.fillRect(b.x - 1.5, b.y - 4, 3, 9); gctx.shadowBlur = 0; });
-    gUp();
-  }
-  gLoop();
-  function resetGame() {
-    score = 0; lives = 3; lv = 1; buls = []; eBuls = []; pl.x = GW / 2; iDir = 1; iSpd = 0.35; mkInv(); gUp(); gSt = 'playing';
-  }
-  document.addEventListener('keydown', e => {
-    keys2[e.key] = true;
-    if (e.key === ' ') e.preventDefault();
-    if (e.key === 'p' || e.key === 'P') {
-      if (gSt === 'playing') gSt = 'paused';
-      else if (gSt === 'paused') gSt = 'playing';
     }
-    if (e.key === ' ') {
-      if (gSt === 'idle' || gSt === 'dead') resetGame();
-      else if (gSt === 'win') { lv++; mkInv(); iSpd = 0.35 + lv * 0.05; buls = []; eBuls = []; gSt = 'playing'; }
-    }
-  });
-  document.addEventListener('keyup', e => { keys2[e.key] = false; });
-  gc2.addEventListener('click', () => {
-    if (gSt === 'idle' || gSt === 'dead') resetGame();
-    else if (gSt === 'win') { lv++; mkInv(); iSpd = 0.35 + lv * 0.05; buls = []; eBuls = []; gSt = 'playing'; }
-  });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
 </script>
 <script>
-(function () {
+// blitz-analytics (self-hosted, github.com/blitzandres/blitz-analytics).
+// Set BLITZ_ENDPOINT to the public URL of the collector to activate; empty = disabled.
+(function() {
   var BLITZ_ENDPOINT = '';
   if (!BLITZ_ENDPOINT) return;
   var s = document.createElement('script');
