@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- SEO META TAGS -->
-<title>Andrés Blitz | Sales Leader & Operations Expert | Victoria, BC Canada</title>
-<meta name="description" content="Andrés Blitz is a sales leader, operations expert, and tech strategist in Victoria, BC. 15+ years across real estate, petroleum, automotive, and operations. Builder of open-source tools." />
-<meta name="keywords" content="sales leader Victoria BC, operations management, tech strategist Canada" />
+<title>Andrés Blitz | Full-Time Trader · Sales Leader & Operations Expert | Victoria, BC</title>
+<meta name="description" content="Andrés Blitz is a full-time trader in Victoria, BC, with 15+ years as a sales leader and operations expert across real estate, petroleum, automotive, and ops. Builder of open-source tools." />
+<meta name="keywords" content="full-time trader Victoria BC, sales leader, operations management, tech strategist Canada" />
 <link rel="canonical" href="https://andresblitz.com/" />
 <meta property="og:type" content="profile" />
 <meta property="og:url" content="https://andresblitz.com/" />
-<meta property="og:title" content="Andrés Blitz | Sales Leader & Operations Expert" />
-<meta property="og:description" content="15+ years of proven results. Building open-source tools in Victoria, BC." />
-<meta property="og:image" content="https://andresblitz.com/og-image-1200x630.jpg" />
+<meta property="og:title" content="Andrés Blitz | Full-Time Trader · Sales Leader & Operations Expert" />
+<meta property="og:description" content="Full-time trader in Victoria, BC — with 15+ years in sales leadership and operations. Builder of open-source tools." />
+<meta property="og:image" content="https://andresblitz.com/assets/hero-markets.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@andresblitz" />
-<meta name="twitter:title" content="Andrés Blitz | Sales Leader & Operations Expert" />
-<meta name="twitter:description" content="15+ years of proven results. Building open-source tools in Victoria, BC." />
-<meta name="twitter:image" content="https://andresblitz.com/og-image-1200x630.jpg" />
+<meta name="twitter:title" content="Andrés Blitz | Full-Time Trader · Sales Leader & Operations Expert" />
+<meta name="twitter:description" content="Full-time trader in Victoria, BC — with 15+ years in sales leadership and operations." />
+<meta name="twitter:image" content="https://andresblitz.com/assets/hero-markets.png" />
 <meta name="theme-color" content="#05070f" />
 <meta name="geo.position" content="48.4281;-123.3656" />
 <meta name="geo.placename" content="Victoria, British Columbia, Canada" />
@@ -271,6 +271,40 @@ footer {
   .reveal { opacity: 1; transform: none; transition: none; }
   * { animation: none !important; transition-duration: 0.01ms !important; }
 }
+
+/* Additive: hero image, about visual, 4-up strip/stats */
+#hero { position: relative; overflow: hidden; }
+#hero > *:not(.hero-media) { position: relative; z-index: 1; }
+.hero-media { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-media img {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
+  filter: saturate(1.08) contrast(1.05);
+}
+.hero-shade {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 18%, rgba(91,141,239,0.22), transparent 55%),
+    linear-gradient(180deg, rgba(5,7,15,0.5) 0%, rgba(5,7,15,0.78) 52%, var(--bg) 100%);
+}
+.about-visual {
+  margin-top: 2.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  max-width: 52rem;
+}
+.about-visual img { display: block; width: 100%; height: auto; }
+.contact-motif { margin: 0 auto 1.75rem; max-width: 28rem; opacity: 0.72; }
+@media (min-width: 900px) {
+  #about .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1100px) {
+  #about .strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 720px) {
+  #hero .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
 </style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -297,10 +331,15 @@ footer {
 
 <!-- ============ HERO ============ -->
 <header id="hero">
-  <div class="badge"><span class="dot" aria-hidden="true"></span> Victoria, BC &middot; Canada</div>
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/hero-markets.png" alt="" />
+    <div class="hero-shade"></div>
+  </div>
+  <div class="badge"><span class="dot" aria-hidden="true"></span> Victoria, BC &middot; Canada &middot; Full-time trader</div>
   <h1>Andr&eacute;s <span class="accent">Blitz</span></h1>
-  <p class="role">Sales leader &amp; operations expert — 15+ years of proven results, now building open-source tools and web experiments on the side.</p>
+  <p class="role">Full-time trader — and a sales leader &amp; operations expert with 15+ years of proven results across real estate, petroleum, and automotive. Still building open-source tools and web experiments on the side.</p>
   <div class="stats">
+    <div class="stat"><b>Now</b><span>Full-time trader</span></div>
     <div class="stat"><b>15+</b><span>Years in sales &amp; ops</span></div>
     <div class="stat"><b>16</b><span>Open-source repos</span></div>
     <div class="stat"><b>4</b><span>Industries led</span></div>
@@ -418,6 +457,11 @@ footer {
     </div>
     <div class="strip">
       <div class="item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <h3>Trading</h3>
+        <p>Full-time trader — markets as the current focus, built on the same discipline from sales and ops.</p>
+      </div>
+      <div class="item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
         <h3>Sales Leadership</h3>
         <p>15+ years leading teams across real estate, petroleum, and automotive — strategy through close.</p>
@@ -433,12 +477,18 @@ footer {
         <p>Open-source tools, dashboards, and web experiments — everything shipped public on GitHub.</p>
       </div>
     </div>
+    <div class="about-visual reveal">
+      <img src="assets/trading-focus.png" alt="Abstract trading and markets visual" width="960" height="540" loading="lazy" />
+    </div>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
 <section id="contact">
   <div class="container">
+    <div class="about-visual reveal contact-motif">
+      <img src="assets/velocity-arc.png" alt="" width="800" height="600" loading="lazy" />
+    </div>
     <div class="panel reveal">
       <h2>Let's talk</h2>
       <p>Collaborations, ventures, or a good conversation about what's next.</p>
