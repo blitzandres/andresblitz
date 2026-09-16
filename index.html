@@ -286,15 +286,6 @@ footer {
     radial-gradient(ellipse 80% 60% at 70% 18%, rgba(91,141,239,0.22), transparent 55%),
     linear-gradient(180deg, rgba(5,7,15,0.5) 0%, rgba(5,7,15,0.78) 52%, var(--bg) 100%);
 }
-.about-visual {
-  margin-top: 2.5rem;
-  border-radius: 1rem;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  max-width: 52rem;
-}
-.about-visual img { display: block; width: 100%; height: auto; }
-.contact-motif { margin: 0 auto 1.75rem; max-width: 28rem; opacity: 0.72; }
 @media (min-width: 900px) {
   #about .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -303,6 +294,48 @@ footer {
 }
 @media (min-width: 720px) {
   #hero .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+
+/* ============ PLAY / SPACE INVADERS ============ */
+#play .section-head { text-align: center; margin-bottom: 1.75rem; }
+#play .game-shell {
+  max-width: 620px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+#play canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+  cursor: pointer;
+}
+#play .game-hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+#play .game-hud span { color: var(--text); }
+#play .game-help {
+  margin-top: 0.9rem;
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 </style>
@@ -324,6 +357,7 @@ footer {
     <div class="links">
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
+      <a href="#play">Play</a>
       <a class="btn" href="#contact">Contact</a>
     </div>
   </div>
@@ -477,18 +511,33 @@ footer {
         <p>Open-source tools, dashboards, and web experiments — everything shipped public on GitHub.</p>
       </div>
     </div>
-    <div class="about-visual reveal">
-      <img src="assets/trading-focus.png" alt="Abstract trading and markets visual" width="960" height="540" loading="lazy" />
+  </div>
+</section>
+
+
+<!-- ============ PLAY ============ -->
+<section id="play">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">Arcade</p>
+      <h2>Space Invaders</h2>
+      <p>A little window of chaos before we talk. Click the board to start.</p>
     </div>
+    <div class="game-shell reveal">
+      <canvas id="game-canvas" width="580" height="360" aria-label="Space Invaders game"></canvas>
+      <div class="game-hud">
+        <div>Score <span id="score">00000</span></div>
+        <div>Level <span id="level">1</span></div>
+        <div>Lives <span id="lives">♥ ♥ ♥</span></div>
+      </div>
+    </div>
+    <p class="game-help">← → / A D move · Space shoot · P pause · Click to start</p>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
 <section id="contact">
   <div class="container">
-    <div class="about-visual reveal contact-motif">
-      <img src="assets/velocity-arc.png" alt="" width="800" height="600" loading="lazy" />
-    </div>
     <div class="panel reveal">
       <h2>Let's talk</h2>
       <p>Collaborations, ventures, or a good conversation about what's next.</p>
@@ -618,6 +667,159 @@ footer {
   s.setAttribute('data-endpoint', BLITZ_ENDPOINT);
   document.body.appendChild(s);
 })();
+</script>
+
+<script>
+    // SPACE INVADERS (same clean version)
+    (function() {
+      const c = document.getElementById('game-canvas');
+      if (!c) return;
+      const ctx = c.getContext('2d');
+      const W = c.width, H = c.height;
+
+      let started = false, paused = false, over = false;
+      let score = 0, level = 1, lives = 3, frame = 0, dir = 1, speed = 0.65;
+      let lastShot = 0;
+      let bullets = [], aBullets = [];
+      let keys = {};
+      const p = { x: W/2, y: H-42, w: 34, h: 14 };
+      let aliens = [], shields = [];
+
+      function resetAliens() {
+        aliens = [];
+        const sx = (W - 8 * 40) / 2 + 14;
+        for (let r = 0; r < 3; r++) for (let col = 0; col < 8; col++)
+          aliens.push({ x: sx + col * 40, y: 52 + r * 32, alive: true });
+        dir = 1; speed = 0.65 + (level - 1) * 0.13;
+      }
+      function resetShields() {
+        shields = [];
+        const g = (W - 4 * 36) / 5;
+        for (let i = 0; i < 4; i++) shields.push({ x: g + i * (36 + g), y: H - 82, hp: 5 });
+      }
+      function reset() {
+        score = 0; level = 1; lives = 3; frame = 0; bullets = []; aBullets = [];
+        over = false; paused = false; p.x = W/2;
+        resetAliens(); resetShields(); updateHUD();
+      }
+      function updateHUD() {
+        document.getElementById('score').textContent = score.toString().padStart(5, '0');
+        document.getElementById('level').textContent = level;
+        document.getElementById('lives').innerHTML = '♥ '.repeat(lives).trim();
+      }
+
+      function draw() {
+        ctx.fillStyle = '#0a0a0a'; ctx.fillRect(0, 0, W, H);
+        ctx.strokeStyle = 'rgba(255,255,255,0.035)';
+        for (let x = 24; x < W; x += 24) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+
+        if (!started) {
+          ctx.fillStyle = '#666'; ctx.font = '13px Inter, system-ui'; ctx.textAlign = 'center';
+          ctx.fillText('CLICK TO START', W/2, H/2); return;
+        }
+
+        ctx.fillStyle = '#f5f5f5';
+        ctx.fillRect(p.x - p.w/2, p.y - 4, p.w, 8);
+        ctx.fillStyle = '#3b82f6';
+        ctx.fillRect(p.x - 4, p.y - 11, 8, 6);
+
+        ctx.fillStyle = '#3b82f6';
+        aliens.forEach(a => { if (a.alive) ctx.fillRect(a.x - 14, a.y - 10, 28, 20); });
+
+        ctx.fillStyle = '#fff'; bullets.forEach(b => ctx.fillRect(b.x - 1, b.y - 5, 2, 8));
+        ctx.fillStyle = '#f87171'; aBullets.forEach(b => ctx.fillRect(b.x - 1.5, b.y - 4, 3, 7));
+
+        ctx.fillStyle = '#444';
+        shields.forEach(s => { if (s.hp > 0) { ctx.globalAlpha = s.hp / 5; ctx.fillRect(s.x, s.y, 34, 11); } });
+        ctx.globalAlpha = 1;
+
+        if (paused) { ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0,0,W,H); ctx.fillStyle='#fff'; ctx.font='600 15px Inter'; ctx.fillText('PAUSED', W/2, H/2); }
+        if (over) {
+          ctx.fillStyle = 'rgba(0,0,0,0.85)'; ctx.fillRect(0,0,W,H);
+          ctx.fillStyle = '#fff'; ctx.font = '600 16px Inter'; ctx.textAlign = 'center';
+          ctx.fillText('MISSION COMPLETE', W/2, H/2 - 8);
+          ctx.fillStyle = '#666'; ctx.font = '13px Inter'; ctx.fillText('SCORE ' + score + '  —  CLICK TO RESTART', W/2, H/2 + 18);
+        }
+      }
+
+      function update() {
+        if (!started || paused || over) return;
+
+        if (keys['ArrowLeft'] || keys['a']) p.x -= 4.4;
+        if (keys['ArrowRight'] || keys['d']) p.x += 4.4;
+        p.x = Math.max(22, Math.min(W - 22, p.x));
+
+        bullets.forEach((b, i) => { b.y -= 8; if (b.y < 0) bullets.splice(i,1); });
+
+        let edge = false;
+        aliens.forEach(a => { if (!a.alive) return; a.x += dir * speed; if (a.x < 24 || a.x > W - 24) edge = true; });
+        if (edge) { dir *= -1; aliens.forEach(a => a.y += 16); }
+
+        if (frame % Math.max(36, 50 - level * 3) === 0) {
+          const live = aliens.filter(a => a.alive);
+          if (live.length) {
+            const s = live[Math.floor(Math.random() * live.length)];
+            aBullets.push({ x: s.x, y: s.y + 10 });
+          }
+        }
+        aBullets.forEach((b, i) => { b.y += 3.6; if (b.y > H) aBullets.splice(i,1); });
+
+        bullets.forEach((b, bi) => {
+          aliens.forEach(a => {
+            if (a.alive && Math.abs(b.x - a.x) < 16 && Math.abs(b.y - a.y) < 12) {
+              a.alive = false; bullets.splice(bi, 1); score += 10; updateHUD();
+            }
+          });
+        });
+
+        aBullets.forEach((b, i) => {
+          if (Math.abs(b.x - p.x) < 18 && Math.abs(b.y - p.y) < 14) {
+            aBullets.splice(i, 1); lives--; updateHUD(); if (lives <= 0) over = true;
+          }
+        });
+
+        if (aliens.every(a => !a.alive)) { level++; resetAliens(); aBullets = []; updateHUD(); }
+        frame++;
+      }
+
+      function loop() { update(); draw(); requestAnimationFrame(loop); }
+
+      window.addEventListener('keydown', e => {
+        keys[e.key] = true;
+        if (e.key.toLowerCase() === 'p' && started && !over) paused = !paused;
+        if (e.key === ' ' && started && !paused && !over) {
+          e.preventDefault();
+          const t = Date.now();
+          if (t - lastShot > 160) { bullets.push({ x: p.x, y: p.y - 12 }); lastShot = t; }
+        }
+      });
+      window.addEventListener('keyup', e => keys[e.key] = false);
+
+      c.addEventListener('click', () => { if (!started) { started = true; reset(); } else if (over) reset(); else if (paused) paused = false; });
+      c.addEventListener('mousedown', () => {
+        if (started && !paused && !over) {
+          const t = Date.now(); if (t - lastShot > 160) { bullets.push({ x: p.x, y: p.y - 12 }); lastShot = t; }
+        }
+      });
+
+      let tx = 0;
+      c.addEventListener('touchstart', e => {
+        if (!started) { started = true; reset(); return; }
+        if (over) { reset(); return; }
+        tx = e.touches[0].clientX;
+        if (started && !paused && !over) bullets.push({ x: p.x, y: p.y - 12 });
+      });
+      c.addEventListener('touchmove', e => {
+        if (!started || paused || over) return;
+        p.x = Math.max(22, Math.min(W - 22, W/2 + (e.touches[0].clientX - tx) * 1.7));
+      });
+
+      loop();
+    })();
+  </script>
+</body>
+</html>
+
 </script>
 </body>
 </html>
