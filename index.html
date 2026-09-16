@@ -656,16 +656,21 @@ footer {
 })();
 </script>
 <script>
-// blitz-analytics (self-hosted, github.com/blitzandres/blitz-analytics).
-// Set BLITZ_ENDPOINT to the public URL of the collector to activate; empty = disabled.
+// blitz-analytics — visitor tracking + Intercom-style chat
 (function() {
-  var BLITZ_ENDPOINT = '';
+  var BLITZ_ENDPOINT = 'https://blitz-analytics.andres-491.workers.dev';
   if (!BLITZ_ENDPOINT) return;
-  var s = document.createElement('script');
-  s.src = BLITZ_ENDPOINT + '/t.js';
-  s.defer = true;
-  s.setAttribute('data-endpoint', BLITZ_ENDPOINT);
-  document.body.appendChild(s);
+  var base = BLITZ_ENDPOINT.replace(/\/$/, '');
+  var t = document.createElement('script');
+  t.src = base + '/t.js';
+  t.defer = true;
+  t.setAttribute('data-endpoint', base);
+  document.body.appendChild(t);
+  var c = document.createElement('script');
+  c.src = base + '/chat.js';
+  c.defer = true;
+  c.setAttribute('data-endpoint', base);
+  document.body.appendChild(c);
 })();
 </script>
 
