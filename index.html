@@ -342,15 +342,15 @@ footer {
 /* Easter egg: quiet Bitcoin mark in the footer */
 .btc-egg {
   display: inline-flex; align-items: center; justify-content: center;
-  margin-left: 0.55rem; vertical-align: middle;
-  opacity: 0.28; transition: opacity .25s ease, transform .25s ease;
+  margin-left: 0.7rem; vertical-align: middle;
+  opacity: 0.55; transition: opacity .25s ease, transform .25s ease;
   color: #f7931a;
 }
 .btc-egg:hover, .btc-egg:focus-visible {
-  opacity: 1; transform: translateY(-1px);
+  opacity: 1; transform: translateY(-1px) scale(1.08);
   outline: none;
 }
-.btc-egg svg { width: 14px; height: 14px; display: block; }
+.btc-egg svg { width: 28px; height: 28px; display: block; }
 
 </style>
 <script>document.documentElement.classList.add('js');</script>
