@@ -338,6 +338,20 @@ footer {
   color: var(--muted);
 }
 
+
+/* Easter egg: quiet Bitcoin mark in the footer */
+.btc-egg {
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-left: 0.55rem; vertical-align: middle;
+  opacity: 0.28; transition: opacity .25s ease, transform .25s ease;
+  color: #f7931a;
+}
+.btc-egg:hover, .btc-egg:focus-visible {
+  opacity: 1; transform: translateY(-1px);
+  outline: none;
+}
+.btc-egg svg { width: 14px; height: 14px; display: block; }
+
 </style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -558,7 +572,11 @@ footer {
 </section>
 
 <footer>
-  <div class="container">&copy; 2026 Andr&eacute;s Blitz &middot; Victoria, BC, Canada</div>
+  <div class="container">&copy; 2026 Andr&eacute;s Blitz &middot; Victoria, BC, Canada
+    <a class="btc-egg" href="https://bitcoin.org" target="_blank" rel="noopener" aria-label="A little Bitcoin for the believers" title="HODL">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.546zm-6.35-4.613c.24-1.59-.97-2.45-2.64-3.03l.54-2.153-1.315-.33-.525 2.107c-.345-.087-.705-.17-1.06-.25l.53-2.127-1.315-.33-.54 2.153c-.285-.065-.565-.13-.84-.2l.002-.01-1.813-.455-.35 1.407s.97.222.95.236c.53.133.63.48.615.758l-.615 2.467c.037.01.084.023.137.045l-.14-.035-.863 3.46c-.065.17-.235.415-.615.32.01.02-.95-.238-.95-.238l-.65 1.49 1.705.427.94 2.153-.54 2.16 1.315.328.54-2.15c.355.1.705.19 1.05.273l-.54 2.13 1.315.33.54-2.153c2.24.425 3.925.255 4.635-1.77.57-1.63-.03-2.575-1.21-3.19.86-.2 1.51-.76 1.68-1.93zm-3.01 4.22c-.405 1.64-3.15.755-4.04.53l.72-2.89c.895.22 3.73.67 3.32 2.36zm.405-4.24c-.37 1.49-2.66.735-3.405.55l.655-2.62c.745.185 3.125.53 2.75 2.07z"/></svg>
+    </a>
+  </div>
 </footer>
 
 </div><!-- /.page -->
@@ -822,9 +840,5 @@ footer {
       loop();
     })();
   </script>
-</body>
-</html>
-
-</script>
 </body>
 </html>
