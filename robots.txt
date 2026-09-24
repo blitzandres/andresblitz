@@ -3,4 +3,7 @@ Allow: /
 Disallow: /dashboard/
 Disallow: /dashboard
 
+# AI crawlers welcome (no Disallow for GPTBot, ClaudeBot, Google-Extended, etc.)
+# Optional machine-readable site summary: https://andresblitz.com/llms.txt
+
 Sitemap: https://andresblitz.com/sitemap.xml
