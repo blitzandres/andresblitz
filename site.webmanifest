@@ -1,0 +1,29 @@
+{
+  "name": "Andr\u00e9s Blitz \u2014 Markets & Investing",
+  "short_name": "Andr\u00e9s Blitz",
+  "description": "Full-time trader and investor based in Victoria, BC.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#05070f",
+  "theme_color": "#05070f",
+  "lang": "en-CA",
+  "icons": [
+    {
+      "src": "/assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
