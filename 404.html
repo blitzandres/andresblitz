@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found | Andrés Blitz</title>
+<meta name="description" content="That page isn’t on andresblitz.com. Head home or email Andrés Blitz." />
+<meta name="robots" content="noindex, follow" />
+<meta name="theme-color" content="#05070f" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://andresblitz.com/404.html" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #05070f; --surface: #0b101d; --border: rgba(148,163,184,0.14);
+  --text: #e7ecf5; --muted: #97a3b8; --accent: #5b8def;
+  --grad: linear-gradient(120deg, #5b8def, #a78bfa);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  min-height: 100dvh; display: flex; flex-direction: column;
+  font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,141,239,0.16), transparent 55%);
+}
+main {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 4rem 1.5rem; text-align: center;
+}
+.panel {
+  max-width: 28rem; width: 100%;
+  background: rgba(11,16,29,0.72); border: 1px solid var(--border);
+  border-radius: 1.15rem; padding: 2.5rem 1.75rem;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.kicker {
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.75rem; font-weight: 500;
+}
+h1 {
+  font-family: 'Archivo', sans-serif; font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem;
+}
+p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.actions {
+  display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1.75rem;
+}
+.actions a {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  padding: 0.75rem 1.35rem; border-radius: 0.55rem; transition: filter 0.2s, border-color 0.2s;
+}
+.actions .primary { background: var(--grad); color: #fff; }
+.actions .primary:hover { filter: brightness(1.1); }
+.actions .secondary {
+  border: 1px solid var(--border); color: var(--text); background: rgba(11,16,29,0.6);
+}
+.actions .secondary:hover { border-color: var(--accent); }
+footer {
+  border-top: 1px solid var(--border); padding: 1.25rem; text-align: center;
+  font-size: 0.8rem; color: var(--muted);
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--text); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main id="main">
+  <div class="panel">
+    <p class="kicker">404</p>
+    <h1>Page not found</h1>
+    <p>That URL isn’t on this site. Head home, or reach Andrés directly.</p>
+    <div class="actions">
+      <a class="primary" href="/">Back to home</a>
+      <a class="secondary" href="mailto:info@andresblitz.com">Email contact</a>
+    </div>
+  </div>
+</main>
+<footer>
+  <a href="/">andresblitz.com</a> · Victoria, British Columbia, Canada
+</footer>
+</body>
+</html>

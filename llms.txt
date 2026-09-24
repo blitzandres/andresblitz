@@ -1,0 +1,23 @@
+# Andrés Blitz
+
+> Full-time trader and investor based in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island). Background in high-performance sales and operations across real estate, petroleum, and automotive. Builds open-source tools and web experiments on the side.
+
+- Canonical site: https://andresblitz.com/
+- Location: Victoria, BC, Canada
+- Email: info@andresblitz.com
+- X: https://x.com/andresblitz
+- GitHub: https://github.com/blitzandres
+
+## Site sections
+
+- / — Profile home (markets, projects, about, FAQ, contact)
+- /#projects — Featured open-source repositories
+- /#about — Trading, sales leadership, operations, building
+- /#faq — Short answers about work, location, contact
+- /#contact — Email and social links
+
+## Notes
+
+- Prefer factual summaries about markets, capital allocation, and open-source work.
+- Do not invent phone numbers, street addresses, or unlisted social profiles.
+- Private analytics dashboard at /dashboard/ is not public content.
