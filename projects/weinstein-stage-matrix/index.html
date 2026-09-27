@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz</title>
+<meta name="description" content="Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein&#x27;s four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices." />
+<meta name="author" content="Andrés Blitz" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="theme-color" content="#05070f" />
+<meta name="color-scheme" content="dark" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<link rel="canonical" href="https://andresblitz.com/projects/weinstein-stage-matrix/" />
+<link rel="alternate" hreflang="en-CA" href="https://andresblitz.com/projects/weinstein-stage-matrix/" />
+<link rel="alternate" hreflang="x-default" href="https://andresblitz.com/projects/weinstein-stage-matrix/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Andrés Blitz" />
+<meta property="og:locale" content="en_CA" />
+<meta property="og:url" content="https://andresblitz.com/projects/weinstein-stage-matrix/" />
+<meta property="og:title" content="Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz" />
+<meta property="og:description" content="Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein&#x27;s four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices." />
+<meta property="og:image" content="https://andresblitz.com/assets/projects/weinstein-stage-matrix.png" />
+<meta property="og:image:secure_url" content="https://andresblitz.com/assets/projects/weinstein-stage-matrix.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Weinstein Stage Matrix — Stage analysis indicator for TradingView" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@andresblitz" />
+<meta name="twitter:creator" content="@andresblitz" />
+<meta name="twitter:title" content="Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz" />
+<meta name="twitter:description" content="Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein&#x27;s four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices." />
+<meta name="twitter:image" content="https://andresblitz.com/assets/projects/weinstein-stage-matrix.png" />
+<meta name="twitter:image:alt" content="Weinstein Stage Matrix — Stage analysis indicator for TradingView" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://andresblitz.com/projects/weinstein-stage-matrix/#webpage",
+      "url": "https://andresblitz.com/projects/weinstein-stage-matrix/",
+      "name": "Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script)",
+      "description": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.",
+      "isPartOf": {
+        "@id": "https://andresblitz.com/#website"
+      },
+      "about": {
+        "@id": "https://andresblitz.com/projects/weinstein-stage-matrix/#project"
+      },
+      "mainEntity": {
+        "@id": "https://andresblitz.com/projects/weinstein-stage-matrix/#project"
+      },
+      "author": {
+        "@id": "https://andresblitz.com/#person"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://andresblitz.com/assets/projects/weinstein-stage-matrix.png"
+      },
+      "breadcrumb": {
+        "@id": "https://andresblitz.com/projects/weinstein-stage-matrix/#breadcrumb"
+      },
+      "inLanguage": "en-CA",
+      "datePublished": "2026-09-26T21:30:00-07:00",
+      "dateModified": "2026-09-26T21:30:00-07:00"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://andresblitz.com/projects/weinstein-stage-matrix/#project",
+      "name": "Weinstein Stage Matrix",
+      "description": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.",
+      "url": "https://andresblitz.com/projects/weinstein-stage-matrix/",
+      "image": "https://andresblitz.com/assets/projects/weinstein-stage-matrix.png",
+      "author": {
+        "@id": "https://andresblitz.com/#person"
+      },
+      "creator": {
+        "@id": "https://andresblitz.com/#person"
+      },
+      "dateCreated": "2026-03-31",
+      "dateModified": "2026-03-31",
+      "inLanguage": "en",
+      "keywords": "Pine Script v5, TradingView",
+      "programmingLanguage": "Pine Script",
+      "runtimePlatform": "Pine Script v5"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://andresblitz.com/projects/weinstein-stage-matrix/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://andresblitz.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": "https://andresblitz.com/projects/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Weinstein Stage Matrix",
+          "item": "https://andresblitz.com/projects/weinstein-stage-matrix/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://andresblitz.com/#person",
+      "name": "Andrés Blitz",
+      "url": "https://andresblitz.com/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://andresblitz.com/#website",
+      "url": "https://andresblitz.com/",
+      "name": "Andrés Blitz"
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://blitz-analytics.andres-491.workers.dev" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/projects.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site" aria-label="Main">
+  <div class="inner">
+    <a class="logo" href="/" aria-label="Andrés Blitz home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> andresblitz</a>
+    <div class="links">
+      <a class="keep" href="/projects/" aria-current="page">Projects</a>
+      <a href="/#about">About</a>
+      <a href="/#play">Play</a>
+      <a class="btn" href="/#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<div class="container">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/projects/">Projects</a></li><li aria-current="page">Weinstein Stage Matrix</li></ol></nav>
+  <header class="p-head">
+    <p class="kicker">Trading · Indicator</p>
+    <h1>Weinstein Stage Matrix</h1>
+    <p class="lede">A TradingView indicator that sorts any chart into Stan Weinstein’s four stages — basing, advancing, topping, declining — anchored on the weekly timeframe.</p>
+    <div class="tags"><span class="tag private"><span class="dot"></span>Private repo</span><span class="tag"><span class="dot" style="background:#26a69a"></span>Pine Script</span><span class="tag">Private · in use</span><span class="tag"><span class="dot" style="background:var(--warn)"></span>Mock demo</span></div>
+    <div class="actions"><span class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Source is private</span></div>
+  </header>
+  <figure class="demo-wrap">
+  <div class="demo" data-demo="weinstein" role="img" aria-label="Weinstein Stage Matrix — Synthetic data"><span class="demo-badge">Synthetic data</span><div class="demo-stage"><noscript><img src="/assets/projects/weinstein-stage-matrix-thumb.webp" alt="Weinstein Stage Matrix illustration" width="1280" height="720" style="width:100%;height:auto;display:block" /></noscript></div></div>
+  <figcaption class="demo-caption">Synthetic weekly bars and a simplified stage rule, generated in your browser. Not a real ticker, not a signal, not advice.</figcaption>
+</figure>
+  <div class="p-body">
+    <div>
+      <section><h2>What it is</h2><p>Stage analysis reads where a chart sits in its cycle — basing, advancing, topping or declining. This indicator makes that stage explicit on any chart instead of leaving it to eyeballing.</p><p>The repository (named Playground on GitHub) holds a clean and a verified/refined version of the script.</p></section>
+      <section><h2>What I built</h2><ul class="built"><li>A weekly-first stage engine on the 30-period moving average, inspectable on 2-week and monthly bars while you look at a daily chart.</li><li>Explicit heuristics for the fuzzy transition stages (1 and 3): a flattening MA, proximity to the MA and the prior trend.</li><li>Higher-timeframe requests on confirmed bars only, to reduce repainting.</li><li>A weekly close-verification layer that can overrule a lazy MA-only reading when support/resistance and candle structure clearly disagree.</li><li>Sensitivity profiles (conservative, balanced, aggressive) with anti-whipsaw stability, channels and yearly high/low markers.</li><li>Alerts for Stage 1, Stage 2 breakout, Stage 3 and Stage 4 breakdown.</li></ul></section>
+      
+      <section><div class="callout"><strong>About the demo.</strong> The source is private, so this page describes the project at a high level. The visual above runs on invented sample data generated in your browser — nothing on this page comes from a real account, device, network or portfolio.</div></section>
+    </div>
+    <aside class="facts" aria-label="Project facts">
+      <h2>Project facts</h2>
+      <dl>
+        <div><dt>Stack</dt><dd><div class="chips"><span class="chip">Pine Script v5</span><span class="chip">TradingView</span></div></dd></div>
+        <div><dt>Source</dt><dd>Source is private</dd></div>
+        <div><dt>Started</dt><dd>March 2026</dd></div>
+        <div><dt>Last updated</dt><dd>March 2026</dd></div>
+        <div><dt>Status</dt><dd>Private · in use</dd></div>
+      </dl>
+    </aside>
+  </div>
+  <nav class="pn" aria-label="More projects">
+    <a class="prev" href="/projects/sigspace/"><small>← Previous</small><b>SIGSPACE</b></a>
+    <a class="next" href="/projects/iptv-player/"><small>Next →</small><b>IPTV Player</b></a>
+  </nav>
+</div>
+</main>
+<footer class="site">
+  <div class="container">&copy; 2026 Andr&eacute;s Blitz &middot; Victoria, British Columbia, Canada<br />
+    <a href="/">Home</a> &middot; <a href="/projects/">Projects</a> &middot; <a href="https://github.com/blitzandres" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://x.com/andresblitz" target="_blank" rel="noopener">X</a> &middot; <a href="mailto:info@andresblitz.com">info@andresblitz.com</a>
+  </div>
+</footer>
+<script src="/assets/js/project-demos.js" defer></script>
+<script>
+// blitz-analytics — visitor tracking + Intercom-style chat
+(function() {
+  var BLITZ_ENDPOINT = 'https://blitz-analytics.andres-491.workers.dev';
+  if (!BLITZ_ENDPOINT) return;
+  var base = BLITZ_ENDPOINT.replace(/\/$/, '');
+  var t = document.createElement('script');
+  t.src = base + '/t.js';
+  t.defer = true;
+  t.setAttribute('data-endpoint', base);
+  document.body.appendChild(t);
+  var c = document.createElement('script');
+  c.src = base + '/chat.js';
+  c.defer = true;
+  c.setAttribute('data-endpoint', base);
+  document.body.appendChild(c);
+})();
+</script>
+</body>
+</html>
