@@ -3,12 +3,184 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://andresblitz.com/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://andresblitz.com/assets/og-cover.png</image:loc>
       <image:title>Andrés Blitz — markets and investing</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/projects.png</image:loc>
+      <image:title>Projects by Andrés Blitz</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/blitzys-world/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/blitzys-world.png</image:loc>
+      <image:title>Blitzy's World — A glowing orb cruising an endless universe</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/realwealth-portfolio/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/realwealth-portfolio.png</image:loc>
+      <image:title>RealWealth Portfolio — Private real estate portfolio manager</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/lie-detector/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/lie-detector.png</image:loc>
+      <image:title>Blitz Engine (lie-detector) — Open-source behavioral signal analyzer</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/sigspace/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/sigspace.png</image:loc>
+      <image:title>SIGSPACE — Your network, rendered as a video game world</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/weinstein-stage-matrix/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/weinstein-stage-matrix.png</image:loc>
+      <image:title>Weinstein Stage Matrix — Stage analysis indicator for TradingView</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/iptv-player/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/iptv-player.png</image:loc>
+      <image:title>IPTV Player — Latin America &amp; USA channels in one fast player</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/netwatch/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/netwatch.png</image:loc>
+      <image:title>NetWatch — Local network monitoring dashboard</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/bluth-scan/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/bluth-scan.png</image:loc>
+      <image:title>BluthScan — Bluetooth devices as a living 3D graph</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/signet-thesis/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/signet-thesis.png</image:loc>
+      <image:title>SIGNET — Signal intelligence network visualization — thesis</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/elevatron/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/elevatron.png</image:loc>
+      <image:title>Elevatron — A cited concept study of a beam to space</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/home-history/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/home-history.png</image:loc>
+      <image:title>Home History — A time capsule file for a house</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/quiniela/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/quiniela.png</image:loc>
+      <image:title>Quiniela 2026 — World Cup 2026 prediction pool</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/compute-share-pilot/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/compute-share-pilot.png</image:loc>
+      <image:title>Compute Share Pilot — Trusted compute sharing for remote AI jobs</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/blitz-analytics/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/blitz-analytics.png</image:loc>
+      <image:title>Blitz Analytics — The private analytics behind this site</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/elite-island-movers/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/assets/projects/elite-island-movers.png</image:loc>
+      <image:title>Elite Island Movers — One-page site for a local moving company</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/blitzys-world/play/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/projects/blitzys-world/play/3d/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

@@ -1,0 +1,32 @@
+/* Blitzy's World — game chrome (scoped to .bw-root) */
+.bw-root { position: relative; overflow: hidden; background: #03020d; border-radius: inherit; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+.bw-canvas { display: block; width: 100%; height: 100%; outline: none; cursor: crosshair; }
+.bw-root.bw-playing .bw-canvas { touch-action: none; }
+.bw-hud { position: absolute; left: 14px; top: 12px; display: flex; gap: 16px; pointer-events: none; font-family: 'Space Grotesk', system-ui, sans-serif; }
+.bw-stat span { display: block; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(190,170,255,.55); }
+.bw-stat b { display: block; font-size: 15px; font-weight: 600; color: #e7defc; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
+.bw-btns { position: absolute; right: 12px; top: 12px; display: flex; gap: 8px; }
+.bw-btns button, .bw-boost {
+  font: 600 13px 'Space Grotesk', system-ui, sans-serif; color: #d9c8ff; cursor: pointer;
+  background: rgba(40,14,90,.45); border: 1px solid rgba(150,100,255,.35); border-radius: 10px;
+  width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: background .2s, border-color .2s;
+}
+.bw-btns button:hover, .bw-boost:hover { background: rgba(80,30,170,.6); border-color: rgba(190,140,255,.6); }
+.bw-boost { position: absolute; right: 16px; bottom: 16px; width: auto; height: 54px; padding: 0 18px; border-radius: 999px; letter-spacing: .18em; font-size: 11px; display: none; touch-action: none; }
+@media (hover: none) and (pointer: coarse) { .bw-root.bw-playing .bw-boost { display: inline-flex; } }
+.bw-overlay {
+  position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  background: radial-gradient(ellipse at center, rgba(8,3,26,.35), rgba(2,1,12,.72)); cursor: pointer; padding: 1rem;
+  transition: opacity .25s ease;
+}
+.bw-overlay.hidden { opacity: 0; pointer-events: none; }
+.bw-title { font-family: 'Archivo', 'Space Grotesk', system-ui, sans-serif; font-weight: 700; font-size: clamp(22px, 4.2vw, 44px); letter-spacing: .28em; color: #d8c4ff; text-shadow: 0 0 20px rgba(160,100,255,.85), 0 0 60px rgba(120,60,220,.4); margin-bottom: 10px; }
+.bw-sub { font-size: 11px; letter-spacing: .5em; color: rgba(190,160,255,.6); margin-bottom: 26px; }
+.bw-play { font: 600 12px 'Space Grotesk', system-ui, sans-serif; letter-spacing: .32em; color: #e2d0ff; padding: 14px 30px; border: 1px solid rgba(160,100,255,.6); background: rgba(70,25,150,.38); border-radius: 10px; cursor: pointer; transition: background .2s; }
+.bw-play:hover, .bw-play:focus-visible { background: rgba(100,40,200,.58); }
+.bw-keys { margin-top: 22px; font-size: 10px; letter-spacing: .18em; color: rgba(180,160,255,.5); line-height: 2.1; }
+.bw-stick { position: absolute; width: 104px; height: 104px; margin: -52px 0 0 -52px; border-radius: 50%; border: 1px solid rgba(180,140,255,.35); background: rgba(60,20,140,.18); pointer-events: none; opacity: 0; transition: opacity .15s; }
+.bw-stick.on { opacity: 1; }
+.bw-stick i { position: absolute; left: 50%; top: 50%; width: 42px; height: 42px; border-radius: 50%; background: rgba(210,180,255,.45); box-shadow: 0 0 18px rgba(170,110,255,.6); transform: translate(-50%,-50%); }
+@media (max-width: 560px) { .bw-hud { gap: 10px; } .bw-stat b { font-size: 13px; } .bw-keys { display: none; } }

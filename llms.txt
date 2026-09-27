@@ -11,10 +11,31 @@
 ## Site sections
 
 - / — Profile home (markets, projects, about, FAQ, contact)
-- /#projects — Featured open-source repositories
+- /#projects — Featured projects
+- /projects/ — Every project, each with its own page
 - /#about — Trading, sales leadership, operations, building
 - /#faq — Short answers about work, location, contact
 - /#contact — Email and social links
+
+## Projects
+
+- https://andresblitz.com/projects/blitzys-world/ — Blitzy's World: A glowing orb cruising an endless universe
+- https://andresblitz.com/projects/realwealth-portfolio/ — RealWealth Portfolio: Private real estate portfolio manager
+- https://andresblitz.com/projects/lie-detector/ — Blitz Engine (lie-detector): Open-source behavioral signal analyzer
+- https://andresblitz.com/projects/sigspace/ — SIGSPACE: Your network, rendered as a video game world
+- https://andresblitz.com/projects/weinstein-stage-matrix/ — Weinstein Stage Matrix: Stage analysis indicator for TradingView
+- https://andresblitz.com/projects/iptv-player/ — IPTV Player: Latin America & USA channels in one fast player
+- https://andresblitz.com/projects/netwatch/ — NetWatch: Local network monitoring dashboard
+- https://andresblitz.com/projects/bluth-scan/ — BluthScan: Bluetooth devices as a living 3D graph
+- https://andresblitz.com/projects/signet-thesis/ — SIGNET: Signal intelligence network visualization — thesis
+- https://andresblitz.com/projects/elevatron/ — Elevatron: A cited concept study of a beam to space
+- https://andresblitz.com/projects/home-history/ — Home History: A time capsule file for a house
+- https://andresblitz.com/projects/quiniela/ — Quiniela 2026: World Cup 2026 prediction pool
+- https://andresblitz.com/projects/compute-share-pilot/ — Compute Share Pilot: Trusted compute sharing for remote AI jobs
+- https://andresblitz.com/projects/blitz-analytics/ — Blitz Analytics: The private analytics behind this site
+- https://andresblitz.com/projects/elite-island-movers/ — Elite Island Movers: One-page site for a local moving company
+
+Private projects are described at a high level; demos marked "Demo data" or "Synthetic data" use invented sample data, not real accounts, devices or portfolios.
 
 ## Notes
 

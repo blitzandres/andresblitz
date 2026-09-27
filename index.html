@@ -203,9 +203,12 @@
         "url": "https://andresblitz.com/assets/og-cover.png"
       },
       "dateCreated": "2022-06-10T15:09:44-07:00",
-      "dateModified": "2026-09-26T05:55:00-07:00",
+      "dateModified": "2026-09-26T21:30:00-07:00",
       "breadcrumb": {
         "@id": "https://andresblitz.com/#breadcrumb"
+      },
+      "hasPart": {
+        "@id": "https://andresblitz.com/#projects"
       },
       "inLanguage": "en-CA"
     },
@@ -242,17 +245,22 @@
     {
       "@type": "ItemList",
       "@id": "https://andresblitz.com/#projects",
-      "name": "Open-source projects by Andrés Blitz",
+      "name": "Projects by Andrés Blitz",
+      "url": "https://andresblitz.com/projects/",
+      "numberOfItems": 15,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "item": {
-            "@type": "SoftwareSourceCode",
-            "name": "lie-detector",
-            "url": "https://github.com/blitzandres/lie-detector",
-            "description": "Behavioral deception detection engine — 66 cues, Bayesian fusion, personal baseline calibration.",
-            "programmingLanguage": "Python"
+            "@type": "VideoGame",
+            "@id": "https://andresblitz.com/projects/blitzys-world/#project",
+            "name": "Blitzy's World",
+            "url": "https://andresblitz.com/projects/blitzys-world/",
+            "description": "A glowing orb cruising an endless universe.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            }
           }
         },
         {
@@ -260,10 +268,14 @@
           "position": 2,
           "item": {
             "@type": "SoftwareSourceCode",
-            "name": "elevatron",
-            "url": "https://github.com/blitzandres/elevatron",
-            "description": "Cited concept study of a magnetically-pinched, laser-coupled beam as dual conductor/structure for space access.",
-            "programmingLanguage": "TeX"
+            "@id": "https://andresblitz.com/projects/realwealth-portfolio/#project",
+            "name": "RealWealth Portfolio",
+            "url": "https://andresblitz.com/projects/realwealth-portfolio/",
+            "description": "Private real estate portfolio manager.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "TypeScript"
           }
         },
         {
@@ -271,10 +283,15 @@
           "position": 3,
           "item": {
             "@type": "SoftwareSourceCode",
-            "name": "sigspace",
-            "url": "https://github.com/blitzandres/sigspace",
-            "description": "SIGSPACE — real signal data rendered as a video game world.",
-            "programmingLanguage": "HTML"
+            "@id": "https://andresblitz.com/projects/lie-detector/#project",
+            "name": "Blitz Engine (lie-detector)",
+            "url": "https://andresblitz.com/projects/lie-detector/",
+            "description": "Open-source behavioral signal analyzer.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "Python",
+            "codeRepository": "https://github.com/blitzandres/lie-detector"
           }
         },
         {
@@ -282,10 +299,15 @@
           "position": 4,
           "item": {
             "@type": "SoftwareSourceCode",
-            "name": "iptv-player",
-            "url": "https://github.com/blitzandres/iptv-player",
-            "description": "IPTV player for Latin America & USA — HLS.js, channel search, favorites, custom M3U playlists.",
-            "programmingLanguage": "HTML"
+            "@id": "https://andresblitz.com/projects/sigspace/#project",
+            "name": "SIGSPACE",
+            "url": "https://andresblitz.com/projects/sigspace/",
+            "description": "Your network, rendered as a video game world.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "HTML",
+            "codeRepository": "https://github.com/blitzandres/sigspace"
           }
         },
         {
@@ -293,10 +315,14 @@
           "position": 5,
           "item": {
             "@type": "SoftwareSourceCode",
-            "name": "netwatch",
-            "url": "https://github.com/blitzandres/netwatch",
-            "description": "Local network monitoring dashboard — Python Flask, real-time intel, repo scanning.",
-            "programmingLanguage": "HTML"
+            "@id": "https://andresblitz.com/projects/weinstein-stage-matrix/#project",
+            "name": "Weinstein Stage Matrix",
+            "url": "https://andresblitz.com/projects/weinstein-stage-matrix/",
+            "description": "Stage analysis indicator for TradingView.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "Pine Script"
           }
         },
         {
@@ -304,10 +330,154 @@
           "position": 6,
           "item": {
             "@type": "SoftwareSourceCode",
-            "name": "bluth-scan",
-            "url": "https://github.com/blitzandres/bluth-scan",
-            "description": "Real-time Bluetooth scanner with 3D neural node visualization — 3d-force-graph, Flask-SocketIO, bleak.",
-            "programmingLanguage": "HTML"
+            "@id": "https://andresblitz.com/projects/iptv-player/#project",
+            "name": "IPTV Player",
+            "url": "https://andresblitz.com/projects/iptv-player/",
+            "description": "Latin America & USA channels in one fast player.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "HTML",
+            "codeRepository": "https://github.com/blitzandres/iptv-player"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://andresblitz.com/projects/netwatch/#project",
+            "name": "NetWatch",
+            "url": "https://andresblitz.com/projects/netwatch/",
+            "description": "Local network monitoring dashboard.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "Python",
+            "codeRepository": "https://github.com/blitzandres/netwatch"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://andresblitz.com/projects/bluth-scan/#project",
+            "name": "BluthScan",
+            "url": "https://andresblitz.com/projects/bluth-scan/",
+            "description": "Bluetooth devices as a living 3D graph.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "Python",
+            "codeRepository": "https://github.com/blitzandres/bluth-scan"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://andresblitz.com/projects/signet-thesis/#project",
+            "name": "SIGNET",
+            "url": "https://andresblitz.com/projects/signet-thesis/",
+            "description": "Signal intelligence network visualization — thesis.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://andresblitz.com/projects/elevatron/#project",
+            "name": "Elevatron",
+            "url": "https://andresblitz.com/projects/elevatron/",
+            "description": "A cited concept study of a beam to space.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://andresblitz.com/projects/home-history/#project",
+            "name": "Home History",
+            "url": "https://andresblitz.com/projects/home-history/",
+            "description": "A time capsule file for a house.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "TypeScript",
+            "codeRepository": "https://github.com/blitzandres/home-history"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://andresblitz.com/projects/quiniela/#project",
+            "name": "Quiniela 2026",
+            "url": "https://andresblitz.com/projects/quiniela/",
+            "description": "World Cup 2026 prediction pool.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "JavaScript",
+            "codeRepository": "https://github.com/blitzandres/quiniela"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://andresblitz.com/projects/compute-share-pilot/#project",
+            "name": "Compute Share Pilot",
+            "url": "https://andresblitz.com/projects/compute-share-pilot/",
+            "description": "Trusted compute sharing for remote AI jobs.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "Python",
+            "codeRepository": "https://github.com/blitzandres/compute-share-pilot"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://andresblitz.com/projects/blitz-analytics/#project",
+            "name": "Blitz Analytics",
+            "url": "https://andresblitz.com/projects/blitz-analytics/",
+            "description": "The private analytics behind this site.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "JavaScript"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://andresblitz.com/projects/elite-island-movers/#project",
+            "name": "Elite Island Movers",
+            "url": "https://andresblitz.com/projects/elite-island-movers/",
+            "description": "One-page site for a local moving company.",
+            "author": {
+              "@id": "https://andresblitz.com/#person"
+            },
+            "programmingLanguage": "HTML",
+            "codeRepository": "https://github.com/blitzandres/elite-island-movers"
           }
         }
       ]
@@ -735,7 +905,7 @@ footer {
   <div class="stats">
     <div class="stat"><b>Now</b><span>Full-time trader</span></div>
     <div class="stat"><b>15+</b><span>Years in sales &amp; ops</span></div>
-    <div class="stat"><b>16</b><span>Open-source repos</span></div>
+    <div class="stat"><b>15</b><span>Projects built</span></div>
     <div class="stat"><b>4</b><span>Industries led</span></div>
   </div>
   <div class="ctas">
@@ -762,85 +932,80 @@ footer {
   <div class="container">
     <div class="section-head reveal">
       <p class="kicker">Projects</p>
-      <h2>Open-source builds</h2>
-      <p>Every repo, shipped public on GitHub. The featured work up top — everything else below.</p>
+      <h2>Things I’ve built</h2>
+      <p>Trading tools, dashboards, a game and experiments — each with its own page. Featured work up top, everything else below.</p>
     </div>
 
     <div class="grid">
-      <a class="card reveal" href="https://github.com/blitzandres/lie-detector" target="_blank" rel="noopener">
+      <a class="card reveal" href="/projects/blitzys-world/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M3.5 15.5c-1.4-2.4 2.1-6.3 7.8-8.8s11-2.3 12.2.1"/><path d="M20.5 8.5c1.4 2.4-2.1 6.3-7.8 8.8s-11 2.3-12.2-.1"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>Blitzy's World</h3>
+        <p>A glowing orb cruising an endless universe.</p>
+        <div class="meta"><span class="lang-dot" style="background:#f1e05a"></span> JavaScript · Playable</div>
+      </a>
+      <a class="card reveal" href="/projects/realwealth-portfolio/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>RealWealth Portfolio</h3>
+        <p>Private real estate portfolio manager.</p>
+        <div class="meta"><span class="lang-dot" style="background:#3178c6"></span> TypeScript · Private</div>
+      </a>
+      <a class="card reveal" href="/projects/lie-detector/">
         <div class="top">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/></svg>
-          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </div>
-        <h3>lie-detector</h3>
-        <p>Behavioral deception detection engine — 66 cues, Bayesian fusion, personal baseline calibration.</p>
+        <h3>Blitz Engine (lie-detector)</h3>
+        <p>Open-source behavioral signal analyzer.</p>
         <div class="meta"><span class="lang-dot" style="background:#3572A5"></span> Python</div>
       </a>
-
-      <a class="card reveal" href="https://github.com/blitzandres/elevatron" target="_blank" rel="noopener">
-        <div class="top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3>elevatron</h3>
-        <p>Cited concept study of a magnetically-pinched, laser-coupled beam as dual conductor/structure for space access.</p>
-        <div class="meta"><span class="lang-dot" style="background:#3D6117"></span> TeX</div>
-      </a>
-
-      <a class="card reveal" href="https://github.com/blitzandres/sigspace" target="_blank" rel="noopener">
+      <a class="card reveal" href="/projects/sigspace/">
         <div class="top">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h3l3-9 4 18 3-9h3"/><circle cx="20" cy="12" r="2"/></svg>
-          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </div>
-        <h3>sigspace</h3>
-        <p>SIGSPACE — real signal data rendered as a video game world.</p>
-        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML</div>
+        <h3>SIGSPACE</h3>
+        <p>Your network, rendered as a video game world.</p>
+        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML / Canvas</div>
       </a>
-
-      <a class="card reveal" href="https://github.com/blitzandres/iptv-player" target="_blank" rel="noopener">
+      <a class="card reveal" href="/projects/weinstein-stage-matrix/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>Weinstein Stage Matrix</h3>
+        <p>Stage analysis indicator for TradingView.</p>
+        <div class="meta"><span class="lang-dot" style="background:#26a69a"></span> Pine Script · Private</div>
+      </a>
+      <a class="card reveal" href="/projects/iptv-player/">
         <div class="top">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
-          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </div>
-        <h3>iptv-player</h3>
-        <p>IPTV player for Latin America &amp; USA — HLS.js, channel search, favorites, custom M3U playlists.</p>
+        <h3>IPTV Player</h3>
+        <p>Latin America & USA channels in one fast player.</p>
         <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML</div>
-      </a>
-
-      <a class="card reveal" href="https://github.com/blitzandres/netwatch" target="_blank" rel="noopener">
-        <div class="top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
-          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3>netwatch</h3>
-        <p>Local network monitoring dashboard — Python Flask, real-time intel, repo scanning.</p>
-        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML / Flask</div>
-      </a>
-
-      <a class="card reveal" href="https://github.com/blitzandres/bluth-scan" target="_blank" rel="noopener">
-        <div class="top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>
-          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </div>
-        <h3>bluth-scan</h3>
-        <p>Real-time Bluetooth scanner with 3D neural node visualization — 3d-force-graph, Flask-SocketIO, bleak.</p>
-        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML / Python</div>
       </a>
     </div>
 
     <div id="more-repos" class="reveal">
-      <h3>More on GitHub</h3>
+      <h3>More projects</h3>
       <div class="chips">
-        <a href="https://github.com/blitzandres/compute-share-pilot" target="_blank" rel="noopener">compute-share-pilot</a>
-        <a href="https://github.com/blitzandres/andresblitz" target="_blank" rel="noopener">andresblitz</a>
-        <a href="https://github.com/blitzandres/elite-island-movers" target="_blank" rel="noopener">elite-island-movers</a>
-        <a href="https://github.com/blitzandres/my-website" target="_blank" rel="noopener">my-website</a>
-        <a href="https://github.com/blitzandres/condotwits" target="_blank" rel="noopener">condotwits</a>
-        <a href="https://github.com/blitzandres/Polemicalatina" target="_blank" rel="noopener">Polemicalatina</a>
-        <a href="https://github.com/blitzandres/blitzandres.github.io" target="_blank" rel="noopener">blitzandres.github.io</a>
-        <a href="https://github.com/blitzandres/homesnewwest" target="_blank" rel="noopener">homesnewwest</a>
-        <a href="https://github.com/blitzandres/rep" target="_blank" rel="noopener">rep</a>
-        <a href="https://github.com/blitzandres/testing-img" target="_blank" rel="noopener">testing-img</a>
+        <a href="/projects/netwatch/">NetWatch</a>
+        <a href="/projects/bluth-scan/">BluthScan</a>
+        <a href="/projects/signet-thesis/">SIGNET</a>
+        <a href="/projects/elevatron/">Elevatron</a>
+        <a href="/projects/home-history/">Home History</a>
+        <a href="/projects/quiniela/">Quiniela 2026</a>
+        <a href="/projects/compute-share-pilot/">Compute Share Pilot</a>
+        <a href="/projects/blitz-analytics/">Blitz Analytics</a>
+        <a href="/projects/elite-island-movers/">Elite Island Movers</a>
+        <a href="/projects/">All projects →</a>
       </div>
     </div>
   </div>
@@ -872,7 +1037,7 @@ footer {
       <div class="item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         <h3>Building</h3>
-        <p>Open-source tools, dashboards, and web experiments — everything shipped public on GitHub.</p>
+        <p>Tools, dashboards, games, and web experiments — most of it open source on GitHub, each with <a href="/projects/" style="color:var(--accent);text-decoration:none;">its own page</a>.</p>
       </div>
     </div>
   </div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Play Blitzy's World — Full Screen | Andrés Blitz</title>
+<meta name="description" content="Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch." />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#03020d" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://andresblitz.com/projects/blitzys-world/play/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Andrés Blitz" />
+<meta property="og:url" content="https://andresblitz.com/projects/blitzys-world/play/" />
+<meta property="og:title" content="Play Blitzy's World" />
+<meta property="og:description" content="A glowing orb cruising through an endless universe. Playable in the browser." />
+<meta property="og:image" content="https://andresblitz.com/assets/projects/blitzys-world.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@andresblitz" />
+<meta name="twitter:title" content="Play Blitzy's World" />
+<meta name="twitter:description" content="A glowing orb cruising through an endless universe. Playable in the browser." />
+<meta name="twitter:image" content="https://andresblitz.com/assets/projects/blitzys-world.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/projects/blitzys-world/play/game.css" />
+<style>
+  html, body { margin: 0; height: 100%; background: #03020d; overflow: hidden; }
+  #game { position: fixed; inset: 0; }
+  .back { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 10; font: 500 12px 'Space Grotesk', system-ui, sans-serif; letter-spacing: .08em; color: rgba(210,190,255,.7); text-decoration: none; background: rgba(20,8,50,.55); border: 1px solid rgba(150,100,255,.3); padding: 7px 14px; border-radius: 999px; }
+  .back:hover { color: #fff; border-color: rgba(190,140,255,.6); }
+</style>
+</head>
+<body>
+<main id="game" aria-label="Blitzy's World game"></main>
+<a class="back" href="/projects/blitzys-world/">← About this project</a>
+<noscript><p style="color:#ccc;font-family:sans-serif;padding:2rem">Blitzy's World needs JavaScript to run.</p></noscript>
+<script src="/projects/blitzys-world/play/game.js"></script>
+<script>window.__bw = BlitzysWorld.mount(document.getElementById('game'), { fullscreen: true });</script>
+<script>
+// blitz-analytics — visitor tracking + Intercom-style chat
+(function() {
+  var BLITZ_ENDPOINT = 'https://blitz-analytics.andres-491.workers.dev';
+  if (!BLITZ_ENDPOINT) return;
+  var base = BLITZ_ENDPOINT.replace(/\/$/, '');
+  var t = document.createElement('script');
+  t.src = base + '/t.js';
+  t.defer = true;
+  t.setAttribute('data-endpoint', base);
+  document.body.appendChild(t);
+})();
+</script>
+</body>
+</html>
