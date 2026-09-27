@@ -20,7 +20,7 @@
 ## Projects
 
 - https://andresblitz.com/projects/blitzys-world/ — Blitzy's World: A glowing orb cruising an endless universe
-- https://andresblitz.com/projects/realwealth-portfolio/ — RealWealth Portfolio: Private real estate portfolio manager
+- https://andresblitz.com/projects/realwealth-portfolio/ — RealWealth Portfolio: Live real estate portfolio dashboard
 - https://andresblitz.com/projects/lie-detector/ — Blitz Engine (lie-detector): Open-source behavioral signal analyzer
 - https://andresblitz.com/projects/sigspace/ — SIGSPACE: Your network, rendered as a video game world
 - https://andresblitz.com/projects/weinstein-stage-matrix/ — Weinstein Stage Matrix: Stage analysis indicator for TradingView
@@ -35,7 +35,7 @@
 - https://andresblitz.com/projects/blitz-analytics/ — Blitz Analytics: The private analytics behind this site
 - https://andresblitz.com/projects/elite-island-movers/ — Elite Island Movers: One-page site for a local moving company
 
-Private projects are described at a high level; demos marked "Demo data" or "Synthetic data" use invented sample data, not real accounts, devices or portfolios.
+Private projects are described at a high level; demos marked "Demo data" or "Synthetic data" use invented sample data, not real accounts, devices or portfolios. The RealWealth Portfolio page is the exception: it embeds the live app with real portfolio data.
 
 ## Notes
 

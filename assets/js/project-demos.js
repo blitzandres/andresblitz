@@ -76,67 +76,6 @@
 
   var demos = {};
 
-  // ---------------- RealWealth Portfolio (sample portfolio) ----------------
-  demos.realwealth = function (host) {
-    var props = [
-      { n: 'Sample Home A', t: 'Home', city: 'Sampletown', buy: 910000, val: 1185000, rent: 3900, st: 'Rented' },
-      { n: 'Sample Condo B', t: 'Condo', city: 'Demo City', buy: 540000, val: 612000, rent: 2450, st: 'Rented' },
-      { n: 'Sample Town Home C', t: 'Town Home', city: 'Exampleville', buy: 725000, val: 798000, rent: 0, st: 'For Sale' },
-      { n: 'Sample Lot D', t: 'Land', city: 'Mockridge', buy: 380000, val: 455000, rent: 0, st: 'Held' },
-      { n: 'Sample BTC allocation', t: 'Bitcoin', city: 'Cold storage (sample)', buy: 120000, val: 210000, rent: 0, st: 'Held' }
-    ];
-    var debt = 1260000, expenses = 5200;
-    var total = props.reduce(function (a, p) { return a + p.val; }, 0);
-    var cost = props.reduce(function (a, p) { return a + p.buy; }, 0);
-    var rent = props.reduce(function (a, p) { return a + p.rent; }, 0);
-    var roi = ((total - cost) / cost * 100).toFixed(1);
-    var m = el('div', 'mock');
-    m.innerHTML =
-      '<div class="row kpis">' +
-      '<div class="kpi"><span>Total value</span><b>' + money(total) + '</b><i>▲ ' + roi + '% vs cost</i></div>' +
-      '<div class="kpi"><span>Equity</span><b>' + money(total - debt) + '</b><i>' + Math.round((total - debt) / total * 100) + '% of value</i></div>' +
-      '<div class="kpi"><span>Monthly rent</span><b>' + money(rent) + '</b><i>2 of 5 rented</i></div>' +
-      '<div class="kpi"><span>Net / month</span><b>' + money(rent - expenses) + '</b><i class="' + (rent - expenses < 0 ? 'neg' : '') + '">after sample costs</i></div>' +
-      '</div>' +
-      '<div class="row" style="grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);margin-top:.75rem" data-rw-charts>' +
-      '<div class="panel"><h4>Allocation by type</h4><div data-rw-donut></div></div>' +
-      '<div class="panel"><h4>Portfolio value · 24 months</h4><div data-rw-line></div></div>' +
-      '</div>' +
-      '<div class="panel scroll-x" style="margin-top:.75rem"><h4>Holdings</h4><table><thead><tr><th>Property</th><th>Type</th><th>Area</th><th>Cost</th><th>Value</th><th>Gain</th><th>Status</th></tr></thead><tbody>' +
-      props.map(function (p) {
-        var g = ((p.val - p.buy) / p.buy * 100).toFixed(1);
-        var cls = p.st === 'Rented' ? '' : p.st === 'For Sale' ? 'w' : 'b';
-        return '<tr><td>' + p.n + '</td><td>' + p.t + '</td><td>' + p.city + '</td><td>' + money(p.buy) + '</td><td>' + money(p.val) + '</td><td style="color:#34d399">+' + g + '%</td><td><span class="pill ' + cls + '">' + p.st + '</span></td></tr>';
-      }).join('') + '</tbody></table></div>';
-    host.appendChild(m);
-    if (host.clientWidth < 640) m.querySelector('[data-rw-charts]').style.gridTemplateColumns = '1fr';
-    var types = ['Home', 'Condo', 'Town Home', 'Land', 'Bitcoin'], cols = ['#5b8def', '#a78bfa', '#22d3ee', '#34d399', '#f7931a'];
-    makeCanvas(m.querySelector('[data-rw-donut]'), 170, function (ctx, W, H) {
-      ctx.clearRect(0, 0, W, H);
-      var r = Math.min(62, H / 2 - 12), cx = Math.min(W / 2, r + 20);
-      donut(ctx, cx, H / 2, r, props.map(function (p) { return p.val; }), cols, 16);
-      ctx.fillStyle = '#e7ecf5'; ctx.font = '600 14px Archivo, sans-serif'; ctx.textAlign = 'center'; ctx.fillText(money(total), cx, H / 2 + 5);
-      ctx.textAlign = 'left'; ctx.font = '12px "Space Grotesk", sans-serif';
-      types.forEach(function (t, i) {
-        var y = 26 + i * 25, x = cx + r + 26; if (x > W - 60) return;
-        ctx.fillStyle = cols[i]; ctx.fillRect(x, y - 9, 10, 10);
-        ctx.fillStyle = '#97a3b8'; ctx.fillText(t + ' ' + Math.round(props[i].val / total * 100) + '%', x + 16, y);
-      });
-    });
-    var r = rng(42), s = [], v = 1;
-    for (var i = 0; i < 24; i++) { v *= 1 + (r() - 0.35) * 0.028; s.push(v); }
-    var k0 = total / s[23]; s = s.map(function (x) { return x * k0; });
-    makeCanvas(m.querySelector('[data-rw-line]'), 170, function (ctx, W, H) {
-      ctx.clearRect(0, 0, W, H);
-      ctx.strokeStyle = 'rgba(148,163,184,0.1)'; ctx.lineWidth = 1;
-      for (var k = 0; k < 4; k++) { ctx.beginPath(); ctx.moveTo(0, 10 + k * (H - 30) / 3); ctx.lineTo(W, 10 + k * (H - 30) / 3); ctx.stroke(); }
-      lineChart(ctx, 4, 10, W - 8, H - 30, s, '#5b8def', 'rgba(91,141,239,0.28)');
-      ctx.fillStyle = '#97a3b8'; ctx.font = '11px "Space Grotesk", sans-serif'; ctx.textAlign = 'left';
-      ctx.fillText('24 mo ago', 4, H - 4); ctx.textAlign = 'right'; ctx.fillText('now', W - 4, H - 4);
-    });
-  };
-
-  // ---------------- Blitz Engine / lie-detector (simulated cue activity) ----------------
   demos.cuepolygon = function (host) {
     var fam = [
       { n: 'Visual', c: '#5b8def', cues: ['blink rate', 'gaze aversion', 'lip press', 'head velocity', 'brow stress', 'asymmetry'] },
