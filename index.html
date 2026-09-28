@@ -203,7 +203,7 @@
         "url": "https://andresblitz.com/assets/og-cover.png"
       },
       "dateCreated": "2022-06-10T15:09:44-07:00",
-      "dateModified": "2026-09-26T21:55:54-07:00",
+      "dateModified": "2026-09-27T22:05:32-07:00",
       "breadcrumb": {
         "@id": "https://andresblitz.com/#breadcrumb"
       },
@@ -862,61 +862,42 @@ footer {
   margin-top: 0.55rem; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.02em;
 }
 
-/* ============ FX: scroll progress, hero glow, astronaut, project ring ============ */
-.fx-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60; background: var(--grad); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; opacity: 0.85; }
-.fx-glow { position: absolute; left: 0; top: 0; width: 520px; height: 520px; margin: -260px 0 0 -260px; border-radius: 50%; pointer-events: none; z-index: 0 !important; opacity: 0; transition: opacity .6s ease;
-  background: radial-gradient(circle, rgba(91,141,239,0.16) 0%, rgba(167,139,250,0.08) 35%, transparent 68%); }
-.fx-glow.on { opacity: 1; }
-
-#hero > .astro { position: absolute; z-index: 0; left: max(3%, calc(50% - 38rem)); bottom: clamp(1.25rem, 5vh, 3.5rem); height: clamp(110px, 21vh, 204px); aspect-ratio: 140 / 210; pointer-events: none; will-change: transform; }
-.js #hero > .astro:not(.live):not(.static) { visibility: hidden; }
-.astro svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 14px rgba(91,141,239,0.22)); }
-.astro .orb { position: absolute; left: 96%; top: 30%; width: 14%; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 38% 35%, #fff 0 18%, #c4b5fd 30%, #7c83f6 55%, rgba(91,141,239,0) 72%);
-  box-shadow: 0 0 18px 6px rgba(167,139,250,0.45), 0 0 44px 14px rgba(34,211,238,0.14); animation: orbFloat 4.8s ease-in-out infinite; }
-@keyframes orbFloat { 0%,100% { transform: translate(0,0); } 25% { transform: translate(10%, -45%); } 50% { transform: translate(40%, -10%); } 75% { transform: translate(15%, 35%); } }
-@media (max-width: 600px) { #hero > .astro { left: 3%; bottom: 5.25rem; height: 84px; } }
-
-#projects .ring { margin-top: 0.5rem; }
-.ring-track { list-style: none; margin: 0; padding: 0; }
-.rc a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: var(--text);
-  background: rgba(11,16,29,0.82); border: 1px solid var(--border); border-radius: 0.9rem; overflow: hidden;
-  transition: border-color .25s, box-shadow .25s; }
-.rc a:hover, .rc a:focus-visible { border-color: rgba(91,141,239,0.6); box-shadow: 0 14px 40px rgba(91,141,239,0.18); }
-.rc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.rc img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #0b101d; border-bottom: 1px solid var(--border); }
-.rc .rc-b { padding: 0.6rem 0.75rem 0.7rem; display: flex; flex-direction: column; gap: 0.2rem; }
-.rc b { font-family: 'Archivo', sans-serif; font-size: 0.9rem; font-weight: 600; line-height: 1.25; }
-.rc small { font-size: 0.74rem; color: var(--muted); line-height: 1.35; }
-.rc .rc-m { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.15rem; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
-.rc .rc-m i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
-/* Flat fallback (no JS or reduced motion): a calm swipeable row */
-.ring-stage { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 0.25rem 0 1rem; }
-.ring-track { display: flex; gap: 1rem; }
-.rc { flex: 0 0 min(15rem, 72vw); scroll-snap-align: start; }
-.ring-ctrl { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-top: 1.25rem; flex-wrap: wrap; }
-.ring-ctrl button { display: none; }
-.ring-ctrl a, .ring-ctrl button { font: inherit; font-size: 0.82rem; color: var(--muted); text-decoration: none; cursor: pointer;
-  border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 1rem; background: rgba(11,16,29,0.5); transition: color .2s, border-color .2s; }
-.ring-ctrl a:hover, .ring-ctrl button:hover { color: var(--text); border-color: var(--accent); }
-.ring-ctrl button svg { width: 0.95rem; height: 0.95rem; display: block; }
-.ring-hint .h-touch { display: none; }
-@media (hover: none) { .ring-hint .h-fine { display: none; } .ring-hint .h-touch { display: inline; } }
-.ring-ctrl .ring-hint { font-size: 0.75rem; color: var(--muted); opacity: 0.8; width: 100%; text-align: center; margin-top: 0.2rem; display: none; }
-/* 3D ring (JS on, motion allowed) */
-@media (prefers-reduced-motion: no-preference) {
-  .js .ring .ring-stage { position: relative; overflow: hidden; height: 400px; padding: 0; scroll-snap-type: none;
-    width: 100vw; margin-left: calc(50% - 50vw); perspective: 1600px; perspective-origin: 50% 28%; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-  .js .ring.dragging .ring-stage { cursor: grabbing; }
-  .js .ring .ring-track { position: absolute; left: 50%; top: 46%; width: 0; height: 0; display: block; transform-style: preserve-3d; will-change: transform; }
-  .js .ring .rc { position: absolute; width: var(--rc-w, 210px); left: calc(var(--rc-w, 210px) / -2); top: -7.5rem; transform-style: preserve-3d; opacity: 0; }
-  .js .ring.on .rc { transition: none; }
-  .js .ring .rc.back { pointer-events: none; }
-  .js .ring .rc a { background: rgba(11,16,29,0.92); }
-  .js .ring.on .ring-ctrl button { display: inline-flex; align-items: center; gap: 0.4rem; }
-  .js .ring.on .ring-hint { display: block; }
-  @media (max-width: 600px) { .js .ring .ring-stage { height: 330px; } .js .ring .rc { top: -6.4rem; } }
+/* Project cards: hover preview (fine pointers only; identical at rest) */
+.card-wrap { position: relative; display: flex; }
+.card-wrap > .card { flex: 1; position: relative; }
+.card-pv, .card-repo { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .card-wrap:hover > .card {
+    border-color: rgba(91,141,239,0.55); background: var(--surface-hover);
+    transform: translateY(-4px); box-shadow: 0 18px 44px rgba(91,141,239,0.16), 0 2px 10px rgba(0,0,0,0.3);
+  }
+  .card-pv {
+    display: flex; flex-direction: column; position: absolute; inset: 0; z-index: 2; overflow: hidden;
+    border-radius: calc(1rem - 1px); background: #0d1322; pointer-events: none;
+    opacity: 0; visibility: hidden; transform: translateY(6px);
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+  }
+  .card-wrap:hover .card-pv, .card-wrap:focus-within .card-pv { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  .card-pv img { display: block; width: 100%; height: 44%; min-height: 0; object-fit: cover; object-position: center;
+    border-bottom: 1px solid var(--border); filter: saturate(0.9); }
+  .pv-b { display: flex; flex-direction: column; gap: 0.3rem; padding: 0.7rem 1.25rem 1rem; }
+  .pv-t { font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 1rem; color: var(--text); }
+  .pv-d { font-size: 0.82rem; line-height: 1.45; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pv-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.2rem; }
+  .pv-tags span { font-size: 0.7rem; color: #c7d2e5; border: 1px solid var(--border); background: rgba(91,141,239,0.1); border-radius: 999px; padding: 0.12rem 0.55rem; }
+  .card-repo {
+    display: inline-flex; align-items: center; gap: 0.35rem; position: absolute; top: 0.8rem; right: 0.8rem; z-index: 3;
+    font-size: 0.74rem; font-weight: 500; color: var(--text); text-decoration: none;
+    background: rgba(5,7,15,0.78); border: 1px solid var(--border); border-radius: 999px; padding: 0.3rem 0.7rem;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .card-repo svg { width: 0.85rem; height: 0.85rem; }
+  .card-wrap:hover .card-repo, .card-wrap:focus-within .card-repo { opacity: 1; pointer-events: auto; transform: translateY(-4px); }
+  .card-repo:hover { border-color: var(--accent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-wrap:hover > .card, .card-wrap:hover .card-repo, .card-wrap:focus-within .card-repo, .card-pv { transform: none !important; }
 }
 
 </style>
@@ -955,39 +936,6 @@ footer {
     </picture>
     <div class="hero-shade" aria-hidden="true"></div>
   </div>
-  <div class="astro" aria-hidden="true">
-    <svg viewBox="0 0 140 210" focusable="false">
-      <defs>
-        <linearGradient id="as-visor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e2a5a"/><stop offset="0.55" stop-color="#0b1020"/><stop offset="1" stop-color="#3b2a6e"/></linearGradient>
-        <radialGradient id="as-sheen" cx="0.3" cy="0.3" r="0.7"><stop offset="0" stop-color="#a78bfa" stop-opacity="0.55"/><stop offset="1" stop-color="#5b8def" stop-opacity="0"/></radialGradient>
-      </defs>
-      <ellipse id="as-shadow" cx="0" cy="0" rx="30" ry="4.5" fill="#000" opacity="0.35" transform="translate(66 201)"/>
-      <g id="as-fig">
-        <g id="as-lb" transform="translate(60 124)"><rect x="-10.5" y="-6" width="21" height="44" rx="10" fill="#c9d0dd" stroke="#8f9bb0" stroke-width="1.2"/><rect x="-10.5" y="14" width="21" height="3" fill="#a78bfa" opacity="0.8"/>
-      <g id="as-lb-shin" transform="translate(0 34)"><rect x="-9.5" y="-4" width="19" height="32" rx="9" fill="#c9d0dd" stroke="#8f9bb0" stroke-width="1.2"/><path d="M-11 22h18a9 9 0 0 1 9 9v2a3 3 0 0 1-3 3h-24a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3z" fill="#9aa6bb" stroke="#8f9bb0" stroke-width="1.2"/><rect x="-14" y="32" width="30" height="4" rx="2" fill="#5b6478"/></g></g>
-        <g id="as-ab"><rect x="-8" y="-5" width="16" height="33" rx="8" fill="#c9d0dd" stroke="#8f9bb0" stroke-width="1.2"/><rect x="-8" y="6" width="16" height="3" fill="#a78bfa" opacity="0.8"/>
-      <g id="as-ab-fore" transform="translate(0 26)"><rect x="-7" y="-3" width="14" height="27" rx="7" fill="#c9d0dd" stroke="#8f9bb0" stroke-width="1.2"/><circle cx="0" cy="26" r="7.5" fill="#9aa6bb" stroke="#8f9bb0" stroke-width="1.2"/></g></g>
-        <rect x="28" y="74" width="22" height="50" rx="7" fill="#d5dbe7" stroke="#8f9bb0" stroke-width="1.2"/>
-        <rect x="31" y="80" width="5" height="16" rx="2.5" fill="#8f9bb0" opacity="0.6"/>
-        <rect x="44" y="70" width="46" height="62" rx="16" fill="#e9edf5" stroke="#8f9bb0" stroke-width="1.2"/>
-        <rect x="44" y="116" width="46" height="5" fill="#a78bfa" opacity="0.85"/>
-        <rect x="62" y="86" width="20" height="15" rx="3" fill="#cfd6e4" stroke="#8f9bb0" stroke-width="1"/>
-        <circle cx="67" cy="93.5" r="2" fill="#22d3ee"/><circle cx="73" cy="93.5" r="2" fill="#a78bfa"/><circle cx="79" cy="93.5" r="2" fill="#34d399"/>
-        <circle cx="53" cy="89" r="5.5" fill="#f7931a"/><text x="53" y="92" text-anchor="middle" font-size="8" font-weight="700" font-family="Arial, sans-serif" fill="#fff">&#8383;</text>
-        <rect x="55" y="68" width="32" height="8" rx="4" fill="#c3cad8" stroke="#8f9bb0" stroke-width="1"/>
-        <circle cx="70" cy="46" r="26" fill="#eef1f7" stroke="#8f9bb0" stroke-width="1.2"/>
-        <path d="M63 34a18 16 0 0 1 32 4v10a18 16 0 0 1-32 2z" fill="url(#as-visor)" stroke="#6b7690" stroke-width="1"/>
-        <path d="M63 34a18 16 0 0 1 32 4v10a18 16 0 0 1-32 2z" fill="url(#as-sheen)"/>
-        <ellipse cx="85" cy="38" rx="4.5" ry="2.6" fill="#fff" opacity="0.55" transform="rotate(-24 85 38)"/>
-        <rect x="47" y="30" width="6" height="14" rx="3" fill="#c3cad8" stroke="#8f9bb0" stroke-width="1"/>
-        <g id="as-lf" transform="translate(66 124)"><rect x="-10.5" y="-6" width="21" height="44" rx="10" fill="#e9edf5" stroke="#8f9bb0" stroke-width="1.2"/><rect x="-10.5" y="14" width="21" height="3" fill="#a78bfa" opacity="0.8"/>
-      <g id="as-lf-shin" transform="translate(0 34)"><rect x="-9.5" y="-4" width="19" height="32" rx="9" fill="#e9edf5" stroke="#8f9bb0" stroke-width="1.2"/><path d="M-11 22h18a9 9 0 0 1 9 9v2a3 3 0 0 1-3 3h-24a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3z" fill="#9aa6bb" stroke="#8f9bb0" stroke-width="1.2"/><rect x="-14" y="32" width="30" height="4" rx="2" fill="#5b6478"/></g></g>
-        <g id="as-af"><rect x="-8" y="-5" width="16" height="33" rx="8" fill="#e9edf5" stroke="#8f9bb0" stroke-width="1.2"/><rect x="-8" y="6" width="16" height="3" fill="#a78bfa" opacity="0.8"/>
-      <g id="as-af-fore" transform="translate(0 26)"><rect x="-7" y="-3" width="14" height="27" rx="7" fill="#e9edf5" stroke="#8f9bb0" stroke-width="1.2"/><circle cx="0" cy="26" r="7.5" fill="#9aa6bb" stroke="#8f9bb0" stroke-width="1.2"/></g></g>
-      </g>
-    </svg>
-    <span class="orb"></span>
-  </div>
   <div class="badge"><span class="dot" aria-hidden="true"></span> Victoria, British Columbia &middot; Canada &middot; Full-time trader</div>
   <h1>Andr&eacute;s <span class="accent">Blitz</span></h1>
   <p class="hero-social"><a href="https://x.com/andresblitz" target="_blank" rel="noopener" aria-label="Andrés Blitz on X"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> <span>@andresblitz</span></a></p>
@@ -1024,35 +972,100 @@ footer {
     <div class="section-head reveal">
       <p class="kicker">Projects</p>
       <h2>Things I’ve built</h2>
-      <p>Trading tools, dashboards, a game and experiments — each with its own page. Pick one to explore.</p>
+      <p>Trading tools, dashboards, a game and experiments — each with its own page. Featured work up top, everything else below.</p>
     </div>
 
-    <div class="ring reveal" data-ring role="region" aria-roledescription="carousel" aria-label="All 15 projects">
-      <div class="ring-stage">
-        <ul class="ring-track">
-        <li class="rc"><a href="/projects/blitzys-world/"><img src="/assets/projects/blitzys-world-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Blitzy&#x27;s World</b><small>A glowing orb cruising an endless universe.</small><span class="rc-m"><i style="background:#a78bfa"></i>Playable</span></span></a></li>
-        <li class="rc"><a href="/projects/realwealth-portfolio/"><img src="/assets/projects/realwealth-portfolio-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>RealWealth Portfolio</b><small>Live real estate portfolio dashboard.</small><span class="rc-m"><i style="background:#34d399"></i>Live app</span></span></a></li>
-        <li class="rc"><a href="/projects/lie-detector/"><img src="/assets/projects/lie-detector-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Blitz Engine (lie-detector)</b><small>Open-source behavioral signal analyzer.</small><span class="rc-m"><i style="background:#3572A5"></i>Python</span></span></a></li>
-        <li class="rc"><a href="/projects/sigspace/"><img src="/assets/projects/sigspace-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>SIGSPACE</b><small>Your network, rendered as a video game world.</small><span class="rc-m"><i style="background:#e34c26"></i>HTML</span></span></a></li>
-        <li class="rc"><a href="/projects/weinstein-stage-matrix/"><img src="/assets/projects/weinstein-stage-matrix-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Weinstein Stage Matrix</b><small>Stage analysis indicator for TradingView.</small><span class="rc-m"><i style="background:#26a69a"></i>Pine Script</span></span></a></li>
-        <li class="rc"><a href="/projects/iptv-player/"><img src="/assets/projects/iptv-player-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>IPTV Player</b><small>Latin America &amp; USA channels in one fast player.</small><span class="rc-m"><i style="background:#e34c26"></i>HTML</span></span></a></li>
-        <li class="rc"><a href="/projects/netwatch/"><img src="/assets/projects/netwatch-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>NetWatch</b><small>Local network monitoring dashboard.</small><span class="rc-m"><i style="background:#3572A5"></i>Python</span></span></a></li>
-        <li class="rc"><a href="/projects/bluth-scan/"><img src="/assets/projects/bluth-scan-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>BluthScan</b><small>Bluetooth devices as a living 3D graph.</small><span class="rc-m"><i style="background:#3572A5"></i>Python</span></span></a></li>
-        <li class="rc"><a href="/projects/signet-thesis/"><img src="/assets/projects/signet-thesis-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>SIGNET</b><small>Signal intelligence network visualization — thesis.</small><span class="rc-m"><i style="background:#083fa1"></i>Markdown</span></span></a></li>
-        <li class="rc"><a href="/projects/elevatron/"><img src="/assets/projects/elevatron-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Elevatron</b><small>A cited concept study of a beam to space.</small><span class="rc-m"><i style="background:#3D6117"></i>TeX</span></span></a></li>
-        <li class="rc"><a href="/projects/home-history/"><img src="/assets/projects/home-history-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Home History</b><small>A time capsule file for a house.</small><span class="rc-m"><i style="background:#3178c6"></i>TypeScript</span></span></a></li>
-        <li class="rc"><a href="/projects/quiniela/"><img src="/assets/projects/quiniela-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Quiniela 2026</b><small>World Cup 2026 prediction pool.</small><span class="rc-m"><i style="background:#f1e05a"></i>JavaScript</span></span></a></li>
-        <li class="rc"><a href="/projects/compute-share-pilot/"><img src="/assets/projects/compute-share-pilot-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Compute Share Pilot</b><small>Trusted compute sharing for remote AI jobs.</small><span class="rc-m"><i style="background:#3572A5"></i>Python</span></span></a></li>
-        <li class="rc"><a href="/projects/blitz-analytics/"><img src="/assets/projects/blitz-analytics-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Blitz Analytics</b><small>The private analytics behind this site.</small><span class="rc-m"><i style="background:#f1e05a"></i>JavaScript</span></span></a></li>
-        <li class="rc"><a href="/projects/elite-island-movers/"><img src="/assets/projects/elite-island-movers-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="rc-b"><b>Elite Island Movers</b><small>One-page site for a local moving company.</small><span class="rc-m"><i style="background:#e34c26"></i>HTML</span></span></a></li>
-        </ul>
+    <div class="grid">
+      <div class="card-wrap reveal">
+      <a class="card" href="/projects/blitzys-world/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M3.5 15.5c-1.4-2.4 2.1-6.3 7.8-8.8s11-2.3 12.2.1"/><path d="M20.5 8.5c1.4 2.4-2.1 6.3-7.8 8.8s-11 2.3-12.2-.1"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>Blitzy's World</h3>
+        <p>A glowing orb cruising an endless universe.</p>
+        <div class="meta"><span class="lang-dot" style="background:#f1e05a"></span> JavaScript · Playable</div>
+        <span class="card-pv" aria-hidden="true"><img src="/assets/projects/blitzys-world-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="pv-b"><span class="pv-t">Blitzy&#x27;s World</span><span class="pv-d">Fly a glowing orb through an endless universe, slingshot around planets and collect stardust.</span><span class="pv-tags"><span>Canvas</span><span>JavaScript</span><span>Touch</span></span></span></span>
+      </a>
       </div>
-      <div class="ring-ctrl">
-        <button type="button" data-ring-step="-1" aria-label="Previous project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-        <button type="button" data-ring-toggle aria-pressed="false" aria-label="Pause rotation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
-        <button type="button" data-ring-step="1" aria-label="Next project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+      <div class="card-wrap reveal">
+      <a class="card" href="/projects/realwealth-portfolio/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>RealWealth Portfolio</h3>
+        <p>Live real estate portfolio dashboard.</p>
+        <div class="meta"><span class="lang-dot" style="background:#3178c6"></span> TypeScript · Live app</div>
+        <span class="card-pv" aria-hidden="true"><img src="/assets/projects/realwealth-portfolio-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="pv-b"><span class="pv-t">RealWealth Portfolio</span><span class="pv-d">Properties, mortgages, market data and a Bitcoin sleeve in one live dashboard.</span><span class="pv-tags"><span>Next.js</span><span>TypeScript</span><span>Supabase</span></span></span></span>
+      </a>
+      </div>
+      <div class="card-wrap reveal">
+      <a class="card" href="/projects/lie-detector/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>Blitz Engine (lie-detector)</h3>
+        <p>Open-source behavioral signal analyzer.</p>
+        <div class="meta"><span class="lang-dot" style="background:#3572A5"></span> Python</div>
+        <span class="card-pv" aria-hidden="true"><img src="/assets/projects/lie-detector-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="pv-b"><span class="pv-t">Blitz Engine (lie-detector)</span><span class="pv-d">Webcam and mic cues fused with Bayesian log-odds against a personal baseline.</span><span class="pv-tags"><span>Python</span><span>FastAPI</span><span>WebSockets</span></span></span></span>
+      </a>
+        <a class="card-repo" href="https://github.com/blitzandres/lie-detector" target="_blank" rel="noopener" aria-label="Blitz Engine (lie-detector) source on GitHub"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+      </div>
+      <div class="card-wrap reveal">
+      <a class="card" href="/projects/sigspace/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h3l3-9 4 18 3-9h3"/><circle cx="20" cy="12" r="2"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>SIGSPACE</h3>
+        <p>Your network, rendered as a video game world.</p>
+        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML / Canvas</div>
+        <span class="card-pv" aria-hidden="true"><img src="/assets/projects/sigspace-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="pv-b"><span class="pv-t">SIGSPACE</span><span class="pv-d">Walk through your own network as a pixel character; signals float around you.</span><span class="pv-tags"><span>Canvas</span><span>JavaScript</span><span>Workers</span></span></span></span>
+      </a>
+        <a class="card-repo" href="https://github.com/blitzandres/sigspace" target="_blank" rel="noopener" aria-label="SIGSPACE source on GitHub"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+      </div>
+      <div class="card-wrap reveal">
+      <a class="card" href="/projects/weinstein-stage-matrix/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>Weinstein Stage Matrix</h3>
+        <p>Stage analysis indicator for TradingView.</p>
+        <div class="meta"><span class="lang-dot" style="background:#26a69a"></span> Pine Script · Private</div>
+        <span class="card-pv" aria-hidden="true"><img src="/assets/projects/weinstein-stage-matrix-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="pv-b"><span class="pv-t">Weinstein Stage Matrix</span><span class="pv-d">Sorts any chart into Weinstein’s four stages, anchored on the weekly timeframe.</span><span class="pv-tags"><span>Pine Script</span><span>TradingView</span></span></span></span>
+      </a>
+      </div>
+      <div class="card-wrap reveal">
+      <a class="card" href="/projects/iptv-player/">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+          <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3>IPTV Player</h3>
+        <p>Latin America & USA channels in one fast player.</p>
+        <div class="meta"><span class="lang-dot" style="background:#e34c26"></span> HTML</div>
+        <span class="card-pv" aria-hidden="true"><img src="/assets/projects/iptv-player-thumb.webp" alt="" width="640" height="360" loading="lazy" decoding="async" /><span class="pv-b"><span class="pv-t">IPTV Player</span><span class="pv-d">Dark-mode IPTV player with search, favorites, history and your own M3U playlists.</span><span class="pv-tags"><span>HTML</span><span>JavaScript</span><span>HLS.js</span></span></span></span>
+      </a>
+        <a class="card-repo" href="https://github.com/blitzandres/iptv-player" target="_blank" rel="noopener" aria-label="IPTV Player source on GitHub"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+      </div>
+    </div>
+
+    <div id="more-repos" class="reveal">
+      <h3>More projects</h3>
+      <div class="chips">
+        <a href="/projects/netwatch/">NetWatch</a>
+        <a href="/projects/bluth-scan/">BluthScan</a>
+        <a href="/projects/signet-thesis/">SIGNET</a>
+        <a href="/projects/elevatron/">Elevatron</a>
+        <a href="/projects/home-history/">Home History</a>
+        <a href="/projects/quiniela/">Quiniela 2026</a>
+        <a href="/projects/compute-share-pilot/">Compute Share Pilot</a>
+        <a href="/projects/blitz-analytics/">Blitz Analytics</a>
+        <a href="/projects/elite-island-movers/">Elite Island Movers</a>
         <a href="/projects/">All projects →</a>
-        <p class="ring-hint"><span class="h-fine">Drag to spin · ← → keys work too</span><span class="h-touch">Swipe to spin · tap a card to open</span></p>
       </div>
     </div>
   </div>
@@ -1266,7 +1279,6 @@ footer {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
 </script>
-<script src="/assets/js/fx.js" defer></script>
 <script>
 // blitz-analytics — visitor tracking + Intercom-style chat
 (function() {
