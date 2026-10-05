@@ -3,120 +3,230 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blitzy's World — Original 3D Prototype (v0.1) | Andrés Blitz</title>
-  <meta name="description" content="The original Three.js prototype of Blitzy's World, repaired: a glowing orb rolling around a purple planet in deep space. Mouse, keyboard and touch.">
+  <title>Blitzy's World — 3D Levels (v0.3) | Andrés Blitz</title>
+  <meta name="description" content="Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#01000a">
   <link rel="canonical" href="https://andresblitz.com/projects/blitzys-world/play/3d/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Andrés Blitz">
   <meta property="og:url" content="https://andresblitz.com/projects/blitzys-world/play/3d/">
-  <meta property="og:title" content="Blitzy's World — original 3D prototype">
-  <meta property="og:description" content="The first Three.js version of Blitzy's World, repaired and playable: an orb rolling around a planet in deep space.">
+  <meta property="og:title" content="Blitzy's World — 3D Levels">
+  <meta property="og:description" content="4 levels: catch stars, evade aliens, dodge asteroids.">
   <meta property="og:image" content="https://andresblitz.com/assets/projects/blitzys-world.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@andresblitz">
-  <meta name="twitter:image" content="https://andresblitz.com/assets/projects/blitzys-world.png">
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
   <style>
+
     * { margin:0; padding:0; box-sizing:border-box; }
-    html,body { height:100%; } body { background:#000; overflow:hidden; font-family:'Orbitron',sans-serif; touch-action:none; -webkit-user-select:none; user-select:none; }
+    html,body { height:100%; }
+    body {
+      background:#000; overflow:hidden;
+      font-family:'Orbitron',system-ui,sans-serif;
+      touch-action:none; -webkit-user-select:none; user-select:none;
+      color:#dcc8ff;
+    }
     canvas { display:block; touch-action:none; }
-    #back { position:fixed; top:18px; left:18px; z-index:120; font:500 11px system-ui,sans-serif; letter-spacing:.08em; color:rgba(210,190,255,.75); text-decoration:none; background:rgba(20,8,50,.55); border:1px solid rgba(150,100,255,.3); padding:7px 12px; border-radius:999px; }
+
+    #back {
+      position:fixed; top:16px; left:16px; z-index:120;
+      font:500 11px system-ui,sans-serif; letter-spacing:.08em;
+      color:rgba(210,190,255,.75); text-decoration:none;
+      background:rgba(20,8,50,.55); border:1px solid rgba(150,100,255,.3);
+      padding:7px 12px; border-radius:999px;
+    }
     #back:hover { color:#fff; }
-    .tbtn { position:fixed; z-index:60; width:56px; height:56px; border-radius:50%; display:none; align-items:center; justify-content:center; font:700 11px 'Orbitron',sans-serif; color:#d9c8ff; background:rgba(40,10,90,.5); border:1px solid rgba(130,70,255,.45); touch-action:none; }
+
+    .tbtn {
+      position:fixed; z-index:60; width:56px; height:56px; border-radius:50%;
+      display:none; align-items:center; justify-content:center;
+      font:700 11px 'Orbitron',sans-serif; color:#d9c8ff;
+      background:rgba(40,10,90,.5); border:1px solid rgba(130,70,255,.45);
+      touch-action:none;
+    }
     body.touch.playing .tbtn { display:flex; }
     #t-up { right:22px; bottom:150px; } #t-down { right:22px; bottom:84px; }
-    #stick { position:fixed; width:110px; height:110px; margin:-55px 0 0 -55px; border-radius:50%; border:1px solid rgba(180,140,255,.35); background:rgba(60,20,140,.18); pointer-events:none; display:none; z-index:55; }
-    #stick i { position:absolute; left:50%; top:50%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%; background:rgba(210,180,255,.45); }
+    #stick {
+      position:fixed; width:110px; height:110px; margin:-55px 0 0 -55px;
+      border-radius:50%; border:1px solid rgba(180,140,255,.35);
+      background:rgba(60,20,140,.18); pointer-events:none; display:none; z-index:55;
+    }
+    #stick i {
+      position:absolute; left:50%; top:50%; width:44px; height:44px;
+      margin:-22px 0 0 -22px; border-radius:50%; background:rgba(210,180,255,.45);
+    }
 
-    #blocker {
+    #overlay {
       position:fixed; inset:0; z-index:100;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      background:rgba(2,1,12,0.78); cursor:pointer; user-select:none;
+      display:none; flex-direction:column; align-items:center; justify-content:center;
+      background:rgba(2,1,12,0.82); backdrop-filter:blur(6px);
+      cursor:pointer; padding:24px;
     }
-    #blocker h1 {
-      font-size:clamp(22px,3.5vw,42px); font-weight:900; letter-spacing:0.3em; color:#d4bbff;
-      text-shadow:0 0 20px rgba(160,100,255,0.9),0 0 60px rgba(120,60,220,0.4); margin-bottom:12px;
+    #overlay.on { display:flex; }
+    #ov-title {
+      font-size:clamp(22px,3.6vw,44px); font-weight:900; letter-spacing:0.28em;
+      color:#d4bbff; text-shadow:0 0 20px rgba(160,100,255,0.9),0 0 60px rgba(120,60,220,0.4);
+      margin-bottom:10px; text-align:center;
     }
-    #blocker .sub  { font-size:clamp(9px,1vw,11px); letter-spacing:0.5em; color:rgba(180,150,255,0.5); margin-bottom:36px; }
-    #blocker .btn  {
-      padding:14px 40px; border:1px solid rgba(160,100,255,0.55);
-      font-size:clamp(9px,1vw,12px); letter-spacing:0.4em; color:#cc99ff;
-      background:rgba(70,25,150,0.3); transition:background .2s;
+    #ov-sub {
+      font-size:clamp(9px,1vw,12px); letter-spacing:0.42em;
+      color:rgba(180,150,255,0.55); margin-bottom:14px; text-align:center;
     }
-    #blocker .btn:hover { background:rgba(100,40,200,0.5); }
-    #blocker .keys {
-      margin-top:28px; font-size:clamp(8px,0.85vw,10px); letter-spacing:0.25em;
-      color:rgba(160,130,255,0.35); line-height:2.2; text-align:center;
+    #ov-blurb {
+      font-size:clamp(10px,1.1vw,13px); letter-spacing:0.12em;
+      color:rgba(210,190,255,0.7); margin-bottom:28px; text-align:center; max-width:420px;
+      font-family:system-ui,sans-serif; font-weight:500;
     }
+    #ov-btn {
+      padding:14px 42px; border:1px solid rgba(160,100,255,0.6);
+      font:inherit; font-size:clamp(10px,1vw,12px); letter-spacing:0.38em; color:#e0c4ff;
+      background:rgba(70,25,150,0.35); transition:background .15s, border-color .15s, transform .15s;
+      cursor:pointer;
+    }
+    #ov-btn:hover { background:rgba(100,40,200,0.55); border-color:rgba(200,150,255,0.85); transform:translateY(-1px); }
+    #ov-keys {
+      margin-top:26px; font-size:clamp(8px,0.85vw,10px); letter-spacing:0.22em;
+      color:rgba(160,130,255,0.4); line-height:2.1; text-align:center;
+    }
+    #level-cards {
+      display:none; grid-template-columns:repeat(2,minmax(120px,160px)); gap:10px;
+      margin-top:28px; cursor:default;
+    }
+    .lcard {
+      font:inherit; text-align:left; cursor:pointer;
+      padding:12px 14px; border:1px solid rgba(140,90,255,0.35);
+      background:rgba(40,15,90,0.4); color:#dcc8ff;
+      transition:background .15s, border-color .15s, transform .15s;
+    }
+    .lcard:hover:not(.locked) {
+      background:rgba(80,30,160,0.55); border-color:rgba(190,140,255,0.7); transform:translateY(-1px);
+    }
+    .lcard.locked { opacity:0.35; cursor:default; }
+    .lcard .ln { display:block; font-size:10px; letter-spacing:0.3em; color:rgba(180,140,255,0.55); margin-bottom:4px; }
+    .lcard .nm { display:block; font-size:11px; letter-spacing:0.12em; }
 
     #crosshair {
       position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
-      width:20px; height:20px; z-index:50; pointer-events:none; display:none;
+      width:18px; height:18px; z-index:50; pointer-events:none; display:none;
     }
     #crosshair::before,#crosshair::after {
-      content:''; position:absolute; background:rgba(220,190,255,0.5);
+      content:''; position:absolute; background:rgba(220,190,255,0.55);
     }
-    #crosshair::before { width:20px; height:1px; top:9px; left:0; }
-    #crosshair::after  { width:1px; height:20px; top:0; left:9px; }
+    #crosshair::before { width:18px; height:1px; top:8px; left:0; }
+    #crosshair::after  { width:1px; height:18px; top:0; left:8px; }
 
     #hud {
-      position:fixed; bottom:22px; left:22px; font-size:9px; letter-spacing:0.28em;
-      color:rgba(160,120,255,0.38); line-height:2.3; z-index:50; pointer-events:none; display:none;
+      position:fixed; inset:0; z-index:50; pointer-events:none;
+      opacity:0; transition:opacity .18s ease;
     }
-    #label {
-      position:fixed; top:26px; left:50%; transform:translateX(-50%);
-      font-size:clamp(13px,1.8vw,20px); font-weight:900; letter-spacing:0.35em;
-      color:rgba(200,170,255,0.65); text-shadow:0 0 16px rgba(160,100,255,0.5);
-      z-index:50; pointer-events:none; display:none; white-space:nowrap;
+    #hud.on { opacity:1; }
+    .glass {
+      background:rgba(12,6,28,0.55); border:1px solid rgba(150,100,255,0.28);
+      backdrop-filter:blur(8px); border-radius:10px;
+      box-shadow:0 8px 28px rgba(0,0,0,0.35);
+    }
+    #hud-top {
+      position:absolute; top:18px; left:50%; transform:translateX(-50%);
+      display:flex; align-items:center; gap:18px;
+      padding:10px 18px; min-width:min(92vw,520px); justify-content:space-between;
+    }
+    #hud-top .lvl { display:flex; flex-direction:column; gap:2px; }
+    #h-level { font-size:11px; letter-spacing:0.35em; color:#b894ff; }
+    #h-name { font-size:10px; letter-spacing:0.18em; color:rgba(210,190,255,0.65); font-family:system-ui,sans-serif; font-weight:600; }
+    #h-score { font-size:clamp(16px,2.2vw,22px); font-weight:900; letter-spacing:0.12em; color:#f0e6ff; text-shadow:0 0 12px rgba(180,120,255,0.5); }
+    #h-combo { font-size:12px; letter-spacing:0.2em; color:#ffe066; min-width:36px; text-align:right; }
+    #hud-side {
+      position:absolute; top:18px; right:18px;
+      padding:12px 14px; display:flex; flex-direction:column; gap:8px; min-width:110px;
+    }
+    .stat { display:flex; justify-content:space-between; gap:12px; font-size:10px; letter-spacing:0.18em; }
+    .stat span:first-child { color:rgba(170,140,255,0.55); }
+    .stat span:last-child { color:#e8dcff; }
+    #h-lives { letter-spacing:0.2em; color:#ff9ad4 !important; }
+    #h-timer { display:none; font-size:14px; letter-spacing:0.12em; color:#9ef0ff; text-align:right; }
+    #h-timer.warn { color:#ff6b8a; animation:pulse 0.6s ease infinite alternate; }
+    @keyframes pulse { from { opacity:0.7; } to { opacity:1; } }
+
+    #flash {
+      position:fixed; top:28%; left:50%; transform:translate(-50%,-50%);
+      z-index:70; pointer-events:none; opacity:0;
+      font-size:clamp(18px,3vw,34px); font-weight:900; letter-spacing:0.35em;
+      color:#e8d6ff; text-shadow:0 0 24px rgba(160,100,255,0.85);
+      transition:opacity .2s;
+    }
+    #flash.on { opacity:1; }
+
+    #toast {
+      position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(8px);
+      z-index:70; pointer-events:none; opacity:0;
+      padding:8px 16px; border-radius:999px;
+      background:rgba(30,12,70,0.7); border:1px solid rgba(160,110,255,0.4);
+      font:600 11px system-ui,sans-serif; letter-spacing:0.08em; color:#e8dcff;
+      transition:opacity .18s, transform .18s;
+    }
+    #toast.on { opacity:1; transform:translateX(-50%) translateY(0); }
+
+    #hud-hint {
+      position:absolute; bottom:20px; left:20px;
+      font-size:9px; letter-spacing:0.22em; line-height:1.9;
+      color:rgba(160,120,255,0.35);
     }
 
-    #trace-btn {
-      position:fixed; bottom:22px; right:22px; z-index:60; display:none;
-      padding:10px 22px; font-family:'Orbitron',sans-serif;
-      font-size:clamp(8px,0.9vw,11px); letter-spacing:0.35em;
-      color:rgba(180,140,255,0.75); background:rgba(40,10,90,0.55);
-      border:1px solid rgba(130,70,255,0.40); cursor:pointer;
-      transition:background .18s, border-color .18s, color .18s;
-      user-select:none;
-    }
-    #trace-btn:hover { background:rgba(70,20,160,0.7); border-color:rgba(180,110,255,0.7); color:#ddc0ff; }
   </style>
+
 </head>
 <body>
-  <div id="blocker">
-    <h1>BLITZY'S WORLD</h1>
-    <div class="sub" id="sub">DEEP SPACE · v0.1 · ORIGINAL 3D PROTOTYPE</div>
-    <div class="btn" id="play-btn">CLICK TO PLAY AS BLITZY</div>
-    <div class="keys">
-      W A S D — MOVE &nbsp;·&nbsp; MOUSE — LOOK AROUND (DRAG IF THE POINTER ISN'T CAPTURED)<br>
+
+  <div id="overlay" class="on">
+    <h1 id="ov-title">BLITZY'S WORLD</h1>
+    <div id="ov-sub">DEEP SPACE · v0.3 · 4 LEVELS</div>
+    <div id="ov-blurb">Catch stars. Evade aliens. Dodge asteroids.</div>
+    <button type="button" id="ov-btn">CLICK TO PLAY</button>
+    <div id="ov-keys">
+      W A S D — MOVE &nbsp;·&nbsp; MOUSE — LOOK<br>
       SPACE — UP &nbsp;·&nbsp; SHIFT — DOWN<br>
-      T — ERASE TRACE &nbsp;·&nbsp; ESC / P — PAUSE<br>
-      TOUCH — LEFT SIDE MOVES · RIGHT SIDE LOOKS
+      P / ESC — PAUSE &nbsp;·&nbsp; T — ERASE TRACE
     </div>
+    <div id="level-cards"></div>
   </div>
   <div id="crosshair"></div>
-  <div id="hud">W A S D · MOVE<br>MOUSE · CAMERA<br>SPACE / SHIFT · UP / DOWN<br>T · ERASE TRACE</div>
-  <div id="label">BLITZY'S WORLD</div>
-  <div id="trace-btn">✦ ERASE TRACE</div>
-  <a id="back" href="/projects/blitzys-world/">← Blitzy's World</a>
+  <div id="flash"></div>
+  <div id="toast"></div>
+  <div id="hud">
+    <div id="hud-top" class="glass">
+      <div class="lvl"><span id="h-level">L1</span><span id="h-name">TRAINING ORBIT</span></div>
+      <div id="h-score">000000</div>
+      <div id="h-combo"></div>
+    </div>
+    <div id="hud-side" class="glass">
+      <div class="stat"><span>STARS</span><span id="h-stars">0/0</span></div>
+      <div class="stat"><span>LIVES</span><span id="h-lives">●●●</span></div>
+      <div id="h-timer">0.0s</div>
+    </div>
+    <div id="hud-hint">WASD MOVE · MOUSE LOOK · SPACE/SHIFT UP/DOWN</div>
+  </div>
   <div class="tbtn" id="t-up">UP</div>
   <div class="tbtn" id="t-down">DOWN</div>
   <div id="stick"><i></i></div>
-  <noscript><p style="color:#ccc;font-family:sans-serif;padding:2rem;position:relative;z-index:200">This prototype needs JavaScript and WebGL.</p></noscript>
+
+  <a id="back" href="/projects/blitzys-world/">← Blitzy's World</a>
+
+  <noscript><p style="color:#ccc;font-family:sans-serif;padding:2rem;position:relative;z-index:200">Needs JavaScript and WebGL.</p></noscript>
 
   <script type="importmap">
-  {"imports":{"three":"./vendor/three.module.min.js"}}
+{"imports":{"three":"./vendor/three.module.min.js"}}
   </script>
 
   <script type="module">
+
     import * as THREE from 'three';
 
     // ── Renderer ──────────────────────────────────────────────────────────────
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
     renderer.setSize(innerWidth, innerHeight);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -127,99 +237,257 @@
     scene.background = new THREE.Color(0x01000a);
     scene.fog = new THREE.FogExp2(0x01000a, 0.00006);
 
-    const camera = new THREE.PerspectiveCamera(70, innerWidth / innerHeight, 0.5, 25000);
+    const camera = new THREE.PerspectiveCamera(72, innerWidth / innerHeight, 0.5, 25000);
 
     // ── Constants ─────────────────────────────────────────────────────────────
     const PLANET_R  = 180;
-    const BALL_R    = 16;
-    const CAM_DIST  = 110;
-    const ACCEL     = 2200;
-    const DRAG      = 0.93;
-    const MAX_SPEED = 2000;
+    const BALL_R    = 14;
+    const CAM_DIST  = 100;
+    const ACCEL     = 3000;
+    const DRAG      = 0.94;
+    const MAX_SPEED = 2800;
+    const STAR_R    = 9;
+    const ALIEN_R   = 18;
+    const INVULN_T  = 1.4;
+    const STAR_SCORE = 100;
+    const COMBO_WINDOW = 2.5;
 
-    // ── Ball state ────────────────────────────────────────────────────────────
-    const ballPos = new THREE.Vector3(0, 0, PLANET_R + BALL_R + 2);
+    // ── Level definitions ─────────────────────────────────────────────────────
+    const LEVELS = [
+      {
+        id: 1, name: 'TRAINING ORBIT',
+        blurb: 'Collect the stars. Sparse asteroids. No hostiles.',
+        stars: 8, aliens: 0, asteroids: 6,
+        asteroidSpeed: 55, alienSpeed: 0, alienAgro: 0,
+        starOrbit: [320, 520], lives: 3, timeLimit: 0,
+      },
+      {
+        id: 2, name: 'STAR FIELD',
+        blurb: 'More stars. Mild alien chase. Keep moving.',
+        stars: 10, aliens: 2, asteroids: 12,
+        asteroidSpeed: 85, alienSpeed: 95, alienAgro: 0.55,
+        starOrbit: [340, 620], lives: 3, timeLimit: 0,
+      },
+      {
+        id: 3, name: 'AMBUSH',
+        blurb: 'Dense rock field. Aliens hunt hard. Survive.',
+        stars: 12, aliens: 4, asteroids: 22,
+        asteroidSpeed: 130, alienSpeed: 150, alienAgro: 0.85,
+        starOrbit: [380, 780], lives: 3, timeLimit: 0,
+      },
+      {
+        id: 4, name: 'GAUNTLET',
+        blurb: 'Fast rocks. Aggressive swarm. Beat the clock.',
+        stars: 15, aliens: 6, asteroids: 30,
+        asteroidSpeed: 180, alienSpeed: 210, alienAgro: 1.15,
+        starOrbit: [400, 900], lives: 3, timeLimit: 95,
+      },
+    ];
+
+    // ── Game state ────────────────────────────────────────────────────────────
+    let mode = 'title'; // title | playing | levelclear | gameover | victory | paused
+    let levelIndex = 0;
+    let score = 0;
+    let lives = 3;
+    let starsCollected = 0;
+    let starsTotal = 0;
+    let combo = 0;
+    let lastPickup = -99;
+    let invuln = 0;
+    let levelTime = 0;
+    let flashMsg = '';
+    let flashT = 0;
+    let started = false;
+    let paused = true;
+
+    const ballPos = new THREE.Vector3(0, 0, PLANET_R + BALL_R + 40);
     const ballVel = new THREE.Vector3();
-
-    // ── Camera angles ─────────────────────────────────────────────────────────
-    let camYaw   = 0;          // FIX: yaw=π put the camera inside the planet at spawn
-    let camPitch = 0.28;
+    let camYaw = 0;
+    let camPitch = 0.22;
     let isLocked = false;
-    let started  = false;   // FIX: play no longer depends on pointer lock
-    let paused   = true;
+
     const isTouch = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
     if (isTouch) document.body.classList.add('touch');
 
-    // ── Start / pause (pointer lock is an optional enhancement) ─────────────
-    const blocker   = document.getElementById('blocker');
-    const crosshair = document.getElementById('crosshair');
-    const hud       = document.getElementById('hud');
-    const label     = document.getElementById('label');
-    const traceBtn  = document.getElementById('trace-btn');
-    const playBtn   = document.getElementById('play-btn');
-    const subEl     = document.getElementById('sub');
+    // ── DOM ───────────────────────────────────────────────────────────────────
+    const overlay   = document.getElementById('overlay');
+    const overlayTitle = document.getElementById('ov-title');
+    const overlaySub   = document.getElementById('ov-sub');
+    const overlayBlurb = document.getElementById('ov-blurb');
+    const overlayBtn   = document.getElementById('ov-btn');
+    const overlayKeys  = document.getElementById('ov-keys');
+    const levelCards   = document.getElementById('level-cards');
+    const hudEl        = document.getElementById('hud');
+    const flashEl      = document.getElementById('flash');
+    const crosshair    = document.getElementById('crosshair');
+    const toastEl      = document.getElementById('toast');
 
-    function showPlaying(on) {
-      blocker.style.display   = on ? 'none' : 'flex';
-      hud.style.display       = on ? 'block' : 'none';
-      label.style.display     = on ? 'block' : 'none';
-      traceBtn.style.display  = on && !isLocked ? 'block' : 'none';
-      crosshair.style.display = on && isLocked ? 'block' : 'none';
+    function setHudVisible(on) {
+      hudEl.classList.toggle('on', on);
+      crosshair.style.display = on && isLocked && !isTouch ? 'block' : 'none';
       document.body.classList.toggle('playing', on);
     }
-    function play() {
-      started = true; paused = false; showPlaying(true);
-      if (!isTouch && renderer.domElement.requestPointerLock) {
-        try {
-          const p = renderer.domElement.requestPointerLock();
-          // FIX: Chrome rejects a re-lock right after ESC; fall back to drag-to-look instead of getting stuck
-          if (p && p.catch) p.catch(() => {});
-        } catch (_) {}
+
+    function showOverlay(cfg) {
+      overlay.classList.add('on');
+      overlayTitle.textContent = cfg.title || '';
+      overlaySub.textContent = cfg.sub || '';
+      overlayBlurb.textContent = cfg.blurb || '';
+      overlayBtn.textContent = cfg.btn || 'PLAY';
+      overlayKeys.style.display = cfg.keys ? 'block' : 'none';
+      levelCards.style.display = cfg.levels ? 'grid' : 'none';
+      if (cfg.levels) buildLevelCards();
+      setHudVisible(false);
+    }
+    function hideOverlay() {
+      overlay.classList.remove('on');
+    }
+
+    function buildLevelCards() {
+      levelCards.innerHTML = '';
+      LEVELS.forEach((L, i) => {
+        const unlocked = i <= Math.max(levelIndex, bestCleared());
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'lcard' + (unlocked ? '' : ' locked');
+        card.innerHTML = `<span class="ln">0${L.id}</span><span class="nm">${L.name}</span>`;
+        if (unlocked) card.addEventListener('click', (e) => { e.stopPropagation(); startLevel(i); });
+        levelCards.appendChild(card);
+      });
+    }
+    function bestCleared() {
+      try { return parseInt(localStorage.getItem('bw_cleared') || '0', 10) || 0; } catch (_) { return 0; }
+    }
+    function markCleared(idx) {
+      try {
+        const n = Math.max(bestCleared(), idx + 1);
+        localStorage.setItem('bw_cleared', String(n));
+      } catch (_) {}
+    }
+
+    function toast(msg) {
+      toastEl.textContent = msg;
+      toastEl.classList.add('on');
+      clearTimeout(toastEl._t);
+      toastEl._t = setTimeout(() => toastEl.classList.remove('on'), 1400);
+    }
+
+    function flash(msg, dur = 1.6) {
+      flashMsg = msg;
+      flashT = dur;
+      flashEl.textContent = msg;
+      flashEl.classList.add('on');
+    }
+
+    function updateHud() {
+      const L = LEVELS[levelIndex];
+      document.getElementById('h-level').textContent = `L${L.id}`;
+      document.getElementById('h-name').textContent = L.name;
+      document.getElementById('h-score').textContent = String(score).padStart(6, '0');
+      document.getElementById('h-stars').textContent = `${starsCollected}/${starsTotal}`;
+      document.getElementById('h-lives').textContent = '●'.repeat(Math.max(0, lives)) + '○'.repeat(Math.max(0, 3 - lives));
+      const timer = document.getElementById('h-timer');
+      if (L.timeLimit > 0) {
+        const left = Math.max(0, L.timeLimit - levelTime);
+        timer.style.display = 'block';
+        timer.textContent = left.toFixed(1) + 's';
+        timer.classList.toggle('warn', left < 15);
+      } else {
+        timer.style.display = 'none';
+      }
+      document.getElementById('h-combo').textContent = combo > 1 ? `×${combo}` : '';
+    }
+
+    // ── Pointer / start ───────────────────────────────────────────────────────
+    function requestLock() {
+      if (isTouch || !renderer.domElement.requestPointerLock) return;
+      try {
+        const p = renderer.domElement.requestPointerLock();
+        if (p && p.catch) p.catch(() => {});
+      } catch (_) {}
+    }
+
+    function playFromOverlay() {
+      if (mode === 'victory') {
+        startLevel(0);
+      } else if (mode === 'gameover' || mode === 'title') {
+        startLevel(levelIndex);
+      } else if (mode === 'levelclear') {
+        if (levelIndex + 1 < LEVELS.length) startLevel(levelIndex + 1);
+        else showVictory();
+      } else if (mode === 'paused') {
+        resumePlay();
       }
     }
-    function pause() {
-      if (!started) return;
+
+    overlayBtn.addEventListener('click', (e) => { e.stopPropagation(); playFromOverlay(); });
+    overlay.addEventListener('click', (e) => {
+      if (e.target.closest('.lcard') || e.target === overlayBtn) return;
+      if (mode === 'title' || mode === 'paused' || mode === 'levelclear' || mode === 'gameover' || mode === 'victory') {
+        playFromOverlay();
+      }
+    });
+
+    function resumePlay() {
+      mode = 'playing';
+      paused = false;
+      hideOverlay();
+      setHudVisible(true);
+      updateHud();
+      requestLock();
+    }
+
+    function pauseGame() {
+      if (mode !== 'playing') return;
+      mode = 'paused';
       paused = true;
       for (const k in keys) keys[k] = false;
       if (document.pointerLockElement) document.exitPointerLock();
-      subEl.textContent = 'PAUSED';
-      playBtn.textContent = isTouch ? 'TAP TO RESUME' : 'CLICK TO RESUME';
-      showPlaying(false);
+      showOverlay({
+        title: "BLITZY'S WORLD",
+        sub: 'PAUSED',
+        blurb: LEVELS[levelIndex].name,
+        btn: isTouch ? 'TAP TO RESUME' : 'CLICK TO RESUME',
+        keys: true,
+        levels: true,
+      });
     }
-    if (isTouch) playBtn.textContent = 'TAP TO PLAY AS BLITZY';
-    blocker.addEventListener('click', play);
+
     document.addEventListener('pointerlockchange', () => {
       const was = isLocked;
       isLocked = document.pointerLockElement === renderer.domElement;
-      if (was && !isLocked && !paused) pause();   // ESC while locked = pause
-      else if (!paused) showPlaying(true);
+      if (was && !isLocked && mode === 'playing') pauseGame();
+      else if (mode === 'playing') setHudVisible(true);
     });
-    document.addEventListener('pointerlockerror', () => { isLocked = false; if (!paused) showPlaying(true); });
+    document.addEventListener('pointerlockerror', () => { isLocked = false; });
+
     document.addEventListener('mousemove', e => {
-      if (!isLocked) return;
-      camYaw   -= e.movementX * 0.0022;
-      camPitch -= e.movementY * 0.0022;
-      camPitch  = Math.max(-1.2, Math.min(1.2, camPitch));
+      if (!isLocked || mode !== 'playing') return;
+      camYaw   -= e.movementX * 0.0024;
+      camPitch -= e.movementY * 0.0024;
+      camPitch  = Math.max(-1.25, Math.min(1.25, camPitch));
     });
-    // FIX: drag-to-look fallback when the pointer isn't locked (iframes, Safari, denied permission)
+
     let drag = null;
-    renderer.domElement.addEventListener('mousedown', e => { if (!paused && !isLocked) drag = { x: e.clientX, y: e.clientY }; });
+    renderer.domElement.addEventListener('mousedown', e => {
+      if (mode === 'playing' && !isLocked) drag = { x: e.clientX, y: e.clientY };
+    });
     addEventListener('mouseup', () => { drag = null; });
     addEventListener('mousemove', e => {
-      if (!drag) return;
-      camYaw   -= (e.clientX - drag.x) * 0.005;
-      camPitch -= (e.clientY - drag.y) * 0.005;
-      camPitch  = Math.max(-1.2, Math.min(1.2, camPitch));
+      if (!drag || mode !== 'playing') return;
+      camYaw   -= (e.clientX - drag.x) * 0.0055;
+      camPitch -= (e.clientY - drag.y) * 0.0055;
+      camPitch  = Math.max(-1.25, Math.min(1.25, camPitch));
       drag.x = e.clientX; drag.y = e.clientY;
     });
 
-    // FIX: touch controls — left half is a joystick, right half drags the camera
+    // Touch
     const stickEl = document.getElementById('stick'), knob = stickEl.firstElementChild;
     const touchMove = { id: null, sx: 0, sy: 0, x: 0, y: 0 };
     const touchLook = { id: null, x: 0, y: 0 };
     let touchUp = false, touchDown = false;
     renderer.domElement.addEventListener('touchstart', e => {
-      if (paused) return;
+      if (mode !== 'playing') return;
       for (const t of e.changedTouches) {
         if (t.clientX < innerWidth / 2 && touchMove.id === null) {
           Object.assign(touchMove, { id: t.identifier, sx: t.clientX, sy: t.clientY, x: t.clientX, y: t.clientY });
@@ -239,9 +507,9 @@
           if (d > 48) { dx *= 48 / d; dy *= 48 / d; }
           knob.style.transform = `translate(${dx}px, ${dy}px)`;
         } else if (t.identifier === touchLook.id) {
-          camYaw   -= (t.clientX - touchLook.x) * 0.006;
-          camPitch -= (t.clientY - touchLook.y) * 0.006;
-          camPitch  = Math.max(-1.2, Math.min(1.2, camPitch));
+          camYaw   -= (t.clientX - touchLook.x) * 0.0065;
+          camPitch -= (t.clientY - touchLook.y) * 0.0065;
+          camPitch  = Math.max(-1.25, Math.min(1.25, camPitch));
           touchLook.x = t.clientX; touchLook.y = t.clientY;
         }
       }
@@ -257,71 +525,72 @@
     renderer.domElement.addEventListener('touchcancel', endTouch);
     for (const [id, set] of [['t-up', v => touchUp = v], ['t-down', v => touchDown = v]]) {
       const el = document.getElementById(id);
+      if (!el) continue;
       el.addEventListener('pointerdown', e => { set(true); e.preventDefault(); });
       el.addEventListener('pointerup', () => set(false));
       el.addEventListener('pointercancel', () => set(false));
       el.addEventListener('pointerleave', () => set(false));
     }
-    document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) pauseGame(); });
 
-    // ── Keys ──────────────────────────────────────────────────────────────────
     const keys = {};
     document.addEventListener('keydown', e => {
       keys[e.code] = true;
       if (e.code === 'KeyT') clearTrace();
-      if ((e.code === 'KeyP' || e.code === 'Escape') && started && !paused) pause();
-      else if ((e.code === 'KeyP' || e.code === 'Enter') && started && paused) play();
+      if ((e.code === 'KeyP' || e.code === 'Escape') && mode === 'playing') pauseGame();
+      else if ((e.code === 'KeyP' || e.code === 'Enter') && mode === 'paused') resumePlay();
       if (['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) e.preventDefault();
     });
     document.addEventListener('keyup', e => { keys[e.code] = false; });
 
-    // ── Stars ─────────────────────────────────────────────────────────────────
+    // ── Background stars ──────────────────────────────────────────────────────
     (function buildStars() {
-      const N   = 14000;
+      const N = 9000;
       const pos = new Float32Array(N * 3);
       const col = new Float32Array(N * 3);
-      const pal = [[1,1,1],[1,1,1],[1,1,1],[.85,.9,1],[1,.93,.8],[.8,.85,1],[.9,.8,1]];
+      const pal = [[1,1,1],[1,1,1],[.85,.9,1],[1,.93,.8],[.8,.85,1],[.9,.8,1]];
       for (let i = 0; i < N; i++) {
         const th = Math.random() * Math.PI * 2;
         const ph = Math.acos(2 * Math.random() - 1);
         const r  = 4000 + Math.random() * 9000;
-        pos[i*3] = r*Math.sin(ph)*Math.cos(th); pos[i*3+1] = r*Math.sin(ph)*Math.sin(th); pos[i*3+2] = r*Math.cos(ph);
-        const c = pal[Math.floor(Math.random() * pal.length)];
+        pos[i*3] = r*Math.sin(ph)*Math.cos(th);
+        pos[i*3+1] = r*Math.sin(ph)*Math.sin(th);
+        pos[i*3+2] = r*Math.cos(ph);
+        const c = pal[(Math.random() * pal.length) | 0];
         col[i*3] = c[0]; col[i*3+1] = c[1]; col[i*3+2] = c[2];
       }
       const geo = new THREE.BufferGeometry();
       geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-      geo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
+      geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
       scene.add(new THREE.Points(geo, new THREE.PointsMaterial({
-        size:1.9, sizeAttenuation:true, vertexColors:true, transparent:true, opacity:0.9,
+        size: 1.8, sizeAttenuation: true, vertexColors: true, transparent: true, opacity: 0.9,
       })));
     })();
 
-    // ── Nebula sprites ────────────────────────────────────────────────────────
     function nebulaSprite(r, g, b, pos, scale) {
-      const sz=512, c=document.createElement('canvas'); c.width=c.height=sz;
-      const cx=c.getContext('2d');
-      const grd=cx.createRadialGradient(sz/2,sz/2,0,sz/2,sz/2,sz/2);
-      grd.addColorStop(0,`rgba(${r},${g},${b},0.38)`);
-      grd.addColorStop(0.5,`rgba(${r},${g},${b},0.10)`);
-      grd.addColorStop(1,'rgba(0,0,0,0)');
-      cx.fillStyle=grd; cx.fillRect(0,0,sz,sz);
-      const s=new THREE.Sprite(new THREE.SpriteMaterial({
-        map:new THREE.CanvasTexture(c), transparent:true,
-        blending:THREE.AdditiveBlending, depthWrite:false,
+      const sz = 512, c = document.createElement('canvas'); c.width = c.height = sz;
+      const cx = c.getContext('2d');
+      const grd = cx.createRadialGradient(sz/2,sz/2,0,sz/2,sz/2,sz/2);
+      grd.addColorStop(0, `rgba(${r},${g},${b},0.38)`);
+      grd.addColorStop(0.5, `rgba(${r},${g},${b},0.10)`);
+      grd.addColorStop(1, 'rgba(0,0,0,0)');
+      cx.fillStyle = grd; cx.fillRect(0,0,sz,sz);
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: new THREE.CanvasTexture(c), transparent: true,
+        blending: THREE.AdditiveBlending, depthWrite: false,
       }));
       s.position.set(...pos); s.scale.setScalar(scale); scene.add(s);
     }
-    nebulaSprite(65,15,140,[ 700, 350,-2000],2200);
+    nebulaSprite(65,15,140,[700,350,-2000],2200);
     nebulaSprite(15,25,110,[-950,-250,-2400],2600);
-    nebulaSprite(80,18,155,[ 200, 520,-1600],1600);
+    nebulaSprite(80,18,155,[200,520,-1600],1600);
     nebulaSprite(35,10,100,[-600,-500,-3000],3000);
 
     // ── Planet ────────────────────────────────────────────────────────────────
     function makePlanetTex() {
-      const sz=1024, c=document.createElement('canvas'); c.width=c.height=sz;
-      const cx=c.getContext('2d');
-      cx.fillStyle='#180840'; cx.fillRect(0,0,sz,sz);
+      const sz = 1024, c = document.createElement('canvas'); c.width = c.height = sz;
+      const cx = c.getContext('2d');
+      cx.fillStyle = '#180840'; cx.fillRect(0,0,sz,sz);
       for (const p of [
         {x:.35,y:.40,rx:130,ry:95, col:'rgba(75,28,165,0.72)'},
         {x:.66,y:.28,rx:95, ry:72, col:'rgba(58,18,145,0.68)'},
@@ -331,159 +600,330 @@
         {x:.14,y:.32,rx:72, ry:58, col:'rgba(78,29,162,0.62)'},
         {x:.86,y:.46,rx:68, ry:52, col:'rgba(52,16,132,0.58)'},
       ]) {
-        const g=cx.createRadialGradient(p.x*sz,p.y*sz,0,p.x*sz,p.y*sz,Math.max(p.rx,p.ry));
-        g.addColorStop(0,p.col); g.addColorStop(1,'transparent');
-        cx.fillStyle=g;
-        cx.save(); cx.translate(p.x*sz,p.y*sz); cx.scale(1,p.ry/p.rx);
+        const g = cx.createRadialGradient(p.x*sz,p.y*sz,0,p.x*sz,p.y*sz,Math.max(p.rx,p.ry));
+        g.addColorStop(0, p.col); g.addColorStop(1, 'transparent');
+        cx.fillStyle = g;
+        cx.save(); cx.translate(p.x*sz, p.y*sz); cx.scale(1, p.ry/p.rx);
         cx.beginPath(); cx.arc(0,0,p.rx,0,Math.PI*2); cx.restore(); cx.fill();
       }
-      cx.strokeStyle='rgba(130,70,255,0.10)'; cx.lineWidth=1.2;
-      for (let i=1;i<8;i++) {
+      cx.strokeStyle = 'rgba(130,70,255,0.10)'; cx.lineWidth = 1.2;
+      for (let i = 1; i < 8; i++) {
         cx.beginPath(); cx.moveTo(sz*i/8,0); cx.lineTo(sz*i/8,sz); cx.stroke();
         cx.beginPath(); cx.moveTo(0,sz*i/8); cx.lineTo(sz,sz*i/8); cx.stroke();
       }
       return new THREE.CanvasTexture(c);
     }
     const planet = new THREE.Mesh(
-      new THREE.SphereGeometry(PLANET_R, 80, 80),
+      new THREE.SphereGeometry(PLANET_R, 64, 64),
       new THREE.MeshPhongMaterial({
-        map:makePlanetTex(), color:0x5533aa,
-        emissive:new THREE.Color(0x2a0e60), emissiveIntensity:0.4,
-        specular:new THREE.Color(0x9966ff), shininess:14,
+        map: makePlanetTex(), color: 0x5533aa,
+        emissive: new THREE.Color(0x2a0e60), emissiveIntensity: 0.4,
+        specular: new THREE.Color(0x9966ff), shininess: 14,
       })
     );
     scene.add(planet);
-    for (const [r,op,col] of [[PLANET_R*1.10,0.11,0x7733dd],[PLANET_R*1.04,0.22,0x5522bb]]) {
-      scene.add(new THREE.Mesh(new THREE.SphereGeometry(r,32,32),
-        new THREE.MeshBasicMaterial({color:col,side:THREE.BackSide,transparent:true,opacity:op,
-          blending:THREE.AdditiveBlending,depthWrite:false})));
+    for (const [r, op, col] of [[PLANET_R*1.10,0.11,0x7733dd],[PLANET_R*1.04,0.22,0x5522bb]]) {
+      scene.add(new THREE.Mesh(new THREE.SphereGeometry(r, 32, 32),
+        new THREE.MeshBasicMaterial({ color: col, side: THREE.BackSide, transparent: true, opacity: op,
+          blending: THREE.AdditiveBlending, depthWrite: false })));
     }
 
-    // ── Blitzy ball ───────────────────────────────────────────────────────────
+    // ── Blitzy ────────────────────────────────────────────────────────────────
     const blitzy = new THREE.Mesh(
-      new THREE.SphereGeometry(BALL_R, 40, 40),
+      new THREE.SphereGeometry(BALL_R, 32, 32),
       new THREE.MeshPhongMaterial({
-        color:0xffffff, emissive:new THREE.Color(0xcc88ff),
-        emissiveIntensity:1.0, specular:new THREE.Color(0xffffff), shininess:90,
+        color: 0xffffff, emissive: new THREE.Color(0xcc88ff),
+        emissiveIntensity: 1.0, specular: new THREE.Color(0xffffff), shininess: 90,
       })
     );
     blitzy.position.copy(ballPos);
     scene.add(blitzy);
 
-    function glowTex() {
-      const sz=256, c=document.createElement('canvas'); c.width=c.height=sz;
-      const cx=c.getContext('2d');
-      const g=cx.createRadialGradient(sz/2,sz/2,0,sz/2,sz/2,sz/2);
-      g.addColorStop(0,'rgba(210,160,255,0.9)');
-      g.addColorStop(0.35,'rgba(180,100,255,0.35)');
-      g.addColorStop(1,'rgba(0,0,0,0)');
-      cx.fillStyle=g; cx.fillRect(0,0,sz,sz);
+    function glowTex(rgb) {
+      const sz = 256, c = document.createElement('canvas'); c.width = c.height = sz;
+      const cx = c.getContext('2d');
+      const g = cx.createRadialGradient(sz/2,sz/2,0,sz/2,sz/2,sz/2);
+      g.addColorStop(0, `rgba(${rgb},0.9)`);
+      g.addColorStop(0.35, `rgba(${rgb},0.35)`);
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      cx.fillStyle = g; cx.fillRect(0,0,sz,sz);
       return new THREE.CanvasTexture(c);
     }
     const blitzyGlow = new THREE.Sprite(new THREE.SpriteMaterial({
-      map:glowTex(), transparent:true, blending:THREE.AdditiveBlending, depthWrite:false,
+      map: glowTex('210,160,255'), transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
     }));
     blitzyGlow.scale.setScalar(BALL_R * 3.5);
     scene.add(blitzyGlow);
 
-    // ── Ball trace ────────────────────────────────────────────────────────────
-    const TRACE_MAX  = 2000;
-    const TRACE_LIFE = 14;
-    const TRACE_STEP = 2;
-
-    const tracePts  = [];
-    const traceTime = [];
-
+    // ── Trace (capped for speed) ──────────────────────────────────────────────
+    const TRACE_MAX = 700, TRACE_LIFE = 10, TRACE_STEP = 4;
+    const tracePts = [], traceTime = [];
     const traceBuf = new Float32Array(TRACE_MAX * 3);
     const traceCol = new Float32Array(TRACE_MAX * 3);
     const traceGeo = new THREE.BufferGeometry();
     traceGeo.setAttribute('position', new THREE.BufferAttribute(traceBuf, 3).setUsage(THREE.DynamicDrawUsage));
-    traceGeo.setAttribute('color',    new THREE.BufferAttribute(traceCol, 3).setUsage(THREE.DynamicDrawUsage));
+    traceGeo.setAttribute('color', new THREE.BufferAttribute(traceCol, 3).setUsage(THREE.DynamicDrawUsage));
     traceGeo.setDrawRange(0, 0);
-
-    // Thin sharp center line
     scene.add(new THREE.Line(traceGeo, new THREE.LineBasicMaterial({
-      vertexColors:true, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false,
+      vertexColors: true, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
     })));
-
-    // Thick glow — rendered as overlapping circular sprites at each trail point
     const dotCanvas = document.createElement('canvas');
     dotCanvas.width = dotCanvas.height = 64;
     const dotCtx = dotCanvas.getContext('2d');
     const dotGrd = dotCtx.createRadialGradient(32,32,0,32,32,32);
-    dotGrd.addColorStop(0,   'rgba(255,255,255,1)');
-    dotGrd.addColorStop(0.25,'rgba(180,120,255,0.85)');
+    dotGrd.addColorStop(0, 'rgba(255,255,255,1)');
+    dotGrd.addColorStop(0.25, 'rgba(180,120,255,0.85)');
     dotGrd.addColorStop(0.6, 'rgba(80,60,200,0.35)');
-    dotGrd.addColorStop(1,   'rgba(0,0,0,0)');
-    dotCtx.fillStyle = dotGrd;
-    dotCtx.fillRect(0,0,64,64);
-
-    const tracePoints = new THREE.Points(traceGeo, new THREE.PointsMaterial({
-      size: 28,
-      map: new THREE.CanvasTexture(dotCanvas),
-      vertexColors: true,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      sizeAttenuation: true,
-      alphaTest: 0.005,
-    }));
-    scene.add(tracePoints);
+    dotGrd.addColorStop(1, 'rgba(0,0,0,0)');
+    dotCtx.fillStyle = dotGrd; dotCtx.fillRect(0,0,64,64);
+    scene.add(new THREE.Points(traceGeo, new THREE.PointsMaterial({
+      size: 22, map: new THREE.CanvasTexture(dotCanvas), vertexColors: true,
+      transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
+      sizeAttenuation: true, alphaTest: 0.005,
+    })));
 
     function clearTrace() {
-      tracePts.length  = 0;
-      traceTime.length = 0;
-      traceGeo.setDrawRange(0, 0);   // FIX: removed reference to undefined traceGlowGeo (threw on T / Erase)
+      tracePts.length = 0; traceTime.length = 0; traceGeo.setDrawRange(0, 0);
     }
-
     function updateTrace(now) {
       const last = tracePts[tracePts.length - 1];
       if (!last || ballPos.distanceTo(last) > TRACE_STEP) {
         tracePts.push(ballPos.clone());
         traceTime.push(now);
       }
-      while (tracePts.length > 0 && now - traceTime[0] > TRACE_LIFE) {
-        tracePts.shift(); traceTime.shift();
-      }
+      while (tracePts.length && now - traceTime[0] > TRACE_LIFE) { tracePts.shift(); traceTime.shift(); }
       while (tracePts.length > TRACE_MAX) { tracePts.shift(); traceTime.shift(); }
-
       const count = tracePts.length;
       if (count < 2) { traceGeo.setDrawRange(0, 0); return; }
-
       for (let i = 0; i < count; i++) {
-        const age   = (now - traceTime[i]) / TRACE_LIFE;
+        const age = (now - traceTime[i]) / TRACE_LIFE;
         const alive = Math.pow(1 - age, 1.2);
-        const frac  = i / count;  // 0=oldest tail, 1=freshest head
-
-        traceBuf[i*3]   = tracePts[i].x;
-        traceBuf[i*3+1] = tracePts[i].y;
-        traceBuf[i*3+2] = tracePts[i].z;
-
-        // purple tail → cyan/white head
-        traceCol[i*3]   = (0.4 + 0.6 * frac) * alive;
+        const frac = i / count;
+        traceBuf[i*3] = tracePts[i].x; traceBuf[i*3+1] = tracePts[i].y; traceBuf[i*3+2] = tracePts[i].z;
+        traceCol[i*3] = (0.4 + 0.6 * frac) * alive;
         traceCol[i*3+1] = (0.1 + 0.7 * frac) * alive;
         traceCol[i*3+2] = 1.0 * alive;
       }
-
       traceGeo.setDrawRange(0, count);
       traceGeo.attributes.position.needsUpdate = true;
-      traceGeo.attributes.color.needsUpdate    = true;
+      traceGeo.attributes.color.needsUpdate = true;
     }
 
-    // Erase button
-    document.getElementById('trace-btn').addEventListener('click', clearTrace);
+    // ── Entity pools ──────────────────────────────────────────────────────────
+    const entityRoot = new THREE.Group();
+    scene.add(entityRoot);
+
+    const collectibles = []; // { mesh, glow, alive }
+    const aliens = [];       // { mesh, glow, vel, alive }
+    const asteroids = [];    // { mesh, vel, spin, r, alive }
+
+    const starMat = new THREE.MeshPhongMaterial({
+      color: 0xffe566, emissive: new THREE.Color(0xffaa22), emissiveIntensity: 1.2,
+      specular: 0xffffff, shininess: 80,
+    });
+    const starGlowMap = glowTex('255,220,80');
+    const alienMat = new THREE.MeshPhongMaterial({
+      color: 0x33ff88, emissive: new THREE.Color(0x11aa44), emissiveIntensity: 0.9,
+      specular: 0xaaffcc, shininess: 40, flatShading: true,
+    });
+    const alienGlowMap = glowTex('40,255,120');
+    const rockMat = new THREE.MeshPhongMaterial({
+      color: 0x6a5a78, emissive: new THREE.Color(0x1a1020), emissiveIntensity: 0.25,
+      flatShading: true, shininess: 8,
+    });
+
+    function randDir(out) {
+      const th = Math.random() * Math.PI * 2;
+      const ph = Math.acos(2 * Math.random() - 1);
+      return out.set(Math.sin(ph)*Math.cos(th), Math.sin(ph)*Math.sin(th), Math.cos(ph));
+    }
+    function orbitPoint(rmin, rmax, out) {
+      randDir(out).multiplyScalar(rmin + Math.random() * (rmax - rmin));
+      // keep clear of planet surface
+      if (out.length() < PLANET_R + 60) out.setLength(PLANET_R + 60 + Math.random() * 80);
+      return out;
+    }
+
+    function clearEntities() {
+      while (entityRoot.children.length) {
+        const c = entityRoot.children[0];
+        entityRoot.remove(c);
+        if (c.geometry) c.geometry.dispose();
+      }
+      collectibles.length = 0;
+      aliens.length = 0;
+      asteroids.length = 0;
+    }
+
+    function spawnLevel(L) {
+      clearEntities();
+      const tmp = new THREE.Vector3();
+
+      for (let i = 0; i < L.stars; i++) {
+        const mesh = new THREE.Mesh(new THREE.OctahedronGeometry(STAR_R, 0), starMat.clone());
+        orbitPoint(L.starOrbit[0], L.starOrbit[1], mesh.position);
+        // spread away from spawn
+        if (mesh.position.distanceTo(ballPos) < 80) mesh.position.addScaledVector(randDir(tmp), 120);
+        const glow = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: starGlowMap, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
+        }));
+        glow.scale.setScalar(STAR_R * 4);
+        glow.position.copy(mesh.position);
+        entityRoot.add(mesh); entityRoot.add(glow);
+        collectibles.push({ mesh, glow, alive: true, spin: 1.5 + Math.random() });
+      }
+
+      for (let i = 0; i < L.aliens; i++) {
+        const mesh = new THREE.Mesh(new THREE.TetrahedronGeometry(ALIEN_R, 0), alienMat.clone());
+        orbitPoint(450, 900, mesh.position);
+        if (mesh.position.distanceTo(ballPos) < 200) mesh.position.addScaledVector(randDir(tmp), 250);
+        const glow = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: alienGlowMap, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, opacity: 0.7,
+        }));
+        glow.scale.setScalar(ALIEN_R * 3.2);
+        glow.position.copy(mesh.position);
+        const vel = new THREE.Vector3().copy(randDir(tmp)).multiplyScalar(L.alienSpeed * 0.3);
+        entityRoot.add(mesh); entityRoot.add(glow);
+        aliens.push({ mesh, glow, vel, alive: true });
+      }
+
+      for (let i = 0; i < L.asteroids; i++) {
+        const r = 10 + Math.random() * 22;
+        const mesh = new THREE.Mesh(new THREE.DodecahedronGeometry(r, 0), rockMat.clone());
+        mesh.rotation.set(Math.random()*6, Math.random()*6, Math.random()*6);
+        orbitPoint(300, 1100, mesh.position);
+        if (mesh.position.distanceTo(ballPos) < 160) mesh.position.addScaledVector(randDir(tmp), 200);
+        const vel = randDir(tmp).multiplyScalar(L.asteroidSpeed * (0.45 + Math.random() * 0.7));
+        const spin = new THREE.Vector3((Math.random()-0.5)*2, (Math.random()-0.5)*2, (Math.random()-0.5)*2);
+        entityRoot.add(mesh);
+        asteroids.push({ mesh, vel, spin, r, alive: true });
+      }
+
+      starsTotal = L.stars;
+      starsCollected = 0;
+    }
 
     // ── Lighting ──────────────────────────────────────────────────────────────
     scene.add(new THREE.AmbientLight(0x221133, 0.55));
     const sun = new THREE.DirectionalLight(0xeeddff, 2.5);
     sun.position.set(-600, 400, -200); scene.add(sun);
     const pLight = new THREE.PointLight(0x7733ff, 3, 550, 1.5); scene.add(pLight);
-    const bLight = new THREE.PointLight(0xddaaff, 2.5, 90, 2); scene.add(bLight);
+    const bLight = new THREE.PointLight(0xddaaff, 2.8, 100, 2); scene.add(bLight);
+
+    // ── Level flow ────────────────────────────────────────────────────────────
+    function startLevel(idx) {
+      levelIndex = Math.max(0, Math.min(LEVELS.length - 1, idx));
+      const L = LEVELS[levelIndex];
+      // Reset score on fresh run / retry from title, game over, or victory.
+      // Keep score when advancing from levelclear.
+      if (mode !== 'levelclear') score = 0;
+
+      lives = L.lives;
+      levelTime = 0;
+      combo = 0;
+      lastPickup = -99;
+      invuln = 0;
+      ballPos.set(0, 40, PLANET_R + BALL_R + 50);
+      ballVel.set(0, 0, 0);
+      camYaw = 0; camPitch = 0.22;
+      clearTrace();
+      spawnLevel(L);
+      started = true;
+      paused = false;
+      mode = 'playing';
+      hideOverlay();
+      setHudVisible(true);
+      updateHud();
+      flash(L.name, 1.8);
+      toast(L.blurb);
+      requestLock();
+    }
+
+    function levelClear() {
+      mode = 'levelclear';
+      paused = true;
+      markCleared(levelIndex);
+      if (document.pointerLockElement) document.exitPointerLock();
+      const bonus = Math.floor(lives * 250 + (LEVELS[levelIndex].timeLimit
+        ? Math.max(0, LEVELS[levelIndex].timeLimit - levelTime) * 10 : 0));
+      score += bonus;
+      updateHud();
+      const next = levelIndex + 1 < LEVELS.length;
+      showOverlay({
+        title: 'LEVEL CLEAR',
+        sub: `+${bonus} BONUS · SCORE ${String(score).padStart(6,'0')}`,
+        blurb: next ? `Next: ${LEVELS[levelIndex + 1].name}` : 'All sectors cleared',
+        btn: next ? (isTouch ? 'TAP FOR NEXT LEVEL' : 'NEXT LEVEL') : (isTouch ? 'TAP TO FINISH' : 'FINISH RUN'),
+        keys: false,
+        levels: false,
+      });
+    }
+
+    function showVictory() {
+      mode = 'victory';
+      paused = true;
+      if (document.pointerLockElement) document.exitPointerLock();
+      showOverlay({
+        title: 'SECTOR CLEARED',
+        sub: `FINAL SCORE ${String(score).padStart(6,'0')}`,
+        blurb: 'You flew the gauntlet. Blitzy lives.',
+        btn: isTouch ? 'TAP TO REPLAY' : 'PLAY AGAIN',
+        keys: true,
+        levels: true,
+      });
+    }
+
+    function gameOver() {
+      mode = 'gameover';
+      paused = true;
+      if (document.pointerLockElement) document.exitPointerLock();
+      showOverlay({
+        title: 'SIGNAL LOST',
+        sub: `SCORE ${String(score).padStart(6,'0')} · ${LEVELS[levelIndex].name}`,
+        blurb: 'Hit by rock or alien. Try again.',
+        btn: isTouch ? 'TAP TO RETRY' : 'RETRY LEVEL',
+        keys: true,
+        levels: true,
+      });
+    }
+
+    function takeHit() {
+      if (invuln > 0) return;
+      lives -= 1;
+      invuln = INVULN_T;
+      combo = 0;
+      ballVel.multiplyScalar(0.35);
+      // knockback away from planet center slightly randomized
+      const kick = new THREE.Vector3().copy(ballPos).normalize().multiplyScalar(420);
+      kick.x += (Math.random() - 0.5) * 200;
+      kick.y += (Math.random() - 0.5) * 200;
+      ballVel.add(kick);
+      updateHud();
+      flash('HIT', 0.7);
+      if (lives <= 0) gameOver();
+    }
+
+    function pickupStar(c) {
+      c.alive = false;
+      entityRoot.remove(c.mesh);
+      entityRoot.remove(c.glow);
+      starsCollected += 1;
+      const now = levelTime;
+      if (now - lastPickup < COMBO_WINDOW) combo += 1;
+      else combo = 1;
+      lastPickup = now;
+      const pts = STAR_SCORE * combo;
+      score += pts;
+      toast(`+${pts}` + (combo > 1 ? `  COMBO ×${combo}` : ''));
+      updateHud();
+      if (starsCollected >= starsTotal) levelClear();
+    }
 
     // ── Helpers ───────────────────────────────────────────────────────────────
     const _v3a = new THREE.Vector3();
     const _v3b = new THREE.Vector3();
     const _camT = new THREE.Vector3();
+    const _tmp = new THREE.Vector3();
     const clock = new THREE.Clock();
     let t = 0;
 
@@ -493,69 +933,145 @@
       const dt = Math.min(clock.getDelta(), 0.05);
       t += dt;
 
-      if (started && !paused) {
-        const fwd = _v3a.set(-Math.sin(camYaw), 0, -Math.cos(camYaw));
-        const rgt = _v3b.set( Math.cos(camYaw), 0, -Math.sin(camYaw));
-        const acc = new THREE.Vector3();
-        if (keys['KeyW'] || keys['ArrowUp'])    acc.addScaledVector(fwd,  1);
-        if (keys['KeyS'] || keys['ArrowDown'])  acc.addScaledVector(fwd, -1);
-        if (keys['KeyA'] || keys['ArrowLeft'])  acc.addScaledVector(rgt, -1);
-        if (keys['KeyD'] || keys['ArrowRight']) acc.addScaledVector(rgt,  1);
-        if (keys['Space'] || touchUp)      acc.y += 1;
-        if (keys['ShiftLeft'] || keys['ShiftRight'] || touchDown) acc.y -= 1;
-        if (touchMove.id !== null) {
-          const dx = touchMove.x - touchMove.sx, dy = touchMove.y - touchMove.sy;
-          const d = Math.hypot(dx, dy);
-          if (d > 6) { const m = Math.min(1, d / 48); acc.addScaledVector(rgt, dx / d * m); acc.addScaledVector(fwd, -dy / d * m); }
-        }
-        if (acc.lengthSq() > 0) acc.normalize().multiplyScalar(ACCEL * dt);
-        ballVel.add(acc);
-        const spd = ballVel.length();
-        if (spd > MAX_SPEED) ballVel.multiplyScalar(MAX_SPEED / spd);
-        ballVel.multiplyScalar(Math.pow(DRAG, dt * 60));   // FIX: framerate-independent drag
-        ballPos.addScaledVector(ballVel, dt * 60 / 60);
+      if (flashT > 0) {
+        flashT -= dt;
+        if (flashT <= 0) flashEl.classList.remove('on');
+      }
 
-        // Planet collision
-        const toP  = new THREE.Vector3().subVectors(ballPos, planet.position);
-        const dist = toP.length();
-        if (dist < PLANET_R + BALL_R) {
-          toP.normalize();
-          ballPos.copy(planet.position).addScaledVector(toP, PLANET_R + BALL_R);
-          const dot = ballVel.dot(toP);
-          if (dot < 0) ballVel.addScaledVector(toP, -dot * 1.1);
+      if (mode === 'playing') {
+        levelTime += dt;
+        if (invuln > 0) invuln -= dt;
+
+        const L = LEVELS[levelIndex];
+        if (L.timeLimit > 0 && levelTime >= L.timeLimit) {
+          gameOver();
+        } else {
+          // movement
+          const fwd = _v3a.set(-Math.sin(camYaw), 0, -Math.cos(camYaw));
+          const rgt = _v3b.set( Math.cos(camYaw), 0, -Math.sin(camYaw));
+          const acc = new THREE.Vector3();
+          if (keys['KeyW'] || keys['ArrowUp'])    acc.addScaledVector(fwd,  1);
+          if (keys['KeyS'] || keys['ArrowDown'])  acc.addScaledVector(fwd, -1);
+          if (keys['KeyA'] || keys['ArrowLeft'])  acc.addScaledVector(rgt, -1);
+          if (keys['KeyD'] || keys['ArrowRight']) acc.addScaledVector(rgt,  1);
+          if (keys['Space'] || touchUp) acc.y += 1;
+          if (keys['ShiftLeft'] || keys['ShiftRight'] || touchDown) acc.y -= 1;
+          if (touchMove.id !== null) {
+            const dx = touchMove.x - touchMove.sx, dy = touchMove.y - touchMove.sy;
+            const d = Math.hypot(dx, dy);
+            if (d > 6) {
+              const m = Math.min(1, d / 48);
+              acc.addScaledVector(rgt, dx / d * m);
+              acc.addScaledVector(fwd, -dy / d * m);
+            }
+          }
+          if (acc.lengthSq() > 0) acc.normalize().multiplyScalar(ACCEL * dt);
+          ballVel.add(acc);
+          const spd = ballVel.length();
+          if (spd > MAX_SPEED) ballVel.multiplyScalar(MAX_SPEED / spd);
+          ballVel.multiplyScalar(Math.pow(DRAG, dt * 60));
+          ballPos.addScaledVector(ballVel, dt);
+
+          // planet collision
+          const toP = _tmp.subVectors(ballPos, planet.position);
+          const dist = toP.length();
+          if (dist < PLANET_R + BALL_R) {
+            toP.normalize();
+            ballPos.copy(planet.position).addScaledVector(toP, PLANET_R + BALL_R);
+            const dot = ballVel.dot(toP);
+            if (dot < 0) ballVel.addScaledVector(toP, -dot * 1.15);
+          }
+
+          // stars
+          for (const c of collectibles) {
+            if (!c.alive) continue;
+            c.mesh.rotation.y += dt * c.spin;
+            c.mesh.rotation.x += dt * c.spin * 0.6;
+            c.glow.position.copy(c.mesh.position);
+            const pulse = 3.6 + Math.sin(t * 4 + c.spin) * 0.6;
+            c.glow.scale.setScalar(STAR_R * pulse);
+            if (ballPos.distanceTo(c.mesh.position) < BALL_R + STAR_R + 6) pickupStar(c);
+          }
+
+          // asteroids
+          for (const a of asteroids) {
+            if (!a.alive) continue;
+            a.mesh.position.addScaledVector(a.vel, dt);
+            a.mesh.rotation.x += a.spin.x * dt;
+            a.mesh.rotation.y += a.spin.y * dt;
+            // soft wrap — if far, respawn opposite shell
+            if (a.mesh.position.length() > 1400) {
+              a.mesh.position.multiplyScalar(-0.55);
+              a.vel.multiplyScalar(-0.8);
+            }
+            if (a.mesh.position.length() < PLANET_R + a.r) {
+              a.mesh.position.setLength(PLANET_R + a.r + 2);
+              const n = a.mesh.position.clone().normalize();
+              const d2 = a.vel.dot(n);
+              if (d2 < 0) a.vel.addScaledVector(n, -d2 * 1.2);
+            }
+            if (invuln <= 0 && ballPos.distanceTo(a.mesh.position) < BALL_R + a.r * 0.85) takeHit();
+          }
+
+          // aliens
+          for (const al of aliens) {
+            if (!al.alive) continue;
+            const toPlayer = _tmp.subVectors(ballPos, al.mesh.position);
+            const d = toPlayer.length();
+            if (d > 1) {
+              toPlayer.multiplyScalar(1 / d);
+              al.vel.addScaledVector(toPlayer, L.alienSpeed * L.alienAgro * dt);
+              // slight orbit bias
+              al.vel.addScaledVector(_v3a.set(-toPlayer.z, 0, toPlayer.x), L.alienSpeed * 0.08 * dt);
+            }
+            const as = al.vel.length();
+            if (as > L.alienSpeed) al.vel.multiplyScalar(L.alienSpeed / as);
+            al.vel.multiplyScalar(Math.pow(0.96, dt * 60));
+            al.mesh.position.addScaledVector(al.vel, dt);
+            al.mesh.lookAt(ballPos);
+            al.mesh.rotation.z += dt * 2.2;
+            al.glow.position.copy(al.mesh.position);
+            al.glow.scale.setScalar(ALIEN_R * (2.8 + Math.sin(t * 5) * 0.4));
+            if (al.mesh.position.length() < PLANET_R + ALIEN_R) {
+              al.mesh.position.setLength(PLANET_R + ALIEN_R + 4);
+            }
+            if (invuln <= 0 && ballPos.distanceTo(al.mesh.position) < BALL_R + ALIEN_R * 0.75) takeHit();
+          }
+
+          if (L.timeLimit > 0) updateHud();
         }
       }
 
-      // ── Sync ball visuals ──────────────────────────────────────────────────
+      // visuals
       blitzy.position.copy(ballPos);
       blitzyGlow.position.copy(ballPos);
       bLight.position.copy(ballPos);
-
       const rollAxis = new THREE.Vector3(-ballVel.z, 0, ballVel.x);
-      if (rollAxis.lengthSq() > 1e-8) rollAxis.normalize();
-      if (rollAxis.lengthSq() > 0) blitzy.rotateOnWorldAxis(rollAxis, ballVel.length() * dt * 0.03);
-      blitzy.material.emissiveIntensity = 0.9 + 0.3 * Math.sin(t * 2.1);
-      blitzyGlow.scale.setScalar(BALL_R * (3.0 + 0.6 * Math.sin(t * 1.8)));
+      if (rollAxis.lengthSq() > 1e-8) {
+        rollAxis.normalize();
+        blitzy.rotateOnWorldAxis(rollAxis, ballVel.length() * dt * 0.028);
+      }
+      const blink = invuln > 0 ? (0.35 + 0.65 * Math.abs(Math.sin(t * 18))) : 1;
+      blitzy.material.emissiveIntensity = (0.95 + 0.3 * Math.sin(t * 2.4)) * blink;
+      blitzy.material.opacity = blink;
+      blitzy.material.transparent = invuln > 0;
+      blitzyGlow.scale.setScalar(BALL_R * (3.0 + 0.55 * Math.sin(t * 2.0)) * blink);
+      blitzyGlow.material.opacity = blink;
 
-      // ── Trace ─────────────────────────────────────────────────────────────
       updateTrace(t);
 
-      // ── Camera ────────────────────────────────────────────────────────────
       const cosP = Math.cos(camPitch), sinP = Math.sin(camPitch);
-      const cosY = Math.cos(camYaw),   sinY = Math.sin(camYaw);
+      const cosY = Math.cos(camYaw), sinY = Math.sin(camYaw);
       _camT.set(
         ballPos.x + sinY * cosP * CAM_DIST,
         ballPos.y + sinP * CAM_DIST,
         ballPos.z + cosY * cosP * CAM_DIST
       );
-      // FIX: keep the camera outside the planet + atmosphere
       if (_camT.length() < PLANET_R * 1.15) _camT.setLength(PLANET_R * 1.15);
-      camera.position.lerp(_camT, 1 - Math.pow(0.86, dt * 60));
+      camera.position.lerp(_camT, 1 - Math.pow(0.78, dt * 60));
       camera.lookAt(ballPos);
 
-      // ── Planet spin ───────────────────────────────────────────────────────
       planet.rotation.y += 0.00022;
-
       renderer.render(scene, camera);
     }
     animate();
@@ -565,9 +1081,21 @@
       camera.updateProjectionMatrix();
       renderer.setSize(innerWidth, innerHeight);
     });
+
+    // Title screen
+    if (isTouch) overlayBtn.textContent = 'TAP TO PLAY';
+    showOverlay({
+      title: "BLITZY'S WORLD",
+      sub: 'DEEP SPACE · v0.3 · 4 LEVELS',
+      blurb: 'Catch stars. Evade aliens. Dodge asteroids.',
+      btn: isTouch ? 'TAP TO PLAY' : 'CLICK TO PLAY',
+      keys: true,
+      levels: true,
+    });
+
   </script>
+
   <script>
-  // blitz-analytics — visitor tracking
   (function() {
     var BLITZ_ENDPOINT = 'https://blitz-analytics.andres-491.workers.dev';
     if (!BLITZ_ENDPOINT) return;
@@ -579,5 +1107,6 @@
     document.body.appendChild(t);
   })();
   </script>
+
 </body>
 </html>
