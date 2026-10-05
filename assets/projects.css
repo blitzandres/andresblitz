@@ -171,3 +171,18 @@ footer.site a:hover { color: var(--text); }
 @media (max-width: 480px) { .live-host { display: none; } }
 @media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
 .live-wrap .demo-caption { max-width: 64rem; margin-left: auto; margin-right: auto; padding: 0 0.5rem; }
+
+/* Cross-links: project card → GitHub / live */
+.p-card { position: relative; }
+.p-card > .card-main { display: flex; flex-direction: column; flex: 1; text-decoration: none; color: inherit; }
+.p-card .card-links { display: flex; flex-wrap: wrap; gap: 0.45rem; padding: 0 1.2rem 1.15rem; margin-top: -0.15rem; }
+.p-card .card-link {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.01em;
+  padding: 0.35rem 0.7rem; border-radius: 999px;
+  border: 1px solid var(--border); color: var(--text);
+  background: rgba(11,16,29,0.75); text-decoration: none;
+  transition: border-color .2s, transform .2s, color .2s;
+}
+.p-card .card-link svg { width: 0.85rem; height: 0.85rem; }
+.p-card .card-link:hover { border-color: var(--accent); color: #fff; transform: translateY(-1px); }
