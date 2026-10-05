@@ -95,7 +95,7 @@
       "operatingSystem": "Any (web browser)",
       "potentialAction": {
         "@type": "PlayAction",
-        "target": "https://andresblitz.com/projects/blitzys-world/play/"
+        "target": "https://andresblitz.com/projects/blitzys-world/play/3d/"
       }
     },
     {
@@ -164,8 +164,8 @@
     <p class="kicker">Game · Playable</p>
     <h1>Blitzy&#x27;s World</h1>
     <p class="lede">A glowing orb cruising through an endless universe. Fly it, slingshot around planets and collect stardust — right here in the browser.</p>
-    <div class="tags"><span class="tag local"><span class="dot"></span>Local prototype</span><span class="tag"><span class="dot" style="background:#f1e05a"></span>JavaScript</span><span class="tag">Playable · v0.2</span></div>
-    <div class="actions"><a class="primary" href="/projects/blitzys-world/play/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Play full screen</a><a class="secondary" href="/projects/blitzys-world/play/3d/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Original 3D prototype</a><span class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Source not on GitHub yet</span></div>
+    <div class="tags"><span class="tag local"><span class="dot"></span>Local prototype</span><span class="tag"><span class="dot" style="background:#f1e05a"></span>JavaScript</span><span class="tag">Playable · v0.3</span></div>
+    <div class="actions"><a class="primary" href="/projects/blitzys-world/play/3d/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Play 3D Levels</a><a class="secondary" href="/projects/blitzys-world/play/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Classic 2D</a><span class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Source not on GitHub yet</span></div>
   </header>
   <figure class="demo-wrap">
   <div class="demo game" data-demo="game" aria-label="Playable game: Blitzy's World"><noscript><p style="padding:2rem;color:#97a3b8">Blitzy’s World needs JavaScript to run.</p></noscript></div>
@@ -174,7 +174,7 @@
   <div class="p-body">
     <div>
       <section><h2>What it is</h2><p>Blitzy&#x27;s World started with one image: before Blitzy has a body, Blitzy is a circle of light — an energy orb — drifting through deep space. The first prototype (v0.1) was a Three.js scene with a purple planet, nebula mist, fourteen thousand stars and a trace of light that follows the orb.</p><p>Version 0.2 keeps that idea and turns it into something you can actually cruise around in: an endless 2D universe, drawn on a plain canvas, that runs on phones as well as desktops.</p></section>
-      <section><h2>What I built</h2><ul class="built"><li>An endless, procedurally generated universe — planets, rings, nebulae and stardust are generated deterministically as you travel, so the same places are still there when you fly back.</li><li>Gentle gravity: planets pull on Blitzy, so you can slingshot past them, skim the surface or settle into an orbit.</li><li>The purple-to-cyan light trace from the original prototype, fading over a few seconds (press T to erase it).</li><li>Controls for every device: W A S D or arrows, hold-to-steer with the mouse, a virtual joystick on touch screens, and a boost.</li><li>Framerate-independent physics, a three-layer parallax starfield, auto-pause when you switch tabs, and a calmer mode for reduced-motion settings.</li><li>The original 3D prototype, repaired and playable on its own page.</li></ul></section>
+      <section><h2>What I built</h2><ul class="built"><li>An endless, procedurally generated universe — planets, rings, nebulae and stardust are generated deterministically as you travel, so the same places are still there when you fly back.</li><li>Gentle gravity: planets pull on Blitzy, so you can slingshot past them, skim the surface or settle into an orbit.</li><li>The purple-to-cyan light trace from the original prototype, fading over a few seconds (press T to erase it).</li><li>Controls for every device: W A S D or arrows, hold-to-steer with the mouse, a virtual joystick on touch screens, and a boost.</li><li>Framerate-independent physics, a three-layer parallax starfield, auto-pause when you switch tabs, and a calmer mode for reduced-motion settings.</li><li>The 3D build now has four levels: collect stars, evade aliens, dodge asteroids, and a professional HUD (v0.3).</li></ul></section>
       <section><h2>What was broken in v0.1</h2><ul class="built"><li>The camera spawned <em>inside</em> the planet, so the first thing you saw was a murky purple blur instead of the world.</li><li>Movement only worked while the mouse pointer was locked. Touch devices can't lock the pointer, and Chrome refuses to re-lock right after Esc, so the game often got stuck on its start screen.</li><li>Erasing the trace called an object that didn't exist and threw an error.</li><li>It loaded Three.js from a CDN at runtime and had framerate-dependent drag.</li><li>v0.2 is a dependency-free rebuild of the same idea; the original is fixed too (camera, controls with or without pointer lock, touch, the trace bug, and a bundled copy of Three.js).</li></ul></section>
       
     </div>
@@ -184,8 +184,8 @@
         <div><dt>Stack</dt><dd><div class="chips"><span class="chip">HTML5 Canvas</span><span class="chip">JavaScript (no dependencies)</span><span class="chip">Pointer Events</span><span class="chip">Three.js / WebGL (v0.1 prototype)</span></div></dd></div>
         <div><dt>Source</dt><dd>Source not on GitHub yet</dd></div>
         <div><dt>Started</dt><dd>June 2026</dd></div>
-        <div><dt>Last updated</dt><dd>September 2026</dd></div>
-        <div><dt>Status</dt><dd>Playable · v0.2</dd></div>
+        <div><dt>Last updated</dt><dd>October 2026</dd></div>
+        <div><dt>Status</dt><dd>Playable · v0.3 · 4 levels</dd></div>
       </dl>
     </aside>
   </div>

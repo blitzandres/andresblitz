@@ -31,9 +31,19 @@
   #game { position: fixed; inset: 0; }
   .back { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 10; font: 500 12px 'Space Grotesk', system-ui, sans-serif; letter-spacing: .08em; color: rgba(210,190,255,.7); text-decoration: none; background: rgba(20,8,50,.55); border: 1px solid rgba(150,100,255,.3); padding: 7px 14px; border-radius: 999px; }
   .back:hover { color: #fff; border-color: rgba(190,140,255,.6); }
+  .play3d {
+    position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 12;
+    font: 600 12px 'Space Grotesk', system-ui, sans-serif; letter-spacing: .06em;
+    color: #efe6ff; text-decoration: none;
+    background: linear-gradient(135deg, rgba(90,40,180,.85), rgba(40,20,100,.85));
+    border: 1px solid rgba(190,140,255,.55); padding: 9px 16px; border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  }
+  .play3d:hover { border-color: rgba(220,180,255,.9); color: #fff; }
 </style>
 </head>
 <body>
+<a class="play3d" href="/projects/blitzys-world/play/3d/">✦ Play 3D Levels (new)</a>
 <main id="game" aria-label="Blitzy's World game"></main>
 <a class="back" href="/projects/blitzys-world/">← About this project</a>
 <noscript><p style="color:#ccc;font-family:sans-serif;padding:2rem">Blitzy's World needs JavaScript to run.</p></noscript>
