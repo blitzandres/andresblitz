@@ -4,7 +4,7 @@
 
 - Canonical site: https://andresblitz.com/
 - Location: Victoria, BC, Canada
-- Email: info@andresblitz.com
+- Email: blitz@mail.grokbot.com
 - X: https://x.com/andresblitz
 - GitHub: https://github.com/blitzandres
 
