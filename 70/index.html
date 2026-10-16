@@ -154,9 +154,15 @@ body.con-tasas .leaflet-top{top:28px}
     <button class="tog" type="button" aria-expanded="false" onclick="var l=this.parentNode;l.classList.toggle('abierta');this.setAttribute('aria-expanded',l.classList.contains('abierta'))">Capas del mapa ▾</button>
     <div class="cuerpo">
     <label><input type="checkbox" data-capa="power" checked><i style="background:#ffb000"></i>Líneas y torres eléctricas</label>
-    <label><input type="checkbox" data-capa="subs" checked><i class="pt" style="background:#ff5a36"></i>Subestaciones</label>
-    <label><input type="checkbox" data-capa="comms" checked><i class="pt" style="background:#c77dff"></i>Antenas</label>
+    <label><input type="checkbox" data-capa="subs"><i class="pt" style="background:#ff5a36"></i>Subestaciones</label>
+    <label><input type="checkbox" data-capa="comms"><i class="pt" style="background:#c77dff"></i>Antenas</label>
     <label><input type="checkbox" data-capa="water" checked><i style="background:#3fa9ff"></i>Ríos y caños</label>
+    <label><input type="checkbox" data-capa="roads" checked><i style="background:#f4f1e8"></i>Troncal 6 (asfaltada)</label>
+    <label><input type="checkbox" data-capa="bridges"><i class="pt" style="background:#9aa3b8"></i>Puentes</label>
+    <label><input type="checkbox" data-capa="fuel"><i class="pt" style="background:#ff8fab"></i>Estaciones de servicio</label>
+    <label><input type="checkbox" data-capa="airstrips"><i class="pt" style="background:#7fdbff"></i>Pistas de aterrizaje</label>
+    <label><input type="checkbox" data-capa="schools"><i class="pt" style="background:#b8f28c"></i>Escuelas</label>
+    <label><input type="checkbox" data-capa="services"><i class="pt" style="background:#ffffff"></i>Hospital, mercado y alcaldía</label>
     <small>Capas: © OpenStreetMap (pueden estar incompletas)</small>
   </div>
   </div>
@@ -191,7 +197,7 @@ body.con-tasas .leaflet-top{top:28px}
   <h2>Infraestructura cercana</h2>
   <div class="card">
     <ul id="infra-lista" style="margin:0;padding-left:20px;color:#c9cfdc"><li>Calculando distancias…</li></ul>
-    <p class="mute" style="margin-top:12px">Distancias en línea recta desde el punto de la finca. Los datos de infraestructura provienen de OpenStreetMap y pueden estar incompletos o desactualizados.</p>
+    <p class="mute" style="margin-top:12px">Distancias en línea recta desde la finca, salvo las indicadas por carretera (calculadas con OSRM). Los datos provienen de OpenStreetMap (consulta de octubre de 2026) y pueden estar incompletos o desactualizados. No hay datos abiertos verificados de torres de telefonía celular en la zona.</p>
   </div>
 </section>
 <section id="tierra">
@@ -262,28 +268,45 @@ var EL70 = [10.4165941, -72.2108835]; // Agropecuaria Blimar, KM 70 Carretera Tr
   function popup(p,titulo){var r=['<b>'+(p.name||titulo)+'</b>'];if(p.voltage)r.push('Voltaje: '+v(p));if(p.operator)r.push('Operador: '+p.operator);if(p.cables)r.push('Cables: '+p.cables);if(p.ref)r.push('Ref.: '+p.ref);r.push('<a href="https://www.openstreetmap.org/'+p.osm+'" target="_blank" rel="noopener">Ver en OSM</a>');return r.join('<br>')}
 
   fetch('capas.json').then(function(r){return r.json()}).then(function(D){
+function dot(c,r){return function(f,ll){return L.circleMarker(ll,{radius:r||6,color:'#05070f',weight:1.5,fillColor:c,fillOpacity:1})}}
     var capas = {
       water: L.geoJSON(D.water,{style:function(f){return {color:'#3fa9ff',weight:f.properties.waterway==='river'?4:2,opacity:.95}},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,f.properties.waterway==='river'?'Río':'Caño / quebrada'))}}),
       power: L.layerGroup([
         L.geoJSON(D.power,{style:{color:'#ffb000',weight:3,opacity:.95,dashArray:'8 4'},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Línea eléctrica'))}}),
         L.geoJSON(D.towers,{pointToLayer:function(f,ll){return L.circleMarker(ll,{radius:2.5,color:'#ffb000',weight:1,fillOpacity:1})},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Torre eléctrica'))}})]),
       subs: L.geoJSON(D.subs,{style:{color:'#ff5a36',weight:2,fillOpacity:.5},pointToLayer:function(f,ll){return L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#ff5a36',fillOpacity:1})},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Subestación eléctrica'))}}),
+      roads: L.geoJSON(D.roads,{style:{color:'#f4f1e8',weight:3,opacity:.75},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Carretera'))}}),
+      bridges: L.geoJSON(D.bridges,{pointToLayer:dot('#9aa3b8'),onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Puente'))}}),
+      fuel: L.geoJSON(D.fuel,{pointToLayer:dot('#ff8fab'),onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Estación de servicio'))}}),
+      airstrips: L.geoJSON(D.airstrips,{pointToLayer:dot('#7fdbff',7),onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Pista de aterrizaje'))}}),
+      schools: L.geoJSON(D.schools,{pointToLayer:dot('#b8f28c',5),onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Escuela'))}}),
+      services: L.geoJSON(D.services,{pointToLayer:dot('#ffffff',6),onEachFeature:function(f,l){l.bindPopup(popup(f.properties,({hospital:'Hospital',marketplace:'Mercado',townhall:'Alcaldía'})[f.properties.amenity]||'Servicio'))}}),
       comms: L.geoJSON(D.comms,{pointToLayer:function(f,ll){return L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#c77dff',fillOpacity:1})},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Antena de comunicaciones'))}})
     };
     var pin = L.marker(EL70,{icon:L.divIcon({className:'',html:'<div class="punto"></div><div class="pin">El 70 · Agropecuaria Blimar</div>',iconSize:[16,16],iconAnchor:[8,8]}),keyboard:false,title:'El 70'});
     pin.bindPopup('<b>Agropecuaria Blimar · El 70</b><br>KM 70, Carretera Troncal 6<br>La Villa del Rosario, Zulia');
     function bajar(){ if(window.innerWidth<640) map.panBy([0,-45],{animate:false}); }
-    function mostrar(){bajar();Object.keys(capas).forEach(function(k){capas[k].addTo(map)});pin.addTo(map);document.getElementById('leyenda').hidden=false}
+    function mostrar(){bajar();document.querySelectorAll('#leyenda input').forEach(function(c){if(c.checked&&capas[c.dataset.capa])capas[c.dataset.capa].addTo(map)});pin.addTo(map);document.getElementById('leyenda').hidden=false}
     document.querySelectorAll('#leyenda input').forEach(function(c){c.addEventListener('change',function(){var l=capas[c.dataset.capa];c.checked?l.addTo(map):map.removeLayer(l)})});
 
-    var n={line:cerca(D.power),sub:cerca(D.subs),comm:cerca(D.comms),water:cerca(D.water)};
-    var hud=[];if(n.line)hud.push('Línea eléctrica a <b>'+km(n.line.d)+'</b>');if(n.comm)hud.push('Antena a <b>'+km(n.comm.d)+'</b>');if(n.water)hud.push((n.water.f.properties.name||'Agua')+' a <b>'+km(n.water.d)+'</b>');
+    var n={line:cerca(D.power),sub:cerca(D.subs),comm:cerca(D.comms),water:cerca(D.water),road:cerca(D.roads),fuel:cerca(D.fuel),air:cerca(D.airstrips),school:cerca(D.schools),hosp:cerca({features:D.services.features.filter(function(f){return f.properties.amenity==='hospital'})}),bridge:cerca({features:D.bridges.features.filter(function(f){return /Palmar/.test(f.properties.name||'')})})};var R=(D._meta&&D._meta.rutas)||{};
+    var hud=[];if(n.road)hud.push('Troncal 6 a <b>'+km(n.road.d)+'</b>');if(n.line)hud.push('Línea eléctrica a <b>'+km(n.line.d)+'</b>');if(n.water)hud.push((n.water.f.properties.name||'Agua')+' a <b>'+km(n.water.d)+'</b>');if(R['La Villa del Rosario'])hud.push('La Villa a <b>'+R['La Villa del Rosario'].min+' min</b>');
     document.getElementById('datos').innerHTML=hud.map(function(h){return '<span>'+h+'</span>'}).join('');
     var li=[];
     if(n.line)li.push('<li>Línea eléctrica más cercana: <b>'+km(n.line.d)+'</b>'+(v(n.line.f.properties)?' ('+v(n.line.f.properties)+')':' (voltaje no indicado en OSM)')+(n.line.f.properties.operator?', '+n.line.f.properties.operator:'')+'</li>');
     if(n.sub)li.push('<li>Subestación eléctrica más cercana: <b>'+km(n.sub.d)+'</b>'+(n.sub.f.properties.name?' ('+n.sub.f.properties.name+')':'')+'</li>');
     if(n.comm)li.push('<li>Antena de comunicaciones más cercana: <b>'+km(n.comm.d)+'</b></li>');
     if(n.water)li.push('<li>Curso de agua más cercano: <b>'+km(n.water.d)+'</b> ('+(n.water.f.properties.name||(n.water.f.properties.waterway==='river'?'río':'caño o quebrada')+' sin nombre')+')</li>');
+    var L2=[];
+    if(n.road)L2.push('<li>Carretera asfaltada Troncal 6 (Maracaibo – La Villa del Rosario): <b>'+km(n.road.d)+'</b></li>');
+    if(R['La Villa del Rosario'])L2.push('<li>La Villa del Rosario: <b>'+String(R['La Villa del Rosario'].km).replace('.',',')+' km</b> por carretera (~'+R['La Villa del Rosario'].min+' min)</li>');
+    if(R['Maracaibo'])L2.push('<li>Maracaibo: <b>'+String(R['Maracaibo'].km).replace('.',',')+' km</b> por carretera (~'+Math.round(R['Maracaibo'].min/5)*5+' min)</li>');
+    if(n.bridge)L2.push('<li>Puente sobre el Río Palmar (T-6): <b>'+km(n.bridge.d)+'</b></li>');
+    li=L2.concat(li);
+    if(n.fuel)li.push('<li>Estación de servicio más cercana: <b>'+km(n.fuel.d)+'</b>'+(n.fuel.f.properties.name?' ('+n.fuel.f.properties.name+')':'')+'</li>');
+    if(n.school)li.push('<li>Escuela más cercana: <b>'+km(n.school.d)+'</b>'+(n.school.f.properties.name?' ('+n.school.f.properties.name+')':'')+'</li>');
+    if(n.hosp)li.push('<li>Hospital más cercano: <b>'+km(n.hosp.d)+'</b> (La Villa del Rosario)</li>');
+    if(n.air)li.push('<li>Pista de aterrizaje más cercana: <b>'+km(n.air.d)+'</b>'+(n.air.f.properties.name?' ('+n.air.f.properties.name+')':'')+'</li>');
     document.getElementById('infra-lista').innerHTML=li.join('');
 
     if (reduce) { mostrar(); }
