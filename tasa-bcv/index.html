@@ -61,9 +61,13 @@ h3{font-size:inherit;margin:0;display:inline}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:clamp(10px,3vw,22px) 0 0}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(10px,3vw,18px)}
-.tasa[hidden],#conv[hidden],#fecha[hidden]{display:none}
+.tasa[hidden],#conv[hidden]{display:none}
 .tasa{min-width:0}
-.grid{min-height:calc(17.5vw + 98px)}
+.grid{min-height:calc(17.5vw + 98px);align-content:start;position:relative}
+#cargando{position:absolute;left:0;right:0;top:0;margin:0}
+#cargando:empty{display:none}
+#fecha{display:block;font-size:.95em;line-height:1.4;min-height:2.8em;margin-top:2px}
+@media (min-width:560px){#fecha{min-height:1.4em}}
 @media (min-width:641px){.grid{min-height:115px}}
 .tasa .k{display:block;font-weight:400}
 .tasa .v data{font:inherit;color:inherit}
@@ -76,13 +80,13 @@ footer nav a{margin-right:2px}
 #t-btc[hidden]{display:none}
 #cargando:empty{display:none}
 #conv{margin-top:8px}
-#conv h2{margin:0 0 8px;font-size:clamp(14px,3.8vw,18px)}
+#conv h2{margin:0 0 4px;font-size:clamp(14px,3.8vw,18px)}
 #conv .fila{display:flex;gap:8px;align-items:stretch}
 #conv input,#conv select{min-height:44px;background:#05070f;color:var(--text);border:1px solid #2c3550;border-radius:10px;padding:8px 12px;font:inherit;font-size:16px;font-variant-numeric:tabular-nums}
 #conv input{flex:1 1 auto;min-width:0;width:100%}
 #conv select{flex:0 0 auto;width:84px}
 #conv label{font-size:12.5px;color:var(--mute);display:block;margin:8px 0 3px}
-#conv .nota{font-size:12px;color:var(--mute);margin:8px 0 0}
+#conv .nota{font-size:12px;line-height:1.4;color:var(--mute);margin:6px 0 0}
 p,li{color:#c9cfdc}
 details{border-top:1px solid var(--line)}
 details:last-of-type{border-bottom:1px solid var(--line)}
@@ -102,7 +106,7 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
 <main id="contenido">
 <header>
   <h1>Tasa BCV hoy: dólar y euro oficial en bolívares</h1>
-  <p class="sub">Tasa de cambio oficial del Banco Central de Venezuela y precio del bitcoin en dólares y en bolívares. <span id="fecha" hidden></span></p>
+  <p class="sub">Tasa de cambio oficial del Banco Central de Venezuela y precio del bitcoin en dólares y en bolívares. <span id="fecha"></span></p>
 </header>
 
 <section aria-labelledby="h-tasas">
@@ -111,12 +115,12 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
     <article class="card tasa" id="t-usd" aria-labelledby="k-usd" hidden><h3 class="k" id="k-usd">Dólar BCV (USD)</h3><p class="v" data-v></p><p class="s">por 1 dólar</p></article>
     <article class="card tasa" id="t-eur" aria-labelledby="k-eur" hidden><h3 class="k" id="k-eur">Euro BCV (EUR)</h3><p class="v" data-v></p><p class="s">por 1 euro</p></article>
     <article class="card tasa" id="t-btc" aria-labelledby="k-btc" hidden><h3 class="k" id="k-btc">Bitcoin (BTC)</h3><p class="v" data-v></p><p class="s" data-s></p></article>
+  <p id="cargando" class="mute">Consultando la tasa oficial del dólar BCV y del euro BCV de hoy, publicada por el Banco Central de Venezuela…</p>
   </div>
-  <p id="cargando" class="mute" style="margin:8px 0 0">Consultando la tasa oficial del dólar BCV y del euro BCV de hoy, publicada por el Banco Central de Venezuela…</p>
   <noscript><p class="mute">Para ver el precio del dólar hoy en Venezuela según la tasa oficial del BCV, active JavaScript o consulte el <a href="https://www.bcv.org.ve/">sitio oficial del Banco Central de Venezuela</a>.</p></noscript>
 </section>
 
-<section id="conv" class="card" aria-labelledby="h-conv" hidden>
+<section id="conv" class="card" aria-labelledby="h-conv">
   <h2 id="h-conv">Calculadora: divisas ↔ bolívares</h2>
   <label for="c-div">Monto en divisa</label>
   <div class="fila"><input id="c-div" name="monto" type="text" inputmode="decimal" autocomplete="off" value="1"><label for="c-mon" class="sr">Moneda</label><select id="c-mon" name="moneda"></select></div>
@@ -164,11 +168,11 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
    if(!p.length){el.hidden=true}else{el.innerHTML=p.join('<span aria-hidden="true" style="opacity:.35">·</span>');el.hidden=false}
    show('t-usd',R.USD?bs(R.USD):null,null,R.USD);show('t-eur',R.EUR?bs(R.EUR):null,null,R.EUR);
    show('t-btc',ok(b)?'US$ '+Math.round(b).toLocaleString('es-VE'):null,ok(b)&&R.USD?bs(b*R.USD):'',b);
-   var now=new Date(),hh=now.toLocaleTimeString('es-VE',{hour:'2-digit',minute:'2-digit',timeZone:'America/Caracas'});
+   var now=new Date(),hh=now.toLocaleTimeString('es-VE',{hour:'numeric',minute:'2-digit',timeZone:'America/Caracas'});
    if(p.length){var fe=$('fecha');fe.textContent='';if(fs){fe.appendChild(document.createTextNode('Tasa BCV vigente: '));var t1=document.createElement('time');t1.dateTime=String(fecha).slice(0,10);t1.textContent=fs;fe.appendChild(t1);fe.appendChild(document.createTextNode('. '))}
     fe.appendChild(document.createTextNode('Actualizado: '));var t2=document.createElement('time');t2.dateTime=now.toISOString();t2.textContent=hh+' (hora de Venezuela)';fe.appendChild(t2);fe.appendChild(document.createTextNode('.'));fe.hidden=false;
     try{var m=$('ld-main'),G=JSON.parse(m.textContent);G['@graph'].forEach(function(n){if(n['@type']==='WebPage')n.dateModified=now.toISOString()});m.textContent=JSON.stringify(G)}catch(e){}
-   }else $('fecha').hidden=true;
+   }else $('fecha').textContent='';
    $('cargando').textContent=p.length?'':'No fue posible cargar las tasas en este momento. Intente de nuevo más tarde.';
    var sel=$('c-mon'),cur=sel.value;sel.innerHTML='';['USD','EUR'].forEach(function(m){if(R[m]){var o=document.createElement('option');o.value=m;o.textContent=m;sel.appendChild(o)}});
    if(cur&&R[cur])sel.value=cur;$('conv').hidden=!sel.options.length;if(sel.options.length)calc('div');
