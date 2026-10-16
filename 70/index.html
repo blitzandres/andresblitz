@@ -31,7 +31,7 @@ body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 -apple-syste
 a{color:var(--acc)}
 #entrada{position:relative;height:100vh;height:100svh;min-height:520px;overflow:hidden;
  background:radial-gradient(ellipse at 50% 55%,#0e1a2c 0%,#05070f 70%)}
-#globo{position:absolute;inset:0;margin:auto;width:min(92vw,92vh);aspect-ratio:1;cursor:grab;touch-action:pan-y;opacity:0;transition:opacity 1s}
+#globo{position:absolute;inset:0;margin:auto;width:min(92vw,92vh);aspect-ratio:1;cursor:grab;touch-action:pan-y;opacity:0;transition:opacity 1s;background:transparent;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 58%,transparent 71%);mask-image:radial-gradient(circle at 50% 50%,#000 58%,transparent 71%)}
 #globo.on{opacity:1}
 #fallback{position:absolute;inset:0;margin:auto;width:min(70vw,70vh);aspect-ratio:1;border-radius:50%;
  background:radial-gradient(circle at 35% 30%,#2b4d6e,#0f2238 60%,#081322);box-shadow:0 0 80px #1d4a6e55}
@@ -40,7 +40,7 @@ a{color:var(--acc)}
 #marca.on{opacity:1}
 #marca b{display:inline-block;background:#f4f1e8;color:#0b0f1c;padding:4px 10px;border-radius:6px;font-size:14px;letter-spacing:.04em}
 #marca:after{content:"";display:block;width:2px;height:22px;margin:0 auto;background:#f4f1e8}
-.titulo{position:absolute;left:0;right:0;top:7vh;text-align:center;padding:0 20px;pointer-events:none}
+.titulo{position:absolute;z-index:2;left:0;right:0;top:5vh;text-shadow:0 2px 14px #05070f,0 0 4px #05070f,0 0 28px #05070fcc;text-align:center;padding:0 20px;pointer-events:none}
 .titulo h1{margin:0;font-weight:600;font-size:clamp(26px,5vw,46px);letter-spacing:-.01em}
 .titulo p{margin:6px 0 0;color:var(--mute);font-size:clamp(14px,2.2vw,18px)}
 .entrar{position:absolute;left:50%;bottom:5vh;transform:translateX(-50%);color:var(--text);text-decoration:none;
