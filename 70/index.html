@@ -33,8 +33,7 @@ a{color:var(--acc)}
  background:radial-gradient(ellipse at 50% 55%,#0e1a2c 0%,#05070f 70%)}
 #globo{position:absolute;inset:0;margin:auto;width:min(92vw,92vh);aspect-ratio:1;cursor:grab;touch-action:pan-y;opacity:0;transition:opacity 1s;background:transparent;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 58%,transparent 71%);mask-image:radial-gradient(circle at 50% 50%,#000 58%,transparent 71%)}
 #globo.on{opacity:1}
-#fallback{position:absolute;inset:0;margin:auto;width:min(70vw,70vh);aspect-ratio:1;border-radius:50%;
- background:radial-gradient(circle at 35% 30%,#2b4d6e,#0f2238 60%,#081322);box-shadow:0 0 80px #1d4a6e55}
+#fallback{position:absolute;inset:0;margin:auto;width:min(80vw,70vh);height:min(80vw,70vh)}
 #fallback.hide{display:none}
 #marca{position:absolute;left:50%;top:50%;transform:translate(-50%,-140%);opacity:0;transition:opacity .6s;pointer-events:none;text-align:center}
 #marca.on{opacity:1}
@@ -51,7 +50,7 @@ main{max-width:960px;margin:0 auto;padding:40px 22px 80px}
 section{padding:44px 0;border-bottom:1px solid var(--line)}section:last-child{border:0}
 h2{font-size:24px;font-weight:600;margin:0 0 12px}
 p{color:#c9cfdc;margin:0 0 12px}
-.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
 .galeria figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .galeria img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 .galeria figcaption{padding:10px 14px;color:var(--mute);font-size:14px}
@@ -59,12 +58,13 @@ p{color:#c9cfdc;margin:0 0 12px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
 .mute{color:var(--mute);font-size:14px}
 footer{text-align:center;color:var(--mute);font-size:13px;padding:30px}
+@media (max-width:640px){.galeria{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.entrar span{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <header id="entrada" aria-label="Ubicación de El 70 en el globo">
-  <div id="fallback" aria-hidden="true"></div>
+  <div id="fallback" aria-hidden="true"><svg viewBox="0 0 400 400" width="100%" height="100%"><defs><radialGradient id="gg" cx="40%" cy="35%"><stop offset="0" stop-color="#1c3550"/><stop offset=".7" stop-color="#0b1626"/><stop offset="1" stop-color="#05070f"/></radialGradient><pattern id="dt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.6" fill="#8fd3ff"/></pattern><clipPath id="cl"><circle cx="200" cy="200" r="190"/></clipPath></defs><circle cx="200" cy="200" r="190" fill="url(#gg)"/><g clip-path="url(#cl)" opacity=".85"><path fill="url(#dt)" d="M40 120 L120 100 L150 130 L190 150 L215 165 L260 175 L300 185 L330 215 L360 240 L380 300 L340 330 L300 360 L260 400 L200 400 L210 340 L190 300 L170 260 L175 225 L160 205 L120 190 L90 160 L40 150 Z"/></g><circle cx="200" cy="200" r="9" fill="#f2e6b8"/><line x1="200" y1="190" x2="200" y2="158" stroke="#f4f1e8" stroke-width="2"/><rect x="168" y="128" width="64" height="30" rx="6" fill="#f4f1e8"/><text x="200" y="149" font-family="sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#0b0f1c">El 70</text></svg></div>
   <canvas id="globo" aria-label="Globo interactivo: arrastre para girar"></canvas>
   <div id="marca"><b>El 70</b></div>
   <div class="titulo">
@@ -92,7 +92,6 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px}
   <div class="galeria">
     <figure><img src="img/potrero.jpg" alt="Potrero verde con un samán y cerca de alambre en El 70" loading="lazy" width="700" height="525"><figcaption>Potreros de la finca</figcaption></figure>
     <figure><img src="img/patio-tractor.jpg" alt="Tractor y remolque en el patio de la finca" loading="lazy" width="700" height="525"><figcaption>Trabajo en el patio de la finca</figcaption></figure>
-    <figure><div class="ph">Más fotos próximamente</div><figcaption>Galería en preparación</figcaption></figure>
   </div>
 </section>
 <section id="tierra">
@@ -119,29 +118,36 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px}
 const LAT=10.32, LON=-72.31;
 const cv=document.getElementById('globo'), fb=document.getElementById('fallback'), mk=document.getElementById('marca');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const slow=navigator.connection&&(navigator.connection.saveData||/2g/.test(navigator.connection.effectiveType||''));
 const toAng=(lat,lon)=>[Math.PI-((lon*Math.PI)/180-Math.PI/2),(lat*Math.PI)/180];
-if(!reduce&&!slow){
- (async()=>{try{
-  const createGlobe=(await import('https://esm.sh/cobe@0.6.3')).default;
+const webgl=(()=>{try{const c=document.createElement('canvas');return !!(c.getContext('webgl')||c.getContext('experimental-webgl'))}catch(e){return false}})();
+async function start(){
+  if(!webgl) return;
+  try{
+  const createGlobe=(await import('./cobe.mjs')).default;
   const [tp,tt]=toAng(LAT,LON);
-  let phi=tp-4, theta=0.1, scale=0.85, t0=performance.now(), dragging=null, off=0, offT=0, done=false;
+  const S0=2.2, S1=3.4, DUR=2600;           // Venezuela de cerca -> La Villa del Rosario
+  let scale=reduce?S1:S0, t0=performance.now(), drag=null, off=0, offT=0, done=reduce;
+  const D=Math.min(2,window.devicePixelRatio||1);
+  let w=0; const size=()=>{w=cv.getBoundingClientRect().width||Math.min(innerWidth,innerHeight)*0.92};size();addEventListener('resize',size);
   const ease=x=>1-Math.pow(1-x,3);
-  const D=Math.min(2,devicePixelRatio);let w=0; const size=()=>{w=cv.offsetWidth};size();addEventListener('resize',size);
-  const g=createGlobe(cv,{devicePixelRatio:D,width:w*D,height:w*D,phi,theta,dark:1,diffuse:1.2,
+  const g=createGlobe(cv,{devicePixelRatio:D,width:w*D,height:w*D,phi:tp,theta:tt,dark:1,diffuse:1.2,
    mapSamples:16000,mapBrightness:6,baseColor:[0.2,0.3,0.4],markerColor:[0.95,0.9,0.7],glowColor:[0.15,0.25,0.4],
-   scale,markers:[{location:[LAT,LON],size:0.06}],
-   onRender:s=>{const k=Math.min(1,(performance.now()-t0)/4200),e=ease(k);
-    if(!done){phi=(tp-4)+4*e;theta=0.1+(tt-0.1)*e;scale=0.85+0.9*e;if(k>=1){done=true;mk.classList.add('on')}}
-    s.phi=phi+off;s.theta=theta+offT;s.scale=scale;s.width=w*D;s.height=w*D;}});
-  cv.classList.add('on');fb.classList.add('hide');
-  cv.addEventListener('pointerdown',e=>{dragging=[e.clientX-off*300,e.clientY-offT*300];cv.style.cursor='grabbing';mk.classList.remove('on');cv.setPointerCapture(e.pointerId)});
-  const up=()=>{dragging=null;cv.style.cursor='grab';if(done&&Math.abs(off)<.02&&Math.abs(offT)<.02)mk.classList.add('on')};
+   scale,markers:[{location:[LAT,LON],size:0.05}],
+   onRender:s=>{
+    if(!done){const k=Math.min(1,(performance.now()-t0)/DUR);scale=S0+(S1-S0)*ease(k);if(k>=1){done=true;if(!drag)mk.classList.add('on')}}
+    else if(reduce&&!drag){off+=0.0004}      // giro muy lento con movimiento reducido
+    s.phi=tp+off;s.theta=tt+offT;s.scale=scale;s.width=w*D;s.height=w*D;}});
+  cv.classList.add('on');setTimeout(()=>fb.classList.add('hide'),600);
+  if(reduce)mk.classList.add('on');
+  cv.addEventListener('pointerdown',e=>{drag=[e.clientX-off*400,e.clientY-offT*400];cv.style.cursor='grabbing';mk.classList.remove('on');try{cv.setPointerCapture(e.pointerId)}catch(_){}});
+  const up=()=>{if(!drag)return;drag=null;cv.style.cursor='grab';if(done&&Math.abs(off)<.03&&Math.abs(offT)<.03)mk.classList.add('on')};
   cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
-  cv.addEventListener('pointermove',e=>{if(!dragging)return;off=(e.clientX-dragging[0])/300;offT=Math.max(-.8,Math.min(.8,(e.clientY-dragging[1])/300))});
+  cv.addEventListener('pointermove',e=>{if(!drag)return;off=(e.clientX-drag[0])/400;offT=Math.max(-.6,Math.min(.6,(e.clientY-drag[1])/400))});
   cv.addEventListener('dblclick',()=>{off=0;offT=0;if(done)mk.classList.add('on')});
- }catch(err){/* se mantiene la imagen fija */}})();
-}else{mk.classList.add('on')}
+  cv.addEventListener('webglcontextlost',()=>{cv.classList.remove('on');fb.classList.remove('hide');mk.classList.remove('on')});
+  }catch(err){cv.classList.remove('on');fb.classList.remove('hide')}
+}
+start();
 </script>
 <script>
 (function(){var b='https://blitz-analytics.andres-491.workers.dev';
