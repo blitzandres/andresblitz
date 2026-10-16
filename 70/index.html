@@ -58,7 +58,26 @@ p{color:#c9cfdc;margin:0 0 12px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
 .mute{color:var(--mute);font-size:14px}
 footer{text-align:center;color:var(--mute);font-size:13px;padding:30px}
-@media (max-width:640px){.galeria{grid-template-columns:1fr}}
+html,body{overflow-x:hidden;max-width:100%}
+h3{font-size:19px;font-weight:600;margin:0 0 10px}
+.carrusel{position:relative;max-width:720px;margin:14px auto 0;overflow:hidden}
+.pista{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none}
+.pista::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;min-width:0;scroll-snap-align:center;scroll-snap-stop:always;margin:0}
+.carrusel .card{min-height:180px}
+.carrusel figure.slide{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.carrusel figure img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.carrusel figcaption{padding:10px 14px;color:var(--mute);font-size:14px}
+#galeria .carrusel{max-width:600px}
+.pista-hint{text-align:center;color:var(--mute);font-size:13px;margin-top:6px}
+@media not ((hover:none) and (pointer:coarse)){.pista-hint{display:none}}
+.ctrl{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px}
+.ctrl button{width:34px;height:34px;border-radius:50%;border:1px solid #2c3550;background:var(--panel);color:var(--text);font-size:20px;line-height:1;cursor:pointer}
+.ctrl button:disabled{opacity:.35;cursor:default}
+.dots{display:flex;gap:8px}
+.dots button{width:9px;height:9px;padding:0;border-radius:50%;border:0;background:#3a4560}
+.dots button[aria-current="true"]{background:var(--acc);width:22px;border-radius:5px}
+@media (hover:none) and (pointer:coarse){.ctrl .prev,.ctrl .next{display:none}}
 @media (prefers-reduced-motion:reduce){.entrar span{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -75,23 +94,27 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px}
 </header>
 
 <main id="contenido">
-<section>
-  <h2>Agropecuaria Blimar C.A.</h2>
-  <p>Empresa agropecuaria familiar ubicada en La Villa del Rosario, municipio Rosario de Perijá, estado Zulia, una zona reconocida por su tradición ganadera y lechera. La finca es conocida en la zona como «El 70».</p>
-</section>
-<section id="leche">
-  <h2>Producción lechera</h2>
-  <p>La finca ha estado dedicada a la producción de leche, actividad central de la economía de Rosario de Perijá. Para consultas relacionadas con la producción, comuníquese directamente con la familia.</p>
-</section>
-<section id="carne">
-  <h2>Ganado de carne</h2>
-  <p>Además de la lechería, en la finca se trabaja con ganado. Si desea información sobre ganado o actividades de la finca, escríbanos.</p>
+<section id="finca">
+  <h2>La finca</h2>
+  <div class="carrusel" data-label="Información de la finca">
+    <div class="pista">
+      <article class="slide card"><h3>Agropecuaria Blimar C.A.</h3><p>Empresa agropecuaria familiar ubicada en La Villa del Rosario, municipio Rosario de Perijá, estado Zulia, una zona reconocida por su tradición ganadera y lechera. La finca es conocida en la zona como «El 70».</p></article>
+      <article class="slide card" id="leche"><h3>Producción lechera</h3><p>La finca ha estado dedicada a la producción de leche, actividad central de la economía de Rosario de Perijá. Para consultas relacionadas con la producción, comuníquese directamente con la familia.</p></article>
+      <article class="slide card" id="carne"><h3>Ganado de carne</h3><p>Además de la lechería, en la finca se trabaja con ganado. Si desea información sobre ganado o actividades de la finca, escríbanos.</p></article>
+    </div>
+    <div class="ctrl"><button class="prev" aria-label="Anterior">‹</button><div class="dots"></div><button class="next" aria-label="Siguiente">›</button></div>
+    <p class="pista-hint">Desliza para ver más →</p>
+  </div>
 </section>
 <section id="galeria">
   <h2>Galería de los potreros</h2>
-  <div class="galeria">
-    <figure><img src="img/potrero.jpg" alt="Potrero verde con un samán y cerca de alambre en El 70" loading="lazy" width="700" height="525"><figcaption>Potreros de la finca</figcaption></figure>
-    <figure><img src="img/patio-tractor.jpg" alt="Tractor y remolque en el patio de la finca" loading="lazy" width="700" height="525"><figcaption>Trabajo en el patio de la finca</figcaption></figure>
+  <div class="carrusel" data-label="Galería de fotos">
+    <div class="pista">
+      <figure class="slide"><img src="img/potrero.jpg" alt="Potrero verde con un samán y cerca de alambre en El 70" loading="lazy" width="700" height="525"><figcaption>Potreros de la finca</figcaption></figure>
+      <figure class="slide"><img src="img/patio-tractor.jpg" alt="Tractor y remolque en el patio de la finca" loading="lazy" width="700" height="525"><figcaption>Trabajo en el patio de la finca</figcaption></figure>
+    </div>
+    <div class="ctrl"><button class="prev" aria-label="Anterior">‹</button><div class="dots"></div><button class="next" aria-label="Siguiente">›</button></div>
+    <p class="pista-hint">Desliza para ver más →</p>
   </div>
 </section>
 <section id="tierra">
@@ -148,6 +171,18 @@ async function start(){
   }catch(err){cv.classList.remove('on');fb.classList.remove('hide')}
 }
 start();
+</script>
+<script>
+document.querySelectorAll('.carrusel').forEach(c=>{
+ const p=c.querySelector('.pista'),sl=[...p.children],d=c.querySelector('.dots'),pv=c.querySelector('.prev'),nx=c.querySelector('.next');
+ c.setAttribute('role','region');c.setAttribute('aria-roledescription','carrusel');c.setAttribute('aria-label',c.dataset.label);
+ const dots=sl.map((_,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Ir a '+(i+1)+' de '+sl.length);b.onclick=()=>go(i);d.appendChild(b);return b});
+ const cur=()=>Math.round(p.scrollLeft/p.clientWidth);
+ const go=i=>p.scrollTo({left:Math.max(0,Math.min(sl.length-1,i))*p.clientWidth});
+ const upd=()=>{const i=cur();dots.forEach((b,j)=>b.setAttribute('aria-current',j===i));pv.disabled=i<=0;nx.disabled=i>=sl.length-1};
+ pv.onclick=()=>go(cur()-1);nx.onclick=()=>go(cur()+1);
+ p.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});addEventListener('resize',upd);upd();
+});
 </script>
 <script>
 (function(){var b='https://blitz-analytics.andres-491.workers.dev';
