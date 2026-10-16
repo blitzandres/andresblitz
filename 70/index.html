@@ -89,9 +89,16 @@ h3{font-size:19px;font-weight:600;margin:0 0 10px}
 .dots button[aria-current="true"]{background:var(--acc);width:22px;border-radius:5px}
 @media (hover:none) and (pointer:coarse){.ctrl .prev,.ctrl .next{display:none}}
 @media (prefers-reduced-motion:reduce){.entrar span{animation:none}html{scroll-behavior:auto}}
+#tasas{position:fixed;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:18px;padding:0 10px;background:#05070fe6;border-bottom:1px solid #1a2135;color:#aeb6c8;font-size:12.5px;white-space:nowrap;overflow:hidden;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#tasas[hidden]{display:none}
+#tasas b{color:#e7eaf2;font-weight:600}
+#tasas .f{color:#6f7a92}
+body.con-tasas .titulo{top:calc(5vh + 28px)}
+@media (max-width:640px){#tasas{gap:10px;font-size:11.5px;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}#tasas::-webkit-scrollbar{display:none}#tasas .f{display:none}}
 </style>
 </head>
 <body>
+<div id="tasas" role="status" aria-label="Tasas de cambio" hidden></div>
 <header id="entrada" aria-label="Mapa satelital de El 70">
   <div class="estatico-pin" aria-hidden="true"><div class="punto" style="margin:-8px 0 0 -8px"></div></div>
   <div id="mapa" role="application" aria-label="Mapa satelital interactivo de la zona de El 70"></div>
@@ -160,6 +167,27 @@ h3{font-size:19px;font-weight:600;margin:0 0 10px}
 </main>
 <footer>© Agropecuaria Blimar C.A. · La Villa del Rosario, Zulia, Venezuela</footer>
 
+<script>
+(function(){
+ var el=document.getElementById('tasas');
+ var bs=function(n){return n.toLocaleString('es-VE',{minimumFractionDigits:2,maximumFractionDigits:2})+' Bs'};
+ function j(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()})}
+ function ok(n){return typeof n==='number'&&isFinite(n)&&n>0}
+ function cargar(){
+  Promise.allSettled([j('https://ve.dolarapi.com/v1/dolares/oficial'),j('https://ve.dolarapi.com/v1/euros/oficial'),j('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')]).then(function(r){
+   var p=[],fecha='';
+   if(r[0].status==='fulfilled'&&ok(r[0].value.promedio)){p.push('BCV Dólar <b>'+bs(r[0].value.promedio)+'</b>');fecha=r[0].value.fechaActualizacion}
+   if(r[1].status==='fulfilled'&&ok(r[1].value.promedio)){p.push('BCV Euro <b>'+bs(r[1].value.promedio)+'</b>');fecha=fecha||r[1].value.fechaActualizacion}
+   var b=r[2].status==='fulfilled'&&r[2].value.bitcoin&&r[2].value.bitcoin.usd;
+   if(ok(b))p.push('Bitcoin <b>US$ '+Math.round(b).toLocaleString('es-VE')+'</b>');
+   if(fecha){var d=new Date(fecha);if(!isNaN(d))p.push('<span class="f">BCV '+d.toLocaleDateString('es-VE',{day:'numeric',month:'short',year:'numeric',timeZone:'America/Caracas'})+'</span>')}
+   if(!p.length){el.hidden=true;document.body.classList.remove('con-tasas');return}
+   el.innerHTML=p.join('<span aria-hidden="true" style="opacity:.35">·</span>');el.hidden=false;document.body.classList.add('con-tasas');
+  });
+ }
+ cargar();setInterval(cargar,5*60*1000);
+})();
+</script>
 <script src="vendor/leaflet.js"></script>
 <script>
 // === Ubicación de El 70: cambie solo esta constante para mover el pin ===
