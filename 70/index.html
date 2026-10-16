@@ -371,6 +371,17 @@ body.con-tasas .leaflet-top{top:28px}
 .boton-calido{display:inline-block;margin-top:8px;padding:11px 20px;border-radius:999px;background:#e9e3cf;color:#14190f;text-decoration:none;font-weight:600;transition:background .2s}
 .boton-calido:hover,.boton-calido:focus-visible{background:#f6f1e1}
 @media (max-width:640px){.calida{padding:22px 18px}}
+.empleo form{display:grid;gap:12px;margin-top:14px;max-width:560px}
+.empleo label{display:block;font-size:13.5px;color:#c9cfdc;margin-bottom:4px}
+.empleo input,.empleo select,.empleo textarea{width:100%;background:#05070f;color:var(--text);border:1px solid #2c3550;border-radius:10px;padding:10px 12px;font:inherit;font-size:16px}
+.empleo input:focus,.empleo select:focus,.empleo textarea:focus{outline:2px solid #9fd3a8;outline-offset:1px;border-color:transparent}
+.empleo textarea{min-height:110px;resize:vertical}
+.empleo .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.empleo button{justify-self:start;border:0;cursor:pointer;font:inherit}
+.empleo button[disabled]{opacity:.6;cursor:wait}
+.empleo .estado{margin:4px 0 0;font-size:14.5px;color:#d4d8cf}
+.empleo .estado.err{color:#ffb3a7}
+
 .titulo h1{display:flex;align-items:center;justify-content:center;gap:12px}
 .titulo .logo{width:58px;height:58px;filter:drop-shadow(0 2px 10px #05070f)}
 @media (max-width:640px){.titulo h1{gap:8px}.titulo .logo{width:34px;height:34px}}
@@ -445,6 +456,38 @@ body.con-tasas .leaflet-top{top:28px}
     <a class="boton-calido" href="mailto:blitz@mail.grokbot.com?subject=Consulta%20sobre%20la%20tierra%20-%20El%2070">Escríbanos con su propuesta</a>
   </div>
 </section>
+<section id="empleo" aria-labelledby="h-empleo">
+  <div class="calida empleo">
+    <svg class="hoja" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 19c3-4 6-7 10-10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <h2 id="h-empleo">¿Quieres trabajar con nosotros?</h2>
+    <p>En El 70 el trabajo se hace en equipo y con cariño por la tierra y los animales. Si te interesa sumarte, en el ordeño, con el ganado, en el campo y la maquinaria o en la administración, cuéntanos un poco de ti. Leemos cada mensaje y te responderemos.</p>
+    <form id="form-empleo" action="https://formsubmit.co/6c2ad989016ada736e628ac3f48964bf" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Empleo - El 70">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="hp" aria-hidden="true"><label for="e-honey">No llenar</label><input id="e-honey" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <div><label for="e-nombre">Nombre</label><input id="e-nombre" name="nombre" type="text" autocomplete="name" required maxlength="120"></div>
+      <div><label for="e-correo">Correo</label><input id="e-correo" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+      <div><label for="e-tel">Teléfono <span class="mute">(opcional)</span></label><input id="e-tel" name="telefono" type="tel" autocomplete="tel" maxlength="40"></div>
+      <div><label for="e-area">Área de interés</label><select id="e-area" name="area" required><option value="">Selecciona un área</option><option>Ordeño</option><option>Ganado</option><option>Campo / maquinaria</option><option>Administración</option><option>Otro</option></select></div>
+      <div><label for="e-msg">Mensaje</label><textarea id="e-msg" name="mensaje" required maxlength="3000" placeholder="Cuéntanos tu experiencia y disponibilidad"></textarea></div>
+      <button class="boton-calido" type="submit">Enviar</button>
+      <p class="estado" id="e-estado" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<script>
+(function(){var f=document.getElementById('form-empleo'),st=document.getElementById('e-estado');
+f.addEventListener('submit',function(ev){ev.preventDefault();st.className='estado';
+ if(f._honey.value){return}
+ if(!f.checkValidity()){st.className='estado err';st.textContent='Por favor completa nombre, un correo válido, el área de interés y tu mensaje.';var x=f.querySelector(':invalid');if(x)x.focus();return}
+ var b=f.querySelector('button');b.disabled=true;st.textContent='Enviando…';
+ var d={};new FormData(f).forEach(function(v,k){d[k]=v});
+ fetch('https://formsubmit.co/ajax/6c2ad989016ada736e628ac3f48964bf',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+ .then(function(r){return r.json()}).then(function(j){if(String(j.success)!=='true')throw 0;f.reset();st.textContent='¡Gracias por escribirnos! Recibimos tu mensaje y te responderemos pronto.'})
+ .catch(function(){st.className='estado err';st.textContent='No pudimos enviar tu mensaje. Intenta de nuevo en unos minutos.'})
+ .then(function(){b.disabled=false})});})();
+</script>
 <section id="contacto" aria-labelledby="h-contacto">
   <h2 id="h-contacto">Contacto</h2>
   <p>Correo: <a href="mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070">blitz@mail.grokbot.com</a></p>
