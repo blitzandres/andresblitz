@@ -20,7 +20,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":["LocalBusiness","Farm"],"@id":"https://andresblitz.com/70/#farm",
 "name":"Agropecuaria Blimar C.A.","alternateName":"El 70","url":"https://andresblitz.com/70/",
-"email":"andres@andresblitz.com","image":"https://andresblitz.com/70/img/potrero.jpg",
+"email":"blitz@mail.grokbot.com","image":"https://andresblitz.com/70/img/potrero.jpg",
 "description":"Finca agropecuaria familiar dedicada a la producción lechera y al ganado.",
 "address":{"@type":"PostalAddress","streetAddress":"KM 70 Carretera Troncal 6","addressLocality":"La Villa del Rosario","addressRegion":"Zulia","addressCountry":"VE"},
 "geo":{"@type":"GeoCoordinates","latitude":10.4165941,"longitude":-72.2108835}}
@@ -30,7 +30,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
 a{color:var(--acc)}
-#entrada{position:relative;height:100vh;height:100svh;min-height:520px;overflow:hidden;background:#0b1626 url(img/mapa-estatico.jpg) center/cover no-repeat}
+#entrada{position:relative;height:68vh;min-height:480px;overflow:hidden;background:#0b1626 url(img/mapa-estatico.jpg) center/cover no-repeat}
 #entrada.sin-mapa #mapa{display:none}
 #mapa{position:absolute;inset:0;z-index:1;background:transparent}
 .leaflet-container{font:inherit}
@@ -98,6 +98,22 @@ body.con-tasas .datos{top:calc(5vh + 148px)}
 body.con-tasas .leaflet-top{top:28px}
 @media (max-width:640px){body.con-tasas .datos{top:calc(4vh + 140px)}}
 @media (max-width:640px){#tasas{gap:10px;font-size:11.5px;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}#tasas::-webkit-scrollbar{display:none}#tasas .f{display:none}}
+
+@media (max-width:640px){
+ #entrada{height:62vh;height:62svh;min-height:440px}
+ .titulo h1{font-size:23px}.titulo p{font-size:12.5px;margin-top:2px}
+ body.con-tasas .titulo{top:40px}.titulo{top:14px}
+ .datos,body.con-tasas .datos{top:118px;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none;gap:6px}
+ .datos::-webkit-scrollbar{display:none}
+ .datos span{font-size:10.5px;padding:4px 8px;white-space:nowrap;flex:0 0 auto}
+ .datos,body.con-tasas .datos{justify-content:center;gap:5px;padding:0 6px}
+ .leaflet-control-attribution{font-size:8.5px!important;line-height:1.3;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .leyenda{left:8px;bottom:30px;padding:6px 9px;line-height:1.7}
+ .leyenda .cuerpo{display:none}.leyenda.abierta .cuerpo{display:block}
+ .entrar{bottom:30px;left:auto;right:84px;transform:none;padding:7px 16px}
+}
+.leyenda .tog{display:none;background:none;border:0;color:#e7eaf2;font:inherit;font-size:12px;padding:0;cursor:pointer}
+@media (max-width:640px){.leyenda .tog{display:block}}
 </style>
 </head>
 <body>
@@ -111,11 +127,14 @@ body.con-tasas .leaflet-top{top:28px}
   </div>
   <div class="hud datos" id="datos" aria-live="polite"></div>
   <div class="hud leyenda" id="leyenda" hidden>
+    <button class="tog" type="button" aria-expanded="false" onclick="var l=this.parentNode;l.classList.toggle('abierta');this.setAttribute('aria-expanded',l.classList.contains('abierta'))">Capas del mapa ▾</button>
+    <div class="cuerpo">
     <label><input type="checkbox" data-capa="power" checked><i style="background:#ffb000"></i>Líneas y torres eléctricas</label>
     <label><input type="checkbox" data-capa="subs" checked><i class="pt" style="background:#ff5a36"></i>Subestaciones</label>
     <label><input type="checkbox" data-capa="comms" checked><i class="pt" style="background:#c77dff"></i>Antenas</label>
     <label><input type="checkbox" data-capa="water" checked><i style="background:#3fa9ff"></i>Ríos y caños</label>
     <small>Capas: © OpenStreetMap (pueden estar incompletas)</small>
+  </div>
   </div>
   <a class="entrar" href="#contenido">Entrar <span>↓</span></a>
 </header>
@@ -156,12 +175,12 @@ body.con-tasas .leaflet-top{top:28px}
   <div class="card">
     <p>La familia no tiene la finca a la venta. Con frecuencia recibimos propuestas a través de intermediarios; agradecemos el interés, pero no las atendemos.</p>
     <p>Este espacio es un canal de consulta. Solo se considerará una oferta seria y directa del comprador interesado, presentada personalmente y sin intermediarios.</p>
-    <p><a href="mailto:andres@andresblitz.com?subject=Consulta%20sobre%20la%20tierra%20-%20El%2070">Enviar una consulta sobre la tierra</a></p>
+    <p><a href="mailto:blitz@mail.grokbot.com?subject=Consulta%20sobre%20la%20tierra%20-%20El%2070">Enviar una consulta sobre la tierra</a></p>
   </div>
 </section>
 <section id="contacto">
   <h2>Contacto</h2>
-  <p>Correo: <a href="mailto:andres@andresblitz.com?subject=Consulta%20-%20El%2070">andres@andresblitz.com</a></p>
+  <p>Correo: <a href="mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070">blitz@mail.grokbot.com</a></p>
 </section>
 <section id="mensajes">
   <h2>Tablero de mensajes</h2>
@@ -228,7 +247,8 @@ var EL70 = [10.4165941, -72.2108835]; // Agropecuaria Blimar, KM 70 Carretera Tr
     };
     var pin = L.marker(EL70,{icon:L.divIcon({className:'',html:'<div class="punto"></div><div class="pin">El 70 · Agropecuaria Blimar</div>',iconSize:[16,16],iconAnchor:[8,8]}),keyboard:false,title:'El 70'});
     pin.bindPopup('<b>Agropecuaria Blimar · El 70</b><br>KM 70, Carretera Troncal 6<br>La Villa del Rosario, Zulia');
-    function mostrar(){Object.keys(capas).forEach(function(k){capas[k].addTo(map)});pin.addTo(map);document.getElementById('leyenda').hidden=false}
+    function bajar(){ if(window.innerWidth<640) map.panBy([0,-45],{animate:false}); }
+    function mostrar(){bajar();Object.keys(capas).forEach(function(k){capas[k].addTo(map)});pin.addTo(map);document.getElementById('leyenda').hidden=false}
     document.querySelectorAll('#leyenda input').forEach(function(c){c.addEventListener('change',function(){var l=capas[c.dataset.capa];c.checked?l.addTo(map):map.removeLayer(l)})});
 
     var n={line:cerca(D.power),sub:cerca(D.subs),comm:cerca(D.comms),water:cerca(D.water)};
