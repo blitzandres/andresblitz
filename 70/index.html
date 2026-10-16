@@ -15,34 +15,44 @@
 <meta property="og:url" content="https://andresblitz.com/70/" />
 <meta property="og:image" content="https://andresblitz.com/70/img/potrero.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="vendor/leaflet.css" />
 <link rel="preconnect" href="https://blitz-analytics.andres-491.workers.dev" crossorigin />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":["LocalBusiness","Farm"],"@id":"https://andresblitz.com/70/#farm",
 "name":"Agropecuaria Blimar C.A.","alternateName":"El 70","url":"https://andresblitz.com/70/",
 "email":"andres@andresblitz.com","image":"https://andresblitz.com/70/img/potrero.jpg",
 "description":"Finca agropecuaria familiar dedicada a la producción lechera y al ganado.",
-"address":{"@type":"PostalAddress","addressLocality":"La Villa del Rosario","addressRegion":"Zulia","addressCountry":"VE"},
-"geo":{"@type":"GeoCoordinates","latitude":10.32,"longitude":-72.31}}
+"address":{"@type":"PostalAddress","streetAddress":"KM 70 Carretera Troncal 6","addressLocality":"La Villa del Rosario","addressRegion":"Zulia","addressCountry":"VE"},
+"geo":{"@type":"GeoCoordinates","latitude":10.4165941,"longitude":-72.2108835}}
 </script>
 <style>
 :root{--bg:#05070f;--panel:#0b0f1c;--line:#1a2135;--text:#e7eaf2;--mute:#9aa3b8;--acc:#7fc8a9}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
 a{color:var(--acc)}
-#entrada{position:relative;height:100vh;height:100svh;min-height:520px;overflow:hidden;
- background:radial-gradient(ellipse at 50% 55%,#0e1a2c 0%,#05070f 70%)}
-#globo{position:absolute;inset:0;margin:auto;width:min(92vw,92vh);aspect-ratio:1;cursor:grab;touch-action:pan-y;opacity:0;transition:opacity 1s;background:transparent;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 58%,transparent 71%);mask-image:radial-gradient(circle at 50% 50%,#000 58%,transparent 71%)}
-#globo.on{opacity:1}
-#fallback{position:absolute;inset:0;margin:auto;width:min(80vw,70vh);height:min(80vw,70vh)}
-#fallback.hide{display:none}
-#marca{position:absolute;left:50%;top:50%;transform:translate(-50%,-140%);opacity:0;transition:opacity .6s;pointer-events:none;text-align:center}
-#marca.on{opacity:1}
-#marca b{display:inline-block;background:#f4f1e8;color:#0b0f1c;padding:4px 10px;border-radius:6px;font-size:14px;letter-spacing:.04em}
-#marca:after{content:"";display:block;width:2px;height:22px;margin:0 auto;background:#f4f1e8}
-.titulo{position:absolute;z-index:2;left:0;right:0;top:5vh;text-shadow:0 2px 14px #05070f,0 0 4px #05070f,0 0 28px #05070fcc;text-align:center;padding:0 20px;pointer-events:none}
+#entrada{position:relative;height:100vh;height:100svh;min-height:520px;overflow:hidden;background:#0b1626 url(img/mapa-estatico.jpg) center/cover no-repeat}
+#entrada.sin-mapa #mapa{display:none}
+#mapa{position:absolute;inset:0;z-index:1;background:transparent}
+.leaflet-container{font:inherit}
+.hud{position:absolute;z-index:500;pointer-events:none}
+.hud>*{pointer-events:auto}
+.datos{left:50%;transform:translateX(-50%);top:calc(5vh + 112px);display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:0 12px;width:100%;max-width:760px}
+.datos span{background:#05070fcc;border:1px solid #2c3550;border-radius:999px;padding:6px 12px;font-size:13.5px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.datos b{color:#fff}
+.leyenda{right:12px;bottom:84px;background:#05070fd9;border:1px solid #2c3550;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.9}
+.leyenda label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.leyenda i{display:inline-block;width:18px;height:4px;border-radius:2px}
+.leyenda i.pt{width:10px;height:10px;border-radius:50%}
+.leyenda small{display:block;color:var(--mute);font-size:11px;line-height:1.3;margin-top:4px;max-width:190px}
+.punto{width:16px;height:16px;border-radius:50%;background:#ffd23f;border:3px solid #fff;box-shadow:0 0 0 6px #ffd23f55}
+.pin{position:absolute;left:8px;bottom:26px;transform:translateX(-50%);background:#f4f1e8;color:#0b0f1c;font-weight:700;font-size:13px;padding:4px 9px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 8px #0008}
+.pin:after{content:"";position:absolute;left:50%;top:100%;margin-left:-6px;border:6px solid transparent;border-top-color:#f4f1e8}
+.estatico-pin{position:absolute;left:50%;top:50%;z-index:0}
+@media (max-width:640px){.leyenda{left:10px;right:auto;bottom:120px;font-size:12px;padding:8px 10px}.datos{top:calc(4vh + 112px)}.leaflet-control-zoom{display:none}.datos span{font-size:12.5px}}
+.titulo{position:absolute;z-index:600;left:0;right:0;top:5vh;text-shadow:0 2px 14px #05070f,0 0 4px #05070f,0 0 28px #05070fcc;text-align:center;padding:0 20px;pointer-events:none}
 .titulo h1{margin:0;font-weight:600;font-size:clamp(26px,5vw,46px);letter-spacing:-.01em}
 .titulo p{margin:6px 0 0;color:var(--mute);font-size:clamp(14px,2.2vw,18px)}
-.entrar{position:absolute;left:50%;bottom:5vh;transform:translateX(-50%);color:var(--text);text-decoration:none;
+.entrar{position:absolute;z-index:600;left:50%;bottom:5vh;transform:translateX(-50%);color:var(--text);text-decoration:none;
  border:1px solid #2c3550;border-radius:999px;padding:10px 22px;background:#0b0f1ccc;font-weight:500}
 .entrar:hover{border-color:var(--acc)}
 .entrar span{display:inline-block;animation:b 1.8s infinite}@keyframes b{50%{transform:translateY(4px)}}
@@ -82,13 +92,20 @@ h3{font-size:19px;font-weight:600;margin:0 0 10px}
 </style>
 </head>
 <body>
-<header id="entrada" aria-label="Ubicación de El 70 en el globo">
-  <div id="fallback" aria-hidden="true"><svg viewBox="0 0 400 400" width="100%" height="100%"><defs><radialGradient id="gg" cx="40%" cy="35%"><stop offset="0" stop-color="#1c3550"/><stop offset=".7" stop-color="#0b1626"/><stop offset="1" stop-color="#05070f"/></radialGradient><pattern id="dt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.6" fill="#8fd3ff"/></pattern><clipPath id="cl"><circle cx="200" cy="200" r="190"/></clipPath></defs><circle cx="200" cy="200" r="190" fill="url(#gg)"/><g clip-path="url(#cl)" opacity=".85"><path fill="url(#dt)" d="M40 120 L120 100 L150 130 L190 150 L215 165 L260 175 L300 185 L330 215 L360 240 L380 300 L340 330 L300 360 L260 400 L200 400 L210 340 L190 300 L170 260 L175 225 L160 205 L120 190 L90 160 L40 150 Z"/></g><circle cx="200" cy="200" r="9" fill="#f2e6b8"/><line x1="200" y1="190" x2="200" y2="158" stroke="#f4f1e8" stroke-width="2"/><rect x="168" y="128" width="64" height="30" rx="6" fill="#f4f1e8"/><text x="200" y="149" font-family="sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#0b0f1c">El 70</text></svg></div>
-  <canvas id="globo" aria-label="Globo interactivo: arrastre para girar"></canvas>
-  <div id="marca"><b>El 70</b></div>
+<header id="entrada" aria-label="Mapa satelital de El 70">
+  <div class="estatico-pin" aria-hidden="true"><div class="punto" style="margin:-8px 0 0 -8px"></div></div>
+  <div id="mapa" role="application" aria-label="Mapa satelital interactivo de la zona de El 70"></div>
   <div class="titulo">
     <h1>Agropecuaria Blimar · El 70</h1>
-    <p>La Villa del Rosario, Zulia · Venezuela</p>
+    <p>KM 70 Carretera Troncal 6 · La Villa del Rosario, Zulia</p>
+  </div>
+  <div class="hud datos" id="datos" aria-live="polite"></div>
+  <div class="hud leyenda" id="leyenda" hidden>
+    <label><input type="checkbox" data-capa="power" checked><i style="background:#ffb000"></i>Líneas y torres eléctricas</label>
+    <label><input type="checkbox" data-capa="subs" checked><i class="pt" style="background:#ff5a36"></i>Subestaciones</label>
+    <label><input type="checkbox" data-capa="comms" checked><i class="pt" style="background:#c77dff"></i>Antenas</label>
+    <label><input type="checkbox" data-capa="water" checked><i style="background:#3fa9ff"></i>Ríos y caños</label>
+    <small>Capas: © OpenStreetMap (pueden estar incompletas)</small>
   </div>
   <a class="entrar" href="#contenido">Entrar <span>↓</span></a>
 </header>
@@ -117,18 +134,24 @@ h3{font-size:19px;font-weight:600;margin:0 0 10px}
     <p class="pista-hint">Desliza para ver más →</p>
   </div>
 </section>
+<section id="infraestructura">
+  <h2>Infraestructura cercana</h2>
+  <div class="card">
+    <ul id="infra-lista" style="margin:0;padding-left:20px;color:#c9cfdc"><li>Calculando distancias…</li></ul>
+    <p class="mute" style="margin-top:12px">Distancias en línea recta desde el punto de la finca. Los datos de infraestructura provienen de OpenStreetMap y pueden estar incompletos o desactualizados.</p>
+  </div>
+</section>
 <section id="tierra">
   <h2>Consultas sobre la tierra</h2>
   <div class="card">
     <p>La familia no tiene la finca a la venta. Con frecuencia recibimos propuestas a través de intermediarios; agradecemos el interés, pero no las atendemos.</p>
     <p>Este espacio es un canal de consulta. Solo se considerará una oferta seria y directa del comprador interesado, presentada personalmente y sin intermediarios.</p>
+    <p><a href="mailto:andres@andresblitz.com?cc=roly_polyoly%40hotmail.com&amp;subject=Consulta%20sobre%20la%20tierra%20-%20El%2070">Enviar una consulta sobre la tierra</a></p>
   </div>
 </section>
 <section id="contacto">
   <h2>Contacto</h2>
-  <p>Correo: <a href="mailto:andres@andresblitz.com">andres@andresblitz.com</a></p>
-  <!-- TODO(Andrés): agregar número de teléfono / WhatsApp real. No inventar. Ej.: <p>Teléfono / WhatsApp: <a href="tel:+58XXXXXXXXXX">+58 …</a></p> -->
-  <p class="mute">Teléfono: próximamente.</p>
+  <p>Correo: <a href="mailto:andres@andresblitz.com?cc=roly_polyoly%40hotmail.com&amp;subject=Consulta%20-%20El%2070">andres@andresblitz.com</a></p>
 </section>
 <section id="mensajes">
   <h2>Tablero de mensajes</h2>
@@ -137,40 +160,64 @@ h3{font-size:19px;font-weight:600;margin:0 0 10px}
 </main>
 <footer>© Agropecuaria Blimar C.A. · La Villa del Rosario, Zulia, Venezuela</footer>
 
-<script type="module">
-const LAT=10.32, LON=-72.31;
-const cv=document.getElementById('globo'), fb=document.getElementById('fallback'), mk=document.getElementById('marca');
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const toAng=(lat,lon)=>[Math.PI-((lon*Math.PI)/180-Math.PI/2),(lat*Math.PI)/180];
-const webgl=(()=>{try{const c=document.createElement('canvas');return !!(c.getContext('webgl')||c.getContext('experimental-webgl'))}catch(e){return false}})();
-async function start(){
-  if(!webgl) return;
-  try{
-  const createGlobe=(await import('./cobe.mjs')).default;
-  const [tp,tt]=toAng(LAT,LON);
-  const S0=2.2, S1=3.4, DUR=2600;           // Venezuela de cerca -> La Villa del Rosario
-  let scale=reduce?S1:S0, t0=performance.now(), drag=null, off=0, offT=0, done=reduce;
-  const D=Math.min(2,window.devicePixelRatio||1);
-  let w=0; const size=()=>{w=cv.getBoundingClientRect().width||Math.min(innerWidth,innerHeight)*0.92};size();addEventListener('resize',size);
-  const ease=x=>1-Math.pow(1-x,3);
-  const g=createGlobe(cv,{devicePixelRatio:D,width:w*D,height:w*D,phi:tp,theta:tt,dark:1,diffuse:1.2,
-   mapSamples:16000,mapBrightness:6,baseColor:[0.2,0.3,0.4],markerColor:[0.95,0.9,0.7],glowColor:[0.15,0.25,0.4],
-   scale,markers:[{location:[LAT,LON],size:0.05}],
-   onRender:s=>{
-    if(!done){const k=Math.min(1,(performance.now()-t0)/DUR);scale=S0+(S1-S0)*ease(k);if(k>=1){done=true;if(!drag)mk.classList.add('on')}}
-    else if(reduce&&!drag){off+=0.0004}      // giro muy lento con movimiento reducido
-    s.phi=tp+off;s.theta=tt+offT;s.scale=scale;s.width=w*D;s.height=w*D;}});
-  cv.classList.add('on');setTimeout(()=>fb.classList.add('hide'),600);
-  if(reduce)mk.classList.add('on');
-  cv.addEventListener('pointerdown',e=>{drag=[e.clientX-off*400,e.clientY-offT*400];cv.style.cursor='grabbing';mk.classList.remove('on');try{cv.setPointerCapture(e.pointerId)}catch(_){}});
-  const up=()=>{if(!drag)return;drag=null;cv.style.cursor='grab';if(done&&Math.abs(off)<.03&&Math.abs(offT)<.03)mk.classList.add('on')};
-  cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
-  cv.addEventListener('pointermove',e=>{if(!drag)return;off=(e.clientX-drag[0])/400;offT=Math.max(-.6,Math.min(.6,(e.clientY-drag[1])/400))});
-  cv.addEventListener('dblclick',()=>{off=0;offT=0;if(done)mk.classList.add('on')});
-  cv.addEventListener('webglcontextlost',()=>{cv.classList.remove('on');fb.classList.remove('hide');mk.classList.remove('on')});
-  }catch(err){cv.classList.remove('on');fb.classList.remove('hide')}
-}
-start();
+<script src="vendor/leaflet.js"></script>
+<script>
+// === Ubicación de El 70: cambie solo esta constante para mover el pin ===
+var EL70 = [10.4165941, -72.2108835]; // Agropecuaria Blimar, KM 70 Carretera Troncal 6 (pin de Google Business)
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero = document.getElementById('entrada');
+  if (!window.L) return; // queda la imagen satelital fija de fondo
+  var map = L.map('mapa', {zoomControl:false, attributionControl:true, scrollWheelZoom:false, tap:true, zoomSnap:0.25});
+  L.control.zoom({position:'topright'}).addTo(map);
+  var sat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom:18, attribution:'Imágenes © Esri, Maxar, Earthstar Geographics'}).addTo(map);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {maxZoom:18, attribution:'Datos © OpenStreetMap'}).addTo(map);
+  var falla = 0; sat.on('tileerror', function(){ if(++falla > 8) hero.classList.add('sin-mapa'); });
+  var CERCA = window.innerWidth < 640 ? 14 : 14.5;
+  if (reduce) map.setView(EL70, CERCA); else map.setView([7.5, -66.5], 5);
+
+  // distancias
+  var k = Math.cos(EL70[0]*Math.PI/180);
+  function xy(lon,lat){return [(lon-EL70[1])*111.32*k,(lat-EL70[0])*110.57]}
+  function dSeg(a,b){var A=xy(a[0],a[1]),B=xy(b[0],b[1]),dx=B[0]-A[0],dy=B[1]-A[1],l=dx*dx+dy*dy,t=l?Math.max(0,Math.min(1,-(A[0]*dx+A[1]*dy)/l)):0;return Math.hypot(A[0]+t*dx,A[1]+t*dy)}
+  function dist(g){var c=g.type==='Point'?[g.coordinates]:g.type==='Polygon'?g.coordinates[0]:g.coordinates;if(c.length===1){var p=xy(c[0][0],c[0][1]);return Math.hypot(p[0],p[1])}var m=1e9;for(var i=1;i<c.length;i++)m=Math.min(m,dSeg(c[i-1],c[i]));return m}
+  function cerca(fc){var best=null;fc.features.forEach(function(f){var d=dist(f.geometry);if(!best||d<best.d)best={d:d,f:f}});return best}
+  function km(d){return d<1?Math.round(d*1000)+' m':d.toFixed(1).replace('.',',')+' km'}
+  function v(p){return p.voltage?(p.voltage.split(';').map(function(x){return Math.round(x/1000)+' kV'}).join(' / ')):null}
+  function popup(p,titulo){var r=['<b>'+(p.name||titulo)+'</b>'];if(p.voltage)r.push('Voltaje: '+v(p));if(p.operator)r.push('Operador: '+p.operator);if(p.cables)r.push('Cables: '+p.cables);if(p.ref)r.push('Ref.: '+p.ref);r.push('<a href="https://www.openstreetmap.org/'+p.osm+'" target="_blank" rel="noopener">Ver en OSM</a>');return r.join('<br>')}
+
+  fetch('capas.json').then(function(r){return r.json()}).then(function(D){
+    var capas = {
+      water: L.geoJSON(D.water,{style:function(f){return {color:'#3fa9ff',weight:f.properties.waterway==='river'?4:2,opacity:.95}},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,f.properties.waterway==='river'?'Río':'Caño / quebrada'))}}),
+      power: L.layerGroup([
+        L.geoJSON(D.power,{style:{color:'#ffb000',weight:3,opacity:.95,dashArray:'8 4'},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Línea eléctrica'))}}),
+        L.geoJSON(D.towers,{pointToLayer:function(f,ll){return L.circleMarker(ll,{radius:2.5,color:'#ffb000',weight:1,fillOpacity:1})},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Torre eléctrica'))}})]),
+      subs: L.geoJSON(D.subs,{style:{color:'#ff5a36',weight:2,fillOpacity:.5},pointToLayer:function(f,ll){return L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#ff5a36',fillOpacity:1})},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Subestación eléctrica'))}}),
+      comms: L.geoJSON(D.comms,{pointToLayer:function(f,ll){return L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#c77dff',fillOpacity:1})},onEachFeature:function(f,l){l.bindPopup(popup(f.properties,'Antena de comunicaciones'))}})
+    };
+    var pin = L.marker(EL70,{icon:L.divIcon({className:'',html:'<div class="punto"></div><div class="pin">El 70 · Agropecuaria Blimar</div>',iconSize:[16,16],iconAnchor:[8,8]}),keyboard:false,title:'El 70'});
+    pin.bindPopup('<b>Agropecuaria Blimar · El 70</b><br>KM 70, Carretera Troncal 6<br>La Villa del Rosario, Zulia');
+    function mostrar(){Object.keys(capas).forEach(function(k){capas[k].addTo(map)});pin.addTo(map);document.getElementById('leyenda').hidden=false}
+    document.querySelectorAll('#leyenda input').forEach(function(c){c.addEventListener('change',function(){var l=capas[c.dataset.capa];c.checked?l.addTo(map):map.removeLayer(l)})});
+
+    var n={line:cerca(D.power),sub:cerca(D.subs),comm:cerca(D.comms),water:cerca(D.water)};
+    var hud=[];if(n.line)hud.push('Línea eléctrica a <b>'+km(n.line.d)+'</b>');if(n.comm)hud.push('Antena a <b>'+km(n.comm.d)+'</b>');if(n.water)hud.push((n.water.f.properties.name||'Agua')+' a <b>'+km(n.water.d)+'</b>');
+    document.getElementById('datos').innerHTML=hud.map(function(h){return '<span>'+h+'</span>'}).join('');
+    var li=[];
+    if(n.line)li.push('<li>Línea eléctrica más cercana: <b>'+km(n.line.d)+'</b>'+(v(n.line.f.properties)?' ('+v(n.line.f.properties)+')':' (voltaje no indicado en OSM)')+(n.line.f.properties.operator?', '+n.line.f.properties.operator:'')+'</li>');
+    if(n.sub)li.push('<li>Subestación eléctrica más cercana: <b>'+km(n.sub.d)+'</b>'+(n.sub.f.properties.name?' ('+n.sub.f.properties.name+')':'')+'</li>');
+    if(n.comm)li.push('<li>Antena de comunicaciones más cercana: <b>'+km(n.comm.d)+'</b></li>');
+    if(n.water)li.push('<li>Curso de agua más cercano: <b>'+km(n.water.d)+'</b> ('+(n.water.f.properties.name||(n.water.f.properties.waterway==='river'?'río':'caño o quebrada')+' sin nombre')+')</li>');
+    document.getElementById('infra-lista').innerHTML=li.join('');
+
+    if (reduce) { mostrar(); }
+    else {
+      var go=function(){ map.flyTo(EL70, CERCA, {duration:4.5, easeLinearity:.2}); map.once('moveend', mostrar); };
+      setTimeout(go, 600);
+      setTimeout(function(){ if(!pin._map) mostrar(); }, 7000);
+    }
+  }).catch(function(){ map.setView(EL70, CERCA); L.marker(EL70).addTo(map); });
+})();
 </script>
 <script>
 document.querySelectorAll('.carrusel').forEach(c=>{
