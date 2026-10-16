@@ -8,3 +8,4 @@ Disallow: /dashboard
 
 Sitemap: https://andresblitz.com/sitemap.xml
 Sitemap: https://andresblitz.com/70/sitemap.xml
+Sitemap: https://andresblitz.com/tasa-bcv/sitemap.xml
