@@ -114,6 +114,13 @@ body.con-tasas .leaflet-top{top:28px}
 }
 .leyenda .tog{display:none;background:none;border:0;color:#e7eaf2;font:inherit;font-size:12px;padding:0;cursor:pointer}
 @media (max-width:640px){.leyenda .tog{display:block}}
+.calida{position:relative;background:linear-gradient(160deg,#141a14 0%,#0f1420 60%,#0b0f1c 100%);border:1px solid #2a3a2c;border-radius:16px;padding:28px 26px 26px;box-shadow:0 10px 30px #0006}
+.calida .hoja{color:#9fd3a8;opacity:.9;margin-bottom:6px}
+.calida h2{color:#f1efe6}
+.calida p{color:#d4d8cf;max-width:62ch}
+.boton-calido{display:inline-block;margin-top:8px;padding:11px 20px;border-radius:999px;background:#e9e3cf;color:#14190f;text-decoration:none;font-weight:600;transition:background .2s}
+.boton-calido:hover,.boton-calido:focus-visible{background:#f6f1e1}
+@media (max-width:640px){.calida{padding:22px 18px}}
 </style>
 </head>
 <body>
@@ -171,11 +178,12 @@ body.con-tasas .leaflet-top{top:28px}
   </div>
 </section>
 <section id="tierra">
-  <h2>Consultas sobre la tierra</h2>
-  <div class="card">
-    <p>La familia no tiene la finca a la venta. Con frecuencia recibimos propuestas a través de intermediarios; agradecemos el interés, pero no las atendemos.</p>
-    <p>Este espacio es un canal de consulta. Solo se considerará una oferta seria y directa del comprador interesado, presentada personalmente y sin intermediarios.</p>
-    <p><a href="mailto:blitz@mail.grokbot.com?subject=Consulta%20sobre%20la%20tierra%20-%20El%2070">Enviar una consulta sobre la tierra</a></p>
+  <div class="calida">
+    <svg class="hoja" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 19c3-4 6-7 10-10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <h2>Conversemos sobre El 70</h2>
+    <p>El 70 es parte de nuestra historia familiar y no está a la venta. Aun así, valoramos sinceramente el interés de quienes ven en esta tierra lo mismo que nosotros: su potencial y su valor.</p>
+    <p>Si usted es el comprador interesado y desea presentar una propuesta seria, con gusto la escucharemos de forma directa y personal. Para cuidar la relación y la confianza, preferimos no tratar a través de intermediarios.</p>
+    <a class="boton-calido" href="mailto:blitz@mail.grokbot.com?subject=Consulta%20sobre%20la%20tierra%20-%20El%2070">Escríbanos con su propuesta</a>
   </div>
 </section>
 <section id="contacto">
