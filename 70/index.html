@@ -339,7 +339,9 @@ h3{font-size:19px;font-weight:600;margin:0 0 10px}
 .dots button[aria-current="true"]{background:var(--acc);width:22px;border-radius:5px}
 @media (hover:none) and (pointer:coarse){.ctrl .prev,.ctrl .next{display:none}}
 @media (prefers-reduced-motion:reduce){.entrar span{animation:none}html{scroll-behavior:auto}}
-#tasas{position:fixed;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:18px;padding:0 10px;background:#05070fe6;border-bottom:1px solid #1a2135;color:#aeb6c8;font-size:12.5px;white-space:nowrap;overflow:hidden;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#tasas{position:fixed;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:18px;padding:0 10px;background:#05070fe6;border-bottom:1px solid #1a2135;color:#aeb6c8;font-size:12.5px;white-space:nowrap;overflow:hidden;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);text-decoration:none;cursor:pointer}
+#tasas:hover{background:#0a1020f0;color:#c5ccd9}
+#tasas:focus-visible{outline:2px solid #9fd3a8;outline-offset:-2px;background:#0a1020f0;color:#c5ccd9}
 #tasas[hidden]{display:none}
 #tasas b{color:#e7eaf2;font-weight:600}
 #tasas .f{color:#6f7a92}
@@ -388,7 +390,7 @@ body.con-tasas .leaflet-top{top:28px}
 </style>
 </head>
 <body>
-<div id="tasas" role="status" aria-label="Tasas de cambio" hidden></div>
+<a id="tasas" href="/tasa-bcv/" aria-label="Ver tasa BCV de hoy, convertidor y más" hidden></a>
 <header id="entrada" aria-label="Mapa satelital de El 70">
   <div class="estatico-pin" aria-hidden="true"><div class="punto" style="margin:-8px 0 0 -8px"></div></div>
   <div id="mapa" role="application" aria-label="Mapa satelital interactivo de la zona de El 70"></div>
@@ -502,6 +504,7 @@ f.addEventListener('submit',function(ev){ev.preventDefault();st.className='estad
 <script>
 (function(){
  var el=document.getElementById('tasas');
+ var proposito='Ver tasa BCV de hoy, convertidor y más';
  var bs=function(n){return n.toLocaleString('es-VE',{minimumFractionDigits:2,maximumFractionDigits:2})+' Bs'};
  function j(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()})}
  function ok(n){return typeof n==='number'&&isFinite(n)&&n>0}
@@ -513,8 +516,10 @@ f.addEventListener('submit',function(ev){ev.preventDefault();st.className='estad
    var b=r[2].status==='fulfilled'&&r[2].value.bitcoin&&r[2].value.bitcoin.usd;
    if(ok(b))p.push('Bitcoin <b>US$ '+Math.round(b).toLocaleString('es-VE')+'</b>');
    if(fecha){var d=new Date(fecha);if(!isNaN(d))p.push('<span class="f">BCV '+d.toLocaleDateString('es-VE',{day:'numeric',month:'short',year:'numeric',timeZone:'America/Caracas'})+'</span>')}
-   if(!p.length){el.hidden=true;document.body.classList.remove('con-tasas');return}
-   el.innerHTML=p.join('<span aria-hidden="true" style="opacity:.35">·</span>');el.hidden=false;document.body.classList.add('con-tasas');
+   if(!p.length){el.hidden=true;document.body.classList.remove('con-tasas');el.setAttribute('aria-label',proposito);return}
+   el.innerHTML=p.join('<span aria-hidden="true" style="opacity:.35">·</span>');
+   el.setAttribute('aria-label',proposito+'. '+el.textContent.replace(/\s+/g,' ').trim());
+   el.hidden=false;document.body.classList.add('con-tasas');
   });
  }
  cargar();setInterval(cargar,5*60*1000);
