@@ -185,15 +185,15 @@
       '<div class="kpi"><span>Download</span><b data-nw-down>38.2 Mb/s</b><i>live</i></div>' +
       '<div class="kpi"><span>Upload</span><b data-nw-up>6.1 Mb/s</b><i>live</i></div>' +
       '<div class="kpi"><span>Latency</span><b>12 ms</b><i>gateway</i></div></div>' +
-      '<div class="panel" style="margin-top:.75rem"><h4>Bandwidth · last 2 minutes</h4><div data-nw-chart></div></div>' +
+      '<div class="panel" style="margin-top:.75rem"><h4 role="presentation">Bandwidth · last 2 minutes</h4><div data-nw-chart></div></div>' +
       '<div class="row" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);margin-top:.75rem" data-nw-row>' +
-      '<div class="panel scroll-x"><h4>Top connections</h4><table><thead><tr><th>Host</th><th>Port</th><th>Country</th><th>Traffic</th></tr></thead><tbody>' +
+      '<div class="panel scroll-x"><h4 role="presentation">Top connections</h4><table><thead><tr><th>Host</th><th>Port</th><th>Country</th><th>Traffic</th></tr></thead><tbody>' +
       '<tr><td>cdn.example.net</td><td>443</td><td>US</td><td>212 MB</td></tr>' +
       '<tr><td>video.example.com</td><td>443</td><td>CA</td><td>164 MB</td></tr>' +
       '<tr><td>updates.example.org</td><td>443</td><td>IE</td><td>48 MB</td></tr>' +
       '<tr><td>time.example.org</td><td>123</td><td>DE</td><td>0.2 MB</td></tr>' +
       '</tbody></table></div>' +
-      '<div class="panel"><h4>Events</h4><table><tbody>' +
+      '<div class="panel"><h4 role="presentation">Events</h4><table><tbody>' +
       '<tr><td><span class="pill r">blocked</span></td><td>Port scan from sample host</td></tr>' +
       '<tr><td><span class="pill w">watch</span></td><td>New device joined Wi-Fi</td></tr>' +
       '<tr><td><span class="pill">ok</span></td><td>DNS benchmark finished</td></tr>' +
@@ -331,10 +331,10 @@
       '<div class="kpi"><span>Page views</span><b>3,512</b><i>sample</i></div>' +
       '<div class="kpi"><span>Avg. engaged</span><b>1m 42s</b><i>sample</i></div>' +
       '<div class="kpi"><span>Live now</span><b data-an-live>3</b><i>sample</i></div></div>' +
-      '<div class="panel" style="margin-top:.75rem"><h4>Daily visitors · 30 days</h4><div data-an-chart></div></div>' +
+      '<div class="panel" style="margin-top:.75rem"><h4 role="presentation">Daily visitors · 30 days</h4><div data-an-chart></div></div>' +
       '<div class="row" style="grid-template-columns:1fr 1fr;margin-top:.75rem" data-an-row>' +
-      '<div class="panel"><h4>Top pages</h4><table><tbody><tr><td>/</td><td style="text-align:right">58%</td></tr><tr><td>/projects/</td><td style="text-align:right">17%</td></tr><tr><td>/#play</td><td style="text-align:right">11%</td></tr><tr><td>/projects/blitzys-world/</td><td style="text-align:right">8%</td></tr></tbody></table></div>' +
-      '<div class="panel"><h4>Recent journey</h4><table><tbody><tr><td><span class="pill b">view</span></td><td>/ → #projects</td></tr><tr><td><span class="pill b">view</span></td><td>/projects/ → realwealth</td></tr><tr><td><span class="pill">chat</span></td><td>New message (sample)</td></tr><tr><td><span class="pill w">play</span></td><td>Space Invaders · 2m</td></tr></tbody></table></div></div>';
+      '<div class="panel"><h4 role="presentation">Top pages</h4><table><tbody><tr><td>/</td><td style="text-align:right">58%</td></tr><tr><td>/projects/</td><td style="text-align:right">17%</td></tr><tr><td>/#play</td><td style="text-align:right">11%</td></tr><tr><td>/projects/blitzys-world/</td><td style="text-align:right">8%</td></tr></tbody></table></div>' +
+      '<div class="panel"><h4 role="presentation">Recent journey</h4><table><tbody><tr><td><span class="pill b">view</span></td><td>/ → #projects</td></tr><tr><td><span class="pill b">view</span></td><td>/projects/ → realwealth</td></tr><tr><td><span class="pill">chat</span></td><td>New message (sample)</td></tr><tr><td><span class="pill w">play</span></td><td>Space Invaders · 2m</td></tr></tbody></table></div></div>';
     host.appendChild(m);
     if (host.clientWidth < 640) m.querySelector('[data-an-row]').style.gridTemplateColumns = '1fr';
     var live = m.querySelector('[data-an-live]'), last = 0;
@@ -450,10 +450,10 @@
   demos.quiniela = function (host) {
     var m = el('div', 'mock');
     m.innerHTML = '<div class="row" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)" data-q-row>' +
-      '<div class="panel"><h4>Group stage · sample match</h4><div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin:.4rem 0 .8rem"><b>Team A</b><span style="display:flex;gap:.3rem"><span class="kpi" style="padding:.3rem .7rem"><b>2</b></span><span class="kpi" style="padding:.3rem .7rem"><b>1</b></span></span><b>Team B</b></div>' +
+      '<div class="panel"><h4 role="presentation">Group stage · sample match</h4><div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin:.4rem 0 .8rem"><b>Team A</b><span style="display:flex;gap:.3rem"><span class="kpi" style="padding:.3rem .7rem"><b>2</b></span><span class="kpi" style="padding:.3rem .7rem"><b>1</b></span></span><b>Team B</b></div>' +
       '<div style="font-size:.72rem;color:#97a3b8;margin-bottom:.3rem">Group consensus</div><div style="display:flex;height:10px;border-radius:999px;overflow:hidden"><span style="width:52%;background:#5b8def"></span><span style="width:21%;background:#97a3b8"></span><span style="width:27%;background:#a78bfa"></span></div>' +
       '<div style="display:flex;justify-content:space-between;font-size:.72rem;color:#97a3b8;margin-top:.3rem"><span>A 52%</span><span>Draw 21%</span><span>B 27%</span></div></div>' +
-      '<div class="panel"><h4>Standings (sample players)</h4><table><thead><tr><th>#</th><th>Player</th><th>Exact</th><th>Pts</th></tr></thead><tbody>' +
+      '<div class="panel"><h4 role="presentation">Standings (sample players)</h4><table><thead><tr><th>#</th><th>Player</th><th>Exact</th><th>Pts</th></tr></thead><tbody>' +
       '<tr><td>1</td><td>Tigre</td><td>4</td><td>31</td></tr><tr><td>2</td><td>La Pulga</td><td>3</td><td>28</td></tr><tr><td>3</td><td>Chivo</td><td>2</td><td>24</td></tr><tr><td>4</td><td>Gringo</td><td>1</td><td>19</td></tr></tbody></table></div></div>';
     host.appendChild(m);
     if (host.clientWidth < 640) m.querySelector('[data-q-row]').style.gridTemplateColumns = '1fr';
