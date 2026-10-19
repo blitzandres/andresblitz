@@ -387,10 +387,49 @@ body.con-tasas .leaflet-top{top:28px}
 .titulo h1{display:flex;align-items:center;justify-content:center;gap:12px}
 .titulo .logo{width:58px;height:58px;filter:drop-shadow(0 2px 10px #05070f)}
 @media (max-width:640px){.titulo h1{gap:8px}.titulo .logo{width:34px;height:34px}}
+:root{--pmh:28px}
+@media (max-width:640px),(pointer:coarse){:root{--pmh:44px}}
+#pm{position:fixed;top:0;left:0;right:0;z-index:999;height:var(--pmh);display:none;align-items:stretch;background:#05070fe6;border-bottom:1px solid #1a2135;color:#aeb6c8;font-size:12.5px;line-height:1.2;white-space:nowrap;overflow:hidden;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+body.con-pm #pm{display:flex}
+#pm[hidden]{display:none!important}
+body.con-tasas #pm{top:28px}
+#pm .vivo{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:0 10px;background:#05070f;border-right:1px solid #1a2135;color:#ff7a7a;font-size:10.5px;font-weight:700;letter-spacing:.08em}
+#pm .vivo i{width:7px;height:7px;border-radius:50%;background:#ff3b3b;animation:pmlat 1.6s ease-out infinite}
+@keyframes pmlat{0%{box-shadow:0 0 0 0 #ff3b3bb3}70%{box-shadow:0 0 0 6px #ff3b3b00}100%{box-shadow:0 0 0 0 #ff3b3b00}}
+#pm .vp{position:relative;flex:1 1 auto;min-width:0;display:flex;align-items:center;overflow:hidden;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 24px),transparent)}
+#pm .vp::-webkit-scrollbar{display:none}
+#pm .cinta{display:flex;width:max-content;animation:pmcinta 80s linear infinite}
+@keyframes pmcinta{to{transform:translateX(-50%)}}
+#pm ul{display:flex;margin:0;padding:0;list-style:none}
+#pm li{display:flex;align-items:center}
+#pm li::after{content:"·";opacity:.35}
+#pm a{display:flex;align-items:center;gap:6px;height:var(--pmh);padding:0 12px;color:inherit;text-decoration:none}
+#pm a:hover{background:#0a1020f0;color:#c5ccd9}
+#pm a:focus-visible{outline:2px solid #9fd3a8;outline-offset:-2px;background:#0a1020f0;color:#c5ccd9}
+#pm a b{color:#e7eaf2;font-weight:600}
+#pm .cargando{padding:0 12px;color:#6f7a92}
+#pm:hover .cinta,#pm:focus-within .cinta{animation-play-state:paused}
+#pm.manual .cinta{animation:none}
+#pm.manual .vp{overflow-x:auto}
+#pm.manual .dup{display:none}
+@media (prefers-reduced-motion:reduce){#pm .cinta{animation:none}#pm .vp{overflow-x:auto}#pm .dup{display:none}#pm .vivo i{animation:none}}
+@media (max-width:640px){#pm{font-size:11.5px}#pm a{padding:0 10px}}
+body.con-pm .titulo{top:calc(5vh + var(--pmh))}
+body.con-pm.con-tasas .titulo{top:calc(5vh + 28px + var(--pmh))}
+body.con-pm .datos{top:calc(5vh + 112px + var(--pmh))}
+body.con-pm.con-tasas .datos{top:calc(5vh + 148px + var(--pmh))}
+body.con-pm .leaflet-top{top:var(--pmh)}
+body.con-pm.con-tasas .leaflet-top{top:calc(28px + var(--pmh))}
+@media (max-width:640px){body.con-pm .titulo{top:calc(14px + var(--pmh))}body.con-pm.con-tasas .titulo{top:calc(40px + var(--pmh))}body.con-pm .datos,body.con-pm.con-tasas .datos{top:calc(118px + var(--pmh))}}
 </style>
 </head>
 <body>
 <a id="tasas" href="/tasa-bcv/" aria-label="Ver tasa BCV de hoy, convertidor y más" hidden></a>
+<div id="pm" role="region" aria-label="Mercados de Polymarket sobre América Latina, en vivo">
+  <span class="vivo"><i aria-hidden="true"></i>EN VIVO</span>
+  <div class="vp"><span class="cargando">Cargando mercados de Polymarket…</span></div>
+</div>
+<script>document.body.classList.add('con-pm')</script>
 <header id="entrada" aria-label="Mapa satelital de El 70">
   <div class="estatico-pin" aria-hidden="true"><div class="punto" style="margin:-8px 0 0 -8px"></div></div>
   <div id="mapa" role="application" aria-label="Mapa satelital interactivo de la zona de El 70"></div>
@@ -523,6 +562,52 @@ f.addEventListener('submit',function(ev){ev.preventDefault();st.className='estad
   });
  }
  cargar();setInterval(cargar,5*60*1000);
+})();
+</script>
+<script>
+(function(){
+ var pm=document.getElementById('pm'),vp=pm.querySelector('.vp'),B=document.body,ya=false,firma='';
+ var A='https://gamma-api.polymarket.com/events?active=true&closed=false&order=volume&ascending=false&limit=';
+ var G=[[['venezuela'],3],[['brazil'],2],[['argentina'],1],[['mexico'],1],[['colombia'],1],[['cuba','peru','chile','ecuador','bolivia'],2]];
+ var K=[/venezuel|maduro|machado|delcy|caracas/i,/brazil|brasil|lula|bolsonaro/i,/argentin|milei/i,/mexic|sheinbaum|sinaloa|cartel/i,/colombi|petro/i];
+ function arr(x){if(Array.isArray(x))return x;try{x=JSON.parse(x)}catch(e){return[]}return Array.isArray(x)?x:[]}
+ function lider(e){var ms=(e.markets||[]).filter(function(m){return m.active&&!m.closed}),best=null;
+  ms.forEach(function(m){var o=arr(m.outcomes),q=arr(m.outcomePrices).map(Number);if(o.length<2||q.length!==o.length)return;
+   if(ms.length===1){var i=q[0]>=q[1]?0:1;best={t:o[i],p:q[i]}}else if(!best||q[0]>best.p)best={t:m.groupItemTitle||m.question||o[0],p:q[0]}});
+  return best&&isFinite(best.p)?best:null}
+ function vol(e){return Number(e.volume)||0}
+ function corto(t){t=String(t).replace(/\s+/g,' ').trim();return t.length>60?t.slice(0,58).replace(/\s+\S*$/,'')+'…':t}
+ function res(l){var t=l.t==='Yes'?'Sí':l.t;return corto(t).slice(0,32)+' '+Math.round(l.p*100)+'%'}
+ function j(u){var c=window.AbortController?new AbortController():null,tm=c?setTimeout(function(){c.abort()},10000):0;
+  return fetch(u,c?{signal:c.signal}:{}).then(function(r){clearTimeout(tm);if(!r.ok)throw 0;return r.json()})}
+ function colapsar(){pm.hidden=true;B.classList.remove('con-pm')}
+ function lista(sel,dup){var ul=document.createElement('ul');if(dup){ul.className='dup';ul.setAttribute('aria-hidden','true')}
+  sel.forEach(function(s){var li=document.createElement('li'),a=document.createElement('a'),q=document.createElement('span'),b=document.createElement('b');
+   a.href='https://polymarket.com/event/'+s.e.slug;a.target='_blank';a.rel='noopener nofollow';a.title=s.e.title+' · ver en Polymarket';if(dup)a.tabIndex=-1;
+   q.textContent=corto(s.e.title);b.textContent=res(s.l);a.appendChild(q);a.appendChild(b);li.appendChild(a);ul.appendChild(li)});return ul}
+ function pintar(sel){var f=sel.map(function(s){return s.e.slug}).join();
+  if(ya&&f===firma){var bs=vp.querySelectorAll('b'),n=sel.length;for(var i=0;i<bs.length;i++)bs[i].textContent=res(sel[i%n].l);return}
+  firma=f;var c=document.createElement('div');c.className='cinta';var u=lista(sel,false);c.appendChild(u);c.appendChild(lista(sel,true));
+  vp.textContent='';vp.scrollLeft=0;vp.appendChild(c);ya=true;
+  requestAnimationFrame(function(){c.style.animationDuration=Math.max(30,Math.round(u.scrollWidth/45))+'s'})}
+ function cargar(){if(pm.hidden)return;var U=[];G.forEach(function(g,gi){g[0].forEach(function(t){U.push({g:gi,u:A+(g[0].length>1?3:6)+'&tag_slug='+t})})});
+  Promise.allSettled(U.map(function(x){return j(x.u)})).then(function(r){
+   var ahora=Date.now(),pools=G.map(function(){return[]}),vistos={},sel=G.map(function(){return[]}),resto=[],n=0;
+   r.forEach(function(x,i){if(x.status!=='fulfilled'||!Array.isArray(x.value))return;
+    x.value.forEach(function(e){if(!e||!/^[a-z0-9-]+$/.test(e.slug||'')||!e.title)return;if(e.endDate&&Date.parse(e.endDate)<ahora)return;var g=U[i].g;for(var k=0;k<K.length;k++)if(K[k].test(e.title)){g=k;break}if(k===K.length)g=K.length;pools[g].push(e)})});
+   pools.forEach(function(p,gi){p.sort(function(a,b){return vol(b)-vol(a)});
+    p.forEach(function(e){if(vistos[e.slug])return;var l=lider(e);if(!l)return;vistos[e.slug]=1;var s={e:e,l:l,g:gi};if(sel[gi].length<G[gi][1]){sel[gi].push(s);n++}else resto.push(s)})});
+   resto.sort(function(a,b){return vol(b.e)-vol(a.e)});
+   while(n<10&&resto.length){var s=resto.shift();sel[s.g].push(s);n++}
+   var out=[];sel.forEach(function(g){g.sort(function(a,b){return vol(b.e)-vol(a.e)});out=out.concat(g)});
+   if(!out.length){if(!ya)colapsar();return}
+   pintar(out.slice(0,10));
+  }).catch(function(){if(!ya)colapsar()})}
+ pm.addEventListener('focusin',function(ev){pm.classList.add('manual');var a=ev.target;if(a&&a.tagName==='A'){vp.scrollLeft=Math.max(0,a.offsetLeft-(vp.clientWidth-a.offsetWidth)/2)}});
+ pm.addEventListener('focusout',function(){setTimeout(function(){if(!pm.contains(document.activeElement)){pm.classList.remove('manual');vp.scrollLeft=0}},0)});
+ function inicio(){cargar();setInterval(function(){if(!document.hidden)cargar()},60000)}
+ function luego(){(window.requestIdleCallback||setTimeout)(inicio,{timeout:2000})}
+ if(document.readyState==='complete')luego();else addEventListener('load',luego);
 })();
 </script>
 <script src="vendor/leaflet.js"></script>
