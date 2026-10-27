@@ -20,7 +20,16 @@ export const site = {
     "api_page": "https://andresblitz.com/api/page/{slug}.json",
     "sitemap_ai": "https://andresblitz.com/sitemap-ai.json",
     "sitemap_md": "https://andresblitz.com/sitemap-md.xml",
-    "entry": "https://andresblitz.com/ai/"
+    "entry": "https://andresblitz.com/ai/",
+    "feed": "https://andresblitz.com/feed.xml",
+    "feed_el70": "https://andresblitz.com/70/feed.xml",
+    "api": {
+      "site": "https://andresblitz-ai-api.blitzandres.workers.dev/api/site",
+      "page": "https://andresblitz-ai-api.blitzandres.workers.dev/api/page?path={path}",
+      "accept_markdown": true,
+      "cors": "*",
+      "read_only": true
+    }
   },
   "topics": [
     "trading",
