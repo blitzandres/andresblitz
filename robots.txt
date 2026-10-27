@@ -3,9 +3,39 @@ Allow: /
 Disallow: /dashboard/
 Disallow: /dashboard
 
-# AI crawlers welcome (no Disallow for GPTBot, ClaudeBot, Google-Extended, etc.)
-# Optional machine-readable site summary: https://andresblitz.com/llms.txt
+# AI crawlers welcome
+User-agent: GPTBot
+Allow: /
+Disallow: /dashboard/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /dashboard/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /dashboard/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /dashboard/
+
+User-agent: CCBot
+Allow: /
+Disallow: /dashboard/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /dashboard/
+
+# AI discovery
+# Site map for agents: https://andresblitz.com/llms.txt
+# Full content (Markdown): https://andresblitz.com/llms-full.txt
+# Structured index (JSON): https://andresblitz.com/agent.json
+# Structured index (ES module): https://andresblitz.com/ai-index.js
+# AI sitemap: https://andresblitz.com/sitemap-ai.json
 
 Sitemap: https://andresblitz.com/sitemap.xml
 Sitemap: https://andresblitz.com/70/sitemap.xml
 Sitemap: https://andresblitz.com/tasa-bcv/sitemap.xml
+Sitemap: https://andresblitz.com/sitemap-md.xml

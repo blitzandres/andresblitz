@@ -1,0 +1,9 @@
+{
+  "slug": "projects-blitzys-world-play-3d",
+  "title": "Blitzy's World — 3D Levels (v0.3) | Andrés Blitz",
+  "url": "https://andresblitz.com/projects/blitzys-world/play/3d/",
+  "md": "https://andresblitz.com/projects/blitzys-world/play/3d/index.md",
+  "summary": "Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL.",
+  "last_updated": "2026-10-05",
+  "markdown": "---\ntitle: \"Blitzy's World — 3D Levels (v0.3) | Andrés Blitz\"\ndescription: \"Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL.\"\nurl: \"https://andresblitz.com/projects/blitzys-world/play/3d/\"\nlast_updated: \"2026-10-05\"\nlang: \"en-CA\"\n---\n\n> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/projects/blitzys-world/play/3d/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).\n\n# BLITZY'S WORLD\n\nDEEP SPACE · v0.3 · 4 LEVELS\n\nCatch stars. Evade aliens. Dodge asteroids.\n\nW A S D — MOVE  ·  MOUSE — LOOK  \nSPACE — UP  ·  SHIFT — DOWN  \nP / ESC — PAUSE  ·  T — ERASE TRACE\n\nL1TRAINING ORBIT\n\n000000\n\nSTARS0/0\n\nLIVES●●●\n\n0.0s\n\nWASD MOVE · MOUSE LOOK · SPACE/SHIFT UP/DOWN\n\nUP\n\nDOWN\n\n[← Blitzy's World](https://andresblitz.com/projects/blitzys-world/)\n"
+}
