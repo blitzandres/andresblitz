@@ -11,6 +11,7 @@ import { gfm } from 'turndown-plugin-gfm';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const ORIGIN = 'https://andresblitz.com';
 const LLMS = `${ORIGIN}/llms.txt`;
+const API = 'https://andresblitz-ai-api.blitzandres.workers.dev';
 const EXCLUDE = [/^dashboard\//, /^404\.html$/, /^node_modules\//, /^scripts\//, /^\.git\//, /^ai\//, /vendor\//];
 const START = '<!-- ai-layer:start -->', END = '<!-- ai-layer:end -->';
 const FSTART = '<!-- ai-layer-footer:start -->', FEND = '<!-- ai-layer-footer:end -->';
@@ -26,7 +27,7 @@ function walk(dir, out = []) {
   return out;
 }
 const lastUpdated = (file) => {
-  try { const d = execSync(`git log -1 --format=%cI -- "${rel(file)}"`, { cwd: ROOT }).toString().trim(); if (d) return d.slice(0, 10); } catch {}
+  try { const d = execSync(`git log -1 --format=%cI --invert-grep -i --grep=ai-readable --grep=ai-layer -- "${rel(file)}"`, { cwd: ROOT }).toString().trim(); if (d) return d.slice(0, 10); } catch {}
   return new Date().toISOString().slice(0, 10);
 };
 const stripLayer = (html) => html
@@ -92,7 +93,7 @@ const site = {
   name: 'Andrés Blitz', url: `${ORIGIN}/`, description: pages.find((p) => p.kind === 'home')?.description || '',
   contact: { email: 'blitz@mail.grokbot.com', x: 'https://x.com/andresblitz', github: 'https://github.com/blitzandres' },
   location: 'Victoria, British Columbia, Canada',
-  ai_layer: { status: 'active', llms: LLMS, llms_full: `${ORIGIN}/llms-full.txt`, full_md: `${ORIGIN}/full.md`, agent_json: `${ORIGIN}/agent.json`, ai_index_js: `${ORIGIN}/ai-index.js`, api_site: `${ORIGIN}/api/site.json`, api_page: `${ORIGIN}/api/page/{slug}.json`, sitemap_ai: `${ORIGIN}/sitemap-ai.json`, sitemap_md: `${ORIGIN}/sitemap-md.xml`, entry: `${ORIGIN}/ai/` },
+  ai_layer: { status: 'active', llms: LLMS, llms_full: `${ORIGIN}/llms-full.txt`, full_md: `${ORIGIN}/full.md`, agent_json: `${ORIGIN}/agent.json`, ai_index_js: `${ORIGIN}/ai-index.js`, api_site: `${ORIGIN}/api/site.json`, api_page: `${ORIGIN}/api/page/{slug}.json`, sitemap_ai: `${ORIGIN}/sitemap-ai.json`, sitemap_md: `${ORIGIN}/sitemap-md.xml`, entry: `${ORIGIN}/ai/`, feed: `${ORIGIN}/feed.xml`, feed_el70: `${ORIGIN}/70/feed.xml`, api: { site: `${API}/api/site`, page: `${API}/api/page?path={path}`, accept_markdown: true, cors: '*', read_only: true } },
   topics: ['trading', 'investing', 'capital allocation', 'open-source tools', 'web experiments', 'El 70 (Zulia, Venezuela)', 'Tasa BCV'],
   pages: pages.map((p) => ({ slug: p.slug, title: p.title, url: p.url, md: p.mdUrl, json: `${ORIGIN}/api/page/${p.slug}.json`, kind: p.kind, lang: p.lang, summary: p.description, last_updated: p.last_updated, ...(EXTRA[p.pathname] ? { topics: EXTRA[p.pathname].topics, geo: EXTRA[p.pathname].geo } : {}) })),
   projects,
@@ -154,6 +155,8 @@ ${byPath('/tasa-bcv/') ? `- [Tasa BCV](${byPath('/tasa-bcv/').mdUrl}): ${EXTRA['
 - Per-page JSON (title, summary, markdown): ${ORIGIN}/api/page/<slug>.json (static stand-in for /api/page?path=)
 - AI sitemap: ${ORIGIN}/sitemap-ai.json; Markdown sitemap: ${ORIGIN}/sitemap-md.xml
 - Markdown entry point: ${ORIGIN}/ai/
+- RSS 2.0 feed: ${ORIGIN}/feed.xml (El 70: ${ORIGIN}/70/feed.xml)
+- Live JSON API (read-only, CORS, Cloudflare Worker): ${API}/api/site and ${API}/api/page?path=/70/ — send Accept: text/markdown for raw Markdown (Vary: Accept)
 - Each HTML page has <link rel="alternate" type="text/markdown"> and an inline <script type="application/json" id="ai-structure">
 
 Private projects are described at a high level; demos marked "Demo data" or "Synthetic data" use invented sample data, not real accounts, devices or portfolios. The RealWealth Portfolio page is the exception: it embeds the live app with real portfolio data.
@@ -166,6 +169,13 @@ Private projects are described at a high level; demos marked "Demo data" or "Syn
 `;
 write('llms.txt', llms.replace(/\n{3,}/g, '\n\n'));
 
+// RSS 2.0 feeds
+const rfc822 = (d) => new Date(d + 'T12:00:00Z').toUTCString();
+const rss = (title, link, desc, items) => `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n<title>${esc(title)}</title>\n<link>${link}</link>\n<description>${esc(desc)}</description>\n<atom:link href="${link}feed.xml" rel="self" type="application/rss+xml" />\n<lastBuildDate>${rfc822(site.generated)}</lastBuildDate>\n` + items.map((p) => `<item>\n<title>${esc(p.title)}</title>\n<link>${p.url}</link>\n<guid isPermaLink="true">${p.url}</guid>\n<description>${esc(p.description)}</description>\n<pubDate>${rfc822(p.last_updated)}</pubDate>\n</item>`).join('\n') + '\n</channel>\n</rss>\n';
+const feedPages = pages.filter((p) => p.kind !== 'project-subpage').sort((a, b) => b.last_updated.localeCompare(a.last_updated));
+write('feed.xml', rss('Andrés Blitz', `${ORIGIN}/`, 'Main pages of andresblitz.com', feedPages));
+write('70/feed.xml', rss('El 70 · Agropecuaria Blimar', `${ORIGIN}/70/`, 'El 70 — finca ganadera, La Villa del Rosario, Zulia', pages.filter((p) => p.pathname === '/70/')));
+
 // /ai/ entry
 const aiList = pages.map((p) => ({ p, md: p.mdUrl }));
 write('ai/index.md', `---\ntitle: "AI entry point — andresblitz.com"\ndescription: "Index of every clean Markdown page on andresblitz.com"\nurl: "${ORIGIN}/ai/"\nlast_updated: "${site.generated}"\n---\n\n> Note for AI agents: site map at ${LLMS}\n\n# Markdown pages\n\n` + aiList.map(({ p, md }) => `- [${p.title}](${md}) — ${p.description}`).join('\n') + `\n\nFull content: ${ORIGIN}/full.md\n`);
@@ -176,7 +186,7 @@ write('ai/index.html', `<!doctype html>\n<html lang="en"><head><meta charset="ut
 for (const p of pages) {
   let html = p.html;
   const snippet = { page: { title: p.title, url: p.url, md: p.mdUrl, summary: p.description, last_updated: p.last_updated }, site: { name: site.name, llms: LLMS, agent: `${ORIGIN}/agent.json`, sections: [`${ORIGIN}/index.md`, `${ORIGIN}/projects/index.md`, `${ORIGIN}/70/index.md`, `${ORIGIN}/tasa-bcv/index.md`] } };
-  let block = `${START}\n<link rel="alternate" type="text/markdown" href="${p.mdUrl}" />\n<script type="application/json" id="ai-structure">${safeJson(snippet)}</script>\n`;
+  let block = `${START}\n<link rel="alternate" type="text/markdown" href="${p.mdUrl}" />\n<link rel="alternate" type="application/rss+xml" title="Andrés Blitz" href="${p.pathname === '/70/' ? ORIGIN + '/70/feed.xml' : ORIGIN + '/feed.xml'}" />\n<script type="application/json" id="ai-structure">${safeJson(snippet)}</script>\n`;
   // JSON-LD check
   const types = new Set();
   for (const s of p.document.querySelectorAll('script[type="application/ld+json"]')) {

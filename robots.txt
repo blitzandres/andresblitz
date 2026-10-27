@@ -34,6 +34,8 @@ Disallow: /dashboard/
 # Structured index (JSON): https://andresblitz.com/agent.json
 # Structured index (ES module): https://andresblitz.com/ai-index.js
 # AI sitemap: https://andresblitz.com/sitemap-ai.json
+# RSS feed: https://andresblitz.com/feed.xml (El 70: https://andresblitz.com/70/feed.xml)
+# Live read-only JSON API: https://andresblitz-ai-api.blitzandres.workers.dev/api/site
 
 Sitemap: https://andresblitz.com/sitemap.xml
 Sitemap: https://andresblitz.com/70/sitemap.xml
