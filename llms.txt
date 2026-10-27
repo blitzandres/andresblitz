@@ -8,32 +8,49 @@
 - X: https://x.com/andresblitz
 - GitHub: https://github.com/blitzandres
 
-## Site sections
+Every link below points to the clean Markdown version of the page (append `index.md` to any public directory URL).
 
-- / — Profile home (markets, projects, about, FAQ, contact)
-- /#projects — Featured projects
-- /projects/ — Every project, each with its own page
-- /#about — Trading, sales leadership, operations, building
-- /#faq — Short answers about work, location, contact
-- /#contact — Email and social links
+## Main pages
+
+- [Home](https://andresblitz.com/index.md): Andrés Blitz is a full-time trader and investor in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island) — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.
+- [All projects](https://andresblitz.com/projects/index.md): Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.
 
 ## Projects
 
-- https://andresblitz.com/projects/blitzys-world/ — Blitzy's World: A glowing orb cruising an endless universe
-- https://andresblitz.com/projects/realwealth-portfolio/ — RealWealth Portfolio: Live real estate portfolio dashboard
-- https://andresblitz.com/projects/lie-detector/ — Blitz Engine (lie-detector): Open-source behavioral signal analyzer
-- https://andresblitz.com/projects/sigspace/ — SIGSPACE: Your network, rendered as a video game world
-- https://andresblitz.com/projects/weinstein-stage-matrix/ — Weinstein Stage Matrix: Stage analysis indicator for TradingView
-- https://andresblitz.com/projects/iptv-player/ — IPTV Player: Latin America & USA channels in one fast player
-- https://andresblitz.com/projects/netwatch/ — NetWatch: Local network monitoring dashboard
-- https://andresblitz.com/projects/bluth-scan/ — BluthScan: Bluetooth devices as a living 3D graph
-- https://andresblitz.com/projects/signet-thesis/ — SIGNET: Signal intelligence network visualization — thesis
-- https://andresblitz.com/projects/elevatron/ — Elevatron: A cited concept study of a beam to space
-- https://andresblitz.com/projects/home-history/ — Home History: A time capsule file for a house
-- https://andresblitz.com/projects/quiniela/ — Quiniela 2026: World Cup 2026 prediction pool
-- https://andresblitz.com/projects/compute-share-pilot/ — Compute Share Pilot: Trusted compute sharing for remote AI jobs
-- https://andresblitz.com/projects/blitz-analytics/ — Blitz Analytics: The private analytics behind this site
-- https://andresblitz.com/projects/elite-island-movers/ — Elite Island Movers: One-page site for a local moving company
+- [Blitz Analytics — Privacy-Minded Site Analytics on Cloudflare Workers | Andrés Blitz](https://andresblitz.com/projects/blitz-analytics/index.md): Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.
+- [Blitzy's World — Playable Space Game in the Browser | Andrés Blitz](https://andresblitz.com/projects/blitzys-world/index.md): Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch.
+- [BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz](https://andresblitz.com/projects/bluth-scan/index.md): BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices.
+- [Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz](https://andresblitz.com/projects/compute-share-pilot/index.md): Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs.
+- [Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz](https://andresblitz.com/projects/elevatron/index.md): Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos.
+- [Elite Island Movers — One-Page Website for a Victoria, BC Moving Company | Andrés Blitz](https://andresblitz.com/projects/elite-island-movers/index.md): A simple one-page website Andrés Blitz built for a local moving company in Victoria, BC: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.
+- [Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz](https://andresblitz.com/projects/home-history/index.md): Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP.
+- [IPTV Player — Latin America & USA Channels in the Browser (HLS.js) | Andrés Blitz](https://andresblitz.com/projects/iptv-player/index.md): A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal.
+- [Blitz Engine — Open-Source Behavioral Signal Analyzer (lie-detector) | Andrés Blitz](https://andresblitz.com/projects/lie-detector/index.md): Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it.
+- [NetWatch — Local Network Monitoring Dashboard (Python + Flask) | Andrés Blitz](https://andresblitz.com/projects/netwatch/index.md): NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data.
+- [Quiniela — World Cup 2026 Prediction Pool for Friends | Andrés Blitz](https://andresblitz.com/projects/quiniela/index.md): Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings.
+- [RealWealth Portfolio — Live Real Estate Portfolio Dashboard (Next.js + Supabase) | Andrés Blitz](https://andresblitz.com/projects/realwealth-portfolio/index.md): RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page.
+- [SIGNET — Signal Intelligence Network Visualization (Research Thesis) | Andrés Blitz](https://andresblitz.com/projects/signet-thesis/index.md): SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired.
+- [SIGSPACE — Network Signals as a Video Game World | Andrés Blitz](https://andresblitz.com/projects/sigspace/index.md): SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers.
+- [Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz](https://andresblitz.com/projects/weinstein-stage-matrix/index.md): Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.
+- [Blitzy's World — 3D Levels (v0.3) | Andrés Blitz](https://andresblitz.com/projects/blitzys-world/play/3d/index.md): Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL.
+- [Play Blitzy's World — Full Screen | Andrés Blitz](https://andresblitz.com/projects/blitzys-world/play/index.md): Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch.
+
+## Other pages (Spanish)
+
+- [El 70](https://andresblitz.com/70/index.md): El 70 — finca ganadera (en español). La Villa del Rosario, Rosario de Perijá, Zulia. Geo: 10.4165941,-72.2108835.
+- [Tasa BCV](https://andresblitz.com/tasa-bcv/index.md): Tasa BCV — tipo de cambio oficial del Banco Central de Venezuela (en español). Maracaibo, Zulia.
+
+## AI layer status
+
+- Status: active (generated 2026-10-27)
+- Markdown per page: `<page-url>index.md` with YAML frontmatter (title, description, url, last_updated)
+- Full content: https://andresblitz.com/llms-full.txt and https://andresblitz.com/full.md
+- Structured index (JSON): https://andresblitz.com/agent.json and https://andresblitz.com/api/site.json
+- Structured index (ES module): https://andresblitz.com/ai-index.js
+- Per-page JSON (title, summary, markdown): https://andresblitz.com/api/page/<slug>.json (static stand-in for /api/page?path=)
+- AI sitemap: https://andresblitz.com/sitemap-ai.json; Markdown sitemap: https://andresblitz.com/sitemap-md.xml
+- Markdown entry point: https://andresblitz.com/ai/
+- Each HTML page has <link rel="alternate" type="text/markdown"> and an inline <script type="application/json" id="ai-structure">
 
 Private projects are described at a high level; demos marked "Demo data" or "Synthetic data" use invented sample data, not real accounts, devices or portfolios. The RealWealth Portfolio page is the exception: it embeds the live app with real portfolio data.
 
