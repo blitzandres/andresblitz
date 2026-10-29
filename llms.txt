@@ -1,9 +1,9 @@
 # Andrés Blitz
 
-> Full-time trader and investor based in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island). Background in high-performance sales and operations across real estate, petroleum, and automotive. Builds open-source tools and web experiments on the side.
+> Full-time trader and investor based in British Columbia, Canada. Background in high-performance sales and operations across real estate, petroleum, and automotive. Builds open-source tools and web experiments on the side.
 
 - Canonical site: https://andresblitz.com/
-- Location: Victoria, BC, Canada
+- Location: British Columbia, Canada
 - Email: blitz@mail.grokbot.com
 - X: https://x.com/andresblitz
 - GitHub: https://github.com/blitzandres
@@ -12,7 +12,7 @@ Every link below points to the clean Markdown version of the page (append `index
 
 ## Main pages
 
-- [Home](https://andresblitz.com/index.md): Andrés Blitz is a full-time trader and investor in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island) — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.
+- [Home](https://andresblitz.com/index.md): Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.
 - [All projects](https://andresblitz.com/projects/index.md): Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.
 
 ## Projects
@@ -22,7 +22,7 @@ Every link below points to the clean Markdown version of the page (append `index
 - [BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz](https://andresblitz.com/projects/bluth-scan/index.md): BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices.
 - [Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz](https://andresblitz.com/projects/compute-share-pilot/index.md): Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs.
 - [Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz](https://andresblitz.com/projects/elevatron/index.md): Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos.
-- [Elite Island Movers — One-Page Website for a Victoria, BC Moving Company | Andrés Blitz](https://andresblitz.com/projects/elite-island-movers/index.md): A simple one-page website Andrés Blitz built for a local moving company in Victoria, BC: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.
+- [Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz](https://andresblitz.com/projects/elite-island-movers/index.md): A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.
 - [Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz](https://andresblitz.com/projects/home-history/index.md): Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP.
 - [IPTV Player — Latin America & USA Channels in the Browser (HLS.js) | Andrés Blitz](https://andresblitz.com/projects/iptv-player/index.md): A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal.
 - [Blitz Engine — Open-Source Behavioral Signal Analyzer (lie-detector) | Andrés Blitz](https://andresblitz.com/projects/lie-detector/index.md): Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it.
@@ -42,7 +42,7 @@ Every link below points to the clean Markdown version of the page (append `index
 
 ## AI layer status
 
-- Status: active (generated 2026-10-27)
+- Status: active (generated 2026-10-29)
 - Markdown per page: `<page-url>index.md` with YAML frontmatter (title, description, url, last_updated)
 - Full content: https://andresblitz.com/llms-full.txt and https://andresblitz.com/full.md
 - Structured index (JSON): https://andresblitz.com/agent.json and https://andresblitz.com/api/site.json

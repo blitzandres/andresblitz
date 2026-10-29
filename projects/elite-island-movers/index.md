@@ -1,6 +1,6 @@
 ---
-title: "Elite Island Movers — One-Page Website for a Victoria, BC Moving Company | Andrés Blitz"
-description: "A simple one-page website Andrés Blitz built for a local moving company in Victoria, BC: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
+title: "Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz"
+description: "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
 url: "https://andresblitz.com/projects/elite-island-movers/"
 last_updated: "2026-10-16"
 lang: "en-CA"
@@ -12,7 +12,7 @@ Website · Local business
 
 # Elite Island Movers
 
-A simple, fast one-page website for a local moving company in Victoria, BC — services, straightforward pricing and contact, with local-business structured data.
+A simple, fast one-page website for a local moving company in British Columbia — services, straightforward pricing and contact, with local-business structured data.
 
 Public repoHTMLShipped 2025
 

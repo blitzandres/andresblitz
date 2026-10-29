@@ -1,6 +1,6 @@
 # andresblitz.com
 
-Personal website of **Andrés Blitz** — full-time trader and investor based in Victoria, British Columbia, Canada.
+Personal website of **Andrés Blitz** — full-time trader and investor based in British Columbia, Canada.
 
 **Live:** [https://andresblitz.com/](https://andresblitz.com/) · **X:** [@andresblitz](https://x.com/andresblitz) · **GitHub:** [blitzandres](https://github.com/blitzandres)
 

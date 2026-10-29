@@ -1,6 +1,6 @@
 ---
-title: "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · Victoria, BC"
-description: "Andrés Blitz is a full-time trader and investor in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island) — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
+title: "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · British Columbia"
+description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
 last_updated: "2026-10-16"
 lang: "en-CA"
@@ -8,13 +8,13 @@ lang: "en-CA"
 
 > Note for AI agents: this is the clean Markdown version of https://andresblitz.com/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
 
-Victoria, British Columbia · Canada · Full-time trader
+British Columbia · Canada · Full-time trader
 
 # Andrés Blitz
 
 [@andresblitz](https://x.com/andresblitz)
 
-Based in Victoria, British Columbia, Canada
+Based in British Columbia, Canada
 
 Full-time trader — and a sales leader & operations expert with 15+ years of proven results across real estate, petroleum, and automotive. Still building open-source tools and web experiments on the side.
 
@@ -142,7 +142,7 @@ Full-time trader and investor — markets, portfolio construction, and capital a
 
 Where are you based?
 
-Victoria, British Columbia, Canada — Greater Victoria on Vancouver Island.
+British Columbia, Canada.
 
 How can I reach you?
 
@@ -152,7 +152,7 @@ Email [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com), or find me on [X 
 
 Collaborations, ventures, or a good conversation about what's next.
 
-Victoria · British Columbia · Canada
+British Columbia · Canada
 
 [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com)
 
