@@ -2,7 +2,7 @@
 title: "AI entry point — andresblitz.com"
 description: "Index of every clean Markdown page on andresblitz.com"
 url: "https://andresblitz.com/ai/"
-last_updated: "2026-10-27"
+last_updated: "2026-10-29"
 ---
 
 > Note for AI agents: site map at https://andresblitz.com/llms.txt
@@ -10,7 +10,7 @@ last_updated: "2026-10-27"
 # Markdown pages
 
 - [Agropecuaria Blimar · El 70 — finca ganadera km 70 Troncal 6, La Villa del Rosario, Zulia](https://andresblitz.com/70/index.md) — Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia.
-- [Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · Victoria, BC](https://andresblitz.com/index.md) — Andrés Blitz is a full-time trader and investor in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island) — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.
+- [Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · British Columbia](https://andresblitz.com/index.md) — Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.
 - [Blitz Analytics — Privacy-Minded Site Analytics on Cloudflare Workers | Andrés Blitz](https://andresblitz.com/projects/blitz-analytics/index.md) — Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.
 - [Blitzy's World — Playable Space Game in the Browser | Andrés Blitz](https://andresblitz.com/projects/blitzys-world/index.md) — Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch.
 - [Blitzy's World — 3D Levels (v0.3) | Andrés Blitz](https://andresblitz.com/projects/blitzys-world/play/3d/index.md) — Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL.
@@ -18,7 +18,7 @@ last_updated: "2026-10-27"
 - [BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz](https://andresblitz.com/projects/bluth-scan/index.md) — BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices.
 - [Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz](https://andresblitz.com/projects/compute-share-pilot/index.md) — Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs.
 - [Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz](https://andresblitz.com/projects/elevatron/index.md) — Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos.
-- [Elite Island Movers — One-Page Website for a Victoria, BC Moving Company | Andrés Blitz](https://andresblitz.com/projects/elite-island-movers/index.md) — A simple one-page website Andrés Blitz built for a local moving company in Victoria, BC: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.
+- [Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz](https://andresblitz.com/projects/elite-island-movers/index.md) — A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.
 - [Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz](https://andresblitz.com/projects/home-history/index.md) — Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP.
 - [Projects by Andrés Blitz — Trading Tools, Games & Experiments](https://andresblitz.com/projects/index.md) — Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.
 - [IPTV Player — Latin America & USA Channels in the Browser (HLS.js) | Andrés Blitz](https://andresblitz.com/projects/iptv-player/index.md) — A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal.

@@ -2,13 +2,13 @@
 export const site = {
   "name": "Andrés Blitz",
   "url": "https://andresblitz.com/",
-  "description": "Andrés Blitz is a full-time trader and investor in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island) — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
+  "description": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
   "contact": {
     "email": "blitz@mail.grokbot.com",
     "x": "https://x.com/andresblitz",
     "github": "https://github.com/blitzandres"
   },
-  "location": "Victoria, British Columbia, Canada",
+  "location": "British Columbia, Canada",
   "ai_layer": {
     "status": "active",
     "llms": "https://andresblitz.com/llms.txt",
@@ -65,13 +65,13 @@ export const site = {
     },
     {
       "slug": "home",
-      "title": "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · Victoria, BC",
+      "title": "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · British Columbia",
       "url": "https://andresblitz.com/",
       "md": "https://andresblitz.com/index.md",
       "json": "https://andresblitz.com/api/page/home.json",
       "kind": "home",
       "lang": "en-CA",
-      "summary": "Andrés Blitz is a full-time trader and investor in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island) — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
+      "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
       "last_updated": "2026-10-16"
     },
     {
@@ -153,13 +153,13 @@ export const site = {
     },
     {
       "slug": "projects-elite-island-movers",
-      "title": "Elite Island Movers — One-Page Website for a Victoria, BC Moving Company | Andrés Blitz",
+      "title": "Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz",
       "url": "https://andresblitz.com/projects/elite-island-movers/",
       "md": "https://andresblitz.com/projects/elite-island-movers/index.md",
       "json": "https://andresblitz.com/api/page/projects-elite-island-movers.json",
       "kind": "project",
       "lang": "en-CA",
-      "summary": "A simple one-page website Andrés Blitz built for a local moving company in Victoria, BC: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.",
+      "summary": "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.",
       "last_updated": "2026-10-16"
     },
     {
@@ -325,10 +325,10 @@ export const site = {
       "summary": "Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos."
     },
     {
-      "name": "Elite Island Movers — One-Page Website for a Victoria, BC Moving Company",
+      "name": "Elite Island Movers — One-Page Website for a British Columbia Moving Company",
       "url": "https://andresblitz.com/projects/elite-island-movers/",
       "md": "https://andresblitz.com/projects/elite-island-movers/index.md",
-      "summary": "A simple one-page website Andrés Blitz built for a local moving company in Victoria, BC: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
+      "summary": "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
     },
     {
       "name": "Home History — A Time-Capsule Timeline for a House (Next.js MVP)",
@@ -385,6 +385,6 @@ export const site = {
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
     }
   ],
-  "generated": "2026-10-27"
+  "generated": "2026-10-29"
 };
 export default site;

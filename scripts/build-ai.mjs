@@ -15,7 +15,7 @@ const API = 'https://andresblitz-ai-api.blitzandres.workers.dev';
 const EXCLUDE = [/^dashboard\//, /^404\.html$/, /^node_modules\//, /^scripts\//, /^\.git\//, /^ai\//, /vendor\//];
 const START = '<!-- ai-layer:start -->', END = '<!-- ai-layer:end -->';
 const FSTART = '<!-- ai-layer-footer:start -->', FEND = '<!-- ai-layer-footer:end -->';
-const FORBIDDEN = [/andres@andresblitz\.com/i, /\broly\b/i, /blimar properties/i, /tel:/i, /\+?1[ .-]?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}/, /\+58[ .-]?\d/];
+const FORBIDDEN = [/andres@andresblitz\.com/i, /\broly\b/i, /blimar properties/i, /tel:/i, /\+?1[ .-]?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}/, /\bvictoria\b/i, /48\.4284/, /123\.3656/, /\+58[ .-]?\d/];
 
 const rel = (p) => path.relative(ROOT, p).split(path.sep).join('/');
 function walk(dir, out = []) {
@@ -92,7 +92,7 @@ const projects = pages.filter((p) => p.kind === 'project').map((p) => ({ name: p
 const site = {
   name: 'Andrés Blitz', url: `${ORIGIN}/`, description: pages.find((p) => p.kind === 'home')?.description || '',
   contact: { email: 'blitz@mail.grokbot.com', x: 'https://x.com/andresblitz', github: 'https://github.com/blitzandres' },
-  location: 'Victoria, British Columbia, Canada',
+  location: 'British Columbia, Canada',
   ai_layer: { status: 'active', llms: LLMS, llms_full: `${ORIGIN}/llms-full.txt`, full_md: `${ORIGIN}/full.md`, agent_json: `${ORIGIN}/agent.json`, ai_index_js: `${ORIGIN}/ai-index.js`, api_site: `${ORIGIN}/api/site.json`, api_page: `${ORIGIN}/api/page/{slug}.json`, sitemap_ai: `${ORIGIN}/sitemap-ai.json`, sitemap_md: `${ORIGIN}/sitemap-md.xml`, entry: `${ORIGIN}/ai/`, feed: `${ORIGIN}/feed.xml`, feed_el70: `${ORIGIN}/70/feed.xml`, api: { site: `${API}/api/site`, page: `${API}/api/page?path={path}`, accept_markdown: true, cors: '*', read_only: true } },
   topics: ['trading', 'investing', 'capital allocation', 'open-source tools', 'web experiments', 'El 70 (Zulia, Venezuela)', 'Tasa BCV'],
   pages: pages.map((p) => ({ slug: p.slug, title: p.title, url: p.url, md: p.mdUrl, json: `${ORIGIN}/api/page/${p.slug}.json`, kind: p.kind, lang: p.lang, summary: p.description, last_updated: p.last_updated, ...(EXTRA[p.pathname] ? { topics: EXTRA[p.pathname].topics, geo: EXTRA[p.pathname].geo } : {}) })),
@@ -120,10 +120,10 @@ const line = (p, label) => `- [${label || p.title}](${p.mdUrl}): ${p.description
 const byPath = (x) => pages.find((p) => p.pathname === x);
 const llms = `# Andrés Blitz
 
-> Full-time trader and investor based in Victoria, British Columbia, Canada (Greater Victoria / Vancouver Island). Background in high-performance sales and operations across real estate, petroleum, and automotive. Builds open-source tools and web experiments on the side.
+> Full-time trader and investor based in British Columbia, Canada. Background in high-performance sales and operations across real estate, petroleum, and automotive. Builds open-source tools and web experiments on the side.
 
 - Canonical site: ${ORIGIN}/
-- Location: Victoria, BC, Canada
+- Location: British Columbia, Canada
 - Email: blitz@mail.grokbot.com
 - X: https://x.com/andresblitz
 - GitHub: https://github.com/blitzandres
