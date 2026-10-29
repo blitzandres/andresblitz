@@ -1,5 +1,5 @@
 name = "andresblitz-ai-api"
 main = "src/index.js"
-compatibility_date = "2026-10-01"
+compatibility_date = "2026-10-28"
 account_id = "cdcaafde1bec82e4c4e20432a08191fd"
 workers_dev = true

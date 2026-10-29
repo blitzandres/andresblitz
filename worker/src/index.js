@@ -1,11 +1,12 @@
 // Read-only AI API for andresblitz.com. Proxies the static AI layer on GitHub Pages.
 const ORIGIN = 'https://andresblitz.com';
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS', 'Access-Control-Allow-Headers': 'Accept, Content-Type' };
+const SEC = { 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer' };
 const CACHE = 'public, max-age=300, s-maxage=3600';
 const BLOCK = /^\/dashboard/;
 
 function reply(body, type, status = 200, extra = {}) {
-  return new Response(body, { status, headers: { 'Content-Type': type, 'Cache-Control': CACHE, Vary: 'Accept', ...CORS, ...extra } });
+  return new Response(body, { status, headers: { 'Content-Type': type, 'Cache-Control': CACHE, Vary: 'Accept', ...SEC, ...CORS, ...extra } });
 }
 const json = (o, s = 200) => reply(JSON.stringify(o, null, 2), 'application/json; charset=utf-8', s);
 const wantsMd = (req) => (req.headers.get('Accept') || '').includes('text/markdown');
@@ -22,6 +23,12 @@ function parseMd(md) {
 
 export default {
   async fetch(req) {
+    try { return await handle(req); } catch (e) { console.error('worker error', String(e && e.message || e)); return json({ error: 'internal error' }, 500); }
+  },
+};
+
+const _h = {
+  async handle(req) {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: { ...CORS, 'Access-Control-Max-Age': '86400' } });
     if (req.method !== 'GET' && req.method !== 'HEAD') return json({ error: 'read-only' }, 405);
     const url = new URL(req.url);
@@ -47,3 +54,4 @@ export default {
     return json({ error: 'not found' }, 404);
   },
 };
+const handle = _h.handle;
