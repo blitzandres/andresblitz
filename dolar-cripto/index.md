@@ -10,11 +10,11 @@ lang: "es"
 
 # Dólar cripto hoy: USDT P2P vs. tasa oficial
 
-Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 31 oct, 20:20 UTC.
+Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 31 oct, 20:27 UTC.
 
 Referencial, no es asesoría financiera.
 
--   En Venezuela, USDT está 11,9 % sobre la tasa BCV hoy; aún no hay historial suficiente para comparar.
+-   En Venezuela, USDT está 12,2 % sobre la tasa BCV hoy; aún no hay historial suficiente para comparar.
 -   En Argentina, USDT está 5,9 % sobre el dólar oficial hoy; aún no hay historial suficiente para comparar.
 -   En Colombia, USDT está 0,2 % bajo la TRM hoy; aún no hay historial suficiente para comparar.
 
@@ -28,7 +28,7 @@ USDT/VES
 
 USDT P2P
 
-994,85
+997,48
 
 lo que se paga por un dólar digital entre personas
 
@@ -40,11 +40,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+11,87 %
++12,17 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)31 oct, 20:20 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)31 oct, 20:27 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
 
 ### Argentina
 
@@ -68,7 +68,7 @@ Brecha
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)31 oct, 20:20 UTCOficial: dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)31 oct, 20:27 UTCOficial: dolarapi.com
 
 ### Colombia
 
@@ -76,7 +76,7 @@ USDT/COP
 
 USDT P2P
 
-3.178,04
+3.178,07
 
 lo que se paga por un dólar digital entre personas
 
@@ -88,11 +88,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-\-0,16 %
+\-0,15 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)31 oct, 20:20 UTCOficial: datos.gov.co (Superintendencia Financiera)
+[CriptoYa (mediana P2P)](https://criptoya.com/)31 oct, 20:27 UTCOficial: datos.gov.co (Superintendencia Financiera)
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
@@ -103,26 +103,26 @@ Cada punto es una actualización (cerca de cada 30 minutos). La tabla tiene los 
 USDT P2P frente a la tasa oficial
 | País | USDT P2P | Oficial | Brecha | Fuente y hora |
 | --- | --- | --- | --- | --- |
-| Venezuela VES | 994,85 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +11,87 % | CriptoYa (mediana P2P) · 31 oct, 20:20 UTC  
+| Venezuela VES | 997,48 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +12,17 % | CriptoYa (mediana P2P) · 31 oct, 20:27 UTC  
 Oficial: Banco Central de Venezuela vía ve.dolarapi.com · 30 oct, 04:00 UTC |
-| Argentina ARS | 1.651,50 | [1.560,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,87 % | CriptoYa (mediana P2P) · 31 oct, 20:20 UTC  
+| Argentina ARS | 1.651,50 | [1.560,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,87 % | CriptoYa (mediana P2P) · 31 oct, 20:27 UTC  
 Oficial: dolarapi.com · 30 oct, 18:55 UTC |
-| Colombia COP | 3.178,04 | [3.182,99](https://andresblitz.com/dolar-colombia/) TRM | \-0,16 % | CriptoYa (mediana P2P) · 31 oct, 20:20 UTC  
+| Colombia COP | 3.178,07 | [3.182,99](https://andresblitz.com/dolar-colombia/) TRM | \-0,15 % | CriptoYa (mediana P2P) · 31 oct, 20:27 UTC  
 Oficial: datos.gov.co (Superintendencia Financiera) · 31 oct, 05:00 UTC |
 
 ## Bitcoin y otras criptomonedas (USD)
 
 | Moneda | USD | 24 h |
 | --- | --- | --- |
-| BTC | 77.516,00 | +0,42 % |
-| ETH | 2.253,48 | +0,65 % |
+| BTC | 77.525,00 | +0,89 % |
+| ETH | 2.252,54 | +0,64 % |
 | USDT | 0,9995 | +0,05 % |
-| USDC | 1,0000 | +0,03 % |
-| SOL | 95,79 | +0,94 % |
-| XRP | 1,2500 | +0,33 % |
-| BNB | 705,64 | +0,83 % |
+| USDC | 1,0000 | +0,04 % |
+| SOL | 95,77 | +0,89 % |
+| XRP | 1,2500 | +0,28 % |
+| BNB | 705,14 | +0,73 % |
 
-Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 31 oct, 20:20 UTC.
+Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 31 oct, 20:27 UTC.
 
 ## Cómo leer esta página
 
