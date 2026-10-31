@@ -117,6 +117,24 @@ export const site = {
       ]
     },
     {
+      "slug": "dolar-peru",
+      "title": "Dólar hoy en Perú: tipo de cambio en soles y conversor",
+      "url": "https://andresblitz.com/dolar-peru/",
+      "md": "https://andresblitz.com/dolar-peru/index.md",
+      "json": "https://andresblitz.com/api/page/dolar-peru.json",
+      "kind": "page",
+      "lang": "es-PE",
+      "summary": "Tipo de cambio del dólar hoy en Perú en soles (S/), con la fuente indicada en cada actualización, explicación del tipo de cambio interbancario y conversor de soles a dólares.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "tipo de cambio",
+        "dólar hoy",
+        "soles",
+        "BCRP",
+        "Perú"
+      ]
+    },
+    {
       "slug": "home",
       "title": "Andrés Blitz | Full-Time Trader & Investor, British Columbia",
       "url": "https://andresblitz.com/",

@@ -83,4 +83,4 @@ Es una herramienta informativa. Para una compra o venta real, confirmá el preci
 
 ## Otras tasas de cambio
 
-[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
+[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
