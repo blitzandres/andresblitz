@@ -74,6 +74,8 @@ Del FIX de Banxico vía mx.dolarapi.com, que se consulta aproximadamente cada 30
 
 Es una herramienta informativa. Para facturación o pagos formales consulta el valor publicado en el DOF o el que indique tu banco.
 
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
 ## Otras tasas de cambio
 
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)

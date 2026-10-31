@@ -132,6 +132,8 @@ Lives ♥ ♥ ♥
 
 ← → / A D move · Space shoot · P pause · Click to start
 
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml) · [Currency RSS](https://andresblitz.com/projects/currency-rss/)
+
 FAQ
 
 ## Quick answers

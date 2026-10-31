@@ -74,6 +74,8 @@ Un proceso automático intenta primero pe.dolarapi.com y luego el BCRP. Si ningu
 
 No. Es información de referencia; confirma el precio final con tu banco o casa de cambio antes de operar.
 
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
 ## Otras tasas de cambio
 
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)

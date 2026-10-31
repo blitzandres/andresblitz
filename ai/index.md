@@ -22,6 +22,7 @@ last_updated: "2026-10-31"
 - [Play Blitzy's World — Full Screen | Andrés Blitz](https://andresblitz.com/projects/blitzys-world/play/index.md) — Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch.
 - [BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz](https://andresblitz.com/projects/bluth-scan/index.md) — BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices.
 - [Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz](https://andresblitz.com/projects/compute-share-pilot/index.md) — Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs.
+- [Currency RSS — Exchange-rate and central-bank feed (RSS 2.0) | Andrés Blitz](https://andresblitz.com/projects/currency-rss/index.md) — Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item.
 - [Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz](https://andresblitz.com/projects/elevatron/index.md) — Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos.
 - [Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz](https://andresblitz.com/projects/elite-island-movers/index.md) — A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.
 - [Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz](https://andresblitz.com/projects/home-history/index.md) — Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP.
@@ -37,3 +38,9 @@ last_updated: "2026-10-31"
 - [Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela](https://andresblitz.com/tasa-bcv/index.md) — Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia.
 
 Full content: https://andresblitz.com/full.md
+
+# Feeds
+
+- Site RSS: https://andresblitz.com/feed.xml
+- El 70 RSS: https://andresblitz.com/70/feed.xml
+- Rates RSS (exchange rates, Bitcoin, central-bank rates; Spanish): https://andresblitz.com/rates/feed.xml

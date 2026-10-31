@@ -184,6 +184,18 @@ Private repoJavaScriptMock demo
 
 [
 
+## Currency RSS
+
+LatAm dollar rates, Bitcoin and central-bank rates in one RSS feed.
+
+Public repoJavaScriptLive
+
+](https://andresblitz.com/projects/currency-rss/)
+
+[RSS feed](https://andresblitz.com/rates/feed.xml) [GitHub](https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-feed.mjs)
+
+[
+
 ## Elite Island Movers
 
 One-page site for a local moving company.
