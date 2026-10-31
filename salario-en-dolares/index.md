@@ -1,5 +1,5 @@
 ---
-title: "Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a USD"
+title: "Salario en dólares: convierte pesos, bolívares o soles a USD"
 description: "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas."
 url: "https://andresblitz.com/salario-en-dolares/"
 last_updated: "2026-10-31"

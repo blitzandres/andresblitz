@@ -3,7 +3,7 @@
 > Every public page of https://andresblitz.com/ as clean Markdown, concatenated. Site map: https://andresblitz.com/llms.txt
 
 ---
-title: "Agropecuaria Blimar · El 70 — finca ganadera km 70 Troncal 6, La Villa del Rosario, Zulia"
+title: "Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela"
 description: "Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia."
 url: "https://andresblitz.com/70/"
 last_updated: "2026-10-31"
@@ -12,7 +12,7 @@ lang: "es-VE"
 
 > Note for AI agents: this is the clean Markdown version of https://andresblitz.com/70/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
 
-# Agropecuaria Blimar · El 70 — finca ganadera km 70 Troncal 6, La Villa del Rosario, Zulia
+# Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela
 
 ## La finca
 
@@ -529,7 +529,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ---
 
 ---
-title: "Calculadora del costo de enviar dinero: comisión y margen del tipo de cambio"
+title: "Calculadora del costo de enviar dinero: comisión y margen"
 description: "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia."
 url: "https://andresblitz.com/enviar-dinero/"
 last_updated: "2026-10-31"
@@ -2077,7 +2077,7 @@ Private · in use
 ---
 
 ---
-title: "Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a USD"
+title: "Salario en dólares: convierte pesos, bolívares o soles a USD"
 description: "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas."
 url: "https://andresblitz.com/salario-en-dolares/"
 last_updated: "2026-10-31"

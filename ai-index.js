@@ -45,7 +45,7 @@ export const site = {
   "pages": [
     {
       "slug": "70",
-      "title": "Agropecuaria Blimar · El 70 — finca ganadera km 70 Troncal 6, La Villa del Rosario, Zulia",
+      "title": "Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela",
       "url": "https://andresblitz.com/70/",
       "md": "https://andresblitz.com/70/index.md",
       "json": "https://andresblitz.com/api/page/70.json",
@@ -156,7 +156,7 @@ export const site = {
     },
     {
       "slug": "enviar-dinero",
-      "title": "Calculadora del costo de enviar dinero: comisión y margen del tipo de cambio",
+      "title": "Calculadora del costo de enviar dinero: comisión y margen",
       "url": "https://andresblitz.com/enviar-dinero/",
       "md": "https://andresblitz.com/enviar-dinero/index.md",
       "json": "https://andresblitz.com/api/page/enviar-dinero.json",
@@ -396,7 +396,7 @@ export const site = {
     },
     {
       "slug": "salario-en-dolares",
-      "title": "Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a USD",
+      "title": "Salario en dólares: convierte pesos, bolívares o soles a USD",
       "url": "https://andresblitz.com/salario-en-dolares/",
       "md": "https://andresblitz.com/salario-en-dolares/index.md",
       "json": "https://andresblitz.com/api/page/salario-en-dolares.json",
