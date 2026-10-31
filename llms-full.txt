@@ -1462,7 +1462,11 @@ por 1 euro · último valor conocido
 
 ### Bitcoin (BTC)
 
+…
+
 ### Dólar paralelo · promedio no oficial
+
+…
 
 ## Calculadora: dólares y euros ↔ bolívares
 
