@@ -2,7 +2,7 @@
 title: "SIGNET — Signal Intelligence Network Visualization (Research Thesis) | Andrés Blitz"
 description: "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired."
 url: "https://andresblitz.com/projects/signet-thesis/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 

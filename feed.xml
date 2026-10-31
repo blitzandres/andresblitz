@@ -11,119 +11,126 @@
 <link>https://andresblitz.com/</link>
 <guid isPermaLink="true">https://andresblitz.com/</guid>
 <description>Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Blitz Analytics — Privacy-Minded Site Analytics on Cloudflare Workers | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/blitz-analytics/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/blitz-analytics/</guid>
 <description>Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Blitzy's World — Playable Space Game in the Browser | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/blitzys-world/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/blitzys-world/</guid>
 <description>Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/bluth-scan/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/bluth-scan/</guid>
 <description>BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/compute-share-pilot/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/compute-share-pilot/</guid>
 <description>Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/elevatron/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/elevatron/</guid>
 <description>Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/elite-island-movers/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/elite-island-movers/</guid>
 <description>A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/home-history/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/home-history/</guid>
 <description>Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Projects by Andrés Blitz — Trading Tools, Games &amp; Experiments</title>
 <link>https://andresblitz.com/projects/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/</guid>
 <description>Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>IPTV Player — Latin America &amp; USA Channels in the Browser (HLS.js) | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/iptv-player/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/iptv-player/</guid>
 <description>A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Blitz Engine — Open-Source Behavioral Signal Analyzer (lie-detector) | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/lie-detector/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/lie-detector/</guid>
 <description>Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>NetWatch — Local Network Monitoring Dashboard (Python + Flask) | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/netwatch/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/netwatch/</guid>
 <description>NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Quiniela — World Cup 2026 Prediction Pool for Friends | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/quiniela/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/quiniela/</guid>
 <description>Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>RealWealth Portfolio — Live Real Estate Portfolio Dashboard (Next.js + Supabase) | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/realwealth-portfolio/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/realwealth-portfolio/</guid>
 <description>RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>SIGNET — Signal Intelligence Network Visualization (Research Thesis) | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/signet-thesis/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/signet-thesis/</guid>
 <description>SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>SIGSPACE — Network Signals as a Video Game World | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/sigspace/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/sigspace/</guid>
 <description>SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/weinstein-stage-matrix/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/weinstein-stage-matrix/</guid>
 <description>Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.</description>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela</title>
+<link>https://andresblitz.com/tasa-bcv/</link>
+<guid isPermaLink="true">https://andresblitz.com/tasa-bcv/</guid>
+<description>Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia.</description>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Agropecuaria Blimar · El 70 — finca ganadera km 70 Troncal 6, La Villa del Rosario, Zulia</title>
@@ -131,13 +138,6 @@
 <guid isPermaLink="true">https://andresblitz.com/70/</guid>
 <description>Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia.</description>
 <pubDate>Mon, 19 Oct 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela</title>
-<link>https://andresblitz.com/tasa-bcv/</link>
-<guid isPermaLink="true">https://andresblitz.com/tasa-bcv/</guid>
-<description>Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia.</description>
-<pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

@@ -2,7 +2,7 @@
 title: "Blitz Engine — Open-Source Behavioral Signal Analyzer (lie-detector) | Andrés Blitz"
 description: "Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it."
 url: "https://andresblitz.com/projects/lie-detector/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 

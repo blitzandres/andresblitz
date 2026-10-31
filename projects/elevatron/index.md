@@ -2,7 +2,7 @@
 title: "Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz"
 description: "Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos."
 url: "https://andresblitz.com/projects/elevatron/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
