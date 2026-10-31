@@ -81,6 +81,8 @@ Un proceso automático consulta los datos aproximadamente cada 30 minutos y, al 
 
 Es una herramienta informativa. Para una compra o venta real, confirmá el precio con tu banco o casa de cambio, ya que incluye comisiones y el margen de cada entidad.
 
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
 ## Otras tasas de cambio
 
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)

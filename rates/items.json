@@ -1,0 +1,137 @@
+[
+ {
+  "guid": "bitcoin:2026-10-31T17:26:37.000Z:77523",
+  "key": "bitcoin",
+  "title": "Bitcoin (BTC/USD)",
+  "value": 77523,
+  "unit": "USD",
+  "change24h": 0.49,
+  "extra": "CAD 108350",
+  "source": "CoinGecko",
+  "time": "2026-10-31T17:26:37.000Z",
+  "url": "https://www.coingecko.com/es/monedas/bitcoin",
+  "fetched": "2026-10-31T17:27:24.572Z"
+ },
+ {
+  "guid": "dolar-argentina-blue:2026-10-31T14:57:00.000Z:1565",
+  "key": "dolar-argentina-blue",
+  "title": "Argentina: Dólar blue",
+  "value": 1565,
+  "unit": "ARS por USD",
+  "source": "dolarapi.com",
+  "time": "2026-10-31T14:57:00.000Z",
+  "url": "https://andresblitz.com/dolar-argentina/"
+ },
+ {
+  "guid": "dolar-colombia:2026-10-31T05:00:00.000Z:3182.99",
+  "key": "dolar-colombia",
+  "title": "Colombia: TRM",
+  "value": 3182.99,
+  "unit": "COP por USD",
+  "source": "datos.gov.co (Superintendencia Financiera)",
+  "time": "2026-10-31T05:00:00.000Z",
+  "url": "https://andresblitz.com/dolar-colombia/"
+ },
+ {
+  "guid": "dolar-peru:2026-10-31T00:02:31.000Z:3.460617",
+  "key": "dolar-peru",
+  "title": "Perú: Dólar de referencia (mercado internacional)",
+  "value": 3.460617,
+  "unit": "PEN por USD",
+  "source": "open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)",
+  "time": "2026-10-31T00:02:31.000Z",
+  "url": "https://andresblitz.com/dolar-peru/"
+ },
+ {
+  "guid": "usdcad:2026-10-30T20:30:00.000Z:1.396",
+  "key": "usdcad",
+  "title": "USD/CAD (Banco de Canadá)",
+  "value": 1.396,
+  "unit": "CAD por USD",
+  "source": "Bank of Canada Valet API (FXUSDCAD)",
+  "time": "2026-10-30T20:30:00.000Z",
+  "url": "https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/"
+ },
+ {
+  "guid": "dolar-argentina:2026-10-30T18:55:00.000Z:1560",
+  "key": "dolar-argentina",
+  "title": "Argentina: Dólar oficial",
+  "value": 1560,
+  "unit": "ARS por USD",
+  "source": "dolarapi.com",
+  "time": "2026-10-30T18:55:00.000Z",
+  "url": "https://andresblitz.com/dolar-argentina/"
+ },
+ {
+  "guid": "dolar-mexico:2026-10-30T18:00:00.000Z:18.7962",
+  "key": "dolar-mexico",
+  "title": "México: Tipo de cambio FIX (Banxico)",
+  "value": 18.7962,
+  "unit": "MXN por USD",
+  "source": "mx.dolarapi.com (FIX de Banxico)",
+  "time": "2026-10-30T18:00:00.000Z",
+  "url": "https://andresblitz.com/dolar-mexico/"
+ },
+ {
+  "guid": "tasa-bcv:2026-10-30T04:00:00.000Z:889.2553",
+  "key": "tasa-bcv",
+  "title": "Venezuela: Tasa BCV (USD)",
+  "value": 889.2553,
+  "unit": "VES por USD",
+  "source": "Banco Central de Venezuela vía ve.dolarapi.com",
+  "time": "2026-10-30T04:00:00.000Z",
+  "url": "https://andresblitz.com/tasa-bcv/"
+ },
+ {
+  "guid": "dolar-chile:2026-10-30T03:00:00.000Z:993.22",
+  "key": "dolar-chile",
+  "title": "Chile: Dólar observado (Banco Central de Chile)",
+  "value": 993.22,
+  "unit": "CLP por USD",
+  "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
+  "time": "2026-10-30T03:00:00.000Z",
+  "url": "https://andresblitz.com/dolar-chile/"
+ },
+ {
+  "guid": "boc-policy:2026-10-29T16:00:00.000Z:2.5",
+  "key": "boc-policy",
+  "title": "Tasa de política: Banco de Canadá",
+  "value": 2.5,
+  "unit": "%",
+  "source": "Bank of Canada Valet API (V39079)",
+  "time": "2026-10-29T16:00:00.000Z",
+  "url": "https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/"
+ },
+ {
+  "guid": "fed-funds-target:2026-10-29T16:00:00.000Z:3,75–4,00",
+  "key": "fed-funds-target",
+  "title": "Tasa de política: Reserva Federal (rango objetivo)",
+  "value": "3,75–4,00",
+  "unit": "%",
+  "extra": "EFFR 3.88%",
+  "source": "Federal Reserve Bank of New York Markets API (EFFR)",
+  "time": "2026-10-29T16:00:00.000Z",
+  "url": "https://www.newyorkfed.org/markets/reference-rates/effr"
+ },
+ {
+  "guid": "boe-bank-rate:2026-10-29T12:00:00.000Z:3.75",
+  "key": "boe-bank-rate",
+  "title": "Tasa de política: Banco de Inglaterra (Bank Rate)",
+  "value": 3.75,
+  "unit": "%",
+  "source": "Bank of England Database (IUDBEDR)",
+  "time": "2026-10-29T12:00:00.000Z",
+  "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate"
+ },
+ {
+  "guid": "pboc-lpr:2026-10-20T01:00:00.000Z:3",
+  "key": "pboc-lpr",
+  "title": "China: Loan Prime Rate (LPR) 1 año",
+  "value": 3,
+  "unit": "%",
+  "extra": "LPR 5 años 3.50%",
+  "source": "China Foreign Exchange Trade System (chinamoney.com.cn)",
+  "time": "2026-10-20T01:00:00.000Z",
+  "url": "https://www.chinamoney.com.cn/english/bmklpr/"
+ }
+]

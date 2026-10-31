@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Feed de tasas · andresblitz.com</title>
+<link>https://andresblitz.com/projects/currency-rss/</link>
+<atom:link href="https://andresblitz.com/rates/feed.xml" rel="self" type="application/rss+xml"/>
+<description>Tipos de cambio de Venezuela, Argentina, Colombia, México, Perú y Chile, bitcoin, USD/CAD y tasas de política monetaria, con fuente y hora de cada dato.</description>
+<language>es</language>
+<lastBuildDate>Sat, 31 Oct 2026 17:26:37 GMT</lastBuildDate>
+<ttl>30</ttl>
+<item>
+<title>Bitcoin (BTC/USD): 77.523 USD</title>
+<link>https://www.coingecko.com/es/monedas/bitcoin</link>
+<guid isPermaLink="false">bitcoin:2026-10-31T17:26:37.000Z:77523</guid>
+<pubDate>Sat, 31 Oct 2026 17:26:37 GMT</pubDate>
+<description>Bitcoin (BTC/USD): 77.523 USD (+0.49 % en 24 h) · CAD 108350. Fuente: CoinGecko. Dato del 2026-10-31T17:26:37Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
+</item>
+<item>
+<title>Argentina: Dólar blue: 1.565 ARS por USD</title>
+<link>https://andresblitz.com/dolar-argentina/</link>
+<guid isPermaLink="false">dolar-argentina-blue:2026-10-31T14:57:00.000Z:1565</guid>
+<pubDate>Sat, 31 Oct 2026 14:57:00 GMT</pubDate>
+<description>Argentina: Dólar blue: 1.565 ARS por USD. Fuente: dolarapi.com. Dato del 2026-10-31T14:57:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">dolarapi.com</source>
+</item>
+<item>
+<title>Colombia: TRM: 3.182,99 COP por USD</title>
+<link>https://andresblitz.com/dolar-colombia/</link>
+<guid isPermaLink="false">dolar-colombia:2026-10-31T05:00:00.000Z:3182.99</guid>
+<pubDate>Sat, 31 Oct 2026 05:00:00 GMT</pubDate>
+<description>Colombia: TRM: 3.182,99 COP por USD. Fuente: datos.gov.co (Superintendencia Financiera). Dato del 2026-10-31T05:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">datos.gov.co (Superintendencia Financiera)</source>
+</item>
+<item>
+<title>Perú: Dólar de referencia (mercado internacional): 3,4606 PEN por USD</title>
+<link>https://andresblitz.com/dolar-peru/</link>
+<guid isPermaLink="false">dolar-peru:2026-10-31T00:02:31.000Z:3.460617</guid>
+<pubDate>Sat, 31 Oct 2026 00:02:31 GMT</pubDate>
+<description>Perú: Dólar de referencia (mercado internacional): 3,4606 PEN por USD. Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia). Dato del 2026-10-31T00:02:31Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)</source>
+</item>
+<item>
+<title>USD/CAD (Banco de Canadá): 1,396 CAD por USD</title>
+<link>https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/</link>
+<guid isPermaLink="false">usdcad:2026-10-30T20:30:00.000Z:1.396</guid>
+<pubDate>Fri, 30 Oct 2026 20:30:00 GMT</pubDate>
+<description>USD/CAD (Banco de Canadá): 1,396 CAD por USD. Fuente: Bank of Canada Valet API (FXUSDCAD). Dato del 2026-10-30T20:30:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">Bank of Canada Valet API (FXUSDCAD)</source>
+</item>
+<item>
+<title>Argentina: Dólar oficial: 1.560 ARS por USD</title>
+<link>https://andresblitz.com/dolar-argentina/</link>
+<guid isPermaLink="false">dolar-argentina:2026-10-30T18:55:00.000Z:1560</guid>
+<pubDate>Fri, 30 Oct 2026 18:55:00 GMT</pubDate>
+<description>Argentina: Dólar oficial: 1.560 ARS por USD. Fuente: dolarapi.com. Dato del 2026-10-30T18:55:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">dolarapi.com</source>
+</item>
+<item>
+<title>México: Tipo de cambio FIX (Banxico): 18,7962 MXN por USD</title>
+<link>https://andresblitz.com/dolar-mexico/</link>
+<guid isPermaLink="false">dolar-mexico:2026-10-30T18:00:00.000Z:18.7962</guid>
+<pubDate>Fri, 30 Oct 2026 18:00:00 GMT</pubDate>
+<description>México: Tipo de cambio FIX (Banxico): 18,7962 MXN por USD. Fuente: mx.dolarapi.com (FIX de Banxico). Dato del 2026-10-30T18:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">mx.dolarapi.com (FIX de Banxico)</source>
+</item>
+<item>
+<title>Venezuela: Tasa BCV (USD): 889,2553 VES por USD</title>
+<link>https://andresblitz.com/tasa-bcv/</link>
+<guid isPermaLink="false">tasa-bcv:2026-10-30T04:00:00.000Z:889.2553</guid>
+<pubDate>Fri, 30 Oct 2026 04:00:00 GMT</pubDate>
+<description>Venezuela: Tasa BCV (USD): 889,2553 VES por USD. Fuente: Banco Central de Venezuela vía ve.dolarapi.com. Dato del 2026-10-30T04:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">Banco Central de Venezuela vía ve.dolarapi.com</source>
+</item>
+<item>
+<title>Chile: Dólar observado (Banco Central de Chile): 993,22 CLP por USD</title>
+<link>https://andresblitz.com/dolar-chile/</link>
+<guid isPermaLink="false">dolar-chile:2026-10-30T03:00:00.000Z:993.22</guid>
+<pubDate>Fri, 30 Oct 2026 03:00:00 GMT</pubDate>
+<description>Chile: Dólar observado (Banco Central de Chile): 993,22 CLP por USD. Fuente: mindicador.cl (dólar observado, Banco Central de Chile). Dato del 2026-10-30T03:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">mindicador.cl (dólar observado, Banco Central de Chile)</source>
+</item>
+<item>
+<title>Tasa de política: Banco de Canadá: 2,50 %</title>
+<link>https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/</link>
+<guid isPermaLink="false">boc-policy:2026-10-29T16:00:00.000Z:2.5</guid>
+<pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate>
+<description>Tasa de política: Banco de Canadá: 2,50 %. Fuente: Bank of Canada Valet API (V39079). Dato del 2026-10-29T16:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">Bank of Canada Valet API (V39079)</source>
+</item>
+<item>
+<title>Tasa de política: Reserva Federal (rango objetivo): 3,75–4,00 %</title>
+<link>https://www.newyorkfed.org/markets/reference-rates/effr</link>
+<guid isPermaLink="false">fed-funds-target:2026-10-29T16:00:00.000Z:3,75–4,00</guid>
+<pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate>
+<description>Tasa de política: Reserva Federal (rango objetivo): 3,75–4,00 % · EFFR 3.88%. Fuente: Federal Reserve Bank of New York Markets API (EFFR). Dato del 2026-10-29T16:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">Federal Reserve Bank of New York Markets API (EFFR)</source>
+</item>
+<item>
+<title>Tasa de política: Banco de Inglaterra (Bank Rate): 3,75 %</title>
+<link>https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate</link>
+<guid isPermaLink="false">boe-bank-rate:2026-10-29T12:00:00.000Z:3.75</guid>
+<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+<description>Tasa de política: Banco de Inglaterra (Bank Rate): 3,75 %. Fuente: Bank of England Database (IUDBEDR). Dato del 2026-10-29T12:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">Bank of England Database (IUDBEDR)</source>
+</item>
+<item>
+<title>China: Loan Prime Rate (LPR) 1 año: 3,00 %</title>
+<link>https://www.chinamoney.com.cn/english/bmklpr/</link>
+<guid isPermaLink="false">pboc-lpr:2026-10-20T01:00:00.000Z:3</guid>
+<pubDate>Tue, 20 Oct 2026 01:00:00 GMT</pubDate>
+<description>China: Loan Prime Rate (LPR) 1 año: 3,00 % · LPR 5 años 3.50%. Fuente: China Foreign Exchange Trade System (chinamoney.com.cn). Dato del 2026-10-20T01:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">China Foreign Exchange Trade System (chinamoney.com.cn)</source>
+</item>
+</channel>
+</rss>

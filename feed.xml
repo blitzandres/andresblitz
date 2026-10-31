@@ -84,6 +84,13 @@
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
+<title>Currency RSS — Exchange-rate and central-bank feed (RSS 2.0) | Andrés Blitz</title>
+<link>https://andresblitz.com/projects/currency-rss/</link>
+<guid isPermaLink="true">https://andresblitz.com/projects/currency-rss/</guid>
+<description>Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item.</description>
+<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
 <title>Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/elevatron/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/elevatron/</guid>

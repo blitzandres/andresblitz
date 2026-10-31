@@ -74,6 +74,8 @@ El dólar observado proviene de mindicador.cl, que replica la información del B
 
 Son valores informativos. Antes de cambiar dinero confirma el precio en tu banco o casa de cambio.
 
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
 ## Otras tasas de cambio
 
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)

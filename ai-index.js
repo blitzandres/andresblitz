@@ -23,6 +23,8 @@ export const site = {
     "entry": "https://andresblitz.com/ai/",
     "feed": "https://andresblitz.com/feed.xml",
     "feed_el70": "https://andresblitz.com/70/feed.xml",
+    "feed_rates": "https://andresblitz.com/rates/feed.xml",
+    "rates_json": "https://andresblitz.com/rates/index.json",
     "api": {
       "site": "https://andresblitz-ai-api.blitzandres.workers.dev/api/site",
       "page": "https://andresblitz-ai-api.blitzandres.workers.dev/api/page?path={path}",
@@ -230,6 +232,17 @@ export const site = {
       "last_updated": "2026-10-31"
     },
     {
+      "slug": "projects-currency-rss",
+      "title": "Currency RSS — Exchange-rate and central-bank feed (RSS 2.0) | Andrés Blitz",
+      "url": "https://andresblitz.com/projects/currency-rss/",
+      "md": "https://andresblitz.com/projects/currency-rss/index.md",
+      "json": "https://andresblitz.com/api/page/projects-currency-rss.json",
+      "kind": "project",
+      "lang": "en-CA",
+      "summary": "Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item.",
+      "last_updated": "2026-10-31"
+    },
+    {
       "slug": "projects-elevatron",
       "title": "Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz",
       "url": "https://andresblitz.com/projects/elevatron/",
@@ -406,6 +419,12 @@ export const site = {
       "url": "https://andresblitz.com/projects/compute-share-pilot/",
       "md": "https://andresblitz.com/projects/compute-share-pilot/index.md",
       "summary": "Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs."
+    },
+    {
+      "name": "Currency RSS — Exchange-rate and central-bank feed (RSS 2.0)",
+      "url": "https://andresblitz.com/projects/currency-rss/",
+      "md": "https://andresblitz.com/projects/currency-rss/index.md",
+      "summary": "Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item."
     },
     {
       "name": "Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access",

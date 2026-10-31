@@ -25,6 +25,8 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - name: Fetch rates, pre-render HTML and rebuild AI layer
         run: node scripts/bake-rates.mjs
+      - name: Bake rates RSS feed
+        run: node scripts/bake-feed.mjs
       - name: Commit if changed
         run: |
           if git diff --quiet; then echo "No changes"; exit 0; fi
