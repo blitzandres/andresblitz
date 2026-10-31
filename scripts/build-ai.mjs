@@ -32,7 +32,7 @@ const lastUpdated = (file) => {
 };
 const stripLayer = (html) => html
   .replace(new RegExp(`\\n?${START}[\\s\\S]*?${END}`, 'g'), '')
-  .replace(new RegExp(`${FSTART}[\\s\\S]*?${FEND}`, 'g'), '');
+  .replace(new RegExp(`${FSTART}[\\s\\S]*?${FEND}\\n?`, 'g'), '');
 const yq = (s) => JSON.stringify(String(s ?? ''));
 const safeJson = (o, sp) => JSON.stringify(o, null, sp).replace(/</g, '\\u003c');
 
@@ -79,6 +79,7 @@ for (const file of walk(ROOT).sort()) {
 const EXTRA = {
   '/70/': { topics: ['El 70', 'ganadería', 'Zulia', 'Venezuela'], geo: { place: 'La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela', lat: 10.4165941, lng: -72.2108835 }, note: 'El 70 — finca ganadera (en español). La Villa del Rosario, Rosario de Perijá, Zulia. Geo: 10.4165941,-72.2108835.' },
   '/tasa-bcv/': { topics: ['Tasa BCV', 'tipo de cambio', 'Venezuela', 'Maracaibo'], geo: { place: 'Maracaibo, Zulia, Venezuela' }, note: 'Tasa BCV — tipo de cambio oficial del Banco Central de Venezuela (en español). Maracaibo, Zulia.' },
+  '/dolar-argentina/': { topics: ['Dólar hoy', 'dólar blue', 'dólar MEP', 'tipo de cambio', 'Argentina'], note: 'Dólar hoy en Argentina — oficial, blue, MEP, CCL, cripto y tarjeta, con conversor ARS ↔ USD (en español).' },
 };
 
 function markdownFor(p) {
@@ -144,6 +145,7 @@ ${pages.filter((p) => p.kind === 'project-subpage').map((p) => line(p)).join('\n
 
 ${byPath('/70/') ? `- [El 70](${byPath('/70/').mdUrl}): ${EXTRA['/70/'].note}` : ''}
 ${byPath('/tasa-bcv/') ? `- [Tasa BCV](${byPath('/tasa-bcv/').mdUrl}): ${EXTRA['/tasa-bcv/'].note}` : ''}
+${byPath('/dolar-argentina/') ? `- [Dólar Argentina](${byPath('/dolar-argentina/').mdUrl}): ${EXTRA['/dolar-argentina/'].note}` : ''}
 
 ## AI layer status
 
