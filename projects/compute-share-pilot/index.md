@@ -1,5 +1,5 @@
 ---
-title: "Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz"
+title: "Compute Share Pilot — Trusted Compute for AI | Andrés Blitz"
 description: "Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs."
 url: "https://andresblitz.com/projects/compute-share-pilot/"
 last_updated: "2026-10-31"

@@ -1046,7 +1046,7 @@ Prototype
 ---
 
 ---
-title: "Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz"
+title: "Compute Share Pilot — Trusted Compute for AI | Andrés Blitz"
 description: "Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs."
 url: "https://andresblitz.com/projects/compute-share-pilot/"
 last_updated: "2026-10-31"
@@ -1106,7 +1106,7 @@ Pilot
 ---
 
 ---
-title: "Currency RSS — Exchange-rate and central-bank feed (RSS 2.0) | Andrés Blitz"
+title: "Currency RSS — FX Rates and Central-Bank Feed | Andrés Blitz"
 description: "Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item."
 url: "https://andresblitz.com/projects/currency-rss/"
 last_updated: "2026-10-31"
@@ -1294,7 +1294,7 @@ Shipped 2025
 ---
 
 ---
-title: "Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz"
+title: "Home History — Time-Capsule House Timeline | Andrés Blitz"
 description: "Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP."
 url: "https://andresblitz.com/projects/home-history/"
 last_updated: "2026-10-31"
@@ -1693,7 +1693,7 @@ On hold · 114 commits
 ---
 
 ---
-title: "NetWatch — Local Network Monitoring Dashboard (Python + Flask) | Andrés Blitz"
+title: "NetWatch — Local Network Monitoring Dashboard | Andrés Blitz"
 description: "NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data."
 url: "https://andresblitz.com/projects/netwatch/"
 last_updated: "2026-10-31"

@@ -242,7 +242,7 @@ export const site = {
     },
     {
       "slug": "projects-compute-share-pilot",
-      "title": "Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz",
+      "title": "Compute Share Pilot — Trusted Compute for AI | Andrés Blitz",
       "url": "https://andresblitz.com/projects/compute-share-pilot/",
       "md": "https://andresblitz.com/projects/compute-share-pilot/index.md",
       "json": "https://andresblitz.com/api/page/projects-compute-share-pilot.json",
@@ -253,7 +253,7 @@ export const site = {
     },
     {
       "slug": "projects-currency-rss",
-      "title": "Currency RSS — Exchange-rate and central-bank feed (RSS 2.0) | Andrés Blitz",
+      "title": "Currency RSS — FX Rates and Central-Bank Feed | Andrés Blitz",
       "url": "https://andresblitz.com/projects/currency-rss/",
       "md": "https://andresblitz.com/projects/currency-rss/index.md",
       "json": "https://andresblitz.com/api/page/projects-currency-rss.json",
@@ -286,7 +286,7 @@ export const site = {
     },
     {
       "slug": "projects-home-history",
-      "title": "Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz",
+      "title": "Home History — Time-Capsule House Timeline | Andrés Blitz",
       "url": "https://andresblitz.com/projects/home-history/",
       "md": "https://andresblitz.com/projects/home-history/index.md",
       "json": "https://andresblitz.com/api/page/projects-home-history.json",
@@ -330,7 +330,7 @@ export const site = {
     },
     {
       "slug": "projects-netwatch",
-      "title": "NetWatch — Local Network Monitoring Dashboard (Python + Flask) | Andrés Blitz",
+      "title": "NetWatch — Local Network Monitoring Dashboard | Andrés Blitz",
       "url": "https://andresblitz.com/projects/netwatch/",
       "md": "https://andresblitz.com/projects/netwatch/index.md",
       "json": "https://andresblitz.com/api/page/projects-netwatch.json",
@@ -453,13 +453,13 @@ export const site = {
       "summary": "BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices."
     },
     {
-      "name": "Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs",
+      "name": "Compute Share Pilot — Trusted Compute for AI",
       "url": "https://andresblitz.com/projects/compute-share-pilot/",
       "md": "https://andresblitz.com/projects/compute-share-pilot/index.md",
       "summary": "Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs."
     },
     {
-      "name": "Currency RSS — Exchange-rate and central-bank feed (RSS 2.0)",
+      "name": "Currency RSS — FX Rates and Central-Bank Feed",
       "url": "https://andresblitz.com/projects/currency-rss/",
       "md": "https://andresblitz.com/projects/currency-rss/index.md",
       "summary": "Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item."
@@ -477,7 +477,7 @@ export const site = {
       "summary": "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
     },
     {
-      "name": "Home History — A Time-Capsule Timeline for a House (Next.js MVP)",
+      "name": "Home History — Time-Capsule House Timeline",
       "url": "https://andresblitz.com/projects/home-history/",
       "md": "https://andresblitz.com/projects/home-history/index.md",
       "summary": "Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP."
@@ -495,7 +495,7 @@ export const site = {
       "summary": "Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it."
     },
     {
-      "name": "NetWatch — Local Network Monitoring Dashboard (Python + Flask)",
+      "name": "NetWatch — Local Network Monitoring Dashboard",
       "url": "https://andresblitz.com/projects/netwatch/",
       "md": "https://andresblitz.com/projects/netwatch/index.md",
       "summary": "NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data."

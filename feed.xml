@@ -84,14 +84,14 @@
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
-<title>Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz</title>
+<title>Compute Share Pilot — Trusted Compute for AI | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/compute-share-pilot/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/compute-share-pilot/</guid>
 <description>Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs.</description>
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
-<title>Currency RSS — Exchange-rate and central-bank feed (RSS 2.0) | Andrés Blitz</title>
+<title>Currency RSS — FX Rates and Central-Bank Feed | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/currency-rss/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/currency-rss/</guid>
 <description>Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item.</description>
@@ -112,7 +112,7 @@
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
-<title>Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz</title>
+<title>Home History — Time-Capsule House Timeline | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/home-history/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/home-history/</guid>
 <description>Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP.</description>
@@ -140,7 +140,7 @@
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
-<title>NetWatch — Local Network Monitoring Dashboard (Python + Flask) | Andrés Blitz</title>
+<title>NetWatch — Local Network Monitoring Dashboard | Andrés Blitz</title>
 <link>https://andresblitz.com/projects/netwatch/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/netwatch/</guid>
 <description>NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data.</description>
