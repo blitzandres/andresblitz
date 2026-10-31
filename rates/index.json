@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-10-31T17:31:50.072Z",
+ "generated": "2026-10-31T20:20:56.294Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -16,7 +16,7 @@
    "value": 1565,
    "unit": "ARS por USD",
    "source": "dolarapi.com",
-   "time": "2026-10-31T14:57:00.000Z",
+   "time": "2026-10-31T17:57:00.000Z",
    "url": "https://andresblitz.com/dolar-argentina/"
   },
   "dolar-colombia": {
@@ -59,16 +59,43 @@
    "time": "2026-10-30T04:00:00.000Z",
    "url": "https://andresblitz.com/tasa-bcv/"
   },
+  "usdt-ve": {
+   "title": "Venezuela: USDT P2P (VES)",
+   "value": 994.85,
+   "unit": "VES por USDT",
+   "extra": "brecha +11.87 % vs. Tasa BCV",
+   "source": "CriptoYa (mediana P2P)",
+   "time": "2026-10-31T20:20:34.000Z",
+   "url": "https://andresblitz.com/dolar-cripto/"
+  },
+  "usdt-ar": {
+   "title": "Argentina: USDT P2P (ARS)",
+   "value": 1651.5,
+   "unit": "ARS por USDT",
+   "extra": "brecha +5.87 % vs. Dólar oficial",
+   "source": "CriptoYa (mediana P2P)",
+   "time": "2026-10-31T20:20:49.000Z",
+   "url": "https://andresblitz.com/dolar-cripto/"
+  },
+  "usdt-co": {
+   "title": "Colombia: USDT P2P (COP)",
+   "value": 3178.04,
+   "unit": "COP por USDT",
+   "extra": "brecha -0.16 % vs. TRM",
+   "source": "CriptoYa (mediana P2P)",
+   "time": "2026-10-31T20:20:49.000Z",
+   "url": "https://andresblitz.com/dolar-cripto/"
+  },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 77516,
+   "value": 77525,
    "unit": "USD",
-   "change24h": 0.42,
-   "extra": "CAD 108341",
+   "change24h": 0.89,
+   "extra": "CAD 108353",
    "source": "CoinGecko",
-   "time": "2026-10-31T17:30:51.000Z",
+   "time": "2026-10-31T20:20:10.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-10-31T17:31:47.281Z"
+   "fetched": "2026-10-31T20:20:54.117Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",
