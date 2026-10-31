@@ -1,5 +1,5 @@
 ---
-title: "IPTV Player — Latin America & USA Channels in the Browser (HLS.js) | Andrés Blitz"
+title: "IPTV Player — Latin America & USA Live TV | Andrés Blitz"
 description: "A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal."
 url: "https://andresblitz.com/projects/iptv-player/"
 last_updated: "2026-10-31"

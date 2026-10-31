@@ -794,7 +794,7 @@ British Columbia · Canada
 ---
 
 ---
-title: "Blitz Analytics — Privacy-Minded Site Analytics on Cloudflare Workers | Andrés Blitz"
+title: "Blitz Analytics — Privacy-Minded Web Analytics | Andrés Blitz"
 description: "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data."
 url: "https://andresblitz.com/projects/blitz-analytics/"
 last_updated: "2026-10-31"
@@ -984,7 +984,7 @@ Play Blitzy's World full screen: fly a glowing orb through an endless universe, 
 ---
 
 ---
-title: "BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz"
+title: "BluthScan — Real-Time Bluetooth Scanner in 3D | Andrés Blitz"
 description: "BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices."
 url: "https://andresblitz.com/projects/bluth-scan/"
 last_updated: "2026-10-31"
@@ -1567,7 +1567,7 @@ Every project page links to its GitHub repo (and live demo when one exists). Bro
 ---
 
 ---
-title: "IPTV Player — Latin America & USA Channels in the Browser (HLS.js) | Andrés Blitz"
+title: "IPTV Player — Latin America & USA Live TV | Andrés Blitz"
 description: "A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal."
 url: "https://andresblitz.com/projects/iptv-player/"
 last_updated: "2026-10-31"
@@ -1627,7 +1627,7 @@ Live · 9 commits
 ---
 
 ---
-title: "Blitz Engine — Open-Source Behavioral Signal Analyzer (lie-detector) | Andrés Blitz"
+title: "Blitz Engine — Behavioral Signal Analyzer | Andrés Blitz"
 description: "Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it."
 url: "https://andresblitz.com/projects/lie-detector/"
 last_updated: "2026-10-31"
@@ -1883,7 +1883,7 @@ Active
 ---
 
 ---
-title: "SIGNET — Signal Intelligence Network Visualization (Research Thesis) | Andrés Blitz"
+title: "SIGNET — Signal Network Visualization Thesis | Andrés Blitz"
 description: "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired."
 url: "https://andresblitz.com/projects/signet-thesis/"
 last_updated: "2026-10-31"
