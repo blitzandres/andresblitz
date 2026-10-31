@@ -106,7 +106,7 @@ export const site = {
     },
     {
       "slug": "dolar-argentina",
-      "title": "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto | Cotización",
+      "title": "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto",
       "url": "https://andresblitz.com/dolar-argentina/",
       "md": "https://andresblitz.com/dolar-argentina/index.md",
       "json": "https://andresblitz.com/api/page/dolar-argentina.json",
@@ -142,7 +142,7 @@ export const site = {
     },
     {
       "slug": "dolar-colombia",
-      "title": "Dólar hoy en Colombia: TRM oficial y conversor de pesos | Cotización",
+      "title": "Dólar hoy en Colombia: TRM oficial y conversor de pesos",
       "url": "https://andresblitz.com/dolar-colombia/",
       "md": "https://andresblitz.com/dolar-colombia/index.md",
       "json": "https://andresblitz.com/api/page/dolar-colombia.json",

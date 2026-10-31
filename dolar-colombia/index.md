@@ -1,5 +1,5 @@
 ---
-title: "Dólar hoy en Colombia: TRM oficial y conversor de pesos | Cotización"
+title: "Dólar hoy en Colombia: TRM oficial y conversor de pesos"
 description: "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares."
 url: "https://andresblitz.com/dolar-colombia/"
 last_updated: "2026-10-31"
