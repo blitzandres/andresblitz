@@ -2,7 +2,7 @@
 title: "NetWatch — Local Network Monitoring Dashboard (Python + Flask) | Andrés Blitz"
 description: "NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data."
 url: "https://andresblitz.com/projects/netwatch/"
-last_updated: "2026-10-16"
+last_updated: "2026-10-29"
 lang: "en-CA"
 ---
 

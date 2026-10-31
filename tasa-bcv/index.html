@@ -77,6 +77,9 @@ h3{font-size:inherit;margin:0;display:inline}
 @media (min-width:560px){#fecha{min-height:1.4em}}
 @media (min-width:641px){.grid{min-height:194px}}
 .tasa .k{display:block;font-weight:400}
+.ult{font-size:.85em;opacity:.75}.ult[hidden]{display:none}
+#cargando{position:static;grid-column:1/-1;font-size:.9em}
+@media (max-width:640px){main{padding-top:10px}.grid{min-height:0;margin-top:8px}#fecha{min-height:1.4em}h1{font-size:clamp(18px,5vw,24px)}#tasas-hoy .v{font-size:clamp(20px,6vw,26px)}}
 .tasa .v data{font:inherit;color:inherit}
 footer nav a{margin-right:2px}
 .tasa .k{font-size:clamp(11.5px,3.2vw,13px);color:var(--mute);margin:0}
@@ -202,11 +205,11 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
 <section id="tasas-hoy" aria-labelledby="h-tasas">
   <h2 id="h-tasas" class="sr">Dólar BCV, euro BCV y bitcoin hoy en Venezuela</h2>
   <div class="grid">
-    <article class="card tasa" id="t-usd" aria-labelledby="k-usd" hidden><h3 class="k" id="k-usd">Dólar BCV (USD)</h3><p class="v" data-v></p><p class="s">por 1 dólar</p></article>
-    <article class="card tasa" id="t-eur" aria-labelledby="k-eur" hidden><h3 class="k" id="k-eur">Euro BCV (EUR)</h3><p class="v" data-v></p><p class="s">por 1 euro</p></article>
+    <article class="card tasa" id="t-usd" aria-labelledby="k-usd"><h3 class="k" id="k-usd">Dólar BCV (USD)</h3><p class="v" data-v data-bake="USD">889,26 Bs</p><p class="s">por 1 dólar <span class="ult" data-ult>· último valor conocido</span></p></article>
+    <article class="card tasa" id="t-eur" aria-labelledby="k-eur"><h3 class="k" id="k-eur">Euro BCV (EUR)</h3><p class="v" data-v data-bake="EUR">992,80 Bs</p><p class="s">por 1 euro <span class="ult" data-ult>· último valor conocido</span></p></article>
     <article class="card tasa" id="t-btc" aria-labelledby="k-btc" hidden><h3 class="k" id="k-btc">Bitcoin (BTC)</h3><p class="v" data-v></p><p class="s" data-s></p></article>
     <article class="card tasa" id="t-par" aria-labelledby="k-par" hidden><h3 class="k" id="k-par">Dólar paralelo · promedio no oficial</h3><p class="v" data-v></p><p class="s" data-s></p></article>
-  <p id="cargando" class="mute">Consultando la tasa oficial del dólar BCV y del euro BCV de hoy, publicada por el Banco Central de Venezuela…</p>
+  <p id="cargando" class="mute"></p>
   </div>
   <noscript><p class="mute">Para ver el precio del dólar hoy en Venezuela según la tasa oficial del BCV, active JavaScript o consulte el <a href="https://www.bcv.org.ve/">sitio oficial del Banco Central de Venezuela</a>.</p></noscript>
 </section>
@@ -405,24 +408,33 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
  var el=document.getElementById('tasas'),$=function(i){return document.getElementById(i)};
  var nf=function(n,d){return n.toLocaleString('es-VE',{minimumFractionDigits:d,maximumFractionDigits:d})};
  var bs=function(n){return nf(n,2)+' Bs'};
- function j(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()})}
+ function j(u,ms){var c=window.AbortController?new AbortController():null,t=c&&setTimeout(function(){c.abort()},ms||4500);return fetch(u,{cache:'no-store',signal:c&&c.signal}).then(function(r){clearTimeout(t);if(!r.ok)throw 0;return r.json()})}
+ var FB={"USD":889.2553,"EUR":992.80018713,"f":"2026-10-30T00:00:00-04:00"};
  function ok(n){return typeof n==='number'&&isFinite(n)&&n>0}
  var R={},PAR=null,bEd=false;
  function show(id,v,s,raw){var c=$(id);if(v==null){c.hidden=true;return}var e=c.querySelector('[data-v]');e.textContent='';var d=document.createElement('data');d.value=String(raw);d.textContent=v;e.appendChild(d);if(s!=null)c.querySelector('[data-s]').textContent=s;c.hidden=false}
  function ld(f){var x=document.getElementById('ld-rates');if(x)x.remove();var g=[];
   [['USD',R.USD],['EUR',R.EUR]].forEach(function(p){if(p[1])g.push({"@type":"ExchangeRateSpecification","currency":p[0],"currentExchangeRate":{"@type":"UnitPriceSpecification","price":p[1],"priceCurrency":"VES"},"description":"Tasa oficial BCV "+p[0]+"/VES"+(f?" ("+f+")":"")})});
   if(!g.length)return;var s=document.createElement('script');s.type='application/ld+json';s.id='ld-rates';s.textContent=JSON.stringify({"@context":"https://schema.org","@graph":g});document.head.appendChild(s)}
+ function ult(on){document.querySelectorAll('[data-ult]').forEach(function(x){x.hidden=!on})}
+ function previo(){var c=null;try{c=JSON.parse(localStorage.getItem('bcv-last')||'null')}catch(e){}
+  if(!(c&&ok(c.USD))||(FB.f&&c.f&&c.f<FB.f))c=FB;if(!ok(c.USD))return;R={USD:c.USD};if(ok(c.EUR))R.EUR=c.EUR;
+  show('t-usd',bs(R.USD),null,R.USD);show('t-eur',R.EUR?bs(R.EUR):null,null,R.EUR);ult(true);
+  var d=new Date(c.f);if(!isNaN(d))$('fecha').textContent='Último valor conocido: '+d.toLocaleDateString('es-VE',{day:'numeric',month:'short',year:'numeric',timeZone:'America/Caracas'})+'. Actualizando…';
+  var sel=$('c-mon');sel.innerHTML='';['USD','EUR'].forEach(function(m){if(R[m]){var o=document.createElement('option');o.value=m;o.textContent=m;sel.appendChild(o)}});calc('div');
+  try{performance.mark('bcv-rate-visible')}catch(e){}}
  function cargar(){
   Promise.allSettled([j('https://ve.dolarapi.com/v1/dolares/oficial'),j('https://ve.dolarapi.com/v1/euros/oficial'),j('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd'),j('https://ve.dolarapi.com/v1/dolares/paralelo')]).then(function(r){
    var p=[],fecha='',fs='';
-   R={};
+   var R0=R;R={};
    if(r[0].status==='fulfilled'&&ok(r[0].value.promedio)){R.USD=r[0].value.promedio;p.push('BCV Dólar <b>'+bs(R.USD)+'</b>');fecha=r[0].value.fechaActualizacion}
    if(r[1].status==='fulfilled'&&ok(r[1].value.promedio)){R.EUR=r[1].value.promedio;p.push('BCV Euro <b>'+bs(R.EUR)+'</b>');fecha=fecha||r[1].value.fechaActualizacion}
    var b=r[2].status==='fulfilled'&&r[2].value.bitcoin&&r[2].value.bitcoin.usd;
    if(ok(b))p.push('Bitcoin <b>US$ '+Math.round(b).toLocaleString('es-VE')+'</b>');
    if(fecha){var d=new Date(fecha);if(!isNaN(d)){fs=d.toLocaleDateString('es-VE',{day:'numeric',month:'short',year:'numeric',timeZone:'America/Caracas'});p.push('<span class="f">BCV '+fs+'</span>')}}
+   if(R.USD){ult(false);try{localStorage.setItem('bcv-last',JSON.stringify({USD:R.USD,EUR:R.EUR||null,f:fecha}))}catch(e){}}else{R=R0}
    if(!p.length){el.hidden=true}else{el.innerHTML=p.join('<span aria-hidden="true" style="opacity:.35">·</span>');el.hidden=false}
-   show('t-usd',R.USD?bs(R.USD):null,null,R.USD);show('t-eur',R.EUR?bs(R.EUR):null,null,R.EUR);
+   if(R!==R0){show('t-usd',R.USD?bs(R.USD):null,null,R.USD);show('t-eur',R.EUR?bs(R.EUR):null,null,R.EUR)}
    var pa=r[3].status==='fulfilled'&&r[3].value,pd=pa&&new Date(pa.fechaActualizacion),pok=pa&&ok(pa.promedio)&&!isNaN(pd)&&Date.now()-pd<72*3600e3;
    show('t-par',pok?bs(pa.promedio):null,pok?'No es la tasa BCV · fuente: ve.dolarapi.com · '+pd.toLocaleString('es-VE',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit',timeZone:'America/Caracas'}).replace(/ /g,'\u00a0'):null,pok&&pa.promedio);
    show('t-btc',ok(b)?'US$ '+Math.round(b).toLocaleString('es-VE'):null,ok(b)&&R.USD?bs(b*R.USD):'',b);
@@ -430,8 +442,8 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
    if(p.length){var fe=$('fecha');fe.textContent='';if(fs){fe.appendChild(document.createTextNode('Tasa BCV vigente: '));var t1=document.createElement('time');t1.dateTime=String(fecha).slice(0,10);t1.textContent=fs;fe.appendChild(t1);fe.appendChild(document.createTextNode('. '))}
     fe.appendChild(document.createTextNode('Actualizado: '));var t2=document.createElement('time');t2.dateTime=now.toISOString();t2.textContent=hh+' (hora de Venezuela)';fe.appendChild(t2);fe.appendChild(document.createTextNode('.'));fe.hidden=false;
     try{var m=$('ld-main'),G=JSON.parse(m.textContent);G['@graph'].forEach(function(n){if(n['@type']==='WebPage')n.dateModified=now.toISOString()});m.textContent=JSON.stringify(G)}catch(e){}
-   }else $('fecha').textContent='';
-   $('cargando').textContent=p.length?'':'No fue posible cargar las tasas en este momento. Intente de nuevo más tarde.';
+   }else if(!R.USD)$('fecha').textContent='';
+   $('cargando').textContent=p.length?'':(R.USD?'Sin conexión con la fuente: se muestra el último valor conocido.':'No fue posible cargar las tasas en este momento. Intente de nuevo más tarde.');
    var sel=$('c-mon'),cur=sel.value;sel.innerHTML='';['USD','EUR'].forEach(function(m){if(R[m]){var o=document.createElement('option');o.value=m;o.textContent=m;sel.appendChild(o)}});
    if(cur&&R[cur])sel.value=cur;$('conv').hidden=!sel.options.length;if(sel.options.length)calc('div');
    ld(fs);PAR=pok?pa.promedio:null;tools();
@@ -478,7 +490,7 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
  var hs=$('historial');if('IntersectionObserver' in window){var ho=new IntersectionObserver(function(en){if(en.some(function(x){return x.isIntersecting})){ho.disconnect();hist()}},{rootMargin:'600px 0px'});ho.observe(hs)}else hist();
  function hora(){var h=$('hora-ve'),n=new Date();if(!h)return;try{h.textContent=n.toLocaleString('es-VE',{weekday:'long',hour:'numeric',minute:'2-digit',timeZone:'America/Caracas'})}catch(e){}}
  hora();setInterval(hora,30000);
- cargar();setInterval(cargar,5*60*1000);
+ previo();cargar();setInterval(cargar,5*60*1000);
 })();
 </script>
 <script>
@@ -509,7 +521,9 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
 </script>
 <script>
 (function(){var b='https://blitz-analytics.andres-491.workers.dev';
-['t.js','chat.js'].forEach(function(f){var s=document.createElement('script');s.src=b+'/'+f;s.defer=true;s.setAttribute('data-endpoint',b);document.body.appendChild(s)});})();
+function add(f){var s=document.createElement('script');s.src=b+'/'+f;s.defer=true;s.setAttribute('data-endpoint',b);document.body.appendChild(s)}
+add('t.js');function late(){(window.requestIdleCallback||setTimeout)(function(){add('chat.js')},{timeout:3000})}
+if(document.readyState==='complete')late();else addEventListener('load',late);})();
 </script>
 </body>
 </html>

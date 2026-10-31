@@ -16,17 +16,19 @@ Tasa de cambio oficial del Banco Central de Venezuela, válida en todo el país,
 
 ### Dólar BCV (USD)
 
-por 1 dólar
+889,26 Bs
+
+por 1 dólar · último valor conocido
 
 ### Euro BCV (EUR)
 
-por 1 euro
+992,80 Bs
+
+por 1 euro · último valor conocido
 
 ### Bitcoin (BTC)
 
 ### Dólar paralelo · promedio no oficial
-
-Consultando la tasa oficial del dólar BCV y del euro BCV de hoy, publicada por el Banco Central de Venezuela…
 
 ## Calculadora: dólares y euros ↔ bolívares
 

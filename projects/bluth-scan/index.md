@@ -2,7 +2,7 @@
 title: "BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz"
 description: "BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices."
 url: "https://andresblitz.com/projects/bluth-scan/"
-last_updated: "2026-10-16"
+last_updated: "2026-10-29"
 lang: "en-CA"
 ---
 
