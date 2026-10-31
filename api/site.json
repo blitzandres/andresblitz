@@ -394,6 +394,24 @@
       "last_updated": "2026-10-31"
     },
     {
+      "slug": "salario-en-dolares",
+      "title": "Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a USD",
+      "url": "https://andresblitz.com/salario-en-dolares/",
+      "md": "https://andresblitz.com/salario-en-dolares/index.md",
+      "json": "https://andresblitz.com/api/page/salario-en-dolares.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "salario en dólares",
+        "sueldo en dólares",
+        "convertir salario",
+        "tipo de cambio",
+        "paridad de poder adquisitivo"
+      ]
+    },
+    {
       "slug": "tasa-bcv",
       "title": "Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela",
       "url": "https://andresblitz.com/tasa-bcv/",

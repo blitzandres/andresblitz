@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a USD</title>
+<meta name="description" content="Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.">
+<link rel="canonical" href="https://andresblitz.com/salario-en-dolares/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Andrés Blitz">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#05070f">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_LA">
+<meta property="og:site_name" content="andresblitz.com">
+<meta property="og:title" content="Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a USD">
+<meta property="og:description" content="Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.">
+<meta property="og:url" content="https://andresblitz.com/salario-en-dolares/">
+<meta property="og:image" content="https://andresblitz.com/assets/og-cover.png">
+<meta property="article:modified_time" content="2026-10-31T17:31:50.072Z">
+<link rel="alternate" type="application/rss+xml" title="Feed de tasas" href="https://andresblitz.com/rates/feed.xml">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a USD","url":"https://andresblitz.com/salario-en-dolares/","inLanguage":"es","applicationCategory":"FinanceApplication","operatingSystem":"Web","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"datePublished":"2026-10-31","dateModified":"2026-10-31T17:31:50.072Z","author":{"@type":"Person","name":"Andrés Blitz","url":"https://andresblitz.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo se convierte un salario a dólares?","acceptedAnswer":{"@type":"Answer","text":"Se divide el salario en moneda local por la tasa de referencia del día, expresada en unidades de moneda local por 1 dólar. Para un salario anual, el resultado mensual es el anual dividido entre 12."}},{"@type":"Question","name":"¿Qué tasa de cambio usa esta calculadora?","acceptedAnswer":{"@type":"Answer","text":"Las mismas tasas publicadas en este sitio y actualizadas cerca de cada 30 minutos: tasa BCV para Venezuela, TRM para Colombia, FIX de Banxico para México, dólar oficial y dólar blue para Argentina, tasa de mercado para Perú, dólar observado para Chile y el USD/CAD del Banco de Canadá. Cada una muestra su fuente y su fecha."}},{"@type":"Question","name":"¿Por qué Argentina tiene dos resultados?","acceptedAnswer":{"@type":"Answer","text":"Porque conviven varios tipos de cambio. El oficial es el de referencia bancaria y el blue es el del mercado informal; según cuál uses, el mismo sueldo equivale a otra cantidad de dólares."}},{"@type":"Question","name":"¿Qué es la paridad de poder adquisitivo (PPA)?","acceptedAnswer":{"@type":"Answer","text":"Es un factor del Banco Mundial que indica cuántas unidades de moneda local compran lo mismo que un dólar en Estados Unidos. Sirve para comparar el nivel de vida entre países mejor que el tipo de cambio de mercado. La calculadora la muestra solo donde hay datos recientes."}},{"@type":"Question","name":"¿Por qué no aparece la PPA para Venezuela?","acceptedAnswer":{"@type":"Answer","text":"El último dato del Banco Mundial para Venezuela es de 2011, anterior a varias reconversiones monetarias, así que no es útil para un salario actual y se omite."}},{"@type":"Question","name":"¿Este resultado sirve para un contrato o un trámite?","acceptedAnswer":{"@type":"Answer","text":"No. Es una conversión de referencia; para contratos, impuestos o trámites usa la tasa oficial que indique la autoridad o tu banco en la fecha correspondiente."}}]}</script>
+<style>
+:root{--bg:#05070f;--panel:#0b0f1c;--line:#1a2135;--text:#e7eaf2;--mute:#9aa3b8;--acc:#7fc8a9;--pad:clamp(12px,4vw,20px)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:clamp(14.5px,3.9vw,16px)/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;overflow-x:hidden}
+a{color:var(--acc)}
+main{max-width:760px;margin:0 auto;padding:clamp(10px,4vw,40px) var(--pad) 40px}
+h1{font-size:clamp(18px,5vw,32px);line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+h2{font-size:clamp(16px,4.4vw,20px);margin:28px 0 10px}
+.sub,.mute{color:var(--mute)}.sub{font-size:clamp(12.5px,3.4vw,15px);margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(10px,3vw,18px)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 0}
+.tasa{min-width:0;padding:10px 12px}.tasa.big{grid-column:1/-1}.tasa[hidden]{display:none}
+.tasa h3{font-size:clamp(11.5px,3.2vw,13px);color:var(--mute);font-weight:400;margin:0}
+.tasa .v{font-size:clamp(19px,5.8vw,28px);font-weight:650;line-height:1.15;margin:2px 0 0;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tasa.big .v{font-size:clamp(26px,8vw,40px)}
+.tasa .s{font-size:clamp(11px,3vw,12.5px);color:var(--mute);margin:1px 0 0;font-variant-numeric:tabular-nums}
+.fuente{font-size:12.5px;color:var(--mute);margin:8px 0 0;min-height:1.4em}
+.calc label{font-size:12.5px;color:var(--mute);display:block;margin:8px 0 3px}
+.calc input,.calc select{min-height:44px;width:100%;min-width:0;background:#05070f;color:var(--text);border:1px solid #2c3550;border-radius:10px;padding:8px 12px;font:inherit;font-size:16px;font-variant-numeric:tabular-nums}
+.nota{font-size:12.5px;color:var(--mute);margin:6px 0 0}
+details{border-bottom:1px solid var(--line);padding:8px 0}summary{cursor:pointer;font-weight:600}summary h3{display:inline;font-size:inherit;margin:0}details p{margin:6px 0 0}
+footer{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute);font-size:13px}
+</style>
+<style>
+.aviso{border-left:3px solid #e0b252;background:#16130a;padding:10px 12px;border-radius:8px;margin:12px 0;font-weight:600}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.row2>div{min-width:0}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.res .big{grid-column:1/-1}
+.res .tasa .v{font-size:clamp(17px,5vw,24px)}.neg{color:#e98a8a}.pos{color:var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.calc .btn{min-height:36px;width:auto;margin-top:6px;background:#10182b;color:var(--acc);border:1px solid #2c3550;border-radius:8px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
+</style>
+<!-- ai-layer:start -->
+<link rel="alternate" type="text/markdown" href="https://andresblitz.com/salario-en-dolares/index.md" />
+<link rel="alternate" type="application/rss+xml" title="Andrés Blitz" href="https://andresblitz.com/feed.xml" />
+<script type="application/json" id="ai-structure">{"page":{"title":"Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a USD","url":"https://andresblitz.com/salario-en-dolares/","md":"https://andresblitz.com/salario-en-dolares/index.md","summary":"Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.","last_updated":"2026-10-31"},"site":{"name":"Andrés Blitz","llms":"https://andresblitz.com/llms.txt","agent":"https://andresblitz.com/agent.json","sections":["https://andresblitz.com/index.md","https://andresblitz.com/projects/index.md","https://andresblitz.com/70/index.md","https://andresblitz.com/tasa-bcv/index.md"]}}</script>
+<!-- ai-layer:end -->
+</head>
+<body>
+<main id="contenido">
+<header>
+  <h1>Salario en dólares: convierte tu sueldo a USD</h1>
+  <p class="sub">Escribe tu salario mensual o anual en moneda local y mira cuánto equivale en dólares estadounidenses con la tasa de referencia de hoy.</p>
+</header>
+<p class="aviso" role="note">Conversión de referencia; no es una oferta ni un dato de salarios.</p>
+
+<section id="calculadora" class="card calc" aria-labelledby="h-calc">
+  <h2 id="h-calc" style="margin-top:0">Tu salario</h2>
+  <div class="row2">
+    <div><label for="s-monto">Salario</label><input id="s-monto" type="text" inputmode="decimal" autocomplete="off" placeholder="p. ej. 3.000.000"></div>
+    <div><label for="s-per">Periodo</label><select id="s-per"><option value="m" selected>Mensual</option><option value="a">Anual</option></select></div>
+  </div>
+  <label for="s-cur">Moneda</label>
+  <select id="s-cur"><option value="VE">bolívares (Venezuela, tasa BCV) (VES)</option><option value="CO" selected>pesos colombianos (COP)</option><option value="MX">pesos mexicanos (MXN)</option><option value="AR">pesos argentinos · dólar oficial (ARS)</option><option value="ARB">pesos argentinos · dólar blue (ARS)</option><option value="PE">soles (Perú) (PEN)</option><option value="CL">pesos chilenos (CLP)</option><option value="CAD">dólares canadienses (CAD)</option></select>
+  <div class="res" aria-live="polite">
+    <article class="card tasa big"><h3>En dólares (USD) por mes</h3><p class="v" id="r-mes">—</p><p class="s" id="r-alt">—</p></article>
+    <article class="card tasa"><h3>USD por año</h3><p class="v" id="r-anio">—</p></article>
+    <article class="card tasa"><h3>Dólares internacionales (PPA) por mes</h3><p class="v" id="r-ppa">—</p><p class="s" id="r-ppa-s">—</p></article>
+  </div>
+  <p class="fuente" id="r-ref">Tasa de referencia: —</p>
+</section>
+
+<section id="referencias" aria-labelledby="h-ref">
+  <h2 id="h-ref">Tasas que usa la calculadora</h2>
+  <table><thead><tr><th>Moneda</th><th class="n">por 1 USD</th><th>Fuente y fecha</th></tr></thead><tbody id="t-ref"></tbody></table>
+  <p class="nota">Se actualizan cerca de cada 30 minutos con los mismos datos de las páginas de cada país. Si no cargan, se usa el último valor guardado. Paridad de poder adquisitivo: Banco Mundial, indicador PA.NUS.PPP (datos de 2025, base actualizada el 2026-10-08).</p>
+</section>
+
+<section id="como" aria-labelledby="h-como">
+  <h2 id="h-como">Tipo de cambio y poder adquisitivo</h2>
+  <p>La conversión principal divide tu salario entre la tasa de referencia: cuántas unidades de tu moneda equivalen a un dólar hoy. Es la cifra útil para comparar con un sueldo pagado en dólares o con precios en dólares.</p>
+  <p>El tipo de cambio no dice cuánto alcanza el dinero en tu país. Para eso existe la <strong>paridad de poder adquisitivo (PPA)</strong> del Banco Mundial, que convierte tu salario en “dólares internacionales”: lo que podrías comprar en Estados Unidos con el mismo nivel de precios. Es un promedio nacional y anual, no un costo de vida de tu ciudad, y solo se muestra donde hay datos recientes.</p>
+  <p>Esta página no muestra ni estima salarios: solo convierte la cifra que tú escribes, y no la guarda ni la envía.</p>
+</section>
+
+<section id="faq" aria-labelledby="h-faq">
+  <h2 id="h-faq">Preguntas frecuentes</h2>
+  <details><summary><h3>¿Cómo se convierte un salario a dólares?</h3></summary><p>Se divide el salario en moneda local por la tasa de referencia del día, expresada en unidades de moneda local por 1 dólar. Para un salario anual, el resultado mensual es el anual dividido entre 12.</p></details>
+  <details><summary><h3>¿Qué tasa de cambio usa esta calculadora?</h3></summary><p>Las mismas tasas publicadas en este sitio y actualizadas cerca de cada 30 minutos: tasa BCV para Venezuela, TRM para Colombia, FIX de Banxico para México, dólar oficial y dólar blue para Argentina, tasa de mercado para Perú, dólar observado para Chile y el USD/CAD del Banco de Canadá. Cada una muestra su fuente y su fecha.</p></details>
+  <details><summary><h3>¿Por qué Argentina tiene dos resultados?</h3></summary><p>Porque conviven varios tipos de cambio. El oficial es el de referencia bancaria y el blue es el del mercado informal; según cuál uses, el mismo sueldo equivale a otra cantidad de dólares.</p></details>
+  <details><summary><h3>¿Qué es la paridad de poder adquisitivo (PPA)?</h3></summary><p>Es un factor del Banco Mundial que indica cuántas unidades de moneda local compran lo mismo que un dólar en Estados Unidos. Sirve para comparar el nivel de vida entre países mejor que el tipo de cambio de mercado. La calculadora la muestra solo donde hay datos recientes.</p></details>
+  <details><summary><h3>¿Por qué no aparece la PPA para Venezuela?</h3></summary><p>El último dato del Banco Mundial para Venezuela es de 2011, anterior a varias reconversiones monetarias, así que no es útil para un salario actual y se omite.</p></details>
+  <details><summary><h3>¿Este resultado sirve para un contrato o un trámite?</h3></summary><p>No. Es una conversión de referencia; para contratos, impuestos o trámites usa la tasa oficial que indique la autoridad o tu banco en la fecha correspondiente.</p></details>
+</section>
+
+<div data-rates-widget><p style="font-size:13px;color:#9aa3b8">Feed de tasas: <a href="/rates/feed.xml">RSS</a></p></div>
+<script src="/assets/rates-widget.js" defer></script>
+<section id="otros" aria-labelledby="h-otros">
+  <h2 id="h-otros">Tasas de cambio por país</h2>
+  <p><a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a> · <a href="/dolar-colombia/">Dólar hoy en Colombia</a> · <a href="/dolar-mexico/">Dólar hoy en México</a> · <a href="/dolar-argentina/">Dólar hoy en Argentina</a> · <a href="/dolar-peru/">Dólar hoy en Perú</a> · <a href="/dolar-chile/">Dólar hoy en Chile</a> · <a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a></p>
+</section>
+</main>
+<footer>
+  <p style="margin:0">Herramienta informativa y gratuita. Conversión de referencia, no constituye asesoría financiera ni laboral. Sin enlaces de afiliados. Paridad de poder adquisitivo: Banco Mundial, indicador PA.NUS.PPP (datos de 2025, base actualizada el 2026-10-08). Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a> · British Columbia, Canadá.</p>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/enviar-dinero/">Enviar dinero</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
+</footer>
+<script>
+(function(){
+var MID={"VE":{"value":889.2553,"source":"Banco Central de Venezuela vía ve.dolarapi.com","time":"2026-10-30T04:00:00.000Z"},"CO":{"value":3182.99,"source":"datos.gov.co (Superintendencia Financiera)","time":"2026-10-31T05:00:00.000Z"},"MX":{"value":18.7962,"source":"mx.dolarapi.com (FIX de Banxico)","time":"2026-10-30T18:00:00.000Z"},"AR":{"value":1560,"source":"dolarapi.com","time":"2026-10-30T18:55:00.000Z"},"ARB":{"value":1565,"source":"dolarapi.com","time":"2026-10-31T14:57:00.000Z"},"PE":{"value":3.460617,"source":"open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)","time":"2026-10-31T00:02:31.000Z"},"CL":{"value":993.22,"source":"mindicador.cl (dólar observado, Banco Central de Chile)","time":"2026-10-30T03:00:00.000Z"},"CAD":{"value":1.396,"source":"Bank of Canada Valet API (FXUSDCAD)","time":"2026-10-30T20:30:00.000Z"}};/*mid*/
+var PPP={"CO":{"value":1532.719303,"year":2025,"updated":"2026-10-08"},"MX":{"value":10.328951,"year":2025,"updated":"2026-10-08"},"AR":{"value":567.297421,"year":2025,"updated":"2026-10-08"},"PE":{"value":1.835923,"year":2025,"updated":"2026-10-08"},"CL":{"value":453.188563,"year":2025,"updated":"2026-10-08"},"CAD":{"value":1.166683,"year":2025,"updated":"2026-10-08"},"ARB":{"value":567.297421,"year":2025,"updated":"2026-10-08"}};
+var C={"VE":["VES","bolívares (Venezuela, tasa BCV)","tasa-bcv","Tasa BCV"],"CO":["COP","pesos colombianos","dolar-colombia","TRM"],"MX":["MXN","pesos mexicanos","dolar-mexico","FIX de Banxico"],"AR":["ARS","pesos argentinos · dólar oficial","dolar-argentina","dólar oficial"],"ARB":["ARS","pesos argentinos · dólar blue","dolar-argentina","dólar blue"],"PE":["PEN","soles (Perú)","dolar-peru","tasa de mercado"],"CL":["CLP","pesos chilenos","dolar-chile","dólar observado"],"CAD":["CAD","dólares canadienses","","Banco de Canadá USD/CAD"]};
+var SER={"VE":"tasa-bcv","CO":"dolar-colombia","MX":"dolar-mexico","AR":"dolar-argentina","ARB":"dolar-argentina-blue","PE":"dolar-peru","CL":"dolar-chile","CAD":"usdcad"};
+var $=function(s){return document.querySelector(s)};
+var num=function(s){s=String(s).replace(/[\s$]/g,'');if(!s)return NaN;var c=s.lastIndexOf(','),d=s.lastIndexOf('.');
+ if(c>-1&&d>-1){s=c>d?s.replace(/\./g,'').replace(',','.'):s.replace(/,/g,'')}
+ else if(c>-1){s=(s.split(',').length===2&&s.length-c-1!==3)?s.replace(',','.'):s.replace(/,/g,'')}
+ else if(d>-1&&(s.split('.').length>2||s.length-d-1===3))s=s.replace(/\./g,'');
+ return parseFloat(s)};
+var f=function(n,d){return isFinite(n)?n.toLocaleString('es',{minimumFractionDigits:d==null?2:0,maximumFractionDigits:d==null?2:d,useGrouping:'always'}):'—'};
+var fd=function(s){return new Date(s).toLocaleDateString('es',{dateStyle:'medium'})};
+function table(){$('#t-ref').innerHTML=Object.keys(C).map(function(k){var m=MID[k];return '<tr><td>'+(C[k][2]?'<a href="/'+C[k][2]+'/">'+C[k][1]+'</a>':C[k][1])+'</td><td class="n">'+(m?f(m.value,4)+' '+C[k][0]:'—')+'</td><td>'+(m?m.source+' · '+fd(m.time):'no disponible')+'</td></tr>'}).join('')}
+function calc(){var k=$('#s-cur').value,c=C[k][0],m=MID[k],v=num($('#s-monto').value),mes=$('#s-per').value==='a'?v/12:v;
+ $('#r-ref').textContent=m?'Tasa de referencia: '+f(m.value,4)+' '+c+' por 1 USD ('+C[k][3]+', '+m.source+', '+fd(m.time)+').':'Tasa de referencia no disponible.';
+ var ok=m&&isFinite(mes)&&mes>0;
+ $('#r-mes').textContent=ok?f(mes/m.value)+' USD':'—';$('#r-anio').textContent=ok?f(mes*12/m.value)+' USD':'—';
+ var o=k==='AR'?'ARB':k==='ARB'?'AR':null;
+ $('#r-alt').textContent=ok&&o&&MID[o]?'con el '+C[o][3]+': '+f(mes/MID[o].value)+' USD por mes':ok?f(mes,2)+' '+c+' por mes':'escribe tu salario';
+ var p=PPP[k];$('#r-ppa').textContent=ok&&p?f(mes/p.value)+' $ int.':'—';
+ $('#r-ppa-s').textContent=p?'Banco Mundial, PPA '+p.year:'sin dato reciente del Banco Mundial'}
+['#s-monto'].forEach(function(s){$(s).addEventListener('input',calc)});
+['#s-per','#s-cur'].forEach(function(s){$(s).addEventListener('change',calc)});
+table();calc();
+var ctl=window.AbortController?new AbortController():null;setTimeout(function(){ctl&&ctl.abort()},4500);
+fetch('/rates/index.json',Object.assign({cache:'no-cache'},ctl?{signal:ctl.signal}:{})).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+ Object.keys(SER).forEach(function(k){var s=d.series[SER[k]];if(s&&typeof s.value==='number')MID[k]={value:s.value,source:s.source,time:s.time}});table();calc()}).catch(function(){});
+})();
+</script>
+<script>
+(function(){var b='https://blitz-analytics.andres-491.workers.dev';
+function add(f){var s=document.createElement('script');s.src=b+'/'+f;s.defer=true;s.setAttribute('data-endpoint',b);document.body.appendChild(s)}
+add('t.js');function late(){(window.requestIdleCallback||setTimeout)(function(){add('chat.js')},{timeout:3000})}
+if(document.readyState==='complete')late();else addEventListener('load',late);})();
+</script>
+<!-- ai-layer-footer:start --><nav class="ai-links" aria-label="AI-readable versions" style="font:12px/1.6 system-ui,sans-serif;opacity:.6;text-align:center;margin:24px auto 16px;padding:0 12px;clear:both">AI-readable: <a href="/ai/" style="color:inherit">/ai/</a> &middot; <a href="/llms.txt" style="color:inherit">llms.txt</a> &middot; <a href="https://andresblitz.com/salario-en-dolares/index.md" rel="alternate" type="text/markdown" style="color:inherit">Markdown (.md)</a> &middot; <a href="/agent.json" style="color:inherit">agent.json</a> &middot; <a href="/agent.json" rel="alternate" type="application/json" title="Machine-readable site index" style="color:inherit">Site index (JSON)</a></nav><!-- ai-layer-footer:end -->
+</body>
+</html>
