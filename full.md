@@ -1175,7 +1175,7 @@ Live
 ---
 
 ---
-title: "Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz"
+title: "Elevatron — Space-Access Beam Concept Study | Andrés Blitz"
 description: "Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos."
 url: "https://andresblitz.com/projects/elevatron/"
 last_updated: "2026-10-31"
@@ -1235,7 +1235,7 @@ Complete
 ---
 
 ---
-title: "Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz"
+title: "Elite Island Movers — Moving Company Website | Andrés Blitz"
 description: "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
 url: "https://andresblitz.com/projects/elite-island-movers/"
 last_updated: "2026-10-31"
@@ -1815,7 +1815,7 @@ Live
 ---
 
 ---
-title: "RealWealth Portfolio — Live Real Estate Portfolio Dashboard (Next.js + Supabase) | Andrés Blitz"
+title: "RealWealth Portfolio — Real Estate Dashboard | Andrés Blitz"
 description: "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page."
 url: "https://andresblitz.com/projects/realwealth-portfolio/"
 last_updated: "2026-10-31"
@@ -2011,7 +2011,7 @@ Live · 17 commits
 ---
 
 ---
-title: "Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz"
+title: "Weinstein Stage Matrix — TradingView Indicator | Andrés Blitz"
 description: "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
 url: "https://andresblitz.com/projects/weinstein-stage-matrix/"
 last_updated: "2026-10-31"
