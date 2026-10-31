@@ -49,7 +49,7 @@
       "kind": "page",
       "lang": "es-VE",
       "summary": "Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia.",
-      "last_updated": "2026-10-19",
+      "last_updated": "2026-10-31",
       "topics": [
         "El 70",
         "ganadería",
@@ -82,7 +82,7 @@
     },
     {
       "slug": "home",
-      "title": "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · British Columbia",
+      "title": "Andrés Blitz | Full-Time Trader & Investor, British Columbia",
       "url": "https://andresblitz.com/",
       "md": "https://andresblitz.com/index.md",
       "json": "https://andresblitz.com/api/page/home.json",
@@ -122,7 +122,7 @@
       "kind": "project-subpage",
       "lang": "en-CA",
       "summary": "Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL.",
-      "last_updated": "2026-10-05"
+      "last_updated": "2026-10-31"
     },
     {
       "slug": "projects-blitzys-world-play",
@@ -133,7 +133,7 @@
       "kind": "project-subpage",
       "lang": "en-CA",
       "summary": "Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch.",
-      "last_updated": "2026-10-05"
+      "last_updated": "2026-10-31"
     },
     {
       "slug": "projects-bluth-scan",

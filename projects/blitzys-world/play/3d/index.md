@@ -2,7 +2,7 @@
 title: "Blitzy's World — 3D Levels (v0.3) | Andrés Blitz"
 description: "Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL."
 url: "https://andresblitz.com/projects/blitzys-world/play/3d/"
-last_updated: "2026-10-05"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 

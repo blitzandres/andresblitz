@@ -6,7 +6,7 @@
 title: "Agropecuaria Blimar · El 70 — finca ganadera km 70 Troncal 6, La Villa del Rosario, Zulia"
 description: "Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-10-19"
+last_updated: "2026-10-31"
 lang: "es-VE"
 ---
 
@@ -180,7 +180,7 @@ Son valores de referencia con fines informativos. Antes de comprar o vender divi
 ---
 
 ---
-title: "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · British Columbia"
+title: "Andrés Blitz | Full-Time Trader & Investor, British Columbia"
 description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
 last_updated: "2026-10-31"
@@ -478,7 +478,7 @@ Playable · v0.3 · 4 levels
 title: "Blitzy's World — 3D Levels (v0.3) | Andrés Blitz"
 description: "Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL."
 url: "https://andresblitz.com/projects/blitzys-world/play/3d/"
-last_updated: "2026-10-05"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -519,7 +519,7 @@ DOWN
 title: "Play Blitzy's World — Full Screen | Andrés Blitz"
 description: "Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch."
 url: "https://andresblitz.com/projects/blitzys-world/play/"
-last_updated: "2026-10-05"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
