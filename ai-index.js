@@ -253,6 +253,102 @@ export const site = {
       ]
     },
     {
+      "slug": "guias-cripto-brecha-dolar-cripto",
+      "title": "Cómo leer la brecha del dólar cripto vs. el oficial",
+      "url": "https://andresblitz.com/guias-cripto/brecha-dolar-cripto/",
+      "md": "https://andresblitz.com/guias-cripto/brecha-dolar-cripto/index.md",
+      "json": "https://andresblitz.com/api/page/guias-cripto-brecha-dolar-cripto.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Qué es la brecha entre el dólar cripto (USDT P2P) y el dólar oficial, cómo se calcula, qué la mueve y cómo leer los colores y el historial de la página de dólar cripto.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "guías cripto",
+        "Brecha del dólar cripto"
+      ]
+    },
+    {
+      "slug": "guias-cripto-como-funciona-p2p",
+      "title": "Cómo funciona el P2P de criptomonedas: guía básica",
+      "url": "https://andresblitz.com/guias-cripto/como-funciona-p2p/",
+      "md": "https://andresblitz.com/guias-cripto/como-funciona-p2p/index.md",
+      "json": "https://andresblitz.com/api/page/guias-cripto-como-funciona-p2p.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Qué es el mercado P2P de criptomonedas, cómo funciona una operación con custodia (escrow), qué son los anuncios, límites y métodos de pago, y qué cuidar. Explicado de forma neutral.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "guías cripto",
+        "Cómo funciona el P2P"
+      ]
+    },
+    {
+      "slug": "guias-cripto-estafas-comunes",
+      "title": "Estafas cripto comunes y cómo evitarlas",
+      "url": "https://andresblitz.com/guias-cripto/estafas-comunes/",
+      "md": "https://andresblitz.com/guias-cripto/estafas-comunes/index.md",
+      "json": "https://andresblitz.com/api/page/guias-cripto-estafas-comunes.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Las estafas más comunes con criptomonedas y P2P: comprobantes falsos, falsos soportes, promesas de ganancias, phishing, triangulación y más. Señales de alerta y cómo protegerte.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "guías cripto",
+        "Estafas cripto comunes"
+      ]
+    },
+    {
+      "slug": "guias-cripto",
+      "title": "Guías cripto en español: USDT, P2P, redes y estafas",
+      "url": "https://andresblitz.com/guias-cripto/",
+      "md": "https://andresblitz.com/guias-cripto/index.md",
+      "json": "https://andresblitz.com/api/page/guias-cripto.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Guías básicas en español sobre USDT y stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "guías cripto",
+        "USDT",
+        "stablecoins",
+        "P2P",
+        "redes",
+        "comisiones",
+        "estafas",
+        "brecha"
+      ]
+    },
+    {
+      "slug": "guias-cripto-que-es-usdt",
+      "title": "Qué es USDT y qué son las stablecoins: guía básica",
+      "url": "https://andresblitz.com/guias-cripto/que-es-usdt/",
+      "md": "https://andresblitz.com/guias-cripto/que-es-usdt/index.md",
+      "json": "https://andresblitz.com/api/page/guias-cripto-que-es-usdt.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Qué es USDT (Tether), qué es una stablecoin, cómo intenta valer un dólar, qué riesgos tiene y en qué se diferencia de un dólar en el banco. Guía en español para principiantes.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "guías cripto",
+        "Qué es USDT"
+      ]
+    },
+    {
+      "slug": "guias-cripto-redes-y-comisiones",
+      "title": "Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning",
+      "url": "https://andresblitz.com/guias-cripto/redes-y-comisiones/",
+      "md": "https://andresblitz.com/guias-cripto/redes-y-comisiones/index.md",
+      "json": "https://andresblitz.com/api/page/guias-cripto-redes-y-comisiones.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "guías cripto",
+        "Redes y comisiones"
+      ]
+    },
+    {
       "slug": "home",
       "title": "Andrés Blitz | Full-Time Trader & Investor, British Columbia",
       "url": "https://andresblitz.com/",

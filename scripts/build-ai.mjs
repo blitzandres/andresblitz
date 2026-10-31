@@ -89,6 +89,12 @@ const EXTRA = {
   '/convertidor-cripto/': { topics: ['convertidor cripto', 'bitcoin a bolívares', 'sats', 'USDT', 'ETH', 'calculadora cripto'], note: 'Convertidor cripto: BTC, sats, ETH, USDT, USDC, SOL, XRP y BNB a VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD y al revés, con tasas de referencia horneadas y fuente de cada precio (en español). Referencial, no es asesoría financiera.' },
   '/comision-cripto/': { topics: ['comisión cripto', 'comisión de retiro', 'TRC20', 'ERC20', 'BEP20', 'Lightning', 'enviar USDT'], note: 'Calculadora de comisión cripto: con el monto, la moneda (USDT, USDC o BTC), la red (TRC20, ERC20, BEP20, Solana, Lightning o Bitcoin) y la comisión de retiro que escribe el usuario, muestra cuánto llega, la comisión en % y el valor en moneda local, con comparación con una remesa y tarifas de mempool.space como referencia (en español). Estimaciones, no es asesoría financiera.' },
   '/ahorro-en-dolares/': { topics: ['ahorro en dólares', 'devaluación', 'USDT', 'bolívares', 'pesos', 'histórico'], note: 'Calculadora histórica de ahorro en dólares: cuánto vale hoy en USD un monto guardado hace N meses en VES, ARS (oficial y blue), COP, MXN, PEN, CLP o CAD frente a haberlo cambiado a dólares o USDT ese día, con fuentes fechadas (currency-api, ArgentinaDatos). Solo datos históricos, no es asesoría financiera.' },
+  '/guias-cripto/que-es-usdt/': { topics: ['guías cripto', 'Qué es USDT'], note: 'Guía: qué es USDT y qué son las stablecoins, cómo intentan valer un dólar y sus riesgos (en español).' },
+  '/guias-cripto/como-funciona-p2p/': { topics: ['guías cripto', 'Cómo funciona el P2P'], note: 'Guía: cómo funciona el mercado P2P de criptomonedas, custodia (escrow), anuncios y buenas prácticas, explicado de forma neutral (en español).' },
+  '/guias-cripto/redes-y-comisiones/': { topics: ['guías cripto', 'Redes y comisiones'], note: 'Guía: redes TRC20, ERC20, BEP20, Solana, Bitcoin y Lightning, por qué cambian las comisiones y cómo no enviar por la red equivocada (en español).' },
+  '/guias-cripto/estafas-comunes/': { topics: ['guías cripto', 'Estafas cripto comunes'], note: 'Guía: estafas cripto y P2P frecuentes (comprobante falso, falso soporte, triangulación, phishing) y hábitos para evitarlas (en español).' },
+  '/guias-cripto/brecha-dolar-cripto/': { topics: ['guías cripto', 'Brecha del dólar cripto'], note: 'Guía: cómo se calcula y cómo leer la brecha entre el USDT P2P y la tasa oficial (en español).' },
+  '/guias-cripto/': { topics: ['guías cripto', 'USDT', 'stablecoins', 'P2P', 'redes', 'comisiones', 'estafas', 'brecha'], note: 'Guías cripto en español para principiantes: qué es USDT y las stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto. Informativo, no es asesoría financiera.' },
   '/dolar-colombia/': { topics: ['TRM', 'dólar hoy', 'tipo de cambio', 'Colombia'], note: 'Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).' },
 };
 
@@ -157,6 +163,12 @@ ${byPath('/70/') ? `- [El 70](${byPath('/70/').mdUrl}): ${EXTRA['/70/'].note}` :
 ${byPath('/tasa-bcv/') ? `- [Tasa BCV](${byPath('/tasa-bcv/').mdUrl}): ${EXTRA['/tasa-bcv/'].note}` : ''}
 ${byPath('/dolar-argentina/') ? `- [Dólar Argentina](${byPath('/dolar-argentina/').mdUrl}): ${EXTRA['/dolar-argentina/'].note}` : ''}
 ${byPath('/dolar-colombia/') ? `- [Dólar Colombia](${byPath('/dolar-colombia/').mdUrl}): ${EXTRA['/dolar-colombia/'].note}` : ''}
+${byPath('/guias-cripto/') ? `- [Guías cripto](${byPath('/guias-cripto/').mdUrl}): ${EXTRA['/guias-cripto/'].note}` : ''}
+${byPath('/guias-cripto/brecha-dolar-cripto/') ? `  - [Brecha del dólar cripto](${byPath('/guias-cripto/brecha-dolar-cripto/').mdUrl}): ${EXTRA['/guias-cripto/brecha-dolar-cripto/'].note}` : ''}
+${byPath('/guias-cripto/estafas-comunes/') ? `  - [Estafas cripto comunes](${byPath('/guias-cripto/estafas-comunes/').mdUrl}): ${EXTRA['/guias-cripto/estafas-comunes/'].note}` : ''}
+${byPath('/guias-cripto/redes-y-comisiones/') ? `  - [Redes y comisiones](${byPath('/guias-cripto/redes-y-comisiones/').mdUrl}): ${EXTRA['/guias-cripto/redes-y-comisiones/'].note}` : ''}
+${byPath('/guias-cripto/como-funciona-p2p/') ? `  - [Cómo funciona el P2P](${byPath('/guias-cripto/como-funciona-p2p/').mdUrl}): ${EXTRA['/guias-cripto/como-funciona-p2p/'].note}` : ''}
+${byPath('/guias-cripto/que-es-usdt/') ? `  - [Qué es USDT](${byPath('/guias-cripto/que-es-usdt/').mdUrl}): ${EXTRA['/guias-cripto/que-es-usdt/'].note}` : ''}
 ${byPath('/ahorro-en-dolares/') ? `- [Ahorro en dólares](${byPath('/ahorro-en-dolares/').mdUrl}): ${EXTRA['/ahorro-en-dolares/'].note}` : ''}
 ${byPath('/comision-cripto/') ? `- [Comisión cripto](${byPath('/comision-cripto/').mdUrl}): ${EXTRA['/comision-cripto/'].note}` : ''}
 ${byPath('/convertidor-cripto/') ? `- [Convertidor cripto](${byPath('/convertidor-cripto/').mdUrl}): ${EXTRA['/convertidor-cripto/'].note}` : ''}

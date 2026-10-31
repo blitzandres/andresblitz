@@ -151,7 +151,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Tasas y calculadoras
 
-[Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+[Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
 
 ---
@@ -251,7 +251,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Tasas y calculadoras
 
-[Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+[Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
 
 ---
@@ -328,7 +328,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Tasas y calculadoras
 
-[Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
+[Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
 
 
 ---
@@ -442,7 +442,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Otras tasas de cambio
 
-[Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy: dólar y euro oficial en bolívares (Venezuela)](https://andresblitz.com/tasa-bcv/)
+[Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy: dólar y euro oficial en bolívares (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 
 ---
@@ -527,7 +527,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Otras tasas de cambio
 
-[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
+[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 
 ---
@@ -619,7 +619,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Otras tasas de cambio
 
-[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
+[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 
 ---
@@ -786,7 +786,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Tasas y calculadoras
 
-[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
+[Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
 
 
 ---
@@ -871,7 +871,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Otras tasas de cambio
 
-[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
+[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 
 ---
@@ -956,7 +956,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Otras tasas de cambio
 
-[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
+[Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 
 ---
@@ -1056,7 +1056,489 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Tasas de cambio por país
 
-[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+[Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+
+
+---
+
+---
+title: "Cómo leer la brecha del dólar cripto vs. el oficial"
+description: "Qué es la brecha entre el dólar cripto (USDT P2P) y el dólar oficial, cómo se calcula, qué la mueve y cómo leer los colores y el historial de la página de dólar cripto."
+url: "https://andresblitz.com/guias-cripto/brecha-dolar-cripto/"
+last_updated: "2026-10-31"
+lang: "es"
+---
+
+> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/guias-cripto/brecha-dolar-cripto/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
+
+# Cómo leer la brecha del dólar cripto vs. el oficial
+
+Qué es la brecha entre el dólar cripto (USDT P2P) y el dólar oficial, cómo se calcula, qué la mueve y cómo leer los colores y el historial de la página de dólar cripto.
+
+Informativo, no es asesoría financiera.
+
+La **brecha** es la diferencia porcentual entre el precio del USDT en el mercado P2P y la tasa oficial de un país. Es una forma simple de ver cuánto más (o menos) cuesta el dólar digital frente al dólar oficial.
+
+## Cómo se calcula
+
+Brecha = (precio USDT P2P ÷ tasa oficial − 1) × 100. Si el USDT cotiza a 990 bolívares y la tasa BCV es 900, la brecha es (990 ÷ 900 − 1) × 100 = 10 %. Una brecha negativa significa que el USDT está por debajo de la tasa oficial.
+
+En la página de [dólar cripto](https://andresblitz.com/dolar-cripto/) la tasa oficial es la tasa BCV en Venezuela, el dólar oficial en Argentina y la TRM en Colombia. El precio P2P es la mediana de varios anuncios.
+
+## Cómo leer los colores
+
+-   **Verde (menos de 5 %):** ambos mercados están cerca.
+-   **Amarillo (5 % a 20 %):** hay una diferencia notable.
+-   **Rojo (más de 20 %):** diferencia grande.
+
+Los colores describen el tamaño de la diferencia, no indican si conviene hacer algo.
+
+## Qué suele mover la brecha
+
+-   Restricciones o límites para comprar dólares por la vía oficial.
+-   Cambios en la oferta y la demanda de dólares en el mercado local.
+-   Ajustes de la tasa oficial, que puede moverse con retraso frente al mercado.
+-   Comisiones y costos de los métodos de pago usados en P2P.
+-   Días festivos o fines de semana, cuando la tasa oficial no se actualiza pero el P2P sigue operando.
+
+## Leer el historial
+
+La vista de gráfico muestra la brecha de los últimos días y la línea de resumen la compara con la semana anterior. Es una descripción de lo que pasó, no una predicción. Para ver qué habría pasado con un ahorro en moneda local frente a dólares en meses anteriores, usa la calculadora de [ahorro en dólares](https://andresblitz.com/ahorro-en-dolares/).
+
+## Limitaciones
+
+El precio P2P cambia minuto a minuto y varía por método de pago y monto; la tasa oficial puede tener otra hora de publicación. Por eso cada dato muestra su fuente y su hora.
+
+## Herramientas cripto
+
+-   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
+-   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
+-   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)
+-   [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
+-   [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
+-   [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+
+## Más guías
+
+-   [Qué es USDT](https://andresblitz.com/guias-cripto/que-es-usdt/)
+-   [Cómo funciona el P2P](https://andresblitz.com/guias-cripto/como-funciona-p2p/)
+-   [Redes y comisiones](https://andresblitz.com/guias-cripto/redes-y-comisiones/)
+-   [Estafas comunes](https://andresblitz.com/guias-cripto/estafas-comunes/)
+
+[Todas las guías cripto](https://andresblitz.com/guias-cripto/)
+
+## Preguntas frecuentes
+
+### ¿Qué significa una brecha de 10 %?
+
+Que el USDT en P2P cuesta 10 % más en moneda local que el dólar a la tasa oficial.
+
+### ¿Puede ser negativa?
+
+Sí. Significa que el USDT P2P está por debajo de la tasa oficial, algo que a veces ocurre en Colombia.
+
+### ¿La brecha predice la tasa oficial?
+
+No. Es una medida de la diferencia en un momento dado, no una predicción.
+
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
+## Tasas por país
+
+[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+
+---
+
+---
+title: "Cómo funciona el P2P de criptomonedas: guía básica"
+description: "Qué es el mercado P2P de criptomonedas, cómo funciona una operación con custodia (escrow), qué son los anuncios, límites y métodos de pago, y qué cuidar. Explicado de forma neutral."
+url: "https://andresblitz.com/guias-cripto/como-funciona-p2p/"
+last_updated: "2026-10-31"
+lang: "es"
+---
+
+> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/guias-cripto/como-funciona-p2p/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
+
+# Cómo funciona el P2P de criptomonedas: guía básica
+
+Qué es el mercado P2P de criptomonedas, cómo funciona una operación con custodia (escrow), qué son los anuncios, límites y métodos de pago, y qué cuidar. Explicado de forma neutral.
+
+Informativo, no es asesoría financiera.
+
+**P2P** significa “de persona a persona”. En un mercado P2P de criptomonedas, una persona que quiere vender USDT (u otra moneda) publica un anuncio con su precio y sus métodos de pago, y otra persona que quiere comprar lo acepta. La plataforma no vende: pone en contacto a las partes y retiene las criptomonedas mientras se completa el pago. Plataformas como Binance P2P, entre otras, funcionan de esta forma.
+
+## Paso a paso de una operación típica
+
+1.  **Anuncio:** el vendedor publica precio, cantidad mínima y máxima, métodos de pago aceptados (transferencia, pago móvil, billeteras locales) y condiciones.
+2.  **Orden:** el comprador abre una orden por un monto. Las criptomonedas del vendedor quedan bloqueadas por la plataforma (custodia o _escrow_).
+3.  **Pago:** el comprador paga por fuera de la plataforma, con el método indicado, y marca la orden como pagada.
+4.  **Liberación:** el vendedor confirma que recibió el dinero en su cuenta y libera las criptomonedas, que pasan al comprador.
+5.  **Disputa:** si algo falla, cualquiera puede abrir una apelación y la plataforma revisa las pruebas.
+
+## Por qué los precios varían
+
+Cada anunciante fija su precio. Influyen el método de pago, el monto, la reputación del anunciante y la demanda del momento. Por eso en [dólar cripto](https://andresblitz.com/dolar-cripto/) usamos la **mediana** de varios anuncios: representa el precio típico sin dejarse llevar por anuncios extremos.
+
+## Qué mirar en un anuncio
+
+-   Cantidad de operaciones completadas y porcentaje de finalización del anunciante.
+-   Tiempo límite para pagar y para liberar.
+-   Que el nombre del titular de la cuenta que paga coincida con el de la cuenta en la plataforma (muchas plataformas lo exigen).
+-   Condiciones escritas en el anuncio, sin acuerdos “por fuera”.
+
+## Buenas prácticas generales
+
+-   Mantén toda la conversación dentro del chat de la plataforma.
+-   Como vendedor, libera solo después de ver el dinero acreditado en tu cuenta, no por una captura de pantalla.
+-   Como comprador, paga solo a la cuenta indicada en la orden.
+-   Lee la guía de [estafas comunes](https://andresblitz.com/guias-cripto/estafas-comunes/) antes de operar.
+
+## Herramientas cripto
+
+-   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
+-   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
+-   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)
+-   [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
+-   [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
+-   [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+
+## Más guías
+
+-   [Qué es USDT](https://andresblitz.com/guias-cripto/que-es-usdt/)
+-   [Redes y comisiones](https://andresblitz.com/guias-cripto/redes-y-comisiones/)
+-   [Estafas comunes](https://andresblitz.com/guias-cripto/estafas-comunes/)
+-   [Cómo leer la brecha](https://andresblitz.com/guias-cripto/brecha-dolar-cripto/)
+
+[Todas las guías cripto](https://andresblitz.com/guias-cripto/)
+
+## Preguntas frecuentes
+
+### ¿La plataforma P2P me vende las criptomonedas?
+
+No. En el P2P la contraparte es otra persona; la plataforma retiene las criptomonedas mientras se hace el pago y media en disputas.
+
+### ¿Qué es el escrow o custodia?
+
+Es el bloqueo temporal de las criptomonedas del vendedor por parte de la plataforma hasta que se confirma el pago.
+
+### ¿Por qué el precio P2P es distinto del oficial?
+
+Porque lo fijan los propios usuarios según la oferta y la demanda; la diferencia con la tasa oficial es la brecha.
+
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
+## Tasas por país
+
+[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+
+---
+
+---
+title: "Estafas cripto comunes y cómo evitarlas"
+description: "Las estafas más comunes con criptomonedas y P2P: comprobantes falsos, falsos soportes, promesas de ganancias, phishing, triangulación y más. Señales de alerta y cómo protegerte."
+url: "https://andresblitz.com/guias-cripto/estafas-comunes/"
+last_updated: "2026-10-31"
+lang: "es"
+---
+
+> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/guias-cripto/estafas-comunes/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
+
+# Estafas cripto comunes y cómo evitarlas
+
+Las estafas más comunes con criptomonedas y P2P: comprobantes falsos, falsos soportes, promesas de ganancias, phishing, triangulación y más. Señales de alerta y cómo protegerte.
+
+Informativo, no es asesoría financiera.
+
+Las criptomonedas se mueven rápido y una transacción enviada normalmente no se puede revertir. Por eso las estafas buscan apurarte o hacer que confíes en la persona equivocada. Estas son las más frecuentes y las señales para reconocerlas.
+
+## Estafas frecuentes
+
+-   **Comprobante falso:** en P2P, el comprador envía una captura de una transferencia que nunca ocurrió y presiona para que liberes. Señal: te piden liberar “ya” sin que veas el dinero en tu cuenta.
+-   **Falso soporte técnico:** alguien te escribe por redes sociales o mensajería diciendo ser de una plataforma y te pide tu código de verificación, tu frase semilla o que instales una aplicación de acceso remoto. Ningún soporte real pide eso.
+-   **Promesas de ganancias:** “duplica tus USDT”, “inversión garantizada del 5 % semanal”, grupos que muestran ganancias de otros. Ninguna ganancia alta está garantizada.
+-   **Phishing:** enlaces a páginas idénticas a las de una plataforma para robar tu contraseña. Verifica la dirección web y entra siempre escribiéndola tú.
+-   **Triangulación:** un estafador usa tu anuncio P2P para que una tercera persona, también engañada, te pague a ti. Luego esa persona reclama y tu cuenta puede quedar bloqueada. Señal: el nombre del pagador no coincide con el de la cuenta en la plataforma.
+-   **Pago fuera de la plataforma:** te proponen cerrar el trato por fuera “para ahorrar comisiones”. Pierdes la custodia y la posibilidad de disputa.
+-   **Reembolsos o contracargos:** el pagador usa un método que puede revertirse después de que liberaste.
+-   **Romance o amistad:** alguien gana tu confianza durante semanas y luego te invita a una “oportunidad”.
+
+## Hábitos que protegen
+
+-   Nunca compartas tu frase semilla ni tus códigos de verificación.
+-   Activa la verificación en dos pasos con una aplicación, no solo por SMS.
+-   Verifica el dinero en tu propia cuenta bancaria antes de liberar.
+-   Mantén la conversación y los pagos dentro de la plataforma.
+-   Desconfía de la urgencia: un estafador siempre tiene prisa.
+-   Revisa la red y la dirección antes de enviar (ver [redes y comisiones](https://andresblitz.com/guias-cripto/redes-y-comisiones/)).
+
+## Si crees que te estafaron
+
+Abre una disputa en la plataforma de inmediato, guarda capturas y comprobantes, cambia tus contraseñas y, si corresponde, presenta una denuncia ante las autoridades de tu país.
+
+## Herramientas cripto
+
+-   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
+-   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
+-   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)
+-   [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
+-   [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
+-   [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+
+## Más guías
+
+-   [Qué es USDT](https://andresblitz.com/guias-cripto/que-es-usdt/)
+-   [Cómo funciona el P2P](https://andresblitz.com/guias-cripto/como-funciona-p2p/)
+-   [Redes y comisiones](https://andresblitz.com/guias-cripto/redes-y-comisiones/)
+-   [Cómo leer la brecha](https://andresblitz.com/guias-cripto/brecha-dolar-cripto/)
+
+[Todas las guías cripto](https://andresblitz.com/guias-cripto/)
+
+## Preguntas frecuentes
+
+### ¿Un soporte de una plataforma puede pedirme mi frase semilla?
+
+No. Ninguna plataforma ni soporte legítimo necesita tu frase semilla ni tus códigos de verificación.
+
+### ¿Una captura de pantalla prueba que me pagaron?
+
+No. En P2P, confirma siempre el dinero acreditado en tu propia cuenta antes de liberar.
+
+### ¿Qué es la triangulación?
+
+Una estafa en la que alguien hace que una tercera persona engañada te pague, para quedarse con tus criptomonedas; la víctima luego reclama el pago.
+
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
+## Tasas por país
+
+[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+
+---
+
+---
+title: "Guías cripto en español: USDT, P2P, redes y estafas"
+description: "Guías básicas en español sobre USDT y stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto."
+url: "https://andresblitz.com/guias-cripto/"
+last_updated: "2026-10-31"
+lang: "es"
+---
+
+> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/guias-cripto/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
+
+# Guías cripto para principiantes
+
+Conceptos básicos explicados en español, sin recomendaciones: qué es USDT, cómo funciona el P2P, redes y comisiones, estafas comunes y la brecha del dólar cripto.
+
+Informativo, no es asesoría financiera.
+
+## Las guías
+
+-   [**Qué es USDT**Qué es USDT (Tether), qué es una stablecoin, cómo intenta valer un dólar, qué riesgos tiene y en qué se diferencia de un dólar en el banco.](https://andresblitz.com/guias-cripto/que-es-usdt/)
+-   [**Cómo funciona el P2P**Qué es el mercado P2P de criptomonedas, cómo funciona una operación con custodia (escrow), qué son los anuncios, límites y métodos de pago, y qué cuidar.](https://andresblitz.com/guias-cripto/como-funciona-p2p/)
+-   [**Redes y comisiones**Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada.](https://andresblitz.com/guias-cripto/redes-y-comisiones/)
+-   [**Estafas comunes**Las estafas más comunes con criptomonedas y P2P: comprobantes falsos, falsos soportes, promesas de ganancias, phishing, triangulación y más.](https://andresblitz.com/guias-cripto/estafas-comunes/)
+-   [**Cómo leer la brecha**Qué es la brecha entre el dólar cripto (USDT P2P) y el dólar oficial, cómo se calcula, qué la mueve y cómo leer los colores y el historial de la página de dólar cripto..](https://andresblitz.com/guias-cripto/brecha-dolar-cripto/)
+
+Cada guía enlaza a las herramientas del sitio para ver datos actuales, con fuente y hora.
+
+## Herramientas cripto
+
+-   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
+-   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
+-   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)
+-   [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
+-   [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
+-   [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+
+## Preguntas frecuentes
+
+### ¿Para quién son estas guías?
+
+Para personas que están empezando con stablecoins, P2P y envíos en criptomonedas en Latinoamérica y quieren entender los conceptos básicos.
+
+### ¿Recomiendan alguna plataforma o moneda?
+
+No. Las guías son informativas; las plataformas se mencionan solo como ejemplos y no hay enlaces de afiliados.
+
+### ¿Cada cuánto se actualizan?
+
+Son guías de conceptos que cambian poco; se revisan cuando cambia algo importante. Los precios y tasas están en las herramientas.
+
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
+## Tasas por país
+
+[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+
+---
+
+---
+title: "Qué es USDT y qué son las stablecoins: guía básica"
+description: "Qué es USDT (Tether), qué es una stablecoin, cómo intenta valer un dólar, qué riesgos tiene y en qué se diferencia de un dólar en el banco. Guía en español para principiantes."
+url: "https://andresblitz.com/guias-cripto/que-es-usdt/"
+last_updated: "2026-10-31"
+lang: "es"
+---
+
+> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/guias-cripto/que-es-usdt/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
+
+# Qué es USDT y qué son las stablecoins: guía básica
+
+Qué es USDT (Tether), qué es una stablecoin, cómo intenta valer un dólar, qué riesgos tiene y en qué se diferencia de un dólar en el banco. Guía en español para principiantes.
+
+Informativo, no es asesoría financiera.
+
+Una **stablecoin** (moneda estable) es una criptomoneda diseñada para mantener un precio fijo frente a otro activo, casi siempre el dólar estadounidense. Las más conocidas son **USDT** (emitida por Tether) y **USDC** (emitida por Circle). La idea es sencilla: 1 USDT debería valer aproximadamente 1 dólar.
+
+## Cómo intenta valer un dólar
+
+La empresa emisora dice mantener reservas (efectivo, letras del Tesoro de Estados Unidos y otros activos) por un valor igual o mayor a las monedas que circulan. Cuando alguien entrega dólares, se emiten tokens nuevos; cuando los devuelve, se retiran. Ese mecanismo, junto con el comercio entre plataformas, hace que el precio se mantenga cerca de 1 dólar. En la práctica puede moverse unas centésimas hacia arriba o hacia abajo.
+
+## Por qué se usa tanto en Latinoamérica
+
+-   Permite guardar un valor ligado al dólar desde un teléfono, sin cuenta bancaria en el exterior.
+-   Se puede enviar a otra persona en minutos, a cualquier hora.
+-   En países con controles cambiarios o varias tasas, su precio en moneda local sirve como referencia del dólar “de mercado”. Eso es lo que mide la página de [dólar cripto](https://andresblitz.com/dolar-cripto/).
+
+## En qué se diferencia de un dólar en el banco
+
+Un USDT no es un depósito bancario. No tiene seguro de depósitos, depende de la solvencia y la transparencia de la empresa emisora y de la plataforma o billetera donde lo guardes. Si pierdes el acceso a tu billetera o envías a una dirección equivocada, normalmente no hay forma de recuperarlo.
+
+## Riesgos que conviene conocer
+
+-   **Riesgo del emisor:** el valor depende de que las reservas existan y sean suficientes.
+-   **Riesgo de plataforma:** si dejas tus monedas en una plataforma, dependes de que esta funcione y te permita retirarlas.
+-   **Riesgo de red:** el mismo USDT existe en varias redes (TRC20, ERC20, BEP20 y otras). Enviar por la red equivocada puede hacer que se pierda. Lo explicamos en [redes y comisiones](https://andresblitz.com/guias-cripto/redes-y-comisiones/).
+-   **Riesgo regulatorio:** las reglas cambian según el país.
+
+## Cómo ver su valor en tu moneda
+
+El [convertidor cripto](https://andresblitz.com/convertidor-cripto/) muestra cuánto equivale una cantidad de USDT en bolívares, pesos o soles con tasas de referencia, y la página de [dólar cripto](https://andresblitz.com/dolar-cripto/) muestra el precio P2P en Venezuela, Argentina y Colombia.
+
+## Herramientas cripto
+
+-   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
+-   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
+-   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)
+-   [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
+-   [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
+-   [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+
+## Más guías
+
+-   [Cómo funciona el P2P](https://andresblitz.com/guias-cripto/como-funciona-p2p/)
+-   [Redes y comisiones](https://andresblitz.com/guias-cripto/redes-y-comisiones/)
+-   [Estafas comunes](https://andresblitz.com/guias-cripto/estafas-comunes/)
+-   [Cómo leer la brecha](https://andresblitz.com/guias-cripto/brecha-dolar-cripto/)
+
+[Todas las guías cripto](https://andresblitz.com/guias-cripto/)
+
+## Preguntas frecuentes
+
+### ¿1 USDT siempre vale 1 dólar?
+
+Está diseñado para eso y normalmente cotiza muy cerca de 1 dólar, pero puede desviarse un poco, y en momentos de tensión puede desviarse más.
+
+### ¿USDT y USDC son lo mismo?
+
+Ambas son stablecoins ligadas al dólar, pero las emiten empresas distintas, con reservas y reglas propias.
+
+### ¿Un USDT tiene seguro como un depósito bancario?
+
+No. No está cubierto por seguros de depósitos.
+
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
+## Tasas por país
+
+[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+
+---
+
+---
+title: "Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning"
+description: "Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes."
+url: "https://andresblitz.com/guias-cripto/redes-y-comisiones/"
+last_updated: "2026-10-31"
+lang: "es"
+---
+
+> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/guias-cripto/redes-y-comisiones/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
+
+# Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning
+
+Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes.
+
+Informativo, no es asesoría financiera.
+
+Una misma moneda puede existir en varias **redes** (blockchains). USDT, por ejemplo, circula en Tron, Ethereum, BNB Chain, Solana y otras. Al retirar o enviar, la plataforma te pide elegir la red. Esa elección define la comisión, la velocidad y, sobre todo, a qué direcciones puedes enviar.
+
+## Las redes más comunes
+
+-   **TRC20 (Tron):** muy usada para USDT por sus comisiones generalmente bajas. Las direcciones empiezan con “T”.
+-   **ERC20 (Ethereum):** la red original de muchos tokens. Su comisión depende de la congestión y suele ser alta para montos pequeños. Direcciones que empiezan con “0x”.
+-   **BEP20 (BNB Chain):** compatible con el formato de Ethereum (también “0x”), con comisiones usualmente bajas. Que la dirección se vea igual no significa que sea la misma red.
+-   **Solana:** rápida y de bajo costo; direcciones con otro formato.
+-   **Bitcoin (on-chain):** la red principal de Bitcoin. La comisión se paga por tamaño de la transacción (satoshis por byte virtual), no por monto.
+-   **Lightning:** una red construida sobre Bitcoin para pagos pequeños y casi instantáneos, con comisiones muy bajas. Usa facturas (_invoices_) en lugar de direcciones tradicionales.
+
+## Por qué cambian las comisiones
+
+Cada red cobra una tarifa para procesar transacciones, y las plataformas suelen cobrar además una comisión fija de retiro que puede ser mayor que la tarifa de la red. Una comisión fija pesa mucho en un envío pequeño y poco en uno grande: 1 USDT de comisión es 10 % de 10 USDT, pero 0,5 % de 200 USDT.
+
+Con la [calculadora de comisión cripto](https://andresblitz.com/comision-cripto/) puedes escribir la comisión que te muestra tu plataforma y ver cuánto llega, el porcentaje y su valor en tu moneda. Para Bitcoin, la calculadora también muestra como referencia las tarifas públicas de mempool.space.
+
+## La regla más importante: misma red en ambos lados
+
+La red que eliges al enviar debe ser la misma que acepta la dirección de destino. Si envías USDT por BEP20 a una dirección que solo espera ERC20, los fondos pueden quedar inaccesibles o requerir un proceso de recuperación incierto.
+
+-   Copia la dirección y la red desde la pantalla de depósito del destino.
+-   Revisa los primeros y últimos caracteres de la dirección después de pegarla.
+-   Con montos grandes, muchas personas envían primero un monto de prueba.
+-   Algunas redes o plataformas piden un _memo_ o _tag_; si se olvida, el depósito puede no acreditarse.
+
+## Herramientas cripto
+
+-   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
+-   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
+-   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)
+-   [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
+-   [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
+-   [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+
+## Más guías
+
+-   [Qué es USDT](https://andresblitz.com/guias-cripto/que-es-usdt/)
+-   [Cómo funciona el P2P](https://andresblitz.com/guias-cripto/como-funciona-p2p/)
+-   [Estafas comunes](https://andresblitz.com/guias-cripto/estafas-comunes/)
+-   [Cómo leer la brecha](https://andresblitz.com/guias-cripto/brecha-dolar-cripto/)
+
+[Todas las guías cripto](https://andresblitz.com/guias-cripto/)
+
+## Preguntas frecuentes
+
+### ¿Qué red es la más barata?
+
+Depende del momento y de la plataforma. TRC20, BEP20, Solana y Lightning suelen tener comisiones bajas; ERC20 y Bitcoin on-chain suelen ser más caras para montos pequeños. Mira siempre la comisión que muestra tu plataforma.
+
+### ¿Qué pasa si envío por la red equivocada?
+
+Los fondos pueden perderse o quedar bloqueados. Algunas plataformas ofrecen recuperación con un costo, pero no está garantizada.
+
+### ¿Lightning sirve para USDT?
+
+Lightning se usa principalmente para Bitcoin. Para USDT se usan otras redes como TRC20, BEP20, ERC20 o Solana.
+
+Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
+
+## Tasas por país
+
+[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
 
 ---
@@ -2596,7 +3078,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ## Tasas de cambio por país
 
-[Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
+[Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
 
 
 ---

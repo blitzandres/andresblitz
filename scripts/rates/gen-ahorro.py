@@ -16,7 +16,7 @@ wp = json.dumps({"@context":"https://schema.org","@type":"WebApplication","name"
 src = open('enviar-dinero/index.html').read()
 base_style = src[src.index('<style>'):src.index('</style>')+8]
 analytics = re.search(r"<script>\n\(function\(\)\{var b='https://blitz-analytics.*?</script>\n", src, re.S).group(0)
-links = ' · '.join(['<a href="/salario-en-dolares/">Calculadora de salario en dólares</a>','<a href="/convertidor-cripto/">Convertidor cripto (BTC, USDT)</a>','<a href="/dolar-cripto/">Dólar cripto (USDT P2P)</a>','<a href="/comision-cripto/">Calculadora de comisión cripto (USDT, BTC)</a>','<a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>','<a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>'] + [f'<a href="/{s}/">Dólar hoy en {n}</a>' for s,n in [('dolar-argentina','Argentina'),('dolar-colombia','Colombia'),('dolar-mexico','México'),('dolar-peru','Perú'),('dolar-chile','Chile')]])
+links = ' · '.join(['<a href=\"/guias-cripto/\">Guías cripto para principiantes</a>','<a href="/salario-en-dolares/">Calculadora de salario en dólares</a>','<a href="/convertidor-cripto/">Convertidor cripto (BTC, USDT)</a>','<a href="/dolar-cripto/">Dólar cripto (USDT P2P)</a>','<a href="/comision-cripto/">Calculadora de comisión cripto (USDT, BTC)</a>','<a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>','<a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>'] + [f'<a href="/{s}/">Dólar hoy en {n}</a>' for s,n in [('dolar-argentina','Argentina'),('dolar-colombia','Colombia'),('dolar-mexico','México'),('dolar-peru','Perú'),('dolar-chile','Chile')]])
 out = f'''<!doctype html>
 <html lang="es">
 <head>
@@ -128,7 +128,7 @@ select{{font:inherit;font-size:15px;min-height:44px;background:#16203a;color:var
 </main>
 <footer>
   <p style="margin:0">Solo datos históricos, no es asesoría financiera. Sin proyecciones, señales, botones de compra ni enlaces de afiliados. Historia: currency-api (fawazahmed0) y ArgentinaDatos. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a> · British Columbia, Canadá.</p>
-  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/salario-en-dolares/">Salario en dólares</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/salario-en-dolares/">Salario en dólares</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/guias-cripto/">Guías cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
 </footer>
 <script>
 var MID={{}};/*mid*/

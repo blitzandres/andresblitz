@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning</title>
+<meta name="description" content="Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes.">
+<link rel="canonical" href="https://andresblitz.com/guias-cripto/redes-y-comisiones/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Andrés Blitz">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#05070f">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_LA">
+<meta property="og:site_name" content="andresblitz.com">
+<meta property="og:title" content="Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning">
+<meta property="og:description" content="Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes.">
+<meta property="og:url" content="https://andresblitz.com/guias-cripto/redes-y-comisiones/">
+<meta property="og:image" content="https://andresblitz.com/assets/og-cover.png">
+<meta property="article:modified_time" content="2026-10-31">
+<link rel="alternate" type="application/rss+xml" title="Feed de tasas" href="https://andresblitz.com/rates/feed.xml">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning","description":"Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes.","inLanguage":"es","url":"https://andresblitz.com/guias-cripto/redes-y-comisiones/","mainEntityOfPage":"https://andresblitz.com/guias-cripto/redes-y-comisiones/","datePublished":"2026-10-31","dateModified":"2026-10-31","author":{"@type":"Person","name":"Andrés Blitz","url":"https://andresblitz.com/"},"publisher":{"@type":"Person","name":"Andrés Blitz","url":"https://andresblitz.com/"},"image":"https://andresblitz.com/assets/og-cover.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://andresblitz.com/"},{"@type":"ListItem","position":2,"name":"Guías cripto","item":"https://andresblitz.com/guias-cripto/"},{"@type":"ListItem","position":3,"name":"Redes y comisiones","item":"https://andresblitz.com/guias-cripto/redes-y-comisiones/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué red es la más barata?","acceptedAnswer":{"@type":"Answer","text":"Depende del momento y de la plataforma. TRC20, BEP20, Solana y Lightning suelen tener comisiones bajas; ERC20 y Bitcoin on-chain suelen ser más caras para montos pequeños. Mira siempre la comisión que muestra tu plataforma."}},{"@type":"Question","name":"¿Qué pasa si envío por la red equivocada?","acceptedAnswer":{"@type":"Answer","text":"Los fondos pueden perderse o quedar bloqueados. Algunas plataformas ofrecen recuperación con un costo, pero no está garantizada."}},{"@type":"Question","name":"¿Lightning sirve para USDT?","acceptedAnswer":{"@type":"Answer","text":"Lightning se usa principalmente para Bitcoin. Para USDT se usan otras redes como TRC20, BEP20, ERC20 o Solana."}}]}</script>
+<style>
+:root{--bg:#05070f;--panel:#0b0f1c;--line:#1a2135;--text:#e7eaf2;--mute:#9aa3b8;--acc:#7fc8a9;--pad:clamp(12px,4vw,20px)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:clamp(14.5px,3.9vw,16px)/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;overflow-x:hidden}
+a{color:var(--acc)}
+main{max-width:760px;margin:0 auto;padding:clamp(10px,4vw,40px) var(--pad) 40px}
+h1{font-size:clamp(18px,5vw,32px);line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+h2{font-size:clamp(16px,4.4vw,20px);margin:28px 0 10px}
+.sub,.mute{color:var(--mute)}.sub{font-size:clamp(12.5px,3.4vw,15px);margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(10px,3vw,18px)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 0}
+.tasa{min-width:0;padding:10px 12px}.tasa.big{grid-column:1/-1}.tasa[hidden]{display:none}
+.tasa h3{font-size:clamp(11.5px,3.2vw,13px);color:var(--mute);font-weight:400;margin:0}
+.tasa .v{font-size:clamp(19px,5.8vw,28px);font-weight:650;line-height:1.15;margin:2px 0 0;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tasa.big .v{font-size:clamp(26px,8vw,40px)}
+.tasa .s{font-size:clamp(11px,3vw,12.5px);color:var(--mute);margin:1px 0 0;font-variant-numeric:tabular-nums}
+.fuente{font-size:12.5px;color:var(--mute);margin:8px 0 0;min-height:1.4em}
+.calc label{font-size:12.5px;color:var(--mute);display:block;margin:8px 0 3px}
+.calc input,.calc select{min-height:44px;width:100%;min-width:0;background:#05070f;color:var(--text);border:1px solid #2c3550;border-radius:10px;padding:8px 12px;font:inherit;font-size:16px;font-variant-numeric:tabular-nums}
+.nota{font-size:12.5px;color:var(--mute);margin:6px 0 0}
+details{border-bottom:1px solid var(--line);padding:8px 0}summary{cursor:pointer;font-weight:600}summary h3{display:inline;font-size:inherit;margin:0}details p{margin:6px 0 0}
+footer{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute);font-size:13px}
+</style>
+<style>
+main{max-width:760px}
+.aviso{border-left:3px solid #e0b252;background:#16130a;padding:8px 12px;border-radius:8px;margin:10px 0;font-weight:600;font-size:14px}
+.crumbs{font-size:13px;color:var(--mute);margin:0 0 8px}.crumbs a{color:var(--mute)}
+.prose{font-size:16px;line-height:1.65}.prose h2{font-size:19px;margin-top:26px}.prose li{margin:4px 0}
+.gcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;padding:0;list-style:none}
+.gcards a{display:block;height:100%;background:var(--panel);border:1px solid var(--line);border-top:3px solid #8fb3ff;border-radius:12px;padding:12px;text-decoration:none;color:var(--text)}.gcards a:hover{border-color:var(--acc)}
+.gcards strong{display:block;font-size:16px;margin-bottom:4px}.gcards span{font-size:13.5px;color:var(--mute)}
+.tools{display:flex;flex-wrap:wrap;gap:6px;padding:0;list-style:none}.tools a{display:inline-block;font-size:13.5px;background:#0f1527;border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-decoration:none}
+</style>
+<!-- ai-layer:start -->
+<link rel="alternate" type="text/markdown" href="https://andresblitz.com/guias-cripto/redes-y-comisiones/index.md" />
+<link rel="alternate" type="application/rss+xml" title="Andrés Blitz" href="https://andresblitz.com/feed.xml" />
+<script type="application/json" id="ai-structure">{"page":{"title":"Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning","url":"https://andresblitz.com/guias-cripto/redes-y-comisiones/","md":"https://andresblitz.com/guias-cripto/redes-y-comisiones/index.md","summary":"Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes.","last_updated":"2026-10-31"},"site":{"name":"Andrés Blitz","llms":"https://andresblitz.com/llms.txt","agent":"https://andresblitz.com/agent.json","sections":["https://andresblitz.com/index.md","https://andresblitz.com/projects/index.md","https://andresblitz.com/70/index.md","https://andresblitz.com/tasa-bcv/index.md"]}}</script>
+<!-- ai-layer:end -->
+</head>
+<body>
+<main id="contenido">
+<nav class="crumbs" aria-label="Ruta"><a href="/">Inicio</a> › <a href="/guias-cripto/">Guías cripto</a> › <span aria-current="page">Redes y comisiones</span></nav>
+<header>
+  <h1>Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning</h1>
+  <p class="sub">Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes.</p>
+</header>
+<p class="aviso" role="note">Informativo, no es asesoría financiera.</p>
+<article class="prose">
+<p>Una misma moneda puede existir en varias <strong>redes</strong> (blockchains). USDT, por ejemplo, circula en Tron, Ethereum, BNB Chain, Solana y otras. Al retirar o enviar, la plataforma te pide elegir la red. Esa elección define la comisión, la velocidad y, sobre todo, a qué direcciones puedes enviar.</p>
+<h2>Las redes más comunes</h2>
+<ul><li><strong>TRC20 (Tron):</strong> muy usada para USDT por sus comisiones generalmente bajas. Las direcciones empiezan con “T”.</li><li><strong>ERC20 (Ethereum):</strong> la red original de muchos tokens. Su comisión depende de la congestión y suele ser alta para montos pequeños. Direcciones que empiezan con “0x”.</li><li><strong>BEP20 (BNB Chain):</strong> compatible con el formato de Ethereum (también “0x”), con comisiones usualmente bajas. Que la dirección se vea igual no significa que sea la misma red.</li><li><strong>Solana:</strong> rápida y de bajo costo; direcciones con otro formato.</li><li><strong>Bitcoin (on-chain):</strong> la red principal de Bitcoin. La comisión se paga por tamaño de la transacción (satoshis por byte virtual), no por monto.</li><li><strong>Lightning:</strong> una red construida sobre Bitcoin para pagos pequeños y casi instantáneos, con comisiones muy bajas. Usa facturas (<em>invoices</em>) en lugar de direcciones tradicionales.</li></ul>
+<h2>Por qué cambian las comisiones</h2>
+<p>Cada red cobra una tarifa para procesar transacciones, y las plataformas suelen cobrar además una comisión fija de retiro que puede ser mayor que la tarifa de la red. Una comisión fija pesa mucho en un envío pequeño y poco en uno grande: 1 USDT de comisión es 10 % de 10 USDT, pero 0,5 % de 200 USDT.</p>
+<p>Con la <a href="/comision-cripto/">calculadora de comisión cripto</a> puedes escribir la comisión que te muestra tu plataforma y ver cuánto llega, el porcentaje y su valor en tu moneda. Para Bitcoin, la calculadora también muestra como referencia las tarifas públicas de mempool.space.</p>
+<h2>La regla más importante: misma red en ambos lados</h2>
+<p>La red que eliges al enviar debe ser la misma que acepta la dirección de destino. Si envías USDT por BEP20 a una dirección que solo espera ERC20, los fondos pueden quedar inaccesibles o requerir un proceso de recuperación incierto.</p>
+<ul><li>Copia la dirección y la red desde la pantalla de depósito del destino.</li><li>Revisa los primeros y últimos caracteres de la dirección después de pegarla.</li><li>Con montos grandes, muchas personas envían primero un monto de prueba.</li><li>Algunas redes o plataformas piden un <em>memo</em> o <em>tag</em>; si se olvida, el depósito puede no acreditarse.</li></ul>
+</article>
+<section id="herramientas" aria-labelledby="h-tools">
+  <h2 id="h-tools">Herramientas cripto</h2>
+  <ul class="tools"><li><a href="/dolar-cripto/">Dólar cripto (USDT P2P)</a></li><li><a href="/convertidor-cripto/">Convertidor cripto (BTC, USDT)</a></li><li><a href="/comision-cripto/">Calculadora de comisión cripto</a></li><li><a href="/ahorro-en-dolares/">Ahorro en dólares: calculadora histórica</a></li><li><a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a></li><li><a href="/salario-en-dolares/">Calculadora de salario en dólares</a></li></ul>
+</section>
+<section id="mas" aria-labelledby="h-mas"><h2 id="h-mas">Más guías</h2><ul><li><a href="/guias-cripto/que-es-usdt/">Qué es USDT</a></li><li><a href="/guias-cripto/como-funciona-p2p/">Cómo funciona el P2P</a></li><li><a href="/guias-cripto/estafas-comunes/">Estafas comunes</a></li><li><a href="/guias-cripto/brecha-dolar-cripto/">Cómo leer la brecha</a></li></ul><p><a href="/guias-cripto/">Todas las guías cripto</a></p></section>
+<section id="faq" aria-labelledby="h-faq">
+  <h2 id="h-faq">Preguntas frecuentes</h2>
+  <details><summary><h3>¿Qué red es la más barata?</h3></summary><p>Depende del momento y de la plataforma. TRC20, BEP20, Solana y Lightning suelen tener comisiones bajas; ERC20 y Bitcoin on-chain suelen ser más caras para montos pequeños. Mira siempre la comisión que muestra tu plataforma.</p></details>
+  <details><summary><h3>¿Qué pasa si envío por la red equivocada?</h3></summary><p>Los fondos pueden perderse o quedar bloqueados. Algunas plataformas ofrecen recuperación con un costo, pero no está garantizada.</p></details>
+  <details><summary><h3>¿Lightning sirve para USDT?</h3></summary><p>Lightning se usa principalmente para Bitcoin. Para USDT se usan otras redes como TRC20, BEP20, ERC20 o Solana.</p></details>
+</section>
+<div data-rates-widget><p style="font-size:13px;color:#9aa3b8">Feed de tasas: <a href="/rates/feed.xml">RSS</a></p></div>
+<script src="/assets/rates-widget.js" defer></script>
+<section id="otros" aria-labelledby="h-otros">
+  <h2 id="h-otros">Tasas por país</h2>
+  <p><a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a> · <a href="/dolar-argentina/">Dólar hoy en Argentina</a> · <a href="/dolar-colombia/">Dólar hoy en Colombia</a> · <a href="/dolar-mexico/">Dólar hoy en México</a> · <a href="/dolar-peru/">Dólar hoy en Perú</a> · <a href="/dolar-chile/">Dólar hoy en Chile</a></p>
+</section>
+</main>
+<footer>
+  <p style="margin:0">Informativo, no es asesoría financiera. Sin recomendaciones, botones de compra ni enlaces de afiliados. Las plataformas se mencionan solo como ejemplos. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a> · British Columbia, Canadá.</p>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/guias-cripto/">Guías cripto</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/comision-cripto/">Comisión cripto</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
+</footer>
+<script>
+(function(){var b='https://blitz-analytics.andres-491.workers.dev';
+function add(f){var s=document.createElement('script');s.src=b+'/'+f;s.defer=true;s.setAttribute('data-endpoint',b);document.body.appendChild(s)}
+add('t.js');function late(){(window.requestIdleCallback||setTimeout)(function(){add('chat.js')},{timeout:3000})}
+if(document.readyState==='complete')late();else addEventListener('load',late);})();
+</script>
+<!-- ai-layer-footer:start --><nav class="ai-links" aria-label="AI-readable versions" style="font:12px/1.6 system-ui,sans-serif;opacity:.6;text-align:center;margin:24px auto 16px;padding:0 12px;clear:both">AI-readable: <a href="/ai/" style="color:inherit">/ai/</a> &middot; <a href="/llms.txt" style="color:inherit">llms.txt</a> &middot; <a href="https://andresblitz.com/guias-cripto/redes-y-comisiones/index.md" rel="alternate" type="text/markdown" style="color:inherit">Markdown (.md)</a> &middot; <a href="/agent.json" style="color:inherit">agent.json</a> &middot; <a href="/agent.json" rel="alternate" type="application/json" title="Machine-readable site index" style="color:inherit">Site index (JSON)</a></nav><!-- ai-layer-footer:end -->
+</body>
+</html>

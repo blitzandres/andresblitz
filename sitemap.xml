@@ -94,6 +94,42 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://andresblitz.com/guias-cripto/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/guias-cripto/que-es-usdt/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/guias-cripto/como-funciona-p2p/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/guias-cripto/redes-y-comisiones/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/guias-cripto/estafas-comunes/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/guias-cripto/brecha-dolar-cripto/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://andresblitz.com/projects/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
