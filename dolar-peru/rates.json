@@ -1,0 +1,15 @@
+{
+ "country": "dolar-peru",
+ "currency": "PEN",
+ "base": "USD",
+ "source": "open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)",
+ "label": "Dólar de referencia (mercado internacional)",
+ "updated": "2026-10-31T00:02:31.000Z",
+ "rates": {
+  "ref": {
+   "compra": null,
+   "venta": 3.460617,
+   "f": "2026-10-31T00:02:31.000Z"
+  }
+ }
+}
