@@ -6,8 +6,16 @@
 <atom:link href="https://andresblitz.com/rates/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Tipos de cambio de Venezuela, Argentina, Colombia, México, Perú y Chile, bitcoin, USD/CAD y tasas de política monetaria, con fuente y hora de cada dato.</description>
 <language>es</language>
-<lastBuildDate>Sat, 31 Oct 2026 17:26:37 GMT</lastBuildDate>
+<lastBuildDate>Sat, 31 Oct 2026 17:30:51 GMT</lastBuildDate>
 <ttl>30</ttl>
+<item>
+<title>Bitcoin (BTC/USD): 77.516 USD</title>
+<link>https://www.coingecko.com/es/monedas/bitcoin</link>
+<guid isPermaLink="false">bitcoin:2026-10-31T17:30:51.000Z:77516</guid>
+<pubDate>Sat, 31 Oct 2026 17:30:51 GMT</pubDate>
+<description>Bitcoin (BTC/USD): 77.516 USD (+0.42 % en 24 h) · CAD 108341. Fuente: CoinGecko. Dato del 2026-10-31T17:30:51Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
+</item>
 <item>
 <title>Bitcoin (BTC/USD): 77.523 USD</title>
 <link>https://www.coingecko.com/es/monedas/bitcoin</link>

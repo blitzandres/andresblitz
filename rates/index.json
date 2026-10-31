@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-10-31T17:27:26.827Z",
+ "generated": "2026-10-31T17:31:50.072Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -61,14 +61,14 @@
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 77523,
+   "value": 77516,
    "unit": "USD",
-   "change24h": 0.49,
-   "extra": "CAD 108350",
+   "change24h": 0.42,
+   "extra": "CAD 108341",
    "source": "CoinGecko",
-   "time": "2026-10-31T17:26:37.000Z",
+   "time": "2026-10-31T17:30:51.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-10-31T17:27:24.572Z"
+   "fetched": "2026-10-31T17:31:47.281Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",

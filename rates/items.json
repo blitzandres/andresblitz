@@ -1,5 +1,18 @@
 [
  {
+  "guid": "bitcoin:2026-10-31T17:30:51.000Z:77516",
+  "key": "bitcoin",
+  "title": "Bitcoin (BTC/USD)",
+  "value": 77516,
+  "unit": "USD",
+  "change24h": 0.42,
+  "extra": "CAD 108341",
+  "source": "CoinGecko",
+  "time": "2026-10-31T17:30:51.000Z",
+  "url": "https://www.coingecko.com/es/monedas/bitcoin",
+  "fetched": "2026-10-31T17:31:47.281Z"
+ },
+ {
   "guid": "bitcoin:2026-10-31T17:26:37.000Z:77523",
   "key": "bitcoin",
   "title": "Bitcoin (BTC/USD)",
