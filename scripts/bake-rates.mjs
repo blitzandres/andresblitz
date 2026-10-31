@@ -31,7 +31,7 @@ for (const slug of slugs) {
     const hf = new URL(`../${slug}/index.html`, import.meta.url);
     let h = fs.readFileSync(hf, 'utf8');
     h = h.replace(/var FB=\{[\s\S]*?\};\/\*fb\*\//, `var FB=${JSON.stringify(json)};/*fb*/`)
-      .replace(/("dateModified":")[^"]*(")/g, `$1${newest}$2`)
+      .replace(/("dateModified":\s*")[^"]*(")/g, `$1${newest}$2`)
       .replace(/(<time data-upd datetime=")[^"]*(">)[^<]*(<\/time>)/g, `$1${newest}$2${when} (${c.tzLabel})$3`)
       .replace(/(<time data-vig datetime=")[^"]*(">)[^<]*(<\/time>)/g, (m, a, b, e) => `${a}${rates[c.keys[0]].f}${b}${new Date(rates[c.keys[0]].f).toLocaleDateString(c.locale, { timeZone: c.timeZone, dateStyle: 'long' })}${e}`)
       .replace(/(<span data-label>)[^<]*(<\/span>)/g, (m, a, e) => data.label ? `${a}${data.label}${e}` : m)
