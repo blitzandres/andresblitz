@@ -79,7 +79,7 @@ h3{font-size:inherit;margin:0;display:inline}
 .tasa .k{display:block;font-weight:400}
 .ult{font-size:.85em;opacity:.75}.ult[hidden]{display:none}
 #cargando{position:static;grid-column:1/-1;font-size:.9em}
-@media (max-width:640px){main{padding-top:10px}.grid{min-height:0;margin-top:8px}#fecha{min-height:1.4em}h1{font-size:clamp(18px,5vw,24px)}#tasas-hoy .v{font-size:clamp(20px,6vw,26px)}}
+@media (max-width:640px){main{padding-top:10px}.grid{margin-top:8px}#t-btc .s{min-height:2.7em}#t-par .s{min-height:4.2em}h1{font-size:clamp(18px,5vw,24px)}#tasas-hoy .v{font-size:clamp(20px,6vw,26px)}}
 .tasa .v data{font:inherit;color:inherit}
 footer nav a{margin-right:2px}
 .tasa .k{font-size:clamp(11.5px,3.2vw,13px);color:var(--mute);margin:0}
@@ -525,6 +525,8 @@ function add(f){var s=document.createElement('script');s.src=b+'/'+f;s.defer=tru
 add('t.js');function late(){(window.requestIdleCallback||setTimeout)(function(){add('chat.js')},{timeout:3000})}
 if(document.readyState==='complete')late();else addEventListener('load',late);})();
 </script>
+
+
 
 
 <!-- ai-layer-footer:start --><nav class="ai-links" aria-label="AI-readable versions" style="font:12px/1.6 system-ui,sans-serif;opacity:.6;text-align:center;margin:24px auto 16px;padding:0 12px;clear:both">AI-readable: <a href="/ai/" style="color:inherit">/ai/</a> &middot; <a href="/llms.txt" style="color:inherit">llms.txt</a> &middot; <a href="https://andresblitz.com/tasa-bcv/index.md" rel="alternate" type="text/markdown" style="color:inherit">Markdown (.md)</a> &middot; <a href="/agent.json" style="color:inherit">agent.json</a> &middot; <a href="/agent.json" rel="alternate" type="application/json" title="Machine-readable site index" style="color:inherit">Site index (JSON)</a></nav><!-- ai-layer-footer:end -->
