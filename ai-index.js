@@ -66,6 +66,26 @@ export const site = {
       }
     },
     {
+      "slug": "comision-cripto",
+      "title": "Calculadora de comisión cripto: cuánto llega al enviar USDT, USDC o BTC",
+      "url": "https://andresblitz.com/comision-cripto/",
+      "md": "https://andresblitz.com/comision-cripto/index.md",
+      "json": "https://andresblitz.com/api/page/comision-cripto.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "comisión cripto",
+        "comisión de retiro",
+        "TRC20",
+        "ERC20",
+        "BEP20",
+        "Lightning",
+        "enviar USDT"
+      ]
+    },
+    {
       "slug": "convertidor-cripto",
       "title": "Convertidor cripto: BTC, sats, ETH y USDT a bolívares, pesos y dólares",
       "url": "https://andresblitz.com/convertidor-cripto/",

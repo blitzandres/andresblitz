@@ -125,7 +125,7 @@ if (changed || !fs.existsSync(R('rates/feed.xml'))) {
 console.log(`feed: ${Object.keys(series).length} series, ${items.length} items${skipped.length ? `; skipped: ${skipped.join(' | ')}` : ''}`);
 
 // Bake the reference (mid-market) rates into the remittance calculator so it works without fetching.
-for (const page of ['enviar-dinero/index.html', 'salario-en-dolares/index.html', 'convertidor-cripto/index.html']) {
+for (const page of ['enviar-dinero/index.html', 'salario-en-dolares/index.html', 'convertidor-cripto/index.html', 'comision-cripto/index.html']) {
   const CALC = R(page);
   if (!fs.existsSync(CALC)) continue;
   const MAP = { VE: 'tasa-bcv', CO: 'dolar-colombia', MX: 'dolar-mexico', AR: 'dolar-argentina', ARB: 'dolar-argentina-blue', PE: 'dolar-peru', CL: 'dolar-chile', CAD: 'usdcad' };
@@ -144,8 +144,8 @@ for (const page of ['enviar-dinero/index.html', 'salario-en-dolares/index.html',
 }
 
 // Bake coin prices (BTC from the feed's CoinGecko series, others from dolar-cripto/data.json) + USDT P2P into the crypto converter.
-try {
-  const CF = R('convertidor-cripto/index.html');
+for (const CPAGE of ['convertidor-cripto', 'comision-cripto']) try {
+  const CF = R(`${CPAGE}/index.html`);
   if (fs.existsSync(CF)) {
     const cj = readJson('dolar-cripto/data.json', {});
     const co = {};
@@ -169,7 +169,30 @@ try {
         .replace(/(<time id="upd" datetime=")[^"]*(">)[^<]*/, `$1${index.generated}$2${new Date(index.generated).toLocaleString('es', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' })} UTC`)
         .replace(/("dateModified":)"[^"]*"/, `$1"${index.generated}"`)
         .replace(/(<meta property="article:modified_time" content=")[^"]*/, `$1${index.generated}`));
-      console.log('convertidor-cripto: coin prices updated');
+      console.log(`${CPAGE}: coin prices updated`);
     }
   }
-} catch (e) { console.warn('convertidor-cripto: kept previous prices:', e.message); }
+} catch (e) { console.warn(`${CPAGE}: kept previous prices:`, e.message); }
+
+// Bitcoin network fee levels from mempool.space (keyless), informational only on /comision-cripto/. Failure keeps the previous values.
+try {
+  const MF = R('comision-cripto/index.html');
+  if (fs.existsSync(MF)) {
+    const m = await get('https://mempool.space/api/v1/fees/recommended');
+    const keys = ['fastestFee', 'halfHourFee', 'hourFee', 'economyFee', 'minimumFee'];
+    if (!keys.every((k) => Number.isFinite(m[k]) && m[k] > 0 && m[k] < 5000)) throw new Error('bad mempool data');
+    const mp = Object.fromEntries(keys.map((k) => [k, m[k]]));
+    const html = fs.readFileSync(MF, 'utf8');
+    const prev = JSON.parse((html.match(/var MP=(\{.*?\});\/\*mempool\*\//) || [, '{}'])[1]);
+    if (keys.some((k) => prev[k] !== mp[k]) || !prev.time) {
+      mp.time = new Date().toISOString();
+      const btc = readJson('rates/index.json', { series: {} }).series?.bitcoin?.value || series.bitcoin?.value;
+      const L = [['Rápida (~10 min)', 'fastestFee'], ['Media (~30 min)', 'halfHourFee'], ['Normal (~1 h)', 'hourFee'], ['Económica', 'economyFee']];
+      const rows = L.map(([n, k]) => { const sats = mp[k] * 140; return `<tr><td>${n}</td><td class="n">${mp[k]}</td><td class="n">${sats.toLocaleString('es')} sats${btc ? ` ≈ ${(sats / 1e8 * btc).toLocaleString('es', { maximumFractionDigits: 2 })} USD` : ''}</td></tr>`; }).join('');
+      fs.writeFileSync(MF, html.replace(/var MP=\{.*?\};\/\*mempool\*\//, () => `var MP=${JSON.stringify(mp)};/*mempool*/`)
+        .replace(/<!--mp:start-->[\s\S]*?<!--mp:end-->/, () => `<!--mp:start-->${rows}<!--mp:end-->`)
+        .replace(/(<time id="mpt" datetime=")[^"]*(">)[^<]*/, `$1${mp.time}$2${new Date(mp.time).toLocaleString('es', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' })} UTC`));
+      console.log('comision-cripto: mempool fees updated');
+    }
+  }
+} catch (e) { console.warn('comision-cripto: kept previous mempool fees:', e.message); }
