@@ -71,7 +71,7 @@ Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%
 title: "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · British Columbia"
 description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -234,7 +234,7 @@ British Columbia · Canada
 title: "Blitz Analytics — Privacy-Minded Site Analytics on Cloudflare Workers | Andrés Blitz"
 description: "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data."
 url: "https://andresblitz.com/projects/blitz-analytics/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -296,7 +296,7 @@ In production · private
 title: "Blitzy's World — Playable Space Game in the Browser | Andrés Blitz"
 description: "Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch."
 url: "https://andresblitz.com/projects/blitzys-world/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -424,7 +424,7 @@ Play Blitzy's World full screen: fly a glowing orb through an endless universe, 
 title: "BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz"
 description: "BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices."
 url: "https://andresblitz.com/projects/bluth-scan/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -486,7 +486,7 @@ Prototype
 title: "Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz"
 description: "Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs."
 url: "https://andresblitz.com/projects/compute-share-pilot/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -546,7 +546,7 @@ Pilot
 title: "Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz"
 description: "Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos."
 url: "https://andresblitz.com/projects/elevatron/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -606,7 +606,7 @@ Complete
 title: "Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz"
 description: "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
 url: "https://andresblitz.com/projects/elite-island-movers/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -665,7 +665,7 @@ Shipped 2025
 title: "Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz"
 description: "Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP."
 url: "https://andresblitz.com/projects/home-history/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -725,7 +725,7 @@ MVP
 title: "Projects by Andrés Blitz — Trading Tools, Games & Experiments"
 description: "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps."
 url: "https://andresblitz.com/projects/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -926,7 +926,7 @@ Every project page links to its GitHub repo (and live demo when one exists). Bro
 title: "IPTV Player — Latin America & USA Channels in the Browser (HLS.js) | Andrés Blitz"
 description: "A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal."
 url: "https://andresblitz.com/projects/iptv-player/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -986,7 +986,7 @@ Live · 9 commits
 title: "Blitz Engine — Open-Source Behavioral Signal Analyzer (lie-detector) | Andrés Blitz"
 description: "Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it."
 url: "https://andresblitz.com/projects/lie-detector/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -1052,7 +1052,7 @@ On hold · 114 commits
 title: "NetWatch — Local Network Monitoring Dashboard (Python + Flask) | Andrés Blitz"
 description: "NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data."
 url: "https://andresblitz.com/projects/netwatch/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -1114,7 +1114,7 @@ Prototype
 title: "Quiniela — World Cup 2026 Prediction Pool for Friends | Andrés Blitz"
 description: "Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings."
 url: "https://andresblitz.com/projects/quiniela/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -1174,7 +1174,7 @@ Live
 title: "RealWealth Portfolio — Live Real Estate Portfolio Dashboard (Next.js + Supabase) | Andrés Blitz"
 description: "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page."
 url: "https://andresblitz.com/projects/realwealth-portfolio/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -1242,7 +1242,7 @@ Active
 title: "SIGNET — Signal Intelligence Network Visualization (Research Thesis) | Andrés Blitz"
 description: "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired."
 url: "https://andresblitz.com/projects/signet-thesis/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -1306,7 +1306,7 @@ Active research
 title: "SIGSPACE — Network Signals as a Video Game World | Andrés Blitz"
 description: "SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers."
 url: "https://andresblitz.com/projects/sigspace/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -1370,7 +1370,7 @@ Live · 17 commits
 title: "Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz"
 description: "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
 url: "https://andresblitz.com/projects/weinstein-stage-matrix/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
@@ -1436,7 +1436,7 @@ Private · in use
 title: "Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela"
 description: "Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia."
 url: "https://andresblitz.com/tasa-bcv/"
-last_updated: "2026-10-18"
+last_updated: "2026-10-31"
 lang: "es-VE"
 ---
 
@@ -1462,7 +1462,11 @@ por 1 euro · último valor conocido
 
 ### Bitcoin (BTC)
 
+…
+
 ### Dólar paralelo · promedio no oficial
+
+…
 
 ## Calculadora: dólares y euros ↔ bolívares
 

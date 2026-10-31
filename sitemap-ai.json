@@ -14,21 +14,21 @@
       "md": "https://andresblitz.com/index.md",
       "title": "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · British Columbia",
       "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/blitz-analytics/",
       "md": "https://andresblitz.com/projects/blitz-analytics/index.md",
       "title": "Blitz Analytics — Privacy-Minded Site Analytics on Cloudflare Workers | Andrés Blitz",
       "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/blitzys-world/",
       "md": "https://andresblitz.com/projects/blitzys-world/index.md",
       "title": "Blitzy's World — Playable Space Game in the Browser | Andrés Blitz",
       "summary": "Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/blitzys-world/play/3d/",
@@ -49,105 +49,105 @@
       "md": "https://andresblitz.com/projects/bluth-scan/index.md",
       "title": "BluthScan — Real-Time Bluetooth Scanner with 3D Graph Visualization | Andrés Blitz",
       "summary": "BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/compute-share-pilot/",
       "md": "https://andresblitz.com/projects/compute-share-pilot/index.md",
       "title": "Compute Share Pilot — Trusted Compute Sharing for Remote AI Jobs | Andrés Blitz",
       "summary": "Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/elevatron/",
       "md": "https://andresblitz.com/projects/elevatron/index.md",
       "title": "Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz",
       "summary": "Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/elite-island-movers/",
       "md": "https://andresblitz.com/projects/elite-island-movers/index.md",
       "title": "Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz",
       "summary": "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/home-history/",
       "md": "https://andresblitz.com/projects/home-history/index.md",
       "title": "Home History — A Time-Capsule Timeline for a House (Next.js MVP) | Andrés Blitz",
       "summary": "Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/",
       "md": "https://andresblitz.com/projects/index.md",
       "title": "Projects by Andrés Blitz — Trading Tools, Games & Experiments",
       "summary": "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/iptv-player/",
       "md": "https://andresblitz.com/projects/iptv-player/index.md",
       "title": "IPTV Player — Latin America & USA Channels in the Browser (HLS.js) | Andrés Blitz",
       "summary": "A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/lie-detector/",
       "md": "https://andresblitz.com/projects/lie-detector/index.md",
       "title": "Blitz Engine — Open-Source Behavioral Signal Analyzer (lie-detector) | Andrés Blitz",
       "summary": "Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/netwatch/",
       "md": "https://andresblitz.com/projects/netwatch/index.md",
       "title": "NetWatch — Local Network Monitoring Dashboard (Python + Flask) | Andrés Blitz",
       "summary": "NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/quiniela/",
       "md": "https://andresblitz.com/projects/quiniela/index.md",
       "title": "Quiniela — World Cup 2026 Prediction Pool for Friends | Andrés Blitz",
       "summary": "Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/realwealth-portfolio/",
       "md": "https://andresblitz.com/projects/realwealth-portfolio/index.md",
       "title": "RealWealth Portfolio — Live Real Estate Portfolio Dashboard (Next.js + Supabase) | Andrés Blitz",
       "summary": "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/signet-thesis/",
       "md": "https://andresblitz.com/projects/signet-thesis/index.md",
       "title": "SIGNET — Signal Intelligence Network Visualization (Research Thesis) | Andrés Blitz",
       "summary": "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/sigspace/",
       "md": "https://andresblitz.com/projects/sigspace/index.md",
       "title": "SIGSPACE — Network Signals as a Video Game World | Andrés Blitz",
       "summary": "SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/projects/weinstein-stage-matrix/",
       "md": "https://andresblitz.com/projects/weinstein-stage-matrix/index.md",
       "title": "Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz",
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.",
-      "lastmod": "2026-10-29"
+      "lastmod": "2026-10-31"
     },
     {
       "url": "https://andresblitz.com/tasa-bcv/",
       "md": "https://andresblitz.com/tasa-bcv/index.md",
       "title": "Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela",
       "summary": "Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia.",
-      "lastmod": "2026-10-18"
+      "lastmod": "2026-10-31"
     }
   ]
 }
