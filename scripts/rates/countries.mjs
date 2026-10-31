@@ -12,6 +12,13 @@ const erApi = (cur, key = 'ref') => async () => {
   if (j.result !== 'success' || !(j.rates?.[cur] > 0)) throw new Error('er-api bad data');
   return { source: 'open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)', label: 'Dólar de referencia (mercado internacional)', rates: { [key]: { compra: null, venta: j.rates[cur], f: new Date(j.time_last_update_unix * 1000).toISOString() } } };
 };
+// fawazahmed0/currency-api via jsDelivr (keyless, daily reference): last-resort fallback.
+const curApi = (cur, key = 'ref') => async () => {
+  const j = await get('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.min.json');
+  const v = Number(j.usd?.[cur.toLowerCase()]);
+  if (!(v > 0)) throw new Error('currency-api bad data');
+  return { source: 'currency-api (fawazahmed0, referencia diaria)', label: 'Tipo de cambio de referencia', rates: { [key]: { compra: null, venta: v, f: new Date(j.date + 'T12:00:00Z').toISOString() } } };
+};
 const dolarapiUsd = async (cc) => (await get(`https://${cc}.dolarapi.com/v1/cotizaciones`)).find((d) => d.moneda === 'USD');
 const ts = (s) => new Date(s * 1000).toISOString();
 
@@ -63,7 +70,9 @@ export const COUNTRIES = {
       async () => {
         // BCRP series PD04640PD = tipo de cambio interbancario, venta (S/ por US$), daily.
         const end = new Date(), start = new Date(end - 15 * 864e5), d = (x) => x.toISOString().slice(0, 10);
-        const j = JSON.parse(await getText(`https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PD04640PD/json/${d(start)}/${d(end)}`));
+        const t = await getText(`https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PD04640PD/json/${d(start)}/${d(end)}`);
+        if (!t.trimStart().startsWith('{')) throw new Error('BCRP returned HTML (bot wall), skipped');
+        const j = JSON.parse(t);
         const p = [...j.periods].reverse().find((x) => Number(x.values?.[0]) > 0);
         const M = { Ene: 0, Feb: 1, Mar: 2, Abr: 3, May: 4, Jun: 5, Jul: 6, Ago: 7, Set: 8, Sep: 8, Oct: 9, Nov: 10, Dic: 11 };
         const [dd, mm, yy] = p.name.split('.');
@@ -71,6 +80,7 @@ export const COUNTRIES = {
         return { source: 'BCRP (tipo de cambio interbancario)', label: 'Tipo de cambio interbancario BCRP (venta)', rates: { ref: { compra: null, venta: Number(p.values[0]), f } } };
       },
       erApi('PEN'),
+      curApi('PEN'),
     ],
   },
   'dolar-chile': {

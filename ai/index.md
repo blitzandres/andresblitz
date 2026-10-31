@@ -10,6 +10,7 @@ last_updated: "2026-10-31"
 # Markdown pages
 
 - [Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela](https://andresblitz.com/70/index.md) — Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia.
+- [Convertidor cripto: BTC, sats, ETH y USDT a bolívares, pesos y dólares](https://andresblitz.com/convertidor-cripto/index.md) — Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.
 - [Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto | Cotización](https://andresblitz.com/dolar-argentina/index.md) — Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.
 - [Dólar hoy en Chile: dólar observado y conversor de pesos](https://andresblitz.com/dolar-chile/index.md) — Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.
 - [Dólar hoy en Colombia: TRM oficial y conversor de pesos | Cotización](https://andresblitz.com/dolar-colombia/index.md) — TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.

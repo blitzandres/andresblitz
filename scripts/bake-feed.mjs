@@ -125,7 +125,7 @@ if (changed || !fs.existsSync(R('rates/feed.xml'))) {
 console.log(`feed: ${Object.keys(series).length} series, ${items.length} items${skipped.length ? `; skipped: ${skipped.join(' | ')}` : ''}`);
 
 // Bake the reference (mid-market) rates into the remittance calculator so it works without fetching.
-for (const page of ['enviar-dinero/index.html', 'salario-en-dolares/index.html']) {
+for (const page of ['enviar-dinero/index.html', 'salario-en-dolares/index.html', 'convertidor-cripto/index.html']) {
   const CALC = R(page);
   if (!fs.existsSync(CALC)) continue;
   const MAP = { VE: 'tasa-bcv', CO: 'dolar-colombia', MX: 'dolar-mexico', AR: 'dolar-argentina', ARB: 'dolar-argentina-blue', PE: 'dolar-peru', CL: 'dolar-chile', CAD: 'usdcad' };
@@ -142,3 +142,34 @@ for (const page of ['enviar-dinero/index.html', 'salario-en-dolares/index.html']
     console.log(`${page}: reference rates updated`);
   }
 }
+
+// Bake coin prices (BTC from the feed's CoinGecko series, others from dolar-cripto/data.json) + USDT P2P into the crypto converter.
+try {
+  const CF = R('convertidor-cripto/index.html');
+  if (fs.existsSync(CF)) {
+    const cj = readJson('dolar-cripto/data.json', {});
+    const co = {};
+    for (const [k, c] of Object.entries(cj.coins || {})) if (c.usd > 0) co[k] = { usd: c.usd, source: c.source || 'CoinGecko', time: c.time };
+    const b = series.bitcoin; if (typeof b?.value === 'number' && b.value > 0) co.BTC = { usd: b.value, source: b.source, time: b.time };
+    if (!co.BTC) throw new Error('no BTC price');
+    const p2p = {};
+    for (const [cc, c] of Object.entries(cj.countries || {})) if (c.usdt?.value > 0 && !c.usdt.stale) p2p[cc.toLowerCase()] = { value: c.usdt.value, source: c.usdt.source, time: c.usdt.time };
+    co.p2p = p2p; co.generated = index.generated;
+    const html = fs.readFileSync(CF, 'utf8');
+    const mid = JSON.parse((html.match(/var MID=(\{.*?\});\/\*mid\*\//) || [, '{}'])[1]);
+    const FI = [['VE', 'VES', 'Bolívares (tasa BCV)'], ['AR', 'ARS', 'Pesos argentinos (oficial)'], ['ARB', 'ARS', 'Pesos argentinos (blue)'], ['CO', 'COP', 'Pesos colombianos (TRM)'], ['MX', 'MXN', 'Pesos mexicanos (FIX)'], ['PE', 'PEN', 'Soles peruanos'], ['CL', 'CLP', 'Pesos chilenos'], ['USD', 'USD', 'Dólares estadounidenses'], ['CAD', 'CAD', 'Dólares canadienses']];
+    const esc = (x) => String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    const rows = FI.map(([k, cur, n]) => { const r = k === 'USD' ? 1 : mid[k]?.value; const v = r ? co.BTC.usd * r : null; const two = ['USD', 'CAD', 'PE'].includes(k);
+      return `<tr><td>${n}</td><td class="n">${v == null ? '—' : v.toLocaleString('es', { maximumFractionDigits: two ? 2 : 0 })} ${cur}</td><td>${k === 'USD' ? '—' : esc(mid[k]?.source || 'sin dato')}</td></tr>`; }).join('');
+    const prevCo = JSON.parse((html.match(/var CO=(\{.*?\});\/\*coins\*\//) || [, '{}'])[1]);
+    const same = JSON.stringify({ ...prevCo, generated: 0 }) === JSON.stringify({ ...co, generated: 0 });
+    if (!same) {
+      fs.writeFileSync(CF, html.replace(/var CO=\{.*?\};\/\*coins\*\//, () => `var CO=${JSON.stringify(co)};/*coins*/`)
+        .replace(/<!--ref:start-->[\s\S]*?<!--ref:end-->/, () => `<!--ref:start-->${rows}<!--ref:end-->`)
+        .replace(/(<time id="upd" datetime=")[^"]*(">)[^<]*/, `$1${index.generated}$2${new Date(index.generated).toLocaleString('es', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' })} UTC`)
+        .replace(/("dateModified":)"[^"]*"/, `$1"${index.generated}"`)
+        .replace(/(<meta property="article:modified_time" content=")[^"]*/, `$1${index.generated}`));
+      console.log('convertidor-cripto: coin prices updated');
+    }
+  }
+} catch (e) { console.warn('convertidor-cripto: kept previous prices:', e.message); }

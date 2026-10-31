@@ -158,7 +158,7 @@ footer{{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute
 <script src="/assets/rates-widget.js" defer></script>
 <section id="otros" aria-labelledby="h-otros">
   <h2 id="h-otros">Otras tasas de cambio</h2>
-  <p>{' · '.join(f'<a href="/{s}/">{t}</a>' for s,_,t in others)} · <a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>{' · <a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>' if 'enviar-dinero' in live else ''}{' · <a href="/salario-en-dolares/">Calculadora de salario en dólares</a>' if 'salario-en-dolares' in live else ''}{' · <a href="/dolar-cripto/">Dólar cripto hoy: USDT P2P</a>' if 'dolar-cripto' in live else ''}</p>
+  <p>{' · '.join(f'<a href="/{s}/">{t}</a>' for s,_,t in others)} · <a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>{' · <a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>' if 'enviar-dinero' in live else ''}{' · <a href="/salario-en-dolares/">Calculadora de salario en dólares</a>' if 'salario-en-dolares' in live else ''}{' · <a href="/dolar-cripto/">Dólar cripto hoy: USDT P2P</a> · <a href="/convertidor-cripto/">Convertidor cripto (BTC, USDT)</a>' if 'dolar-cripto' in live else ''}</p>
 </section>
 </main>
 <footer>
