@@ -87,6 +87,7 @@ const EXTRA = {
   '/salario-en-dolares/': { topics: ['salario en dólares', 'sueldo en dólares', 'convertir salario', 'tipo de cambio', 'paridad de poder adquisitivo'], note: 'Calculadora de salario en dólares: convierte un sueldo mensual o anual en VES, COP, MXN, ARS (oficial y blue), PEN, CLP o CAD a USD con tasas de referencia, y a dólares internacionales (PPA del Banco Mundial) donde hay datos recientes (en español).' },
   '/dolar-cripto/': { topics: ['dólar cripto', 'USDT', 'P2P', 'brecha cambiaria', 'Venezuela', 'Argentina', 'Colombia'], note: 'Dólar cripto hoy: precio mediano del USDT P2P en VES, ARS y COP con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato; precios de BTC y otras criptomonedas de CoinGecko (en español). Referencial, no es asesoría financiera.' },
   '/convertidor-cripto/': { topics: ['convertidor cripto', 'bitcoin a bolívares', 'sats', 'USDT', 'ETH', 'calculadora cripto'], note: 'Convertidor cripto: BTC, sats, ETH, USDT, USDC, SOL, XRP y BNB a VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD y al revés, con tasas de referencia horneadas y fuente de cada precio (en español). Referencial, no es asesoría financiera.' },
+  '/comision-cripto/': { topics: ['comisión cripto', 'comisión de retiro', 'TRC20', 'ERC20', 'BEP20', 'Lightning', 'enviar USDT'], note: 'Calculadora de comisión cripto: con el monto, la moneda (USDT, USDC o BTC), la red (TRC20, ERC20, BEP20, Solana, Lightning o Bitcoin) y la comisión de retiro que escribe el usuario, muestra cuánto llega, la comisión en % y el valor en moneda local, con comparación con una remesa y tarifas de mempool.space como referencia (en español). Estimaciones, no es asesoría financiera.' },
   '/dolar-colombia/': { topics: ['TRM', 'dólar hoy', 'tipo de cambio', 'Colombia'], note: 'Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).' },
 };
 
@@ -155,6 +156,7 @@ ${byPath('/70/') ? `- [El 70](${byPath('/70/').mdUrl}): ${EXTRA['/70/'].note}` :
 ${byPath('/tasa-bcv/') ? `- [Tasa BCV](${byPath('/tasa-bcv/').mdUrl}): ${EXTRA['/tasa-bcv/'].note}` : ''}
 ${byPath('/dolar-argentina/') ? `- [Dólar Argentina](${byPath('/dolar-argentina/').mdUrl}): ${EXTRA['/dolar-argentina/'].note}` : ''}
 ${byPath('/dolar-colombia/') ? `- [Dólar Colombia](${byPath('/dolar-colombia/').mdUrl}): ${EXTRA['/dolar-colombia/'].note}` : ''}
+${byPath('/comision-cripto/') ? `- [Comisión cripto](${byPath('/comision-cripto/').mdUrl}): ${EXTRA['/comision-cripto/'].note}` : ''}
 ${byPath('/convertidor-cripto/') ? `- [Convertidor cripto](${byPath('/convertidor-cripto/').mdUrl}): ${EXTRA['/convertidor-cripto/'].note}` : ''}
 ${byPath('/dolar-cripto/') ? `- [Dólar cripto](${byPath('/dolar-cripto/').mdUrl}): ${EXTRA['/dolar-cripto/'].note}` : ''}
 ${byPath('/salario-en-dolares/') ? `- [Salario en dólares](${byPath('/salario-en-dolares/').mdUrl}): ${EXTRA['/salario-en-dolares/'].note}` : ''}
