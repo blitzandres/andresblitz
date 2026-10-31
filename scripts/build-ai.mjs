@@ -83,6 +83,7 @@ const EXTRA = {
   '/dolar-mexico/': { topics: ['FIX', 'Banxico', 'dólar hoy', 'tipo de cambio', 'México'], note: 'Dólar hoy en México — tipo de cambio FIX de Banxico, compra y venta de mercado y conversor MXN ↔ USD (en español).' },
   '/dolar-peru/': { topics: ['tipo de cambio', 'dólar hoy', 'soles', 'BCRP', 'Perú'], note: 'Dólar hoy en Perú — tipo de cambio en soles con la fuente indicada en cada actualización y conversor PEN ↔ USD (en español).' },
   '/dolar-chile/': { topics: ['dólar observado', 'Banco Central de Chile', 'dólar hoy', 'tipo de cambio', 'Chile'], note: 'Dólar hoy en Chile — dólar observado del Banco Central de Chile, compra y venta de mercado y conversor CLP ↔ USD (en español).' },
+  '/enviar-dinero/': { topics: ['enviar dinero', 'remesas', 'costo de envío', 'comisión', 'tipo de cambio', 'Canadá', 'Estados Unidos'], note: 'Calculadora del costo de enviar dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión y margen frente a la tasa de referencia (en español). Estimaciones; no muestra cotizaciones de proveedores.' },
   '/dolar-colombia/': { topics: ['TRM', 'dólar hoy', 'tipo de cambio', 'Colombia'], note: 'Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).' },
 };
 
@@ -151,6 +152,7 @@ ${byPath('/70/') ? `- [El 70](${byPath('/70/').mdUrl}): ${EXTRA['/70/'].note}` :
 ${byPath('/tasa-bcv/') ? `- [Tasa BCV](${byPath('/tasa-bcv/').mdUrl}): ${EXTRA['/tasa-bcv/'].note}` : ''}
 ${byPath('/dolar-argentina/') ? `- [Dólar Argentina](${byPath('/dolar-argentina/').mdUrl}): ${EXTRA['/dolar-argentina/'].note}` : ''}
 ${byPath('/dolar-colombia/') ? `- [Dólar Colombia](${byPath('/dolar-colombia/').mdUrl}): ${EXTRA['/dolar-colombia/'].note}` : ''}
+${byPath('/enviar-dinero/') ? `- [Enviar dinero](${byPath('/enviar-dinero/').mdUrl}): ${EXTRA['/enviar-dinero/'].note}` : ''}
 ${byPath('/dolar-chile/') ? `- [Dólar Chile](${byPath('/dolar-chile/').mdUrl}): ${EXTRA['/dolar-chile/'].note}` : ''}
 ${byPath('/dolar-peru/') ? `- [Dólar Perú](${byPath('/dolar-peru/').mdUrl}): ${EXTRA['/dolar-peru/'].note}` : ''}
 ${byPath('/dolar-mexico/') ? `- [Dólar México](${byPath('/dolar-mexico/').mdUrl}): ${EXTRA['/dolar-mexico/'].note}` : ''}
