@@ -29,6 +29,11 @@ try {
   const fb = JSON.parse(fs.readFileSync(R('tasa-bcv/index.html'), 'utf8').match(/var FB=(\{[^}]*\});/)[1]);
   if (fb.USD > 0) series['tasa-bcv'] = { title: 'Venezuela: Tasa BCV (USD)', value: fb.USD, unit: 'VES por USD', source: 'Banco Central de Venezuela vía ve.dolarapi.com', time: new Date(fb.f).toISOString(), url: `${ORIGIN}/tasa-bcv/` };
 } catch (e) { skipped.push(`tasa-bcv: ${e.message}`); }
+// 2b. USDT P2P (baked by scripts/bake-crypto.mjs; stale values are not re-announced)
+try {
+  const cj = JSON.parse(fs.readFileSync(R('dolar-cripto/data.json'), 'utf8'));
+  for (const [cc, c] of Object.entries(cj.countries || {})) if (c.usdt && !c.usdt.stale) series[`usdt-${cc.toLowerCase()}`] = { title: `${c.name}: USDT P2P (${c.fiat})`, value: c.usdt.value, unit: `${c.fiat} por USDT`, extra: c.gap != null ? `brecha ${c.gap > 0 ? '+' : ''}${c.gap} % vs. ${c.official.label}` : undefined, source: c.usdt.source, time: c.usdt.time, url: `${ORIGIN}/dolar-cripto/` };
+} catch (e) { if (fs.existsSync(R('dolar-cripto/data.json'))) skipped.push(`usdt: ${e.message}`); }
 
 // 3. Macro series, each optional
 const macro = {
