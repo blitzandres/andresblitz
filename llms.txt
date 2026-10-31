@@ -41,6 +41,7 @@ Every link below points to the clean Markdown version of the page (append `index
 - [Tasa BCV](https://andresblitz.com/tasa-bcv/index.md): Tasa BCV — tipo de cambio oficial del Banco Central de Venezuela (en español). Maracaibo, Zulia.
 - [Dólar Argentina](https://andresblitz.com/dolar-argentina/index.md): Dólar hoy en Argentina — oficial, blue, MEP, CCL, cripto y tarjeta, con conversor ARS ↔ USD (en español).
 - [Dólar Colombia](https://andresblitz.com/dolar-colombia/index.md): Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).
+- [Dólar México](https://andresblitz.com/dolar-mexico/index.md): Dólar hoy en México — tipo de cambio FIX de Banxico, compra y venta de mercado y conversor MXN ↔ USD (en español).
 
 ## AI layer status
 

@@ -5,6 +5,14 @@
 //   node scripts/bake-rates.mjs <slug> && node scripts/build-ai.mjs
 // (/tasa-bcv/ is intentionally separate and baked by scripts/bake-bcv.mjs.)
 const get = async (u) => { const r = await fetch(u, { signal: AbortSignal.timeout(10000) }); if (!r.ok) throw new Error(`${u} ${r.status}`); return r.json(); };
+const getText = async (u) => { const r = await fetch(u, { signal: AbortSignal.timeout(10000) }); if (!r.ok) throw new Error(`${u} ${r.status}`); return r.text(); };
+// open.er-api.com (ExchangeRate-API) free endpoint: attribution required on the page.
+const erApi = (cur, key = 'ref') => async () => {
+  const j = await get('https://open.er-api.com/v6/latest/USD');
+  if (j.result !== 'success' || !(j.rates?.[cur] > 0)) throw new Error('er-api bad data');
+  return { source: 'open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)', label: 'Dólar de referencia (mercado internacional)', rates: { [key]: { compra: null, venta: j.rates[cur], f: new Date(j.time_last_update_unix * 1000).toISOString() } } };
+};
+const dolarapiUsd = async (cc) => (await get(`https://${cc}.dolarapi.com/v1/cotizaciones`)).find((d) => d.moneda === 'USD');
 const ts = (s) => new Date(s * 1000).toISOString();
 
 export const COUNTRIES = {
@@ -37,5 +45,45 @@ export const COUNTRIES = {
       const u = (await get('https://co.dolarapi.com/v1/cotizaciones')).find((d) => d.moneda === 'USD');
       return { source: 'co.dolarapi.com', rates: { trm: { compra: null, venta: u.ultimoCierre ?? u.venta, f: u.fechaActualizacion }, mercado: { compra: u.compra, venta: u.venta, f: u.fechaActualizacion } } };
     },
+  },
+  'dolar-mexico': {
+    locale: 'es-MX', currency: 'MXN', timeZone: 'America/Mexico_City', tzLabel: 'hora del centro de México', decimals: 4,
+    keys: ['ref', 'mercado'], required: ['ref'],
+    sources: [
+      async () => { const u = await dolarapiUsd('mx'); const f = `${u.fechaActualizacion.slice(0, 10)}T12:00:00-06:00`; // FIX is a daily value; keep the calendar date in Mexico
+        return { source: 'mx.dolarapi.com (FIX de Banxico)', label: 'Tipo de cambio FIX (Banxico)', rates: { ref: { compra: null, venta: u.fix, f }, mercado: { compra: u.compra, venta: u.venta, f: u.fechaActualizacion } } }; },
+      erApi('MXN'),
+    ],
+  },
+  'dolar-peru': {
+    locale: 'es-PE', currency: 'PEN', timeZone: 'America/Lima', tzLabel: 'hora de Lima', decimals: 4,
+    keys: ['ref', 'mercado'], required: ['ref'],
+    sources: [
+      async () => { const u = await dolarapiUsd('pe'); return { source: 'pe.dolarapi.com', label: 'Tipo de cambio de cierre', rates: { ref: { compra: null, venta: u.ultimoCierre ?? u.venta, f: u.fechaActualizacion }, mercado: { compra: u.compra, venta: u.venta, f: u.fechaActualizacion } } }; },
+      async () => {
+        // BCRP series PD04640PD = tipo de cambio interbancario, venta (S/ por US$), daily.
+        const end = new Date(), start = new Date(end - 15 * 864e5), d = (x) => x.toISOString().slice(0, 10);
+        const j = JSON.parse(await getText(`https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PD04640PD/json/${d(start)}/${d(end)}`));
+        const p = [...j.periods].reverse().find((x) => Number(x.values?.[0]) > 0);
+        const M = { Ene: 0, Feb: 1, Mar: 2, Abr: 3, May: 4, Jun: 5, Jul: 6, Ago: 7, Set: 8, Sep: 8, Oct: 9, Nov: 10, Dic: 11 };
+        const [dd, mm, yy] = p.name.split('.');
+        const f = new Date(Date.UTC(2000 + Number(yy), M[mm], Number(dd), 5)).toISOString();
+        return { source: 'BCRP (tipo de cambio interbancario)', label: 'Tipo de cambio interbancario BCRP (venta)', rates: { ref: { compra: null, venta: Number(p.values[0]), f } } };
+      },
+      erApi('PEN'),
+    ],
+  },
+  'dolar-chile': {
+    locale: 'es-CL', currency: 'CLP', timeZone: 'America/Santiago', tzLabel: 'hora de Chile',
+    keys: ['ref', 'mercado'], required: ['ref'],
+    sources: [
+      async () => {
+        const [s] = (await get('https://mindicador.cl/api/dolar')).serie;
+        const out = { ref: { compra: null, venta: s.valor, f: s.fecha } };
+        try { const u = await dolarapiUsd('cl'); out.mercado = { compra: u.compra, venta: u.venta, f: u.fechaActualizacion }; } catch {}
+        return { source: 'mindicador.cl (dólar observado, Banco Central de Chile)', label: 'Dólar observado (Banco Central de Chile)', rates: out };
+      },
+      async () => { const u = await dolarapiUsd('cl'); return { source: 'cl.dolarapi.com', label: 'Dólar de cierre de mercado', rates: { ref: { compra: null, venta: u.ultimoCierre ?? u.venta, f: u.fechaActualizacion }, mercado: { compra: u.compra, venta: u.venta, f: u.fechaActualizacion } } }; },
+    ],
   },
 };

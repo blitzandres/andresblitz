@@ -1,0 +1,20 @@
+{
+ "country": "dolar-mexico",
+ "currency": "MXN",
+ "base": "USD",
+ "source": "mx.dolarapi.com (FIX de Banxico)",
+ "label": "Tipo de cambio FIX (Banxico)",
+ "updated": "2026-10-30T18:00:00.000Z",
+ "rates": {
+  "ref": {
+   "compra": null,
+   "venta": 18.7962,
+   "f": "2026-10-30T12:00:00-06:00"
+  },
+  "mercado": {
+   "compra": 18.7985,
+   "venta": 18.804,
+   "f": "2026-10-30T00:00:00.000Z"
+  }
+ }
+}
