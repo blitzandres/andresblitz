@@ -105,4 +105,4 @@ Son valores de referencia con fines informativos. Antes de comprar o vender divi
 
 ## Otras tasas de cambio
 
-[Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Tasa BCV hoy: dólar y euro oficial en bolívares (Venezuela)](https://andresblitz.com/tasa-bcv/)
+[Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Tasa BCV hoy: dólar y euro oficial en bolívares (Venezuela)](https://andresblitz.com/tasa-bcv/)

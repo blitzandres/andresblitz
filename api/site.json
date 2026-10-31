@@ -81,6 +81,24 @@
       ]
     },
     {
+      "slug": "dolar-chile",
+      "title": "Dólar hoy en Chile: dólar observado y conversor de pesos",
+      "url": "https://andresblitz.com/dolar-chile/",
+      "md": "https://andresblitz.com/dolar-chile/index.md",
+      "json": "https://andresblitz.com/api/page/dolar-chile.json",
+      "kind": "page",
+      "lang": "es-CL",
+      "summary": "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "dólar observado",
+        "Banco Central de Chile",
+        "dólar hoy",
+        "tipo de cambio",
+        "Chile"
+      ]
+    },
+    {
       "slug": "dolar-colombia",
       "title": "Dólar hoy en Colombia: TRM oficial y conversor de pesos | Cotización",
       "url": "https://andresblitz.com/dolar-colombia/",

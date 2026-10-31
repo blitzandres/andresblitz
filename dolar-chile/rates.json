@@ -1,0 +1,20 @@
+{
+ "country": "dolar-chile",
+ "currency": "CLP",
+ "base": "USD",
+ "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
+ "label": "Dólar observado (Banco Central de Chile)",
+ "updated": "2026-10-31T12:01:19.058Z",
+ "rates": {
+  "ref": {
+   "compra": null,
+   "venta": 993.22,
+   "f": "2026-10-30T03:00:00.000Z"
+  },
+  "mercado": {
+   "compra": 993.37,
+   "venta": 994.63,
+   "f": "2026-10-31T12:01:19.058Z"
+  }
+ }
+}
