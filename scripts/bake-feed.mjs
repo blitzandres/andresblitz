@@ -118,3 +118,21 @@ if (changed || !fs.existsSync(R('rates/feed.xml'))) {
   fs.writeFileSync(R('rates/feed.xml'), xml);
 }
 console.log(`feed: ${Object.keys(series).length} series, ${items.length} items${skipped.length ? `; skipped: ${skipped.join(' | ')}` : ''}`);
+
+// Bake the reference (mid-market) rates into the remittance calculator so it works without fetching.
+const CALC = R('enviar-dinero/index.html');
+if (fs.existsSync(CALC)) {
+  const MAP = { VE: 'tasa-bcv', CO: 'dolar-colombia', MX: 'dolar-mexico', AR: 'dolar-argentina', PE: 'dolar-peru', CL: 'dolar-chile', CAD: 'usdcad' };
+  const mid = {};
+  for (const [k, s] of Object.entries(MAP)) if (typeof series[s]?.value === 'number') mid[k] = { value: series[s].value, source: series[s].source, time: series[s].time };
+  const html = fs.readFileSync(CALC, 'utf8');
+  const cur = (html.match(/var MID=(\{.*?\});\/\*mid\*\//) || [])[1];
+  const next = JSON.stringify(mid);
+  if (cur !== next && Object.keys(mid).length) {
+    const now = index.generated;
+    fs.writeFileSync(CALC, html.replace(/var MID=\{.*?\};\/\*mid\*\//, () => `var MID=${next};/*mid*/`)
+      .replace(/("dateModified":)"[^"]*"/, `$1"${now}"`)
+      .replace(/(<meta property="article:modified_time" content=")[^"]*/, `$1${now}`));
+    console.log('enviar-dinero: reference rates updated');
+  }
+}

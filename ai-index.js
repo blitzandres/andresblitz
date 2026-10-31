@@ -155,6 +155,26 @@ export const site = {
       ]
     },
     {
+      "slug": "enviar-dinero",
+      "title": "Calculadora del costo de enviar dinero: comisión y margen del tipo de cambio",
+      "url": "https://andresblitz.com/enviar-dinero/",
+      "md": "https://andresblitz.com/enviar-dinero/index.md",
+      "json": "https://andresblitz.com/api/page/enviar-dinero.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "enviar dinero",
+        "remesas",
+        "costo de envío",
+        "comisión",
+        "tipo de cambio",
+        "Canadá",
+        "Estados Unidos"
+      ]
+    },
+    {
       "slug": "home",
       "title": "Andrés Blitz | Full-Time Trader & Investor, British Columbia",
       "url": "https://andresblitz.com/",
