@@ -16,7 +16,7 @@ wp = json.dumps({"@context":"https://schema.org","@type":"WebPage","name":title,
 src = open('enviar-dinero/index.html').read()
 base_style = src[src.index('<style>'):src.index('</style>')+8]
 analytics = re.search(r"<script>\n\(function\(\)\{var b='https://blitz-analytics.*?</script>\n", src, re.S).group(0)
-links = ' · '.join(['<a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>'] + [f'<a href="/{s}/">Dólar hoy en {n}</a>' for s,n in [('dolar-argentina','Argentina'),('dolar-colombia','Colombia'),('dolar-mexico','México'),('dolar-peru','Perú'),('dolar-chile','Chile')]] + ['<a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>','<a href="/salario-en-dolares/">Calculadora de salario en dólares</a>','<a href="/convertidor-cripto/">Convertidor cripto (BTC, USDT)</a> · <a href="/comision-cripto/">Calculadora de comisión cripto (USDT, BTC)</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares: calculadora histórica</a>'])
+links = ' · '.join(['<a href=\"/guias-cripto/\">Guías cripto para principiantes</a>','<a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>'] + [f'<a href="/{s}/">Dólar hoy en {n}</a>' for s,n in [('dolar-argentina','Argentina'),('dolar-colombia','Colombia'),('dolar-mexico','México'),('dolar-peru','Perú'),('dolar-chile','Chile')]] + ['<a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>','<a href="/salario-en-dolares/">Calculadora de salario en dólares</a>','<a href="/convertidor-cripto/">Convertidor cripto (BTC, USDT)</a> · <a href="/comision-cripto/">Calculadora de comisión cripto (USDT, BTC)</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares: calculadora histórica</a>'])
 out = f'''<!doctype html>
 <html lang="es">
 <head>
@@ -125,7 +125,7 @@ main{{max-width:980px}}
 </main>
 <footer>
   <p style="margin:0">Referencial, no es asesoría financiera. Sin botones de compra, enlaces de afiliados, señales ni predicciones. Datos P2P: CriptoYa, Binance P2P o Yadio según disponibilidad; criptomonedas: CoinGecko. Gráficos: uPlot, svg-gauge y sparkline (MIT). Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a> · British Columbia, Canadá.</p>
-  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/comision-cripto/">Comisión cripto</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/comision-cripto/">Comisión cripto</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares</a> · <a href="/guias-cripto/">Guías cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
 </footer>
 <script type="application/json" id="cd">{{}}</script>
 <script>
