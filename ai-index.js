@@ -82,6 +82,23 @@ export const site = {
       ]
     },
     {
+      "slug": "dolar-colombia",
+      "title": "Dólar hoy en Colombia: TRM oficial y conversor de pesos | Cotización",
+      "url": "https://andresblitz.com/dolar-colombia/",
+      "md": "https://andresblitz.com/dolar-colombia/index.md",
+      "json": "https://andresblitz.com/api/page/dolar-colombia.json",
+      "kind": "page",
+      "lang": "es-CO",
+      "summary": "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "TRM",
+        "dólar hoy",
+        "tipo de cambio",
+        "Colombia"
+      ]
+    },
+    {
       "slug": "home",
       "title": "Andrés Blitz | Full-Time Trader & Investor, British Columbia",
       "url": "https://andresblitz.com/",

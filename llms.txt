@@ -40,6 +40,7 @@ Every link below points to the clean Markdown version of the page (append `index
 - [El 70](https://andresblitz.com/70/index.md): El 70 — finca ganadera (en español). La Villa del Rosario, Rosario de Perijá, Zulia. Geo: 10.4165941,-72.2108835.
 - [Tasa BCV](https://andresblitz.com/tasa-bcv/index.md): Tasa BCV — tipo de cambio oficial del Banco Central de Venezuela (en español). Maracaibo, Zulia.
 - [Dólar Argentina](https://andresblitz.com/dolar-argentina/index.md): Dólar hoy en Argentina — oficial, blue, MEP, CCL, cripto y tarjeta, con conversor ARS ↔ USD (en español).
+- [Dólar Colombia](https://andresblitz.com/dolar-colombia/index.md): Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).
 
 ## AI layer status
 
