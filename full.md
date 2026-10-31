@@ -2391,7 +2391,7 @@ Sí. El Banco Central de Venezuela publica una sola tasa oficial para todo el pa
 
 ### ¿En qué se diferencia el dólar oficial del dólar monitor o paralelo?
 
-El dólar oficial es la tasa que publica el Banco Central de Venezuela y es la referencia legal para precios, facturas y obligaciones. El llamado dólar paralelo (o dólar monitor) es una cotización no oficial que publican sitios independientes a partir de operaciones fuera del sistema bancario, y puede ser bastante distinta. Esta página muestra el promedio del paralelo que publica [ve.dolarapi.com](https://ve.dolarapi.com/) solo como referencia, claramente separado de la tasa oficial; la calculadora usa siempre la tasa oficial BCV.
+El dólar oficial es la tasa que publica el Banco Central de Venezuela y es la referencia legal para precios, facturas y obligaciones. El llamado dólar paralelo (o dólar monitor) es una cotización no oficial que publican sitios independientes a partir de operaciones fuera del sistema bancario, y puede ser bastante distinta. Esta página muestra el promedio del paralelo que publica [DolarApi.com](https://dolarapi.com/docs/venezuela/) solo como referencia, claramente separado de la tasa oficial; la calculadora usa siempre la tasa oficial BCV.
 
 ### Precio del bitcoin en bolívares
 
@@ -2439,7 +2439,7 @@ No. Según su ficha oficial, Rappi opera en Argentina, Brasil, Chile, Colombia, 
 
 ### De dónde salen los datos
 
-El dólar y el euro oficiales provienen de [ve.dolarapi.com](https://ve.dolarapi.com/), que reproduce la tasa publicada por el BCV (el promedio del dólar paralelo, no oficial, viene de la misma fuente), y el bitcoin de [CoinGecko](https://www.coingecko.com/). Si una fuente no responde, ese dato no se muestra: aquí nunca verá cifras estimadas. Esta página no es una fuente oficial; para usos legales o contables consulte el [sitio oficial del Banco Central de Venezuela](https://www.bcv.org.ve/).
+El dólar y el euro oficiales provienen de [DolarApi.com](https://dolarapi.com/docs/venezuela/), que reproduce la tasa publicada por el BCV (el promedio del dólar paralelo, no oficial, viene de la misma fuente), y el bitcoin de [CoinGecko](https://www.coingecko.com/). Si una fuente no responde, ese dato no se muestra: aquí nunca verá cifras estimadas. Esta página no es una fuente oficial; para usos legales o contables consulte el [sitio oficial del Banco Central de Venezuela](https://www.bcv.org.ve/).
 
 ### ¿Qué pasa si una fuente no responde?
 
