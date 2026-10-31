@@ -1,0 +1,32 @@
+name: Bake country exchange rates
+
+on:
+  schedule:
+    - cron: '7,37 * * * *'  # every ~30 min (GitHub may delay scheduled runs)
+  workflow_dispatch:
+
+concurrency:
+  group: bake-rates
+  cancel-in-progress: false
+
+jobs:
+  bake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fetch rates and pre-render HTML
+        run: node scripts/bake-rates.mjs
+      - name: Commit if changed
+        run: |
+          if git diff --quiet; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*/rates.json' '*/index.html'
+          git commit -m "chore(rates): bake latest exchange rates"
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done; exit 1

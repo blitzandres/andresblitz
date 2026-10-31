@@ -63,6 +63,24 @@
       }
     },
     {
+      "slug": "dolar-argentina",
+      "title": "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto | Cotización",
+      "url": "https://andresblitz.com/dolar-argentina/",
+      "md": "https://andresblitz.com/dolar-argentina/index.md",
+      "json": "https://andresblitz.com/api/page/dolar-argentina.json",
+      "kind": "page",
+      "lang": "es-AR",
+      "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "Dólar hoy",
+        "dólar blue",
+        "dólar MEP",
+        "tipo de cambio",
+        "Argentina"
+      ]
+    },
+    {
       "slug": "home",
       "title": "Andrés Blitz | Full-Time Trader & Investor | Markets · Capital · British Columbia",
       "url": "https://andresblitz.com/",

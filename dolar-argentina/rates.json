@@ -1,0 +1,39 @@
+{
+ "country": "dolar-argentina",
+ "currency": "ARS",
+ "base": "USD",
+ "source": "dolarapi.com",
+ "updated": "2026-10-31T14:57:00.000Z",
+ "rates": {
+  "oficial": {
+   "compra": 1510,
+   "venta": 1560,
+   "f": "2026-10-30T18:55:00.000Z"
+  },
+  "blue": {
+   "compra": 1545,
+   "venta": 1565,
+   "f": "2026-10-31T14:57:00.000Z"
+  },
+  "mep": {
+   "compra": 1565.4,
+   "venta": 1575,
+   "f": "2026-10-31T14:57:00.000Z"
+  },
+  "ccl": {
+   "compra": 1655.3,
+   "venta": 1658.5,
+   "f": "2026-10-31T14:57:00.000Z"
+  },
+  "cripto": {
+   "compra": 1645.6,
+   "venta": 1650.54,
+   "f": "2026-10-31T14:57:00.000Z"
+  },
+  "tarjeta": {
+   "compra": 1963,
+   "venta": 2028,
+   "f": "2026-10-30T18:55:00.000Z"
+  }
+ }
+}
