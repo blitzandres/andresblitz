@@ -3,7 +3,7 @@
 import sys,re,glob
 slug,live,name,long_,topics,note=sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6]
 for f in glob.glob('dolar-*/index.html'):
-    if f.startswith(slug+'/'):continue
+    if f.startswith(slug+'/') or f.startswith('dolar-cripto/'):continue
     s=open(f).read()
     if f'href="/{slug}/"' in s: continue
     s,n1=re.subn(r'( · )(<a href="/tasa-bcv/">Tasa BCV hoy)',rf'\1<a href="/{slug}/">{long_}</a> · \2',s,count=1)

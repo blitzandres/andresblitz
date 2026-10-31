@@ -66,6 +66,25 @@ export const site = {
       }
     },
     {
+      "slug": "convertidor-cripto",
+      "title": "Convertidor cripto: BTC, sats, ETH y USDT a bolívares, pesos y dólares",
+      "url": "https://andresblitz.com/convertidor-cripto/",
+      "md": "https://andresblitz.com/convertidor-cripto/index.md",
+      "json": "https://andresblitz.com/api/page/convertidor-cripto.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "convertidor cripto",
+        "bitcoin a bolívares",
+        "sats",
+        "USDT",
+        "ETH",
+        "calculadora cripto"
+      ]
+    },
+    {
       "slug": "dolar-argentina",
       "title": "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto | Cotización",
       "url": "https://andresblitz.com/dolar-argentina/",
