@@ -2,7 +2,7 @@
 title: "Blitzy's World — Playable Space Game in the Browser | Andrés Blitz"
 description: "Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch."
 url: "https://andresblitz.com/projects/blitzys-world/"
-last_updated: "2026-10-16"
+last_updated: "2026-10-29"
 lang: "en-CA"
 ---
 

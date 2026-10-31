@@ -42,7 +42,7 @@ Every link below points to the clean Markdown version of the page (append `index
 
 ## AI layer status
 
-- Status: active (generated 2026-10-29)
+- Status: active (generated 2026-10-31)
 - Markdown per page: `<page-url>index.md` with YAML frontmatter (title, description, url, last_updated)
 - Full content: https://andresblitz.com/llms-full.txt and https://andresblitz.com/full.md
 - Structured index (JSON): https://andresblitz.com/agent.json and https://andresblitz.com/api/site.json
