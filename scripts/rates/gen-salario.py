@@ -39,7 +39,7 @@ style = src[src.index('<style>'):src.index('</head>')]
 style = re.sub(r'\n?<!-- ai-layer:start -->.*?<!-- ai-layer:end -->\n?', '\n', style, flags=re.S).strip()
 analytics = re.search(r"<script>\n\(function\(\)\{var b='https://blitz-analytics.*?</script>\n", src, re.S).group(0)
 opts = ''.join(f'<option value="{k}"{" selected" if k=="CO" else ""}>{n} ({c})</option>' for k,c,n,s,l in CUR)
-links = ' · '.join(['<a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>'] + [f'<a href="/{s}/">Dólar hoy en {n}</a>' for s,n in [('dolar-colombia','Colombia'),('dolar-mexico','México'),('dolar-argentina','Argentina'),('dolar-peru','Perú'),('dolar-chile','Chile')]] + ['<a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>'])
+links = ' · '.join(['<a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>'] + [f'<a href="/{s}/">Dólar hoy en {n}</a>' for s,n in [('dolar-colombia','Colombia'),('dolar-mexico','México'),('dolar-argentina','Argentina'),('dolar-peru','Perú'),('dolar-chile','Chile')]] + ['<a href="/dolar-cripto/">Dólar cripto (USDT P2P)</a>', '<a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>'])
 pppnote = (f'Paridad de poder adquisitivo: Banco Mundial, indicador PA.NUS.PPP (datos de {max(v["year"] for v in ppp.values())}, base actualizada el {wbdate}).' if ppp else '')
 out = f'''<!doctype html>
 <html lang="es">
@@ -122,7 +122,7 @@ out = f'''<!doctype html>
 </main>
 <footer>
   <p style="margin:0">Herramienta informativa y gratuita. Conversión de referencia, no constituye asesoría financiera ni laboral. Sin enlaces de afiliados. {E(pppnote)} Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a> · British Columbia, Canadá.</p>
-  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/enviar-dinero/">Enviar dinero</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/enviar-dinero/">Enviar dinero</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
 </footer>
 <script>
 (function(){{

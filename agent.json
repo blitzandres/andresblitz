@@ -118,6 +118,26 @@
       ]
     },
     {
+      "slug": "dolar-cripto",
+      "title": "Dólar cripto hoy: USDT P2P en Venezuela, Argentina y Colombia",
+      "url": "https://andresblitz.com/dolar-cripto/",
+      "md": "https://andresblitz.com/dolar-cripto/index.md",
+      "json": "https://andresblitz.com/api/page/dolar-cripto.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "dólar cripto",
+        "USDT",
+        "P2P",
+        "brecha cambiaria",
+        "Venezuela",
+        "Argentina",
+        "Colombia"
+      ]
+    },
+    {
       "slug": "dolar-mexico",
       "title": "Dólar hoy en México: tipo de cambio FIX de Banxico y conversor",
       "url": "https://andresblitz.com/dolar-mexico/",
