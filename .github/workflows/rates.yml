@@ -27,6 +27,8 @@ jobs:
         run: node scripts/bake-rates.mjs
       - name: Bake USDT P2P tracker (/dolar-cripto/)
         run: node scripts/bake-crypto.mjs
+      - name: Bake savings history (/ahorro-en-dolares/)
+        run: node scripts/bake-ahorro.mjs
       - name: Bake rates RSS feed
         run: node scripts/bake-feed.mjs
       - name: Rebuild AI layer

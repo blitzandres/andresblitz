@@ -125,7 +125,7 @@ if (changed || !fs.existsSync(R('rates/feed.xml'))) {
 console.log(`feed: ${Object.keys(series).length} series, ${items.length} items${skipped.length ? `; skipped: ${skipped.join(' | ')}` : ''}`);
 
 // Bake the reference (mid-market) rates into the remittance calculator so it works without fetching.
-for (const page of ['enviar-dinero/index.html', 'salario-en-dolares/index.html', 'convertidor-cripto/index.html', 'comision-cripto/index.html']) {
+for (const page of ['enviar-dinero/index.html', 'salario-en-dolares/index.html', 'convertidor-cripto/index.html', 'comision-cripto/index.html', 'ahorro-en-dolares/index.html']) {
   const CALC = R(page);
   if (!fs.existsSync(CALC)) continue;
   const MAP = { VE: 'tasa-bcv', CO: 'dolar-colombia', MX: 'dolar-mexico', AR: 'dolar-argentina', ARB: 'dolar-argentina-blue', PE: 'dolar-peru', CL: 'dolar-chile', CAD: 'usdcad' };

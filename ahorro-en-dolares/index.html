@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado</title>
+<meta name="description" content="Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.">
+<link rel="canonical" href="https://andresblitz.com/ahorro-en-dolares/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Andrés Blitz">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#05070f">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_LA">
+<meta property="og:site_name" content="andresblitz.com">
+<meta property="og:title" content="Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado">
+<meta property="og:description" content="Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.">
+<meta property="og:url" content="https://andresblitz.com/ahorro-en-dolares/">
+<meta property="og:image" content="https://andresblitz.com/assets/og-cover.png">
+<meta property="article:modified_time" content="2026-10-31T20:39:24.715Z">
+<link rel="alternate" type="application/rss+xml" title="Feed de tasas" href="https://andresblitz.com/rates/feed.xml">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado","url":"https://andresblitz.com/ahorro-en-dolares/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"es","datePublished":"2026-10-31","dateModified":"2026-10-31T20:39:24.715Z","author":{"@type":"Person","name":"Andrés Blitz","url":"https://andresblitz.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué calcula esta página?","acceptedAnswer":{"@type":"Answer","text":"Compara dos casos con datos históricos: guardar el dinero en moneda local desde una fecha pasada, o cambiarlo a dólares (o USDT, que sigue al dólar) ese mismo día. Muestra cuánto vale cada caso hoy en dólares."}},{"@type":"Question","name":"¿De dónde salen los datos históricos?","acceptedAnswer":{"@type":"Answer","text":"Para bolívares, pesos colombianos, mexicanos y chilenos, soles y dólares canadienses usamos las cotizaciones diarias fechadas de currency-api (fawazahmed0), tomando el primer día disponible de cada mes desde marzo de 2024; las comparamos con series oficiales (TRM, Banco de Canadá, Banco Central de Chile, BCV) y coinciden en menos de 0,2 %. Para Argentina usamos el dólar oficial y el blue (venta) de ArgentinaDatos. El valor de hoy es la tasa de referencia de cada país en este sitio."}},{"@type":"Question","name":"¿Por qué no puedo elegir fechas anteriores a 2024?","acceptedAnswer":{"@type":"Answer","text":"Porque solo usamos fuentes gratuitas y fechadas que pudimos verificar. Las instantáneas diarias de currency-api empiezan en marzo de 2024."}},{"@type":"Question","name":"¿Se considera la inflación en dólares o el rendimiento de un ahorro?","acceptedAnswer":{"@type":"Answer","text":"No. Es una comparación de tipo de cambio: no incluye intereses, comisiones, la inflación del dólar ni el pequeño desvío del USDT respecto de un dólar."}},{"@type":"Question","name":"¿Esto dice qué va a pasar con mi moneda?","acceptedAnswer":{"@type":"Answer","text":"No. Son solo datos históricos, no es asesoría financiera. No hay proyecciones, señales ni recomendaciones."}},{"@type":"Question","name":"¿Cómo convierto mi salario a dólares hoy?","acceptedAnswer":{"@type":"Answer","text":"Usa la calculadora de salario en dólares, que convierte un sueldo mensual o anual con las tasas de referencia actuales."}}]}</script>
+<style>
+:root{--bg:#05070f;--panel:#0b0f1c;--line:#1a2135;--text:#e7eaf2;--mute:#9aa3b8;--acc:#7fc8a9;--pad:clamp(12px,4vw,20px)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:clamp(14.5px,3.9vw,16px)/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;overflow-x:hidden}
+a{color:var(--acc)}
+main{max-width:760px;margin:0 auto;padding:clamp(10px,4vw,40px) var(--pad) 40px}
+h1{font-size:clamp(18px,5vw,32px);line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+h2{font-size:clamp(16px,4.4vw,20px);margin:28px 0 10px}
+.sub,.mute{color:var(--mute)}.sub{font-size:clamp(12.5px,3.4vw,15px);margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(10px,3vw,18px)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 0}
+.tasa{min-width:0;padding:10px 12px}.tasa.big{grid-column:1/-1}.tasa[hidden]{display:none}
+.tasa h3{font-size:clamp(11.5px,3.2vw,13px);color:var(--mute);font-weight:400;margin:0}
+.tasa .v{font-size:clamp(19px,5.8vw,28px);font-weight:650;line-height:1.15;margin:2px 0 0;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tasa.big .v{font-size:clamp(26px,8vw,40px)}
+.tasa .s{font-size:clamp(11px,3vw,12.5px);color:var(--mute);margin:1px 0 0;font-variant-numeric:tabular-nums}
+.fuente{font-size:12.5px;color:var(--mute);margin:8px 0 0;min-height:1.4em}
+.calc label{font-size:12.5px;color:var(--mute);display:block;margin:8px 0 3px}
+.calc input,.calc select{min-height:44px;width:100%;min-width:0;background:#05070f;color:var(--text);border:1px solid #2c3550;border-radius:10px;padding:8px 12px;font:inherit;font-size:16px;font-variant-numeric:tabular-nums}
+.nota{font-size:12.5px;color:var(--mute);margin:6px 0 0}
+details{border-bottom:1px solid var(--line);padding:8px 0}summary{cursor:pointer;font-weight:600}summary h3{display:inline;font-size:inherit;margin:0}details p{margin:6px 0 0}
+footer{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute);font-size:13px}
+</style>
+<style>
+main{max-width:760px}
+.aviso{border-left:3px solid #e0b252;background:#16130a;padding:8px 12px;border-radius:8px;margin:10px 0;font-weight:600;font-size:14px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:10px}
+.side{background:#0b1020;border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:6px}.side:focus-within{border-color:var(--acc)}
+.side label,.lbl{font-size:12.5px;color:var(--mute)}
+.big{display:grid;grid-template-columns:1fr minmax(120px,42%);gap:8px;align-items:center}
+.big input{font:inherit;font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;background:transparent;border:0;color:var(--text);min-width:0;width:100%;min-height:44px}.big input:focus{outline:none}
+select{font:inherit;font-size:15px;min-height:44px;background:#16203a;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:6px 8px;width:100%;min-width:0}
+.seg{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-height:44px}.seg button{min-height:38px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:#0f1527;color:var(--text);font:inherit;font-size:13.5px;cursor:pointer}.seg button[aria-pressed=true]{background:#16203a;border-color:var(--acc);font-weight:600}
+.seg select{width:auto;min-height:38px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.kpi{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--t,#8fb3ff);border-radius:12px;padding:10px;min-height:84px}
+.kpi .k{font-size:12px;color:var(--mute)}.kpi .v{font-size:21px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px;overflow-wrap:anywhere}.kpi .s{font-size:12px;color:var(--mute)}
+.ok{--t:#7fc8a9}.mid{--t:#e0b252}.hi{--t:#e98a8a}
+.res{font-size:16px;margin:12px 0 4px;min-height:4.5em}
+.chartbox{height:220px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px;margin-top:8px}.chartbox svg{width:100%;height:100%;display:block}
+.lg{display:flex;gap:12px;font-size:12.5px;color:var(--mute);margin-top:4px;min-height:20px}.lg i{display:inline-block;width:12px;height:3px;vertical-align:middle;margin-right:4px}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;min-height:24px}.chip{display:inline-block;font-size:11.5px;color:var(--mute);background:#0f1527;border:1px solid var(--line);border-radius:999px;padding:2px 8px}.chip.src{color:var(--acc)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}.tbl th,.tbl td{padding:6px;border-bottom:1px solid var(--line);text-align:left}.n{text-align:right!important;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tblwrap{overflow-x:auto;max-height:420px;overflow-y:auto}
+@media (max-width:520px){.kpis{grid-template-columns:1fr}.big input{font-size:23px}}
+</style>
+<!-- ai-layer:start -->
+<link rel="alternate" type="text/markdown" href="https://andresblitz.com/ahorro-en-dolares/index.md" />
+<link rel="alternate" type="application/rss+xml" title="Andrés Blitz" href="https://andresblitz.com/feed.xml" />
+<script type="application/json" id="ai-structure">{"page":{"title":"Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado","url":"https://andresblitz.com/ahorro-en-dolares/","md":"https://andresblitz.com/ahorro-en-dolares/index.md","summary":"Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.","last_updated":"2026-10-31"},"site":{"name":"Andrés Blitz","llms":"https://andresblitz.com/llms.txt","agent":"https://andresblitz.com/agent.json","sections":["https://andresblitz.com/index.md","https://andresblitz.com/projects/index.md","https://andresblitz.com/70/index.md","https://andresblitz.com/tasa-bcv/index.md"]}}</script>
+<!-- ai-layer:end -->
+</head>
+<body>
+<main id="contenido">
+<header>
+  <h1>Ahorro en dólares: ¿cuánto valdría hoy?</h1>
+  <p class="sub">Si guardaste dinero en tu moneda hace unos meses, ¿cuánto vale hoy en dólares, y cuánto tendrías si lo hubieras cambiado a dólares o USDT ese día? Datos históricos con fuente y fecha.</p>
+</header>
+<p class="aviso" role="note">Solo datos históricos, no es asesoría financiera.</p>
+
+<section class="box" aria-label="Calculadora">
+  <div class="side">
+    <label for="amt">Monto que guardaste</label>
+    <div class="big"><input id="amt" inputmode="decimal" autocomplete="off" value="1000"><select id="cur" aria-label="Moneda">
+      <option value="VE">Bolívares (VES)</option><option value="AR">Pesos argentinos (oficial)</option><option value="ARB">Pesos argentinos (blue)</option><option value="CO">Pesos colombianos (COP)</option><option value="MX">Pesos mexicanos (MXN)</option><option value="PE">Soles (PEN)</option><option value="CL">Pesos chilenos (CLP)</option><option value="CAD">Dólares canadienses (CAD)</option></select></div>
+  </div>
+  <div class="side">
+    <span class="lbl" id="l-per">Hace cuánto</span>
+    <div class="seg" id="per" role="group" aria-labelledby="l-per"><button type="button" data-m="1">1 mes</button><button type="button" data-m="3">3 meses</button><button type="button" data-m="6">6 meses</button><button type="button" data-m="12" aria-pressed="true">1 año</button><button type="button" data-m="24">2 años</button><label class="lbl" for="since">o desde</label><select id="since"></select></div>
+  </div>
+</section>
+
+<div class="kpis" aria-live="polite">
+  <div class="kpi" id="k1"><div class="k">Guardado en moneda local, hoy</div><div class="v" id="v-loc">—</div><div class="s" id="s-loc"></div></div>
+  <div class="kpi" id="k2"><div class="k">Cambiado a USD/USDT ese día</div><div class="v" id="v-usd">—</div><div class="s" id="s-usd"></div></div>
+  <div class="kpi" id="k3"><div class="k">Diferencia</div><div class="v" id="v-dif">—</div><div class="s" id="s-dif"></div></div>
+</div>
+<p class="res" id="res">Activa JavaScript para usar la calculadora; abajo está la tabla de tasas históricas.</p>
+<div class="chips" id="chips"></div>
+
+<section id="grafico" aria-labelledby="h-g">
+  <h2 id="h-g">Valor en dólares de tu ahorro en moneda local</h2>
+  <div class="chartbox" id="chart" role="img" aria-label="Gráfico del valor en dólares del ahorro en moneda local por mes"></div>
+  <div class="lg"><span><i style="background:#8fb3ff"></i>Guardado en moneda local</span><span><i style="background:#7fc8a9"></i>Cambiado a dólares</span></div>
+</section>
+
+<section id="tabla" aria-labelledby="h-t">
+  <h2 id="h-t">Tasas históricas usadas (<span id="tcur">VES</span> por USD)</h2>
+  <div class="tblwrap"><table class="tbl"><thead><tr><th scope="col">Fecha</th><th scope="col" class="n">Tasa</th><th scope="col" class="n">Tu monto en USD</th></tr></thead><tbody id="tb"><tr><td colspan="3">Activa JavaScript para ver la tabla.</td></tr></tbody></table></div>
+</section>
+
+<section id="como" aria-labelledby="h-como">
+  <h2 id="h-como">Cómo se calcula y de dónde salen los datos</h2>
+  <p>Guardado en moneda local, hoy = monto ÷ tasa de hoy. Cambiado ese día = monto ÷ tasa de esa fecha (y se mantiene en dólares; el USDT sigue al dólar). Diferencia = cuánto más (o menos) tendrías en dólares si lo hubieras cambiado.</p>
+  <p>Historia mensual: <a href="https://github.com/fawazahmed0/exchange-api" rel="nofollow">currency-api (fawazahmed0)</a>, primer día disponible de cada mes desde marzo de 2024, para VES, COP, MXN, PEN, CLP y CAD; verificada contra la TRM (datos.gov.co), el Banco de Canadá, el Banco Central de Chile y la tasa BCV, con diferencias menores a 0,2 %. Argentina: dólar oficial y blue (venta) de <a href="https://argentinadatos.com/" rel="nofollow">ArgentinaDatos</a>. Hoy: la tasa de referencia de cada país en este sitio (fuente y hora en las etiquetas). No se incluye el real brasileño ni otras monedas porque no forman parte de este sitio.</p>
+</section>
+
+<section id="faq" aria-labelledby="h-faq">
+  <h2 id="h-faq">Preguntas frecuentes</h2>
+  <details><summary><h3>¿Qué calcula esta página?</h3></summary><p>Compara dos casos con datos históricos: guardar el dinero en moneda local desde una fecha pasada, o cambiarlo a dólares (o USDT, que sigue al dólar) ese mismo día. Muestra cuánto vale cada caso hoy en dólares.</p></details>
+  <details><summary><h3>¿De dónde salen los datos históricos?</h3></summary><p>Para bolívares, pesos colombianos, mexicanos y chilenos, soles y dólares canadienses usamos las cotizaciones diarias fechadas de currency-api (fawazahmed0), tomando el primer día disponible de cada mes desde marzo de 2024; las comparamos con series oficiales (TRM, Banco de Canadá, Banco Central de Chile, BCV) y coinciden en menos de 0,2 %. Para Argentina usamos el dólar oficial y el blue (venta) de ArgentinaDatos. El valor de hoy es la tasa de referencia de cada país en este sitio.</p></details>
+  <details><summary><h3>¿Por qué no puedo elegir fechas anteriores a 2024?</h3></summary><p>Porque solo usamos fuentes gratuitas y fechadas que pudimos verificar. Las instantáneas diarias de currency-api empiezan en marzo de 2024.</p></details>
+  <details><summary><h3>¿Se considera la inflación en dólares o el rendimiento de un ahorro?</h3></summary><p>No. Es una comparación de tipo de cambio: no incluye intereses, comisiones, la inflación del dólar ni el pequeño desvío del USDT respecto de un dólar.</p></details>
+  <details><summary><h3>¿Esto dice qué va a pasar con mi moneda?</h3></summary><p>No. Son solo datos históricos, no es asesoría financiera. No hay proyecciones, señales ni recomendaciones.</p></details>
+  <details><summary><h3>¿Cómo convierto mi salario a dólares hoy?</h3></summary><p>Usa la calculadora de salario en dólares, que convierte un sueldo mensual o anual con las tasas de referencia actuales.</p></details>
+</section>
+
+<div data-rates-widget><p style="font-size:13px;color:#9aa3b8">Feed de tasas: <a href="/rates/feed.xml">RSS</a></p></div>
+<script src="/assets/rates-widget.js" defer></script>
+<section id="otros" aria-labelledby="h-otros">
+  <h2 id="h-otros">Tasas y calculadoras</h2>
+  <p><a href="/salario-en-dolares/">Calculadora de salario en dólares</a> · <a href="/convertidor-cripto/">Convertidor cripto (BTC, USDT)</a> · <a href="/dolar-cripto/">Dólar cripto (USDT P2P)</a> · <a href="/comision-cripto/">Calculadora de comisión cripto (USDT, BTC)</a> · <a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a> · <a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a> · <a href="/dolar-argentina/">Dólar hoy en Argentina</a> · <a href="/dolar-colombia/">Dólar hoy en Colombia</a> · <a href="/dolar-mexico/">Dólar hoy en México</a> · <a href="/dolar-peru/">Dólar hoy en Perú</a> · <a href="/dolar-chile/">Dólar hoy en Chile</a></p>
+</section>
+</main>
+<footer>
+  <p style="margin:0">Solo datos históricos, no es asesoría financiera. Sin proyecciones, señales, botones de compra ni enlaces de afiliados. Historia: currency-api (fawazahmed0) y ArgentinaDatos. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a> · British Columbia, Canadá.</p>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/salario-en-dolares/">Salario en dólares</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
+</footer>
+<script>
+var MID={"VE":{"value":889.2553,"source":"Banco Central de Venezuela vía ve.dolarapi.com","time":"2026-10-30T04:00:00.000Z"},"CO":{"value":3182.99,"source":"datos.gov.co (Superintendencia Financiera)","time":"2026-10-31T05:00:00.000Z"},"MX":{"value":18.7962,"source":"mx.dolarapi.com (FIX de Banxico)","time":"2026-10-30T18:00:00.000Z"},"AR":{"value":1560,"source":"dolarapi.com","time":"2026-10-30T18:55:00.000Z"},"ARB":{"value":1565,"source":"dolarapi.com","time":"2026-10-31T17:57:00.000Z"},"PE":{"value":3.460617,"source":"open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)","time":"2026-10-31T00:02:31.000Z"},"CL":{"value":993.22,"source":"mindicador.cl (dólar observado, Banco Central de Chile)","time":"2026-10-30T03:00:00.000Z"},"CAD":{"value":1.396,"source":"Bank of Canada Valet API (FXUSDCAD)","time":"2026-10-30T20:30:00.000Z"}};/*mid*/
+var H={"ves":{"2024-04":["2024-04-01",36.203876],"2024-05":["2024-05-01",36.402426],"2024-06":["2024-06-01",36.48471],"2024-07":["2024-07-01",36.399722],"2024-08":["2024-08-01",36.590769],"2024-09":["2024-09-01",36.580364],"2024-10":["2024-10-01",36.876932],"2024-11":["2024-11-01",42.656121],"2024-12":["2024-12-01",47.548564],"2025-01":["2025-01-01",51.962405],"2025-02":["2025-02-01",58.370656],"2025-03":["2025-03-01",64.403859],"2025-04":["2025-04-01",69.479679],"2025-05":["2025-05-01",87.098094],"2025-06":["2025-06-01",96.618778],"2025-07":["2025-07-01",107.93011],"2025-08":["2025-08-01",124.47362],"2025-09":["2025-09-01",148.25281],"2025-10":["2025-10-01",177.45817],"2025-11":["2025-11-01",223.1499],"2025-12":["2025-12-01",245.06519],"2026-01":["2026-01-01",299.48295],"2026-02":["2026-02-01",366.39574],"2026-03":["2026-03-01",416.71169],"2026-04":["2026-04-01",472.63459],"2026-05":["2026-05-01",485.58766],"2026-06":["2026-06-01",550.86181],"2026-07":["2026-07-01",626.65317],"2026-08":["2026-08-01",746.53439],"2026-09":["2026-09-01",796.11717],"2026-10":["2026-10-01",858.61267],"2024-03":["2024-03-02",36.03917]},"cop":{"2024-04":["2024-04-01",3861.2],"2024-05":["2024-05-01",3915.2554],"2024-06":["2024-06-01",3859.0368],"2024-07":["2024-07-01",4150.5126],"2024-08":["2024-08-01",4048.8759],"2024-09":["2024-09-01",4176.6833],"2024-10":["2024-10-01",4209.7028],"2024-11":["2024-11-01",4424.3333],"2024-12":["2024-12-01",4428.1567],"2025-01":["2025-01-01",4407.5222],"2025-02":["2025-02-01",4203.8966],"2025-03":["2025-03-01",4159.06],"2025-04":["2025-04-01",4178.9933],"2025-05":["2025-05-01",4245.14],"2025-06":["2025-06-01",4149.2645],"2025-07":["2025-07-01",4088.0834],"2025-08":["2025-08-01",4185.997],"2025-09":["2025-09-01",4014.3095],"2025-10":["2025-10-01",3923.7596],"2025-11":["2025-11-01",3861.1636],"2025-12":["2025-12-01",3742.8983],"2026-01":["2026-01-01",3766.8495],"2026-02":["2026-02-01",3675.0971],"2026-03":["2026-03-01",3756.7142],"2026-04":["2026-04-01",3679.7522],"2026-05":["2026-05-01",3656.6293],"2026-06":["2026-06-01",3686.8339],"2026-07":["2026-07-01",3427.9498],"2026-08":["2026-08-01",3162.1473],"2026-09":["2026-09-01",3222.6563],"2026-10":["2026-10-01",3317.0128],"2024-03":["2024-03-02",3942.4631]},"mxn":{"2024-04":["2024-04-01",16.558496],"2024-05":["2024-05-01",17.139799],"2024-06":["2024-06-01",16.990923],"2024-07":["2024-07-01",18.275667],"2024-08":["2024-08-01",18.677034],"2024-09":["2024-09-01",19.725187],"2024-10":["2024-10-01",19.667561],"2024-11":["2024-11-01",20.052762],"2024-12":["2024-12-01",20.374775],"2025-01":["2025-01-01",20.865056],"2025-02":["2025-02-01",20.675373],"2025-03":["2025-03-01",20.527995],"2025-04":["2025-04-01",20.476744],"2025-05":["2025-05-01",19.617604],"2025-06":["2025-06-01",19.42867],"2025-07":["2025-07-01",18.758412],"2025-08":["2025-08-01",18.882004],"2025-09":["2025-09-01",18.653688],"2025-10":["2025-10-01",18.314206],"2025-11":["2025-11-01",18.577513],"2025-12":["2025-12-01",18.296206],"2026-01":["2026-01-01",18.0118],"2026-02":["2026-02-01",17.465528],"2026-03":["2026-03-01",17.233684],"2026-04":["2026-04-01",17.900992],"2026-05":["2026-05-01",17.46599],"2026-06":["2026-06-01",17.341376],"2026-07":["2026-07-01",17.531856],"2026-08":["2026-08-01",17.344805],"2026-09":["2026-09-01",17.008219],"2026-10":["2026-10-01",18.084124],"2024-03":["2024-03-02",17.02103]},"pen":{"2024-04":["2024-04-01",3.7173771],"2024-05":["2024-05-01",3.7685932],"2024-06":["2024-06-01",3.7496889],"2024-07":["2024-07-01",3.8427958],"2024-08":["2024-08-01",3.737558],"2024-09":["2024-09-01",3.748947],"2024-10":["2024-10-01",3.7067148],"2024-11":["2024-11-01",3.7728013],"2024-12":["2024-12-01",3.7448988],"2025-01":["2025-01-01",3.7601929],"2025-02":["2025-02-01",3.7187742],"2025-03":["2025-03-01",3.681339],"2025-04":["2025-04-01",3.6660098],"2025-05":["2025-05-01",3.6708491],"2025-06":["2025-06-01",3.6193936],"2025-07":["2025-07-01",3.542397],"2025-08":["2025-08-01",3.5815537],"2025-09":["2025-09-01",3.5316023],"2025-10":["2025-10-01",3.4701064],"2025-11":["2025-11-01",3.3879483],"2025-12":["2025-12-01",3.3568139],"2026-01":["2026-01-01",3.3610169],"2026-02":["2026-02-01",3.3676887],"2026-03":["2026-03-01",3.3547219],"2026-04":["2026-04-01",3.4873655],"2026-05":["2026-05-01",3.5077001],"2026-06":["2026-06-01",3.3998554],"2026-07":["2026-07-01",3.4154979],"2026-08":["2026-08-01",3.3895447],"2026-09":["2026-09-01",3.3635225],"2026-10":["2026-10-01",3.4502157],"2024-03":["2024-03-02",3.7792788]},"clp":{"2024-04":["2024-04-01",979.77009],"2024-05":["2024-05-01",957.90506],"2024-06":["2024-06-01",918.24523],"2024-07":["2024-07-01",951.9311],"2024-08":["2024-08-01",943.35163],"2024-09":["2024-09-01",913.19854],"2024-10":["2024-10-01",897.9948],"2024-11":["2024-11-01",961.43557],"2024-12":["2024-12-01",973.80276],"2025-01":["2025-01-01",994.40728],"2025-02":["2025-02-01",983.30114],"2025-03":["2025-03-01",960.36275],"2025-04":["2025-04-01",946.12555],"2025-05":["2025-05-01",949.74805],"2025-06":["2025-06-01",945.20546],"2025-07":["2025-07-01",931.92315],"2025-08":["2025-08-01",973.6214],"2025-09":["2025-09-01",966.54171],"2025-10":["2025-10-01",961.81416],"2025-11":["2025-11-01",942.48419],"2025-12":["2025-12-01",925.85454],"2026-01":["2026-01-01",899.88648],"2026-02":["2026-02-01",873.71479],"2026-03":["2026-03-01",873.66089],"2026-04":["2026-04-01",926.34586],"2026-05":["2026-05-01",900.9695],"2026-06":["2026-06-01",889.42937],"2026-07":["2026-07-01",922.34673],"2026-08":["2026-08-01",931.00864],"2026-09":["2026-09-01",934.64139],"2026-10":["2026-10-01",973.34926],"2024-03":["2024-03-02",967.43139]},"cad":{"2024-04":["2024-04-01",1.35255],"2024-05":["2024-05-01",1.3774746],"2024-06":["2024-06-01",1.3630425],"2024-07":["2024-07-01",1.3666694],"2024-08":["2024-08-01",1.3806737],"2024-09":["2024-09-01",1.3492156],"2024-10":["2024-10-01",1.3521682],"2024-11":["2024-11-01",1.3931999],"2024-12":["2024-12-01",1.4006001],"2025-01":["2025-01-01",1.4386545],"2025-02":["2025-02-01",1.4542071],"2025-03":["2025-03-01",1.4445783],"2025-04":["2025-04-01",1.4391681],"2025-05":["2025-05-01",1.3791519],"2025-06":["2025-06-01",1.3740562],"2025-07":["2025-07-01",1.3612778],"2025-08":["2025-08-01",1.385695],"2025-09":["2025-09-01",1.3736591],"2025-10":["2025-10-01",1.3923863],"2025-11":["2025-11-01",1.4028928],"2025-12":["2025-12-01",1.397976],"2026-01":["2026-01-01",1.3722341],"2026-02":["2026-02-01",1.361975],"2026-03":["2026-03-01",1.3645306],"2026-04":["2026-04-01",1.390184],"2026-05":["2026-05-01",1.3573498],"2026-06":["2026-06-01",1.380952],"2026-07":["2026-07-01",1.4218462],"2026-08":["2026-08-01",1.4020863],"2026-09":["2026-09-01",1.3870305],"2026-10":["2026-10-01",1.4248386],"2024-03":["2024-03-02",1.3559069]},"ars":{"2024-03":["2024-03-01",861.5],"2024-04":["2024-04-01",876],"2024-05":["2024-05-01",896],"2024-06":["2024-06-01",914],"2024-07":["2024-07-01",932.5],"2024-08":["2024-08-01",951.5],"2024-09":["2024-09-01",972],"2024-10":["2024-10-01",990.5],"2024-11":["2024-11-01",1013],"2024-12":["2024-12-01",1031],"2025-01":["2025-01-01",1052.5],"2025-02":["2025-02-01",1073.5],"2025-03":["2025-03-01",1084.25],"2025-04":["2025-04-01",1094.25],"2025-05":["2025-05-01",1190],"2025-06":["2025-06-01",1195],"2025-07":["2025-07-01",1235],"2025-08":["2025-08-01",1375],"2025-09":["2025-09-01",1385],"2025-10":["2025-10-01",1450],"2025-11":["2025-11-01",1475],"2025-12":["2025-12-01",1475],"2026-01":["2026-01-01",1480],"2026-02":["2026-02-01",1465],"2026-03":["2026-03-01",1420],"2026-04":["2026-04-01",1415],"2026-05":["2026-05-01",1415],"2026-06":["2026-06-01",1445],"2026-07":["2026-07-01",1510],"2026-08":["2026-08-01",1510],"2026-09":["2026-09-01",1535],"2026-10":["2026-10-01",1540]},"arsb":{"2024-03":["2024-03-01",1050],"2024-04":["2024-04-01",1010],"2024-05":["2024-05-01",1040],"2024-06":["2024-06-01",1225],"2024-07":["2024-07-01",1405],"2024-08":["2024-08-01",1380],"2024-09":["2024-09-01",1305],"2024-10":["2024-10-01",1220],"2024-11":["2024-11-01",1190],"2024-12":["2024-12-01",1120],"2025-01":["2025-01-01",1230],"2025-02":["2025-02-01",1220],"2025-03":["2025-03-01",1230],"2025-04":["2025-04-01",1315],"2025-05":["2025-05-01",1185],"2025-06":["2025-06-01",1180],"2025-07":["2025-07-01",1225],"2025-08":["2025-08-01",1335],"2025-09":["2025-09-01",1370],"2025-10":["2025-10-01",1460],"2025-11":["2025-11-01",1445],"2025-12":["2025-12-01",1445],"2026-01":["2026-01-01",1530],"2026-02":["2026-02-01",1470],"2026-03":["2026-03-01",1425],"2026-04":["2026-04-01",1405],"2026-05":["2026-05-01",1400],"2026-06":["2026-06-01",1435],"2026-07":["2026-07-01",1525],"2026-08":["2026-08-01",1560],"2026-09":["2026-09-01",1555],"2026-10":["2026-10-01",1560]}};/*hist*/
+(function(){
+var $=function(s){return document.getElementById(s)};
+var C={VE:['ves','VES','bolívares','el bolívar','currency-api (fawazahmed0)'],AR:['ars','ARS','pesos argentinos','el peso argentino (oficial)','ArgentinaDatos (dólar oficial, venta)'],ARB:['arsb','ARS','pesos argentinos','el peso argentino (blue)','ArgentinaDatos (dólar blue, venta)'],CO:['cop','COP','pesos colombianos','el peso colombiano','currency-api (fawazahmed0)'],MX:['mxn','MXN','pesos mexicanos','el peso mexicano','currency-api (fawazahmed0)'],PE:['pen','PEN','soles','el sol','currency-api (fawazahmed0)'],CL:['clp','CLP','pesos chilenos','el peso chileno','currency-api (fawazahmed0)'],CAD:['cad','CAD','dólares canadienses','el dólar canadiense','currency-api (fawazahmed0)']};
+var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+var cur=$('cur'),amt=$('amt'),since=$('since'),months=12;
+var q=new URLSearchParams(location.search);if(C[q.get('m')])cur.value=q.get('m');if(q.get('n'))amt.value=q.get('n');if(+q.get('p')>0)months=+q.get('p');
+function parse(s){s=String(s).replace(/[\s_]/g,'');if(!s)return NaN;var c=s.lastIndexOf(','),d=s.lastIndexOf('.');
+ if(c>-1&&d>-1){s=c>d?s.replace(/\./g,'').replace(',','.'):s.replace(/,/g,'')}else if(c>-1){s=(s.split(',').length>2)?s.replace(/,/g,''):s.replace(',','.')}else if(d>-1&&s.split('.').length>2){s=s.replace(/\./g,'')}
+ return /^\d*\.?\d+$/.test(s)?parseFloat(s):NaN}
+function nf(v,d){if(!isFinite(v))return '—';var a=Math.abs(v);if(d==null)d=a>=1000?0:a>=1?2:4;return v.toLocaleString('es',{maximumFractionDigits:d,minimumFractionDigits:0})}
+function usd(v){return nf(v,v>=1000?0:2)+' USD'}
+function series(){var s=H[C[cur.value][0]]||{};return Object.keys(s).sort().map(function(ym){return {ym:ym,d:s[ym][0],r:s[ym][1]}})}
+function label(ym){var p=ym.split('-');return MES[+p[1]-1]+' de '+p[0]}
+function fd(d){var p=d.split('-');return +p[2]+' de '+MES[+p[1]-1]+' de '+p[0]}
+function fillSince(){var s=series(),v=since.value;since.innerHTML=s.map(function(x){return '<option value="'+x.ym+'">'+label(x.ym)+'</option>'}).reverse().join('');pick();if(v&&s.some(function(x){return x.ym===v})&&!months)since.value=v}
+function pick(){if(!months)return;var d=new Date();d.setUTCDate(1);d.setUTCMonth(d.getUTCMonth()-months);var ym=d.toISOString().slice(0,7),s=series();
+ if(!s.length)return;if(ym<s[0].ym)ym=s[0].ym;since.value=ym}
+function btns(){document.querySelectorAll('#per button').forEach(function(b){b.setAttribute('aria-pressed',String(+b.getAttribute('data-m')===months))})}
+function chart(s,n,today){var box=$('chart'),W=box.clientWidth-16||600,Hh=204,P=36;var pts=s.map(function(x){return {l:n/x.r,u:n/s[0].r}});pts.push({l:n/today,u:n/s[0].r});
+ var mx=Math.max.apply(null,pts.map(function(p){return Math.max(p.l,p.u)}))*1.08,X=function(i){return P+i*(W-P-8)/Math.max(1,pts.length-1)},Y=function(v){return 8+(Hh-28)*(1-v/mx)};
+ var path=function(k){return pts.map(function(p,i){return (i?'L':'M')+X(i).toFixed(1)+' '+Y(p[k]).toFixed(1)}).join('')};
+ var g='';for(var i=0;i<=3;i++){var v=mx*i/3;g+='<line x1="'+P+'" x2="'+(W-8)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="#1a2135"/><text x="'+(P-4)+'" y="'+(Y(v)+4)+'" fill="#9aa3b8" font-size="10" text-anchor="end">'+nf(v,v>=100?0:1)+'</text>'}
+ g+='<text x="'+P+'" y="'+(Hh-4)+'" fill="#9aa3b8" font-size="10">'+label(s[0].ym)+'</text><text x="'+(W-8)+'" y="'+(Hh-4)+'" fill="#9aa3b8" font-size="10" text-anchor="end">hoy</text>';
+ box.innerHTML='<svg viewBox="0 0 '+W+' '+Hh+'" preserveAspectRatio="none">'+g+'<path d="'+path('u')+'" stroke="#7fc8a9" stroke-width="2" fill="none"/><path d="'+path('l')+'" stroke="#8fb3ff" stroke-width="2.5" fill="none"/></svg>'}
+function calc(){var k=cur.value,c=C[k],n=parse(amt.value),all=series(),s=all.filter(function(x){return x.ym>=since.value}),m=MID[k];
+ $('tcur').textContent=c[1];
+ var line='',chips='';
+ if(!(n>0)){line='Escribe el monto que guardaste, por ejemplo 1000.';['v-loc','v-usd','v-dif'].forEach(function(i){$(i).textContent='—'})}
+ else if(!s.length||!m){line='No hay datos históricos suficientes para esta moneda en este momento.'}
+ else{var t0=s[0],today=m.value,a=n/today,b=n/t0.r,dif=(b/a-1)*100,chg=(1-t0.r/today)*100;
+  $('v-loc').textContent=usd(a);$('s-loc').textContent=nf(n)+' '+c[1]+' ÷ '+nf(today)+' (hoy)';
+  $('v-usd').textContent=usd(b);$('s-usd').textContent=nf(n)+' '+c[1]+' ÷ '+nf(t0.r)+' ('+fd(t0.d)+')';
+  $('v-dif').textContent=(dif>=0?'+':'')+nf(dif,1)+' %';$('s-dif').textContent=usd(Math.abs(b-a))+(b>=a?' más si se cambiaba ese día':' más guardando en '+c[1]);
+  $('k3').className='kpi '+(Math.abs(dif)<5?'ok':Math.abs(dif)<25?'mid':'hi');
+  line='Si el '+fd(t0.d)+' guardaste <strong>'+nf(n)+' '+c[2]+'</strong>, hoy equivalen a <strong>'+usd(a)+'</strong>; si los hubieras cambiado a dólares (o USDT) ese día tendrías <strong>'+usd(b)+'</strong>. '
+   +(chg>0.05?'En ese periodo '+c[3]+' perdió '+nf(chg,1)+' % de su valor frente al dólar.':chg<-0.05?'En ese periodo '+c[3]+' ganó '+nf(-chg,1)+' % de valor frente al dólar, así que guardar en moneda local rindió más en dólares.':'En ese periodo el tipo de cambio casi no se movió.');
+  chips='<span class="chip src">'+fd(t0.d)+': '+c[4]+'</span><span class="chip src">Hoy: '+m.source+'</span><span class="chip">'+new Date(m.time).toLocaleString('es',{dateStyle:'medium',timeStyle:'short'})+'</span>';
+  chart(s,n,today);
+  $('tb').innerHTML=s.slice().reverse().map(function(x){return '<tr><td>'+fd(x.d)+'</td><td class="n">'+nf(x.r)+'</td><td class="n">'+usd(n/x.r)+'</td></tr>'}).join('')+'';
+  $('tb').insertAdjacentHTML('afterbegin','<tr><td>Hoy</td><td class="n">'+nf(today)+'</td><td class="n">'+usd(a)+'</td></tr>');
+ }
+ $('res').innerHTML=line;$('chips').innerHTML=chips;
+ try{history.replaceState(null,'','?m='+k+'&n='+encodeURIComponent(amt.value)+'&p='+(months||since.value))}catch(e){}
+}
+$('per').addEventListener('click',function(e){var b=e.target.closest('button');if(b){months=+b.getAttribute('data-m');btns();pick();calc()}});
+since.addEventListener('change',function(){months=0;btns();calc()});
+cur.addEventListener('change',function(){fillSince();calc()});amt.addEventListener('input',calc);
+if(/^\d{4}-\d\d$/.test(q.get('p')||'')){months=0}
+fillSince();if(!months&&q.get('p'))since.value=q.get('p');btns();calc();
+var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(calc,150)});
+})();
+</script>
+<script>
+(function(){var b='https://blitz-analytics.andres-491.workers.dev';
+function add(f){var s=document.createElement('script');s.src=b+'/'+f;s.defer=true;s.setAttribute('data-endpoint',b);document.body.appendChild(s)}
+add('t.js');function late(){(window.requestIdleCallback||setTimeout)(function(){add('chat.js')},{timeout:3000})}
+if(document.readyState==='complete')late();else addEventListener('load',late);})();
+</script>
+<!-- ai-layer-footer:start --><nav class="ai-links" aria-label="AI-readable versions" style="font:12px/1.6 system-ui,sans-serif;opacity:.6;text-align:center;margin:24px auto 16px;padding:0 12px;clear:both">AI-readable: <a href="/ai/" style="color:inherit">/ai/</a> &middot; <a href="/llms.txt" style="color:inherit">llms.txt</a> &middot; <a href="https://andresblitz.com/ahorro-en-dolares/index.md" rel="alternate" type="text/markdown" style="color:inherit">Markdown (.md)</a> &middot; <a href="/agent.json" style="color:inherit">agent.json</a> &middot; <a href="/agent.json" rel="alternate" type="application/json" title="Machine-readable site index" style="color:inherit">Site index (JSON)</a></nav><!-- ai-layer-footer:end -->
+</body>
+</html>

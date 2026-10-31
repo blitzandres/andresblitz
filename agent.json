@@ -65,6 +65,25 @@
       }
     },
     {
+      "slug": "ahorro-en-dolares",
+      "title": "Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado",
+      "url": "https://andresblitz.com/ahorro-en-dolares/",
+      "md": "https://andresblitz.com/ahorro-en-dolares/index.md",
+      "json": "https://andresblitz.com/api/page/ahorro-en-dolares.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "ahorro en dólares",
+        "devaluación",
+        "USDT",
+        "bolívares",
+        "pesos",
+        "histórico"
+      ]
+    },
+    {
       "slug": "comision-cripto",
       "title": "Calculadora de comisión cripto: cuánto llega al enviar USDT, USDC o BTC",
       "url": "https://andresblitz.com/comision-cripto/",
