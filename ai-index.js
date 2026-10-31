@@ -99,6 +99,24 @@ export const site = {
       ]
     },
     {
+      "slug": "dolar-mexico",
+      "title": "Dólar hoy en México: tipo de cambio FIX de Banxico y conversor",
+      "url": "https://andresblitz.com/dolar-mexico/",
+      "md": "https://andresblitz.com/dolar-mexico/index.md",
+      "json": "https://andresblitz.com/api/page/dolar-mexico.json",
+      "kind": "page",
+      "lang": "es-MX",
+      "summary": "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.",
+      "last_updated": "2026-10-31",
+      "topics": [
+        "FIX",
+        "Banxico",
+        "dólar hoy",
+        "tipo de cambio",
+        "México"
+      ]
+    },
+    {
       "slug": "home",
       "title": "Andrés Blitz | Full-Time Trader & Investor, British Columbia",
       "url": "https://andresblitz.com/",

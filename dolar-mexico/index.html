@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dólar hoy en México: tipo de cambio FIX de Banxico y conversor</title>
+<meta name="description" content="Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.">
+<link rel="canonical" href="https://andresblitz.com/dolar-mexico/">
+<link rel="alternate" hreflang="es-MX" href="https://andresblitz.com/dolar-mexico/">
+<link rel="alternate" hreflang="x-default" href="https://andresblitz.com/dolar-mexico/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Andrés Blitz">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#05070f">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="andresblitz.com">
+<meta property="og:title" content="Dólar hoy en México: tipo de cambio FIX de Banxico y conversor">
+<meta property="og:description" content="Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.">
+<meta property="og:url" content="https://andresblitz.com/dolar-mexico/">
+<meta property="og:image" content="https://andresblitz.com/assets/og-cover.png">
+<meta property="article:modified_time" content="2026-10-30T18:00:00.000Z">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Dólar hoy en México: tipo de cambio FIX de Banxico y conversor", "url": "https://andresblitz.com/dolar-mexico/", "inLanguage": "es-MX", "datePublished": "2026-10-31", "dateModified": "", "author": {"@type": "Person", "name": "Andrés Blitz", "url": "https://andresblitz.com/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es el tipo de cambio FIX?", "acceptedAnswer": {"@type": "Answer", "text": "Es el tipo de cambio de referencia que determina el Banco de México cada día hábil con base en cotizaciones del mercado mayorista de divisas. Sirve como valor oficial de referencia del peso mexicano frente al dólar."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre el FIX y el tipo de cambio del DOF?", "acceptedAnswer": {"@type": "Answer", "text": "El FIX se calcula y difunde el mismo día; el Diario Oficial de la Federación lo publica al día hábil siguiente, y desde esa publicación se aplica para pagar obligaciones en dólares dentro de México."}}, {"@type": "Question", "name": "¿Por qué el banco me cobra más que el FIX?", "acceptedAnswer": {"@type": "Answer", "text": "Los bancos y casas de cambio fijan sus propios precios de compra y venta y añaden un margen por la operación. El FIX es un promedio del mercado al mayoreo, no un precio al público."}}, {"@type": "Question", "name": "¿El tipo de cambio cambia los fines de semana?", "acceptedAnswer": {"@type": "Answer", "text": "El mercado mayorista no opera sábados, domingos ni días festivos bancarios, así que el FIX se mantiene en el último valor publicado hasta el siguiente día hábil."}}, {"@type": "Question", "name": "¿De dónde salen los datos de esta página?", "acceptedAnswer": {"@type": "Answer", "text": "Del FIX de Banxico vía mx.dolarapi.com, que se consulta aproximadamente cada 30 minutos. Si esa fuente no responde, se muestra una tasa de mercado de referencia de ExchangeRate-API y la etiqueta de la tarjeta lo indica."}}, {"@type": "Question", "name": "¿Puedo usar el conversor para facturar?", "acceptedAnswer": {"@type": "Answer", "text": "Es una herramienta informativa. Para facturación o pagos formales consulta el valor publicado en el DOF o el que indique tu banco."}}]}</script>
+<style>
+:root{--bg:#05070f;--panel:#0b0f1c;--line:#1a2135;--text:#e7eaf2;--mute:#9aa3b8;--acc:#7fc8a9;--pad:clamp(12px,4vw,20px)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:clamp(14.5px,3.9vw,16px)/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;overflow-x:hidden}
+a{color:var(--acc)}
+main{max-width:760px;margin:0 auto;padding:clamp(10px,4vw,40px) var(--pad) 40px}
+h1{font-size:clamp(18px,5vw,32px);line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+h2{font-size:clamp(16px,4.4vw,20px);margin:28px 0 10px}
+.sub,.mute{color:var(--mute)}.sub{font-size:clamp(12.5px,3.4vw,15px);margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(10px,3vw,18px)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 0}
+.tasa{min-width:0;padding:10px 12px}.tasa.big{grid-column:1/-1}.tasa[hidden]{display:none}
+.tasa h3{font-size:clamp(11.5px,3.2vw,13px);color:var(--mute);font-weight:400;margin:0}
+.tasa .v{font-size:clamp(19px,5.8vw,28px);font-weight:650;line-height:1.15;margin:2px 0 0;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tasa.big .v{font-size:clamp(26px,8vw,40px)}
+.tasa .s{font-size:clamp(11px,3vw,12.5px);color:var(--mute);margin:1px 0 0;font-variant-numeric:tabular-nums}
+.fuente{font-size:12.5px;color:var(--mute);margin:8px 0 0;min-height:1.4em}
+.calc label{font-size:12.5px;color:var(--mute);display:block;margin:8px 0 3px}
+.calc input,.calc select{min-height:44px;width:100%;min-width:0;background:#05070f;color:var(--text);border:1px solid #2c3550;border-radius:10px;padding:8px 12px;font:inherit;font-size:16px;font-variant-numeric:tabular-nums}
+.nota{font-size:12.5px;color:var(--mute);margin:6px 0 0}
+details{border-bottom:1px solid var(--line);padding:8px 0}summary{cursor:pointer;font-weight:600}summary h3{display:inline;font-size:inherit;margin:0}details p{margin:6px 0 0}
+footer{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute);font-size:13px}
+</style>
+<!-- ai-layer:start -->
+<link rel="alternate" type="text/markdown" href="https://andresblitz.com/dolar-mexico/index.md" />
+<link rel="alternate" type="application/rss+xml" title="Andrés Blitz" href="https://andresblitz.com/feed.xml" />
+<script type="application/json" id="ai-structure">{"page":{"title":"Dólar hoy en México: tipo de cambio FIX de Banxico y conversor","url":"https://andresblitz.com/dolar-mexico/","md":"https://andresblitz.com/dolar-mexico/index.md","summary":"Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.","last_updated":"2026-10-31"},"site":{"name":"Andrés Blitz","llms":"https://andresblitz.com/llms.txt","agent":"https://andresblitz.com/agent.json","sections":["https://andresblitz.com/index.md","https://andresblitz.com/projects/index.md","https://andresblitz.com/70/index.md","https://andresblitz.com/tasa-bcv/index.md"]}}</script>
+<!-- ai-layer:end -->
+</head>
+<body>
+<main id="contenido">
+<header>
+  <h1>Dólar hoy en México: FIX de Banxico y precio de ventanilla</h1>
+  <p class="sub">El tipo de cambio FIX que publica el Banco de México y una cotización de mercado de compra y venta, en pesos mexicanos (MXN).</p>
+</header>
+
+<section id="cotizaciones" aria-labelledby="h-cot">
+  <h2 id="h-cot" class="sr">Dólar hoy en México: FIX de Banxico y precio de ventanilla</h2>
+  <div class="grid">
+    <article class="card tasa big" data-k="ref"><h3><span data-label>Tipo de cambio FIX (Banxico)</span></h3><p class="v" data-bake="ref-venta">$ 18.7962</p><p class="s">pesos por 1 dólar · fecha <time data-vig datetime="2026-10-30T12:00:00-06:00">30 de octubre de 2026</time></p></article>
+    <article class="card tasa" data-k="mercado-c"><h3>Mercado · compra</h3><p class="v" data-bake="mercado-compra">$ 18.7985</p><p class="s">lo que pagan por un dólar</p></article>
+    <article class="card tasa" data-k="mercado-v"><h3>Mercado · venta</h3><p class="v" data-bake="mercado-venta">$ 18.8040</p><p class="s">lo que cuesta un dólar</p></article>
+  </div>
+  <p class="fuente" id="fuente">Fuente: <span data-src>mx.dolarapi.com (FIX de Banxico)</span>, actualizado <time data-upd datetime="2026-10-30T18:00:00.000Z">30 oct 2026, 12:00 p.m. (hora del centro de México)</time><span id="estado"></span></p>
+</section>
+
+<section id="conversor" class="card calc" aria-labelledby="h-conv">
+  <h2 id="h-conv" style="margin-top:0">Conversor de pesos mexicanos a dólares (MXN ↔ USD)</h2>
+  <label for="c-tipo">Tasa a usar</label>
+  <select id="c-tipo"><option value="ref" selected>Tasa de referencia</option><option value="mercado">Mercado (compra / venta)</option></select>
+  <label for="c-usd">Dólares (USD)</label>
+  <input id="c-usd" type="text" inputmode="decimal" autocomplete="off" value="100">
+  <label for="c-loc">Pesos mexicanos (MXN)</label>
+  <input id="c-loc" type="text" inputmode="decimal" autocomplete="off">
+  <p class="nota">El cálculo funciona en ambos sentidos. Con la tasa de mercado, de dólares a pesos mexicanos se aplica el precio de compra y en sentido inverso, el de venta.</p>
+</section>
+
+<section id="explicacion" aria-labelledby="h-exp">
+  <h2 id="h-exp">Qué es el tipo de cambio FIX y para qué sirve</h2>
+  <p>México opera con un tipo de cambio <strong>flotante</strong>: el valor del peso frente al dólar se determina libremente en el mercado. Para contar con una referencia diaria, el <strong>Banco de México (Banxico)</strong> calcula el <strong>tipo de cambio FIX</strong>.</p>
+  <p>Banxico lo obtiene en días hábiles a partir de un promedio de cotizaciones del mercado de cambios al mayoreo para operaciones liquidables el segundo día hábil siguiente. Se publica alrededor del mediodía y, al día hábil siguiente, aparece en el Diario Oficial de la Federación (DOF).</p>
+  <p>Ese valor publicado en el DOF es el que se usa para <strong>solventar obligaciones en dólares pagaderas en México</strong>, y es la referencia habitual en contratos, facturas y trámites fiscales. En bancos, casas de cambio y aplicaciones el precio de ventanilla incluye un margen, por lo que comprar dólares cuesta algo más que el FIX y venderlos rinde algo menos.</p>
+</section>
+
+<section id="faq" aria-labelledby="h-faq">
+  <h2 id="h-faq">Preguntas frecuentes</h2>
+  <details><summary><h3>¿Qué es el tipo de cambio FIX?</h3></summary><p>Es el tipo de cambio de referencia que determina el Banco de México cada día hábil con base en cotizaciones del mercado mayorista de divisas. Sirve como valor oficial de referencia del peso mexicano frente al dólar.</p></details>
+  <details><summary><h3>¿Cuál es la diferencia entre el FIX y el tipo de cambio del DOF?</h3></summary><p>El FIX se calcula y difunde el mismo día; el Diario Oficial de la Federación lo publica al día hábil siguiente, y desde esa publicación se aplica para pagar obligaciones en dólares dentro de México.</p></details>
+  <details><summary><h3>¿Por qué el banco me cobra más que el FIX?</h3></summary><p>Los bancos y casas de cambio fijan sus propios precios de compra y venta y añaden un margen por la operación. El FIX es un promedio del mercado al mayoreo, no un precio al público.</p></details>
+  <details><summary><h3>¿El tipo de cambio cambia los fines de semana?</h3></summary><p>El mercado mayorista no opera sábados, domingos ni días festivos bancarios, así que el FIX se mantiene en el último valor publicado hasta el siguiente día hábil.</p></details>
+  <details><summary><h3>¿De dónde salen los datos de esta página?</h3></summary><p>Del FIX de Banxico vía mx.dolarapi.com, que se consulta aproximadamente cada 30 minutos. Si esa fuente no responde, se muestra una tasa de mercado de referencia de ExchangeRate-API y la etiqueta de la tarjeta lo indica.</p></details>
+  <details><summary><h3>¿Puedo usar el conversor para facturar?</h3></summary><p>Es una herramienta informativa. Para facturación o pagos formales consulta el valor publicado en el DOF o el que indique tu banco.</p></details>
+</section>
+
+<section id="otros" aria-labelledby="h-otros">
+  <h2 id="h-otros">Otras tasas de cambio</h2>
+  <p><a href="/dolar-argentina/">Dólar hoy en Argentina: oficial, blue, MEP y CCL</a> · <a href="/dolar-colombia/">Dólar hoy en Colombia: TRM y conversor de pesos</a> · <a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a></p>
+</section>
+</main>
+<footer>
+  <p style="margin:0">Datos: <span data-src>mx.dolarapi.com (FIX de Banxico)</span>. Respaldo: <a href="https://www.exchangerate-api.com" rel="noopener">Rates By Exchange Rate API</a>. Información de referencia, no constituye asesoría financiera. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a></p>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/dolar-argentina/">Dólar Argentina</a> · <a href="/dolar-colombia/">Dólar Colombia</a> · <a href="/tasa-bcv/">Tasa BCV (Venezuela)</a></nav>
+</footer>
+<script>
+(function(){
+var FB={"country":"dolar-mexico","currency":"MXN","base":"USD","source":"mx.dolarapi.com (FIX de Banxico)","label":"Tipo de cambio FIX (Banxico)","updated":"2026-10-30T18:00:00.000Z","rates":{"ref":{"compra":null,"venta":18.7962,"f":"2026-10-30T12:00:00-06:00"},"mercado":{"compra":18.7985,"venta":18.804,"f":"2026-10-30T00:00:00.000Z"}}};/*fb*/
+var L='es-MX',TZ='America/Mexico_City',KEY='rates:dolar-mexico',R=FB.rates||{};
+var $=function(s){return document.querySelector(s)};
+var nf=function(n){return n==null?'—':'$ '+n.toLocaleString(L,{minimumFractionDigits:4,maximumFractionDigits:4})};
+var fd=function(s,o){return new Date(s).toLocaleString(L,Object.assign({timeZone:TZ},o))};
+function render(d){R=d.rates;FB=d;
+ ['ref','mercado'].forEach(function(k){var a=$('[data-bake="'+k+'-venta"]'),b=$('[data-bake="'+k+'-compra"]');if(a)a.textContent=nf(R[k]&&R[k].venta);if(b)b.textContent=nf(R[k]&&R[k].compra)});
+ ['mercado-c','mercado-v'].forEach(function(k){$('[data-k="'+k+'"]').hidden=!R.mercado});$('#c-tipo option[value=mercado]').disabled=!R.mercado;if(!R.mercado)$('#c-tipo').value='ref';
+ if(d.label)$('[data-label]').textContent=d.label;
+ if(R.ref){var v=$('time[data-vig]');v.dateTime=R.ref.f;v.textContent=fd(R.ref.f,{dateStyle:'long'})}
+ if(d.updated){var t=$('time[data-upd]');t.dateTime=d.updated;t.textContent=fd(d.updated,{dateStyle:'medium',timeStyle:'short'})+' (hora del centro de México)'}
+ document.querySelectorAll('[data-src]').forEach(function(e){e.textContent=d.source});conv('usd')}
+var num=function(s){s=String(s).replace(/\s|\$/g,'');if(L==='es-MX'||L==='es-PE')s=s.replace(/,/g,'');else if(s.indexOf(',')>-1)s=s.replace(/\./g,'').replace(',','.');else if(/\.\d{3}(\.|$)/.test(s))s=s.replace(/\./g,'');var n=parseFloat(s);return isFinite(n)?n:NaN};
+var fmt=function(n){return isFinite(n)?n.toLocaleString(L,{maximumFractionDigits:2}):''};
+function conv(from){var r=R[$('#c-tipo').value];if(!r)return;
+ if(from==='usd')$('#c-loc').value=fmt(num($('#c-usd').value)*(r.compra||r.venta));
+ else $('#c-usd').value=fmt(num($('#c-loc').value)/r.venta)}
+$('#c-usd').addEventListener('input',function(){conv('usd')});
+$('#c-loc').addEventListener('input',function(){conv('loc')});
+$('#c-tipo').addEventListener('change',function(){conv('usd')});
+try{var c=JSON.parse(localStorage.getItem(KEY));if(c&&c.updated>(FB.updated||''))FB=c}catch(e){}
+if(FB.rates)render(FB);
+var ctl=window.AbortController?new AbortController():null;setTimeout(function(){ctl&&ctl.abort()},4500);
+fetch('/dolar-mexico/rates.json',Object.assign({cache:'no-cache'},ctl?{signal:ctl.signal}:{})).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+ if(!(d.rates&&d.rates.ref))throw 0;if(d.updated>=(FB.updated||'')){render(d);try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}}
+}).catch(function(){$('#estado').textContent=' · mostrando el último valor guardado'});
+})();
+</script>
+<script>
+(function(){var b='https://blitz-analytics.andres-491.workers.dev';
+function add(f){var s=document.createElement('script');s.src=b+'/'+f;s.defer=true;s.setAttribute('data-endpoint',b);document.body.appendChild(s)}
+add('t.js');function late(){(window.requestIdleCallback||setTimeout)(function(){add('chat.js')},{timeout:3000})}
+if(document.readyState==='complete')late();else addEventListener('load',late);})();
+</script>
+<!-- ai-layer-footer:start --><nav class="ai-links" aria-label="AI-readable versions" style="font:12px/1.6 system-ui,sans-serif;opacity:.6;text-align:center;margin:24px auto 16px;padding:0 12px;clear:both">AI-readable: <a href="/ai/" style="color:inherit">/ai/</a> &middot; <a href="/llms.txt" style="color:inherit">llms.txt</a> &middot; <a href="https://andresblitz.com/dolar-mexico/index.md" rel="alternate" type="text/markdown" style="color:inherit">Markdown (.md)</a> &middot; <a href="/agent.json" style="color:inherit">agent.json</a> &middot; <a href="/agent.json" rel="alternate" type="application/json" title="Machine-readable site index" style="color:inherit">Site index (JSON)</a></nav><!-- ai-layer-footer:end -->
+</body>
+</html>
