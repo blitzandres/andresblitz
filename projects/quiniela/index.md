@@ -2,7 +2,7 @@
 title: "Quiniela — World Cup 2026 Prediction Pool for Friends | Andrés Blitz"
 description: "Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings."
 url: "https://andresblitz.com/projects/quiniela/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 

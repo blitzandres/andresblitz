@@ -2,7 +2,7 @@
 title: "SIGSPACE — Network Signals as a Video Game World | Andrés Blitz"
 description: "SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers."
 url: "https://andresblitz.com/projects/sigspace/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 

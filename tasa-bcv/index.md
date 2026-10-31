@@ -2,7 +2,7 @@
 title: "Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela"
 description: "Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia."
 url: "https://andresblitz.com/tasa-bcv/"
-last_updated: "2026-10-18"
+last_updated: "2026-10-31"
 lang: "es-VE"
 ---
 

@@ -2,7 +2,7 @@
 title: "RealWealth Portfolio — Live Real Estate Portfolio Dashboard (Next.js + Supabase) | Andrés Blitz"
 description: "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page."
 url: "https://andresblitz.com/projects/realwealth-portfolio/"
-last_updated: "2026-10-29"
+last_updated: "2026-10-31"
 lang: "en-CA"
 ---
 
