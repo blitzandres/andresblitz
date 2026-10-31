@@ -82,6 +82,7 @@ const EXTRA = {
   '/dolar-argentina/': { topics: ['Dólar hoy', 'dólar blue', 'dólar MEP', 'tipo de cambio', 'Argentina'], note: 'Dólar hoy en Argentina — oficial, blue, MEP, CCL, cripto y tarjeta, con conversor ARS ↔ USD (en español).' },
   '/dolar-mexico/': { topics: ['FIX', 'Banxico', 'dólar hoy', 'tipo de cambio', 'México'], note: 'Dólar hoy en México — tipo de cambio FIX de Banxico, compra y venta de mercado y conversor MXN ↔ USD (en español).' },
   '/dolar-peru/': { topics: ['tipo de cambio', 'dólar hoy', 'soles', 'BCRP', 'Perú'], note: 'Dólar hoy en Perú — tipo de cambio en soles con la fuente indicada en cada actualización y conversor PEN ↔ USD (en español).' },
+  '/dolar-chile/': { topics: ['dólar observado', 'Banco Central de Chile', 'dólar hoy', 'tipo de cambio', 'Chile'], note: 'Dólar hoy en Chile — dólar observado del Banco Central de Chile, compra y venta de mercado y conversor CLP ↔ USD (en español).' },
   '/dolar-colombia/': { topics: ['TRM', 'dólar hoy', 'tipo de cambio', 'Colombia'], note: 'Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).' },
 };
 
@@ -150,6 +151,7 @@ ${byPath('/70/') ? `- [El 70](${byPath('/70/').mdUrl}): ${EXTRA['/70/'].note}` :
 ${byPath('/tasa-bcv/') ? `- [Tasa BCV](${byPath('/tasa-bcv/').mdUrl}): ${EXTRA['/tasa-bcv/'].note}` : ''}
 ${byPath('/dolar-argentina/') ? `- [Dólar Argentina](${byPath('/dolar-argentina/').mdUrl}): ${EXTRA['/dolar-argentina/'].note}` : ''}
 ${byPath('/dolar-colombia/') ? `- [Dólar Colombia](${byPath('/dolar-colombia/').mdUrl}): ${EXTRA['/dolar-colombia/'].note}` : ''}
+${byPath('/dolar-chile/') ? `- [Dólar Chile](${byPath('/dolar-chile/').mdUrl}): ${EXTRA['/dolar-chile/'].note}` : ''}
 ${byPath('/dolar-peru/') ? `- [Dólar Perú](${byPath('/dolar-peru/').mdUrl}): ${EXTRA['/dolar-peru/'].note}` : ''}
 ${byPath('/dolar-mexico/') ? `- [Dólar México](${byPath('/dolar-mexico/').mdUrl}): ${EXTRA['/dolar-mexico/'].note}` : ''}
 
