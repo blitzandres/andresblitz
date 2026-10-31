@@ -12,6 +12,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://andresblitz.com/70/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://andresblitz.com/70/img/og-el70.jpg</image:loc>
+      <image:title>Agropecuaria Blimar · El 70</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://andresblitz.com/tasa-bcv/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>daily</changefreq>
