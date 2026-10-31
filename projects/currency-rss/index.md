@@ -1,5 +1,5 @@
 ---
-title: "Currency RSS — Exchange-rate and central-bank feed (RSS 2.0) | Andrés Blitz"
+title: "Currency RSS — FX Rates and Central-Bank Feed | Andrés Blitz"
 description: "Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item."
 url: "https://andresblitz.com/projects/currency-rss/"
 last_updated: "2026-10-31"
