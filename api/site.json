@@ -263,7 +263,7 @@
     },
     {
       "slug": "projects-elevatron",
-      "title": "Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access | Andrés Blitz",
+      "title": "Elevatron — Space-Access Beam Concept Study | Andrés Blitz",
       "url": "https://andresblitz.com/projects/elevatron/",
       "md": "https://andresblitz.com/projects/elevatron/index.md",
       "json": "https://andresblitz.com/api/page/projects-elevatron.json",
@@ -274,7 +274,7 @@
     },
     {
       "slug": "projects-elite-island-movers",
-      "title": "Elite Island Movers — One-Page Website for a British Columbia Moving Company | Andrés Blitz",
+      "title": "Elite Island Movers — Moving Company Website | Andrés Blitz",
       "url": "https://andresblitz.com/projects/elite-island-movers/",
       "md": "https://andresblitz.com/projects/elite-island-movers/index.md",
       "json": "https://andresblitz.com/api/page/projects-elite-island-movers.json",
@@ -351,7 +351,7 @@
     },
     {
       "slug": "projects-realwealth-portfolio",
-      "title": "RealWealth Portfolio — Live Real Estate Portfolio Dashboard (Next.js + Supabase) | Andrés Blitz",
+      "title": "RealWealth Portfolio — Real Estate Dashboard | Andrés Blitz",
       "url": "https://andresblitz.com/projects/realwealth-portfolio/",
       "md": "https://andresblitz.com/projects/realwealth-portfolio/index.md",
       "json": "https://andresblitz.com/api/page/projects-realwealth-portfolio.json",
@@ -384,7 +384,7 @@
     },
     {
       "slug": "projects-weinstein-stage-matrix",
-      "title": "Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script) | Andrés Blitz",
+      "title": "Weinstein Stage Matrix — TradingView Indicator | Andrés Blitz",
       "url": "https://andresblitz.com/projects/weinstein-stage-matrix/",
       "md": "https://andresblitz.com/projects/weinstein-stage-matrix/index.md",
       "json": "https://andresblitz.com/api/page/projects-weinstein-stage-matrix.json",
@@ -464,13 +464,13 @@
       "summary": "Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item."
     },
     {
-      "name": "Elevatron — Cited Concept Study of a Magnetically-Pinched Beam for Space Access",
+      "name": "Elevatron — Space-Access Beam Concept Study",
       "url": "https://andresblitz.com/projects/elevatron/",
       "md": "https://andresblitz.com/projects/elevatron/index.md",
       "summary": "Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos."
     },
     {
-      "name": "Elite Island Movers — One-Page Website for a British Columbia Moving Company",
+      "name": "Elite Island Movers — Moving Company Website",
       "url": "https://andresblitz.com/projects/elite-island-movers/",
       "md": "https://andresblitz.com/projects/elite-island-movers/index.md",
       "summary": "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
@@ -506,7 +506,7 @@
       "summary": "Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings."
     },
     {
-      "name": "RealWealth Portfolio — Live Real Estate Portfolio Dashboard (Next.js + Supabase)",
+      "name": "RealWealth Portfolio — Real Estate Dashboard",
       "url": "https://andresblitz.com/projects/realwealth-portfolio/",
       "md": "https://andresblitz.com/projects/realwealth-portfolio/index.md",
       "summary": "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page."
@@ -524,7 +524,7 @@
       "summary": "SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers."
     },
     {
-      "name": "Weinstein Stage Matrix — Stage Analysis Indicator for TradingView (Pine Script)",
+      "name": "Weinstein Stage Matrix — TradingView Indicator",
       "url": "https://andresblitz.com/projects/weinstein-stage-matrix/",
       "md": "https://andresblitz.com/projects/weinstein-stage-matrix/index.md",
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
