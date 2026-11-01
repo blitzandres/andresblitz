@@ -16,7 +16,7 @@ A TradingView indicator that sorts any chart into Stan Weinstein’s four stages
 
 Private repoPine ScriptPrivate · in useMock demo
 
-[GitHub (private)](https://github.com/blitzandres/Playground) Access limited
+repositorio privado Access limited
 
 Synthetic data
 
@@ -47,7 +47,7 @@ Pine Script v5TradingView
 
 Source
 
-[github.com/blitzandres/Playground](https://github.com/blitzandres/Playground) (private)
+repositorio privado
 
 Started
 

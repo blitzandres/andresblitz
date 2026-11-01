@@ -27,7 +27,7 @@ title = 'Salario en dólares: convierte tu sueldo en pesos, bolívares o soles a
 desc = 'Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.'
 U = 'https://andresblitz.com/salario-en-dolares/'
 faq = [('¿Cómo se convierte un salario a dólares?','Se divide el salario en moneda local por la tasa de referencia del día, expresada en unidades de moneda local por 1 dólar. Para un salario anual, el resultado mensual es el anual dividido entre 12.'),
-('¿Qué tasa de cambio usa esta calculadora?','Las mismas tasas publicadas en este sitio y actualizadas cerca de cada 30 minutos: tasa BCV para Venezuela, TRM para Colombia, FIX de Banxico para México, dólar oficial y dólar blue para Argentina, tasa de mercado para Perú, dólar observado para Chile y el USD/CAD del Banco de Canadá. Cada una muestra su fuente y su fecha.'),
+('¿Qué tasa de cambio usa esta calculadora?','Las mismas tasas publicadas en este sitio y actualizadas cada vez que corre la actualización automática, normalmente varias veces al día: tasa BCV para Venezuela, TRM para Colombia, FIX de Banxico para México, dólar oficial y dólar blue para Argentina, tasa de mercado para Perú, dólar observado para Chile y el USD/CAD del Banco de Canadá. Cada una muestra su fuente y su fecha.'),
 ('¿Por qué Argentina tiene dos resultados?','Porque conviven varios tipos de cambio. El oficial es el de referencia bancaria y el blue es el del mercado informal; según cuál uses, el mismo sueldo equivale a otra cantidad de dólares.'),
 ('¿Qué es la paridad de poder adquisitivo (PPA)?','Es un factor del Banco Mundial que indica cuántas unidades de moneda local compran lo mismo que un dólar en Estados Unidos. Sirve para comparar el nivel de vida entre países mejor que el tipo de cambio de mercado. La calculadora la muestra solo donde hay datos recientes.'),
 ('¿Por qué no aparece la PPA para Venezuela?','El último dato del Banco Mundial para Venezuela es de 2011, anterior a varias reconversiones monetarias, así que no es útil para un salario actual y se omite.'),
@@ -98,7 +98,7 @@ out = f'''<!doctype html>
 <section id="referencias" aria-labelledby="h-ref">
   <h2 id="h-ref">Tasas que usa la calculadora</h2>
   <table><thead><tr><th>Moneda</th><th class="n">por 1 USD</th><th>Fuente y fecha</th></tr></thead><tbody id="t-ref"></tbody></table>
-  <p class="nota">Se actualizan cerca de cada 30 minutos con los mismos datos de las páginas de cada país. Si no cargan, se usa el último valor guardado. {E(pppnote)}</p>
+  <p class="nota">Se actualizan cada vez que corre la actualización automática, normalmente varias veces al día con los mismos datos de las páginas de cada país. Si no cargan, se usa el último valor guardado. {E(pppnote)}</p>
 </section>
 
 <section id="como" aria-labelledby="h-como">

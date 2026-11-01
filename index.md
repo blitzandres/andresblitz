@@ -1,5 +1,5 @@
 ---
-title: "Andrés Blitz | Full-Time Trader & Investor, British Columbia"
+title: "Andrés Blitz | Trader & Investor in British Columbia"
 description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
 last_updated: "2026-10-31"

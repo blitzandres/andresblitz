@@ -16,7 +16,7 @@ A World Cup 2026 prediction pool for friends — nickname and PIN, live scores, 
 
 Public repoJavaScriptLive
 
-[Open the pool](https://blitzandres.github.io/quiniela/) [View on GitHub](https://github.com/blitzandres/quiniela)
+repositorio privado
 
 Sample content
 
@@ -41,7 +41,7 @@ HTMLCSSJavaScriptFirebase FirestoreAPI-Football
 
 Source
 
-[github.com/blitzandres/quiniela](https://github.com/blitzandres/quiniela)
+repositorio privado
 
 Started
 

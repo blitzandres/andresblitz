@@ -3,7 +3,7 @@
 import json, html, re
 E = html.escape
 U = 'https://andresblitz.com/dolar-cripto/'
-title = 'Dólar cripto hoy: USDT P2P en Venezuela, Argentina y Colombia'
+title = 'Dólar cripto hoy: USDT P2P Venezuela, Argentina y Colombia'
 desc = 'Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.'
 faq = [('¿Qué es el dólar cripto o dólar USDT?','Es el precio al que se compran y venden USDT (Tether), una criptomoneda que sigue al dólar estadounidense, entre personas en plataformas P2P. En países con controles o varias tasas, funciona como un precio de mercado del dólar.'),
 ('¿Qué es la brecha?','Es la diferencia porcentual entre el precio del USDT P2P y la tasa oficial: tasa BCV en Venezuela, dólar oficial en Argentina y TRM en Colombia. Una brecha de 10 % significa que el dólar digital cuesta 10 % más que el oficial.'),

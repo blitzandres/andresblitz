@@ -1,5 +1,5 @@
 ---
-title: "Dólar cripto hoy: USDT P2P en Venezuela, Argentina y Colombia"
+title: "Dólar cripto hoy: USDT P2P Venezuela, Argentina y Colombia"
 description: "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato."
 url: "https://andresblitz.com/dolar-cripto/"
 last_updated: "2026-11-01"

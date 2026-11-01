@@ -36,7 +36,7 @@ Private repoTypeScriptLive app
 
 ](https://andresblitz.com/projects/realwealth-portfolio/)
 
-[Open app](https://realwealth-portfolio.vercel.app/) [GitHub (private)](https://github.com/blitzandres/realwealth-portfolio)
+[Open app](https://realwealth-portfolio.vercel.app/)repositorio privado
 
 [
 
@@ -72,7 +72,7 @@ Private repoPine ScriptMock demo
 
 ](https://andresblitz.com/projects/weinstein-stage-matrix/)
 
-[GitHub (private)](https://github.com/blitzandres/Playground)
+repositorio privado
 
 [
 
@@ -120,7 +120,7 @@ Private repoMarkdown
 
 ](https://andresblitz.com/projects/signet-thesis/)
 
-[GitHub (private)](https://github.com/blitzandres/signet-thesis)
+repositorio privado
 
 [
 
@@ -156,7 +156,7 @@ Public repoJavaScript
 
 ](https://andresblitz.com/projects/quiniela/)
 
-[Live demo](https://blitzandres.github.io/quiniela/) [GitHub](https://github.com/blitzandres/quiniela)
+repositorio privado
 
 [
 
@@ -180,7 +180,7 @@ Private repoJavaScriptMock demo
 
 ](https://andresblitz.com/projects/blitz-analytics/)
 
-[GitHub (private)](https://github.com/blitzandres/blitz-analytics)
+repositorio privado
 
 [
 

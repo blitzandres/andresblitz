@@ -16,7 +16,7 @@ A research thesis on turning every kind of signal — IP packets, Wi-Fi, Bluetoo
 
 Private repoMarkdownActive research
 
-[GitHub (private)](https://github.com/blitzandres/signet-thesis) Access limited
+repositorio privado Access limited
 
 Illustration
 
@@ -45,7 +45,7 @@ Research writing (Markdown)Python / Flask prototypeGlobe.glLeafletCytoscape.jsEC
 
 Source
 
-[github.com/blitzandres/signet-thesis](https://github.com/blitzandres/signet-thesis) (private)
+repositorio privado
 
 Started
 

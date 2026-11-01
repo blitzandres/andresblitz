@@ -3,7 +3,7 @@
 import json, html, re
 E = html.escape
 U = 'https://andresblitz.com/ahorro-en-dolares/'
-title = 'Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado'
+title = 'Ahorro en dólares: qué valdrían hoy tus bolívares o pesos'
 desc = 'Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.'
 faq = [('¿Qué calcula esta página?','Compara dos casos con datos históricos: guardar el dinero en moneda local desde una fecha pasada, o cambiarlo a dólares (o USDT, que sigue al dólar) ese mismo día. Muestra cuánto vale cada caso hoy en dólares.'),
 ('¿De dónde salen los datos históricos?','Para bolívares, pesos colombianos, mexicanos y chilenos, soles y dólares canadienses usamos las cotizaciones diarias fechadas de currency-api (fawazahmed0), tomando el primer día disponible de cada mes desde marzo de 2024; las comparamos con series oficiales (TRM, Banco de Canadá, Banco Central de Chile, BCV) y coinciden en menos de 0,2 %. Para Argentina usamos el dólar oficial y el blue (venta) de ArgentinaDatos. El valor de hoy es la tasa de referencia de cada país en este sitio.'),

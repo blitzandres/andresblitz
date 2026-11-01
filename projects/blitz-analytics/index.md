@@ -16,7 +16,7 @@ The small, private analytics and chat backend behind this site — a Cloudflare 
 
 Private repoJavaScriptIn production · privateMock demo
 
-[GitHub (private)](https://github.com/blitzandres/blitz-analytics) Access limited
+repositorio privado Access limited
 
 Demo data
 
@@ -43,7 +43,7 @@ Cloudflare WorkersCloudflare D1 (SQLite)JavaScriptChart.jscobe
 
 Source
 
-[github.com/blitzandres/blitz-analytics](https://github.com/blitzandres/blitz-analytics) (private)
+repositorio privado
 
 Started
 

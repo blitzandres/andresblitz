@@ -67,7 +67,7 @@ export const site = {
     },
     {
       "slug": "ahorro-en-dolares",
-      "title": "Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado",
+      "title": "Ahorro en dólares: qué valdrían hoy tus bolívares o pesos",
       "url": "https://andresblitz.com/ahorro-en-dolares/",
       "md": "https://andresblitz.com/ahorro-en-dolares/index.md",
       "json": "https://andresblitz.com/api/page/ahorro-en-dolares.json",
@@ -86,7 +86,7 @@ export const site = {
     },
     {
       "slug": "comision-cripto",
-      "title": "Calculadora de comisión cripto: cuánto llega al enviar USDT, USDC o BTC",
+      "title": "Calculadora de comisión cripto: cuánto llega al enviar USDT",
       "url": "https://andresblitz.com/comision-cripto/",
       "md": "https://andresblitz.com/comision-cripto/index.md",
       "json": "https://andresblitz.com/api/page/comision-cripto.json",
@@ -106,7 +106,7 @@ export const site = {
     },
     {
       "slug": "convertidor-cripto",
-      "title": "Convertidor cripto: BTC, sats, ETH y USDT a bolívares, pesos y dólares",
+      "title": "Convertidor cripto: BTC, ETH y USDT a bolívares y pesos",
       "url": "https://andresblitz.com/convertidor-cripto/",
       "md": "https://andresblitz.com/convertidor-cripto/index.md",
       "json": "https://andresblitz.com/api/page/convertidor-cripto.json",
@@ -178,7 +178,7 @@ export const site = {
     },
     {
       "slug": "dolar-cripto",
-      "title": "Dólar cripto hoy: USDT P2P en Venezuela, Argentina y Colombia",
+      "title": "Dólar cripto hoy: USDT P2P Venezuela, Argentina y Colombia",
       "url": "https://andresblitz.com/dolar-cripto/",
       "md": "https://andresblitz.com/dolar-cripto/index.md",
       "json": "https://andresblitz.com/api/page/dolar-cripto.json",
@@ -350,7 +350,7 @@ export const site = {
     },
     {
       "slug": "home",
-      "title": "Andrés Blitz | Full-Time Trader & Investor, British Columbia",
+      "title": "Andrés Blitz | Trader & Investor in British Columbia",
       "url": "https://andresblitz.com/",
       "md": "https://andresblitz.com/index.md",
       "json": "https://andresblitz.com/api/page/home.json",

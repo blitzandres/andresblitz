@@ -1,5 +1,5 @@
 ---
-title: "Convertidor cripto: BTC, sats, ETH y USDT a bolívares, pesos y dólares"
+title: "Convertidor cripto: BTC, ETH y USDT a bolívares y pesos"
 description: "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa."
 url: "https://andresblitz.com/convertidor-cripto/"
 last_updated: "2026-11-01"

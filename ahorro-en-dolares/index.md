@@ -1,5 +1,5 @@
 ---
-title: "Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado"
+title: "Ahorro en dólares: qué valdrían hoy tus bolívares o pesos"
 description: "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones."
 url: "https://andresblitz.com/ahorro-en-dolares/"
 last_updated: "2026-11-01"

@@ -68,7 +68,7 @@ Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%
 ---
 
 ---
-title: "Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado"
+title: "Ahorro en dólares: qué valdrían hoy tus bolívares o pesos"
 description: "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones."
 url: "https://andresblitz.com/ahorro-en-dolares/"
 last_updated: "2026-11-01"
@@ -157,7 +157,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ---
 
 ---
-title: "Calculadora de comisión cripto: cuánto llega al enviar USDT, USDC o BTC"
+title: "Calculadora de comisión cripto: cuánto llega al enviar USDT"
 description: "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa."
 url: "https://andresblitz.com/comision-cripto/"
 last_updated: "2026-11-01"
@@ -257,7 +257,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ---
 
 ---
-title: "Convertidor cripto: BTC, sats, ETH y USDT a bolívares, pesos y dólares"
+title: "Convertidor cripto: BTC, ETH y USDT a bolívares y pesos"
 description: "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa."
 url: "https://andresblitz.com/convertidor-cripto/"
 last_updated: "2026-11-01"
@@ -625,7 +625,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ---
 
 ---
-title: "Dólar cripto hoy: USDT P2P en Venezuela, Argentina y Colombia"
+title: "Dólar cripto hoy: USDT P2P Venezuela, Argentina y Colombia"
 description: "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato."
 url: "https://andresblitz.com/dolar-cripto/"
 last_updated: "2026-11-01"
@@ -1544,7 +1544,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ---
 
 ---
-title: "Andrés Blitz | Full-Time Trader & Investor, British Columbia"
+title: "Andrés Blitz | Trader & Investor in British Columbia"
 description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
 last_updated: "2026-10-31"
@@ -1726,7 +1726,7 @@ The small, private analytics and chat backend behind this site — a Cloudflare 
 
 Private repoJavaScriptIn production · privateMock demo
 
-[GitHub (private)](https://github.com/blitzandres/blitz-analytics) Access limited
+repositorio privado Access limited
 
 Demo data
 
@@ -1753,7 +1753,7 @@ Cloudflare WorkersCloudflare D1 (SQLite)JavaScriptChart.jscobe
 
 Source
 
-[github.com/blitzandres/blitz-analytics](https://github.com/blitzandres/blitz-analytics) (private)
+repositorio privado
 
 Started
 
@@ -2306,7 +2306,7 @@ Private repoTypeScriptLive app
 
 ](https://andresblitz.com/projects/realwealth-portfolio/)
 
-[Open app](https://realwealth-portfolio.vercel.app/) [GitHub (private)](https://github.com/blitzandres/realwealth-portfolio)
+[Open app](https://realwealth-portfolio.vercel.app/)repositorio privado
 
 [
 
@@ -2342,7 +2342,7 @@ Private repoPine ScriptMock demo
 
 ](https://andresblitz.com/projects/weinstein-stage-matrix/)
 
-[GitHub (private)](https://github.com/blitzandres/Playground)
+repositorio privado
 
 [
 
@@ -2390,7 +2390,7 @@ Private repoMarkdown
 
 ](https://andresblitz.com/projects/signet-thesis/)
 
-[GitHub (private)](https://github.com/blitzandres/signet-thesis)
+repositorio privado
 
 [
 
@@ -2426,7 +2426,7 @@ Public repoJavaScript
 
 ](https://andresblitz.com/projects/quiniela/)
 
-[Live demo](https://blitzandres.github.io/quiniela/) [GitHub](https://github.com/blitzandres/quiniela)
+repositorio privado
 
 [
 
@@ -2450,7 +2450,7 @@ Private repoJavaScriptMock demo
 
 ](https://andresblitz.com/projects/blitz-analytics/)
 
-[GitHub (private)](https://github.com/blitzandres/blitz-analytics)
+repositorio privado
 
 [
 
@@ -2687,7 +2687,7 @@ A World Cup 2026 prediction pool for friends — nickname and PIN, live scores, 
 
 Public repoJavaScriptLive
 
-[Open the pool](https://blitzandres.github.io/quiniela/) [View on GitHub](https://github.com/blitzandres/quiniela)
+repositorio privado
 
 Sample content
 
@@ -2712,7 +2712,7 @@ HTMLCSSJavaScriptFirebase FirestoreAPI-Football
 
 Source
 
-[github.com/blitzandres/quiniela](https://github.com/blitzandres/quiniela)
+repositorio privado
 
 Started
 
@@ -2747,7 +2747,7 @@ My real estate portfolio manager: properties, mortgages, rent and expenses in on
 
 Private repoTypeScriptActiveLive app
 
-[Open full app](https://realwealth-portfolio.vercel.app/) [GitHub (private)](https://github.com/blitzandres/realwealth-portfolio) Access limited
+[Open full app](https://realwealth-portfolio.vercel.app/)repositorio privado Access limited
 
 Live apprealwealth-portfolio.vercel.app[Open full app](https://realwealth-portfolio.vercel.app/)
 
@@ -2780,7 +2780,7 @@ Next.js 16 (App Router)React 19TypeScriptTailwind CSS 4Supabase / PostgresLeafle
 
 Source
 
-[github.com/blitzandres/realwealth-portfolio](https://github.com/blitzandres/realwealth-portfolio) (private)
+repositorio privado
 
 Started
 
@@ -2815,7 +2815,7 @@ A research thesis on turning every kind of signal — IP packets, Wi-Fi, Bluetoo
 
 Private repoMarkdownActive research
 
-[GitHub (private)](https://github.com/blitzandres/signet-thesis) Access limited
+repositorio privado Access limited
 
 Illustration
 
@@ -2844,7 +2844,7 @@ Research writing (Markdown)Python / Flask prototypeGlobe.glLeafletCytoscape.jsEC
 
 Source
 
-[github.com/blitzandres/signet-thesis](https://github.com/blitzandres/signet-thesis) (private)
+repositorio privado
 
 Started
 
@@ -2943,7 +2943,7 @@ A TradingView indicator that sorts any chart into Stan Weinstein’s four stages
 
 Private repoPine ScriptPrivate · in useMock demo
 
-[GitHub (private)](https://github.com/blitzandres/Playground) Access limited
+repositorio privado Access limited
 
 Synthetic data
 
@@ -2974,7 +2974,7 @@ Pine Script v5TradingView
 
 Source
 
-[github.com/blitzandres/Playground](https://github.com/blitzandres/Playground) (private)
+repositorio privado
 
 Started
 
