@@ -1,5 +1,61 @@
 [
  {
+  "guid": "usdt-co:2026-11-01T13:07:45.000Z:3191.9342",
+  "key": "usdt-co",
+  "title": "Colombia: USDT P2P (COP)",
+  "value": 3191.9342,
+  "unit": "COP por USDT",
+  "extra": "brecha +0.28 % vs. TRM",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-01T13:07:45.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "usdt-ve:2026-11-01T13:07:43.000Z:997.02525",
+  "key": "usdt-ve",
+  "title": "Venezuela: USDT P2P (VES)",
+  "value": 997.02525,
+  "unit": "VES por USDT",
+  "extra": "brecha +12.12 % vs. Tasa BCV",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-01T13:07:43.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "usdt-ar:2026-11-01T13:07:42.000Z:1647.05",
+  "key": "usdt-ar",
+  "title": "Argentina: USDT P2P (ARS)",
+  "value": 1647.05,
+  "unit": "ARS por USDT",
+  "extra": "brecha +5.58 % vs. Dólar oficial",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-01T13:07:42.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "bitcoin:2026-11-01T13:06:53.000Z:77866",
+  "key": "bitcoin",
+  "title": "Bitcoin (BTC/USD)",
+  "value": 77866,
+  "unit": "USD",
+  "change24h": 0.53,
+  "extra": "CAD 108830",
+  "source": "CoinGecko",
+  "time": "2026-11-01T13:06:53.000Z",
+  "url": "https://www.coingecko.com/es/monedas/bitcoin",
+  "fetched": "2026-11-01T13:07:49.226Z"
+ },
+ {
+  "guid": "dolar-argentina-blue:2026-11-01T11:57:00.000Z:1565",
+  "key": "dolar-argentina-blue",
+  "title": "Argentina: Dólar blue",
+  "value": 1565,
+  "unit": "ARS por USD",
+  "source": "dolarapi.com",
+  "time": "2026-11-01T11:57:00.000Z",
+  "url": "https://andresblitz.com/dolar-argentina/"
+ },
+ {
   "guid": "usdt-co:2026-11-01T05:45:06.000Z:3201.75",
   "key": "usdt-co",
   "title": "Colombia: USDT P2P (COP)",
@@ -502,47 +558,5 @@
   "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
   "time": "2026-10-30T03:00:00.000Z",
   "url": "https://andresblitz.com/dolar-chile/"
- },
- {
-  "guid": "boc-policy:2026-10-29T16:00:00.000Z:2.5",
-  "key": "boc-policy",
-  "title": "Tasa de política: Banco de Canadá",
-  "value": 2.5,
-  "unit": "%",
-  "source": "Bank of Canada Valet API (V39079)",
-  "time": "2026-10-29T16:00:00.000Z",
-  "url": "https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/"
- },
- {
-  "guid": "fed-funds-target:2026-10-29T16:00:00.000Z:3,75–4,00",
-  "key": "fed-funds-target",
-  "title": "Tasa de política: Reserva Federal (rango objetivo)",
-  "value": "3,75–4,00",
-  "unit": "%",
-  "extra": "EFFR 3.88%",
-  "source": "Federal Reserve Bank of New York Markets API (EFFR)",
-  "time": "2026-10-29T16:00:00.000Z",
-  "url": "https://www.newyorkfed.org/markets/reference-rates/effr"
- },
- {
-  "guid": "boe-bank-rate:2026-10-29T12:00:00.000Z:3.75",
-  "key": "boe-bank-rate",
-  "title": "Tasa de política: Banco de Inglaterra (Bank Rate)",
-  "value": 3.75,
-  "unit": "%",
-  "source": "Bank of England Database (IUDBEDR)",
-  "time": "2026-10-29T12:00:00.000Z",
-  "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate"
- },
- {
-  "guid": "pboc-lpr:2026-10-20T01:00:00.000Z:3",
-  "key": "pboc-lpr",
-  "title": "China: Loan Prime Rate (LPR) 1 año",
-  "value": 3,
-  "unit": "%",
-  "extra": "LPR 5 años 3.50%",
-  "source": "China Foreign Exchange Trade System (chinamoney.com.cn)",
-  "time": "2026-10-20T01:00:00.000Z",
-  "url": "https://www.chinamoney.com.cn/english/bmklpr/"
  }
 ]

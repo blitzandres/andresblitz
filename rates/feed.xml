@@ -6,8 +6,48 @@
 <atom:link href="https://andresblitz.com/rates/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Tipos de cambio de Venezuela, Argentina, Colombia, México, Perú y Chile, bitcoin, USD/CAD y tasas de política monetaria, con fuente y hora de cada dato.</description>
 <language>es</language>
-<lastBuildDate>Sun, 01 Nov 2026 05:45:06 GMT</lastBuildDate>
+<lastBuildDate>Sun, 01 Nov 2026 13:07:45 GMT</lastBuildDate>
 <ttl>30</ttl>
+<item>
+<title>Colombia: USDT P2P (COP): 3.191,9342 COP por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-co:2026-11-01T13:07:45.000Z:3191.9342</guid>
+<pubDate>Sun, 01 Nov 2026 13:07:45 GMT</pubDate>
+<description>Colombia: USDT P2P (COP): 3.191,9342 COP por USDT · brecha +0.28 % vs. TRM. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-01T13:07:45Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Venezuela: USDT P2P (VES): 997,0253 VES por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ve:2026-11-01T13:07:43.000Z:997.02525</guid>
+<pubDate>Sun, 01 Nov 2026 13:07:43 GMT</pubDate>
+<description>Venezuela: USDT P2P (VES): 997,0253 VES por USDT · brecha +12.12 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-01T13:07:43Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Argentina: USDT P2P (ARS): 1.647,05 ARS por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ar:2026-11-01T13:07:42.000Z:1647.05</guid>
+<pubDate>Sun, 01 Nov 2026 13:07:42 GMT</pubDate>
+<description>Argentina: USDT P2P (ARS): 1.647,05 ARS por USDT · brecha +5.58 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-01T13:07:42Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Bitcoin (BTC/USD): 77.866 USD</title>
+<link>https://www.coingecko.com/es/monedas/bitcoin</link>
+<guid isPermaLink="false">bitcoin:2026-11-01T13:06:53.000Z:77866</guid>
+<pubDate>Sun, 01 Nov 2026 13:06:53 GMT</pubDate>
+<description>Bitcoin (BTC/USD): 77.866 USD (+0.53 % en 24 h) · CAD 108830. Fuente: CoinGecko. Dato del 2026-11-01T13:06:53Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
+</item>
+<item>
+<title>Argentina: Dólar blue: 1.565 ARS por USD</title>
+<link>https://andresblitz.com/dolar-argentina/</link>
+<guid isPermaLink="false">dolar-argentina-blue:2026-11-01T11:57:00.000Z:1565</guid>
+<pubDate>Sun, 01 Nov 2026 11:57:00 GMT</pubDate>
+<description>Argentina: Dólar blue: 1.565 ARS por USD. Fuente: dolarapi.com. Dato del 2026-11-01T11:57:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">dolarapi.com</source>
+</item>
 <item>
 <title>Colombia: USDT P2P (COP): 3.201,75 COP por USDT</title>
 <link>https://andresblitz.com/dolar-cripto/</link>
@@ -367,38 +407,6 @@
 <pubDate>Fri, 30 Oct 2026 03:00:00 GMT</pubDate>
 <description>Chile: Dólar observado (Banco Central de Chile): 993,22 CLP por USD. Fuente: mindicador.cl (dólar observado, Banco Central de Chile). Dato del 2026-10-30T03:00:00Z.</description>
 <source url="https://andresblitz.com/rates/feed.xml">mindicador.cl (dólar observado, Banco Central de Chile)</source>
-</item>
-<item>
-<title>Tasa de política: Banco de Canadá: 2,50 %</title>
-<link>https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/</link>
-<guid isPermaLink="false">boc-policy:2026-10-29T16:00:00.000Z:2.5</guid>
-<pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate>
-<description>Tasa de política: Banco de Canadá: 2,50 %. Fuente: Bank of Canada Valet API (V39079). Dato del 2026-10-29T16:00:00Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">Bank of Canada Valet API (V39079)</source>
-</item>
-<item>
-<title>Tasa de política: Reserva Federal (rango objetivo): 3,75–4,00 %</title>
-<link>https://www.newyorkfed.org/markets/reference-rates/effr</link>
-<guid isPermaLink="false">fed-funds-target:2026-10-29T16:00:00.000Z:3,75–4,00</guid>
-<pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate>
-<description>Tasa de política: Reserva Federal (rango objetivo): 3,75–4,00 % · EFFR 3.88%. Fuente: Federal Reserve Bank of New York Markets API (EFFR). Dato del 2026-10-29T16:00:00Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">Federal Reserve Bank of New York Markets API (EFFR)</source>
-</item>
-<item>
-<title>Tasa de política: Banco de Inglaterra (Bank Rate): 3,75 %</title>
-<link>https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate</link>
-<guid isPermaLink="false">boe-bank-rate:2026-10-29T12:00:00.000Z:3.75</guid>
-<pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
-<description>Tasa de política: Banco de Inglaterra (Bank Rate): 3,75 %. Fuente: Bank of England Database (IUDBEDR). Dato del 2026-10-29T12:00:00Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">Bank of England Database (IUDBEDR)</source>
-</item>
-<item>
-<title>China: Loan Prime Rate (LPR) 1 año: 3,00 %</title>
-<link>https://www.chinamoney.com.cn/english/bmklpr/</link>
-<guid isPermaLink="false">pboc-lpr:2026-10-20T01:00:00.000Z:3</guid>
-<pubDate>Tue, 20 Oct 2026 01:00:00 GMT</pubDate>
-<description>China: Loan Prime Rate (LPR) 1 año: 3,00 % · LPR 5 años 3.50%. Fuente: China Foreign Exchange Trade System (chinamoney.com.cn). Dato del 2026-10-20T01:00:00Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">China Foreign Exchange Trade System (chinamoney.com.cn)</source>
 </item>
 </channel>
 </rss>
