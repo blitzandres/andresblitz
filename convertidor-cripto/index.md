@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 31 oct 2026, 20:46 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 31 oct 2026, 23:59 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 68.908.393 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 120.884.400 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 121.271.850 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 246.649.895 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.456.518 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 268.163,21 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 76.964.618 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 77.490 USD | — |
-| Dólares canadienses | 108.176,04 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 68.892.387 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 120.856.320 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 121.243.680 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 246.592.601 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.456.179 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 268.100,92 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 76.946.740 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 77.472 USD | — |
+| Dólares canadienses | 108.150,91 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 
