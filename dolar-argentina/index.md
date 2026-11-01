@@ -2,7 +2,7 @@
 title: "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto"
 description: "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio."
 url: "https://andresblitz.com/dolar-argentina/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "es-AR"
 ---
 

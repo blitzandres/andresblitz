@@ -74,7 +74,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.",
-      "last_updated": "2026-10-31",
+      "last_updated": "2026-11-01",
       "topics": [
         "ahorro en dólares",
         "devaluación",
@@ -93,7 +93,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa.",
-      "last_updated": "2026-10-31",
+      "last_updated": "2026-11-01",
       "topics": [
         "comisión cripto",
         "comisión de retiro",
@@ -113,7 +113,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.",
-      "last_updated": "2026-10-31",
+      "last_updated": "2026-11-01",
       "topics": [
         "convertidor cripto",
         "bitcoin a bolívares",
@@ -132,7 +132,7 @@ export const site = {
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-10-31",
+      "last_updated": "2026-11-01",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -185,7 +185,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.",
-      "last_updated": "2026-10-31",
+      "last_updated": "2026-11-01",
       "topics": [
         "dólar cripto",
         "USDT",
@@ -241,7 +241,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia.",
-      "last_updated": "2026-10-31",
+      "last_updated": "2026-11-01",
       "topics": [
         "enviar dinero",
         "remesas",
@@ -577,7 +577,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.",
-      "last_updated": "2026-10-31",
+      "last_updated": "2026-11-01",
       "topics": [
         "salario en dólares",
         "sueldo en dólares",

@@ -7,38 +7,59 @@
 <atom:link href="https://andresblitz.com/feed.xml" rel="self" type="application/rss+xml" />
 <lastBuildDate>Sun, 01 Nov 2026 12:00:00 GMT</lastBuildDate>
 <item>
-<title>Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela</title>
-<link>https://andresblitz.com/70/</link>
-<guid isPermaLink="true">https://andresblitz.com/70/</guid>
-<description>Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia.</description>
-<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
 <title>Ahorro en dólares: cuánto valdrían hoy tus bolívares o pesos si los hubieras cambiado</title>
 <link>https://andresblitz.com/ahorro-en-dolares/</link>
 <guid isPermaLink="true">https://andresblitz.com/ahorro-en-dolares/</guid>
 <description>Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.</description>
-<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sun, 01 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Calculadora de comisión cripto: cuánto llega al enviar USDT, USDC o BTC</title>
 <link>https://andresblitz.com/comision-cripto/</link>
 <guid isPermaLink="true">https://andresblitz.com/comision-cripto/</guid>
 <description>Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa.</description>
-<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sun, 01 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Convertidor cripto: BTC, sats, ETH y USDT a bolívares, pesos y dólares</title>
 <link>https://andresblitz.com/convertidor-cripto/</link>
 <guid isPermaLink="true">https://andresblitz.com/convertidor-cripto/</guid>
 <description>Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.</description>
-<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
+<pubDate>Sun, 01 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto</title>
 <link>https://andresblitz.com/dolar-argentina/</link>
 <guid isPermaLink="true">https://andresblitz.com/dolar-argentina/</guid>
 <description>Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.</description>
+<pubDate>Sun, 01 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Dólar cripto hoy: USDT P2P en Venezuela, Argentina y Colombia</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="true">https://andresblitz.com/dolar-cripto/</guid>
+<description>Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.</description>
+<pubDate>Sun, 01 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Calculadora del costo de enviar dinero: comisión y margen</title>
+<link>https://andresblitz.com/enviar-dinero/</link>
+<guid isPermaLink="true">https://andresblitz.com/enviar-dinero/</guid>
+<description>Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia.</description>
+<pubDate>Sun, 01 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Salario en dólares: convierte pesos, bolívares o soles a USD</title>
+<link>https://andresblitz.com/salario-en-dolares/</link>
+<guid isPermaLink="true">https://andresblitz.com/salario-en-dolares/</guid>
+<description>Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.</description>
+<pubDate>Sun, 01 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela</title>
+<link>https://andresblitz.com/70/</link>
+<guid isPermaLink="true">https://andresblitz.com/70/</guid>
+<description>Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia.</description>
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
@@ -56,13 +77,6 @@
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
-<title>Dólar cripto hoy: USDT P2P en Venezuela, Argentina y Colombia</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="true">https://andresblitz.com/dolar-cripto/</guid>
-<description>Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.</description>
-<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
 <title>Dólar hoy en México: tipo de cambio FIX de Banxico y conversor</title>
 <link>https://andresblitz.com/dolar-mexico/</link>
 <guid isPermaLink="true">https://andresblitz.com/dolar-mexico/</guid>
@@ -74,13 +88,6 @@
 <link>https://andresblitz.com/dolar-peru/</link>
 <guid isPermaLink="true">https://andresblitz.com/dolar-peru/</guid>
 <description>Tipo de cambio del dólar hoy en Perú en soles (S/), con la fuente indicada en cada actualización, explicación del tipo de cambio interbancario y conversor de soles a dólares.</description>
-<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Calculadora del costo de enviar dinero: comisión y margen</title>
-<link>https://andresblitz.com/enviar-dinero/</link>
-<guid isPermaLink="true">https://andresblitz.com/enviar-dinero/</guid>
-<description>Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia.</description>
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
@@ -249,13 +256,6 @@
 <link>https://andresblitz.com/projects/weinstein-stage-matrix/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/weinstein-stage-matrix/</guid>
 <description>Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.</description>
-<pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Salario en dólares: convierte pesos, bolívares o soles a USD</title>
-<link>https://andresblitz.com/salario-en-dolares/</link>
-<guid isPermaLink="true">https://andresblitz.com/salario-en-dolares/</guid>
-<description>Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.</description>
 <pubDate>Sat, 31 Oct 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
