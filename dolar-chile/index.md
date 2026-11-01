@@ -2,7 +2,7 @@
 title: "Dólar hoy en Chile: dólar observado y conversor de pesos"
 description: "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares."
 url: "https://andresblitz.com/dolar-chile/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "es-CL"
 ---
 

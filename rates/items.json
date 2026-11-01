@@ -1,5 +1,61 @@
 [
  {
+  "guid": "bitcoin:2026-11-01T18:30:31.000Z:77883",
+  "key": "bitcoin",
+  "title": "Bitcoin (BTC/USD)",
+  "value": 77883,
+  "unit": "USD",
+  "change24h": 0.31,
+  "extra": "CAD 108853",
+  "source": "CoinGecko",
+  "time": "2026-11-01T18:30:31.000Z",
+  "url": "https://www.coingecko.com/es/monedas/bitcoin",
+  "fetched": "2026-11-01T18:30:43.375Z"
+ },
+ {
+  "guid": "usdt-co:2026-11-01T18:30:29.000Z:3184.875",
+  "key": "usdt-co",
+  "title": "Colombia: USDT P2P (COP)",
+  "value": 3184.875,
+  "unit": "COP por USDT",
+  "extra": "brecha +0.06 % vs. TRM",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-01T18:30:29.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "usdt-ve:2026-11-01T18:30:22.000Z:991.53",
+  "key": "usdt-ve",
+  "title": "Venezuela: USDT P2P (VES)",
+  "value": 991.53,
+  "unit": "VES por USDT",
+  "extra": "brecha +11.5 % vs. Tasa BCV",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-01T18:30:22.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "usdt-ar:2026-11-01T18:30:16.000Z:1645.22",
+  "key": "usdt-ar",
+  "title": "Argentina: USDT P2P (ARS)",
+  "value": 1645.22,
+  "unit": "ARS por USDT",
+  "extra": "brecha +5.46 % vs. Dólar oficial",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-01T18:30:16.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "dolar-argentina-blue:2026-11-01T17:57:00.000Z:1565",
+  "key": "dolar-argentina-blue",
+  "title": "Argentina: Dólar blue",
+  "value": 1565,
+  "unit": "ARS por USD",
+  "source": "dolarapi.com",
+  "time": "2026-11-01T17:57:00.000Z",
+  "url": "https://andresblitz.com/dolar-argentina/"
+ },
+ {
   "guid": "usdt-co:2026-11-01T13:07:45.000Z:3191.9342",
   "key": "usdt-co",
   "title": "Colombia: USDT P2P (COP)",
@@ -508,55 +564,5 @@
   "source": "open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)",
   "time": "2026-10-31T00:02:31.000Z",
   "url": "https://andresblitz.com/dolar-peru/"
- },
- {
-  "guid": "usdcad:2026-10-30T20:30:00.000Z:1.396",
-  "key": "usdcad",
-  "title": "USD/CAD (Banco de Canadá)",
-  "value": 1.396,
-  "unit": "CAD por USD",
-  "source": "Bank of Canada Valet API (FXUSDCAD)",
-  "time": "2026-10-30T20:30:00.000Z",
-  "url": "https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/"
- },
- {
-  "guid": "dolar-argentina:2026-10-30T18:55:00.000Z:1560",
-  "key": "dolar-argentina",
-  "title": "Argentina: Dólar oficial",
-  "value": 1560,
-  "unit": "ARS por USD",
-  "source": "dolarapi.com",
-  "time": "2026-10-30T18:55:00.000Z",
-  "url": "https://andresblitz.com/dolar-argentina/"
- },
- {
-  "guid": "dolar-mexico:2026-10-30T18:00:00.000Z:18.7962",
-  "key": "dolar-mexico",
-  "title": "México: Tipo de cambio FIX (Banxico)",
-  "value": 18.7962,
-  "unit": "MXN por USD",
-  "source": "mx.dolarapi.com (FIX de Banxico)",
-  "time": "2026-10-30T18:00:00.000Z",
-  "url": "https://andresblitz.com/dolar-mexico/"
- },
- {
-  "guid": "tasa-bcv:2026-10-30T04:00:00.000Z:889.2553",
-  "key": "tasa-bcv",
-  "title": "Venezuela: Tasa BCV (USD)",
-  "value": 889.2553,
-  "unit": "VES por USD",
-  "source": "Banco Central de Venezuela vía ve.dolarapi.com",
-  "time": "2026-10-30T04:00:00.000Z",
-  "url": "https://andresblitz.com/tasa-bcv/"
- },
- {
-  "guid": "dolar-chile:2026-10-30T03:00:00.000Z:993.22",
-  "key": "dolar-chile",
-  "title": "Chile: Dólar observado (Banco Central de Chile)",
-  "value": 993.22,
-  "unit": "CLP por USD",
-  "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
-  "time": "2026-10-30T03:00:00.000Z",
-  "url": "https://andresblitz.com/dolar-chile/"
  }
 ]

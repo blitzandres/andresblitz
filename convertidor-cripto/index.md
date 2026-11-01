@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 1 nov 2026, 13:07 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 1 nov 2026, 18:30 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 69.242.753 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 121.470.960 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 121.860.290 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 247.846.699 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.463.585 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 269.286,17 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 77.338.069 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 77.866 USD | — |
-| Dólares canadienses | 108.700,94 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 69.257.871 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 121.497.480 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 121.886.895 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 247.900.810 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.463.904 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 269.344,96 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 77.354.953 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 77.883 USD | — |
+| Dólares canadienses | 108.724,67 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 
