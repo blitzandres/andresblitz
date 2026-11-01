@@ -2,7 +2,7 @@
 title: "RealWealth Portfolio — Real Estate Dashboard | Andrés Blitz"
 description: "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page."
 url: "https://andresblitz.com/projects/realwealth-portfolio/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -16,7 +16,7 @@ My real estate portfolio manager: properties, mortgages, rent and expenses in on
 
 Private repoTypeScriptActiveLive app
 
-[Open full app](https://realwealth-portfolio.vercel.app/) [GitHub (private)](https://github.com/blitzandres/realwealth-portfolio) Access limited
+[Open full app](https://realwealth-portfolio.vercel.app/)repositorio privado Access limited
 
 Live apprealwealth-portfolio.vercel.app[Open full app](https://realwealth-portfolio.vercel.app/)
 
@@ -49,7 +49,7 @@ Next.js 16 (App Router)React 19TypeScriptTailwind CSS 4Supabase / PostgresLeafle
 
 Source
 
-[github.com/blitzandres/realwealth-portfolio](https://github.com/blitzandres/realwealth-portfolio) (private)
+repositorio privado
 
 Started
 

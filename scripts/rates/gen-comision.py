@@ -3,7 +3,7 @@
 import json, html, re
 E = html.escape
 U = 'https://andresblitz.com/comision-cripto/'
-title = 'Calculadora de comisión cripto: cuánto llega al enviar USDT, USDC o BTC'
+title = 'Calculadora de comisión cripto: cuánto llega al enviar USDT'
 desc = 'Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa.'
 faq = [('¿Cómo uso la calculadora?','Escribe el monto que vas a enviar, elige la moneda y la red, y copia la comisión de retiro que te muestra tu plataforma. La calculadora resta esa comisión y te dice cuánto llega, qué porcentaje se pierde y cuánto vale en tu moneda local.'),
 ('¿Por qué tengo que escribir yo la comisión?','Porque cada plataforma cobra distinto y cambia sus comisiones con frecuencia. Esta página no consulta ni compara proveedores: usa solo el número que tú ves al retirar.'),

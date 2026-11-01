@@ -2,7 +2,7 @@
 title: "Projects by Andrés Blitz — Trading Tools, Games & Experiments"
 description: "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps."
 url: "https://andresblitz.com/projects/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -36,7 +36,7 @@ Private repoTypeScriptLive app
 
 ](https://andresblitz.com/projects/realwealth-portfolio/)
 
-[Open app](https://realwealth-portfolio.vercel.app/) [GitHub (private)](https://github.com/blitzandres/realwealth-portfolio)
+[Open app](https://realwealth-portfolio.vercel.app/)repositorio privado
 
 [
 
@@ -72,7 +72,7 @@ Private repoPine ScriptMock demo
 
 ](https://andresblitz.com/projects/weinstein-stage-matrix/)
 
-[GitHub (private)](https://github.com/blitzandres/Playground)
+repositorio privado
 
 [
 
@@ -120,7 +120,7 @@ Private repoMarkdown
 
 ](https://andresblitz.com/projects/signet-thesis/)
 
-[GitHub (private)](https://github.com/blitzandres/signet-thesis)
+repositorio privado
 
 [
 
@@ -152,11 +152,11 @@ Public repoTypeScript
 
 World Cup 2026 prediction pool.
 
-Public repoJavaScript
+Private repoJavaScript
 
 ](https://andresblitz.com/projects/quiniela/)
 
-[Live demo](https://blitzandres.github.io/quiniela/) [GitHub](https://github.com/blitzandres/quiniela)
+repositorio privado
 
 [
 
@@ -180,7 +180,7 @@ Private repoJavaScriptMock demo
 
 ](https://andresblitz.com/projects/blitz-analytics/)
 
-[GitHub (private)](https://github.com/blitzandres/blitz-analytics)
+repositorio privado
 
 [
 

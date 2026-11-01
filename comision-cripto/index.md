@@ -1,5 +1,5 @@
 ---
-title: "Calculadora de comisión cripto: cuánto llega al enviar USDT, USDC o BTC"
+title: "Calculadora de comisión cripto: cuánto llega al enviar USDT"
 description: "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa."
 url: "https://andresblitz.com/comision-cripto/"
 last_updated: "2026-11-01"

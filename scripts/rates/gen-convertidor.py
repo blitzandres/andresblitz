@@ -3,11 +3,11 @@
 import json, html, re
 E = html.escape
 U = 'https://andresblitz.com/convertidor-cripto/'
-title = 'Convertidor cripto: BTC, sats, ETH y USDT a bolívares, pesos y dólares'
+title = 'Convertidor cripto: BTC, ETH y USDT a bolívares y pesos'
 desc = 'Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.'
 faq = [('¿Cómo funciona el convertidor?','Multiplica la cantidad de la criptomoneda por su precio en dólares estadounidenses y luego por la tasa de referencia de la moneda local (por ejemplo, la tasa BCV o la TRM). Al invertir la conversión hace la cuenta al revés.'),
 ('¿Qué es un satoshi (sat)?','Es la unidad más pequeña de Bitcoin: 1 BTC = 100.000.000 sats. Es útil para hablar de montos pequeños sin tantos decimales.'),
-('¿De dónde salen los precios?','El precio de Bitcoin viene de la misma serie de CoinGecko que usa el feed de tasas de este sitio; Ethereum, USDT, USDC, Solana, XRP y BNB vienen de CoinGecko. Las tasas de cada país son las mismas de sus páginas: tasa BCV, dólar oficial y blue de Argentina, TRM, FIX de Banxico, referencia para Perú, dólar observado de Chile y Banco de Canadá. Se actualizan cerca de cada 30 minutos.'),
+('¿De dónde salen los precios?','El precio de Bitcoin viene de la misma serie de CoinGecko que usa el feed de tasas de este sitio; Ethereum, USDT, USDC, Solana, XRP y BNB vienen de CoinGecko. Las tasas de cada país son las mismas de sus páginas: tasa BCV, dólar oficial y blue de Argentina, TRM, FIX de Banxico, referencia para Perú, dólar observado de Chile y Banco de Canadá. Se actualizan cada vez que corre la actualización automática, normalmente varias veces al día.'),
 ('¿Por qué el resultado no coincide con lo que me pagan en una plataforma?','Porque las plataformas y casas de cambio aplican su propio precio, comisiones y diferencial. Este convertidor usa tasas de referencia. En Venezuela, Argentina y Colombia también mostramos el valor al precio USDT P2P como comparación.'),
 ('¿El convertidor consulta precios en vivo desde mi navegador?','No. Las tasas se guardan en la página en cada actualización automática, así que la conversión se calcula en tu dispositivo sin llamar a servicios externos.'),
 ('¿Esta página recomienda comprar o vender?','No. Es información referencial, no es asesoría financiera. No tiene botones de compra, enlaces de afiliados, señales ni predicciones.')]

@@ -2,7 +2,7 @@
 title: "Weinstein Stage Matrix — TradingView Indicator | Andrés Blitz"
 description: "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
 url: "https://andresblitz.com/projects/weinstein-stage-matrix/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -16,7 +16,7 @@ A TradingView indicator that sorts any chart into Stan Weinstein’s four stages
 
 Private repoPine ScriptPrivate · in useMock demo
 
-[GitHub (private)](https://github.com/blitzandres/Playground) Access limited
+repositorio privado Access limited
 
 Synthetic data
 
@@ -47,7 +47,7 @@ Pine Script v5TradingView
 
 Source
 
-[github.com/blitzandres/Playground](https://github.com/blitzandres/Playground) (private)
+repositorio privado
 
 Started
 

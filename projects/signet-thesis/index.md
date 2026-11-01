@@ -2,7 +2,7 @@
 title: "SIGNET — Signal Network Visualization Thesis | Andrés Blitz"
 description: "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired."
 url: "https://andresblitz.com/projects/signet-thesis/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -16,7 +16,7 @@ A research thesis on turning every kind of signal — IP packets, Wi-Fi, Bluetoo
 
 Private repoMarkdownActive research
 
-[GitHub (private)](https://github.com/blitzandres/signet-thesis) Access limited
+repositorio privado Access limited
 
 Illustration
 
@@ -45,7 +45,7 @@ Research writing (Markdown)Python / Flask prototypeGlobe.glLeafletCytoscape.jsEC
 
 Source
 
-[github.com/blitzandres/signet-thesis](https://github.com/blitzandres/signet-thesis) (private)
+repositorio privado
 
 Started
 

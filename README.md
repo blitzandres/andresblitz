@@ -17,7 +17,7 @@ Personal website of **Andrés Blitz** — full-time trader and investor based in
 |-------|--------|
 | Site | Static HTML / CSS / JS |
 | Hosting | GitHub Pages (custom domain `andresblitz.com`) |
-| Analytics | Private Cloudflare Worker ([blitz-analytics](https://github.com/blitzandres/blitz-analytics)) |
+| Analytics | Private Cloudflare Worker (blitz-analytics (repositorio privado)) |
 
 ## Local preview
 
