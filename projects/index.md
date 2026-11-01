@@ -2,7 +2,7 @@
 title: "Projects by Andrés Blitz — Trading Tools, Games & Experiments"
 description: "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps."
 url: "https://andresblitz.com/projects/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -152,7 +152,7 @@ Public repoTypeScript
 
 World Cup 2026 prediction pool.
 
-Public repoJavaScript
+Private repoJavaScript
 
 ](https://andresblitz.com/projects/quiniela/)
 

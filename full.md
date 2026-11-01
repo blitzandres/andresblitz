@@ -1547,7 +1547,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Andrés Blitz | Trader & Investor in British Columbia"
 description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -1712,7 +1712,7 @@ British Columbia · Canada
 title: "Blitz Analytics — Privacy-Minded Web Analytics | Andrés Blitz"
 description: "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data."
 url: "https://andresblitz.com/projects/blitz-analytics/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -1885,7 +1885,7 @@ DOWN
 title: "Play Blitzy's World — Full Screen | Andrés Blitz"
 description: "Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch."
 url: "https://andresblitz.com/projects/blitzys-world/play/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -2272,7 +2272,7 @@ MVP
 title: "Projects by Andrés Blitz — Trading Tools, Games & Experiments"
 description: "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps."
 url: "https://andresblitz.com/projects/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -2422,7 +2422,7 @@ Public repoTypeScript
 
 World Cup 2026 prediction pool.
 
-Public repoJavaScript
+Private repoJavaScript
 
 ](https://andresblitz.com/projects/quiniela/)
 
@@ -2673,7 +2673,7 @@ Prototype
 title: "Quiniela — World Cup 2026 Prediction Pool for Friends | Andrés Blitz"
 description: "Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings."
 url: "https://andresblitz.com/projects/quiniela/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -2685,7 +2685,7 @@ Web app · Sports
 
 A World Cup 2026 prediction pool for friends — nickname and PIN, live scores, group consensus odds and automatic standings.
 
-Public repoJavaScriptLive
+Private repoJavaScript
 
 repositorio privado
 
@@ -2733,7 +2733,7 @@ Live
 title: "RealWealth Portfolio — Real Estate Dashboard | Andrés Blitz"
 description: "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page."
 url: "https://andresblitz.com/projects/realwealth-portfolio/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -2801,7 +2801,7 @@ Active
 title: "SIGNET — Signal Network Visualization Thesis | Andrés Blitz"
 description: "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired."
 url: "https://andresblitz.com/projects/signet-thesis/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 
@@ -2929,7 +2929,7 @@ Live · 17 commits
 title: "Weinstein Stage Matrix — TradingView Indicator | Andrés Blitz"
 description: "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
 url: "https://andresblitz.com/projects/weinstein-stage-matrix/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-01"
 lang: "en-CA"
 ---
 

@@ -357,7 +357,7 @@ export const site = {
       "kind": "home",
       "lang": "en-CA",
       "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-01"
     },
     {
       "slug": "projects-blitz-analytics",
@@ -368,7 +368,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-01"
     },
     {
       "slug": "projects-blitzys-world",
@@ -401,7 +401,7 @@ export const site = {
       "kind": "project-subpage",
       "lang": "en-CA",
       "summary": "Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-01"
     },
     {
       "slug": "projects-bluth-scan",
@@ -478,7 +478,7 @@ export const site = {
       "kind": "projects-index",
       "lang": "en-CA",
       "summary": "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-01"
     },
     {
       "slug": "projects-iptv-player",
@@ -522,7 +522,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-01"
     },
     {
       "slug": "projects-realwealth-portfolio",
@@ -533,7 +533,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-01"
     },
     {
       "slug": "projects-signet-thesis",
@@ -544,7 +544,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-01"
     },
     {
       "slug": "projects-sigspace",
@@ -566,7 +566,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-01"
     },
     {
       "slug": "salario-en-dolares",
