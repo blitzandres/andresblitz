@@ -451,7 +451,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Dólar hoy en Chile: dólar observado y conversor de pesos"
 description: "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares."
 url: "https://andresblitz.com/dolar-chile/"
-last_updated: "2026-11-01"
+last_updated: "2026-11-02"
 lang: "es-CL"
 ---
 
@@ -722,7 +722,7 @@ cuánto más cuesta el dólar fuera del canal oficial
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
-Cada punto es una actualización (cerca de cada 30 minutos). La tabla tiene los mismos datos en texto.
+Cada punto es una actualización (se actualiza varias veces al día). La tabla tiene los mismos datos en texto.
 
 ## Tabla de datos
 
@@ -768,7 +768,7 @@ Es la diferencia porcentual entre el precio del USDT P2P y la tasa oficial: tasa
 
 ### ¿De dónde salen los precios?
 
-De fuentes públicas sin registro, consultadas cerca de cada 30 minutos por un proceso automático: primero CriptoYa (mediana de varias plataformas P2P), luego la búsqueda pública de Binance P2P y, si ambas fallan, Yadio. Cada tarjeta muestra la fuente usada y la hora del dato. Si todas fallan se mantiene el último dato válido, marcado como anterior.
+De fuentes públicas sin registro, consultadas varias veces al día por un proceso automático: primero CriptoYa (mediana de varias plataformas P2P), luego la búsqueda pública de Binance P2P y, si ambas fallan, Yadio. Cada tarjeta muestra la fuente usada y la hora del dato. Si todas fallan se mantiene el último dato válido, marcado como anterior.
 
 ### ¿Por qué uso la mediana y no el promedio?
 
