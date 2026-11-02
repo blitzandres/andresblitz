@@ -7,7 +7,7 @@ title = 'Dólar cripto hoy: USDT P2P Venezuela, Argentina y Colombia'
 desc = 'Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.'
 faq = [('¿Qué es el dólar cripto o dólar USDT?','Es el precio al que se compran y venden USDT (Tether), una criptomoneda que sigue al dólar estadounidense, entre personas en plataformas P2P. En países con controles o varias tasas, funciona como un precio de mercado del dólar.'),
 ('¿Qué es la brecha?','Es la diferencia porcentual entre el precio del USDT P2P y la tasa oficial: tasa BCV en Venezuela, dólar oficial en Argentina y TRM en Colombia. Una brecha de 10 % significa que el dólar digital cuesta 10 % más que el oficial.'),
-('¿De dónde salen los precios?','De fuentes públicas sin registro, consultadas cerca de cada 30 minutos por un proceso automático: primero CriptoYa (mediana de varias plataformas P2P), luego la búsqueda pública de Binance P2P y, si ambas fallan, Yadio. Cada tarjeta muestra la fuente usada y la hora del dato. Si todas fallan se mantiene el último dato válido, marcado como anterior.'),
+('¿De dónde salen los precios?','De fuentes públicas sin registro, consultadas varias veces al día por un proceso automático: primero CriptoYa (mediana de varias plataformas P2P), luego la búsqueda pública de Binance P2P y, si ambas fallan, Yadio. Cada tarjeta muestra la fuente usada y la hora del dato. Si todas fallan se mantiene el último dato válido, marcado como anterior.'),
 ('¿Por qué uso la mediana y no el promedio?','La mediana no se deja mover por anuncios con precios extremos, así que representa mejor el precio típico del mercado.'),
 ('¿De dónde vienen los precios de Bitcoin y otras criptomonedas?','De CoinGecko, una fuente pública y gratuita. Son precios en dólares estadounidenses y se muestran con su variación de 24 horas.'),
 ('¿Esta página recomienda comprar o vender?','No. Es información referencial, no es asesoría financiera. No tiene botones de compra, enlaces de afiliados, señales ni predicciones.')]
@@ -93,7 +93,7 @@ main{{max-width:980px}}
 <section class="panel" id="p-chart" role="tabpanel" aria-labelledby="t-chart">
   <h2 style="margin-top:0;font-size:16px">Brecha USDT vs. oficial, últimos 7 días (%)</h2>
   <div class="chartbox" id="chart"></div>
-  <p class="nota">Cada punto es una actualización (cerca de cada 30 minutos). La tabla tiene los mismos datos en texto.</p>
+  <p class="nota">Cada punto es una actualización (se actualiza varias veces al día). La tabla tiene los mismos datos en texto.</p>
 </section>
 <section class="panel tblwrap" id="p-table" role="tabpanel" aria-labelledby="t-table">
   <h2 style="margin-top:0;font-size:16px">Tabla de datos</h2>
