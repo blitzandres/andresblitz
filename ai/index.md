@@ -2,7 +2,7 @@
 title: "AI entry point — andresblitz.com"
 description: "Index of every clean Markdown page on andresblitz.com"
 url: "https://andresblitz.com/ai/"
-last_updated: "2026-11-02"
+last_updated: "2026-11-03"
 ---
 
 > Note for AI agents: site map at https://andresblitz.com/llms.txt

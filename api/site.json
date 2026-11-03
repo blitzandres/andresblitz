@@ -131,7 +131,7 @@
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-01",
+      "last_updated": "2026-11-02",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -704,5 +704,5 @@
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
     }
   ],
-  "generated": "2026-11-02"
+  "generated": "2026-11-03"
 }
