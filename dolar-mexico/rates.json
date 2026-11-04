@@ -4,17 +4,17 @@
  "base": "USD",
  "source": "mx.dolarapi.com (FIX de Banxico)",
  "label": "Tipo de cambio FIX (Banxico)",
- "updated": "2026-11-03T18:00:00.000Z",
+ "updated": "2026-11-04T18:00:00.000Z",
  "rates": {
   "ref": {
    "compra": null,
-   "venta": 18.7592,
-   "f": "2026-11-03T12:00:00-06:00"
+   "venta": 18.6285,
+   "f": "2026-11-04T12:00:00-06:00"
   },
   "mercado": {
    "compra": 18.693,
    "venta": 18.699,
-   "f": "2026-11-03T00:00:00.000Z"
+   "f": "2026-11-04T00:00:00.000Z"
   }
  }
 }

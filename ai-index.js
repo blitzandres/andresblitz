@@ -150,7 +150,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CL",
       "summary": "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.",
-      "last_updated": "2026-11-03",
+      "last_updated": "2026-11-04",
       "topics": [
         "dólar observado",
         "Banco Central de Chile",
