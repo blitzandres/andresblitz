@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-11-03T23:10:56.166Z",
+ "generated": "2026-11-04T03:09:27.092Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -37,10 +37,10 @@
   },
   "dolar-peru": {
    "title": "Perú: Dólar de referencia (mercado internacional)",
-   "value": 3.46461,
+   "value": 3.464766,
    "unit": "PEN por USD",
    "source": "open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)",
-   "time": "2026-11-03T00:02:31.000Z",
+   "time": "2026-11-04T00:02:31.000Z",
    "url": "https://andresblitz.com/dolar-peru/"
   },
   "dolar-chile": {
@@ -61,41 +61,41 @@
   },
   "usdt-ve": {
    "title": "Venezuela: USDT P2P (VES)",
-   "value": 1004.975,
+   "value": 1005.4525,
    "unit": "VES por USDT",
-   "extra": "brecha +13.01 % vs. Tasa BCV",
+   "extra": "brecha +13.07 % vs. Tasa BCV",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-03T23:10:32.000Z",
+   "time": "2026-11-04T03:09:20.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-ar": {
    "title": "Argentina: USDT P2P (ARS)",
-   "value": 1652.75,
+   "value": 1653.95,
    "unit": "ARS por USDT",
-   "extra": "brecha +5.27 % vs. Dólar oficial",
+   "extra": "brecha +5.35 % vs. Dólar oficial",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-03T23:10:29.000Z",
+   "time": "2026-11-04T03:08:59.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-co": {
    "title": "Colombia: USDT P2P (COP)",
-   "value": 3190.7117,
+   "value": 3196.56,
    "unit": "COP por USDT",
-   "extra": "brecha +0.24 % vs. TRM",
+   "extra": "brecha -1.21 % vs. TRM",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-03T23:10:34.000Z",
+   "time": "2026-11-04T03:09:14.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 77757,
+   "value": 75839,
    "unit": "USD",
-   "change24h": 1.36,
-   "extra": "CAD 108945",
+   "change24h": -1.16,
+   "extra": "CAD 105899",
    "source": "CoinGecko",
-   "time": "2026-11-03T23:10:25.000Z",
+   "time": "2026-11-04T03:09:01.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-11-03T23:10:52.040Z"
+   "fetched": "2026-11-04T03:09:23.729Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",
