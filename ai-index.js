@@ -223,7 +223,7 @@ export const site = {
       "kind": "page",
       "lang": "es-PE",
       "summary": "Tipo de cambio del dólar hoy en Perú en soles (S/), con la fuente indicada en cada actualización, explicación del tipo de cambio interbancario y conversor de soles a dólares.",
-      "last_updated": "2026-11-04",
+      "last_updated": "2026-11-05",
       "topics": [
         "tipo de cambio",
         "dólar hoy",

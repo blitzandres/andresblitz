@@ -14,25 +14,25 @@ El dólar observado que informa el Banco Central de Chile y una cotización de c
 
 ## Dólar hoy en Chile: dólar observado y precio de mercado
 
-### Dólar observado (Banco Central de Chile)
+### Dólar de cierre de mercado
 
-$ 970,95
+$ 965,60
 
 pesos por 1 dólar · fecha 5 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 964,64
+$ 963,91
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 966,44
+$ 966,11
 
 lo que cuesta un dólar
 
-Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 05-11-2026, 12:00 a. m. (hora de Chile)
+Fuente: cl.dolarapi.com, actualizado 05-11-2026, 9:01 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
