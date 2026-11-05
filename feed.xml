@@ -5,7 +5,7 @@
 <link>https://andresblitz.com/</link>
 <description>Main pages of andresblitz.com</description>
 <atom:link href="https://andresblitz.com/feed.xml" rel="self" type="application/rss+xml" />
-<lastBuildDate>Wed, 04 Nov 2026 12:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 05 Nov 2026 12:00:00 GMT</lastBuildDate>
 <item>
 <title>Ahorro en dólares: qué valdrían hoy tus bolívares o pesos</title>
 <link>https://andresblitz.com/ahorro-en-dolares/</link>
@@ -25,6 +25,13 @@
 <link>https://andresblitz.com/convertidor-cripto/</link>
 <guid isPermaLink="true">https://andresblitz.com/convertidor-cripto/</guid>
 <description>Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.</description>
+<pubDate>Wed, 04 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto</title>
+<link>https://andresblitz.com/dolar-argentina/</link>
+<guid isPermaLink="true">https://andresblitz.com/dolar-argentina/</guid>
+<description>Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.</description>
 <pubDate>Wed, 04 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
@@ -68,13 +75,6 @@
 <guid isPermaLink="true">https://andresblitz.com/salario-en-dolares/</guid>
 <description>Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.</description>
 <pubDate>Wed, 04 Nov 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto</title>
-<link>https://andresblitz.com/dolar-argentina/</link>
-<guid isPermaLink="true">https://andresblitz.com/dolar-argentina/</guid>
-<description>Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.</description>
-<pubDate>Tue, 03 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Dólar hoy en Colombia: TRM oficial y conversor de pesos</title>

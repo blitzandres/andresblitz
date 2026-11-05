@@ -69,8 +69,8 @@ footer{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute)
   <h2 id="h-cot" class="sr">Dólar hoy en México: FIX de Banxico y precio de ventanilla</h2>
   <div class="grid">
     <article class="card tasa big" data-k="ref"><h3><span data-label>Tipo de cambio FIX (Banxico)</span></h3><p class="v" data-bake="ref-venta">$ 18.6285</p><p class="s">pesos por 1 dólar · fecha <time data-vig datetime="2026-11-04T12:00:00-06:00">4 de noviembre de 2026</time></p></article>
-    <article class="card tasa" data-k="mercado-c"><h3>Mercado · compra</h3><p class="v" data-bake="mercado-compra">$ 18.6930</p><p class="s">lo que pagan por un dólar</p></article>
-    <article class="card tasa" data-k="mercado-v"><h3>Mercado · venta</h3><p class="v" data-bake="mercado-venta">$ 18.6990</p><p class="s">lo que cuesta un dólar</p></article>
+    <article class="card tasa" data-k="mercado-c"><h3>Mercado · compra</h3><p class="v" data-bake="mercado-compra">$ 18.6740</p><p class="s">lo que pagan por un dólar</p></article>
+    <article class="card tasa" data-k="mercado-v"><h3>Mercado · venta</h3><p class="v" data-bake="mercado-venta">$ 18.6800</p><p class="s">lo que cuesta un dólar</p></article>
   </div>
   <p class="fuente" id="fuente">Fuente: <span data-src>mx.dolarapi.com (FIX de Banxico)</span>, actualizado <time data-upd datetime="2026-11-04T18:00:00.000Z">4 nov 2026, 12:00 p.m. (hora del centro de México)</time><span id="estado"></span></p>
 </section>
@@ -116,7 +116,7 @@ footer{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute)
 </footer>
 <script>
 (function(){
-var FB={"country":"dolar-mexico","currency":"MXN","base":"USD","source":"mx.dolarapi.com (FIX de Banxico)","label":"Tipo de cambio FIX (Banxico)","updated":"2026-11-04T18:00:00.000Z","rates":{"ref":{"compra":null,"venta":18.6285,"f":"2026-11-04T12:00:00-06:00"},"mercado":{"compra":18.693,"venta":18.699,"f":"2026-11-04T00:00:00.000Z"}}};/*fb*/
+var FB={"country":"dolar-mexico","currency":"MXN","base":"USD","source":"mx.dolarapi.com (FIX de Banxico)","label":"Tipo de cambio FIX (Banxico)","updated":"2026-11-04T18:00:00.000Z","rates":{"ref":{"compra":null,"venta":18.6285,"f":"2026-11-04T12:00:00-06:00"},"mercado":{"compra":18.674,"venta":18.68,"f":"2026-11-04T00:00:00.000Z"}}};/*fb*/
 var L='es-MX',TZ='America/Mexico_City',KEY='rates:dolar-mexico',R=FB.rates||{};
 var $=function(s){return document.querySelector(s)};
 var nf=function(n){return n==null?'—':'$ '+n.toLocaleString(L,{minimumFractionDigits:4,maximumFractionDigits:4})};

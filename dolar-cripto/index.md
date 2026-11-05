@@ -10,12 +10,12 @@ lang: "es"
 
 # Dólar cripto hoy: USDT P2P vs. tasa oficial
 
-Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 4 nov, 18:48 UTC.
+Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 5 nov, 00:17 UTC.
 
 Referencial, no es asesoría financiera.
 
--   En Venezuela, USDT está 13,9 % sobre la tasa BCV hoy, más alto que al inicio del historial (11,9 %).
--   En Argentina, USDT está 5,9 % sobre el dólar oficial hoy, casi igual que al inicio del historial (5,9 %).
+-   En Venezuela, USDT está 13,7 % sobre la tasa BCV hoy, más alto que al inicio del historial (11,9 %).
+-   En Argentina, USDT está 5,8 % sobre el dólar oficial hoy, casi igual que al inicio del historial (5,9 %).
 -   En Colombia, USDT está 1,2 % bajo la TRM hoy, más bajo que al inicio del historial (0,1 %).
 
   
@@ -28,7 +28,7 @@ USDT/VES
 
 USDT P2P
 
-1.013,19
+1.011,16
 
 lo que se paga por un dólar digital entre personas
 
@@ -40,11 +40,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+13,94 %
++13,71 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)4 nov, 18:48 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)5 nov, 00:17 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
 
 ### Argentina
 
@@ -52,7 +52,7 @@ USDT/ARS
 
 USDT P2P
 
-1.663,05
+1.660,52
 
 lo que se paga por un dólar digital entre personas
 
@@ -64,11 +64,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+5,93 %
++5,77 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)4 nov, 18:48 UTCOficial: dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)5 nov, 00:17 UTCOficial: dolarapi.com
 
 ### Colombia
 
@@ -76,7 +76,7 @@ USDT/COP
 
 USDT P2P
 
-3.196,50
+3.196,74
 
 lo que se paga por un dólar digital entre personas
 
@@ -88,11 +88,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-\-1,21 %
+\-1,20 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)4 nov, 18:48 UTCOficial: datos.gov.co (Superintendencia Financiera)
+[CriptoYa (mediana P2P)](https://criptoya.com/)5 nov, 00:17 UTCOficial: datos.gov.co (Superintendencia Financiera)
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
@@ -103,26 +103,26 @@ Cada punto es una actualización (se actualiza varias veces al día). La tabla t
 USDT P2P frente a la tasa oficial
 | País | USDT P2P | Oficial | Brecha | Fuente y hora |
 | --- | --- | --- | --- | --- |
-| Venezuela VES | 1.013,19 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +13,94 % | CriptoYa (mediana P2P) · 4 nov, 18:48 UTC  
+| Venezuela VES | 1.011,16 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +13,71 % | CriptoYa (mediana P2P) · 5 nov, 00:17 UTC  
 Oficial: Banco Central de Venezuela vía ve.dolarapi.com · 30 oct, 04:00 UTC |
-| Argentina ARS | 1.663,05 | [1.570,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,93 % | CriptoYa (mediana P2P) · 4 nov, 18:48 UTC  
-Oficial: dolarapi.com · 3 nov, 18:00 UTC |
-| Colombia COP | 3.196,50 | [3.235,59](https://andresblitz.com/dolar-colombia/) TRM | \-1,21 % | CriptoYa (mediana P2P) · 4 nov, 18:48 UTC  
+| Argentina ARS | 1.660,52 | [1.570,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,77 % | CriptoYa (mediana P2P) · 5 nov, 00:17 UTC  
+Oficial: dolarapi.com · 4 nov, 15:00 UTC |
+| Colombia COP | 3.196,74 | [3.235,59](https://andresblitz.com/dolar-colombia/) TRM | \-1,20 % | CriptoYa (mediana P2P) · 5 nov, 00:17 UTC  
 Oficial: datos.gov.co (Superintendencia Financiera) · 4 nov, 05:00 UTC |
 
 ## Bitcoin y otras criptomonedas (USD)
 
 | Moneda | USD | 24 h |
 | --- | --- | --- |
-| BTC | 78.545,00 | +1,88 % |
-| ETH | 2.420,89 | +5,51 % |
-| USDT | 0,9993 | +0,02 % |
-| USDC | 0,9997 | 0,00 % |
-| SOL | 95,37 | +2,01 % |
-| XRP | 1,3100 | +2,06 % |
-| BNB | 716,53 | +2,77 % |
+| BTC | 80.322,00 | +3,45 % |
+| ETH | 2.426,33 | +6,71 % |
+| USDT | 0,9994 | +0,04 % |
+| USDC | 0,9997 | +0,02 % |
+| SOL | 95,56 | +3,21 % |
+| XRP | 1,3000 | +2,44 % |
+| BNB | 720,37 | +3,41 % |
 
-Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 4 nov, 18:48 UTC.
+Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 5 nov, 00:17 UTC.
 
 ## Cómo leer esta página
 
