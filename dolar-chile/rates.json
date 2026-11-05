@@ -4,12 +4,12 @@
  "base": "USD",
  "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
  "label": "Dólar observado (Banco Central de Chile)",
- "updated": "2026-11-04T20:02:23.265Z",
+ "updated": "2026-11-05T03:00:00.000Z",
  "rates": {
   "ref": {
    "compra": null,
-   "venta": 980.59,
-   "f": "2026-11-04T03:00:00.000Z"
+   "venta": 970.95,
+   "f": "2026-11-05T03:00:00.000Z"
   },
   "mercado": {
    "compra": 964.64,
