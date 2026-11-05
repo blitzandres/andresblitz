@@ -3,13 +3,13 @@
  "currency": "COP",
  "base": "USD",
  "source": "datos.gov.co (Superintendencia Financiera)",
- "updated": "2026-11-05T12:03:54.918Z",
+ "updated": "2026-11-06T05:00:00.000Z",
  "rates": {
   "trm": {
    "compra": null,
-   "venta": 3221.19,
-   "f": "2026-11-05T00:00:00-05:00",
-   "hasta": "2026-11-05"
+   "venta": 3228.26,
+   "f": "2026-11-06T00:00:00-05:00",
+   "hasta": "2026-11-06"
   },
   "mercado": {
    "compra": 3227.38,
