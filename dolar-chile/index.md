@@ -14,25 +14,25 @@ El dólar observado que informa el Banco Central de Chile y una cotización de c
 
 ## Dólar hoy en Chile: dólar observado y precio de mercado
 
-### Dólar de cierre de mercado
+### Dólar observado (Banco Central de Chile)
 
-$ 977,69
+$ 970,94
 
 pesos por 1 dólar · fecha 6 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 979,62
+$ 975,74
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 981,82
+$ 977,54
 
 lo que cuesta un dólar
 
-Fuente: cl.dolarapi.com, actualizado 06-11-2026, 9:01 a. m. (hora de Chile)
+Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 06-11-2026, 5:01 p. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
@@ -79,3 +79,5 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Otras tasas de cambio
 
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
+
+Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).

@@ -2,7 +2,7 @@
 title: "Andrés Blitz | Trader & Investor in British Columbia"
 description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
-last_updated: "2026-11-01"
+last_updated: "2026-11-06"
 lang: "en-CA"
 ---
 
@@ -133,6 +133,8 @@ Lives ♥ ♥ ♥
 ← → / A D move · Space shoot · P pause · Click to start
 
 Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml) · [Currency RSS](https://andresblitz.com/projects/currency-rss/)
+
+Dollar rates by country: [Venezuela (Tasa BCV)](https://andresblitz.com/tasa-bcv/) · [Argentina](https://andresblitz.com/dolar-argentina/) · [Colombia](https://andresblitz.com/dolar-colombia/) · [México](https://andresblitz.com/dolar-mexico/) · [Perú](https://andresblitz.com/dolar-peru/) · [Chile](https://andresblitz.com/dolar-chile/). All of them in one feed: [RSS](https://andresblitz.com/rates/feed.xml) · [how the Currency RSS feed works](https://andresblitz.com/projects/currency-rss/).
 
 FAQ
 

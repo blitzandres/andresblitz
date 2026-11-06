@@ -131,7 +131,7 @@
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-05",
+      "last_updated": "2026-11-06",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -167,7 +167,7 @@
       "kind": "page",
       "lang": "es-CO",
       "summary": "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.",
-      "last_updated": "2026-11-05",
+      "last_updated": "2026-11-06",
       "topics": [
         "TRM",
         "dólar hoy",
@@ -204,7 +204,7 @@
       "kind": "page",
       "lang": "es-MX",
       "summary": "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.",
-      "last_updated": "2026-11-05",
+      "last_updated": "2026-11-06",
       "topics": [
         "FIX",
         "Banxico",
@@ -356,7 +356,7 @@
       "kind": "home",
       "lang": "en-CA",
       "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
-      "last_updated": "2026-11-01"
+      "last_updated": "2026-11-06"
     },
     {
       "slug": "projects-blitz-analytics",
@@ -477,7 +477,7 @@
       "kind": "projects-index",
       "lang": "en-CA",
       "summary": "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.",
-      "last_updated": "2026-11-01"
+      "last_updated": "2026-11-06"
     },
     {
       "slug": "projects-iptv-player",
@@ -594,7 +594,7 @@
       "kind": "page",
       "lang": "es-VE",
       "summary": "Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia.",
-      "last_updated": "2026-10-31",
+      "last_updated": "2026-11-06",
       "topics": [
         "Tasa BCV",
         "tipo de cambio",

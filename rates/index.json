@@ -1,14 +1,16 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-11-06T17:21:53.916Z",
- "skipped": [],
+ "generated": "2026-11-06T22:18:58.691Z",
+ "skipped": [
+  "fed: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+ ],
  "series": {
   "dolar-argentina": {
    "title": "Argentina: Dólar oficial",
    "value": 1570,
    "unit": "ARS por USD",
    "source": "dolarapi.com",
-   "time": "2026-11-05T14:00:00.000Z",
+   "time": "2026-11-05T18:00:00.000Z",
    "url": "https://andresblitz.com/dolar-argentina/"
   },
   "dolar-argentina-blue": {
@@ -16,7 +18,7 @@
    "value": 1555,
    "unit": "ARS por USD",
    "source": "dolarapi.com",
-   "time": "2026-11-06T17:00:00.000Z",
+   "time": "2026-11-06T21:00:00.000Z",
    "url": "https://andresblitz.com/dolar-argentina/"
   },
   "dolar-colombia": {
@@ -29,10 +31,10 @@
   },
   "dolar-mexico": {
    "title": "México: Tipo de cambio FIX (Banxico)",
-   "value": 18.7147,
+   "value": 18.6297,
    "unit": "MXN por USD",
    "source": "mx.dolarapi.com (FIX de Banxico)",
-   "time": "2026-11-05T18:00:00.000Z",
+   "time": "2026-11-06T18:00:00.000Z",
    "url": "https://andresblitz.com/dolar-mexico/"
   },
   "dolar-peru": {
@@ -44,11 +46,11 @@
    "url": "https://andresblitz.com/dolar-peru/"
   },
   "dolar-chile": {
-   "title": "Chile: Dólar de cierre de mercado",
-   "value": 977.69,
+   "title": "Chile: Dólar observado (Banco Central de Chile)",
+   "value": 970.94,
    "unit": "CLP por USD",
-   "source": "cl.dolarapi.com",
-   "time": "2026-11-06T12:01:35.461Z",
+   "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
+   "time": "2026-11-06T03:00:00.000Z",
    "url": "https://andresblitz.com/dolar-chile/"
   },
   "tasa-bcv": {
@@ -61,48 +63,48 @@
   },
   "usdt-ve": {
    "title": "Venezuela: USDT P2P (VES)",
-   "value": 1012.9025,
+   "value": 1017.13,
    "unit": "VES por USDT",
-   "extra": "brecha +13.9 % vs. Tasa BCV",
+   "extra": "brecha +14.38 % vs. Tasa BCV",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-06T17:21:15.000Z",
+   "time": "2026-11-06T22:18:44.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-ar": {
    "title": "Argentina: USDT P2P (ARS)",
-   "value": 1642.2875,
+   "value": 1647,
    "unit": "ARS por USDT",
-   "extra": "brecha +4.6 % vs. Dólar oficial",
+   "extra": "brecha +4.9 % vs. Dólar oficial",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-06T17:21:47.000Z",
+   "time": "2026-11-06T22:18:45.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-co": {
    "title": "Colombia: USDT P2P (COP)",
-   "value": 3224.5075,
+   "value": 3222.675,
    "unit": "COP por USDT",
-   "extra": "brecha -0.12 % vs. TRM",
+   "extra": "brecha -0.17 % vs. TRM",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-06T17:21:42.000Z",
+   "time": "2026-11-06T22:18:25.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 75910,
+   "value": 75948,
    "unit": "USD",
    "change24h": -0.07,
-   "extra": "CAD 107136",
+   "extra": "CAD 107212",
    "source": "CoinGecko",
-   "time": "2026-11-06T17:21:43.000Z",
+   "time": "2026-11-06T22:18:44.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-11-06T17:21:50.542Z"
+   "fetched": "2026-11-06T22:18:55.880Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",
-   "value": 1.3989,
+   "value": 1.4113,
    "unit": "CAD por USD",
    "source": "Bank of Canada Valet API (FXUSDCAD)",
-   "time": "2026-11-05T20:30:00.000Z",
+   "time": "2026-11-06T20:30:00.000Z",
    "url": "https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/"
   },
   "boc-policy": {
@@ -121,15 +123,6 @@
    "time": "2026-11-05T12:00:00.000Z",
    "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate"
   },
-  "fed-funds-target": {
-   "title": "Tasa de política: Reserva Federal (rango objetivo)",
-   "value": "3,75–4,00",
-   "unit": "%",
-   "extra": "EFFR 3.88%",
-   "source": "Federal Reserve Bank of New York Markets API (EFFR)",
-   "time": "2026-11-05T16:00:00.000Z",
-   "url": "https://www.newyorkfed.org/markets/reference-rates/effr"
-  },
   "pboc-lpr": {
    "title": "China: Loan Prime Rate (LPR) 1 año",
    "value": 3,
@@ -138,6 +131,16 @@
    "source": "China Foreign Exchange Trade System (chinamoney.com.cn)",
    "time": "2026-10-20T01:00:00.000Z",
    "url": "https://www.chinamoney.com.cn/english/bmklpr/"
+  },
+  "fed-funds-target": {
+   "title": "Tasa de política: Reserva Federal (rango objetivo)",
+   "value": "3,75–4,00",
+   "unit": "%",
+   "extra": "EFFR 3.88%",
+   "source": "Federal Reserve Bank of New York Markets API (EFFR)",
+   "time": "2026-11-05T16:00:00.000Z",
+   "url": "https://www.newyorkfed.org/markets/reference-rates/effr",
+   "stale": true
   }
  }
 }
