@@ -159,11 +159,12 @@ footer{{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute
 <section id="otros" aria-labelledby="h-otros">
   <h2 id="h-otros">Otras tasas de cambio</h2>
   <p>{' · '.join(f'<a href="/{s}/">{t}</a>' for s,_,t in others)} · <a href="/tasa-bcv/">Tasa BCV hoy (Venezuela)</a>{' · <a href="/enviar-dinero/">Calculadora del costo de enviar dinero</a>' if 'enviar-dinero' in live else ''}{' · <a href="/salario-en-dolares/">Calculadora de salario en dólares</a>' if 'salario-en-dolares' in live else ''}{' · <a href="/dolar-cripto/">Dólar cripto hoy: USDT P2P</a> · <a href="/convertidor-cripto/">Convertidor cripto (BTC, USDT)</a> · <a href="/comision-cripto/">Calculadora de comisión cripto (USDT, BTC)</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares: calculadora histórica</a>' if 'dolar-cripto' in live else ''}{' · <a href="/guias-cripto/">Guías cripto para principiantes</a>' if 'guias-cripto' in live else ''}</p>
+  <p>Todas estas tasas también se publican juntas en el <a href="/rates/feed.xml">feed RSS de tasas</a>, con la fuente y la hora de cada dato. <a href="/projects/currency-rss/">Cómo funciona el feed de tasas</a>.</p>
 </section>
 </main>
 <footer>
   <p style="margin:0">Datos: <span data-src>{E(c['src'])}</span>.{credit} Información de referencia, no constituye asesoría financiera. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a></p>
-  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · {' · '.join(f'<a href="/{s}/">{n}</a>' for s,n,_ in others)} · <a href="/tasa-bcv/">Tasa BCV (Venezuela)</a></nav>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · {' · '.join(f'<a href="/{s}/">{n}</a>' for s,n,_ in others)} · <a href="/tasa-bcv/">Tasa BCV (Venezuela)</a> · <a href="/rates/feed.xml">Feed de tasas (RSS)</a></nav>
 </footer>
 <script>
 (function(){{
