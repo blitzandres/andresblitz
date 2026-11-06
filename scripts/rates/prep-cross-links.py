@@ -7,7 +7,7 @@ for f in glob.glob('dolar-*/index.html'):
     s=open(f).read()
     if f'href="/{slug}/"' in s: continue
     s,n1=re.subn(r'( · )(<a href="/tasa-bcv/">Tasa BCV hoy)',rf'\1<a href="/{slug}/">{long_}</a> · \2',s,count=1)
-    s,n2=re.subn(r'(<a href="/tasa-bcv/">Tasa BCV \(Venezuela\)</a></nav>)',rf'<a href="/{slug}/">{name}</a> · \1',s,count=1)
+    s,n2=re.subn(r'(<a href="/tasa-bcv/">Tasa BCV \(Venezuela\)</a>(?: · <a href="/rates/feed\.xml">Feed de tasas \(RSS\)</a>)?</nav>)',rf'<a href="/{slug}/">{name}</a> · \1',s,count=1)
     assert n1 and n2,f
     open(f,'w').write(s)
 f='tasa-bcv/index.html';s=open(f).read()
@@ -15,8 +15,10 @@ a='<a href="/dolar-colombia/">Dólar hoy en Colombia</a>'
 assert a in s
 if f'href="/{slug}/"' not in s:
     import subprocess
-    prev=[m for m in re.findall(r'<a href="/[a-z-]+/">[^<]+</a>(?=</nav>)',s) if s.index(m)>s.index(a)][0]  # last link of the footer nav that lists the country pages
-    s=s.replace(prev+'</nav>',prev+f' · <a href="/{slug}/">{long_.split(":")[0]}</a></nav>',1)
+    tail=' · <a href="/rates/feed.xml">Feed de tasas (RSS)</a> · <a href="/projects/currency-rss/">Cómo funciona el feed de tasas</a></nav>'  # feed links stay last in the footer
+    end=tail if tail in s else '</nav>'
+    prev=[m for m in re.findall(r'<a href="/[a-z-]+/">[^<]+</a>(?='+re.escape(end)+')',s) if s.index(m)>s.index(a)][0]  # last page link of the footer nav that lists the country pages
+    s=s.replace(prev+end,prev+f' · <a href="/{slug}/">{long_.split(":")[0]}</a>'+end,1)
     open(f,'w').write(s)
 f='sitemap.xml';s=open(f).read()
 if slug not in s:
