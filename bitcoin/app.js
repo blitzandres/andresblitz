@@ -1,7 +1,6 @@
 // /bitcoin/ — days Bitcoin spent in each USD price bracket.
-// Completed UTC days: baked CoinGecko daily closes (inline JSON from /bitcoin/history.json).
-// Today: live BTC/USD print, CoinGecko simple/price (same call as the rates feed), polled ~60 s.
-// Coinbase public spot is a fallback for the live print only, used when CoinGecko fails. One quote at a time.
+// Completed days: baked Yahoo Finance BTC-USD daily closes (inline JSON from /bitcoin/history.json), from 2014-09-17.
+// Today: live BTC/USD print, CoinGecko simple/price, polled ~60 s. Coinbase public spot is a fallback for the live print only.
 (function () {
   'use strict';
   var SIZES = [3000, 5000, 10000, 15000], POLL = 60000, DAY = 864e5;
@@ -37,22 +36,9 @@
     return out.sort(function (a, b) { return a[0] < b[0] ? -1 : 1; });
   }
 
-  // Fill days completed after the last bake (only if the bake fell behind), CoinGecko only, cached 6 h.
-  function fillGap() {
-    var end = D.end, yday = iso(Date.now() - DAY);
-    if (!end || end >= yday) return Promise.resolve();
-    var c = ls.get('btc-gap');
-    if (c && c.end === end && Date.now() - c.t < 6 * 36e5) { gap = c.rows || []; return Promise.resolve(); }
-    var days = Math.min(365, Math.ceil((Date.parse(yday) - Date.parse(end)) / DAY) + 2);
-    return fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=' + days + '&interval=daily')
-      .then(function (r) { if (!r.ok) throw r.status; return r.json(); })
-      .then(function (j) {
-        gap = (j.prices || []).filter(function (p) { return p[0] % DAY === 0 && p[1] > 0; })
-          .map(function (p) { return [iso(p[0] - DAY), Math.round(p[1] * 100) / 100]; })
-          .filter(function (r) { return r[0] > end; });
-        ls.set('btc-gap', { end: end, t: Date.now(), rows: gap });
-      }).catch(function () {});
-  }
+  // Do not fill gaps from CoinGecko: that 365-day series would mix with the Yahoo history and distort shares.
+  // The scheduled bake appends new Yahoo daily closes. If the bake lags, show the stored series until it catches up.
+  function fillGap() { return Promise.resolve(); }
 
   function getLive() {
     if (document.hidden && live) return Promise.resolve();
@@ -141,7 +127,11 @@
     if (!m.keys.length) { box.textContent = 'History is loading.'; return; }
     var total = m.done.map(function (d, i) { return d + (m.keys[i] === m.tb ? 1 : 0); });
     var n = m.rows.length, first = n ? m.rows[0][0] : '', last = n ? m.rows[n - 1][0] : '';
-    if (sub) sub.textContent = 'CoinGecko daily closes · ' + pretty(first || D.start) + (last || D.end ? ' – ' + pretty(last || D.end) : '');
+    if (sub) {
+      var totalDays = n + (m.tb != null ? 1 : 0);
+      var until = (m.tb != null ? today() : last) || D.end;
+      sub.textContent = 'Yahoo Finance BTC-USD daily closes · ' + pretty(first || D.start) + (until ? ' – ' + pretty(until) : '') + (totalDays ? ' · ' + totalDays.toLocaleString('en-US') + ' days' : '');
+    }
     var parts = ['A day counts in the bracket of that day’s close.'];
     if (live) parts.push('Latest print: ' + usd(live.p) + ' (' + live.src + ', ' + pt(live.t) + ')' + (live.stale ? ' — last good price; retrying' : '') + '.');
     if (m.peak) parts.push('Series high: ' + usd(m.peak) + '.');

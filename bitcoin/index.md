@@ -1,6 +1,6 @@
 ---
 title: "Bitcoin Days in Each Price Bracket: BTC/USD Close History"
-description: "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from CoinGecko daily closes, with a live price for today. Times in PT."
+description: "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT."
 url: "https://andresblitz.com/bitcoin/"
 last_updated: "2026-11-07"
 lang: "en"
@@ -14,7 +14,7 @@ Markets · Bitcoin
 
 How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one. Pick a bracket size of $3,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open.
 
-History starts **November 7, 2025** and runs through **November 6, 2026** (365 completed days). With $10,000 brackets, Bitcoin closed most often between **$60k and $70k** (118 days). History baked Nov 7, 2026, 7:42 a.m. PT.
+History starts **September 17, 2014** and runs through **November 7, 2026** (4,435 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 7, 2026, 8:02 a.m. PT.
 
 ## Days in each price bracket
 
@@ -22,17 +22,24 @@ Bitcoin now (BTC/USD)—Live price loads in your browser.
 
 Bracket size: **$10,000** 
 
-Days by daily close, $10,000 brackets (November 7, 2025 – November 6, 2026)
+Days by daily close, $10,000 brackets (September 17, 2014 – November 7, 2026)
 | Price bracket (USD) | Days | Share |
 | --- | --- | --- |
-| $100k–$110k | 6 | 1.6% |
-| $90k–$100k | 39 | 10.7% |
-| $80k–$90k | 94 | 25.8% |
-| $70k–$80k | 103 | 28.2% |
-| $60k–$70k | 118 | 32.3% |
-| $50k–$60k | 5 | 1.4% |
+| $120k–$130k | 10 | 0.2% |
+| $110k–$120k | 95 | 2.1% |
+| $100k–$110k | 112 | 2.5% |
+| $90k–$100k | 131 | 3.0% |
+| $80k–$90k | 148 | 3.3% |
+| $70k–$80k | 130 | 2.9% |
+| $60k–$70k | 350 | 7.9% |
+| $50k–$60k | 166 | 3.7% |
+| $40k–$50k | 258 | 5.8% |
+| $30k–$40k | 250 | 5.6% |
+| $20k–$30k | 382 | 8.6% |
+| $10k–$20k | 431 | 9.7% |
+| $0–$10k | 1,972 | 44.5% |
 
-Daily closes and live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (free public API). History from November 7, 2025; not backfilled from other sources. Days are UTC calendar days; times shown in PT.
+Daily closes: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/), from September 17, 2014. Live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (Coinbase public spot as fallback). Times shown in PT.
 
 ## How to read it
 
@@ -40,8 +47,8 @@ Each bar is a price range in US dollars, for example $70,000 to $80,000. A longe
 
 ## Where the numbers come from
 
--   Completed days use CoinGecko’s daily Bitcoin price in USD, stamped 00:00 UTC (the close of the previous UTC day). A scheduled GitHub Action stores each new close in [/bitcoin/history.json](https://andresblitz.com/bitcoin/history.json) and pre-renders the table above, so the chart works even if CoinGecko is slow.
--   The live price is the same CoinGecko BTC/USD series used by the [Currency RSS](https://andresblitz.com/projects/currency-rss/) feed, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.
+-   Completed days use Yahoo Finance’s BTC-USD daily close, from September 17, 2014 onward. A scheduled GitHub Action stores each new close in [/bitcoin/history.json](https://andresblitz.com/bitcoin/history.json) and pre-renders the table above.
+-   The live price for today is CoinGecko’s BTC/USD print, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.
 -   If a request fails, the last good data stays on screen with its time. Nothing is estimated.
 
 **Reference only.** Historical prices from public sources, which may be delayed. This is not financial advice: no buy or sell buttons, signals, predictions or affiliate links.
@@ -54,7 +61,7 @@ Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its lengt
 
 ### How is a day counted?
 
-Days are UTC calendar days. A completed day counts once, in the bracket that contains its close. The close is CoinGecko’s daily Bitcoin price stamped 00:00 UTC of the next day, which is 4 PM PT in winter and 5 PM PT in summer.
+A completed day counts once, in the bracket that contains that day’s Yahoo Finance BTC-USD close. Days follow the Yahoo daily series. Times on the page are shown in PT.
 
 ### Why does the current bar move?
 
@@ -62,11 +69,11 @@ Today is not finished yet, so it is counted with the live Bitcoin price instead 
 
 ### Where does the data come from?
 
-Daily closes and the live price both come from CoinGecko’s free public API, the same Bitcoin series used by the site’s rates feed. If CoinGecko is rate-limiting, the live price falls back to Coinbase’s public BTC-USD spot price, and the page names whichever source is shown. Only one live price is ever shown.
+Daily closes come from Yahoo Finance’s public BTC-USD series, starting September 17, 2014 (the first day of that series). The live price for the unfinished day comes from CoinGecko’s free public API; if CoinGecko is rate-limiting, it falls back to Coinbase’s public BTC-USD spot price, and the page names whichever live source is shown.
 
 ### Why does the history start when it does?
 
-CoinGecko’s free public API only serves the last 365 days of daily prices. The history starts at the first day this site stored and grows by one day each day. Older years are not filled in from other sources, so the start date is shown on the page.
+Yahoo Finance’s public BTC-USD daily series begins on September 17, 2014. That is why the chart starts there and can show time spent from $0 up. Earlier years are not included; Bitcoin traded below $10,000 throughout that earlier period.
 
 ### Is this trading advice?
 
@@ -74,9 +81,13 @@ No. It is a historical reference chart only. There are no buy or sell buttons, s
 
 ## Facts
 
-Data
+Daily closes
 
-[CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (BTC/USD)
+[Yahoo Finance](https://finance.yahoo.com/quote/BTC-USD/) (BTC-USD)
+
+Live print
+
+[CoinGecko](https://www.coingecko.com/en/coins/bitcoin)
 
 Live fallback
 
