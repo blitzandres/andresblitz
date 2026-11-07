@@ -3,18 +3,18 @@
 import json, html
 U = 'https://andresblitz.com/bitcoin/'
 T = 'Bitcoin Days in Each Price Bracket: BTC/USD Close History'
-D = 'Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from CoinGecko daily closes, with a live price for today. Times in PT.'
+D = 'Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT.'
 faq = [
  ('What does this chart show?', 'Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 brackets.'),
- ('How is a day counted?', 'Days are UTC calendar days. A completed day counts once, in the bracket that contains its close. The close is CoinGecko\u2019s daily Bitcoin price stamped 00:00 UTC of the next day, which is 4 PM PT in winter and 5 PM PT in summer.'),
+ ('How is a day counted?', 'A completed day counts once, in the bracket that contains that day\u2019s Yahoo Finance BTC-USD close. Days follow the Yahoo daily series. Times on the page are shown in PT.'),
  ('Why does the current bar move?', 'Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today\u2019s day moves to that bar. It is shown in a deeper orange with a “← now” label until the day closes.'),
- ('Where does the data come from?', 'Daily closes and the live price both come from CoinGecko\u2019s free public API, the same Bitcoin series used by the site\u2019s rates feed. If CoinGecko is rate-limiting, the live price falls back to Coinbase\u2019s public BTC-USD spot price, and the page names whichever source is shown. Only one live price is ever shown.'),
- ('Why does the history start when it does?', 'CoinGecko\u2019s free public API only serves the last 365 days of daily prices. The history starts at the first day this site stored and grows by one day each day. Older years are not filled in from other sources, so the start date is shown on the page.'),
+ ('Where does the data come from?', 'Daily closes come from Yahoo Finance\u2019s public BTC-USD series, starting September 17, 2014 (the first day of that series). The live price for the unfinished day comes from CoinGecko\u2019s free public API; if CoinGecko is rate-limiting, it falls back to Coinbase\u2019s public BTC-USD spot price, and the page names whichever live source is shown.'),
+ ('Why does the history start when it does?', 'Yahoo Finance\u2019s public BTC-USD daily series begins on September 17, 2014. That is why the chart starts there and can show time spent from $0 up. Earlier years are not included; Bitcoin traded below $10,000 throughout that earlier period.'),
  ('Is this trading advice?', 'No. It is a historical reference chart only. There are no buy or sell buttons, signals, predictions or affiliate links.'),
 ]
 faqld = {'@context':'https://schema.org','@type':'FAQPage','mainEntity':[{'@type':'Question','name':q,'acceptedAnswer':{'@type':'Answer','text':a}} for q,a in faq]}
 pageld = {'@context':'https://schema.org','@graph':[
- {'@type':'WebApplication','@id':U+'#app','name':T,'url':U,'description':D,'applicationCategory':'FinanceApplication','operatingSystem':'Any','offers':{'@type':'Offer','price':'0','priceCurrency':'USD'},'inLanguage':'en','isAccessibleForFree':True,'datePublished':'2026-11-07','dateModified':'2026-11-07','author':{'@type':'Person','name':'Andrés Blitz','url':'https://andresblitz.com/'},'isBasedOn':'https://www.coingecko.com/en/coins/bitcoin'},
+ {'@type':'WebApplication','@id':U+'#app','name':T,'url':U,'description':D,'applicationCategory':'FinanceApplication','operatingSystem':'Any','offers':{'@type':'Offer','price':'0','priceCurrency':'USD'},'inLanguage':'en','isAccessibleForFree':True,'datePublished':'2026-11-07','dateModified':'2026-11-07','author':{'@type':'Person','name':'Andrés Blitz','url':'https://andresblitz.com/'},'isBasedOn':'https://finance.yahoo.com/quote/BTC-USD/'},
  {'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':'https://andresblitz.com/'},{'@type':'ListItem','position':2,'name':'Projects','item':'https://andresblitz.com/projects/'},{'@type':'ListItem','position':3,'name':'Bitcoin days in each price bracket','item':U}]}]}
 j = lambda o: json.dumps(o, ensure_ascii=False, separators=(',',':')).replace('</','<\\/')
 e = html.escape
@@ -101,7 +101,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
 
   <section class="btc" aria-labelledby="chartTitle">
     <h2 id="chartTitle">Days Bitcoin spent in each $10,000 bracket</h2>
-    <p class="chart-sub" id="chartSub">CoinGecko daily closes</p>
+    <p class="chart-sub" id="chartSub">Yahoo Finance BTC-USD daily closes</p>
     <div class="live" aria-live="polite"><span class="s">Bitcoin now (BTC/USD)</span><span class="v" id="px">—</span><span class="s" id="pxs">Live price loads in your browser.</span></div>
     <div class="ctl">
       <label for="size">Bracket size: <strong id="sizeLabel">$10,000</strong></label>
@@ -112,15 +112,15 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
     <div id="chart" role="img" aria-label="Bar chart of days Bitcoin closed in each USD price bracket"></div>
     <p class="now" id="now"></p>
     <div id="tbl"><!--btc-table:start--><!--btc-table:end--></div>
-    <p class="nota">Daily closes and live price: <a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a> (free public API). History from <!--btc-start:start--><!--btc-start:end-->; not backfilled from other sources. Days are UTC calendar days; times shown in PT.</p>
+    <p class="nota">Daily closes: <a href="https://finance.yahoo.com/quote/BTC-USD/" rel="noopener">Yahoo Finance BTC-USD</a>, from <!--btc-start:start--><!--btc-start:end-->. Live price: <a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a> (Coinbase public spot as fallback). Times shown in PT.</p>
   </section>
 
   <div class="p-body" style="padding-top:1rem">
     <div>
       <section><h2>How to read it</h2><p>Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range. Lower prices sit at the bottom. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes.</p></section>
       <section><h2>Where the numbers come from</h2><ul class="built">
-        <li>Completed days use CoinGecko’s daily Bitcoin price in USD, stamped 00:00 UTC (the close of the previous UTC day). A scheduled GitHub Action stores each new close in <a href="/bitcoin/history.json">/bitcoin/history.json</a> and pre-renders the table above, so the chart works even if CoinGecko is slow.</li>
-        <li>The live price is the same CoinGecko BTC/USD series used by the <a href="/projects/currency-rss/">Currency RSS</a> feed, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.</li>
+        <li>Completed days use Yahoo Finance’s BTC-USD daily close, from September 17, 2014 onward. A scheduled GitHub Action stores each new close in <a href="/bitcoin/history.json">/bitcoin/history.json</a> and pre-renders the table above.</li>
+        <li>The live price for today is CoinGecko’s BTC/USD print, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.</li>
         <li>If a request fails, the last good data stays on screen with its time. Nothing is estimated.</li>
       </ul></section>
       <section><div class="callout"><strong>Reference only.</strong> Historical prices from public sources, which may be delayed. This is not financial advice: no buy or sell buttons, signals, predictions or affiliate links.</div></section>
@@ -131,7 +131,8 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
     <aside class="facts" aria-label="Page facts">
       <h2>Facts</h2>
       <dl>
-        <div><dt>Data</dt><dd><a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a> (BTC/USD)</dd></div>
+        <div><dt>Daily closes</dt><dd><a href="https://finance.yahoo.com/quote/BTC-USD/" rel="noopener">Yahoo Finance</a> (BTC-USD)</dd></div>
+        <div><dt>Live print</dt><dd><a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a></dd></div>
         <div><dt>Live fallback</dt><dd>Coinbase public spot</dd></div>
         <div><dt>Brackets</dt><dd>$3k · $5k · $10k · $15k</dd></div>
         <div><dt>History</dt><dd><a href="/bitcoin/history.json">history.json</a></dd></div>
