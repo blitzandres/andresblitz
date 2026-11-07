@@ -14,25 +14,25 @@ El tipo de cambio FIX que publica el Banco de México y una cotización de merca
 
 ## Dólar hoy en México: FIX de Banxico y precio de ventanilla
 
-### Tipo de cambio FIX (Banxico)
+### Dólar de referencia (mercado internacional)
 
-$ 18.6297
+$ 18.6565
 
 pesos por 1 dólar · fecha 6 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 18.6225
+—
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 18.6290
+—
 
 lo que cuesta un dólar
 
-Fuente: mx.dolarapi.com (FIX de Banxico), actualizado 6 nov 2026, 12:00 p.m. (hora del centro de México)
+Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia), actualizado 6 nov 2026, 6:02 p.m. (hora del centro de México)
 
 ## Conversor de pesos mexicanos a dólares (MXN ↔ USD)
 

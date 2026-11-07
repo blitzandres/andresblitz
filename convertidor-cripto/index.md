@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 7 nov 2026, 15:52 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 7 nov 2026, 20:07 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 67.242.818 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 118.718.690 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 117.584.435 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 244.834.991 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.408.722 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 259.734,19 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 73.419.570 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 75.617 USD | — |
-| Dólares canadienses | 106.718,27 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 67.337.079 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 118.885.110 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 117.749.265 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 245.178.201 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.412.728 MXN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Soles peruanos | 260.098,28 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 73.522.490 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 75.723 USD | — |
+| Dólares canadienses | 106.867,87 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 

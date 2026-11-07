@@ -151,7 +151,7 @@ export const site = {
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-06",
+      "last_updated": "2026-11-07",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -169,7 +169,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CL",
       "summary": "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.",
-      "last_updated": "2026-11-06",
+      "last_updated": "2026-11-07",
       "topics": [
         "dólar observado",
         "Banco Central de Chile",
