@@ -116,7 +116,7 @@ main{{max-width:760px}}
 </main>
 <footer>
   <p style="margin:0">Referencial, no es asesoría financiera. Sin botones de compra, enlaces de afiliados, señales ni predicciones. Precios de criptomonedas: <a href="https://www.coingecko.com/" rel="nofollow">CoinGecko</a>; tasas de cada país: fuentes indicadas en cada moneda. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a> · British Columbia, Canadá.</p>
-  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/comision-cripto/">Comisión cripto</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares</a> · <a href="/guias-cripto/">Guías cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/bitcoin/">Bitcoin: días por rango de precio</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/comision-cripto/">Comisión cripto</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares</a> · <a href="/guias-cripto/">Guías cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
 </footer>
 <script>
 var MID={{}};/*mid*/
