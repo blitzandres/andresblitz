@@ -132,10 +132,6 @@ Lives ♥ ♥ ♥
 
 ← → / A D move · Space shoot · P pause · Click to start
 
-Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml) · [Currency RSS](https://andresblitz.com/projects/currency-rss/)
-
-Dollar rates by country: [Venezuela (Tasa BCV)](https://andresblitz.com/tasa-bcv/) · [Argentina](https://andresblitz.com/dolar-argentina/) · [Colombia](https://andresblitz.com/dolar-colombia/) · [México](https://andresblitz.com/dolar-mexico/) · [Perú](https://andresblitz.com/dolar-peru/) · [Chile](https://andresblitz.com/dolar-chile/). All of them in one feed: [RSS](https://andresblitz.com/rates/feed.xml) · [how the Currency RSS feed works](https://andresblitz.com/projects/currency-rss/).
-
 FAQ
 
 ## Quick answers

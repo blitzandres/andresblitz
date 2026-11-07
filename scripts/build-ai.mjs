@@ -214,13 +214,12 @@ write('70/feed.xml', rss('El 70 · Agropecuaria Blimar', `${ORIGIN}/70/`, 'El 70
 // /ai/ entry
 const aiList = pages.map((p) => ({ p, md: p.mdUrl }));
 write('ai/index.md', `---\ntitle: "AI entry point — andresblitz.com"\ndescription: "Index of every clean Markdown page on andresblitz.com"\nurl: "${ORIGIN}/ai/"\nlast_updated: "${site.generated}"\n---\n\n> Note for AI agents: site map at ${LLMS}\n\n# Markdown pages\n\n` + aiList.map(({ p, md }) => `- [${p.title}](${md}) — ${p.description}`).join('\n') + `\n\nFull content: ${ORIGIN}/full.md\n\n# Feeds\n\n- Site RSS: ${ORIGIN}/feed.xml\n- El 70 RSS: ${ORIGIN}/70/feed.xml\n- Rates RSS (exchange rates, Bitcoin, central-bank rates; Spanish): ${ORIGIN}/rates/feed.xml\n`);
-// Subtle AI-readable links block, injected on every public page (+ /ai/ and 404) before </body>
-const aiNav = (md) => `${FSTART}<nav class="ai-links" aria-label="AI-readable versions" style="font:12px/1.6 system-ui,sans-serif;opacity:.6;text-align:center;margin:24px auto 16px;padding:0 12px;clear:both">AI-readable: <a href="/ai/" style="color:inherit">/ai/</a> &middot; <a href="/llms.txt" style="color:inherit">llms.txt</a> &middot; <a href="${md}" rel="alternate" type="text/markdown" style="color:inherit">Markdown (.md)</a> &middot; <a href="/agent.json" style="color:inherit">agent.json</a> &middot; <a href="/agent.json" rel="alternate" type="application/json" title="Machine-readable site index" style="color:inherit">Site index (JSON)</a></nav>${FEND}`;
-const addNav = (html, md) => html.replace(new RegExp(`${FSTART}<nav class="ai-links"[\\s\\S]*?${FEND}\\n?`, 'g'), '').replace(/<\/body>/i, `${aiNav(md)}\n</body>`);
+// Visible AI-readable banner is backend-only: strip any leftover footer, do not re-inject.
+const addNav = (html, _md) => html.replace(new RegExp(`${FSTART}[\\s\\S]*?${FEND}\\n?`, 'g'), '');
 const hx = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
-write('ai/index.html', `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI entry point | Andrés Blitz</title><meta name="description" content="Index of every clean Markdown page on andresblitz.com for AI agents."><link rel="canonical" href="${ORIGIN}/ai/"><link rel="alternate" type="text/markdown" href="${ORIGIN}/ai/index.md"><style>body{font:16px/1.5 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#111}a{color:#0b5}</style></head><body><main><h1>AI entry point</h1><p>Clean Markdown for every public page. Site map: <a href="/llms.txt">/llms.txt</a> · <a href="/agent.json">/agent.json</a> · <a href="/full.md">/full.md</a></p><p>Feeds: <a href="/feed.xml" type="application/rss+xml">/feed.xml</a> · <a href="/70/feed.xml" type="application/rss+xml">/70/feed.xml</a> · <a href="/rates/feed.xml" type="application/rss+xml">/rates/feed.xml</a> (rates)</p><ul>\n${aiList.map(({ p, md }) => `<li><a href="${hx(md)}">${hx(new URL(md).pathname)}</a> — ${hx(p.title)}</li>`).join('\n')}\n</ul></main>${aiNav(`${ORIGIN}/ai/index.md`)}\n</body></html>\n`);
+write('ai/index.html', `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI entry point | Andrés Blitz</title><meta name="description" content="Index of every clean Markdown page on andresblitz.com for AI agents."><link rel="canonical" href="${ORIGIN}/ai/"><link rel="alternate" type="text/markdown" href="${ORIGIN}/ai/index.md"><style>body{font:16px/1.5 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#111}a{color:#0b5}</style></head><body><main><h1>AI entry point</h1><p>Clean Markdown for every public page. Site map: <a href="/llms.txt">/llms.txt</a> · <a href="/agent.json">/agent.json</a> · <a href="/full.md">/full.md</a></p><p>Feeds: <a href="/feed.xml" type="application/rss+xml">/feed.xml</a> · <a href="/70/feed.xml" type="application/rss+xml">/70/feed.xml</a> · <a href="/rates/feed.xml" type="application/rss+xml">/rates/feed.xml</a> (rates)</p><ul>\n${aiList.map(({ p, md }) => `<li><a href="${hx(md)}">${hx(new URL(md).pathname)}</a> — ${hx(p.title)}</li>`).join('\n')}\n</ul></main></body></html>\n`);
 
-// HTML head injection + JSON-LD + homepage footer
+// HTML head injection + JSON-LD (no visible AI footer)
 for (const p of pages) {
   let html = p.html;
   const snippet = { page: { title: p.title, url: p.url, md: p.mdUrl, summary: p.description, last_updated: p.last_updated }, site: { name: site.name, llms: LLMS, agent: `${ORIGIN}/agent.json`, sections: [`${ORIGIN}/index.md`, `${ORIGIN}/projects/index.md`, `${ORIGIN}/70/index.md`, `${ORIGIN}/tasa-bcv/index.md`] } };
@@ -243,9 +242,6 @@ for (const p of pages) {
   for (const o of ld) block += `<script type="application/ld+json">${safeJson(o)}</script>\n`;
   block += END;
   html = html.replace(/<\/head>/i, `${block}\n</head>`);
-  if (p.kind === 'home') {
-    html = html.replace(/(<p class="updated-note">[^<]*)(<\/p>)/, `$1${FSTART} &middot; <a href="/agent.json" rel="alternate" type="application/json" title="Machine-readable site index">Site index (JSON)</a>${FEND}$2`);
-  }
   html = addNav(html, p.mdUrl);
   if (html !== p.original) fs.writeFileSync(p.file, html);
 }
