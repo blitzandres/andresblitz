@@ -85,6 +85,25 @@ export const site = {
       ]
     },
     {
+      "slug": "bitcoin",
+      "title": "Bitcoin Days in Each Price Bracket: BTC/USD Close History",
+      "url": "https://andresblitz.com/bitcoin/",
+      "md": "https://andresblitz.com/bitcoin/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from CoinGecko daily closes, with a live price for today. Times in PT.",
+      "last_updated": "2026-11-07",
+      "topics": [
+        "Bitcoin",
+        "BTC/USD",
+        "price brackets",
+        "days in range",
+        "price history",
+        "CoinGecko"
+      ]
+    },
+    {
       "slug": "comision-cripto",
       "title": "Calculadora de comisión cripto: cuánto llega al enviar USDT",
       "url": "https://andresblitz.com/comision-cripto/",

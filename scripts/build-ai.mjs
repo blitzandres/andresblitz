@@ -95,6 +95,7 @@ const EXTRA = {
   '/guias-cripto/estafas-comunes/': { topics: ['guías cripto', 'Estafas cripto comunes'], note: 'Guía: estafas cripto y P2P frecuentes (comprobante falso, falso soporte, triangulación, phishing) y hábitos para evitarlas (en español).' },
   '/guias-cripto/brecha-dolar-cripto/': { topics: ['guías cripto', 'Brecha del dólar cripto'], note: 'Guía: cómo se calcula y cómo leer la brecha entre el USDT P2P y la tasa oficial (en español).' },
   '/guias-cripto/': { topics: ['guías cripto', 'USDT', 'stablecoins', 'P2P', 'redes', 'comisiones', 'estafas', 'brecha'], note: 'Guías cripto en español para principiantes: qué es USDT y las stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto. Informativo, no es asesoría financiera.' },
+  '/bitcoin/': { topics: ['Bitcoin', 'BTC/USD', 'price brackets', 'days in range', 'price history', 'CoinGecko'], note: 'Bitcoin days in each price bracket: chart of how many UTC days BTC/USD closed in each $3k, $5k, $10k or $15k bracket, from CoinGecko daily closes (history starts at the first stored day, not backfilled), with today counted at the live CoinGecko price (Coinbase spot as fallback); times in PT (in English). Historical reference, not financial advice.' },
   '/dolar-colombia/': { topics: ['TRM', 'dólar hoy', 'tipo de cambio', 'Colombia'], note: 'Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).' },
 };
 
@@ -157,7 +158,7 @@ ${line(byPath('/projects/'), 'All projects')}
 ${pages.filter((p) => p.kind === 'project').map((p) => line(p)).join('\n')}
 ${pages.filter((p) => p.kind === 'project-subpage').map((p) => line(p)).join('\n')}
 
-## Other pages (Spanish)
+## Other pages (Spanish unless noted)
 
 ${byPath('/70/') ? `- [El 70](${byPath('/70/').mdUrl}): ${EXTRA['/70/'].note}` : ''}
 ${byPath('/tasa-bcv/') ? `- [Tasa BCV](${byPath('/tasa-bcv/').mdUrl}): ${EXTRA['/tasa-bcv/'].note}` : ''}
@@ -172,6 +173,7 @@ ${byPath('/guias-cripto/que-es-usdt/') ? `  - [Qué es USDT](${byPath('/guias-cr
 ${byPath('/ahorro-en-dolares/') ? `- [Ahorro en dólares](${byPath('/ahorro-en-dolares/').mdUrl}): ${EXTRA['/ahorro-en-dolares/'].note}` : ''}
 ${byPath('/comision-cripto/') ? `- [Comisión cripto](${byPath('/comision-cripto/').mdUrl}): ${EXTRA['/comision-cripto/'].note}` : ''}
 ${byPath('/convertidor-cripto/') ? `- [Convertidor cripto](${byPath('/convertidor-cripto/').mdUrl}): ${EXTRA['/convertidor-cripto/'].note}` : ''}
+${byPath('/bitcoin/') ? `- [Bitcoin price brackets](${byPath('/bitcoin/').mdUrl}): ${EXTRA['/bitcoin/'].note}` : ''}
 ${byPath('/dolar-cripto/') ? `- [Dólar cripto](${byPath('/dolar-cripto/').mdUrl}): ${EXTRA['/dolar-cripto/'].note}` : ''}
 ${byPath('/salario-en-dolares/') ? `- [Salario en dólares](${byPath('/salario-en-dolares/').mdUrl}): ${EXTRA['/salario-en-dolares/'].note}` : ''}
 ${byPath('/enviar-dinero/') ? `- [Enviar dinero](${byPath('/enviar-dinero/').mdUrl}): ${EXTRA['/enviar-dinero/'].note}` : ''}

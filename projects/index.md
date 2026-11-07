@@ -14,7 +14,7 @@ Projects
 
 Trading tools, dashboards, a game, signal experiments and a few research rabbit holes. Each project has its own page with what it does, how it’s built and a visual. Private projects are described at a high level. Demos built on invented data are labelled as mock data; live apps are labelled live.
 
-Live rate pages (in Spanish): [Venezuela (Tasa BCV)](https://andresblitz.com/tasa-bcv/) · [Argentina](https://andresblitz.com/dolar-argentina/) · [Colombia](https://andresblitz.com/dolar-colombia/) · [México](https://andresblitz.com/dolar-mexico/) · [Perú](https://andresblitz.com/dolar-peru/) · [Chile](https://andresblitz.com/dolar-chile/). They all feed the [Currency RSS](https://andresblitz.com/projects/currency-rss/) project and its [RSS feed](https://andresblitz.com/rates/feed.xml).
+Live rate pages (in Spanish): [Venezuela (Tasa BCV)](https://andresblitz.com/tasa-bcv/) · [Argentina](https://andresblitz.com/dolar-argentina/) · [Colombia](https://andresblitz.com/dolar-colombia/) · [México](https://andresblitz.com/dolar-mexico/) · [Perú](https://andresblitz.com/dolar-peru/) · [Chile](https://andresblitz.com/dolar-chile/). They all feed the [Currency RSS](https://andresblitz.com/projects/currency-rss/) project and its [RSS feed](https://andresblitz.com/rates/feed.xml). Bitcoin: [days in each price bracket](https://andresblitz.com/bitcoin/).
 
 [
 
@@ -195,6 +195,18 @@ Public repoJavaScriptLive
 ](https://andresblitz.com/projects/currency-rss/)
 
 [RSS feed](https://andresblitz.com/rates/feed.xml) [GitHub](https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-feed.mjs)
+
+[
+
+## Bitcoin price brackets
+
+How many days Bitcoin closed in each USD price range, with a live bar for today.
+
+Public repoJavaScriptLive
+
+](https://andresblitz.com/bitcoin/)
+
+[Daily closes (JSON)](https://andresblitz.com/bitcoin/history.json)[Source](https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-btc-history.mjs)
 
 [
 
