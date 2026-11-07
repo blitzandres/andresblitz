@@ -158,7 +158,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 ---
 title: "Bitcoin Days in Each Price Bracket: BTC/USD Close History"
-description: "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from CoinGecko daily closes, with a live price for today. Times in PT."
+description: "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT."
 url: "https://andresblitz.com/bitcoin/"
 last_updated: "2026-11-07"
 lang: "en"
@@ -172,34 +172,43 @@ Markets · Bitcoin
 
 How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one. Pick a bracket size of $3,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open.
 
-History starts **November 7, 2025** and runs through **November 6, 2026** (365 completed days). With $10,000 brackets, Bitcoin closed most often between **$60k and $70k** (118 days). History baked Nov 7, 2026, 7:42 a.m. PT.
+History starts **September 17, 2014** and runs through **November 7, 2026** (4,435 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 7, 2026, 7:02 a.m. PT.
 
-## Days in each price bracket
+## Days Bitcoin spent in each $10,000 bracket
+
+Yahoo Finance BTC-USD daily closes
 
 Bitcoin now (BTC/USD)—Live price loads in your browser.
 
 Bracket size: **$10,000** 
 
-Days by daily close, $10,000 brackets (November 7, 2025 – November 6, 2026)
+Days by daily close, $10,000 brackets (September 17, 2014 – November 7, 2026)
 | Price bracket (USD) | Days | Share |
 | --- | --- | --- |
-| $100k–$110k | 6 | 1.6% |
-| $90k–$100k | 39 | 10.7% |
-| $80k–$90k | 94 | 25.8% |
-| $70k–$80k | 103 | 28.2% |
-| $60k–$70k | 118 | 32.3% |
-| $50k–$60k | 5 | 1.4% |
+| $120k–$130k | 10 | 0.2% |
+| $110k–$120k | 95 | 2.1% |
+| $100k–$110k | 112 | 2.5% |
+| $90k–$100k | 131 | 3.0% |
+| $80k–$90k | 148 | 3.3% |
+| $70k–$80k | 130 | 2.9% |
+| $60k–$70k | 350 | 7.9% |
+| $50k–$60k | 166 | 3.7% |
+| $40k–$50k | 258 | 5.8% |
+| $30k–$40k | 250 | 5.6% |
+| $20k–$30k | 382 | 8.6% |
+| $10k–$20k | 431 | 9.7% |
+| $0–$10k | 1,972 | 44.5% |
 
-Daily closes and live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (free public API). History from November 7, 2025; not backfilled from other sources. Days are UTC calendar days; times shown in PT. Chart: uPlot (MIT).
+Daily closes: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/), from September 17, 2014. Live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (Coinbase public spot as fallback). Times shown in PT.
 
 ## How to read it
 
-Each bar is a price range in US dollars, for example $70,000 to $80,000. A taller bar means Bitcoin finished more days inside that range. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The amber top of one bar is today, counted at the live price until the UTC day closes.
+Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range. Lower prices sit at the bottom. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes.
 
 ## Where the numbers come from
 
--   Completed days use CoinGecko’s daily Bitcoin price in USD, stamped 00:00 UTC (the close of the previous UTC day). A scheduled GitHub Action stores each new close in [/bitcoin/history.json](https://andresblitz.com/bitcoin/history.json) and pre-renders the table above, so the chart works even if CoinGecko is slow.
--   The live price is the same CoinGecko BTC/USD series used by the [Currency RSS](https://andresblitz.com/projects/currency-rss/) feed, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.
+-   Completed days use Yahoo Finance’s BTC-USD daily close, from September 17, 2014 onward. A scheduled GitHub Action stores each new close in [/bitcoin/history.json](https://andresblitz.com/bitcoin/history.json) and pre-renders the table above.
+-   The live price for today is CoinGecko’s BTC/USD print, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.
 -   If a request fails, the last good data stays on screen with its time. Nothing is estimated.
 
 **Reference only.** Historical prices from public sources, which may be delayed. This is not financial advice: no buy or sell buttons, signals, predictions or affiliate links.
@@ -208,23 +217,23 @@ Each bar is a price range in US dollars, for example $70,000 to $80,000. A talle
 
 ### What does this chart show?
 
-Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its height is the number of days Bitcoin closed inside that bracket. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 brackets.
+Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 brackets.
 
 ### How is a day counted?
 
-Days are UTC calendar days. A completed day counts once, in the bracket that contains its close. The close is CoinGecko’s daily Bitcoin price stamped 00:00 UTC of the next day, which is 4 PM PT in winter and 5 PM PT in summer.
+A completed day counts once, in the bracket that contains that day’s Yahoo Finance BTC-USD close. Days follow the Yahoo daily series. Times on the page are shown in PT.
 
 ### Why does the current bar move?
 
-Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today’s day moves to that bar. It is shown in amber until the day closes.
+Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today’s day moves to that bar. It is shown in a deeper orange with a “← now” label until the day closes.
 
 ### Where does the data come from?
 
-Daily closes and the live price both come from CoinGecko’s free public API, the same Bitcoin series used by the site’s rates feed. If CoinGecko is rate-limiting, the live price falls back to Coinbase’s public BTC-USD spot price, and the page names whichever source is shown. Only one live price is ever shown.
+Daily closes come from Yahoo Finance’s public BTC-USD series, starting September 17, 2014 (the first day of that series). The live price for the unfinished day comes from CoinGecko’s free public API; if CoinGecko is rate-limiting, it falls back to Coinbase’s public BTC-USD spot price, and the page names whichever live source is shown.
 
 ### Why does the history start when it does?
 
-CoinGecko’s free public API only serves the last 365 days of daily prices. The history starts at the first day this site stored and grows by one day each day. Older years are not filled in from other sources, so the start date is shown on the page.
+Yahoo Finance’s public BTC-USD daily series begins on September 17, 2014. That is why the chart starts there and can show time spent from $0 up. Earlier years are not included; Bitcoin traded below $10,000 throughout that earlier period.
 
 ### Is this trading advice?
 
@@ -232,9 +241,13 @@ No. It is a historical reference chart only. There are no buy or sell buttons, s
 
 ## Facts
 
-Data
+Daily closes
 
-[CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (BTC/USD)
+[Yahoo Finance](https://finance.yahoo.com/quote/BTC-USD/) (BTC-USD)
+
+Live print
+
+[CoinGecko](https://www.coingecko.com/en/coins/bitcoin)
 
 Live fallback
 
@@ -367,7 +380,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 7 nov 2026, 9:09 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 7 nov 2026, 15:52 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -383,15 +396,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 67.677.664 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 119.486.420 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 118.344.830 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 246.418.290 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.417.832 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 261.413,84 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 73.894.360 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 76.106 USD | — |
-| Dólares canadienses | 107.408,4 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 67.242.818 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 118.718.690 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 117.584.435 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 244.834.991 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.408.722 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 259.734,19 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 73.419.570 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 75.617 USD | — |
+| Dólares canadienses | 106.718,27 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 
@@ -474,9 +487,9 @@ Compra $ 1.658,40
 
 ### Dólar cripto (USDT)
 
-$ 1.650,09
+$ 1.654,97
 
-Compra $ 1.646,97
+Compra $ 1.648,20
 
 ### Dólar tarjeta
 
@@ -484,7 +497,7 @@ $ 2.041,00
 
 Compra $ 1.976,00
 
-Fuente: dolarapi.com, actualizado 6 nov 2026, 6:00 p. m. (hora de Buenos Aires)
+Fuente: dolarapi.com, actualizado 7 nov 2026, 12:00 p. m. (hora de Buenos Aires)
 
 ## Conversor de pesos a dólares (ARS ↔ USD)
 
@@ -582,7 +595,7 @@ $ 977,54
 
 lo que cuesta un dólar
 
-Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 06-11-2026, 5:01 p. m. (hora de Chile)
+Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 07-11-2026, 9:01 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
@@ -741,13 +754,13 @@ lang: "es"
 
 # Dólar cripto hoy: USDT P2P vs. tasa oficial
 
-Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 7 nov, 09:09 UTC.
+Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 7 nov, 15:52 UTC.
 
 Referencial, no es asesoría financiera.
 
--   En Venezuela, USDT está 15,2 % sobre la tasa BCV hoy, más alto que la semana pasada (12,4 %).
--   En Argentina, USDT está 5,2 % sobre el dólar oficial hoy, más bajo que la semana pasada (5,9 %).
--   En Colombia, USDT está 0,6 % bajo la TRM hoy, más bajo que la semana pasada (0,6 %).
+-   En Venezuela, USDT está 15,3 % sobre la tasa BCV hoy, más alto que la semana pasada (12,1 %).
+-   En Argentina, USDT está 5,1 % sobre el dólar oficial hoy, casi igual que la semana pasada (5,6 %).
+-   En Colombia, USDT está 0,5 % bajo la TRM hoy, más bajo que la semana pasada (0,3 %).
 
   
 
@@ -759,7 +772,7 @@ USDT/VES
 
 USDT P2P
 
-1.024,50
+1.025,69
 
 lo que se paga por un dólar digital entre personas
 
@@ -771,11 +784,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+15,21 %
++15,34 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)7 nov, 09:09 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)7 nov, 15:52 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
 
 ### Argentina
 
@@ -783,7 +796,7 @@ USDT/ARS
 
 USDT P2P
 
-1.651,42
+1.650,25
 
 lo que se paga por un dólar digital entre personas
 
@@ -795,11 +808,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+5,19 %
++5,11 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)7 nov, 09:09 UTCOficial: dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)7 nov, 15:52 UTCOficial: dolarapi.com
 
 ### Colombia
 
@@ -807,7 +820,7 @@ USDT/COP
 
 USDT P2P
 
-3.219,61
+3.222,82
 
 lo que se paga por un dólar digital entre personas
 
@@ -819,11 +832,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-\-0,56 %
+\-0,46 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)7 nov, 09:00 UTCOficial: datos.gov.co (Superintendencia Financiera)
+[CriptoYa (mediana P2P)](https://criptoya.com/)7 nov, 15:52 UTCOficial: datos.gov.co (Superintendencia Financiera)
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
@@ -834,26 +847,26 @@ Cada punto es una actualización (se actualiza varias veces al día). La tabla t
 USDT P2P frente a la tasa oficial
 | País | USDT P2P | Oficial | Brecha | Fuente y hora |
 | --- | --- | --- | --- | --- |
-| Venezuela VES | 1.024,50 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +15,21 % | CriptoYa (mediana P2P) · 7 nov, 09:09 UTC  
+| Venezuela VES | 1.025,69 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +15,34 % | CriptoYa (mediana P2P) · 7 nov, 15:52 UTC  
 Oficial: Banco Central de Venezuela vía ve.dolarapi.com · 30 oct, 04:00 UTC |
-| Argentina ARS | 1.651,42 | [1.570,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,19 % | CriptoYa (mediana P2P) · 7 nov, 09:09 UTC  
+| Argentina ARS | 1.650,25 | [1.570,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,11 % | CriptoYa (mediana P2P) · 7 nov, 15:52 UTC  
 Oficial: dolarapi.com · 5 nov, 18:00 UTC |
-| Colombia COP | 3.219,61 | [3.237,83](https://andresblitz.com/dolar-colombia/) TRM | \-0,56 % | CriptoYa (mediana P2P) · 7 nov, 09:00 UTC  
+| Colombia COP | 3.222,82 | [3.237,83](https://andresblitz.com/dolar-colombia/) TRM | \-0,46 % | CriptoYa (mediana P2P) · 7 nov, 15:52 UTC  
 Oficial: datos.gov.co (Superintendencia Financiera) · 7 nov, 05:00 UTC |
 
 ## Bitcoin y otras criptomonedas (USD)
 
 | Moneda | USD | 24 h |
 | --- | --- | --- |
-| BTC | 76.002,00 | \-0,10 % |
-| ETH | 2.246,44 | +0,42 % |
+| BTC | 76.106,00 | +0,17 % |
+| ETH | 2.233,59 | +0,22 % |
 | USDT | 0,9992 | +0,02 % |
 | USDC | 0,9997 | +0,02 % |
-| SOL | 90,17 | +0,25 % |
-| XRP | 1,1700 | \-1,70 % |
-| BNB | 695,24 | +0,23 % |
+| SOL | 89,34 | \-1,30 % |
+| XRP | 1,1500 | \-2,84 % |
+| BNB | 693,20 | \-0,41 % |
 
-Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 7 nov, 09:09 UTC.
+Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 7 nov, 15:52 UTC.
 
 ## Cómo leer esta página
 
@@ -1656,7 +1669,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Andrés Blitz | Trader & Investor in British Columbia"
 description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
-last_updated: "2026-11-06"
+last_updated: "2026-11-07"
 lang: "en-CA"
 ---
 
@@ -2379,7 +2392,7 @@ MVP
 title: "Projects by Andrés Blitz — Trading Tools, Games & Experiments"
 description: "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps."
 url: "https://andresblitz.com/projects/"
-last_updated: "2026-11-06"
+last_updated: "2026-11-07"
 lang: "en-CA"
 ---
 

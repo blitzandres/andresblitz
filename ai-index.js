@@ -92,7 +92,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from CoinGecko daily closes, with a live price for today. Times in PT.",
+      "summary": "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT.",
       "last_updated": "2026-11-07",
       "topics": [
         "Bitcoin",
@@ -376,7 +376,7 @@ export const site = {
       "kind": "home",
       "lang": "en-CA",
       "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
-      "last_updated": "2026-11-06"
+      "last_updated": "2026-11-07"
     },
     {
       "slug": "projects-blitz-analytics",
@@ -497,7 +497,7 @@ export const site = {
       "kind": "projects-index",
       "lang": "en-CA",
       "summary": "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.",
-      "last_updated": "2026-11-06"
+      "last_updated": "2026-11-07"
     },
     {
       "slug": "projects-iptv-player",

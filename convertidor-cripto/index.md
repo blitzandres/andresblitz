@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 7 nov 2026, 9:09 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 7 nov 2026, 15:52 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 67.677.664 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 119.486.420 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 118.344.830 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 246.418.290 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.417.832 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 261.413,84 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 73.894.360 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 76.106 USD | — |
-| Dólares canadienses | 107.408,4 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 67.242.818 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 118.718.690 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 117.584.435 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 244.834.991 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.408.722 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 259.734,19 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 73.419.570 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 75.617 USD | — |
+| Dólares canadienses | 106.718,27 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 

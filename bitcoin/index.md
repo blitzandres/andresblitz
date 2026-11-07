@@ -14,9 +14,11 @@ Markets · Bitcoin
 
 How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one. Pick a bracket size of $3,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open.
 
-History starts **September 17, 2014** and runs through **November 7, 2026** (4,435 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 7, 2026, 8:02 a.m. PT.
+History starts **September 17, 2014** and runs through **November 7, 2026** (4,435 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 7, 2026, 7:02 a.m. PT.
 
-## Days in each price bracket
+## Days Bitcoin spent in each $10,000 bracket
+
+Yahoo Finance BTC-USD daily closes
 
 Bitcoin now (BTC/USD)—Live price loads in your browser.
 

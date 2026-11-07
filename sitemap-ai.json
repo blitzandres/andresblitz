@@ -20,7 +20,7 @@
       "url": "https://andresblitz.com/bitcoin/",
       "md": "https://andresblitz.com/bitcoin/index.md",
       "title": "Bitcoin Days in Each Price Bracket: BTC/USD Close History",
-      "summary": "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from CoinGecko daily closes, with a live price for today. Times in PT.",
+      "summary": "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT.",
       "lastmod": "2026-11-07"
     },
     {
@@ -133,7 +133,7 @@
       "md": "https://andresblitz.com/index.md",
       "title": "Andrés Blitz | Trader & Investor in British Columbia",
       "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
-      "lastmod": "2026-11-06"
+      "lastmod": "2026-11-07"
     },
     {
       "url": "https://andresblitz.com/projects/blitz-analytics/",
@@ -210,7 +210,7 @@
       "md": "https://andresblitz.com/projects/index.md",
       "title": "Projects by Andrés Blitz — Trading Tools, Games & Experiments",
       "summary": "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.",
-      "lastmod": "2026-11-06"
+      "lastmod": "2026-11-07"
     },
     {
       "url": "https://andresblitz.com/projects/iptv-player/",
