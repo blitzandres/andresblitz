@@ -32,11 +32,11 @@ Days by daily close, $10,000 brackets (November 7, 2025 – November 6, 2026)
 | $60k–$70k | 118 | 32.3% |
 | $50k–$60k | 5 | 1.4% |
 
-Daily closes and live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (free public API). History from November 7, 2025; not backfilled from other sources. Days are UTC calendar days; times shown in PT. Chart: uPlot (MIT).
+Daily closes and live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (free public API). History from November 7, 2025; not backfilled from other sources. Days are UTC calendar days; times shown in PT.
 
 ## How to read it
 
-Each bar is a price range in US dollars, for example $70,000 to $80,000. A taller bar means Bitcoin finished more days inside that range. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The amber top of one bar is today, counted at the live price until the UTC day closes.
+Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range. Lower prices sit at the bottom. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes.
 
 ## Where the numbers come from
 
@@ -50,7 +50,7 @@ Each bar is a price range in US dollars, for example $70,000 to $80,000. A talle
 
 ### What does this chart show?
 
-Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its height is the number of days Bitcoin closed inside that bracket. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 brackets.
+Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 brackets.
 
 ### How is a day counted?
 
@@ -58,7 +58,7 @@ Days are UTC calendar days. A completed day counts once, in the bracket that con
 
 ### Why does the current bar move?
 
-Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today’s day moves to that bar. It is shown in amber until the day closes.
+Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today’s day moves to that bar. It is shown in a deeper orange with a “← now” label until the day closes.
 
 ### Where does the data come from?
 
