@@ -5,9 +5,9 @@ U = 'https://andresblitz.com/bitcoin/'
 T = 'Bitcoin Days in Each Price Bracket: BTC/USD Close History'
 D = 'Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from CoinGecko daily closes, with a live price for today. Times in PT.'
 faq = [
- ('What does this chart show?', 'Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its height is the number of days Bitcoin closed inside that bracket. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 brackets.'),
+ ('What does this chart show?', 'Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 brackets.'),
  ('How is a day counted?', 'Days are UTC calendar days. A completed day counts once, in the bracket that contains its close. The close is CoinGecko\u2019s daily Bitcoin price stamped 00:00 UTC of the next day, which is 4 PM PT in winter and 5 PM PT in summer.'),
- ('Why does the current bar move?', 'Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today\u2019s day moves to that bar. It is shown in amber until the day closes.'),
+ ('Why does the current bar move?', 'Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today\u2019s day moves to that bar. It is shown in a deeper orange with a “← now” label until the day closes.'),
  ('Where does the data come from?', 'Daily closes and the live price both come from CoinGecko\u2019s free public API, the same Bitcoin series used by the site\u2019s rates feed. If CoinGecko is rate-limiting, the live price falls back to Coinbase\u2019s public BTC-USD spot price, and the page names whichever source is shown. Only one live price is ever shown.'),
  ('Why does the history start when it does?', 'CoinGecko\u2019s free public API only serves the last 365 days of daily prices. The history starts at the first day this site stored and grows by one day each day. Older years are not filled in from other sources, so the start date is shown on the page.'),
  ('Is this trading advice?', 'No. It is a historical reference chart only. There are no buy or sell buttons, signals, predictions or affiliate links.'),
@@ -55,25 +55,25 @@ page = f'''<!doctype html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/projects.css">
-<link rel="stylesheet" href="/assets/vendor/uplot/uPlot.min.css">
 <style>
-.btc{{background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:clamp(12px,3vw,22px);margin:0 0 1.5rem}}
+.btc{{background:#FFFBF6;color:#292524;border:1px solid #E7E5E4;border-radius:1rem;padding:clamp(16px,3vw,28px);margin:0 0 1.5rem}}
+.btc a{{color:#C2410C}}
+#chartTitle{{margin:0 0 .35rem;font-size:clamp(1.15rem,3vw,1.45rem);font-weight:600;color:#1C1917;letter-spacing:-.02em;text-align:left}}
+.chart-sub{{margin:0 0 1rem;font-size:.88rem;color:#78716C}}
 .live{{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem 1rem}}
-.live .v{{font-family:'Archivo',sans-serif;font-size:clamp(1.8rem,6vw,2.6rem);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}}
-.live .s,.nota{{font-size:.85rem;color:var(--muted)}}
-.ctl{{margin:1rem 0 .5rem}}.ctl label{{display:block;font-size:.85rem;color:var(--muted);margin-bottom:.35rem}}
-.ctl input[type=range]{{width:100%;max-width:26rem;accent-color:var(--accent);min-height:32px}}
-.ticks{{display:flex;justify-content:space-between;max-width:26rem;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}}
-.ticks button{{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:4px 2px}}.ticks button[aria-pressed=true]{{color:var(--text);font-weight:600}}
-#chart{{min-height:300px;margin-top:.5rem}}
-#chart .u-legend{{font-size:.8rem;color:var(--muted)}}
-.now{{margin:.6rem 0 0;font-size:.95rem;color:#c9d2e3}}
-table.bt{{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums;margin-top:.5rem}}
-table.bt caption{{text-align:left;color:var(--muted);font-size:.82rem;padding-bottom:.4rem}}
-table.bt th,table.bt td{{border-bottom:1px solid var(--border);padding:.4rem .5rem;text-align:left}}table.bt .n{{text-align:right}}
-table.bt tr.cur td{{color:var(--text);font-weight:600;background:var(--accent-soft)}}
+.live .v{{font-family:'Archivo',sans-serif;font-size:clamp(1.8rem,6vw,2.6rem);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;color:#1C1917}}
+.live .s,.nota{{font-size:.85rem;color:#78716C}}
+.ctl{{margin:1rem 0 .5rem}}.ctl label{{display:block;font-size:.85rem;color:#78716C;margin-bottom:.35rem}}
+.ctl input[type=range]{{width:100%;max-width:26rem;accent-color:#F59E0B;min-height:32px}}
+.ticks{{display:flex;justify-content:space-between;max-width:26rem;font-size:.78rem;color:#A8A29E;font-variant-numeric:tabular-nums}}
+.ticks button{{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:4px 2px}}.ticks button[aria-pressed=true]{{color:#1C1917;font-weight:600}}
+#chart{{margin:1rem 0 .25rem;overflow:visible}}
+.now{{margin:.75rem 0 0;font-size:.88rem;color:#78716C}}
+table.bt{{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums;margin-top:.85rem;color:#44403C}}
+table.bt caption{{text-align:left;color:#78716C;font-size:.82rem;padding-bottom:.4rem}}
+table.bt th,table.bt td{{border-bottom:1px solid #E7E5E4;padding:.4rem .5rem;text-align:left}}table.bt .n{{text-align:right}}
+table.bt tr.cur td{{color:#9A3412;font-weight:600;background:#FFEDD5}}
 details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:pointer;font-weight:600}}summary h3{{display:inline;font-size:1rem;margin:0}}details p{{margin:.4rem 0 0}}
-.sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 </style>
 </head>
 <body>
@@ -99,8 +99,9 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
     <p class="nota" id="meta"><!--btc-meta:start--><!--btc-meta:end--></p>
   </header>
 
-  <section class="btc" aria-labelledby="h-chart">
-    <h2 id="h-chart" class="sr">Days in each price bracket</h2>
+  <section class="btc" aria-labelledby="chartTitle">
+    <h2 id="chartTitle">Days Bitcoin spent in each $10,000 bracket</h2>
+    <p class="chart-sub" id="chartSub">CoinGecko daily closes</p>
     <div class="live" aria-live="polite"><span class="s">Bitcoin now (BTC/USD)</span><span class="v" id="px">—</span><span class="s" id="pxs">Live price loads in your browser.</span></div>
     <div class="ctl">
       <label for="size">Bracket size: <strong id="sizeLabel">$10,000</strong></label>
@@ -111,12 +112,12 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
     <div id="chart" role="img" aria-label="Bar chart of days Bitcoin closed in each USD price bracket"></div>
     <p class="now" id="now"></p>
     <div id="tbl"><!--btc-table:start--><!--btc-table:end--></div>
-    <p class="nota">Daily closes and live price: <a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a> (free public API). History from <!--btc-start:start--><!--btc-start:end-->; not backfilled from other sources. Days are UTC calendar days; times shown in PT. Chart: uPlot (MIT).</p>
+    <p class="nota">Daily closes and live price: <a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a> (free public API). History from <!--btc-start:start--><!--btc-start:end-->; not backfilled from other sources. Days are UTC calendar days; times shown in PT.</p>
   </section>
 
   <div class="p-body" style="padding-top:1rem">
     <div>
-      <section><h2>How to read it</h2><p>Each bar is a price range in US dollars, for example $70,000 to $80,000. A taller bar means Bitcoin finished more days inside that range. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The amber top of one bar is today, counted at the live price until the UTC day closes.</p></section>
+      <section><h2>How to read it</h2><p>Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range. Lower prices sit at the bottom. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes.</p></section>
       <section><h2>Where the numbers come from</h2><ul class="built">
         <li>Completed days use CoinGecko’s daily Bitcoin price in USD, stamped 00:00 UTC (the close of the previous UTC day). A scheduled GitHub Action stores each new close in <a href="/bitcoin/history.json">/bitcoin/history.json</a> and pre-renders the table above, so the chart works even if CoinGecko is slow.</li>
         <li>The live price is the same CoinGecko BTC/USD series used by the <a href="/projects/currency-rss/">Currency RSS</a> feed, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.</li>
@@ -150,7 +151,6 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
   </div>
 </footer>
 <script type="application/json" id="btc-data">{{}}</script>
-<script src="/assets/vendor/uplot/uPlot.iife.min.js" defer></script>
 <script src="/bitcoin/app.js" defer></script>
 <script>
 (function(){{var b='https://blitz-analytics.andres-491.workers.dev';
