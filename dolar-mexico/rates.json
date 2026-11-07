@@ -2,14 +2,19 @@
  "country": "dolar-mexico",
  "currency": "MXN",
  "base": "USD",
- "source": "open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)",
- "label": "Dólar de referencia (mercado internacional)",
- "updated": "2026-11-07T00:02:31.000Z",
+ "source": "mx.dolarapi.com (FIX de Banxico)",
+ "label": "Tipo de cambio FIX (Banxico)",
+ "updated": "2026-11-06T18:00:00.000Z",
  "rates": {
   "ref": {
    "compra": null,
-   "venta": 18.656526,
-   "f": "2026-11-07T00:02:31.000Z"
+   "venta": 18.6297,
+   "f": "2026-11-06T12:00:00-06:00"
+  },
+  "mercado": {
+   "compra": 18.6225,
+   "venta": 18.629,
+   "f": "2026-11-06T00:00:00.000Z"
   }
  }
 }

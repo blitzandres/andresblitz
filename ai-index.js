@@ -224,7 +224,7 @@ export const site = {
       "kind": "page",
       "lang": "es-MX",
       "summary": "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.",
-      "last_updated": "2026-11-06",
+      "last_updated": "2026-11-07",
       "topics": [
         "FIX",
         "Banxico",
