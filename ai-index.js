@@ -233,6 +233,25 @@ export const site = {
       ]
     },
     {
+      "slug": "donde-comprar-chile",
+      "title": "Dónde comprar en Chile: supermercados y tiendas online",
+      "url": "https://andresblitz.com/donde-comprar-chile/",
+      "md": "https://andresblitz.com/donde-comprar-chile/index.md",
+      "json": "https://andresblitz.com/api/page/donde-comprar-chile.json",
+      "kind": "page",
+      "lang": "es-CL",
+      "summary": "Guía de dónde comprar en Chile: supermercados (Lider, Jumbo, Santa Isabel, Unimarc, Tottus), mayoristas, tiendas por departamento, farmacias, ferretería y delivery, con el dólar de hoy en Chile.",
+      "last_updated": "2026-11-07",
+      "topics": [
+        "dónde comprar",
+        "supermercados",
+        "Chile",
+        "tiendas online",
+        "farmacias",
+        "delivery"
+      ]
+    },
+    {
       "slug": "enviar-dinero",
       "title": "Calculadora del costo de enviar dinero: comisión y margen",
       "url": "https://andresblitz.com/enviar-dinero/",
