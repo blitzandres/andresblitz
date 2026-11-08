@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Site Map — Every Page on andresblitz.com | Andrés Blitz</title>
+<meta name="description" content="Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree." />
+<meta name="author" content="Andrés Blitz" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#05070f" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://andresblitz.com/site-map/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Andrés Blitz" />
+<meta property="og:url" content="https://andresblitz.com/site-map/" />
+<meta property="og:title" content="Site Map — Every Page on andresblitz.com" />
+<meta property="og:description" content="Every page on andresblitz.com as a clickable tree." />
+<meta property="og:image" content="https://andresblitz.com/assets/og-cover.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/projects.css" />
+<style>
+  .map-head { padding: 2.5rem 0 1.25rem; }
+  .map-head h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+  .map-head h1 span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .map-head p { color: var(--muted); margin-top: .5rem; max-width: 40rem; }
+  .map-tools { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; align-items: center; }
+  .map-tools button { font: inherit; font-size: .85rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: .5rem; padding: .45rem .85rem; cursor: pointer; }
+  .map-tools button:hover { background: var(--surface-hover); }
+  .map-tools input { font: inherit; font-size: .85rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: .5rem; padding: .45rem .85rem; min-width: 0; flex: 1 1 12rem; max-width: 20rem; }
+  .map-count { color: var(--muted); font-size: .85rem; margin-left: auto; }
+  .map-wrap { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; overflow: auto; -webkit-overflow-scrolling: touch; max-height: 78vh; }
+  .map-wrap svg { display: block; }
+  .node { cursor: pointer; transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s; }
+  .node circle { stroke-width: 2; transition: r .2s; }
+  .node:hover circle, .node.sel circle { r: 8; }
+  .node text { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 13px; fill: var(--text); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
+  .node.branch text { font-weight: 600; font-family: 'Archivo', system-ui, sans-serif; }
+  .node .n { fill: var(--muted); font-size: 11px; font-weight: 400; }
+  .node.dim { opacity: .2; }
+  .node.hit text { fill: #fff; }
+  .link { fill: none; stroke-width: 1.5; stroke-opacity: .45; transition: opacity .3s; }
+  .link.dim { opacity: .15; }
+  .card { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; width: min(24rem, calc(100vw - 2rem)); background: rgba(11,16,29,.95); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: .8rem; padding: 1rem 1.1rem; box-shadow: 0 10px 40px rgba(0,0,0,.45); display: none; }
+  .card.on { display: block; }
+  .card .x { position: absolute; top: .45rem; right: .55rem; font: inherit; font-size: 1.1rem; line-height: 1; color: var(--muted); background: none; border: 0; cursor: pointer; padding: .25rem; }
+  .card h2 { padding-right: 1.5rem; }
+  .card h2 { font-size: 1rem; }
+  .card p { color: var(--muted); font-size: .85rem; margin: .4rem 0 .7rem; }
+  .card .meta { font-size: .75rem; color: var(--muted); margin-bottom: .6rem; }
+  .card a.go { display: inline-block; font-size: .85rem; color: #fff; background: var(--accent); text-decoration: none; padding: .4rem .85rem; border-radius: .45rem; }
+  .legend { display: flex; flex-wrap: wrap; gap: .4rem 1rem; margin: .9rem 0 2.5rem; font-size: .8rem; color: var(--muted); }
+  .legend i { display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; margin-right: .35rem; vertical-align: -1px; }
+  noscript p, .err { color: var(--muted); padding: 1.5rem; }
+  @media (prefers-reduced-motion: reduce) { .node { transition: none; } }
+</style>
+</head>
+<body>
+<nav class="site" aria-label="Main">
+  <div class="inner">
+    <a class="logo" href="/" aria-label="Andrés Blitz home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> andresblitz</a>
+    <div class="links">
+      <a class="keep" href="/projects/">Projects</a>
+      <a href="/#about">About</a>
+      <a href="/#play">Play</a>
+      <a class="btn" href="/#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<div class="container">
+  <header class="map-head">
+    <h1>Site <span>map</span></h1>
+    <p>Every page on andresblitz.com as a tree. Click a section to open or close it, or click a page to preview it.</p>
+  </header>
+
+  <div class="map-tools">
+    <button type="button" id="expand">Expand all</button>
+    <button type="button" id="collapse">Collapse</button>
+    <input type="search" id="q" placeholder="Find a page…" aria-label="Find a page" />
+    <span class="map-count" id="count"></span>
+  </div>
+
+  <div class="map-wrap" id="wrap">
+    <noscript><p>The tree needs JavaScript. The plain list is at <a href="/sitemap.xml">sitemap.xml</a>.</p></noscript>
+    <svg id="tree" role="img" aria-label="Tree of all pages on andresblitz.com"></svg>
+    <aside class="card" id="card" aria-live="polite">
+      <button type="button" class="x" id="c-x" aria-label="Close preview">×</button>
+      <h2 id="c-title"></h2>
+      <div class="meta" id="c-meta"></div>
+      <p id="c-sum"></p>
+      <a class="go" id="c-go" href="/">Open page →</a>
+    </aside>
+  </div>
+
+  <div class="legend" id="legend"></div>
+</div>
+</main>
+<footer class="site">
+  <div class="container">&copy; 2026 Andr&eacute;s Blitz &middot; British Columbia, Canada<br />
+    <a href="/">Home</a> &middot; <a href="/projects/">Projects</a> &middot; <a href="/sitemap.xml">sitemap.xml</a> &middot; <a href="https://github.com/blitzandres" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="/assets/vendor/d3-hierarchy/d3-hierarchy.min.js"></script>
+<script>
+(function () {
+  // Sections: how pages are grouped. Order = order in the tree.
+  var SECTIONS = [
+    { id: 'projects', name: 'Projects', color: '#5b8def', url: '/projects/', test: function (s) { return s.indexOf('projects') === 0; } },
+    { id: 'dolar', name: 'Dólar hoy', color: '#34d399', test: function (s) { return s === 'tasa-bcv' || s.indexOf('dolar-') === 0; } },
+    { id: 'calc', name: 'Calculadoras', color: '#fbbf24', test: function (s) { return /^(enviar-dinero|salario-en-dolares|convertidor-cripto|comision-cripto|ahorro-en-dolares)$/.test(s); } },
+    { id: 'guias', name: 'Guías cripto', color: '#a78bfa', url: '/guias-cripto/', test: function (s) { return s.indexOf('guias-cripto') === 0; } },
+    { id: 'markets', name: 'Markets', color: '#f472b6', test: function (s) { return s === 'bitcoin'; } },
+    { id: 'el70', name: 'El 70', color: '#f87171', test: function (s) { return s === '70'; } }
+  ];
+
+  // Labels where the page title reads badly in a tree.
+  var LABELS = { 'projects-blitzys-world-play': 'Play (full screen)', 'projects-blitzys-world-play-3d': '3D levels' };
+
+  // "Name — tagline | Andrés Blitz" -> "Name"
+  function short(t) {
+    t = t.replace(/\s*\|\s*Andr[ée]s Blitz.*$/, '');
+    var cut = t.split(/\s[—–]\s|:\s|\s\|\s/)[0];
+    return cut.length > 38 ? cut.slice(0, 36) + '…' : cut;
+  }
+  function pathOf(url) { try { return new URL(url).pathname; } catch (e) { return url; } }
+
+  function build(pages) {
+    var bySlug = {};
+    pages.forEach(function (p) { bySlug[p.slug] = p; });
+    var home = bySlug.home || { title: 'andresblitz.com', url: '/', summary: '' };
+    var root = { id: 'root', name: 'andresblitz.com', page: home, color: '#e7ecf5', children: [] };
+
+    SECTIONS.forEach(function (sec) {
+      var list = pages.filter(function (p) { return p.slug !== 'home' && sec.test(p.slug); });
+      if (!list.length) return;
+      // A section's own index page (e.g. /projects/) becomes the section node.
+      var indexPage = list.filter(function (p) { return sec.url && pathOf(p.url) === sec.url; })[0];
+      var node = { id: sec.id, name: sec.name, color: sec.color, page: indexPage, children: [] };
+      var nodes = {};
+      list.filter(function (p) { return p !== indexPage; })
+        .sort(function (a, b) { return pathOf(a.url).localeCompare(pathOf(b.url)); })
+        .forEach(function (p) {
+          var path = pathOf(p.url);
+          var parent = path.replace(/[^/]+\/$/, '');
+          var name = LABELS[p.slug] || short(p.title);
+          var n = { id: p.slug, name: name, color: sec.color, page: p, path: path };
+          nodes[path] = n;
+          // Nest sub-pages (e.g. /play/3d/) under their parent page.
+          (nodes[parent] ? (nodes[parent].children = nodes[parent].children || []) : node.children).push(n);
+        });
+      root.children.push(node);
+    });
+    return root;
+  }
+
+  var svg = document.getElementById('tree');
+  var NS = 'http://www.w3.org/2000/svg';
+  var DX = 26, DY = window.innerWidth < 640 ? 150 : 210, PAD = 24;
+  var root, sel = null, query = '';
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function esc(s) { return String(s || ''); }
+
+  function collapse(d) { if (d.children) { d._children = d.children; d._children.forEach(collapse); d.children = null; } }
+  function expand(d) { if (d._children) { d.children = d._children; d._children = null; } (d.children || []).forEach(expand); }
+
+  var gLinks, gNodes, nodeEls = {};
+
+  function render() {
+    d3.tree().nodeSize([DX, DY])(root);
+    var x0 = Infinity, x1 = -Infinity, y1 = 0;
+    root.each(function (d) { if (d.x < x0) x0 = d.x; if (d.x > x1) x1 = d.x; if (d.y > y1) y1 = d.y; });
+    var w = y1 + DY + PAD * 2 + 60, h = x1 - x0 + PAD * 2 + 20;
+    svg.setAttribute('width', w); svg.setAttribute('height', h);
+    svg.setAttribute('viewBox', [-PAD - 10, x0 - PAD - 10, w, h].join(' '));
+
+    gLinks.textContent = '';
+    root.links().forEach(function (l) {
+      var s = l.source, t = l.target, mx = (s.y + t.y) / 2;
+      el('path', { 'class': 'link' + (dimmed(t) ? ' dim' : ''), stroke: t.data.color,
+        d: 'M' + s.y + ',' + s.x + 'C' + mx + ',' + s.x + ' ' + mx + ',' + t.x + ' ' + t.y + ',' + t.x }, gLinks);
+    });
+
+    var live = {};
+    root.descendants().forEach(function (d) {
+      var key = d.data.id; live[key] = true;
+      var g = nodeEls[key];
+      var hasKids = d.children || d._children;
+      if (!g) {
+        g = el('g', { tabindex: 0, role: 'button' }, gNodes);
+        g.style.transform = 'translate(' + (d.parent ? d.parent.y : 0) + 'px,' + (d.parent ? d.parent.x : 0) + 'px)';
+        el('circle', { r: 6 }, g);
+        var t = el('text', { dy: '0.32em' }, g);
+        g._t = t;
+        g.addEventListener('click', function () { onClick(g._d); });
+        g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(g._d); } });
+        nodeEls[key] = g;
+        g.getBoundingClientRect(); // commit start position so the move animates
+      }
+      g._d = d;
+      g.setAttribute('class', 'node' + (hasKids ? ' branch' : '') + (sel === key ? ' sel' : '') + (dimmed(d) ? ' dim' : '') + (query && match(d) ? ' hit' : ''));
+      g.setAttribute('aria-label', d.data.name + (hasKids ? (d.children ? ', open' : ', closed') : ''));
+      var c = g.firstChild;
+      c.setAttribute('stroke', d.data.color);
+      c.setAttribute('fill', d._children ? d.data.color : 'var(--surface)');
+      var left = !!hasKids && d.depth > 0 && d.children;
+      var t2 = g._t;
+      t2.setAttribute('x', left ? -12 : 12);
+      t2.setAttribute('text-anchor', left ? 'end' : 'start');
+      var count = d._children ? ' (' + countLeaves(d) + ')' : '';
+      t2.innerHTML = '';
+      t2.appendChild(document.createTextNode(d.data.name));
+      if (count) { var s = el('tspan', { 'class': 'n' }, t2); s.textContent = count; }
+      g.style.transform = 'translate(' + d.y + 'px,' + d.x + 'px)';
+    });
+    Object.keys(nodeEls).forEach(function (k) { if (!live[k]) { gNodes.removeChild(nodeEls[k]); delete nodeEls[k]; } });
+  }
+
+  function countLeaves(d) { var n = 0; (d.children || d._children || []).forEach(function (c) { n += (c.children || c._children) ? countLeaves(c) + (c.data.page ? 1 : 0) : 1; }); return n; }
+  function text(d) { var p = d.data.page || {}; return (d.data.name + ' ' + (p.title || '') + ' ' + (p.summary || '') + ' ' + (p.topics || []).join(' ')).toLowerCase(); }
+  function match(d) { return text(d).indexOf(query) !== -1; }
+  function dimmed(d) {
+    if (!query) return false;
+    var any = false;
+    d.each(function (x) { if (match(x)) any = true; });
+    (d._children || []).forEach(function (c) { if (!any) { var h = d3.hierarchy(c.data); h.each(function (x) { if (text(x).indexOf(query) !== -1) any = true; }); } });
+    return !any;
+  }
+
+  function onClick(d) {
+    sel = d.data.id;
+    if (d.children) { d._children = d.children; d.children = null; }
+    else if (d._children) { d.children = d._children; d._children = null; }
+    show(d);
+    render();
+  }
+
+  var card = document.getElementById('card');
+  function show(d) {
+    var p = d.data.page;
+    if (!p) { card.classList.remove('on'); return; }
+    document.getElementById('c-title').textContent = p.title.replace(/\s*\|\s*Andr[ée]s Blitz.*$/, '');
+    document.getElementById('c-sum').textContent = esc(p.summary);
+    document.getElementById('c-meta').textContent = [pathOf(p.url), p.lang, p.last_updated && ('updated ' + p.last_updated)].filter(Boolean).join(' · ');
+    document.getElementById('c-go').href = pathOf(p.url);
+    card.classList.add('on');
+  }
+
+  function init(pages) {
+    var data = build(pages);
+    root = d3.hierarchy(data);
+    root.children.forEach(collapse);
+    gLinks = el('g', {}, svg); gNodes = el('g', {}, svg);
+    document.getElementById('count').textContent = pages.length + ' pages';
+    document.getElementById('legend').innerHTML = SECTIONS.map(function (s) { return '<span><i style="background:' + s.color + '"></i>' + s.name + '</span>'; }).join('');
+    document.getElementById('c-x').onclick = function () { card.classList.remove('on'); sel = null; render(); };
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') card.classList.remove('on'); });
+    document.getElementById('expand').onclick = function () { expand(root); render(); };
+    document.getElementById('collapse').onclick = function () { root.children.forEach(collapse); render(); };
+    document.getElementById('q').addEventListener('input', function (e) {
+      query = e.target.value.trim().toLowerCase();
+      if (query) expand(root);
+      render();
+    });
+    render();
+  }
+
+  fetch('/api/site.json').then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function (j) { init(j.pages || []); })
+    .catch(function () {
+      document.getElementById('wrap').insertAdjacentHTML('afterbegin', '<p class="err">Could not load the page list. Try <a href="/sitemap.xml">sitemap.xml</a>.</p>');
+    });
+})();
+</script>
+</body>
+</html>
