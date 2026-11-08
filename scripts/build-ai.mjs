@@ -94,6 +94,7 @@ const EXTRA = {
   '/guias-cripto/redes-y-comisiones/': { topics: ['guías cripto', 'Redes y comisiones'], note: 'Guía: redes TRC20, ERC20, BEP20, Solana, Bitcoin y Lightning, por qué cambian las comisiones y cómo no enviar por la red equivocada (en español).' },
   '/guias-cripto/estafas-comunes/': { topics: ['guías cripto', 'Estafas cripto comunes'], note: 'Guía: estafas cripto y P2P frecuentes (comprobante falso, falso soporte, triangulación, phishing) y hábitos para evitarlas (en español).' },
   '/guias-cripto/brecha-dolar-cripto/': { topics: ['guías cripto', 'Brecha del dólar cripto'], note: 'Guía: cómo se calcula y cómo leer la brecha entre el USDT P2P y la tasa oficial (en español).' },
+  '/donde-comprar-chile/': { topics: ['dónde comprar', 'supermercados', 'Chile', 'tiendas online', 'farmacias', 'delivery'], note: 'Dónde comprar en Chile: supermercados, mayoristas, tiendas por departamento, farmacias, ferretería y delivery, con enlaces informativos sin afiliados (en español).' },
   '/guias-cripto/': { topics: ['guías cripto', 'USDT', 'stablecoins', 'P2P', 'redes', 'comisiones', 'estafas', 'brecha'], note: 'Guías cripto en español para principiantes: qué es USDT y las stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto. Informativo, no es asesoría financiera.' },
   '/bitcoin/': { topics: ['Bitcoin', 'BTC/USD', 'price brackets', 'days in range', 'price history', 'CoinGecko'], note: 'Bitcoin days in each price bracket: chart of how many UTC days BTC/USD closed in each $3k, $5k, $10k or $15k bracket, from CoinGecko daily closes (history starts at the first stored day, not backfilled), with today counted at the live CoinGecko price (Coinbase spot as fallback); times in PT (in English). Historical reference, not financial advice.' },
   '/dolar-colombia/': { topics: ['TRM', 'dólar hoy', 'tipo de cambio', 'Colombia'], note: 'Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).' },
@@ -178,6 +179,7 @@ ${byPath('/dolar-cripto/') ? `- [Dólar cripto](${byPath('/dolar-cripto/').mdUrl
 ${byPath('/salario-en-dolares/') ? `- [Salario en dólares](${byPath('/salario-en-dolares/').mdUrl}): ${EXTRA['/salario-en-dolares/'].note}` : ''}
 ${byPath('/enviar-dinero/') ? `- [Enviar dinero](${byPath('/enviar-dinero/').mdUrl}): ${EXTRA['/enviar-dinero/'].note}` : ''}
 ${byPath('/dolar-chile/') ? `- [Dólar Chile](${byPath('/dolar-chile/').mdUrl}): ${EXTRA['/dolar-chile/'].note}` : ''}
+${byPath('/donde-comprar-chile/') ? `- [Dónde comprar en Chile](${byPath('/donde-comprar-chile/').mdUrl}): ${EXTRA['/donde-comprar-chile/'].note}` : ''}
 ${byPath('/dolar-peru/') ? `- [Dólar Perú](${byPath('/dolar-peru/').mdUrl}): ${EXTRA['/dolar-peru/'].note}` : ''}
 ${byPath('/dolar-mexico/') ? `- [Dólar México](${byPath('/dolar-mexico/').mdUrl}): ${EXTRA['/dolar-mexico/'].note}` : ''}
 
