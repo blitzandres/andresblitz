@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 8 nov 2026, 18:28 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 8 nov 2026, 22:23 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 67.441.122 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 119.068.800 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 117.931.200 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 245.557.027 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.412.876 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 260.740,8 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 73.636.090 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 75.840 USD | — |
-| Dólares canadienses | 107.032,99 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 66.283.312 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 117.024.660 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 115.906.590 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 241.341.373 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.388.621 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 256.264,48 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 72.371.926 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 74.538 USD | — |
+| Dólares canadienses | 105.195,48 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 
