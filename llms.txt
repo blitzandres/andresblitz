@@ -56,6 +56,7 @@ Every link below points to the clean Markdown version of the page (append `index
 - [Salario en dólares](https://andresblitz.com/salario-en-dolares/index.md): Calculadora de salario en dólares: convierte un sueldo mensual o anual en VES, COP, MXN, ARS (oficial y blue), PEN, CLP o CAD a USD con tasas de referencia, y a dólares internacionales (PPA del Banco Mundial) donde hay datos recientes (en español).
 - [Enviar dinero](https://andresblitz.com/enviar-dinero/index.md): Calculadora del costo de enviar dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión y margen frente a la tasa de referencia (en español). Estimaciones; no muestra cotizaciones de proveedores.
 - [Dólar Chile](https://andresblitz.com/dolar-chile/index.md): Dólar hoy en Chile — dólar observado del Banco Central de Chile, compra y venta de mercado y conversor CLP ↔ USD (en español).
+- [Dónde comprar en Chile](https://andresblitz.com/donde-comprar-chile/index.md): Dónde comprar en Chile: supermercados, mayoristas, tiendas por departamento, farmacias, ferretería y delivery, con enlaces informativos sin afiliados (en español).
 - [Dólar Perú](https://andresblitz.com/dolar-peru/index.md): Dólar hoy en Perú — tipo de cambio en soles con la fuente indicada en cada actualización y conversor PEN ↔ USD (en español).
 - [Dólar México](https://andresblitz.com/dolar-mexico/index.md): Dólar hoy en México — tipo de cambio FIX de Banxico, compra y venta de mercado y conversor MXN ↔ USD (en español).
 

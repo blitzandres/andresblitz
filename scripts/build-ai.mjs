@@ -179,6 +179,7 @@ ${byPath('/dolar-cripto/') ? `- [Dólar cripto](${byPath('/dolar-cripto/').mdUrl
 ${byPath('/salario-en-dolares/') ? `- [Salario en dólares](${byPath('/salario-en-dolares/').mdUrl}): ${EXTRA['/salario-en-dolares/'].note}` : ''}
 ${byPath('/enviar-dinero/') ? `- [Enviar dinero](${byPath('/enviar-dinero/').mdUrl}): ${EXTRA['/enviar-dinero/'].note}` : ''}
 ${byPath('/dolar-chile/') ? `- [Dólar Chile](${byPath('/dolar-chile/').mdUrl}): ${EXTRA['/dolar-chile/'].note}` : ''}
+${byPath('/donde-comprar-chile/') ? `- [Dónde comprar en Chile](${byPath('/donde-comprar-chile/').mdUrl}): ${EXTRA['/donde-comprar-chile/'].note}` : ''}
 ${byPath('/dolar-peru/') ? `- [Dólar Perú](${byPath('/dolar-peru/').mdUrl}): ${EXTRA['/dolar-peru/'].note}` : ''}
 ${byPath('/dolar-mexico/') ? `- [Dólar México](${byPath('/dolar-mexico/').mdUrl}): ${EXTRA['/dolar-mexico/'].note}` : ''}
 
