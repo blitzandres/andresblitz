@@ -116,7 +116,7 @@
     { id: 'dolar', name: 'Dólar hoy', color: '#34d399', test: function (s) { return s === 'tasa-bcv' || s.indexOf('dolar-') === 0; } },
     { id: 'calc', name: 'Calculadoras', color: '#fbbf24', test: function (s) { return /^(enviar-dinero|salario-en-dolares|convertidor-cripto|comision-cripto|ahorro-en-dolares)$/.test(s); } },
     { id: 'guias', name: 'Guías cripto', color: '#a78bfa', url: '/guias-cripto/', test: function (s) { return s.indexOf('guias-cripto') === 0; } },
-    { id: 'markets', name: 'Markets', color: '#f472b6', test: function (s) { return s === 'bitcoin'; } },
+    { id: 'markets', name: 'Bitcoin', color: '#f472b6', test: function (s) { return s === 'bitcoin'; } },
     { id: 'el70', name: 'El 70', color: '#f87171', test: function (s) { return s === '70'; } }
   ];
 
@@ -142,6 +142,11 @@
       if (!list.length) return;
       // A section's own index page (e.g. /projects/) becomes the section node.
       var indexPage = list.filter(function (p) { return sec.url && pathOf(p.url) === sec.url; })[0];
+      // A one-page section (Bitcoin, El 70) is shown as a single top-level page.
+      if (list.length === 1 && !sec.url) {
+        root.children.push({ id: list[0].slug, name: sec.name, color: sec.color, page: list[0] });
+        return;
+      }
       var node = { id: sec.id, name: sec.name, color: sec.color, page: indexPage, children: [] };
       var nodes = {};
       list.filter(function (p) { return p !== indexPage; })
@@ -261,14 +266,14 @@
   function init(pages) {
     var data = build(pages);
     root = d3.hierarchy(data);
-    root.children.forEach(collapse);
+    (root.children || []).forEach(collapse);
     gLinks = el('g', {}, svg); gNodes = el('g', {}, svg);
     document.getElementById('count').textContent = pages.length + ' pages';
     document.getElementById('legend').innerHTML = SECTIONS.map(function (s) { return '<span><i style="background:' + s.color + '"></i>' + s.name + '</span>'; }).join('');
     document.getElementById('c-x').onclick = function () { card.classList.remove('on'); sel = null; render(); };
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') card.classList.remove('on'); });
     document.getElementById('expand').onclick = function () { expand(root); render(); };
-    document.getElementById('collapse').onclick = function () { root.children.forEach(collapse); render(); };
+    document.getElementById('collapse').onclick = function () { (root.children || []).forEach(collapse); render(); };
     document.getElementById('q').addEventListener('input', function (e) {
       query = e.target.value.trim().toLowerCase();
       if (query) expand(root);
