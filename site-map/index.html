@@ -113,12 +113,14 @@
   // Sections: how pages are grouped. Order = order in the tree.
   var SECTIONS = [
     { id: 'projects', name: 'Projects', color: '#5b8def', url: '/projects/', test: function (s) { return s.indexOf('projects') === 0; } },
-    { id: 'dolar', name: 'Dólar hoy', color: '#34d399', test: function (s) { return s === 'tasa-bcv' || s.indexOf('dolar-') === 0; } },
-    { id: 'calc', name: 'Calculadoras', color: '#fbbf24', test: function (s) { return /^(enviar-dinero|salario-en-dolares|convertidor-cripto|comision-cripto|ahorro-en-dolares)$/.test(s); } },
-    { id: 'guias', name: 'Guías cripto', color: '#a78bfa', url: '/guias-cripto/', test: function (s) { return s.indexOf('guias-cripto') === 0; } },
+    { id: 'dolar', name: 'Dólar hoy', group: 'latam', color: '#34d399', test: function (s) { return s === 'tasa-bcv' || s.indexOf('dolar-') === 0; } },
+    { id: 'calc', name: 'Calculadoras', group: 'latam', color: '#fbbf24', test: function (s) { return /^(enviar-dinero|salario-en-dolares|convertidor-cripto|comision-cripto|ahorro-en-dolares)$/.test(s); } },
+    { id: 'guias', name: 'Guías cripto', group: 'latam', color: '#a78bfa', url: '/guias-cripto/', test: function (s) { return s.indexOf('guias-cripto') === 0; } },
     { id: 'markets', name: 'Bitcoin', color: '#f472b6', test: function (s) { return s === 'bitcoin'; } },
     { id: 'el70', name: 'El 70', color: '#f87171', test: function (s) { return s === '70'; } }
   ];
+  // Groups wrap several sections under one branch.
+  var GROUPS = { latam: { name: 'Latinoamérica', color: '#2dd4bf' } };
 
   // Labels where the page title reads badly in a tree.
   var LABELS = { 'projects-blitzys-world-play': 'Play (full screen)', 'projects-blitzys-world-play-3d': '3D levels' };
@@ -135,6 +137,7 @@
     var bySlug = {};
     pages.forEach(function (p) { bySlug[p.slug] = p; });
     var home = bySlug.home || { title: 'andresblitz.com', url: '/', summary: '' };
+    var groups = {};
     var root = { id: 'root', name: 'andresblitz.com', page: home, color: '#e7ecf5', children: [] };
 
     SECTIONS.forEach(function (sec) {
@@ -160,7 +163,16 @@
           // Nest sub-pages (e.g. /play/3d/) under their parent page.
           (nodes[parent] ? (nodes[parent].children = nodes[parent].children || []) : node.children).push(n);
         });
-      root.children.push(node);
+      if (sec.group) {
+        var g = groups[sec.group];
+        if (!g) {
+          g = groups[sec.group] = { id: sec.group, name: GROUPS[sec.group].name, color: GROUPS[sec.group].color, children: [] };
+          root.children.push(g);
+        }
+        g.children.push(node);
+      } else {
+        root.children.push(node);
+      }
     });
     return root;
   }
