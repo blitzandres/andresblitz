@@ -151,7 +151,7 @@ export const site = {
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-08",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -169,7 +169,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CL",
       "summary": "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-08",
       "topics": [
         "dólar observado",
         "Banco Central de Chile",
@@ -604,6 +604,17 @@ export const site = {
         "tipo de cambio",
         "paridad de poder adquisitivo"
       ]
+    },
+    {
+      "slug": "site-map",
+      "title": "Site Map — Every Page on andresblitz.com | Andrés Blitz",
+      "url": "https://andresblitz.com/site-map/",
+      "md": "https://andresblitz.com/site-map/index.md",
+      "json": "https://andresblitz.com/api/page/site-map.json",
+      "kind": "page",
+      "lang": "en-CA",
+      "summary": "Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree.",
+      "last_updated": "2026-11-08"
     },
     {
       "slug": "tasa-bcv",

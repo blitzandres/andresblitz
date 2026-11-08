@@ -48,6 +48,7 @@ last_updated: "2026-11-08"
 - [SIGSPACE — Network Signals as a Video Game World | Andrés Blitz](https://andresblitz.com/projects/sigspace/index.md) — SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers.
 - [Weinstein Stage Matrix — TradingView Indicator | Andrés Blitz](https://andresblitz.com/projects/weinstein-stage-matrix/index.md) — Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.
 - [Salario en dólares: convierte pesos, bolívares o soles a USD](https://andresblitz.com/salario-en-dolares/index.md) — Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.
+- [Site Map — Every Page on andresblitz.com | Andrés Blitz](https://andresblitz.com/site-map/index.md) — Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree.
 - [Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela](https://andresblitz.com/tasa-bcv/index.md) — Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia.
 
 Full content: https://andresblitz.com/full.md
