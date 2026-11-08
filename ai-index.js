@@ -85,6 +85,25 @@ export const site = {
       ]
     },
     {
+      "slug": "bitcoin",
+      "title": "Bitcoin Days in Each Price Bracket: BTC/USD Close History",
+      "url": "https://andresblitz.com/bitcoin/",
+      "md": "https://andresblitz.com/bitcoin/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT.",
+      "last_updated": "2026-11-07",
+      "topics": [
+        "Bitcoin",
+        "BTC/USD",
+        "price brackets",
+        "days in range",
+        "price history",
+        "CoinGecko"
+      ]
+    },
+    {
       "slug": "comision-cripto",
       "title": "Calculadora de comisión cripto: cuánto llega al enviar USDT",
       "url": "https://andresblitz.com/comision-cripto/",
@@ -132,7 +151,7 @@ export const site = {
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-06",
+      "last_updated": "2026-11-07",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -150,7 +169,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CL",
       "summary": "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.",
-      "last_updated": "2026-11-06",
+      "last_updated": "2026-11-07",
       "topics": [
         "dólar observado",
         "Banco Central de Chile",
@@ -205,7 +224,7 @@ export const site = {
       "kind": "page",
       "lang": "es-MX",
       "summary": "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.",
-      "last_updated": "2026-11-06",
+      "last_updated": "2026-11-07",
       "topics": [
         "FIX",
         "Banxico",
@@ -376,7 +395,7 @@ export const site = {
       "kind": "home",
       "lang": "en-CA",
       "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
-      "last_updated": "2026-11-06"
+      "last_updated": "2026-11-07"
     },
     {
       "slug": "projects-blitz-analytics",
@@ -497,7 +516,7 @@ export const site = {
       "kind": "projects-index",
       "lang": "en-CA",
       "summary": "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.",
-      "last_updated": "2026-11-06"
+      "last_updated": "2026-11-07"
     },
     {
       "slug": "projects-iptv-player",
@@ -724,6 +743,6 @@ export const site = {
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
     }
   ],
-  "generated": "2026-11-07"
+  "generated": "2026-11-08"
 };
 export default site;

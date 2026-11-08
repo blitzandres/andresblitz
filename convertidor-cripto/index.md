@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 7 nov 2026, 9:09 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 8 nov 2026, 5:46 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 67.677.664 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 119.486.420 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 118.344.830 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 246.418.290 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.417.832 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 261.413,84 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 73.894.360 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 76.106 USD | — |
-| Dólares canadienses | 107.408,4 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 67.346.861 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 118.902.380 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 117.766.370 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 245.213.817 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.410.902 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 260.376,37 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 73.533.170 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 75.734 USD | — |
+| Dólares canadienses | 106.883,39 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 

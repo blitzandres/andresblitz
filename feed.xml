@@ -5,12 +5,19 @@
 <link>https://andresblitz.com/</link>
 <description>Main pages of andresblitz.com</description>
 <atom:link href="https://andresblitz.com/feed.xml" rel="self" type="application/rss+xml" />
-<lastBuildDate>Sat, 07 Nov 2026 12:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 08 Nov 2026 12:00:00 GMT</lastBuildDate>
 <item>
 <title>Ahorro en dólares: qué valdrían hoy tus bolívares o pesos</title>
 <link>https://andresblitz.com/ahorro-en-dolares/</link>
 <guid isPermaLink="true">https://andresblitz.com/ahorro-en-dolares/</guid>
 <description>Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.</description>
+<pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Bitcoin Days in Each Price Bracket: BTC/USD Close History</title>
+<link>https://andresblitz.com/bitcoin/</link>
+<guid isPermaLink="true">https://andresblitz.com/bitcoin/</guid>
+<description>Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT.</description>
 <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
@@ -28,6 +35,20 @@
 <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
+<title>Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto</title>
+<link>https://andresblitz.com/dolar-argentina/</link>
+<guid isPermaLink="true">https://andresblitz.com/dolar-argentina/</guid>
+<description>Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.</description>
+<pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Dólar hoy en Chile: dólar observado y conversor de pesos</title>
+<link>https://andresblitz.com/dolar-chile/</link>
+<guid isPermaLink="true">https://andresblitz.com/dolar-chile/</guid>
+<description>Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.</description>
+<pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
 <title>Dólar hoy en Colombia: TRM oficial y conversor de pesos</title>
 <link>https://andresblitz.com/dolar-colombia/</link>
 <guid isPermaLink="true">https://andresblitz.com/dolar-colombia/</guid>
@@ -39,6 +60,13 @@
 <link>https://andresblitz.com/dolar-cripto/</link>
 <guid isPermaLink="true">https://andresblitz.com/dolar-cripto/</guid>
 <description>Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.</description>
+<pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Dólar hoy en México: tipo de cambio FIX de Banxico y conversor</title>
+<link>https://andresblitz.com/dolar-mexico/</link>
+<guid isPermaLink="true">https://andresblitz.com/dolar-mexico/</guid>
+<description>Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.</description>
 <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
@@ -63,46 +91,25 @@
 <pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
-<title>Salario en dólares: convierte pesos, bolívares o soles a USD</title>
-<link>https://andresblitz.com/salario-en-dolares/</link>
-<guid isPermaLink="true">https://andresblitz.com/salario-en-dolares/</guid>
-<description>Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.</description>
-<pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto</title>
-<link>https://andresblitz.com/dolar-argentina/</link>
-<guid isPermaLink="true">https://andresblitz.com/dolar-argentina/</guid>
-<description>Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.</description>
-<pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Dólar hoy en Chile: dólar observado y conversor de pesos</title>
-<link>https://andresblitz.com/dolar-chile/</link>
-<guid isPermaLink="true">https://andresblitz.com/dolar-chile/</guid>
-<description>Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.</description>
-<pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Dólar hoy en México: tipo de cambio FIX de Banxico y conversor</title>
-<link>https://andresblitz.com/dolar-mexico/</link>
-<guid isPermaLink="true">https://andresblitz.com/dolar-mexico/</guid>
-<description>Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.</description>
-<pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
 <title>Andrés Blitz | Trader &amp; Investor in British Columbia</title>
 <link>https://andresblitz.com/</link>
 <guid isPermaLink="true">https://andresblitz.com/</guid>
 <description>Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.</description>
-<pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Projects by Andrés Blitz — Trading Tools, Games &amp; Experiments</title>
 <link>https://andresblitz.com/projects/</link>
 <guid isPermaLink="true">https://andresblitz.com/projects/</guid>
 <description>Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.</description>
-<pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate>
+<pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Salario en dólares: convierte pesos, bolívares o soles a USD</title>
+<link>https://andresblitz.com/salario-en-dolares/</link>
+<guid isPermaLink="true">https://andresblitz.com/salario-en-dolares/</guid>
+<description>Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.</description>
+<pubDate>Sat, 07 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela</title>
