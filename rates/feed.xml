@@ -6,8 +6,48 @@
 <atom:link href="https://andresblitz.com/rates/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Tipos de cambio de Venezuela, Argentina, Colombia, México, Perú y Chile, bitcoin, USD/CAD y tasas de política monetaria, con fuente y hora de cada dato.</description>
 <language>es</language>
-<lastBuildDate>Sun, 08 Nov 2026 22:23:14 GMT</lastBuildDate>
+<lastBuildDate>Mon, 09 Nov 2026 01:53:47 GMT</lastBuildDate>
 <ttl>30</ttl>
+<item>
+<title>Colombia: USDT P2P (COP): 3.217,1275 COP por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-co:2026-11-09T01:53:47.000Z:3217.1275</guid>
+<pubDate>Mon, 09 Nov 2026 01:53:47 GMT</pubDate>
+<description>Colombia: USDT P2P (COP): 3.217,1275 COP por USDT · brecha -0.64 % vs. TRM. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-09T01:53:47Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Venezuela: USDT P2P (VES): 1.033,7597 VES por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ve:2026-11-09T01:53:46.000Z:1033.7597</guid>
+<pubDate>Mon, 09 Nov 2026 01:53:46 GMT</pubDate>
+<description>Venezuela: USDT P2P (VES): 1.033,7597 VES por USDT · brecha +16.25 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-09T01:53:46Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Argentina: USDT P2P (ARS): 1.663,145 ARS por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ar:2026-11-09T01:53:40.000Z:1663.145</guid>
+<pubDate>Mon, 09 Nov 2026 01:53:40 GMT</pubDate>
+<description>Argentina: USDT P2P (ARS): 1.663,145 ARS por USDT · brecha +5.93 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-09T01:53:40Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Bitcoin (BTC/USD): 75.240 USD</title>
+<link>https://www.coingecko.com/es/monedas/bitcoin</link>
+<guid isPermaLink="false">bitcoin:2026-11-09T01:53:32.000Z:75240</guid>
+<pubDate>Mon, 09 Nov 2026 01:53:32 GMT</pubDate>
+<description>Bitcoin (BTC/USD): 75.240 USD (-0.57 % en 24 h) · CAD 106207. Fuente: CoinGecko. Dato del 2026-11-09T01:53:32Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
+</item>
+<item>
+<title>Perú: Dólar de referencia (mercado internacional): 3,4448 PEN por USD</title>
+<link>https://andresblitz.com/dolar-peru/</link>
+<guid isPermaLink="false">dolar-peru:2026-11-09T00:02:31.000Z:3.44483</guid>
+<pubDate>Mon, 09 Nov 2026 00:02:31 GMT</pubDate>
+<description>Perú: Dólar de referencia (mercado internacional): 3,4448 PEN por USD. Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia). Dato del 2026-11-09T00:02:31Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)</source>
+</item>
 <item>
 <title>Bitcoin (BTC/USD): 74.538 USD</title>
 <link>https://www.coingecko.com/es/monedas/bitcoin</link>
@@ -367,46 +407,6 @@
 <pubDate>Sat, 07 Nov 2026 00:02:31 GMT</pubDate>
 <description>México: Dólar de referencia (mercado internacional): 18,6565 MXN por USD. Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia). Dato del 2026-11-07T00:02:31Z.</description>
 <source url="https://andresblitz.com/rates/feed.xml">open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)</source>
-</item>
-<item>
-<title>Perú: Dólar de referencia (mercado internacional): 3,4349 PEN por USD</title>
-<link>https://andresblitz.com/dolar-peru/</link>
-<guid isPermaLink="false">dolar-peru:2026-11-07T00:02:31.000Z:3.434865</guid>
-<pubDate>Sat, 07 Nov 2026 00:02:31 GMT</pubDate>
-<description>Perú: Dólar de referencia (mercado internacional): 3,4349 PEN por USD. Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia). Dato del 2026-11-07T00:02:31Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)</source>
-</item>
-<item>
-<title>Argentina: USDT P2P (ARS): 1.647 ARS por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-ar:2026-11-06T22:18:45.000Z:1647</guid>
-<pubDate>Fri, 06 Nov 2026 22:18:45 GMT</pubDate>
-<description>Argentina: USDT P2P (ARS): 1.647 ARS por USDT · brecha +4.9 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-06T22:18:45Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Bitcoin (BTC/USD): 75.948 USD</title>
-<link>https://www.coingecko.com/es/monedas/bitcoin</link>
-<guid isPermaLink="false">bitcoin:2026-11-06T22:18:44.000Z:75948</guid>
-<pubDate>Fri, 06 Nov 2026 22:18:44 GMT</pubDate>
-<description>Bitcoin (BTC/USD): 75.948 USD (-0.07 % en 24 h) · CAD 107212. Fuente: CoinGecko. Dato del 2026-11-06T22:18:44Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
-</item>
-<item>
-<title>Venezuela: USDT P2P (VES): 1.017,13 VES por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-ve:2026-11-06T22:18:44.000Z:1017.13</guid>
-<pubDate>Fri, 06 Nov 2026 22:18:44 GMT</pubDate>
-<description>Venezuela: USDT P2P (VES): 1.017,13 VES por USDT · brecha +14.38 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-06T22:18:44Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Colombia: USDT P2P (COP): 3.222,675 COP por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-co:2026-11-06T22:18:25.000Z:3222.675</guid>
-<pubDate>Fri, 06 Nov 2026 22:18:25 GMT</pubDate>
-<description>Colombia: USDT P2P (COP): 3.222,675 COP por USDT · brecha -0.17 % vs. TRM. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-06T22:18:25Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
 </item>
 </channel>
 </rss>

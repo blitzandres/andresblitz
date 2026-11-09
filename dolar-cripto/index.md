@@ -10,12 +10,12 @@ lang: "es"
 
 # Dólar cripto hoy: USDT P2P vs. tasa oficial
 
-Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 8 nov, 22:23 UTC.
+Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 9 nov, 01:53 UTC.
 
 Referencial, no es asesoría financiera.
 
 -   En Venezuela, USDT está 16,3 % sobre la tasa BCV hoy, más alto que la semana pasada (12,5 %).
--   En Argentina, USDT está 5,7 % sobre el dólar oficial hoy, casi igual que la semana pasada (5,7 %).
+-   En Argentina, USDT está 5,9 % sobre el dólar oficial hoy, casi igual que la semana pasada (5,7 %).
 -   En Colombia, USDT está 0,6 % bajo la TRM hoy, casi igual que la semana pasada (-0,4 %).
 
   
@@ -28,7 +28,7 @@ USDT/VES
 
 USDT P2P
 
-1.034,35
+1.033,76
 
 lo que se paga por un dólar digital entre personas
 
@@ -40,11 +40,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+16,32 %
++16,25 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)8 nov, 22:22 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 01:53 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
 
 ### Argentina
 
@@ -52,7 +52,7 @@ USDT/ARS
 
 USDT P2P
 
-1.659,78
+1.663,15
 
 lo que se paga por un dólar digital entre personas
 
@@ -64,11 +64,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+5,72 %
++5,93 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)8 nov, 22:22 UTCOficial: dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 01:53 UTCOficial: dolarapi.com
 
 ### Colombia
 
@@ -76,7 +76,7 @@ USDT/COP
 
 USDT P2P
 
-3.217,22
+3.217,13
 
 lo que se paga por un dólar digital entre personas
 
@@ -92,7 +92,7 @@ Brecha
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)8 nov, 22:23 UTCOficial: datos.gov.co (Superintendencia Financiera)
+[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 01:53 UTCOficial: datos.gov.co (Superintendencia Financiera)
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
@@ -103,26 +103,26 @@ Cada punto es una actualización (se actualiza varias veces al día). La tabla t
 USDT P2P frente a la tasa oficial
 | País | USDT P2P | Oficial | Brecha | Fuente y hora |
 | --- | --- | --- | --- | --- |
-| Venezuela VES | 1.034,35 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +16,32 % | CriptoYa (mediana P2P) · 8 nov, 22:22 UTC  
+| Venezuela VES | 1.033,76 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +16,25 % | CriptoYa (mediana P2P) · 9 nov, 01:53 UTC  
 Oficial: Banco Central de Venezuela vía ve.dolarapi.com · 30 oct, 04:00 UTC |
-| Argentina ARS | 1.659,78 | [1.570,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,72 % | CriptoYa (mediana P2P) · 8 nov, 22:22 UTC  
+| Argentina ARS | 1.663,15 | [1.570,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,93 % | CriptoYa (mediana P2P) · 9 nov, 01:53 UTC  
 Oficial: dolarapi.com · 5 nov, 18:55 UTC |
-| Colombia COP | 3.217,22 | [3.237,83](https://andresblitz.com/dolar-colombia/) TRM | \-0,64 % | CriptoYa (mediana P2P) · 8 nov, 22:23 UTC  
+| Colombia COP | 3.217,13 | [3.237,83](https://andresblitz.com/dolar-colombia/) TRM | \-0,64 % | CriptoYa (mediana P2P) · 9 nov, 01:53 UTC  
 Oficial: datos.gov.co (Superintendencia Financiera) · 7 nov, 05:00 UTC |
 
 ## Bitcoin y otras criptomonedas (USD)
 
 | Moneda | USD | 24 h |
 | --- | --- | --- |
-| BTC | 75.840,00 | +0,12 % |
-| ETH | 2.131,04 | \-4,49 % |
-| USDT | 0,9992 | +0,02 % |
-| USDC | 0,9996 | \-0,00 % |
-| SOL | 86,57 | \-3,02 % |
-| XRP | 1,1200 | \-3,59 % |
-| BNB | 685,31 | \-1,44 % |
+| BTC | 74.538,00 | \-1,57 % |
+| ETH | 2.145,50 | \-3,89 % |
+| USDT | 0,9991 | +0,02 % |
+| USDC | 0,9995 | 0,00 % |
+| SOL | 88,03 | \-1,16 % |
+| XRP | 1,1200 | \-3,34 % |
+| BNB | 689,07 | \-0,79 % |
 
-Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 8 nov, 22:23 UTC.
+Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 9 nov, 01:53 UTC.
 
 ## Cómo leer esta página
 
