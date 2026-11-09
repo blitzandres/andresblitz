@@ -61,17 +61,18 @@
       <a href="/#about">About</a>
       <a href="/#play">Play</a>
       <a href="/site-map/">Site map</a>
+      <a href="/alerts/" aria-current="page">Get alerts</a>
       <a class="btn" href="/#contact">Contact</a>
     </div>
   </div>
 </nav>
 <main id="main">
 <div class="container">
-  <p class="al-banner" id="soon" hidden>Email alerts are being set up. Check back soon.</p>
+  <p class="al-banner" id="soon">Email alerts: coming soon. · Alertas por email: muy pronto.</p>
   <header class="al-hero">
     <div>
       <h1>Alerts &amp; <span>downloads</span></h1>
-      <p>Pick what you want by email. Each one asks you to confirm first, and every email has a one-click unsubscribe.</p>
+      <p id="al-lead">Bitcoin brackets, the daily Tasa BCV, dollar-gap alerts, PDF guides and more — by email, with a confirm step and one-click unsubscribe. Sign-up cards appear here once email is connected.</p>
     </div>
     <div class="al-stat" id="stat" hidden><b id="stat-n">0</b><small>active subscriptions</small></div>
   </header>
@@ -110,7 +111,10 @@
   if (q.get('ok')) show('ok', '✓ Confirmed: ' + (names[q.get('ok')] || 'your subscription') + '.');
   else if (q.get('bye')) show('ok', 'You are unsubscribed.');
   else if (q.get('e')) show('err', 'That link is no longer valid. Sign up again below.');
-  if (!window.ABAlerts || !ABAlerts.api) { document.getElementById('soon').hidden = false; return; }
+  if (!window.ABAlerts || !ABAlerts.api) { return; }
+  document.getElementById('soon').hidden = true;
+  var lead = document.getElementById('al-lead');
+  if (lead) lead.textContent = 'Pick what you want by email. Each one asks you to confirm first, and every email has a one-click unsubscribe.';
   fetch(ABAlerts.api + '?a=status').then(function (r) { return r.json(); }).then(function (j) {
     var n = 0; for (var k in j.counts) n += j.counts[k];
     if (n > 0) { document.getElementById('stat-n').textContent = n.toLocaleString('en-US'); document.getElementById('stat').hidden = false; }
