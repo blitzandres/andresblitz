@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alerts &amp; Downloads | Andrés Blitz</title>
+<meta name="description" content="Email alerts and downloads from andresblitz.com: Bitcoin bracket alerts, the daily Tasa BCV, crypto dollar gap alerts, weekly LatAm rates, PDF guides and more." />
+<meta name="author" content="Andrés Blitz" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#05070f" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://andresblitz.com/alerts/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Andrés Blitz" />
+<meta property="og:url" content="https://andresblitz.com/alerts/" />
+<meta property="og:title" content="Alerts &amp; Downloads — andresblitz.com" />
+<meta property="og:description" content="Bitcoin, Tasa BCV and dollar alerts, PDF guides and updates by email." />
+<meta property="og:image" content="https://andresblitz.com/assets/og-cover.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/projects.css" />
+<style>
+  .al-hero { padding: 3rem 0 1rem; display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+  .al-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); text-wrap: balance; }
+  .al-hero h1 span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .al-hero p { color: var(--muted); margin-top: .6rem; max-width: 38rem; }
+  .al-stat { text-align: right; font-variant-numeric: tabular-nums; }
+  .al-stat b { display: block; font-family: 'Archivo', sans-serif; font-size: 2.4rem; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .al-stat small { color: var(--muted); font-size: .8rem; }
+  .al-banner { margin: 1rem 0 0; padding: .85rem 1.1rem; border-radius: .7rem; border: 1px solid var(--border); background: var(--surface); font-size: .92rem; }
+  .al-banner.ok { border-color: rgba(52,211,153,.4); color: #a7f3d0; }
+  .al-banner.err { border-color: rgba(248,113,113,.4); color: #fecaca; }
+  .al-group { margin-top: 2.5rem; }
+  .al-group > h2 { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-family: 'Space Grotesk', sans-serif; font-weight: 500; display: flex; align-items: center; gap: .75rem; }
+  .al-group > h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .al-group .ab-alerts { margin: 1rem 0 0; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+  .al-calcs { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; align-items: center; }
+  .al-calcs span { color: var(--muted); font-size: .85rem; }
+  .al-calcs a { font-size: .85rem; color: var(--text); text-decoration: none; border: 1px solid var(--border); background: var(--surface); padding: .45rem .8rem; border-radius: 99rem; }
+  .al-calcs a:hover { background: var(--surface-hover); }
+  .al-note { color: var(--muted); font-size: .85rem; margin: 3rem 0; max-width: 42rem; }
+  @media (max-width: 640px) { .al-hero { grid-template-columns: 1fr; } .al-stat { text-align: left; } }
+</style>
+</head>
+<body>
+<nav class="site" aria-label="Main">
+  <div class="inner">
+    <a class="logo" href="/" aria-label="Andrés Blitz home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> andresblitz</a>
+    <div class="links">
+      <a class="keep" href="/projects/">Projects</a>
+      <a href="/#about">About</a>
+      <a href="/#play">Play</a>
+      <a class="btn" href="/#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<div class="container">
+  <p class="al-banner" id="soon" hidden>Email alerts are being set up. Check back soon.</p>
+  <header class="al-hero">
+    <div>
+      <h1>Alerts &amp; <span>downloads</span></h1>
+      <p>Pick what you want by email. Each one asks you to confirm first, and every email has a one-click unsubscribe.</p>
+    </div>
+    <div class="al-stat" id="stat" hidden><b id="stat-n">0</b><small>active subscriptions</small></div>
+  </header>
+  <div id="banner" role="status" hidden></div>
+
+  <section hidden data-ab-section class="al-group" aria-labelledby="g1"><h2 id="g1">Markets</h2>
+    <div class="ab-alerts" data-lang="en" data-topics="btc-bracket,trading-notes"></div>
+  </section>
+
+  <section hidden data-ab-section class="al-group" lang="es" aria-labelledby="g2"><h2 id="g2">Latinoamérica</h2>
+    <div class="ab-alerts" data-lang="es" data-topics="bcv-daily,dolar-gap,rates-weekly,guias-pdf"></div>
+    <div class="al-calcs"><span>Cada calculadora también te envía tu resultado:</span>
+      <a href="/enviar-dinero/">Enviar dinero</a><a href="/salario-en-dolares/">Salario en dólares</a><a href="/convertidor-cripto/">Convertidor cripto</a><a href="/comision-cripto/">Comisión cripto</a><a href="/ahorro-en-dolares/">Ahorro en dólares</a>
+    </div>
+  </section>
+
+  <section hidden data-ab-section class="al-group" aria-labelledby="g3"><h2 id="g3">About me &amp; updates</h2>
+    <div class="ab-alerts" data-lang="en" data-topics="bio-pdf,new-projects"></div>
+    <div class="ab-alerts" data-lang="es" data-topics="el70" lang="es" style="margin-top:1rem"></div>
+  </section>
+
+  <p class="al-note">Your email is only used for what you sign up for, and it is never sold or shared. PDF copies carry a code tied to your email so shared copies can be traced. Questions: blitz@mail.grokbot.com</p>
+</div>
+</main>
+<footer class="site">
+  <div class="container">&copy; 2026 Andr&eacute;s Blitz &middot; British Columbia, Canada<br />
+    <a href="/">Home</a> &middot; <a href="/projects/">Projects</a> &middot; <a href="/sitemap.xml">sitemap.xml</a> &middot; <a href="https://github.com/blitzandres" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+<script src="/assets/alerts.js"></script>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), b = document.getElementById('banner');
+  var names = { 'btc-bracket': 'Bitcoin bracket alerts', 'bio-pdf': 'the PDF bio. Check your inbox for the download link', 'dolar-gap': 'alerta de brecha', 'bcv-daily': 'Tasa BCV diaria', 'rates-weekly': 'resumen semanal', 'guias-pdf': 'guías en PDF. Revisa tu correo', 'new-projects': 'new project alerts', 'trading-notes': 'trading notes', el70: 'noticias de El 70', 'calc-result': 'tu resultado. Revisa tu correo' };
+  function show(cls, text) { b.className = 'al-banner ' + cls; b.textContent = text; b.hidden = false; }
+  if (q.get('ok')) show('ok', '✓ Confirmed: ' + (names[q.get('ok')] || 'your subscription') + '.');
+  else if (q.get('bye')) show('ok', 'You are unsubscribed.');
+  else if (q.get('e')) show('err', 'That link is no longer valid. Sign up again below.');
+  if (!window.ABAlerts || !ABAlerts.api) { document.getElementById('soon').hidden = false; return; }
+  fetch(ABAlerts.api + '?a=status').then(function (r) { return r.json(); }).then(function (j) {
+    var n = 0; for (var k in j.counts) n += j.counts[k];
+    if (n > 0) { document.getElementById('stat-n').textContent = n.toLocaleString('en-US'); document.getElementById('stat').hidden = false; }
+  }).catch(function () {});
+})();
+</script>
+</body>
+</html>

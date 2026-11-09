@@ -397,6 +397,14 @@ footer{max-width:760px;margin:0 auto;padding:16px var(--pad);border-top:1px soli
   <details><summary><h3>De dónde salen los datos</h3></summary><p>El dólar y el euro oficiales provienen de <a href="https://dolarapi.com/docs/venezuela/" rel="noopener">DolarApi.com</a>, que reproduce la tasa publicada por el BCV (el promedio del dólar paralelo, no oficial, viene de la misma fuente), y el bitcoin de <a href="https://www.coingecko.com/" rel="noopener">CoinGecko</a>. Si una fuente no responde, ese dato no se muestra: aquí nunca verá cifras estimadas. Esta página no es una fuente oficial; para usos legales o contables consulte el <a href="https://www.bcv.org.ve/" rel="noopener">sitio oficial del Banco Central de Venezuela</a>.</p></details>
   <details><summary><h3>¿Qué pasa si una fuente no responde?</h3></summary><p>El dato que no se pueda cargar simplemente no aparece. La página nunca muestra cifras estimadas ni inventadas.</p></details>
 </section>
+<!--ab-alerts:start-->
+<section hidden data-ab-section class="ab-wrap" aria-labelledby="ab-h">
+  <h2 id="ab-h">Recíbelo por correo</h2>
+  <p>Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.</p>
+  <div class="ab-alerts" data-topics="bcv-daily,dolar-gap,rates-weekly" data-country="VE"></div>
+</section>
+<script src="/assets/alerts.js" defer></script>
+<!--ab-alerts:end-->
 </main>
 <footer>
   <p style="margin:0">Datos: Banco Central de Venezuela (vía ve.dolarapi.com), CoinGecko y Polymarket.</p>
