@@ -1,10 +1,12 @@
 /* Email sign-up cards for andresblitz.com.
    Usage: <div class="ab-alerts" data-topics="btc-bracket,bcv-daily" data-country="VE"></div>
           <script src="/assets/alerts.js" defer></script>
-   Posts to the andresblitz-alerts Cloudflare Worker (worker code: worker-alerts/ in the repo). */
+   Sign-ups go to the Google Apps Script web app in google-sheets/alerts.gs.
+   Until API is set, every card section stays hidden, so the site looks unchanged. */
 (function () {
   'use strict';
-  var API = 'https://andresblitz-alerts.blitzandres.workers.dev';
+  // Paste the Apps Script web app URL here (Deploy → Web app → URL ending in /exec).
+  var API = '';
   var DOC_ES = /^es/.test(document.documentElement.lang || '');
   var fmt = function (n, d) { return Number(n).toLocaleString('es', { maximumFractionDigits: d == null ? 2 : d }); };
   var usd = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
@@ -189,13 +191,12 @@
         params = { calc: location.pathname.split('/')[1], summary: summary.slice(0, 280) };
       }
       btn.disabled = true; say('', L('Sending…', 'Enviando…'));
-      fetch(API + '/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, topic: key, params: params, lang: ES ? 'es' : 'en', hp: f.get('hp') || '' }) })
-        .then(function (r) { return r.json().then(function (j) { return { s: r.status, j: j }; }); })
-        .then(function (r) {
-          btn.disabled = false;
-          if (r.s === 200) { el.classList.add('ab-done'); say('ok', r.j.pending === false ? L('You are already subscribed.', 'Ya estás suscrito.') : L('Check your inbox and confirm. ✓', 'Revisa tu correo y confirma. ✓')); }
-          else if (r.s === 429) say('err', L('Too many tries. Try again in an hour.', 'Demasiados intentos. Prueba en una hora.'));
-          else say('err', L('Check the email address and try again.', 'Revisa el correo e inténtalo de nuevo.'));
+      // Apps Script web apps do not send CORS headers, so the reply cannot be read here: a
+      // plain-text no-cors POST is delivered, and the confirmation email is the real answer.
+      fetch(API, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ email: email, topic: key, params: params, lang: ES ? 'es' : 'en', hp: f.get('hp') || '' }) })
+        .then(function () {
+          btn.disabled = false; el.classList.add('ab-done');
+          say('ok', L('Check your inbox and confirm. ✓', 'Revisa tu correo y confirma. ✓'));
         })
         .catch(function () { btn.disabled = false; say('err', L('Sign-ups are not available right now. Try again later.', 'Las suscripciones no están disponibles ahora. Inténtalo más tarde.')); });
     });
@@ -204,11 +205,13 @@
   }
 
   function init() {
+    if (!API) return; // not connected yet: sections stay hidden
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ab-section]'), function (s) { s.hidden = false; });
     if (!document.getElementById('ab-alerts-css')) {
       var st = document.createElement('style'); st.id = 'ab-alerts-css'; st.textContent = CSS; document.head.appendChild(st);
     }
     Array.prototype.forEach.call(document.querySelectorAll('.ab-alerts'), render);
   }
-  window.ABAlerts = { topicsFor: topicsFor, render: render };
+  window.ABAlerts = { api: API, topicsFor: topicsFor, render: render };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

@@ -61,6 +61,7 @@
 </nav>
 <main id="main">
 <div class="container">
+  <p class="al-banner" id="soon" hidden>Email alerts are being set up. Check back soon.</p>
   <header class="al-hero">
     <div>
       <h1>Alerts &amp; <span>downloads</span></h1>
@@ -70,18 +71,18 @@
   </header>
   <div id="banner" role="status" hidden></div>
 
-  <section class="al-group" aria-labelledby="g1"><h2 id="g1">Markets</h2>
+  <section hidden data-ab-section class="al-group" aria-labelledby="g1"><h2 id="g1">Markets</h2>
     <div class="ab-alerts" data-lang="en" data-topics="btc-bracket,trading-notes"></div>
   </section>
 
-  <section class="al-group" lang="es" aria-labelledby="g2"><h2 id="g2">Latinoamérica</h2>
+  <section hidden data-ab-section class="al-group" lang="es" aria-labelledby="g2"><h2 id="g2">Latinoamérica</h2>
     <div class="ab-alerts" data-lang="es" data-topics="bcv-daily,dolar-gap,rates-weekly,guias-pdf"></div>
     <div class="al-calcs"><span>Cada calculadora también te envía tu resultado:</span>
       <a href="/enviar-dinero/">Enviar dinero</a><a href="/salario-en-dolares/">Salario en dólares</a><a href="/convertidor-cripto/">Convertidor cripto</a><a href="/comision-cripto/">Comisión cripto</a><a href="/ahorro-en-dolares/">Ahorro en dólares</a>
     </div>
   </section>
 
-  <section class="al-group" aria-labelledby="g3"><h2 id="g3">About me &amp; updates</h2>
+  <section hidden data-ab-section class="al-group" aria-labelledby="g3"><h2 id="g3">About me &amp; updates</h2>
     <div class="ab-alerts" data-lang="en" data-topics="bio-pdf,new-projects"></div>
     <div class="ab-alerts" data-lang="es" data-topics="el70" lang="es" style="margin-top:1rem"></div>
   </section>
@@ -103,7 +104,8 @@
   if (q.get('ok')) show('ok', '✓ Confirmed: ' + (names[q.get('ok')] || 'your subscription') + '.');
   else if (q.get('bye')) show('ok', 'You are unsubscribed.');
   else if (q.get('e')) show('err', 'That link is no longer valid. Sign up again below.');
-  fetch('https://andresblitz-alerts.blitzandres.workers.dev/status').then(function (r) { return r.json(); }).then(function (j) {
+  if (!window.ABAlerts || !ABAlerts.api) { document.getElementById('soon').hidden = false; return; }
+  fetch(ABAlerts.api + '?a=status').then(function (r) { return r.json(); }).then(function (j) {
     var n = 0; for (var k in j.counts) n += j.counts[k];
     if (n > 0) { document.getElementById('stat-n').textContent = n.toLocaleString('en-US'); document.getElementById('stat').hidden = false; }
   }).catch(function () {});
