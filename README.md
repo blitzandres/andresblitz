@@ -19,6 +19,10 @@ Personal website of **Andrés Blitz** — full-time trader and investor based in
 | Hosting | GitHub Pages (custom domain `andresblitz.com`) |
 | Analytics | Private Cloudflare Worker (blitz-analytics (repositorio privado)) |
 
+## For agents
+
+Start with [AGENTS.md](AGENTS.md): every system in this repo, where it lives, and the rules for changing it.
+
 ## Local preview
 
 ```bash
