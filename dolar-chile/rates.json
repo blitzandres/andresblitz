@@ -2,19 +2,19 @@
  "country": "dolar-chile",
  "currency": "CLP",
  "base": "USD",
- "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
- "label": "Dólar observado (Banco Central de Chile)",
- "updated": "2026-11-09T03:00:00.000Z",
+ "source": "cl.dolarapi.com",
+ "label": "Dólar de cierre de mercado",
+ "updated": "2026-11-09T12:01:35.260Z",
  "rates": {
   "ref": {
    "compra": null,
-   "venta": 979.88,
-   "f": "2026-11-09T03:00:00.000Z"
+   "venta": 975.74,
+   "f": "2026-11-09T12:01:35.260Z"
   },
   "mercado": {
-   "compra": 975.74,
-   "venta": 977.54,
-   "f": "2026-11-08T12:01:11.502Z"
+   "compra": 970.55,
+   "venta": 972.75,
+   "f": "2026-11-09T12:01:35.260Z"
   }
  }
 }
