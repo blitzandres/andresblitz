@@ -92,7 +92,13 @@
       "kind": "page",
       "lang": "en-CA",
       "summary": "Email alerts and downloads from andresblitz.com: Bitcoin bracket alerts, the daily Tasa BCV, crypto dollar gap alerts, weekly LatAm rates, PDF guides and more.",
-      "last_updated": "2026-11-09"
+      "last_updated": "2026-11-09",
+      "topics": [
+        "email alerts",
+        "PDF downloads",
+        "Bitcoin brackets",
+        "Tasa BCV"
+      ]
     },
     {
       "slug": "bitcoin",
@@ -624,7 +630,12 @@
       "kind": "page",
       "lang": "en-CA",
       "summary": "Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree.",
-      "last_updated": "2026-11-08"
+      "last_updated": "2026-11-08",
+      "topics": [
+        "site map",
+        "sitemap",
+        "navigation"
+      ]
     },
     {
       "slug": "tasa-bcv",
