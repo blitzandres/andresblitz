@@ -24,7 +24,7 @@ class Sheet {
 const sheets = {};
 const cache = new Map();
 const ctx = {
-  SpreadsheetApp: { getActive: () => ({ getSheetByName: (n) => sheets[n] || null, insertSheet: (n) => (sheets[n] = new Sheet()) }) },
+  SpreadsheetApp: (() => { const book = { getSheetByName: (n) => sheets[n] || null, insertSheet: (n) => (sheets[n] = new Sheet()) }; return { getActive: () => book, openById: () => book }; })(),
   GmailApp: { getAliases: () => ['info@andresblitz.com'], sendEmail: (to, subject, text, opts) => sent.push({ to, subject, text, ...opts }) },
   CacheService: { getScriptCache: () => ({ get: (k) => cache.get(k) || null, put: (k, v) => cache.set(k, v) }) },
   LockService: { getScriptLock: () => ({ waitLock() {}, releaseLock() {} }) },

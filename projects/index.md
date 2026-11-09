@@ -221,7 +221,3 @@ Public repoHTML
 [Live site](https://blitzandres.github.io/elite-island-movers/) [GitHub](https://github.com/blitzandres/elite-island-movers)
 
 Every project page links to its GitHub repo (and live demo when one exists). Browse the org on [github.com/blitzandres](https://github.com/blitzandres).
-
-## Get it by email
-
-Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.

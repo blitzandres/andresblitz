@@ -2,7 +2,7 @@
 title: "Home History — Time-Capsule House Timeline | Andrés Blitz"
 description: "Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP."
 url: "https://andresblitz.com/projects/home-history/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 

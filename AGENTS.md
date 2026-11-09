@@ -49,14 +49,21 @@ To change them, change the script or the page it reads from.
 
 ## Email alerts
 
-**How it works:** a card on a page posts to the Apps Script web app. The script saves a row in
-the Sheet and sends a confirmation email. Every 30 minutes a trigger runs `cron()`, which reads
-the site's JSON above and emails people only when something changed. Mail goes out through
-Gmail as `info@andresblitz.com`.
+**How it works:** a small "🔔 Recibir alerta / Get alert" link sits right under the prices on
+`/tasa-bcv/`, `/dolar-argentina/`, `/dolar-colombia/`, `/dolar-mexico/`, `/dolar-peru/`,
+`/dolar-chile/`, `/dolar-cripto/` and `/bitcoin/` (and every topic is listed on `/alerts/`, which is
+not in the nav). Clicking it opens one email field (plus a tiny picker where it applies). It posts
+to the Apps Script web app, which saves a row in the "andresblitz alerts" Google Sheet
+(id `1_euDXSIqZqgVkJneCbKasuOdbDYiE27QrBAmfNoaF18`, in Andrés's Drive) and emails a confirm link.
+Every 30 minutes a free Apps Script time trigger runs `cron()`, which reads the site's JSON and
+emails confirmed people only when something changed. Mail goes out from Andrés's Google account
+(as `info@andresblitz.com` if that is an alias), named "andresblitz.com Alerts", with Reply-To
+`blitz@mail.grokbot.com`.
 
-**Status:** the code is on `main` but switched off. Cards stay hidden while `var API = ''` in
-`assets/alerts.js` is empty. To go live, paste the web app URL (ending in `/exec`) there. The
-setup steps (Sheet, script, email alias, DNS) are in `google-sheets/README.md`.
+**Status:** the Sheet and the Apps Script project ("andresblitz alerts script" in Drive) exist.
+Links stay hidden while `var API = ''` in `assets/alerts.js` is empty; add `?alerts=preview` to a
+page URL to see the UI. To go live, deploy the script as a web app and paste its `/exec` URL into
+`API` (steps in `google-sheets/README.md`).
 
 **Topics** (same keys in `alerts.gs` and `alerts.js`):
 
@@ -73,10 +80,11 @@ setup steps (Sheet, script, email alias, DNS) are in `google-sheets/README.md`.
 | `el70` | New item in `/70/feed.xml` | `/70/feed.xml` |
 | `calc-result` | Right after confirm, plus a reminder 30 days later | the calculator's `.res` text |
 
-**Where cards appear:** between `<!--ab-alerts:start-->` and `<!--ab-alerts:end-->` on 22 pages,
-as `<div class="ab-alerts" data-topics="…" data-country="VE">`. To add a card to a page, copy
-that block. To add a new topic, add it to `TOPICS` in both files (plus a cron job in `alerts.gs`
-if it is an alert), then run the test.
+**Where links appear:** `<p class="ab-bell" data-topic="…" data-choice="…" data-country="VE" hidden></p>`
+plus `<script src="/assets/alerts.js" defer></script>`. `data-choice` adds a tiny topic picker,
+`data-open` shows the form without the link (used on `/alerts/`). The language follows the
+nearest `lang` attribute. `calc-result` stays in `alerts.gs` but has no link on the site now.
+To add a topic, add it to `TOPICS` in `alerts.gs` and `names()` in `alerts.js`, then run the test.
 
 **Sheet tabs:** `subs` (sign-ups), `pdfs` (who received which tagged copy), `state` (what the
 cron already saw), `log` (sends and errors).

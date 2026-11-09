@@ -274,7 +274,3 @@ El dólar y el euro oficiales provienen de [DolarApi.com](https://dolarapi.com/d
 ### ¿Qué pasa si una fuente no responde?
 
 El dato que no se pueda cargar simplemente no aparece. La página nunca muestra cifras estimadas ni inventadas.
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

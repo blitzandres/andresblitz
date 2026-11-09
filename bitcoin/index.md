@@ -106,7 +106,3 @@ History
 Source
 
 [bake-btc-history.mjs](https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-btc-history.mjs)
-
-## Get it by email
-
-Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.
