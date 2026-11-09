@@ -11,15 +11,21 @@
  *            publishes and emails people only when something changed
  * - setup    run once by hand: creates the tabs and the 30-minute trigger
  *
- * Email goes out through the Gmail account that owns this script, as FROM_EMAIL
- * (set up as a "Send mail as" alias, see google-sheets/README.md).
+ * Email goes out through the Google account that owns this script (FROM_EMAIL if it is an alias),
+ * with Reply-To set to the Grok Bot inbox. See google-sheets/README.md.
  */
 
 var CONFIG = {
   SITE: 'https://andresblitz.com',
-  FROM_EMAIL: 'info@andresblitz.com', // must be a verified "Send mail as" alias of this Gmail account
-  FROM_NAME: 'Andrés Blitz',
-  REPLY_TO: 'info@andresblitz.com',
+  // The "andresblitz alerts" Sheet in Andrés's Drive. Works bound to that Sheet or as a standalone script.
+  SHEET_ID: '1_euDXSIqZqgVkJneCbKasuOdbDYiE27QrBAmfNoaF18',
+  // Used as From only if it is a verified "Send mail as" alias of this Google account
+  // (on Workspace: add info@ as an alternate address of the account). Otherwise the account address is used.
+  FROM_EMAIL: 'info@andresblitz.com',
+  FROM_NAME: 'andresblitz.com Alerts',
+  // Replies go to the Grok Bot inbox. It cannot be the From address: mail.grokbot.com has DMARC p=reject
+  // and only authorizes Amazon SES, so Gmail-sent mail "from" it would be rejected.
+  REPLY_TO: 'blitz@mail.grokbot.com',
   MAX_PER_EMAIL_PER_HOUR: 3,
   MAX_SIGNUPS_PER_HOUR: 60,
 };
@@ -377,7 +383,8 @@ function mdToHtml_(md) {
 
 /* ================= sheet helpers ================= */
 
-function sheet_(name) { return SpreadsheetApp.getActive().getSheetByName(name); }
+function book_() { return CONFIG.SHEET_ID ? SpreadsheetApp.openById(CONFIG.SHEET_ID) : SpreadsheetApp.getActive(); }
+function sheet_(name) { return book_().getSheetByName(name); }
 
 function subs_() {
   var v = sheet_('subs').getDataRange().getValues();
@@ -430,7 +437,7 @@ function num_(n, d) { return Number(n).toLocaleString('es', { maximumFractionDig
 /* ================= one-time setup ================= */
 
 function setup() {
-  var ss = SpreadsheetApp.getActive();
+  var ss = book_();
   var tabs = { subs: SUBS_COLS, pdfs: ['tag', 'doc', 'email', 'created'], state: ['k', 'v'], log: ['time', 'what', 'message'] };
   Object.keys(tabs).forEach(function (n) {
     var sh = ss.getSheetByName(n) || ss.insertSheet(n);

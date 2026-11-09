@@ -64,10 +64,6 @@ Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%
 
 ¿Tiene una pregunta? Use el chat en la esquina inferior derecha de la página para dejarnos un mensaje. Le responderemos por correo.
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -157,10 +153,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -174,23 +166,32 @@ lang: "en-CA"
 
 > Note for AI agents: this is the clean Markdown version of https://andresblitz.com/alerts/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
 
-Email alerts are being set up. Check back soon.
+# Email alerts
 
-# Alerts & downloads
+Pick one, type your email, done. You confirm once by email, and every email has a one-click unsubscribe. You can also sign up from the small “Get alert” link next to the prices on each rate page.
 
-Pick what you want by email. Each one asks you to confirm first, and every email has a one-click unsubscribe.
+Email alerts open here soon. · Las alertas por correo abren aquí muy pronto.
 
-**0**active subscriptions
+-   **Bitcoin bracket alert**An email when BTC closes a day in a new price bracket. [Chart](https://andresblitz.com/bitcoin/)
+    
+-   **Tasa BCV cada mañana**La Tasa BCV en tu correo cada mañana (≈ 8:00, hora de Caracas). [Ver](https://andresblitz.com/tasa-bcv/)
+    
+-   **Alerta de brecha del dólar cripto**Un correo cuando la brecha entre el dólar oficial y el USDT cruce tu nivel, en Venezuela, Argentina o Colombia. [Ver](https://andresblitz.com/dolar-cripto/)
+    
+-   **Resumen semanal del dólar**Cada lunes: el dólar en 7 países y cuánto se movió en la semana.
+    
+-   **New projects**Hear when a new tool, game or demo goes live. [Projects](https://andresblitz.com/projects/)
+    
+-   **Monthly trading notes**My market view once a month, with a Weinstein stage summary.
+    
+-   **Noticias de El 70**Novedades de la finca: el ganado, los potreros y la temporada. [El 70](https://andresblitz.com/70/)
+    
+-   **Bio as a PDF**A personal PDF copy of my bio and projects. Each copy carries a code tied to your email.
+    
+-   **Guías cripto en PDF**Las 5 guías en un solo PDF: USDT, P2P, redes, brecha y estafas. [Guías](https://andresblitz.com/guias-cripto/)
+    
 
-## Markets
-
-## Latinoamérica
-
-Cada calculadora también te envía tu resultado: [Enviar dinero](https://andresblitz.com/enviar-dinero/)[Salario en dólares](https://andresblitz.com/salario-en-dolares/)[Convertidor cripto](https://andresblitz.com/convertidor-cripto/)[Comisión cripto](https://andresblitz.com/comision-cripto/)[Ahorro en dólares](https://andresblitz.com/ahorro-en-dolares/)
-
-## About me & updates
-
-Your email is only used for what you sign up for, and it is never sold or shared. PDF copies carry a code tied to your email so shared copies can be traced. Questions: blitz@mail.grokbot.com
+Your email is only used for what you sign up for, and it is never sold or shared. Questions: blitz@mail.grokbot.com
 
 
 ---
@@ -304,10 +305,6 @@ Source
 
 [bake-btc-history.mjs](https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-btc-history.mjs)
 
-## Get it by email
-
-Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.
-
 
 ---
 
@@ -408,10 +405,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -488,10 +481,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Tasas y calculadoras
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
 
 
 ---
@@ -609,10 +598,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -699,10 +684,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
 
 
 ---
@@ -797,10 +778,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
 
 
 ---
@@ -969,10 +946,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -1060,10 +1033,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -1150,10 +1119,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
 
 
 ---
@@ -1255,10 +1220,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -1348,10 +1309,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -1437,10 +1394,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -1524,10 +1477,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -1585,10 +1534,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Tasas por país
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
 
 
 ---
@@ -1674,10 +1619,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -1760,10 +1701,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Tasas por país
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
 
 
 ---
@@ -1939,7 +1876,7 @@ Alerts and downloads from this page. You confirm first, and you can unsubscribe 
 title: "Blitz Analytics — Privacy-Minded Web Analytics | Andrés Blitz"
 description: "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data."
 url: "https://andresblitz.com/projects/blitz-analytics/"
-last_updated: "2026-11-01"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2001,7 +1938,7 @@ In production · private
 title: "Blitzy's World — Playable Space Game in the Browser | Andrés Blitz"
 description: "Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch."
 url: "https://andresblitz.com/projects/blitzys-world/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2129,7 +2066,7 @@ Play Blitzy's World full screen: fly a glowing orb through an endless universe, 
 title: "BluthScan — Real-Time Bluetooth Scanner in 3D | Andrés Blitz"
 description: "BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices."
 url: "https://andresblitz.com/projects/bluth-scan/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2191,7 +2128,7 @@ Prototype
 title: "Compute Share Pilot — Trusted Compute for AI | Andrés Blitz"
 description: "Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs."
 url: "https://andresblitz.com/projects/compute-share-pilot/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2251,7 +2188,7 @@ Pilot
 title: "Currency RSS — FX Rates and Central-Bank Feed | Andrés Blitz"
 description: "Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item."
 url: "https://andresblitz.com/projects/currency-rss/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2320,7 +2257,7 @@ Live
 title: "Elevatron — Space-Access Beam Concept Study | Andrés Blitz"
 description: "Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos."
 url: "https://andresblitz.com/projects/elevatron/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2380,7 +2317,7 @@ Complete
 title: "Elite Island Movers — Moving Company Website | Andrés Blitz"
 description: "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
 url: "https://andresblitz.com/projects/elite-island-movers/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2439,7 +2376,7 @@ Shipped 2025
 title: "Home History — Time-Capsule House Timeline | Andrés Blitz"
 description: "Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP."
 url: "https://andresblitz.com/projects/home-history/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2719,10 +2656,6 @@ Public repoHTML
 
 Every project page links to its GitHub repo (and live demo when one exists). Browse the org on [github.com/blitzandres](https://github.com/blitzandres).
 
-## Get it by email
-
-Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.
-
 
 ---
 
@@ -2730,7 +2663,7 @@ Alerts and downloads from this page. You confirm first, and you can unsubscribe 
 title: "IPTV Player — Latin America & USA Live TV | Andrés Blitz"
 description: "A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal."
 url: "https://andresblitz.com/projects/iptv-player/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2790,7 +2723,7 @@ Live · 9 commits
 title: "Blitz Engine — Behavioral Signal Analyzer | Andrés Blitz"
 description: "Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it."
 url: "https://andresblitz.com/projects/lie-detector/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2856,7 +2789,7 @@ On hold · 114 commits
 title: "NetWatch — Local Network Monitoring Dashboard | Andrés Blitz"
 description: "NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data."
 url: "https://andresblitz.com/projects/netwatch/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2918,7 +2851,7 @@ Prototype
 title: "Quiniela — World Cup 2026 Prediction Pool for Friends | Andrés Blitz"
 description: "Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings."
 url: "https://andresblitz.com/projects/quiniela/"
-last_updated: "2026-11-01"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2978,7 +2911,7 @@ Live
 title: "RealWealth Portfolio — Real Estate Dashboard | Andrés Blitz"
 description: "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page."
 url: "https://andresblitz.com/projects/realwealth-portfolio/"
-last_updated: "2026-11-01"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -3046,7 +2979,7 @@ Active
 title: "SIGNET — Signal Network Visualization Thesis | Andrés Blitz"
 description: "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired."
 url: "https://andresblitz.com/projects/signet-thesis/"
-last_updated: "2026-11-01"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -3110,7 +3043,7 @@ Active research
 title: "SIGSPACE — Network Signals as a Video Game World | Andrés Blitz"
 description: "SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers."
 url: "https://andresblitz.com/projects/sigspace/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -3174,7 +3107,7 @@ Live · 17 commits
 title: "Weinstein Stage Matrix — TradingView Indicator | Andrés Blitz"
 description: "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
 url: "https://andresblitz.com/projects/weinstein-stage-matrix/"
-last_updated: "2026-11-01"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -3325,10 +3258,6 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
 
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
-
 
 ---
 
@@ -3336,7 +3265,7 @@ Alertas y descargas de esta página. Confirmas primero y te das de baja cuando q
 title: "Site Map — Every Page on andresblitz.com | Andrés Blitz"
 description: "Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree."
 url: "https://andresblitz.com/site-map/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -3629,7 +3558,3 @@ El dólar y el euro oficiales provienen de [DolarApi.com](https://dolarapi.com/d
 ### ¿Qué pasa si una fuente no responde?
 
 El dato que no se pueda cargar simplemente no aparece. La página nunca muestra cifras estimadas ni inventadas.
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

@@ -1,67 +1,47 @@
 # Email alerts: Google Sheet + Apps Script
 
-All the logic is one file: [`alerts.gs`](alerts.gs). It runs inside a Google Sheet, under your
-Google account. Nothing runs on your computer, on Cloudflare or on GitHub, and no agent wakes up.
+All the logic is one file: [`alerts.gs`](alerts.gs) (manifest: [`appsscript.json`](appsscript.json)).
+It runs as a free Google Apps Script under Andrés's Google account. Nothing runs on Cloudflare, on
+GitHub or on the computer, and no paid service is used.
 
-- **Sign-ups** from the site cards (`assets/alerts.js`) land as rows in the Sheet.
+- **Sheet:** "andresblitz alerts" in Drive, id `1_euDXSIqZqgVkJneCbKasuOdbDYiE27QrBAmfNoaF18`,
+  tabs `subs`, `pdfs`, `state`, `log`. `CONFIG.SHEET_ID` points at it, so the script works as a
+  standalone project or bound to the Sheet.
+- **Script:** "andresblitz alerts script" in Drive (a copy of `alerts.gs` + `appsscript.json`).
+- **Sign-ups** from the small "Get alert" links (`assets/alerts.js`) land as rows in `subs`, and
+  the person gets a confirm link by email. Only confirmed rows get alerts.
 - **The cron:** a 30-minute time trigger calls `cron()`. It reads the JSON the site already
   publishes (`/bitcoin/history.json`, `/dolar-cripto/data.json`, `/rates/index.json`,
   `/api/site.json`, `/70/feed.xml`, `/notes/feed.xml`) and emails people only when something
-  changed.
-- **Email** goes out through Gmail as `info@andresblitz.com`.
-- **PDFs** (bio, crypto guides) are built from the site's own content, tagged with a code per
-  email, attached to the email, and logged in the `pdfs` tab.
+  changed. Every email has an unsubscribe link.
 
-The site cards stay hidden until `API` in `assets/alerts.js` holds the web app URL, so the
-live site does not change before this is connected.
+## Sender
 
-## 1. Email address info@andresblitz.com
+Mail goes out through Gmail of the account that owns the script, named "andresblitz.com Alerts",
+with **Reply-To `blitz@mail.grokbot.com`** (replies reach the Grok Bot inbox).
 
-**Receive:** in Cloudflare, go to andresblitz.com → Email → Email Routing. Turn it on, then
-add the custom address `info@andresblitz.com` and forward it to your Gmail. Cloudflare adds the
-MX and SPF records for you. If the domain already has MX records for another mail service,
-stop and check first.
+- The From address is the account's own address, or `info@andresblitz.com` if that is added as an
+  alias of the account (Google Workspace Admin → Users → the user → Alternate email addresses).
+  Same domain, so no SMTP password is needed, and Workspace signs it for andresblitz.com.
+- `blitz@mail.grokbot.com` **cannot** be the From address: `mail.grokbot.com` publishes
+  `DMARC p=reject` and its SPF only allows Amazon SES, so Gmail-sent mail claiming that From would
+  be rejected, and Gmail would need that domain's SMTP login to add it as an alias.
+- Limits: Google Workspace sends about 1,500 script emails a day (a free Gmail about 100).
 
-**Send:** in Gmail, go to Settings → Accounts and Import → Send mail as → Add another email
-address.
+## Turn it on (one time, about 3 minutes)
 
-- Name: `Andrés Blitz`. Email: `info@andresblitz.com`. Keep "Treat as an alias" checked.
-- SMTP server: `smtp.gmail.com`, port `587`, TLS.
-- Username: your Gmail address.
-- Password: an App Password. To make one, go to Google Account → Security, turn on 2-Step
-  Verification, then open App passwords.
-- Gmail sends a code to info@, which reaches you through the forward. Enter it to verify.
+1. Open the "andresblitz alerts script" project in Drive (script.google.com).
+2. Pick `setup` in the function menu and click Run, then approve the permissions. This formats
+   the tabs and creates the 30-minute trigger.
+3. Deploy → New deployment → type Web app. "Execute as": Me. "Who has access": Anyone. Deploy and
+   copy the URL that ends in `/exec`.
+4. Paste that URL into `var API = ''` in `assets/alerts.js` and push. The links then appear.
 
-**DNS (Cloudflare → DNS):**
-
-| Type | Name | Content |
-|------|------|---------|
-| TXT | `andresblitz.com` | `v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all` (one SPF record only; merge if one exists) |
-| TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:info@andresblitz.com` |
-
-A personal Gmail signs mail with gmail.com, not andresblitz.com, so some emails may land in
-spam. For full domain signing (DKIM), use Google Workspace or another sender later; only
-`send_()` in `alerts.gs` needs to change.
-
-**Limits:** a free Gmail account sends about 100 emails a day from scripts. Google Workspace
-sends 1,500.
-
-## 2. The Sheet and the script
-
-1. Open the Gmail account from step 1 and create a Google Sheet named `andresblitz alerts`.
-2. Go to Extensions → Apps Script, delete the sample code, paste all of `alerts.gs` and save.
-3. Pick `setup` in the function menu and click Run, then approve the permissions. This creates
-   the tabs (`subs`, `pdfs`, `state`, `log`) and the 30-minute trigger.
-4. Go to Deploy → New deployment → type Web app. Set "Execute as" to Me and "Who has access" to
-   Anyone. Deploy and copy the URL that ends in `/exec`.
-5. Paste that URL into `var API = ''` in `assets/alerts.js` and push. The cards then appear on
-   all 22 pages and on `/alerts/`.
-
-To change the script later, edit it in Apps Script, then go to Deploy → Manage deployments →
-edit → New version. That keeps the same URL.
+To change the script later, edit it in Apps Script, then Deploy → Manage deployments → edit →
+New version. That keeps the same URL.
 
 ## Test locally
 
 ```bash
-node google-sheets/test.mjs   # fake Sheet + Gmail, real site data, all 10 topics
+node google-sheets/test.mjs   # fake Sheet + Gmail, real site data, all topics
 ```

@@ -2,7 +2,7 @@
 title: "Elite Island Movers — Moving Company Website | Andrés Blitz"
 description: "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS."
 url: "https://andresblitz.com/projects/elite-island-movers/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 

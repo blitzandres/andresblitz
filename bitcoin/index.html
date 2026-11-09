@@ -70,7 +70,6 @@ details{border-bottom:1px solid var(--border);padding:.6rem 0}summary{cursor:poi
       <a href="/#about">About</a>
       <a href="/#play">Play</a>
       <a href="/site-map/">Site map</a>
-      <a href="/alerts/">Get alerts</a>
       <a class="btn" href="/#contact">Contact</a>
     </div>
   </div>
@@ -89,6 +88,7 @@ details{border-bottom:1px solid var(--border);padding:.6rem 0}summary{cursor:poi
     <h2 id="chartTitle">Days Bitcoin spent in each $10,000 bracket</h2>
     <p class="chart-sub" id="chartSub">Yahoo Finance BTC-USD daily closes</p>
     <div class="live" aria-live="polite"><span class="s">Bitcoin now (BTC/USD)</span><span class="v" id="px">—</span><span class="s" id="pxs">Live price loads in your browser.</span></div>
+    <p class="ab-bell" data-topic="btc-bracket" hidden></p>
     <div class="ctl">
       <label for="size">Bracket size: <strong id="sizeLabel">$10,000</strong></label>
       <input type="range" id="size" min="0" max="3" step="1" value="2" aria-valuetext="$10,000" list="sizes">
@@ -136,14 +136,6 @@ details{border-bottom:1px solid var(--border);padding:.6rem 0}summary{cursor:poi
     <a class="next" href="/convertidor-cripto/"><small>Live tool (Spanish) →</small><b>Convertidor cripto</b></a>
   </nav>
 </div>
-<!--ab-alerts:start-->
-<section hidden data-ab-section class="ab-wrap" aria-labelledby="ab-h">
-  <h2 id="ab-h">Get it by email</h2>
-  <p>Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.</p>
-  <div class="ab-alerts" data-topics="btc-bracket,new-projects"></div>
-</section>
-<script src="/assets/alerts.js" defer></script>
-<!--ab-alerts:end-->
 </main>
 <footer class="site">
   <div class="container">&copy; 2026 Andr&eacute;s Blitz &middot; British Columbia, Canada<br />
@@ -158,5 +150,6 @@ function add(f){var s=document.createElement('script');s.src=b+'/'+f;s.defer=tru
 add('t.js');function late(){(window.requestIdleCallback||setTimeout)(function(){add('chat.js')},{timeout:3000})}
 if(document.readyState==='complete')late();else addEventListener('load',late);})();
 </script>
+<script src="/assets/alerts.js" defer></script>
 </body>
 </html>

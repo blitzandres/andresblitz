@@ -404,7 +404,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.",
-      "last_updated": "2026-11-01"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-blitzys-world",
@@ -415,7 +415,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-blitzys-world-play-3d",
@@ -448,7 +448,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-compute-share-pilot",
@@ -459,7 +459,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Compute Share Pilot is a proof of concept by Andrés Blitz for trusted friends to share spare computer power over the internet: a coordinator, polling workers behind NAT and whole-request routing to local LLMs.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-currency-rss",
@@ -470,7 +470,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Currency RSS by Andrés Blitz: a free RSS 2.0 feed of Latin American dollar rates, Bitcoin, USD/CAD and central-bank policy rates, rebuilt every 30 minutes by GitHub Actions with a source and timestamp on every item.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-elevatron",
@@ -481,7 +481,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Elevatron is a fully-cited concept study by Andrés Blitz: can a magnetically-pinched, laser-coupled beam act as both conductor and structure for space access? Physics, feasibility and safe benchtop demos.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-elite-island-movers",
@@ -492,7 +492,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "A simple one-page website Andrés Blitz built for a local moving company in British Columbia: services, clear hourly pricing and local-business structured data. Plain HTML and CSS.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-home-history",
@@ -503,7 +503,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Home History is a time-capsule web app by Andrés Blitz: past and present residents add photos and stories to a shared timeline for a home. Next.js, TypeScript and SQLite MVP.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects",
@@ -525,7 +525,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "A fast, dark-mode IPTV web player for Latin American and US channels by Andrés Blitz: HLS.js playback, search, favorites, history, custom M3U playlists and automatic dead-channel removal.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-lie-detector",
@@ -536,7 +536,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Blitz Engine is an open-source behavioral signal analyzer: 40 live webcam, audio, language and pulse cues fused with Bayesian log-odds and a personal baseline. Not a lie detector — and honest about it.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-netwatch",
@@ -547,7 +547,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "NetWatch is a local network monitoring dashboard by Andrés Blitz: live bandwidth, connections, devices, intrusion detection and 30-day history, served by a small Python Flask app. Demo uses simulated data.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-quiniela",
@@ -558,7 +558,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Quiniela is a World Cup 2026 prediction pool by Andrés Blitz: nickname + PIN sign-in, real-time sync with Firebase, live scores, group consensus odds and automatic standings.",
-      "last_updated": "2026-11-01"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-realwealth-portfolio",
@@ -569,7 +569,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "RealWealth Portfolio is the real estate portfolio manager Andrés Blitz uses for his own holdings: properties, mortgages, market data, MLS® listings and a Bitcoin sleeve in one Next.js dashboard. The live app is embedded on this page.",
-      "last_updated": "2026-11-01"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-signet-thesis",
@@ -580,7 +580,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "SIGNET is a research thesis by Andrés Blitz on unifying 42 signal channels — IP, Wi-Fi, Bluetooth, cellular, optical — into one spatial intelligence layer, where patterns appear when signals are paired.",
-      "last_updated": "2026-11-01"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-sigspace",
@@ -591,7 +591,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "SIGSPACE is a browser game where you are a pixel character inside your own network: IP, DNS, Bluetooth and threat signals orbit you, and a frequency dial switches realms. Canvas + Cloudflare Workers.",
-      "last_updated": "2026-10-31"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "projects-weinstein-stage-matrix",
@@ -602,7 +602,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices.",
-      "last_updated": "2026-11-01"
+      "last_updated": "2026-11-09"
     },
     {
       "slug": "salario-en-dolares",
@@ -631,7 +631,7 @@ export const site = {
       "kind": "page",
       "lang": "en-CA",
       "summary": "Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree.",
-      "last_updated": "2026-11-08",
+      "last_updated": "2026-11-09",
       "topics": [
         "site map",
         "sitemap",

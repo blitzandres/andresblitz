@@ -59,7 +59,3 @@ Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%
 ## Tablero de mensajes
 
 ¿Tiene una pregunta? Use el chat en la esquina inferior derecha de la página para dejarnos un mensaje. Le responderemos por correo.
-
-## Recíbelo por correo
-
-Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
