@@ -2,7 +2,7 @@
 title: "Dólar hoy en México: tipo de cambio FIX de Banxico y conversor"
 description: "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares."
 url: "https://andresblitz.com/dolar-mexico/"
-last_updated: "2026-11-07"
+last_updated: "2026-11-09"
 lang: "es-MX"
 ---
 
@@ -81,3 +81,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile: dólar observado](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

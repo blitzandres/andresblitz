@@ -2,7 +2,7 @@
 title: "Projects by Andrés Blitz — Trading Tools, Games & Experiments"
 description: "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps."
 url: "https://andresblitz.com/projects/"
-last_updated: "2026-11-07"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -221,3 +221,7 @@ Public repoHTML
 [Live site](https://blitzandres.github.io/elite-island-movers/) [GitHub](https://github.com/blitzandres/elite-island-movers)
 
 Every project page links to its GitHub repo (and live demo when one exists). Browse the org on [github.com/blitzandres](https://github.com/blitzandres).
+
+## Get it by email
+
+Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.

@@ -2,7 +2,7 @@
 title: "Calculadora de comisión cripto: cuánto llega al enviar USDT"
 description: "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa."
 url: "https://andresblitz.com/comision-cripto/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -52,12 +52,12 @@ Tasa que ofrece (VES por USD)
 
 | Prioridad | sat/vB | Envío típico (~140 vB) |
 | --- | --- | --- |
-| Rápida (~10 min) | 3 | 420 sats ≈ 0,32 USD |
-| Media (~30 min) | 3 | 420 sats ≈ 0,32 USD |
-| Normal (~1 h) | 1 | 140 sats ≈ 0,11 USD |
-| Económica | 1 | 140 sats ≈ 0,11 USD |
+| Rápida (~10 min) | 1 | 140 sats ≈ 0,1 USD |
+| Media (~30 min) | 1 | 140 sats ≈ 0,1 USD |
+| Normal (~1 h) | 1 | 140 sats ≈ 0,1 USD |
+| Económica | 1 | 140 sats ≈ 0,1 USD |
 
-Fuente: [mempool.space](https://mempool.space/), 9 nov 2026, 1:53 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
+Fuente: [mempool.space](https://mempool.space/), 9 nov 2026, 9:36 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
 
 ## Cómo se calcula
 
@@ -94,3 +94,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Tasas y calculadoras
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

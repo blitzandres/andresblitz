@@ -2,7 +2,7 @@
 title: "Guías cripto en español: USDT, P2P, redes y estafas"
 description: "Guías básicas en español sobre USDT y stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto."
 url: "https://andresblitz.com/guias-cripto/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -52,3 +52,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Tasas por país
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

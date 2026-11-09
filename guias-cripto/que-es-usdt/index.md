@@ -2,7 +2,7 @@
 title: "Qué es USDT y qué son las stablecoins: guía básica"
 description: "Qué es USDT (Tether), qué es una stablecoin, cómo intenta valer un dólar, qué riesgos tiene y en qué se diferencia de un dólar en el banco. Guía en español para principiantes."
 url: "https://andresblitz.com/guias-cripto/que-es-usdt/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -78,3 +78,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Tasas por país
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

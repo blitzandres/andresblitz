@@ -2,7 +2,7 @@
 title: "Ahorro en dólares: qué valdrían hoy tus bolívares o pesos"
 description: "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones."
 url: "https://andresblitz.com/ahorro-en-dolares/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -83,3 +83,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Tasas y calculadoras
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

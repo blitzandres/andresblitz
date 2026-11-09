@@ -2,7 +2,7 @@
 title: "Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela"
 description: "Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es-VE"
 ---
 
@@ -59,3 +59,7 @@ Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%
 ## Tablero de mensajes
 
 ¿Tiene una pregunta? Use el chat en la esquina inferior derecha de la página para dejarnos un mensaje. Le responderemos por correo.
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

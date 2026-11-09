@@ -2,7 +2,7 @@
 title: "Bitcoin Days in Each Price Bracket: BTC/USD Close History"
 description: "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT."
 url: "https://andresblitz.com/bitcoin/"
-last_updated: "2026-11-07"
+last_updated: "2026-11-09"
 lang: "en"
 ---
 
@@ -106,3 +106,7 @@ History
 Source
 
 [bake-btc-history.mjs](https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-btc-history.mjs)
+
+## Get it by email
+
+Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.

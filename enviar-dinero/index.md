@@ -2,7 +2,7 @@
 title: "Calculadora del costo de enviar dinero: comisión y margen"
 description: "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia."
 url: "https://andresblitz.com/enviar-dinero/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -94,3 +94,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 ## Tasas de cambio por país
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

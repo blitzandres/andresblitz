@@ -2,7 +2,7 @@
 title: "Dólar hoy en Chile: dólar observado y conversor de pesos"
 description: "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares."
 url: "https://andresblitz.com/dolar-chile/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es-CL"
 ---
 
@@ -16,9 +16,9 @@ El dólar observado que informa el Banco Central de Chile y una cotización de c
 
 ### Dólar observado (Banco Central de Chile)
 
-$ 970,94
+$ 979,88
 
-pesos por 1 dólar · fecha 6 de noviembre de 2026
+pesos por 1 dólar · fecha 9 de noviembre de 2026
 
 ### Mercado · compra
 
@@ -32,7 +32,7 @@ $ 977,54
 
 lo que cuesta un dólar
 
-Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 08-11-2026, 9:01 a. m. (hora de Chile)
+Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 09-11-2026, 12:00 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
@@ -81,3 +81,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 [Dólar hoy en Argentina: oficial, blue, MEP y CCL](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia: TRM y conversor de pesos](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México: FIX de Banxico](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú: tipo de cambio en soles](https://andresblitz.com/dolar-peru/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Dólar cripto hoy: USDT P2P](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

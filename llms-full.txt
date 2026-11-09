@@ -6,7 +6,7 @@
 title: "Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela"
 description: "Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es-VE"
 ---
 
@@ -64,6 +64,10 @@ Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%
 
 ¿Tiene una pregunta? Use el chat en la esquina inferior derecha de la página para dejarnos un mensaje. Le responderemos por correo.
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -71,7 +75,7 @@ Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%
 title: "Ahorro en dólares: qué valdrían hoy tus bolívares o pesos"
 description: "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones."
 url: "https://andresblitz.com/ahorro-en-dolares/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -153,6 +157,41 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
+
+---
+
+---
+title: "Alerts & Downloads | Andrés Blitz"
+description: "Email alerts and downloads from andresblitz.com: Bitcoin bracket alerts, the daily Tasa BCV, crypto dollar gap alerts, weekly LatAm rates, PDF guides and more."
+url: "https://andresblitz.com/alerts/"
+last_updated: "2026-11-09"
+lang: "en-CA"
+---
+
+> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/alerts/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
+
+Email alerts are being set up. Check back soon.
+
+# Alerts & downloads
+
+Pick what you want by email. Each one asks you to confirm first, and every email has a one-click unsubscribe.
+
+**0**active subscriptions
+
+## Markets
+
+## Latinoamérica
+
+Cada calculadora también te envía tu resultado: [Enviar dinero](https://andresblitz.com/enviar-dinero/)[Salario en dólares](https://andresblitz.com/salario-en-dolares/)[Convertidor cripto](https://andresblitz.com/convertidor-cripto/)[Comisión cripto](https://andresblitz.com/comision-cripto/)[Ahorro en dólares](https://andresblitz.com/ahorro-en-dolares/)
+
+## About me & updates
+
+Your email is only used for what you sign up for, and it is never sold or shared. PDF copies carry a code tied to your email so shared copies can be traced. Questions: blitz@mail.grokbot.com
+
 
 ---
 
@@ -160,7 +199,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Bitcoin Days in Each Price Bracket: BTC/USD Close History"
 description: "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT."
 url: "https://andresblitz.com/bitcoin/"
-last_updated: "2026-11-07"
+last_updated: "2026-11-09"
 lang: "en"
 ---
 
@@ -265,6 +304,10 @@ Source
 
 [bake-btc-history.mjs](https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-btc-history.mjs)
 
+## Get it by email
+
+Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.
+
 
 ---
 
@@ -272,7 +315,7 @@ Source
 title: "Calculadora de comisión cripto: cuánto llega al enviar USDT"
 description: "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa."
 url: "https://andresblitz.com/comision-cripto/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -322,12 +365,12 @@ Tasa que ofrece (VES por USD)
 
 | Prioridad | sat/vB | Envío típico (~140 vB) |
 | --- | --- | --- |
-| Rápida (~10 min) | 3 | 420 sats ≈ 0,32 USD |
-| Media (~30 min) | 3 | 420 sats ≈ 0,32 USD |
-| Normal (~1 h) | 1 | 140 sats ≈ 0,11 USD |
-| Económica | 1 | 140 sats ≈ 0,11 USD |
+| Rápida (~10 min) | 1 | 140 sats ≈ 0,1 USD |
+| Media (~30 min) | 1 | 140 sats ≈ 0,1 USD |
+| Normal (~1 h) | 1 | 140 sats ≈ 0,1 USD |
+| Económica | 1 | 140 sats ≈ 0,1 USD |
 
-Fuente: [mempool.space](https://mempool.space/), 9 nov 2026, 1:53 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
+Fuente: [mempool.space](https://mempool.space/), 9 nov 2026, 9:36 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
 
 ## Cómo se calcula
 
@@ -365,6 +408,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -372,7 +419,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Convertidor cripto: BTC, ETH y USDT a bolívares y pesos"
 description: "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa."
 url: "https://andresblitz.com/convertidor-cripto/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -380,7 +427,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 9 nov 2026, 1:53 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 9 nov 2026, 9:36 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -396,15 +443,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 66.907.569 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 118.126.800 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 116.998.200 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 243.614.329 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.401.699 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 259.189,01 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 73.053.526 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 75.240 USD | — |
-| Dólares canadienses | 106.186,21 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 65.987.190 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 116.501.850 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 115.388.775 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 240.263.175 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.382.417 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 255.623,61 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 72.711.995 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 74.205 USD | — |
+| Dólares canadienses | 104.725,52 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 
@@ -442,6 +489,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -449,7 +500,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto"
 description: "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio."
 url: "https://andresblitz.com/dolar-argentina/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es-AR"
 ---
 
@@ -558,6 +609,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -565,7 +620,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Dólar hoy en Chile: dólar observado y conversor de pesos"
 description: "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares."
 url: "https://andresblitz.com/dolar-chile/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es-CL"
 ---
 
@@ -579,9 +634,9 @@ El dólar observado que informa el Banco Central de Chile y una cotización de c
 
 ### Dólar observado (Banco Central de Chile)
 
-$ 970,94
+$ 979,88
 
-pesos por 1 dólar · fecha 6 de noviembre de 2026
+pesos por 1 dólar · fecha 9 de noviembre de 2026
 
 ### Mercado · compra
 
@@ -595,7 +650,7 @@ $ 977,54
 
 lo que cuesta un dólar
 
-Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 08-11-2026, 9:01 a. m. (hora de Chile)
+Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 09-11-2026, 12:00 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
@@ -645,6 +700,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -652,7 +711,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Dólar hoy en Colombia: TRM oficial y conversor de pesos"
 description: "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares."
 url: "https://andresblitz.com/dolar-colombia/"
-last_updated: "2026-11-07"
+last_updated: "2026-11-09"
 lang: "es-CO"
 ---
 
@@ -739,6 +798,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -746,7 +809,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Dólar cripto hoy: USDT P2P Venezuela, Argentina y Colombia"
 description: "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato."
 url: "https://andresblitz.com/dolar-cripto/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -754,13 +817,13 @@ lang: "es"
 
 # Dólar cripto hoy: USDT P2P vs. tasa oficial
 
-Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 9 nov, 01:53 UTC.
+Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 9 nov, 09:36 UTC.
 
 Referencial, no es asesoría financiera.
 
--   En Venezuela, USDT está 16,3 % sobre la tasa BCV hoy, más alto que la semana pasada (12,5 %).
--   En Argentina, USDT está 5,9 % sobre el dólar oficial hoy, casi igual que la semana pasada (5,7 %).
--   En Colombia, USDT está 0,6 % bajo la TRM hoy, casi igual que la semana pasada (-0,4 %).
+-   En Venezuela, USDT está 16,2 % sobre la tasa BCV hoy, más alto que la semana pasada (12,4 %).
+-   En Argentina, USDT está 6,2 % sobre el dólar oficial hoy, más alto que la semana pasada (5,4 %).
+-   En Colombia, USDT está 0,6 % bajo la TRM hoy, casi igual que la semana pasada (-0,5 %).
 
   
 
@@ -772,7 +835,7 @@ USDT/VES
 
 USDT P2P
 
-1.033,76
+1.033,53
 
 lo que se paga por un dólar digital entre personas
 
@@ -784,11 +847,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+16,25 %
++16,22 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 01:53 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 09:36 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
 
 ### Argentina
 
@@ -796,7 +859,7 @@ USDT/ARS
 
 USDT P2P
 
-1.663,15
+1.667,10
 
 lo que se paga por un dólar digital entre personas
 
@@ -808,11 +871,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+5,93 %
++6,18 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 01:53 UTCOficial: dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 09:36 UTCOficial: dolarapi.com
 
 ### Colombia
 
@@ -820,7 +883,7 @@ USDT/COP
 
 USDT P2P
 
-3.217,13
+3.217,75
 
 lo que se paga por un dólar digital entre personas
 
@@ -832,11 +895,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-\-0,64 %
+\-0,62 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 01:53 UTCOficial: datos.gov.co (Superintendencia Financiera)
+[CriptoYa (mediana P2P)](https://criptoya.com/)9 nov, 09:35 UTCOficial: datos.gov.co (Superintendencia Financiera)
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
@@ -847,26 +910,26 @@ Cada punto es una actualización (se actualiza varias veces al día). La tabla t
 USDT P2P frente a la tasa oficial
 | País | USDT P2P | Oficial | Brecha | Fuente y hora |
 | --- | --- | --- | --- | --- |
-| Venezuela VES | 1.033,76 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +16,25 % | CriptoYa (mediana P2P) · 9 nov, 01:53 UTC  
+| Venezuela VES | 1.033,53 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +16,22 % | CriptoYa (mediana P2P) · 9 nov, 09:36 UTC  
 Oficial: Banco Central de Venezuela vía ve.dolarapi.com · 30 oct, 04:00 UTC |
-| Argentina ARS | 1.663,15 | [1.570,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +5,93 % | CriptoYa (mediana P2P) · 9 nov, 01:53 UTC  
+| Argentina ARS | 1.667,10 | [1.570,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +6,18 % | CriptoYa (mediana P2P) · 9 nov, 09:36 UTC  
 Oficial: dolarapi.com · 5 nov, 18:55 UTC |
-| Colombia COP | 3.217,13 | [3.237,83](https://andresblitz.com/dolar-colombia/) TRM | \-0,64 % | CriptoYa (mediana P2P) · 9 nov, 01:53 UTC  
+| Colombia COP | 3.217,75 | [3.237,83](https://andresblitz.com/dolar-colombia/) TRM | \-0,62 % | CriptoYa (mediana P2P) · 9 nov, 09:35 UTC  
 Oficial: datos.gov.co (Superintendencia Financiera) · 7 nov, 05:00 UTC |
 
 ## Bitcoin y otras criptomonedas (USD)
 
 | Moneda | USD | 24 h |
 | --- | --- | --- |
-| BTC | 74.538,00 | \-1,57 % |
-| ETH | 2.145,50 | \-3,89 % |
-| USDT | 0,9991 | +0,02 % |
-| USDC | 0,9995 | 0,00 % |
-| SOL | 88,03 | \-1,16 % |
-| XRP | 1,1200 | \-3,34 % |
-| BNB | 689,07 | \-0,79 % |
+| BTC | 75.240,00 | \-0,57 % |
+| ETH | 2.106,55 | \-5,73 % |
+| USDT | 0,9990 | 0,00 % |
+| USDC | 0,9994 | \-0,01 % |
+| SOL | 86,62 | \-2,87 % |
+| XRP | 1,0930 | \-6,02 % |
+| BNB | 680,54 | \-2,38 % |
 
-Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 9 nov, 01:53 UTC.
+Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 9 nov, 09:36 UTC.
 
 ## Cómo leer esta página
 
@@ -906,6 +969,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -913,7 +980,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Dólar hoy en México: tipo de cambio FIX de Banxico y conversor"
 description: "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares."
 url: "https://andresblitz.com/dolar-mexico/"
-last_updated: "2026-11-07"
+last_updated: "2026-11-09"
 lang: "es-MX"
 ---
 
@@ -993,6 +1060,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1000,7 +1071,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Dólar hoy en Perú: tipo de cambio en soles y conversor"
 description: "Tipo de cambio del dólar hoy en Perú en soles (S/), con la fuente indicada en cada actualización, explicación del tipo de cambio interbancario y conversor de soles a dólares."
 url: "https://andresblitz.com/dolar-peru/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es-PE"
 ---
 
@@ -1080,6 +1151,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://andresblitz.com/rates/feed.xml), con la fuente y la hora de cada dato. [Cómo funciona el feed de tasas](https://andresblitz.com/projects/currency-rss/).
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1087,7 +1162,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Calculadora del costo de enviar dinero: comisión y margen"
 description: "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia."
 url: "https://andresblitz.com/enviar-dinero/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -1180,6 +1255,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora de salario en dólares](https://andresblitz.com/salario-en-dolares/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1187,7 +1266,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Cómo leer la brecha del dólar cripto vs. el oficial"
 description: "Qué es la brecha entre el dólar cripto (USDT P2P) y el dólar oficial, cómo se calcula, qué la mueve y cómo leer los colores y el historial de la página de dólar cripto."
 url: "https://andresblitz.com/guias-cripto/brecha-dolar-cripto/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -1269,6 +1348,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1276,7 +1359,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Cómo funciona el P2P de criptomonedas: guía básica"
 description: "Qué es el mercado P2P de criptomonedas, cómo funciona una operación con custodia (escrow), qué son los anuncios, límites y métodos de pago, y qué cuidar. Explicado de forma neutral."
 url: "https://andresblitz.com/guias-cripto/como-funciona-p2p/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -1354,6 +1437,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1361,7 +1448,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Estafas cripto comunes y cómo evitarlas"
 description: "Las estafas más comunes con criptomonedas y P2P: comprobantes falsos, falsos soportes, promesas de ganancias, phishing, triangulación y más. Señales de alerta y cómo protegerte."
 url: "https://andresblitz.com/guias-cripto/estafas-comunes/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -1437,6 +1524,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1444,7 +1535,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Guías cripto en español: USDT, P2P, redes y estafas"
 description: "Guías básicas en español sobre USDT y stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto."
 url: "https://andresblitz.com/guias-cripto/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -1495,6 +1586,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1502,7 +1597,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Qué es USDT y qué son las stablecoins: guía básica"
 description: "Qué es USDT (Tether), qué es una stablecoin, cómo intenta valer un dólar, qué riesgos tiene y en qué se diferencia de un dólar en el banco. Guía en español para principiantes."
 url: "https://andresblitz.com/guias-cripto/que-es-usdt/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -1579,6 +1674,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1586,7 +1685,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning"
 description: "Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes."
 url: "https://andresblitz.com/guias-cripto/redes-y-comisiones/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -1662,6 +1761,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -1669,7 +1772,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Andrés Blitz | Trader & Investor in British Columbia"
 description: "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations."
 url: "https://andresblitz.com/"
-last_updated: "2026-11-07"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -1824,6 +1927,10 @@ British Columbia · Canada
 [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com)
 
 [](https://github.com/blitzandres)[](https://x.com/andresblitz)[](https://instagram.com/andresblitz)
+
+## Get it by email
+
+Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.
 
 
 ---
@@ -2392,7 +2499,7 @@ MVP
 title: "Projects by Andrés Blitz — Trading Tools, Games & Experiments"
 description: "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps."
 url: "https://andresblitz.com/projects/"
-last_updated: "2026-11-07"
+last_updated: "2026-11-09"
 lang: "en-CA"
 ---
 
@@ -2611,6 +2718,10 @@ Public repoHTML
 [Live site](https://blitzandres.github.io/elite-island-movers/) [GitHub](https://github.com/blitzandres/elite-island-movers)
 
 Every project page links to its GitHub repo (and live demo when one exists). Browse the org on [github.com/blitzandres](https://github.com/blitzandres).
+
+## Get it by email
+
+Alerts and downloads from this page. You confirm first, and you can unsubscribe any time.
 
 
 ---
@@ -3129,7 +3240,7 @@ Private · in use
 title: "Salario en dólares: convierte pesos, bolívares o soles a USD"
 description: "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas."
 url: "https://andresblitz.com/salario-en-dolares/"
-last_updated: "2026-11-08"
+last_updated: "2026-11-09"
 lang: "es"
 ---
 
@@ -3214,6 +3325,10 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 
 [Guías cripto para principiantes](https://andresblitz.com/guias-cripto/) · [Tasa BCV hoy (Venezuela)](https://andresblitz.com/tasa-bcv/) · [Dólar hoy en Colombia](https://andresblitz.com/dolar-colombia/) · [Dólar hoy en México](https://andresblitz.com/dolar-mexico/) · [Dólar hoy en Argentina](https://andresblitz.com/dolar-argentina/) · [Dólar hoy en Perú](https://andresblitz.com/dolar-peru/) · [Dólar hoy en Chile](https://andresblitz.com/dolar-chile/) · [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/) · [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/) · [Calculadora de comisión cripto (USDT, BTC)](https://andresblitz.com/comision-cripto/) · [Ahorro en dólares: calculadora histórica](https://andresblitz.com/ahorro-en-dolares/) · [Calculadora del costo de enviar dinero](https://andresblitz.com/enviar-dinero/)
 
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.
+
 
 ---
 
@@ -3242,7 +3357,7 @@ Every page on andresblitz.com as a tree. Click a section to open or close it, or
 title: "Tasa BCV hoy: dólar BCV y euro en bolívares | Venezuela"
 description: "Tasa BCV hoy: dólar BCV, euro y paralelo en bolívares, bitcoin en Bs y calculadoras de cambio, préstamos e IVA para Venezuela, Maracaibo y Zulia."
 url: "https://andresblitz.com/tasa-bcv/"
-last_updated: "2026-11-06"
+last_updated: "2026-11-09"
 lang: "es-VE"
 ---
 
@@ -3514,3 +3629,7 @@ El dólar y el euro oficiales provienen de [DolarApi.com](https://dolarapi.com/d
 ### ¿Qué pasa si una fuente no responde?
 
 El dato que no se pueda cargar simplemente no aparece. La página nunca muestra cifras estimadas ni inventadas.
+
+## Recíbelo por correo
+
+Alertas y descargas de esta página. Confirmas primero y te das de baja cuando quieras.

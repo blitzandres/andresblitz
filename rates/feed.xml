@@ -6,8 +6,48 @@
 <atom:link href="https://andresblitz.com/rates/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Tipos de cambio de Venezuela, Argentina, Colombia, México, Perú y Chile, bitcoin, USD/CAD y tasas de política monetaria, con fuente y hora de cada dato.</description>
 <language>es</language>
-<lastBuildDate>Mon, 09 Nov 2026 01:53:47 GMT</lastBuildDate>
+<lastBuildDate>Mon, 09 Nov 2026 09:36:03 GMT</lastBuildDate>
 <ttl>30</ttl>
+<item>
+<title>Venezuela: USDT P2P (VES): 1.033,525 VES por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ve:2026-11-09T09:36:03.000Z:1033.525</guid>
+<pubDate>Mon, 09 Nov 2026 09:36:03 GMT</pubDate>
+<description>Venezuela: USDT P2P (VES): 1.033,525 VES por USDT · brecha +16.22 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-09T09:36:03Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Argentina: USDT P2P (ARS): 1.667,1 ARS por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ar:2026-11-09T09:36:01.000Z:1667.1</guid>
+<pubDate>Mon, 09 Nov 2026 09:36:01 GMT</pubDate>
+<description>Argentina: USDT P2P (ARS): 1.667,1 ARS por USDT · brecha +6.18 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-09T09:36:01Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Colombia: USDT P2P (COP): 3.217,7475 COP por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-co:2026-11-09T09:35:51.000Z:3217.7475</guid>
+<pubDate>Mon, 09 Nov 2026 09:35:51 GMT</pubDate>
+<description>Colombia: USDT P2P (COP): 3.217,7475 COP por USDT · brecha -0.62 % vs. TRM. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-09T09:35:51Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Bitcoin (BTC/USD): 74.205 USD</title>
+<link>https://www.coingecko.com/es/monedas/bitcoin</link>
+<guid isPermaLink="false">bitcoin:2026-11-09T09:35:23.000Z:74205</guid>
+<pubDate>Mon, 09 Nov 2026 09:35:23 GMT</pubDate>
+<description>Bitcoin (BTC/USD): 74.205 USD (-2.14 % en 24 h) · CAD 104505. Fuente: CoinGecko. Dato del 2026-11-09T09:35:23Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
+</item>
+<item>
+<title>Chile: Dólar observado (Banco Central de Chile): 979,88 CLP por USD</title>
+<link>https://andresblitz.com/dolar-chile/</link>
+<guid isPermaLink="false">dolar-chile:2026-11-09T03:00:00.000Z:979.88</guid>
+<pubDate>Mon, 09 Nov 2026 03:00:00 GMT</pubDate>
+<description>Chile: Dólar observado (Banco Central de Chile): 979,88 CLP por USD. Fuente: mindicador.cl (dólar observado, Banco Central de Chile). Dato del 2026-11-09T03:00:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">mindicador.cl (dólar observado, Banco Central de Chile)</source>
+</item>
 <item>
 <title>Colombia: USDT P2P (COP): 3.217,1275 COP por USDT</title>
 <link>https://andresblitz.com/dolar-cripto/</link>
@@ -367,46 +407,6 @@
 <pubDate>Sat, 07 Nov 2026 05:00:00 GMT</pubDate>
 <description>Colombia: TRM: 3.237,83 COP por USD. Fuente: datos.gov.co (Superintendencia Financiera). Dato del 2026-11-07T05:00:00Z.</description>
 <source url="https://andresblitz.com/rates/feed.xml">datos.gov.co (Superintendencia Financiera)</source>
-</item>
-<item>
-<title>Colombia: USDT P2P (COP): 3.219,9425 COP por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-co:2026-11-07T02:18:00.000Z:3219.9425</guid>
-<pubDate>Sat, 07 Nov 2026 02:18:00 GMT</pubDate>
-<description>Colombia: USDT P2P (COP): 3.219,9425 COP por USDT · brecha -0.26 % vs. TRM. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-07T02:18:00Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Bitcoin (BTC/USD): 76.002 USD</title>
-<link>https://www.coingecko.com/es/monedas/bitcoin</link>
-<guid isPermaLink="false">bitcoin:2026-11-07T02:17:54.000Z:76002</guid>
-<pubDate>Sat, 07 Nov 2026 02:17:54 GMT</pubDate>
-<description>Bitcoin (BTC/USD): 76.002 USD (-0.1 % en 24 h) · CAD 107289. Fuente: CoinGecko. Dato del 2026-11-07T02:17:54Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
-</item>
-<item>
-<title>Argentina: USDT P2P (ARS): 1.649,22 ARS por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-ar:2026-11-07T02:17:37.000Z:1649.22</guid>
-<pubDate>Sat, 07 Nov 2026 02:17:37 GMT</pubDate>
-<description>Argentina: USDT P2P (ARS): 1.649,22 ARS por USDT · brecha +5.05 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-07T02:17:37Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Venezuela: USDT P2P (VES): 1.021,9973 VES por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-ve:2026-11-07T02:17:35.000Z:1021.9973</guid>
-<pubDate>Sat, 07 Nov 2026 02:17:35 GMT</pubDate>
-<description>Venezuela: USDT P2P (VES): 1.021,9973 VES por USDT · brecha +14.93 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-07T02:17:35Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>México: Dólar de referencia (mercado internacional): 18,6565 MXN por USD</title>
-<link>https://andresblitz.com/dolar-mexico/</link>
-<guid isPermaLink="false">dolar-mexico:2026-11-07T00:02:31.000Z:18.656526</guid>
-<pubDate>Sat, 07 Nov 2026 00:02:31 GMT</pubDate>
-<description>México: Dólar de referencia (mercado internacional): 18,6565 MXN por USD. Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia). Dato del 2026-11-07T00:02:31Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)</source>
 </item>
 </channel>
 </rss>
