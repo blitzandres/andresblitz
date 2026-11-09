@@ -1,0 +1,1 @@
+{"name":"andresblitz-alerts","private":true,"type":"module","scripts":{"deploy":"wrangler deploy","test":"node test.mjs"},"dependencies":{"pdf-lib":"1.17.1"},"devDependencies":{"wrangler":"^4.155.0"}}
