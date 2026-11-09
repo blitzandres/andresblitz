@@ -97,6 +97,8 @@ const EXTRA = {
   '/guias-cripto/': { topics: ['guías cripto', 'USDT', 'stablecoins', 'P2P', 'redes', 'comisiones', 'estafas', 'brecha'], note: 'Guías cripto en español para principiantes: qué es USDT y las stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto. Informativo, no es asesoría financiera.' },
   '/bitcoin/': { topics: ['Bitcoin', 'BTC/USD', 'price brackets', 'days in range', 'price history', 'CoinGecko'], note: 'Bitcoin days in each price bracket: chart of how many UTC days BTC/USD closed in each $3k, $5k, $10k or $15k bracket, from CoinGecko daily closes (history starts at the first stored day, not backfilled), with today counted at the live CoinGecko price (Coinbase spot as fallback); times in PT (in English). Historical reference, not financial advice.' },
   '/dolar-colombia/': { topics: ['TRM', 'dólar hoy', 'tipo de cambio', 'Colombia'], note: 'Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).' },
+  '/site-map/': { topics: ['site map', 'sitemap', 'navigation'], note: 'Interactive site map of every public page on andresblitz.com as a clickable tree (in English).' },
+  '/alerts/': { topics: ['email alerts', 'PDF downloads', 'Bitcoin brackets', 'Tasa BCV'], note: 'Email alerts and downloads hub: Bitcoin bracket alerts, daily Tasa BCV, crypto dollar gap alerts, weekly LatAm rates, PDF guides and more (in English). Off until connected.' },
 };
 
 function markdownFor(p) {
@@ -152,6 +154,8 @@ Every link below points to the clean Markdown version of the page (append \`inde
 
 ${line(byPath('/'), 'Home')}
 ${line(byPath('/projects/'), 'All projects')}
+${byPath('/site-map/') ? `- [Site map](${byPath('/site-map/').mdUrl}): ${EXTRA['/site-map/'].note}` : ''}
+${byPath('/alerts/') ? `- [Alerts & Downloads](${byPath('/alerts/').mdUrl}): ${EXTRA['/alerts/'].note}` : ''}
 
 ## Projects
 

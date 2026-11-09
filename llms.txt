@@ -14,6 +14,8 @@ Every link below points to the clean Markdown version of the page (append `index
 
 - [Home](https://andresblitz.com/index.md): Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.
 - [All projects](https://andresblitz.com/projects/index.md): Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.
+- [Site map](https://andresblitz.com/site-map/index.md): Interactive site map of every public page on andresblitz.com as a clickable tree (in English).
+- [Alerts & Downloads](https://andresblitz.com/alerts/index.md): Email alerts and downloads hub: Bitcoin bracket alerts, daily Tasa BCV, crypto dollar gap alerts, weekly LatAm rates, PDF guides and more (in English). Off until connected.
 
 ## Projects
 
