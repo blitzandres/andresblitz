@@ -83,7 +83,7 @@
     var rowH = 30;
     var narrow = w < 520;
     var left = narrow ? 90 : 96;
-    var right = narrow ? 92 : 168;
+    var right = narrow ? 100 : 168;
     var top = 8, bot = 44;
     var plotW = Math.max(80, w - left - right);
     var plotH = rowH * nKeys;
@@ -128,8 +128,10 @@
         var pct = '(' + (days / denom * 100).toFixed(1) + '%)';
         var nowSpan = isNow ? '<tspan fill="' + NOW + '" font-weight="600"> ← now</tspan>' : '';
         if (narrow) {
-          bars += '<text x="' + (left + bw + 6) + '" y="' + (cy - 6) + '" fill="' + INK + '" font-size="11">' + esc(count) + '</text>';
-          bars += '<text x="' + (left + bw + 6) + '" y="' + (cy + 8) + '" fill="' + INK + '" font-size="11">' + esc(pct) + nowSpan + '</text>';
+          var compact = days.toLocaleString('en-US') + 'd · ' + (days / denom * 100).toFixed(1) + '%';
+          bars += '<text x="' + (left + bw + 6) + '" y="' + cy + '" dominant-baseline="middle" fill="' + INK + '" font-size="10">' + esc(compact);
+          if (isNow) bars += nowSpan;
+          bars += '</text>';
         } else {
           bars += '<text x="' + (left + bw + 8) + '" y="' + cy + '" dominant-baseline="middle" fill="' + INK + '" font-size="12">' + esc(count + ' ' + pct);
           if (isNow) bars += nowSpan;
