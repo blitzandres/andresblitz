@@ -21,7 +21,7 @@ Personal website of **Andrés Blitz** — full-time trader and investor based in
 
 ## For agents
 
-Start with [AGENTS.md](AGENTS.md): every system in this repo, where it lives, and the rules for changing it.
+Read [docs/SITE-INDEX.md](docs/SITE-INDEX.md) and [docs/HOMEPAGE.md](docs/HOMEPAGE.md) first. Then start with [AGENTS.md](AGENTS.md): every system in this repo, where it lives, and the rules for changing it.
 
 ## Local preview
 
