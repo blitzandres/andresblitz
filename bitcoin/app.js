@@ -69,11 +69,86 @@
     return { rows: rows, keys: keys, done: keys.map(function (b) { return cnt[b] || 0; }), tb: tb, peak: peak };
   }
 
+  function xPos(days, xmax, left, plotW, useSqrt) {
+    if (!(days > 0)) return left;
+    var t = useSqrt ? Math.sqrt(days) / Math.sqrt(xmax) : days / xmax;
+    return left + t * plotW;
+  }
+
+  // $3k only: taller rows and a square-root bar scale so neighboring brackets stay visually distinct.
+  // $5k / $10k / $15k keep the original linear draw() path unchanged.
+  function draw3k(m, total, box, xmax) {
+    var w = Math.max(1, box.clientWidth);
+    var nKeys = m.keys.length;
+    var rowH = 30;
+    var narrow = w < 520;
+    var left = narrow ? 90 : 96;
+    var right = narrow ? 92 : 168;
+    var top = 8, bot = 44;
+    var plotW = Math.max(80, w - left - right);
+    var plotH = rowH * nKeys;
+    var h = top + bot + plotH;
+    var steps = narrow ? 3 : 4;
+    var grid = '', i, tv, x, raw, exp;
+    var tickVals = [];
+    for (i = 0; i <= steps; i++) {
+      raw = xmax * (i / steps) * (i / steps);
+      if (i === 0) tv = 0;
+      else if (i === steps) tv = xmax;
+      else {
+        exp = Math.pow(10, Math.floor(Math.log10(raw)));
+        tv = Math.round(raw / exp) * exp;
+      }
+      if (!tickVals.length || tickVals[tickVals.length - 1] !== tv) tickVals.push(tv);
+    }
+    for (i = 0; i < tickVals.length; i++) {
+      tv = tickVals[i];
+      x = xPos(tv, xmax, left, plotW, true);
+      grid += '<line x1="' + x + '" y1="' + top + '" x2="' + x + '" y2="' + (top + plotH) + '" stroke="' + GRID + '" stroke-width="1" stroke-dasharray="3 4"/>';
+      grid += '<text x="' + x + '" y="' + (top + plotH + 16) + '" text-anchor="middle" fill="' + MUTED + '" font-size="11">' + tv + '</text>';
+    }
+    grid += '<text x="' + left + '" y="' + (top + plotH + 34) + '" text-anchor="start" fill="' + MUTED + '" font-size="11">bar length: square-root scale</text>';
+    var bars = '';
+    var extra = m.tb != null ? 1 : 0;
+    var denom = m.rows.length + extra;
+    var fs = narrow ? 11 : 12;
+    for (i = 0; i < nKeys; i++) {
+      var row = nKeys - 1 - i;
+      var b = m.keys[row];
+      var days = total[row];
+      var isNow = b === m.tb;
+      var cy = top + i * rowH + rowH / 2;
+      var bh = Math.max(10, rowH - 8);
+      var bw = days ? Math.max(2, xPos(days, xmax, left, plotW, true) - left) : 0;
+      var label = k(b) + '–' + k(b + size);
+      bars += '<text x="' + (left - 8) + '" y="' + cy + '" text-anchor="end" dominant-baseline="middle" fill="' + INK + '" font-size="' + fs + '">' + esc(label) + '</text>';
+      if (bw) bars += '<rect x="' + left + '" y="' + (cy - bh / 2) + '" width="' + bw + '" height="' + bh + '" rx="2" fill="' + (isNow ? NOW : BAR) + '"/>';
+      if (days && denom) {
+        var count = days.toLocaleString('en-US') + ' days';
+        var pct = '(' + (days / denom * 100).toFixed(1) + '%)';
+        var nowSpan = isNow ? '<tspan fill="' + NOW + '" font-weight="600"> ← now</tspan>' : '';
+        if (narrow) {
+          bars += '<text x="' + (left + bw + 6) + '" y="' + (cy - 6) + '" fill="' + INK + '" font-size="11">' + esc(count) + '</text>';
+          bars += '<text x="' + (left + bw + 6) + '" y="' + (cy + 8) + '" fill="' + INK + '" font-size="11">' + esc(pct) + nowSpan + '</text>';
+        } else {
+          bars += '<text x="' + (left + bw + 8) + '" y="' + cy + '" dominant-baseline="middle" fill="' + INK + '" font-size="12">' + esc(count + ' ' + pct);
+          if (isNow) bars += nowSpan;
+          bars += '</text>';
+        }
+      } else if (isNow) {
+        bars += '<text x="' + (left + 8) + '" y="' + cy + '" dominant-baseline="middle" fill="' + NOW + '" font-size="' + fs + '" font-weight="600">← now</text>';
+      }
+    }
+    box.setAttribute('aria-label', 'Horizontal bar chart of days Bitcoin closed in each ' + usd(size) + ' USD price bracket. Bar length uses a square-root scale.');
+    box.innerHTML = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="' + h + '" role="presentation" aria-hidden="true" style="font-family:Archivo,system-ui,sans-serif;display:block">' + grid + bars + '</svg>';
+  }
+
   function draw(m, total) {
     var box = $('#chart');
     var maxD = 1;
     total.forEach(function (v) { if (v > maxD) maxD = v; });
     var xmax = niceMax(maxD);
+    if (size === 3000) { draw3k(m, total, box, xmax); return; }
     var w = Math.max(320, box.clientWidth);
     var nKeys = m.keys.length;
     var rowH = nKeys > 28 ? 22 : nKeys > 18 ? 26 : 30;
