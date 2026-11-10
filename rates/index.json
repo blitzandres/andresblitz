@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-11-10T02:38:44.144Z",
+ "generated": "2026-11-10T10:58:00.985Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -45,10 +45,10 @@
   },
   "dolar-chile": {
    "title": "Chile: Dólar observado (Banco Central de Chile)",
-   "value": 979.88,
+   "value": 969.8,
    "unit": "CLP por USD",
    "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
-   "time": "2026-11-09T03:00:00.000Z",
+   "time": "2026-11-10T03:00:00.000Z",
    "url": "https://andresblitz.com/dolar-chile/"
   },
   "tasa-bcv": {
@@ -61,41 +61,41 @@
   },
   "usdt-ve": {
    "title": "Venezuela: USDT P2P (VES)",
-   "value": 1053.875,
+   "value": 1055.1975,
    "unit": "VES por USDT",
-   "extra": "brecha +18.51 % vs. Tasa BCV",
+   "extra": "brecha +18.66 % vs. Tasa BCV",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-10T02:38:27.000Z",
+   "time": "2026-11-10T10:57:52.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-ar": {
    "title": "Argentina: USDT P2P (ARS)",
-   "value": 1662.78,
+   "value": 1661.49,
    "unit": "ARS por USDT",
-   "extra": "brecha +5.91 % vs. Dólar oficial",
+   "extra": "brecha +5.83 % vs. Dólar oficial",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-10T02:38:36.000Z",
+   "time": "2026-11-10T10:57:52.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-co": {
    "title": "Colombia: USDT P2P (COP)",
-   "value": 3255.5975,
+   "value": 3249.8725,
    "unit": "COP por USDT",
-   "extra": "brecha +0.55 % vs. TRM",
+   "extra": "brecha -0.61 % vs. TRM",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-10T02:38:40.000Z",
+   "time": "2026-11-10T10:57:15.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 74762,
+   "value": 74154,
    "unit": "USD",
-   "change24h": -0.83,
-   "extra": "CAD 105574",
+   "change24h": 0.05,
+   "extra": "CAD 104761",
    "source": "CoinGecko",
-   "time": "2026-11-10T02:38:14.000Z",
+   "time": "2026-11-10T10:57:29.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-11-10T02:38:42.369Z"
+   "fetched": "2026-11-10T10:57:58.268Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",
@@ -118,7 +118,7 @@
    "value": 4,
    "unit": "%",
    "source": "Bank of England Database (IUDBEDR)",
-   "time": "2026-11-06T12:00:00.000Z",
+   "time": "2026-11-09T12:00:00.000Z",
    "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate"
   },
   "fed-funds-target": {
