@@ -35,8 +35,21 @@
   .map-tools input { font: inherit; font-size: .85rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: .5rem; padding: .45rem .85rem; min-width: 0; flex: 1 1 12rem; max-width: 20rem; }
   .map-count { color: var(--muted); font-size: .85rem; margin-left: auto; }
   .map-wrap { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; overflow: auto; -webkit-overflow-scrolling: touch; max-height: 78vh; }
-  .map-wrap svg { display: block; }
-  .node { cursor: pointer; transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s; }
+  .map-wrap svg { display: block; max-width: 100%; height: auto; }
+  .map-wrap.is-list { overflow-x: hidden; }
+  .map-wrap.is-list svg { display: none; }
+  .map-wrap.is-tree .map-list { display: none; }
+  .map-list { display: block; padding: 16px 12px 20px; margin: 0; }
+  .map-row { display: flex; align-items: center; gap: .4rem; padding: .42rem .35rem; border-radius: .4rem; cursor: pointer; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: .9rem; color: var(--text); line-height: 1.35; }
+  .map-row:hover, .map-row.sel { background: var(--surface-hover); }
+  .map-row.branch { font-weight: 600; font-family: 'Archivo', system-ui, sans-serif; }
+  .map-row.dim { opacity: .2; }
+  .map-row.hit .map-name { color: #fff; }
+  .map-chev { flex: 0 0 1rem; width: 1rem; text-align: center; color: var(--muted); font-size: .7rem; line-height: 1; }
+  .map-dot { flex: 0 0 .7rem; width: .7rem; height: .7rem; border-radius: 50%; border: 2px solid; box-sizing: border-box; }
+  .map-name { min-width: 0; overflow-wrap: anywhere; }
+  .map-n { color: var(--muted); font-size: .75rem; font-weight: 400; flex-shrink: 0; }
+  .node { cursor: pointer; transform-origin: 0 0; transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s; }
   .node circle { stroke-width: 2; transition: r .2s; }
   .node:hover circle, .node.sel circle { r: 8; }
   .node text { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 13px; fill: var(--text); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
@@ -96,6 +109,7 @@
   <div class="map-wrap" id="wrap">
     <noscript><p>The tree needs JavaScript. The plain list is at <a href="/sitemap.xml">sitemap.xml</a>.</p></noscript>
     <svg id="tree" role="img" aria-label="Tree of all pages on andresblitz.com"></svg>
+    <div class="map-list" id="list" hidden></div>
     <aside class="card" id="card" aria-live="polite">
       <button type="button" class="x" id="c-x" aria-label="Close preview">×</button>
       <h2 id="c-title"></h2>
@@ -185,9 +199,12 @@
   }
 
   var svg = document.getElementById('tree');
+  var wrapEl = document.getElementById('wrap');
+  var listEl = document.getElementById('list');
   var NS = 'http://www.w3.org/2000/svg';
-  var DX = 26, DY = window.innerWidth < 640 ? 150 : 210, PAD = 24;
+  var DX = 36;
   var root, sel = null, query = '';
+  function isNarrow() { return window.innerWidth < 640; }
 
   function el(tag, attrs, parent) {
     var e = document.createElementNS(NS, tag);
@@ -202,13 +219,64 @@
 
   var gLinks, gNodes, nodeEls = {};
 
-  function render() {
-    d3.tree().nodeSize([DX, DY])(root);
-    var x0 = Infinity, x1 = -Infinity, y1 = 0;
-    root.each(function (d) { if (d.x < x0) x0 = d.x; if (d.x > x1) x1 = d.x; if (d.y > y1) y1 = d.y; });
-    var w = y1 + DY + PAD * 2 + 60, h = x1 - x0 + PAD * 2 + 20;
-    svg.setAttribute('width', w); svg.setAttribute('height', h);
-    svg.setAttribute('viewBox', [-PAD - 10, x0 - PAD - 10, w, h].join(' '));
+  function unionBox(a, b) {
+    if (!a) return b;
+    if (!b) return a;
+    var x1 = Math.min(a.x, b.x), y1 = Math.min(a.y, b.y);
+    var x2 = Math.max(a.x + a.width, b.x + b.width);
+    var y2 = Math.max(a.y + a.height, b.y + b.height);
+    return { x: x1, y: y1, width: x2 - x1, height: y2 - y1 };
+  }
+
+  function groupBox(g) {
+    if (!g || !g.childNodes.length) return null;
+    try {
+      var b = g.getBBox();
+      if (!isFinite(b.width) || !isFinite(b.height) || (b.width === 0 && b.height === 0)) return null;
+      return { x: b.x, y: b.y, width: b.width, height: b.height };
+    } catch (e) { return null; }
+  }
+
+  // Text bounds in svg space (group transform + local text box), in case group getBBox misses labels.
+  function textBoxes() {
+    var box = null;
+    gNodes.querySelectorAll('text').forEach(function (t) {
+      var b;
+      try { b = t.getBBox(); } catch (e) { return; }
+      var tr = (t.parentNode.getAttribute('transform') || '').match(/translate\(([^,]+),\s*([^)]+)\)/);
+      var x = tr ? +tr[1] : 0, y = tr ? +tr[2] : 0;
+      box = unionBox(box, { x: x + b.x, y: y + b.y, width: b.width, height: b.height });
+    });
+    return box;
+  }
+
+  function fitSvg() {
+    // Give the svg a real size first: height:auto on an unsized svg can make getBBox skip text.
+    svg.setAttribute('width', '2000');
+    svg.setAttribute('height', '2000');
+    svg.removeAttribute('viewBox');
+    svg.getBoundingClientRect();
+    var box = unionBox(unionBox(groupBox(gLinks), groupBox(gNodes)), textBoxes());
+    if (!box) {
+      svg.setAttribute('viewBox', '0 0 320 80');
+      svg.setAttribute('width', '320');
+      svg.setAttribute('height', '80');
+      return;
+    }
+    var pad = 32;
+    svg.setAttribute('viewBox', [box.x - pad, box.y - pad, box.width + pad * 2, box.height + pad * 2].join(' '));
+    svg.setAttribute('width', box.width + pad * 2);
+    svg.setAttribute('height', box.height + pad * 2);
+  }
+
+  function renderTree() {
+    wrapEl.classList.add('is-tree');
+    wrapEl.classList.remove('is-list');
+    listEl.setAttribute('hidden', '');
+    var DY = 210;
+    d3.tree().nodeSize([DX, DY]).separation(function (a, b) {
+      return a.parent === b.parent ? (a.depth <= 1 ? 1.8 : 1) : 2;
+    })(root);
 
     gLinks.textContent = '';
     root.links().forEach(function (l) {
@@ -222,9 +290,10 @@
       var key = d.data.id; live[key] = true;
       var g = nodeEls[key];
       var hasKids = d.children || d._children;
+      var fromX = d.parent ? d.parent.x : 0, fromY = d.parent ? d.parent.y : 0;
       if (!g) {
         g = el('g', { tabindex: 0, role: 'button' }, gNodes);
-        g.style.transform = 'translate(' + (d.parent ? d.parent.y : 0) + 'px,' + (d.parent ? d.parent.x : 0) + 'px)';
+        g.setAttribute('transform', 'translate(' + fromY + ',' + fromX + ')');
         el('circle', { r: 6 }, g);
         var t = el('text', { dy: '0.32em' }, g);
         g._t = t;
@@ -247,9 +316,55 @@
       t2.innerHTML = '';
       t2.appendChild(document.createTextNode(d.data.name));
       if (count) { var s = el('tspan', { 'class': 'n' }, t2); s.textContent = count; }
-      g.style.transform = 'translate(' + d.y + 'px,' + d.x + 'px)';
+      g.setAttribute('transform', 'translate(' + d.y + ',' + d.x + ')');
     });
     Object.keys(nodeEls).forEach(function (k) { if (!live[k]) { gNodes.removeChild(nodeEls[k]); delete nodeEls[k]; } });
+    fitSvg();
+  }
+
+  function renderList() {
+    wrapEl.classList.add('is-list');
+    wrapEl.classList.remove('is-tree');
+    listEl.removeAttribute('hidden');
+    listEl.textContent = '';
+    function walk(d, fn) { fn(d); (d.children || []).forEach(function (c) { walk(c, fn); }); }
+    walk(root, function (d) {
+      var hasKids = d.children || d._children;
+      var row = document.createElement('div');
+      row.className = 'map-row' + (hasKids ? ' branch' : '') + (sel === d.data.id ? ' sel' : '') + (dimmed(d) ? ' dim' : '') + (query && match(d) ? ' hit' : '');
+      row.style.paddingLeft = (12 + d.depth * 18) + 'px';
+      row.setAttribute('role', 'button');
+      row.tabIndex = 0;
+      row.setAttribute('aria-label', d.data.name + (hasKids ? (d.children ? ', open' : ', closed') : ''));
+      var chev = document.createElement('span');
+      chev.className = 'map-chev';
+      chev.setAttribute('aria-hidden', 'true');
+      chev.textContent = hasKids ? (d.children ? '▾' : '▸') : '';
+      var dot = document.createElement('span');
+      dot.className = 'map-dot';
+      dot.style.borderColor = d.data.color;
+      dot.style.background = d._children ? d.data.color : 'transparent';
+      var name = document.createElement('span');
+      name.className = 'map-name';
+      name.textContent = d.data.name;
+      row.appendChild(chev);
+      row.appendChild(dot);
+      row.appendChild(name);
+      if (d._children) {
+        var n = document.createElement('span');
+        n.className = 'map-n';
+        n.textContent = ' (' + countLeaves(d) + ')';
+        row.appendChild(n);
+      }
+      row.addEventListener('click', function () { onClick(d); });
+      row.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(d); } });
+      listEl.appendChild(row);
+    });
+  }
+
+  function render() {
+    if (isNarrow()) renderList();
+    else renderTree();
   }
 
   function countLeaves(d) { var n = 0; (d.children || d._children || []).forEach(function (c) { n += (c.children || c._children) ? countLeaves(c) + (c.data.page ? 1 : 0) : 1; }); return n; }
@@ -298,7 +413,15 @@
       if (query) expand(root);
       render();
     });
+    var narrow = isNarrow();
+    window.addEventListener('resize', function () {
+      var n = isNarrow();
+      if (n !== narrow) { narrow = n; render(); }
+    });
     render();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { if (root && !isNarrow()) fitSvg(); });
+    }
   }
 
   fetch('/api/site.json').then(function (r) { if (!r.ok) throw 0; return r.json(); })
