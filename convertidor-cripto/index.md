@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 10 nov 2026, 18:35 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 10 nov 2026, 23:40 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 65.224.208 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 115.154.790 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 114.054.585 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 239.835.888 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.369.227 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 250.956,1 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 70.923.615 CLP | cl.dolarapi.com |
-| Dólares estadounidenses | 73.347 USD | — |
-| Dólares canadienses | 103.587,97 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 65.508.770 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 115.657.190 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 114.552.185 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 242.885.256 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.375.201 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 252.050,98 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 71.442.257 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 73.667 USD | — |
+| Dólares canadienses | 104.467,17 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 

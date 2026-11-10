@@ -52,12 +52,12 @@ Tasa que ofrece (VES por USD)
 
 | Prioridad | sat/vB | Envío típico (~140 vB) |
 | --- | --- | --- |
-| Rápida (~10 min) | 1 | 140 sats ≈ 0,1 USD |
+| Rápida (~10 min) | 2 | 280 sats ≈ 0,21 USD |
 | Media (~30 min) | 1 | 140 sats ≈ 0,1 USD |
 | Normal (~1 h) | 1 | 140 sats ≈ 0,1 USD |
 | Económica | 1 | 140 sats ≈ 0,1 USD |
 
-Fuente: [mempool.space](https://mempool.space/), 10 nov 2026, 10:58 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
+Fuente: [mempool.space](https://mempool.space/), 10 nov 2026, 23:40 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
 
 ## Cómo se calcula
 

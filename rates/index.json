@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-11-10T18:35:01.530Z",
+ "generated": "2026-11-10T23:40:33.532Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -16,15 +16,15 @@
    "value": 1555,
    "unit": "ARS por USD",
    "source": "dolarapi.com",
-   "time": "2026-11-10T17:59:00.000Z",
+   "time": "2026-11-10T20:59:00.000Z",
    "url": "https://andresblitz.com/dolar-argentina/"
   },
   "dolar-colombia": {
    "title": "Colombia: TRM",
-   "value": 3269.88,
+   "value": 3297.07,
    "unit": "COP por USD",
    "source": "datos.gov.co (Superintendencia Financiera)",
-   "time": "2026-11-10T05:00:00.000Z",
+   "time": "2026-11-11T05:00:00.000Z",
    "url": "https://andresblitz.com/dolar-colombia/"
   },
   "dolar-mexico": {
@@ -44,11 +44,11 @@
    "url": "https://andresblitz.com/dolar-peru/"
   },
   "dolar-chile": {
-   "title": "Chile: Dólar de cierre de mercado",
-   "value": 966.96,
+   "title": "Chile: Dólar observado (Banco Central de Chile)",
+   "value": 969.8,
    "unit": "CLP por USD",
-   "source": "cl.dolarapi.com",
-   "time": "2026-11-10T12:01:13.543Z",
+   "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
+   "time": "2026-11-10T03:00:00.000Z",
    "url": "https://andresblitz.com/dolar-chile/"
   },
   "tasa-bcv": {
@@ -61,48 +61,48 @@
   },
   "usdt-ve": {
    "title": "Venezuela: USDT P2P (VES)",
-   "value": 1067.75,
+   "value": 1077.9165,
    "unit": "VES por USDT",
-   "extra": "brecha +20.07 % vs. Tasa BCV",
+   "extra": "brecha +21.22 % vs. Tasa BCV",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-10T18:34:56.000Z",
+   "time": "2026-11-10T23:39:33.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-ar": {
    "title": "Argentina: USDT P2P (ARS)",
-   "value": 1647.75,
+   "value": 1644.075,
    "unit": "ARS por USDT",
-   "extra": "brecha +4.95 % vs. Dólar oficial",
+   "extra": "brecha +4.72 % vs. Dólar oficial",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-10T18:34:42.000Z",
+   "time": "2026-11-10T23:39:56.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-co": {
    "title": "Colombia: USDT P2P (COP)",
-   "value": 3274.58,
+   "value": 3281.505,
    "unit": "COP por USDT",
-   "extra": "brecha +0.14 % vs. TRM",
+   "extra": "brecha +0.36 % vs. TRM",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-10T18:34:55.000Z",
+   "time": "2026-11-10T23:40:13.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 73347,
+   "value": 73667,
    "unit": "USD",
-   "change24h": -1.6,
-   "extra": "CAD 104067",
+   "change24h": -1.95,
+   "extra": "CAD 104523",
    "source": "CoinGecko",
-   "time": "2026-11-10T18:33:46.000Z",
+   "time": "2026-11-10T23:39:51.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-11-10T18:34:58.554Z"
+   "fetched": "2026-11-10T23:40:30.836Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",
-   "value": 1.4123,
+   "value": 1.4181,
    "unit": "CAD por USD",
    "source": "Bank of Canada Valet API (FXUSDCAD)",
-   "time": "2026-11-09T20:30:00.000Z",
+   "time": "2026-11-10T20:30:00.000Z",
    "url": "https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/"
   },
   "boc-policy": {
