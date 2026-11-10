@@ -34,7 +34,7 @@
   .map-tools button:hover { background: var(--surface-hover); }
   .map-tools input { font: inherit; font-size: .85rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: .5rem; padding: .45rem .85rem; min-width: 0; flex: 1 1 12rem; max-width: 20rem; }
   .map-count { color: var(--muted); font-size: .85rem; margin-left: auto; }
-  .map-wrap { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; overflow: auto; -webkit-overflow-scrolling: touch; max-height: 78vh; }
+  .map-wrap { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; overflow: visible; padding: 20px; }
   .map-wrap svg { display: block; max-width: 100%; height: auto; }
   .map-wrap.is-list { overflow-x: hidden; }
   .map-wrap.is-list svg { display: none; }
@@ -263,7 +263,7 @@
       svg.setAttribute('height', '80');
       return;
     }
-    var pad = 32;
+    var pad = 48;
     svg.setAttribute('viewBox', [box.x - pad, box.y - pad, box.width + pad * 2, box.height + pad * 2].join(' '));
     svg.setAttribute('width', box.width + pad * 2);
     svg.setAttribute('height', box.height + pad * 2);
