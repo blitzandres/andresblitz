@@ -1,6 +1,8 @@
 # AGENTS.md: index for agents working on andresblitz.com
 
-Read this first. It lists every moving part of the site, where it lives, and the rules for
+Read [docs/SITE-INDEX.md](docs/SITE-INDEX.md) and [docs/HOMEPAGE.md](docs/HOMEPAGE.md) first. They list every public page and the locked homepage rules.
+
+Then read this file. It lists every moving part of the site, where it lives, and the rules for
 changing it. Several agents work on this repo, so keep this file up to date when you add or
 move something.
 

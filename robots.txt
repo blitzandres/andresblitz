@@ -2,31 +2,38 @@ User-agent: *
 Allow: /
 Disallow: /dashboard/
 Disallow: /dashboard
+Disallow: /docs/
 
 # AI crawlers welcome
 User-agent: GPTBot
 Allow: /
 Disallow: /dashboard/
+Disallow: /docs/
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /dashboard/
+Disallow: /docs/
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /dashboard/
+Disallow: /docs/
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /dashboard/
+Disallow: /docs/
 
 User-agent: CCBot
 Allow: /
 Disallow: /dashboard/
+Disallow: /docs/
 
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /dashboard/
+Disallow: /docs/
 
 # AI discovery
 # Site map for agents: https://andresblitz.com/llms.txt
