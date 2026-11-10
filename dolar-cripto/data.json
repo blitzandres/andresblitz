@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09T20:00:07.488Z",
+ "generated": "2026-11-10T02:38:41.507Z",
  "countries": {
   "VE": {
    "fiat": "VES",
@@ -13,13 +13,13 @@
    "officialLabel": "Tasa BCV",
    "page": "/tasa-bcv/",
    "usdt": {
-    "value": 1048.6197,
+    "value": 1053.875,
     "source": "CriptoYa (mediana P2P)",
     "sourceUrl": "https://criptoya.com",
-    "time": "2026-11-09T20:00:03.000Z",
+    "time": "2026-11-10T02:38:27.000Z",
     "quotes": 6
    },
-   "gap": 17.92
+   "gap": 18.51
   },
   "AR": {
    "fiat": "ARS",
@@ -33,13 +33,13 @@
    "officialLabel": "Dólar oficial",
    "page": "/dolar-argentina/",
    "usdt": {
-    "value": 1664.495,
+    "value": 1662.78,
     "source": "CriptoYa (mediana P2P)",
     "sourceUrl": "https://criptoya.com",
-    "time": "2026-11-09T20:00:04.000Z",
+    "time": "2026-11-10T02:38:36.000Z",
     "quotes": 9
    },
-   "gap": 6.02
+   "gap": 5.91
   },
   "CO": {
    "fiat": "COP",
@@ -53,59 +53,59 @@
    "officialLabel": "TRM",
    "page": "/dolar-colombia/",
    "usdt": {
-    "value": 3257,
+    "value": 3255.5975,
     "source": "CriptoYa (mediana P2P)",
     "sourceUrl": "https://criptoya.com",
-    "time": "2026-11-09T20:00:07.000Z",
+    "time": "2026-11-10T02:38:40.000Z",
     "quotes": 8
    },
-   "gap": 0.59
+   "gap": 0.55
   }
  },
  "coins": {
   "BTC": {
-   "usd": 74205,
-   "change24h": -2.14,
-   "time": "2026-11-09T09:35:23.000Z",
+   "usd": 74819,
+   "change24h": -1.36,
+   "time": "2026-11-09T19:59:32.000Z",
    "source": "CoinGecko"
   },
   "ETH": {
-   "usd": 2127.32,
-   "change24h": -4.61,
-   "time": "2026-11-09T19:59:42.000Z",
+   "usd": 2117.09,
+   "change24h": -1.65,
+   "time": "2026-11-10T02:38:14.000Z",
    "source": "CoinGecko"
   },
   "USDT": {
-   "usd": 0.999106,
-   "change24h": 0.01,
-   "time": "2026-11-09T19:59:42.000Z",
+   "usd": 0.999079,
+   "change24h": 0,
+   "time": "2026-11-10T02:38:14.000Z",
    "source": "CoinGecko"
   },
   "USDC": {
-   "usd": 0.999497,
-   "change24h": 0,
-   "time": "2026-11-09T19:59:57.000Z",
+   "usd": 0.999492,
+   "change24h": 0.01,
+   "time": "2026-11-10T02:38:28.000Z",
    "source": "CoinGecko"
   },
   "SOL": {
-   "usd": 86.5,
-   "change24h": -3.36,
-   "time": "2026-11-09T19:59:42.000Z",
+   "usd": 85.84,
+   "change24h": -2.65,
+   "time": "2026-11-10T02:38:37.000Z",
    "source": "CoinGecko"
   },
   "XRP": {
-   "usd": 1.094,
-   "change24h": -4.95,
-   "time": "2026-11-09T19:59:42.000Z",
+   "usd": 1.091,
+   "change24h": -2.5,
+   "time": "2026-11-10T02:38:37.000Z",
    "source": "CoinGecko"
   },
   "BNB": {
-   "usd": 687.61,
-   "change24h": -1.32,
-   "time": "2026-11-09T19:59:57.000Z",
+   "usd": 687.97,
+   "change24h": -0.32,
+   "time": "2026-11-10T02:38:14.000Z",
    "source": "CoinGecko"
   }
  },
- "coinsFetched": "2026-11-09T20:00:07.488Z",
+ "coinsFetched": "2026-11-10T02:38:41.507Z",
  "notes": []
 }

@@ -4,12 +4,12 @@
  "base": "USD",
  "source": "open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)",
  "label": "Dólar de referencia (mercado internacional)",
- "updated": "2026-11-09T00:02:31.000Z",
+ "updated": "2026-11-10T00:02:31.000Z",
  "rates": {
   "ref": {
    "compra": null,
-   "venta": 3.44483,
-   "f": "2026-11-09T00:02:31.000Z"
+   "venta": 3.421491,
+   "f": "2026-11-10T00:02:31.000Z"
   }
  }
 }
