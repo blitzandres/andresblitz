@@ -2,18 +2,19 @@
  "country": "dolar-colombia",
  "currency": "COP",
  "base": "USD",
- "source": "co.dolarapi.com",
- "updated": "2026-11-09T12:02:36.557Z",
+ "source": "datos.gov.co (Superintendencia Financiera)",
+ "updated": "2026-11-11T20:02:03.355Z",
  "rates": {
   "trm": {
    "compra": null,
-   "venta": 3251.53,
-   "f": "2026-11-09T12:02:36.557Z"
+   "venta": 3297.07,
+   "f": "2026-11-11T00:00:00-05:00",
+   "hasta": "2026-11-12"
   },
   "mercado": {
-   "compra": 3246.78,
-   "venta": 3250.28,
-   "f": "2026-11-09T12:02:36.557Z"
+   "compra": 3298.56,
+   "venta": 3302.06,
+   "f": "2026-11-11T20:02:03.355Z"
   }
  }
 }
