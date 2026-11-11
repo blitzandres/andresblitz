@@ -16,9 +16,9 @@ Tasa Representativa del Mercado certificada por la Superintendencia Financiera y
 
 ### TRM vigente (dólar oficial)
 
-$ 3.297,07
+$ 3.251,53
 
-pesos por 1 dólar · vigente desde 11 de noviembre de 2026
+pesos por 1 dólar · vigente desde 9 de noviembre de 2026
 
 ### Mercado · compra
 
@@ -32,7 +32,7 @@ $ 3.250,28
 
 lo que cuesta comprar un dólar
 
-Fuente: datos.gov.co (Superintendencia Financiera), actualizado 11/11/2026, 12:00 a. m. (hora de Colombia)
+Fuente: co.dolarapi.com, actualizado 9/11/2026, 7:02 a. m. (hora de Colombia)
 
 ## Conversor de pesos colombianos a dólares (COP ↔ USD)
 
