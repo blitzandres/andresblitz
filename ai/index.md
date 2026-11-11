@@ -5,7 +5,7 @@ url: "https://andresblitz.com/ai/"
 last_updated: "2026-11-11"
 ---
 
-> Note for AI agents: site map at https://andresblitz.com/llms.txt
+> Note for AI agents: start at https://andresblitz.com/AGENTS.md — site map at https://andresblitz.com/llms.txt
 
 # Markdown pages
 

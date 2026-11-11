@@ -2,7 +2,7 @@
 
 A page-by-page map of the public site so anyone working on it knows what each page is, where it lives, and what must not change. For the locked homepage itself, read [HOMEPAGE.md](HOMEPAGE.md) first.
 
-The live site is GitHub Pages from [`blitzandres/andresblitz`](https://github.com/blitzandres/andresblitz) on the `main` branch, at https://andresblitz.com/. Start here, then read [AGENTS.md](../AGENTS.md) for bake jobs, the alerts backend, and generated-file rules.
+The live site is GitHub Pages from [`blitzandres/andresblitz`](https://github.com/blitzandres/andresblitz) on the `main` branch, at https://andresblitz.com/. Start here, then read [AGENTS.md](AGENTS.md) for bake jobs, the alerts backend, and generated-file rules. The public crawler front door at https://andresblitz.com/AGENTS.md is generated; do not hand-edit that file.
 
 This file is for repo contributors. It is not a public landing page and is not in `sitemap.xml`.
 
@@ -36,7 +36,7 @@ This file is for repo contributors. It is not a public landing page and is not i
 | Nav / sitemap | `nav` = linked from the English main nav (logo, Projects, About, Play, Site map, Contact). `rates-nav` = linked from the Spanish rate-tool footers and related navs, not the English header. `sitemap` = listed in `sitemap.xml`. `md-sitemap` = listed in `sitemap-md.xml` only. |
 | Status | `live` on `main`; `live, alerts UI hidden` for pages whose Get alert link is in the HTML but not shown until the Apps Script `/exec` URL is set; `hidden` = not for the public index; `draft PR` = unpublished. |
 
-**Counts:** `sitemap.xml` has **42** public HTML pages. There is also the AI entry page `/ai/` (in the Markdown sitemap, not in `sitemap.xml`), the hidden `/dashboard/`, a custom `404.html`, and held draft PR #80.
+**Counts:** `sitemap.xml` has **42** public HTML pages, plus `/AGENTS.md` and `/llms.txt`. There is also the AI entry page `/ai/` (in the Markdown sitemap, not in `sitemap.xml`), the hidden `/dashboard/`, a custom `404.html`, and held draft PR #80.
 
 ---
 
@@ -206,20 +206,20 @@ A Google Sheet in Andrés’s Drive plus a Google Apps Script with a free 30-min
 
 ### Sitemaps and IndexNow
 
-- HTML sitemap: `/sitemap.xml` (42 URLs). Also `/70/sitemap.xml` and `/tasa-bcv/sitemap.xml`. All three, plus `/sitemap-md.xml`, are listed in `robots.txt`.
+- HTML sitemap: `/sitemap.xml` (42 public HTML pages, plus `/AGENTS.md` and `/llms.txt`). Also `/70/sitemap.xml` and `/tasa-bcv/sitemap.xml`. All three, plus `/sitemap-md.xml`, are listed in `robots.txt`.
 - Do **not** add `docs/` (this folder) to any sitemap.
 - IndexNow verification key is the public file `/2227d3fcc4a8431390efd4e8bc45dbbd.txt` at the repo root. There is no IndexNow ping script in this repo today.
 - `robots.txt` disallows `/dashboard/` and `/docs/`. It allows the usual AI crawlers to the rest of the site. Do not add Google Search Console setup.
 
 ### Other repo docs
 
-- [AGENTS.md](../AGENTS.md) — moving parts, bake jobs, alerts implementation.
+- [AGENTS.md](AGENTS.md) — contributor index: moving parts, bake jobs, alerts implementation. (The public `/AGENTS.md` is a separate, generated crawler front door.)
 - [README.md](../README.md) — short public-repo readme.
-- [CLAUDE.md](../CLAUDE.md) — pointer at AGENTS.md and these docs.
+- [CLAUDE.md](../CLAUDE.md) — pointer at docs/AGENTS.md and these docs.
 - [google-sheets/README.md](../google-sheets/README.md) — alerts Sheet + Apps Script.
 
 ---
 
 ## What this folder is
 
-`docs/` is contributor documentation only (`SITE-INDEX.md` and `HOMEPAGE.md`). GitHub Pages may serve the raw Markdown if someone opens the URL; that is fine. Do not add a public HTML index here, and do not list `docs/` in `sitemap.xml`.
+`docs/` is contributor documentation only (`SITE-INDEX.md`, `HOMEPAGE.md`, and `AGENTS.md`). GitHub Pages may serve the raw Markdown if someone opens the URL; that is fine. Do not add a public HTML index here, and do not list `docs/` in `sitemap.xml`. `robots.txt` already disallows `/docs/`.
