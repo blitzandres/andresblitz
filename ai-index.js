@@ -110,7 +110,7 @@ export const site = {
       "kind": "page",
       "lang": "en",
       "summary": "Days Bitcoin spent at each USD price since 2014, in $3k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country.",
-      "last_updated": "2026-11-09",
+      "last_updated": "2026-11-10",
       "topics": [
         "Bitcoin",
         "BTC/USD",

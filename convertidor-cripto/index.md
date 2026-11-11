@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 10 nov 2026, 23:40 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 11 nov 2026, 5:51 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 65.508.770 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 115.657.190 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 114.552.185 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 242.885.256 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.375.201 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 252.050,98 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 71.442.257 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 73.667 USD | — |
-| Dólares canadienses | 104.467,17 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 65.664.390 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 115.931.940 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 114.824.310 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 243.462.243 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.378.468 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 252.212,52 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 72.147.326 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 73.842 USD | — |
+| Dólares canadienses | 104.715,34 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 ## Cómo se calcula
 

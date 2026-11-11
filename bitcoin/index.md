@@ -2,7 +2,7 @@
 title: "Bitcoin Price History Brackets: Days Spent at Each Price"
 description: "Days Bitcoin spent at each USD price since 2014, in $3k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country."
 url: "https://andresblitz.com/bitcoin/"
-last_updated: "2026-11-09"
+last_updated: "2026-11-10"
 lang: "en"
 ---
 
@@ -14,7 +14,7 @@ Markets · Bitcoin
 
 How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $3,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.
 
-History starts **September 17, 2014** and runs through **November 9, 2026** (4,436 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 8, 2026, 5:53 p.m. PT.
+History starts **September 17, 2014** and runs through **November 11, 2026** (4,437 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 10, 2026, 9:51 p.m. PT.
 
 ## Days Bitcoin spent in each $10,000 bracket
 
@@ -24,7 +24,7 @@ Bitcoin now (BTC/USD)—Live price loads in your browser.
 
 Bracket size: **$10,000** 
 
-Days by daily close, $10,000 brackets (September 17, 2014 – November 9, 2026)
+Days by daily close, $10,000 brackets (September 17, 2014 – November 11, 2026)
 | Price bracket (USD) | Days | Share |
 | --- | --- | --- |
 | $120k–$130k | 10 | 0.2% |
@@ -32,14 +32,14 @@ Days by daily close, $10,000 brackets (September 17, 2014 – November 9, 2026)
 | $100k–$110k | 112 | 2.5% |
 | $90k–$100k | 131 | 3.0% |
 | $80k–$90k | 148 | 3.3% |
-| $70k–$80k | 131 | 3.0% |
+| $70k–$80k | 132 | 3.0% |
 | $60k–$70k | 350 | 7.9% |
 | $50k–$60k | 166 | 3.7% |
 | $40k–$50k | 258 | 5.8% |
 | $30k–$40k | 250 | 5.6% |
 | $20k–$30k | 382 | 8.6% |
 | $10k–$20k | 431 | 9.7% |
-| $0–$10k | 1,972 | 44.5% |
+| $0–$10k | 1,972 | 44.4% |
 
 Daily closes: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/), from September 17, 2014. Live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (Coinbase public spot as fallback). Prices are in USD and the chart is usable from any country. Times shown in PT.
 
