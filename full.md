@@ -197,8 +197,8 @@ Your email is only used for what you sign up for, and it is never sold or shared
 ---
 
 ---
-title: "Bitcoin Days in Each Price Bracket: BTC/USD Close History"
-description: "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT."
+title: "Bitcoin Price History Brackets: Days Spent at Each Price"
+description: "Days Bitcoin spent at each USD price since 2014, in $3k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country."
 url: "https://andresblitz.com/bitcoin/"
 last_updated: "2026-11-09"
 lang: "en"
@@ -208,9 +208,9 @@ lang: "en"
 
 Markets · Bitcoin
 
-# Bitcoin: days in each price bracket
+# Bitcoin: days spent at each price
 
-How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one. Pick a bracket size of $3,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open.
+How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $3,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.
 
 History starts **September 17, 2014** and runs through **November 9, 2026** (4,436 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 8, 2026, 5:53 p.m. PT.
 
@@ -239,11 +239,11 @@ Days by daily close, $10,000 brackets (September 17, 2014 – November 9, 2026)
 | $10k–$20k | 431 | 9.7% |
 | $0–$10k | 1,972 | 44.5% |
 
-Daily closes: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/), from September 17, 2014. Live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (Coinbase public spot as fallback). Times shown in PT.
+Daily closes: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/), from September 17, 2014. Live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (Coinbase public spot as fallback). Prices are in USD and the chart is usable from any country. Times shown in PT.
 
-## How to read it
+## How to read the Bitcoin price range days
 
-Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range. Lower prices sit at the bottom. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes.
+Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.
 
 ## Where the numbers come from
 
@@ -257,7 +257,7 @@ Each bar is a price range in US dollars, for example $70,000 to $80,000. A longe
 
 ### What does this chart show?
 
-Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 brackets.
+Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket since September 17, 2014. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 bitcoin price history brackets.
 
 ### How is a day counted?
 
@@ -279,6 +279,10 @@ Yahoo Finance’s public BTC-USD daily series begins on September 17, 2014. That
 
 No. It is a historical reference chart only. There are no buy or sell buttons, signals, predictions or affiliate links.
 
+### Can I use this chart from any country?
+
+Yes. It uses the global BTC/USD market price in US dollars, not a local-currency quote, so it is the same for visitors in any country. Times are shown in Pacific Time (PT) so everyone sees the same clock.
+
 ## Facts
 
 Daily closes
@@ -296,6 +300,10 @@ Coinbase public spot
 Brackets
 
 $3k · $5k · $10k · $15k
+
+Coverage
+
+Worldwide · prices in USD
 
 History
 
