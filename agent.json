@@ -108,7 +108,7 @@
       "json": "https://andresblitz.com/api/page/bitcoin.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Days Bitcoin spent at each USD price since 2014, in $3k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country.",
+      "summary": "Days Bitcoin spent at each USD price since 2014, in $2k, $3k, $4k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country.",
       "last_updated": "2026-11-11",
       "topics": [
         "Bitcoin",

@@ -3,9 +3,9 @@
 import json, html
 U = 'https://andresblitz.com/bitcoin/'
 T = 'Bitcoin Price History Brackets: Days Spent at Each Price'
-D = 'Days Bitcoin spent at each USD price since 2014, in $3k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country.'
+D = 'Days Bitcoin spent at each USD price since 2014, in $2k, $3k, $4k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country.'
 faq = [
- ('What does this chart show?', 'Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket since September 17, 2014. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 bitcoin price history brackets.'),
+ ('What does this chart show?', 'Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket since September 17, 2014. Use the slider to switch between $2,000, $3,000, $4,000, $5,000, $10,000 and $15,000 bitcoin price history brackets.'),
  ('How is a day counted?', 'A completed day counts once, in the bracket that contains that day\u2019s Yahoo Finance BTC-USD close. Days follow the Yahoo daily series. Times on the page are shown in PT.'),
  ('Why does the current bar move?', 'Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today\u2019s day moves to that bar. It is shown in a deeper orange with a “← now” label until the day closes.'),
  ('Where does the data come from?', 'Daily closes come from Yahoo Finance\u2019s public BTC-USD series, starting September 17, 2014 (the first day of that series). The live price for the unfinished day comes from CoinGecko\u2019s free public API; if CoinGecko is rate-limiting, it falls back to Coinbase\u2019s public BTC-USD spot price, and the page names whichever live source is shown.'),
@@ -77,8 +77,9 @@ page = f'''<!doctype html>
 .live .s,.nota{{font-size:.85rem;color:#78716C}}
 .ctl{{margin:1rem 0 .5rem}}.ctl label{{display:block;font-size:.85rem;color:#78716C;margin-bottom:.35rem}}
 .ctl input[type=range]{{width:100%;max-width:26rem;accent-color:#F59E0B;min-height:32px}}
-.ticks{{display:flex;justify-content:space-between;max-width:26rem;font-size:.78rem;color:#A8A29E;font-variant-numeric:tabular-nums}}
-.ticks button{{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:4px 2px}}.ticks button[aria-pressed=true]{{color:#1C1917;font-weight:600}}
+.ticks{{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:nowrap;gap:0 .15rem;max-width:26rem;font-size:.78rem;color:#A8A29E;font-variant-numeric:tabular-nums}}
+.ticks button{{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:4px 2px;white-space:nowrap}}.ticks button[aria-pressed=true]{{color:#1C1917;font-weight:600}}
+@media (max-width:400px){{.ticks{{font-size:.7rem;gap:0}}.ticks button{{padding:4px 0}}}}
 #chart{{margin:1rem 0 .25rem;overflow:visible}}
 .now{{margin:.75rem 0 0;font-size:.88rem;color:#78716C}}
 table.bt{{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums;margin-top:.85rem;color:#44403C}}
@@ -108,7 +109,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
   <header class="p-head">
     <p class="kicker">Markets · Bitcoin</p>
     <h1>Bitcoin: days spent at each price</h1>
-    <p class="lede">How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $3,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.</p>
+    <p class="lede">How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $2,000, $3,000, $4,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.</p>
     <p class="nota" id="meta"><!--btc-meta:start--><!--btc-meta:end--></p>
   </header>
 
@@ -119,9 +120,9 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
     <p class="ab-bell" data-topic="btc-bracket" hidden></p>
     <div class="ctl">
       <label for="size">Bracket size: <strong id="sizeLabel">$10,000</strong></label>
-      <input type="range" id="size" min="0" max="3" step="1" value="2" aria-valuetext="$10,000" list="sizes">
-      <datalist id="sizes"><option value="0" label="$3k"></option><option value="1" label="$5k"></option><option value="2" label="$10k"></option><option value="3" label="$15k"></option></datalist>
-      <div class="ticks" role="group" aria-label="Bracket size presets"><button type="button" data-i="0">$3k</button><button type="button" data-i="1">$5k</button><button type="button" data-i="2">$10k</button><button type="button" data-i="3">$15k</button></div>
+      <input type="range" id="size" min="0" max="5" step="1" value="4" aria-valuetext="$10,000" list="sizes">
+      <datalist id="sizes"><option value="0" label="$2k"></option><option value="1" label="$3k"></option><option value="2" label="$4k"></option><option value="3" label="$5k"></option><option value="4" label="$10k"></option><option value="5" label="$15k"></option></datalist>
+      <div class="ticks" role="group" aria-label="Bracket size presets"><button type="button" data-i="0">$2k</button><button type="button" data-i="1">$3k</button><button type="button" data-i="2">$4k</button><button type="button" data-i="3">$5k</button><button type="button" data-i="4">$10k</button><button type="button" data-i="5">$15k</button></div>
     </div>
     <div id="chart" role="img" aria-label="Bar chart of days Bitcoin spent in each USD price bracket since 2014"></div>
     <p class="now" id="now"></p>
@@ -131,7 +132,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
 
   <div class="p-body" style="padding-top:1rem">
     <div>
-      <section><h2>How to read the Bitcoin price range days</h2><p>Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.</p></section>
+      <section><h2>How to read the Bitcoin price range days</h2><p>Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($2,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.</p></section>
       <section><h2>Where the numbers come from</h2><ul class="built">
         <li>Completed days use Yahoo Finance’s BTC-USD daily close, from September 17, 2014 onward. A scheduled GitHub Action stores each new close in <a href="/bitcoin/history.json">/bitcoin/history.json</a> and pre-renders the table above.</li>
         <li>The live price for today is CoinGecko’s BTC/USD print, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.</li>
@@ -148,7 +149,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
         <div><dt>Daily closes</dt><dd><a href="https://finance.yahoo.com/quote/BTC-USD/" rel="noopener">Yahoo Finance</a> (BTC-USD)</dd></div>
         <div><dt>Live print</dt><dd><a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a></dd></div>
         <div><dt>Live fallback</dt><dd>Coinbase public spot</dd></div>
-        <div><dt>Brackets</dt><dd>$3k · $5k · $10k · $15k</dd></div>
+        <div><dt>Brackets</dt><dd>$2k · $3k · $4k · $5k · $10k · $15k</dd></div>
         <div><dt>Coverage</dt><dd>Worldwide · prices in USD</dd></div>
         <div><dt>History</dt><dd><a href="/bitcoin/history.json">history.json</a></dd></div>
         <div><dt>Source</dt><dd><a href="https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-btc-history.mjs" target="_blank" rel="noopener">bake-btc-history.mjs</a></dd></div>
