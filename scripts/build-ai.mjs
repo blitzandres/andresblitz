@@ -113,7 +113,7 @@ const site = {
   name: 'Andrés Blitz', url: `${ORIGIN}/`, description: pages.find((p) => p.kind === 'home')?.description || '',
   contact: { email: 'blitz@mail.grokbot.com', x: 'https://x.com/andresblitz', github: 'https://github.com/blitzandres' },
   location: 'British Columbia, Canada',
-  ai_layer: { status: 'active', llms: LLMS, llms_full: `${ORIGIN}/llms-full.txt`, full_md: `${ORIGIN}/full.md`, agent_json: `${ORIGIN}/agent.json`, ai_index_js: `${ORIGIN}/ai-index.js`, api_site: `${ORIGIN}/api/site.json`, api_page: `${ORIGIN}/api/page/{slug}.json`, sitemap_ai: `${ORIGIN}/sitemap-ai.json`, sitemap_md: `${ORIGIN}/sitemap-md.xml`, entry: `${ORIGIN}/ai/`, feed: `${ORIGIN}/feed.xml`, feed_el70: `${ORIGIN}/70/feed.xml`, feed_rates: `${ORIGIN}/rates/feed.xml`, rates_json: `${ORIGIN}/rates/index.json`, api: { site: `${API}/api/site`, page: `${API}/api/page?path={path}`, accept_markdown: true, cors: '*', read_only: true } },
+  ai_layer: { status: 'active', agents: `${ORIGIN}/AGENTS.md`, llms: LLMS, llms_full: `${ORIGIN}/llms-full.txt`, full_md: `${ORIGIN}/full.md`, agent_json: `${ORIGIN}/agent.json`, ai_index_js: `${ORIGIN}/ai-index.js`, api_site: `${ORIGIN}/api/site.json`, api_page: `${ORIGIN}/api/page/{slug}.json`, sitemap_ai: `${ORIGIN}/sitemap-ai.json`, sitemap_md: `${ORIGIN}/sitemap-md.xml`, entry: `${ORIGIN}/ai/`, feed: `${ORIGIN}/feed.xml`, feed_el70: `${ORIGIN}/70/feed.xml`, feed_rates: `${ORIGIN}/rates/feed.xml`, rates_json: `${ORIGIN}/rates/index.json`, api: { site: `${API}/api/site`, page: `${API}/api/page?path={path}`, accept_markdown: true, cors: '*', read_only: true } },
   topics: ['trading', 'investing', 'capital allocation', 'open-source tools', 'web experiments', 'El 70 (Zulia, Venezuela)', 'Tasa BCV'],
   pages: pages.map((p) => ({ slug: p.slug, title: p.title, url: p.url, md: p.mdUrl, json: `${ORIGIN}/api/page/${p.slug}.json`, kind: p.kind, lang: p.lang, summary: p.description, last_updated: p.last_updated, ...(EXTRA[p.pathname] ? { topics: EXTRA[p.pathname].topics, geo: EXTRA[p.pathname].geo } : {}) })),
   projects,
@@ -133,22 +133,205 @@ write('llms-full.txt', full); write('full.md', full);
 // Sitemaps
 write('sitemap-ai.json', safeJson({ site: `${ORIGIN}/`, generated: site.generated, pages: pages.map((p) => ({ url: p.url, md: p.mdUrl, title: p.title, summary: p.description, lastmod: p.last_updated })) }, 2) + '\n');
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-write('sitemap-md.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` + [...pages.map((p) => [p.mdUrl, p.last_updated]), [`${ORIGIN}/ai/index.md`, site.generated], [`${ORIGIN}/full.md`, site.generated]].map(([u, d]) => `  <url><loc>${esc(u)}</loc><lastmod>${d}</lastmod></url>`).join('\n') + '\n</urlset>\n');
+write('sitemap-md.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` + [...pages.map((p) => [p.mdUrl, p.last_updated]), [`${ORIGIN}/AGENTS.md`, site.generated], [LLMS, site.generated], [`${ORIGIN}/ai/index.md`, site.generated], [`${ORIGIN}/full.md`, site.generated]].map(([u, d]) => `  <url><loc>${esc(u)}</loc><lastmod>${d}</lastmod></url>`).join('\n') + '\n</urlset>\n');
 
 // llms.txt
 const line = (p, label) => `- [${label || p.title}](${p.mdUrl}): ${p.description}`;
 const byPath = (x) => pages.find((p) => p.pathname === x);
+
+function langTag(p) { return (p.lang || 'en').toLowerCase().startsWith('es') ? 'es' : 'en'; }
+function existsPublic(relPath) { return fs.existsSync(path.join(ROOT, relPath)); }
+function agentsLine(pathname, label, extra) {
+  const p = byPath(pathname);
+  if (!p) return '';
+  const note = extra || EXTRA[pathname]?.note || p.description;
+  return `- [${label}](${p.url}) (${langTag(p)}): ${note}\n  Markdown: ${p.mdUrl}`;
+}
+function agentsGroup(title, lines) {
+  const body = lines.filter(Boolean).join('\n');
+  return body ? `### ${title}\n\n${body}\n` : '';
+}
+const projectLine = (p) => `- [${p.title.split('|')[0].trim()}](${p.url}) (${langTag(p)}): ${p.description}\n  Markdown: ${p.mdUrl}`;
+const projectLines = pages.filter((p) => p.kind === 'project').flatMap((p) => {
+  const subs = pages.filter((s) => s.kind === 'project-subpage' && s.pathname.startsWith(p.pathname))
+    .sort((a, b) => a.pathname.length - b.pathname.length || a.pathname.localeCompare(b.pathname));
+  return [projectLine(p), ...subs.map(projectLine)];
+}).join('\n');
+const resource = (url, desc) => `- ${url} — ${desc}`;
+const machineResources = [
+  resource(`${ORIGIN}/AGENTS.md`, 'this file: identity, key pages, citation, and crawl guidance'),
+  resource(LLMS, 'short catalog of every public page as clean Markdown'),
+  resource(`${ORIGIN}/llms-full.txt`, 'full site concatenated as Markdown'),
+  resource(`${ORIGIN}/full.md`, 'same content as llms-full.txt'),
+  resource(`${ORIGIN}/agent.json`, 'structured site index (JSON)'),
+  resource(`${ORIGIN}/api/site.json`, 'same structured index at /api/site.json'),
+  resource(`${ORIGIN}/ai-index.js`, 'structured index as an ES module'),
+  resource(`${ORIGIN}/api/page/{slug}.json`, 'per-page JSON (title, summary, markdown); slugs use hyphens, e.g. /api/page/bitcoin.json'),
+  resource(`${ORIGIN}/sitemap.xml`, 'XML sitemap of public HTML pages plus this file and llms.txt'),
+  resource(`${ORIGIN}/sitemap-md.xml`, 'XML sitemap of Markdown alternates'),
+  resource(`${ORIGIN}/sitemap-ai.json`, 'JSON list of pages with Markdown URLs'),
+  resource(`${ORIGIN}/ai/`, 'HTML index of Markdown alternates'),
+  resource(`${ORIGIN}/feed.xml`, 'site RSS 2.0'),
+  existsPublic('70/feed.xml') ? resource(`${ORIGIN}/70/feed.xml`, 'El 70 RSS 2.0') : '',
+  existsPublic('rates/feed.xml') ? resource(`${ORIGIN}/rates/feed.xml`, 'rates RSS 2.0 (Spanish; rebuilt about every 30 minutes)') : '',
+  existsPublic('rates/index.json') ? resource(`${ORIGIN}/rates/index.json`, 'baked Latin American dollar rates, Bitcoin, USD/CAD and selected policy rates, each with source and timestamp') : '',
+  existsPublic('bitcoin/history.json') ? resource(`${ORIGIN}/bitcoin/history.json`, 'Yahoo Finance BTC-USD daily closes used by the Bitcoin brackets page (do not treat today as a finished daily close)') : '',
+  existsPublic('dolar-cripto/data.json') ? resource(`${ORIGIN}/dolar-cripto/data.json`, 'USDT P2P medians and official-rate gaps') : '',
+  existsPublic('dolar-cripto/history.json') ? resource(`${ORIGIN}/dolar-cripto/history.json`, 'historical dólar cripto series') : '',
+  existsPublic('dolar-argentina/rates.json') ? resource(`${ORIGIN}/dolar-argentina/rates.json`, 'baked Argentina dollar rates') : '',
+  existsPublic('dolar-colombia/rates.json') ? resource(`${ORIGIN}/dolar-colombia/rates.json`, 'baked Colombia dollar rates') : '',
+  existsPublic('dolar-mexico/rates.json') ? resource(`${ORIGIN}/dolar-mexico/rates.json`, 'baked Mexico dollar rates') : '',
+  existsPublic('dolar-peru/rates.json') ? resource(`${ORIGIN}/dolar-peru/rates.json`, 'baked Peru dollar rates') : '',
+  existsPublic('dolar-chile/rates.json') ? resource(`${ORIGIN}/dolar-chile/rates.json`, 'baked Chile dollar rates') : '',
+  resource(`${API}/api/site`, 'live read-only JSON API (CORS); also /api/page?path=/bitcoin/ — send Accept: text/markdown for raw Markdown'),
+].filter(Boolean).join('\n');
+
+const agentsMd = `# AGENTS.md — andresblitz.com
+
+This is the front door for AI agents and crawlers visiting ${ORIGIN}/. It explains who Andrés Blitz is, what the site offers, every key public page, how to cite the work, and how to crawl.
+
+If you were redirected here from the human homepage, you may continue to any public URL on this site. This file is a starting point, not a wall.
+
+## Start here / continue crawling
+
+- Human homepage: ${ORIGIN}/
+- HTML site map (every public page as a clickable tree): ${ORIGIN}/site-map/
+- XML sitemap: ${ORIGIN}/sitemap.xml
+- Markdown sitemap: ${ORIGIN}/sitemap-md.xml
+- Short machine-readable catalog (Markdown alternates): ${LLMS}
+- Full site as Markdown: ${ORIGIN}/llms-full.txt (also ${ORIGIN}/full.md)
+- Structured JSON index: ${ORIGIN}/agent.json
+
+## Who Andrés Blitz is
+
+Andrés Blitz is a full-time trader and investor based in British Columbia, Canada, with a background in high-performance sales and operations across real estate, petroleum, and automotive. He builds open-source tools and web experiments on the side.
+
+- Location: British Columbia, Canada (do not invent a city, street address, or phone number)
+- Email: blitz@mail.grokbot.com
+- X: https://x.com/andresblitz (@andresblitz)
+- GitHub: https://github.com/blitzandres
+- Canonical site: ${ORIGIN}/
+
+## What the site offers
+
+andresblitz.com is Andrés's personal site. It publishes:
+
+- A Bitcoin research tool that counts how many days BTC/USD has closed in each US-dollar price bracket since 2014
+- Reference Latin American dollar and FX rates, converters, and calculators (in Spanish)
+- Beginner crypto guides and crypto tools (in Spanish)
+- A directory of open-source projects, including a playable browser game
+- A page about El 70, a cattle ranch in Zulia, Venezuela (in Spanish)
+
+Exchange rates and related JSON are rebuilt about every 30 minutes. The material is factual reference and is **not financial advice**.
+
+## Key pages and tools
+
+Each entry links to the live HTML page, notes the language (\`en\` or \`es\`), and gives the clean Markdown alternate (append \`index.md\` to any public directory URL). Only pages that exist on this site are listed.
+
+${agentsGroup('English — home, research, and navigation', [
+  agentsLine('/', 'Home'),
+  agentsLine('/bitcoin/', 'Bitcoin price history brackets', `Days-in-bracket chart of how many days BTC/USD closed in each $2k, $3k, $4k, $5k, $10k, or $15k US-dollar bracket since 17 September 2014. Completed days use Yahoo Finance BTC-USD daily closes, baked at ${ORIGIN}/bitcoin/history.json. The current unfinished day is counted at the live CoinGecko price, with Coinbase public spot as fallback. Prices are in USD and the page works from any country; times are in Pacific Time (PT). Historical reference, not financial advice.`),
+  agentsLine('/projects/', 'All projects'),
+  agentsLine('/site-map/', 'Site map'),
+  agentsLine('/alerts/', 'Alerts & Downloads', 'Hub describing planned email alerts and downloads (Bitcoin brackets, Tasa BCV, crypto-dollar gap, weekly LatAm rates, PDF guides). Sign-up is not currently connected; do not submit the form or treat alert endpoints as a public API.'),
+])}
+${agentsGroup('Dollar and exchange-rate pages (Spanish)', [
+  agentsLine('/tasa-bcv/', 'Tasa BCV'),
+  agentsLine('/dolar-argentina/', 'Dólar Argentina'),
+  agentsLine('/dolar-colombia/', 'Dólar Colombia'),
+  agentsLine('/dolar-mexico/', 'Dólar México'),
+  agentsLine('/dolar-peru/', 'Dólar Perú'),
+  agentsLine('/dolar-chile/', 'Dólar Chile'),
+  agentsLine('/enviar-dinero/', 'Enviar dinero'),
+  agentsLine('/salario-en-dolares/', 'Salario en dólares'),
+])}
+${agentsGroup('Crypto tools and guides (Spanish)', [
+  agentsLine('/dolar-cripto/', 'Dólar cripto'),
+  agentsLine('/convertidor-cripto/', 'Convertidor cripto'),
+  agentsLine('/comision-cripto/', 'Comisión cripto'),
+  agentsLine('/ahorro-en-dolares/', 'Ahorro en dólares'),
+  agentsLine('/guias-cripto/', 'Guías cripto'),
+  agentsLine('/guias-cripto/que-es-usdt/', 'Qué es USDT'),
+  agentsLine('/guias-cripto/como-funciona-p2p/', 'Cómo funciona el P2P'),
+  agentsLine('/guias-cripto/redes-y-comisiones/', 'Redes y comisiones'),
+  agentsLine('/guias-cripto/estafas-comunes/', 'Estafas cripto comunes'),
+  agentsLine('/guias-cripto/brecha-dolar-cripto/', 'Brecha del dólar cripto'),
+])}
+${agentsGroup('El 70 (Spanish)', [
+  agentsLine('/70/', 'El 70'),
+])}
+${projectLines ? `### Projects and Play (English)
+
+The Play item in the English site nav goes to the Space Invaders section on the homepage (${ORIGIN}/#play), not to Blitzy's World. Playable builds are listed below.
+
+${projectLines}
+` : ''}
+## Machine-readable resources
+
+${machineResources}
+
+Per-page Markdown lives at \`<page-url>index.md\` with YAML frontmatter (title, description, url, last_updated, lang). Each HTML page also has a \`<link rel="alternate" type="text/markdown">\` pointer in the document head (not shown as a visible banner).
+
+## How to cite
+
+When you quote or rely on this site, credit Andrés Blitz as the author, use the canonical page URL, and name the underlying data sources.
+
+- Author: Andrés Blitz
+- Site: ${ORIGIN}/
+- Contact: blitz@mail.grokbot.com
+
+Sample citations:
+
+> Blitz, Andrés. “Bitcoin price history brackets.” andresblitz.com, ${ORIGIN}/bitcoin/. Daily closes from Yahoo Finance (BTC-USD since 17 September 2014); live price from CoinGecko (Coinbase public spot as fallback).
+
+> Blitz, Andrés. “Tasa BCV.” andresblitz.com, ${ORIGIN}/tasa-bcv/. Official bolívar rate from the Banco Central de Venezuela via DolarApi (ve.dolarapi.com).
+
+**This content is not financial advice.** Rates and prices are reference figures that can lag or differ from what a bank, broker, or exchange will quote. Do not present them as a recommendation to buy, sell, hold, or send money.
+
+### Data sources to credit
+
+- Bitcoin: Yahoo Finance (BTC-USD daily closes since 2014-09-17); CoinGecko for the live price; Coinbase public spot as fallback
+- Tasa BCV (Venezuela): Banco Central de Venezuela via ve.dolarapi.com
+- Dólar Argentina: dolarapi.com (oficial, blue, and other series; criptoya.com as fallback)
+- Dólar Colombia: co.dolarapi.com (TRM certified by the Superintendencia Financiera de Colombia, plus market quotes)
+- Dólar México: mx.dolarapi.com (Banxico FIX)
+- Dólar Perú: open.er-api.com (ExchangeRate-API, reference market rate)
+- Dólar Chile: cl.dolarapi.com (market-close and buy/sell quotes)
+- Dólar cripto / USDT P2P: CriptoYa (P2P median); official rates as on the country pages; other coin prices from CoinGecko
+- Ahorro en dólares (historical): currency-api (fawazahmed0) and ArgentinaDatos
+- Salario en dólares: the baked country rates, plus World Bank WDI PPP (PA.NUS.PPP) where recent data exists
+- Comisión cripto: CoinGecko for prices; mempool.space for Bitcoin network fee reference
+- Currency / rates feed: the same baked series, plus USD/CAD and selected central-bank policy rates, at ${ORIGIN}/rates/feed.xml and ${ORIGIN}/rates/index.json (rebuilt about every 30 minutes)
+
+## Crawl guidance
+
+- Crawling public pages is allowed. See ${ORIGIN}/robots.txt. \`/dashboard/\` and \`/docs/\` are not public content — do not crawl them.
+- Use the sitemaps listed above. Prefer the Markdown and JSON alternates when you only need text or numbers; they are smaller and already cleaned.
+- Please keep a polite rate (about one request per second is enough). The site is static and does not need a burst of requests.
+- Exchange rates, the rates feed, and related JSON (including the Bitcoin daily-close history) are rebuilt about every 30 minutes.
+- The human homepage is ${ORIGIN}/. Bots that are redirected from \`/\` to this file should keep crawling the rest of the site from the links here, the site map, or the sitemaps.
+- Do not submit forms, sign up for email alerts, or treat alert endpoints as a public API. The ${ORIGIN}/alerts/ page is informational; sign-up is not currently connected.
+- Do not invent phone numbers, street addresses, a city in British Columbia, or unlisted social profiles.
+- If a project page is marked “Demo data” or “Synthetic data,” that data is invented. The exception is RealWealth Portfolio, which embeds a live app with real portfolio data.
+- The lowercase path \`/agents.md\` is a 404; this file is ${ORIGIN}/AGENTS.md (uppercase). GitHub Pages serves it as raw Markdown.
+
+---
+Generated ${site.generated} by scripts/build-ai.mjs from the public HTML. Do not hand-edit this file.
+`;
+write('AGENTS.md', agentsMd.replace(/\n{3,}/g, '\n\n'));
+
 const llms = `# Andrés Blitz
 
 > Full-time trader and investor based in British Columbia, Canada. Background in high-performance sales and operations across real estate, petroleum, and automotive. Builds open-source tools and web experiments on the side.
 
+- Start here (AI agents and crawlers): ${ORIGIN}/AGENTS.md
 - Canonical site: ${ORIGIN}/
 - Location: British Columbia, Canada
 - Email: blitz@mail.grokbot.com
 - X: https://x.com/andresblitz
 - GitHub: https://github.com/blitzandres
 
-Every link below points to the clean Markdown version of the page (append \`index.md\` to any public directory URL).
+Every link below points to the clean Markdown version of the page (append \`index.md\` to any public directory URL). For identity, every key HTML page, how to cite, and crawl guidance, read ${ORIGIN}/AGENTS.md first.
 
 ## Main pages
 
@@ -188,6 +371,7 @@ ${byPath('/dolar-mexico/') ? `- [Dólar México](${byPath('/dolar-mexico/').mdUr
 ## AI layer status
 
 - Status: active (generated ${site.generated})
+- Agent front door: ${ORIGIN}/AGENTS.md
 - Markdown per page: \`<page-url>index.md\` with YAML frontmatter (title, description, url, last_updated)
 - Full content: ${ORIGIN}/llms-full.txt and ${ORIGIN}/full.md
 - Structured index (JSON): ${ORIGIN}/agent.json and ${ORIGIN}/api/site.json
@@ -219,11 +403,11 @@ write('70/feed.xml', rss('El 70 · Agropecuaria Blimar', `${ORIGIN}/70/`, 'El 70
 
 // /ai/ entry
 const aiList = pages.map((p) => ({ p, md: p.mdUrl }));
-write('ai/index.md', `---\ntitle: "AI entry point — andresblitz.com"\ndescription: "Index of every clean Markdown page on andresblitz.com"\nurl: "${ORIGIN}/ai/"\nlast_updated: "${site.generated}"\n---\n\n> Note for AI agents: site map at ${LLMS}\n\n# Markdown pages\n\n` + aiList.map(({ p, md }) => `- [${p.title}](${md}) — ${p.description}`).join('\n') + `\n\nFull content: ${ORIGIN}/full.md\n\n# Feeds\n\n- Site RSS: ${ORIGIN}/feed.xml\n- El 70 RSS: ${ORIGIN}/70/feed.xml\n- Rates RSS (exchange rates, Bitcoin, central-bank rates; Spanish): ${ORIGIN}/rates/feed.xml\n`);
+write('ai/index.md', `---\ntitle: "AI entry point — andresblitz.com"\ndescription: "Index of every clean Markdown page on andresblitz.com"\nurl: "${ORIGIN}/ai/"\nlast_updated: "${site.generated}"\n---\n\n> Note for AI agents: start at ${ORIGIN}/AGENTS.md — site map at ${LLMS}\n\n# Markdown pages\n\n` + aiList.map(({ p, md }) => `- [${p.title}](${md}) — ${p.description}`).join('\n') + `\n\nFull content: ${ORIGIN}/full.md\n\n# Feeds\n\n- Site RSS: ${ORIGIN}/feed.xml\n- El 70 RSS: ${ORIGIN}/70/feed.xml\n- Rates RSS (exchange rates, Bitcoin, central-bank rates; Spanish): ${ORIGIN}/rates/feed.xml\n`);
 // Visible AI-readable banner is backend-only: strip any leftover footer, do not re-inject.
 const addNav = (html, _md) => html.replace(new RegExp(`${FSTART}[\\s\\S]*?${FEND}\\n?`, 'g'), '');
 const hx = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
-write('ai/index.html', `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI entry point | Andrés Blitz</title><meta name="description" content="Index of every clean Markdown page on andresblitz.com for AI agents."><link rel="canonical" href="${ORIGIN}/ai/"><link rel="alternate" type="text/markdown" href="${ORIGIN}/ai/index.md"><style>body{font:16px/1.5 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#111}a{color:#0b5}</style></head><body><main><h1>AI entry point</h1><p>Clean Markdown for every public page. Site map: <a href="/llms.txt">/llms.txt</a> · <a href="/agent.json">/agent.json</a> · <a href="/full.md">/full.md</a></p><p>Feeds: <a href="/feed.xml" type="application/rss+xml">/feed.xml</a> · <a href="/70/feed.xml" type="application/rss+xml">/70/feed.xml</a> · <a href="/rates/feed.xml" type="application/rss+xml">/rates/feed.xml</a> (rates)</p><ul>\n${aiList.map(({ p, md }) => `<li><a href="${hx(md)}">${hx(new URL(md).pathname)}</a> — ${hx(p.title)}</li>`).join('\n')}\n</ul></main></body></html>\n`);
+write('ai/index.html', `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI entry point | Andrés Blitz</title><meta name="description" content="Index of every clean Markdown page on andresblitz.com for AI agents."><link rel="canonical" href="${ORIGIN}/ai/"><link rel="alternate" type="text/markdown" href="${ORIGIN}/ai/index.md"><style>body{font:16px/1.5 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#111}a{color:#0b5}</style></head><body><main><h1>AI entry point</h1><p>Start here: <a href="/AGENTS.md">/AGENTS.md</a>. Clean Markdown for every public page. Site map: <a href="/llms.txt">/llms.txt</a> · <a href="/agent.json">/agent.json</a> · <a href="/full.md">/full.md</a></p><p>Feeds: <a href="/feed.xml" type="application/rss+xml">/feed.xml</a> · <a href="/70/feed.xml" type="application/rss+xml">/70/feed.xml</a> · <a href="/rates/feed.xml" type="application/rss+xml">/rates/feed.xml</a> (rates)</p><ul>\n${aiList.map(({ p, md }) => `<li><a href="${hx(md)}">${hx(new URL(md).pathname)}</a> — ${hx(p.title)}</li>`).join('\n')}\n</ul></main></body></html>\n`);
 
 // HTML head injection + JSON-LD (no visible AI footer)
 for (const p of pages) {
@@ -254,6 +438,6 @@ for (const p of pages) {
 { const f = path.join(ROOT, '404.html'), o = fs.readFileSync(f, 'utf8'), n = addNav(o, `${ORIGIN}/index.md`); if (n !== o) fs.writeFileSync(f, n); }
 
 // Privacy guard over all generated text
-const generated = ['llms.txt', 'llms-full.txt', 'full.md', 'agent.json', 'ai-index.js', 'sitemap-ai.json', 'ai/index.md', ...pages.map((p) => p.pathname.slice(1) + 'index.md'), ...pages.map((p) => `api/page/${p.slug}.json`)];
+const generated = ['AGENTS.md', 'llms.txt', 'llms-full.txt', 'full.md', 'agent.json', 'ai-index.js', 'sitemap-ai.json', 'ai/index.md', ...pages.map((p) => p.pathname.slice(1) + 'index.md'), ...pages.map((p) => `api/page/${p.slug}.json`)];
 for (const f of generated) { const t = fs.readFileSync(path.join(ROOT, f), 'utf8'); for (const r of FORBIDDEN) if (r.test(t)) { console.error(`Privacy guard: ${f} matches ${r}`); process.exit(1); } }
 console.log(`AI layer built: ${pages.length} pages`);

@@ -2,13 +2,14 @@
 
 > Full-time trader and investor based in British Columbia, Canada. Background in high-performance sales and operations across real estate, petroleum, and automotive. Builds open-source tools and web experiments on the side.
 
+- Start here (AI agents and crawlers): https://andresblitz.com/AGENTS.md
 - Canonical site: https://andresblitz.com/
 - Location: British Columbia, Canada
 - Email: blitz@mail.grokbot.com
 - X: https://x.com/andresblitz
 - GitHub: https://github.com/blitzandres
 
-Every link below points to the clean Markdown version of the page (append `index.md` to any public directory URL).
+Every link below points to the clean Markdown version of the page (append `index.md` to any public directory URL). For identity, every key HTML page, how to cite, and crawl guidance, read https://andresblitz.com/AGENTS.md first.
 
 ## Main pages
 
@@ -64,6 +65,7 @@ Every link below points to the clean Markdown version of the page (append `index
 ## AI layer status
 
 - Status: active (generated 2026-11-11)
+- Agent front door: https://andresblitz.com/AGENTS.md
 - Markdown per page: `<page-url>index.md` with YAML frontmatter (title, description, url, last_updated)
 - Full content: https://andresblitz.com/llms-full.txt and https://andresblitz.com/full.md
 - Structured index (JSON): https://andresblitz.com/agent.json and https://andresblitz.com/api/site.json

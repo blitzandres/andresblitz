@@ -11,6 +11,7 @@ export const site = {
   "location": "British Columbia, Canada",
   "ai_layer": {
     "status": "active",
+    "agents": "https://andresblitz.com/AGENTS.md",
     "llms": "https://andresblitz.com/llms.txt",
     "llms_full": "https://andresblitz.com/llms-full.txt",
     "full_md": "https://andresblitz.com/full.md",
@@ -168,7 +169,7 @@ export const site = {
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-10",
+      "last_updated": "2026-11-11",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -204,7 +205,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CO",
       "summary": "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.",
-      "last_updated": "2026-11-10",
+      "last_updated": "2026-11-11",
       "topics": [
         "TRM",
         "dólar hoy",
