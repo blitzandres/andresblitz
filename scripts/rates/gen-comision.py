@@ -136,7 +136,7 @@ select,.sm{{font:inherit;font-size:15px;min-height:44px;background:#16203a;color
 </main>
 <footer>
   <p style="margin:0">Estimaciones, no es asesoría financiera. Sin botones de compra, enlaces de afiliados, señales ni predicciones; las comisiones las escribe cada usuario. Precios: <a href="https://www.coingecko.com/" rel="nofollow">CoinGecko</a>; tarifas de Bitcoin: <a href="https://mempool.space/" rel="nofollow">mempool.space</a>. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a> · British Columbia, Canadá.</p>
-  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/enviar-dinero/">Enviar dinero</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares</a> · <a href="/guias-cripto/">Guías cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
+  <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/bitcoin/">Bitcoin: días por rango de precio</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/enviar-dinero/">Enviar dinero</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares</a> · <a href="/guias-cripto/">Guías cripto</a> · <a href="/projects/currency-rss/">Feed de tasas (RSS)</a></nav>
 </footer>
 <script>
 var MID={{}};/*mid*/

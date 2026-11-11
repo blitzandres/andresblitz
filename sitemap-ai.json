@@ -1,6 +1,6 @@
 {
   "site": "https://andresblitz.com/",
-  "generated": "2026-11-10",
+  "generated": "2026-11-11",
   "pages": [
     {
       "url": "https://andresblitz.com/70/",
@@ -26,8 +26,8 @@
     {
       "url": "https://andresblitz.com/bitcoin/",
       "md": "https://andresblitz.com/bitcoin/index.md",
-      "title": "Bitcoin Days in Each Price Bracket: BTC/USD Close History",
-      "summary": "Chart of how many days Bitcoin closed in each US dollar price bracket ($3k, $5k, $10k or $15k wide), from Yahoo Finance BTC-USD daily closes starting September 17, 2014, with a live price for today. Times in PT.",
+      "title": "Bitcoin Price History Brackets: Days Spent at Each Price",
+      "summary": "Days Bitcoin spent at each USD price since 2014, in $3k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country.",
       "lastmod": "2026-11-09"
     },
     {

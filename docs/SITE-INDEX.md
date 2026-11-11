@@ -98,9 +98,9 @@ The `guias-pdf` alert (all five guides as one tagged PDF, sent after confirm) is
 
 | Path | Source | Lang | Purpose | Main content / sections | Data sources | Alert | Nav / sitemap | Status |
 |------|--------|------|---------|-------------------------|--------------|-------|---------------|--------|
-| `/bitcoin/` | `bitcoin/index.html` | en | Days Bitcoin closed in each USD price bracket, with a live bar for today | Bracket-size control ($3k / $5k / $10k / $15k), chart, table, FAQ. Times in PT | Completed days: Yahoo Finance BTC-USD daily closes from 2014-09-17, baked to `bitcoin/history.json` by `scripts/bake-btc-history.mjs`. Live price for the open day: CoinGecko, Coinbase public spot as fallback | `btc-bracket` | English chrome nav (not a header item of its own), sitemap | live, alerts UI hidden |
+| `/bitcoin/` | `bitcoin/index.html` | en (hreflang `en` + `x-default`; worldwide, not a country) | Days Bitcoin closed in each USD price bracket, with a live bar for today. Prices in USD, usable from any country. | Bracket-size control ($3k / $5k / $10k / $15k), chart, table, FAQ (including worldwide/USD). Times in PT. JSON-LD: WebPage, WebApplication (`areaServed` Worldwide), Dataset (`spatialCoverage` Earth), FAQPage, BreadcrumbList. No `geo.region` / city tags. | Completed days: Yahoo Finance BTC-USD daily closes from 2014-09-17, baked to `bitcoin/history.json` by `scripts/bake-btc-history.mjs`. Live price for the open day: CoinGecko, Coinbase public spot as fallback | `btc-bracket` | English chrome nav (not a header item of its own), sitemap, `/projects/`, crypto tool footers | live, alerts UI hidden |
 
-This page is also listed from `/projects/` as “Bitcoin price brackets.” It is not featured on the locked homepage.
+This page is also listed from `/projects/` as “Bitcoin price brackets,” and from the Spanish crypto tool footers (`/dolar-cripto/`, `/convertidor-cripto/`, `/comision-cripto/`). It is not featured on the locked homepage. There is no Spanish translation of `/bitcoin/` itself; do not invent an alternate URL. Targeting is worldwide (`areaServed` Worldwide, `spatialCoverage` Earth). Owner location, if shown, stays “British Columbia, Canada” in the footer only — never a city.
 
 ---
 
