@@ -198,7 +198,7 @@ Your email is only used for what you sign up for, and it is never sold or shared
 
 ---
 title: "Bitcoin Price History Brackets: Days Spent at Each Price"
-description: "Days Bitcoin spent at each USD price since 2014, in $3k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country."
+description: "Days Bitcoin spent at each USD price since 2014, in $2k, $3k, $4k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country."
 url: "https://andresblitz.com/bitcoin/"
 last_updated: "2026-11-11"
 lang: "en"
@@ -210,7 +210,7 @@ Markets · Bitcoin
 
 # Bitcoin: days spent at each price
 
-How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $3,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.
+How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $2,000, $3,000, $4,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.
 
 History starts **September 17, 2014** and runs through **November 11, 2026** (4,437 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 10, 2026, 9:51 p.m. PT.
 
@@ -243,7 +243,7 @@ Daily closes: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/),
 
 ## How to read the Bitcoin price range days
 
-Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($3,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.
+Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($2,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.
 
 ## Where the numbers come from
 
@@ -257,7 +257,7 @@ Each bar is a price range in US dollars, for example $70,000 to $80,000. A longe
 
 ### What does this chart show?
 
-Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket since September 17, 2014. Use the slider to switch between $3,000, $5,000, $10,000 and $15,000 bitcoin price history brackets.
+Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket since September 17, 2014. Use the slider to switch between $2,000, $3,000, $4,000, $5,000, $10,000 and $15,000 bitcoin price history brackets.
 
 ### How is a day counted?
 
@@ -299,7 +299,7 @@ Coinbase public spot
 
 Brackets
 
-$3k · $5k · $10k · $15k
+$2k · $3k · $4k · $5k · $10k · $15k
 
 Coverage
 

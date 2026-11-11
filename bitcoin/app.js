@@ -3,7 +3,7 @@
 // Today: live BTC/USD print, CoinGecko simple/price, polled ~60 s. Coinbase public spot is a fallback for the live print only.
 (function () {
   'use strict';
-  var SIZES = [3000, 5000, 10000, 15000], POLL = 60000, DAY = 864e5;
+  var SIZES = [2000, 3000, 4000, 5000, 10000, 15000], POLL = 60000, DAY = 864e5;
   var CG_LIVE = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,cad&include_24hr_change=true&include_last_updated_at=true';
   var CB_LIVE = 'https://api.coinbase.com/v2/prices/BTC-USD/spot';
   var BAR = '#F59E0B', NOW = '#EA580C', INK = '#44403C', MUTED = '#A8A29E', GRID = '#E7E5E4';
@@ -75,7 +75,7 @@
     return left + t * plotW;
   }
 
-  // $3k only: taller rows and a square-root bar scale so neighboring brackets stay visually distinct.
+  // $2k / $3k / $4k: taller rows and a square-root bar scale so neighboring brackets stay visually distinct.
   // $5k / $10k / $15k keep the original linear draw() path unchanged.
   function draw3k(m, total, box, xmax) {
     var w = Math.max(1, box.clientWidth);
@@ -150,7 +150,7 @@
     var maxD = 1;
     total.forEach(function (v) { if (v > maxD) maxD = v; });
     var xmax = niceMax(maxD);
-    if (size === 3000) { draw3k(m, total, box, xmax); return; }
+    if (size === 2000 || size === 3000 || size === 4000) { draw3k(m, total, box, xmax); return; }
     var w = Math.max(320, box.clientWidth);
     var nKeys = m.keys.length;
     var rowH = nKeys > 28 ? 22 : nKeys > 18 ? 26 : 30;
@@ -233,7 +233,7 @@
     var c = ls.get('btc-live'); if (c && c.p > 0 && Date.now() - c.t < 15 * 6e4) { live = c; live.stale = true; }
     $('#size').addEventListener('input', function () { setSize(+this.value); });
     document.querySelectorAll('.ticks button').forEach(function (b) { b.addEventListener('click', function () { setSize(+b.dataset.i); }); });
-    setSize(2);
+    setSize(4);
     fillGap().then(render);
     getLive(); setInterval(getLive, POLL);
     document.addEventListener('visibilitychange', function () { if (!document.hidden && (!live || Date.now() - live.t > POLL)) getLive(); });
