@@ -2,7 +2,7 @@
 // three.js r180 (MIT) is imported through the page import map, from a pinned jsDelivr URL.
 // Visual ideas (not code) from MIT-licensed work: mrdoob/three.js examples (OrbitControls,
 // CSS2D labels), protectwise/troika (readable 3D labels, data-viz lighting),
-// gavinmgrant/tricharts and vsergeev88/ddd-charts (stacked 3D bars, orbit, legend hover).
+// gavinmgrant/tricharts and vsergeev88/ddd-charts (3D bars, orbit, legend hover).
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
@@ -120,27 +120,22 @@ function build(state) {
   var sparse = narrow && n > 16;
   var maxDays = 0, ti;
   for (ti = 0; ti < n; ti++) if ((state.totals[ti] || 0) > maxDays) maxDays = state.totals[ti];
-  var i, j, x, days, segs, acc, h0, h1, h, mesh, geom, label, top, isNow, eraDays, priceText, showPrice, showCount;
+  var i, x, days, h, mesh, geom, label, top, isNow, priceText, showPrice, showCount, un, eraId;
 
   for (i = 0; i < n; i++) {
     days = state.totals[i] || 0;
-    segs = state.eraCnt[keys[i]] || [0, 0, 0, 0];
+    un = (state.unlock && state.unlock[keys[i]]) || {};
+    eraId = un.era || 'e0';
     x = i * pitch - span / 2;
     isNow = keys[i] === state.tb;
-    acc = 0;
-    for (j = 0; j < 4; j++) {
-      eraDays = segs[j] || 0;
-      if (!eraDays) continue;
-      h0 = heightOf(acc, xmax, useSqrt, maxH);
-      acc += eraDays;
-      h1 = heightOf(acc, xmax, useSqrt, maxH);
-      h = Math.max(0.04, h1 - h0);
+    if (days) {
+      h = Math.max(0.04, heightOf(days, xmax, useSqrt, maxH));
       geom = new THREE.BoxGeometry(thick, h, thick);
-      mesh = new THREE.Mesh(geom, barMaterial(ERA_COLOR[ERA_IDS[j]], focusEra && focusEra !== ERA_IDS[j]));
-      mesh.position.set(x, h0 + h / 2, 0);
+      mesh = new THREE.Mesh(geom, barMaterial(ERA_COLOR[eraId] || ERA_COLOR.e0, focusEra && focusEra !== eraId));
+      mesh.position.set(x, h / 2, 0);
       mesh.castShadow = true;
       mesh.receiveShadow = true;
-      mesh.userData = { era: ERA_IDS[j], key: keys[i], days: eraDays, total: days, label: state.labels[i], now: isNow };
+      mesh.userData = { era: eraId, key: keys[i], days: days, label: state.labels[i], now: isNow, dayLabel: un.dayLabel, eraName: un.eraName };
       root.add(mesh);
     }
     if (isNow && days) {
@@ -238,8 +233,8 @@ function moveTip(ev, mesh) {
   tooltip.hidden = false;
   tooltip.style.left = ev.offsetX + 12 + 'px';
   tooltip.style.top = ev.offsetY + 12 + 'px';
-  tooltip.innerHTML = '<strong>' + d.label + '</strong> · ' + d.days.toLocaleString('en-US') + ' days in this period'
-    + (d.total ? ' of ' + d.total.toLocaleString('en-US') : '')
+  tooltip.innerHTML = '<strong>' + d.label + '</strong> · ' + d.days.toLocaleString('en-US') + ' days'
+    + (d.dayLabel ? '. First reached ' + d.dayLabel + ' (' + (d.eraName || '') + ')' : '')
     + (d.now ? ' · now' : '');
 }
 

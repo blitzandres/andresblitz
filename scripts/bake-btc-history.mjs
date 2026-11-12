@@ -11,7 +11,7 @@
 // Usage: node scripts/bake-btc-history.mjs [--force] [--offline]   (--offline: re-render from the stored history only)
 import fs from 'node:fs';
 import { bake as bakeExtraPages } from './lib/btc-extra-pages.mjs';
-import { R, iso, esc, num, usd, k, pct, dl, pt, stats, sitemapLastmod, writeOg, OG } from './lib/btc-common.mjs';
+import { R, iso, esc, num, usd, k, pct, dl, pt, stats, sitemapLastmod, writeOg, OG, firstUnlocks, ERA_NAMES } from './lib/btc-common.mjs';
 const FILE = 'bitcoin/history.json', PAGE = 'bitcoin/index.html';
 const UA = { 'User-Agent': 'andresblitz.com rates bot (+https://andresblitz.com/bitcoin/)', Accept: 'application/json' };
 const START = '2014-09-17', REVISE_DAYS = 7;
@@ -74,11 +74,13 @@ if (write) fs.writeFileSync(R(FILE), JSON.stringify(out) + '\n');
 // ---- Static numbers on /bitcoin/ (visible without JavaScript; app.js redraws them after history.json loads)
 const s = stats(out);
 const top = s.top, below10 = s.counts.get(0) || 0;
-const table = `<table class="bt"><caption>Days by daily close, $10,000 brackets (${dl(s.first[0])} – ${dl(s.last[0])}, ${num(s.n)} completed days)</caption><thead><tr><th scope="col">Price bracket (USD)</th><th scope="col" class="n">Days</th><th scope="col" class="n">Share</th></tr></thead><tbody>${s.keys.filter((b) => s.counts.get(b)).map((b) => `<tr><td>${k(b)}–${k(b + s.size)}</td><td class="n">${num(s.counts.get(b))}</td><td class="n">${pct(s.counts.get(b), s.n)}</td></tr>`).join('')}</tbody></table>`;
+const { unlock } = firstUnlocks(s.rows, s.size);
+const reached = (b) => { const u = unlock.get(b); return u ? `${dl(u.day)} (${ERA_NAMES[u.era]})` : ''; };
+const table = `<table class="bt"><caption>Days by daily close, $10,000 brackets (${dl(s.first[0])} – ${dl(s.last[0])}, ${num(s.n)} completed days)</caption><thead><tr><th scope="col">Price bracket (USD)</th><th scope="col" class="n">Days</th><th scope="col" class="n">Share</th><th scope="col">First reached</th></tr></thead><tbody>${s.keys.filter((b) => s.counts.get(b)).map((b) => `<tr><td>${k(b)}–${k(b + s.size)}</td><td class="n">${num(s.counts.get(b))}</td><td class="n">${pct(s.counts.get(b), s.n)}</td><td>${reached(b)}</td></tr>`).join('')}</tbody></table>`;
 const meta = `History starts <strong>${dl(s.first[0])}</strong> and runs through <strong>${dl(s.last[0])}</strong> (${num(s.n)} completed daily closes). With $10,000 brackets, Bitcoin closed most often between <strong>${k(top)} and ${k(top + s.size)}</strong> (${num(s.counts.get(top) || 0)} days). Highest close ${usd(s.peak[1], 2)} on ${dl(s.peak[0])}. History baked ${pt(out.generated)}.`;
 const lastLine = `Last close: <strong>${usd(s.last[1], 2)}</strong> on ${dl(s.last[0])} (<a href="https://finance.yahoo.com/quote/BTC-USD/" rel="noopener">Yahoo Finance BTC-USD</a>).`;
 const explain = `In plain English: Bitcoin has ${num(s.n)} daily closes on record since ${dl(s.first[0])}, and this page sorts every one of them into US-dollar price ranges and counts the days in each. That shows where the price has actually spent its time: ${pct(below10, s.n)} of those days closed below $10,000, and ${num(s.counts.get(s.lastBracket) || 0)} closed in the ${k(s.lastBracket)}–${k(s.lastBracket + s.size)} range where the last close sits. It is a record of the past only, with no forecasts.`;
-const chartLabel = `Horizontal bar chart of days Bitcoin closed in each $10,000 USD price bracket from ${dl(s.first[0])} to ${dl(s.last[0])}. The longest bar is ${k(top)}–${k(top + s.size)} with ${num(s.counts.get(top) || 0)} days (${pct(s.counts.get(top) || 0, s.n)}). Each bar is split by Bitcoin’s halving periods (2016, 2020 and 2024). The same numbers are in the table below.`;
+const chartLabel = `Horizontal bar chart of days Bitcoin closed in each $10,000 USD price bracket from ${dl(s.first[0])} to ${dl(s.last[0])}. The longest bar is ${k(top)}–${k(top + s.size)} with ${num(s.counts.get(top) || 0)} days (${pct(s.counts.get(top) || 0, s.n)}). Each bar is one color for the halving period when Bitcoin first reached that price. The same numbers are in the table below.`;
 let html = fs.readFileSync(R(PAGE), 'utf8');
 const put = (name, v) => { html = html.replace(new RegExp(`(<!--${name}:start-->)[\\s\\S]*?(<!--${name}:end-->)`), (m, a, b) => a + v + b); };
 put('btc-meta', meta); put('btc-table', table); put('btc-start', dl(s.first[0])); put('btc-last', lastLine); put('btc-explain', explain);

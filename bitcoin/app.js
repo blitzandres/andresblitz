@@ -2,7 +2,7 @@
 // Completed days: baked Yahoo Finance BTC-USD daily closes, fetched from /bitcoin/history.json after first paint, from 2014-09-17.
 // Until it loads, the page shows the static $10k table and last close that the bake writes into the HTML.
 // Today: live BTC/USD print, CoinGecko simple/price, polled ~60 s. Coinbase public spot is a fallback for the live print only.
-// Bars are stacked by Bitcoin halving era (UTC close date). Hover or tap a period in the key to highlight it.
+// Each bar is one color: the halving era when Bitcoin first closed at or above that bracket’s low. Hover or tap a period to highlight the brackets it unlocked.
 (function () {
   'use strict';
   var SIZES = [2000, 3000, 4000, 5000, 10000, 15000], POLL = 60000, DAY = 864e5;
@@ -50,12 +50,6 @@
     if (day <= '2024-04-19') return 2;
     return 3;
   };
-  var eraSum = function (arr) {
-    var t = 0, i;
-    if (!arr) return 0;
-    for (i = 0; i < 4; i++) t += arr[i] || 0;
-    return t;
-  };
   var activeEra = function () { return hoverEra || pinnedEra; };
 
   function closes() {
@@ -91,30 +85,41 @@
   }
 
   function model() {
-    var rows = closes(), cnt = {}, eraCnt = {}, hi = -Infinity, peak = 0;
-    var eraInfo = ERAS.map(function () { return { days: 0, first: null }; });
+    var rows = closes(), cnt = {}, hi = -Infinity, peak = 0;
+    var eraInfo = ERAS.map(function () { return { first: null, unlocked: [] }; });
     rows.forEach(function (r) {
       var b = Math.floor(r[1] / size) * size;
       var e = eraOf(r[0]);
       cnt[b] = (cnt[b] || 0) + 1;
-      if (!eraCnt[b]) eraCnt[b] = [0, 0, 0, 0];
-      eraCnt[b][e]++;
-      eraInfo[e].days++;
       if (!eraInfo[e].first) eraInfo[e].first = r;
       hi = Math.max(hi, b);
       if (r[1] > peak) peak = r[1];
     });
     var tb = live && live.p > 0 && iso(live.t) === today() ? Math.floor(live.p / size) * size : null;
-    if (tb != null) {
-      hi = Math.max(hi, tb);
-      var ce = eraOf(today());
-      if (!eraCnt[tb]) eraCnt[tb] = [0, 0, 0, 0];
-      eraCnt[tb][ce]++;
-      eraInfo[ce].days++;
-    }
+    if (tb != null) hi = Math.max(hi, tb);
     if (live && live.p > peak) peak = live.p;
     var keys = []; if (isFinite(hi)) for (var b = 0; b <= hi; b += size) keys.push(b);
-    return { rows: rows, keys: keys, done: keys.map(function (b) { return cnt[b] || 0; }), eraCnt: eraCnt, eraInfo: eraInfo, tb: tb, peak: peak };
+    // One era per bracket: the first UTC close at or above that bracket’s low.
+    var unlock = {}, pending = 0, i, r;
+    for (i = 0; i < rows.length && pending < keys.length; i++) {
+      r = rows[i];
+      while (pending < keys.length && r[1] >= keys[pending]) {
+        unlock[keys[pending]] = { day: r[0], price: r[1], era: eraOf(r[0]) };
+        pending++;
+      }
+    }
+    if (tb != null && live && live.p > 0) {
+      for (i = 0; i < keys.length; i++) {
+        if (!unlock[keys[i]] && live.p >= keys[i]) {
+          unlock[keys[i]] = { day: today(), price: live.p, era: eraOf(today()) };
+        }
+      }
+    }
+    keys.forEach(function (b) {
+      var u = unlock[b];
+      if (u) eraInfo[u.era].unlocked.push({ b: b, day: u.day });
+    });
+    return { rows: rows, keys: keys, done: keys.map(function (b) { return cnt[b] || 0; }), unlock: unlock, eraInfo: eraInfo, tb: tb, peak: peak };
   }
 
   function xPos(days, xmax, left, plotW, useSqrt) {
@@ -151,31 +156,23 @@
     });
   }
 
-  function stackBar(left, cy, bh, daysByEra, days, xmax, plotW, useSqrt, label, clipId) {
-    var html = '', acc = 0, i, d, x0, x1, w, title;
+  function solidBar(left, cy, bh, days, xmax, plotW, useSqrt, label, unlock, denom) {
     var bw = days ? Math.max(2, xPos(days, xmax, left, plotW, useSqrt) - left) : 0;
-    if (!bw) return { html: '', bw: 0, defs: '' };
-    var defs = '<clipPath id="' + clipId + '"><rect x="' + left + '" y="' + (cy - bh / 2) + '" width="' + bw + '" height="' + bh + '" rx="2"/></clipPath>';
-    html += '<g clip-path="url(#' + clipId + ')">';
-    for (i = 0; i < ERAS.length; i++) {
-      d = daysByEra[i] || 0;
-      if (!d) continue;
-      x0 = acc === 0 ? left : xPos(acc, xmax, left, plotW, useSqrt);
-      acc += d;
-      x1 = xPos(acc, xmax, left, plotW, useSqrt);
-      w = Math.max(0.5, x1 - x0);
-      title = ERAS[i].name + ': ' + d.toLocaleString('en-US') + ' of ' + days.toLocaleString('en-US') + ' days in ' + label;
-      html += '<rect class="seg" data-era="' + ERAS[i].id + '" x="' + x0 + '" y="' + (cy - bh / 2) + '" width="' + w + '" height="' + bh + '" fill="' + ERAS[i].color + '"><title>' + esc(title) + '</title></rect>';
-    }
-    html += '</g>';
-    return { html: html, bw: bw, defs: defs };
+    if (!bw) return { html: '', bw: 0 };
+    var era = unlock ? ERAS[unlock.era] : ERAS[0];
+    var title = label + ': ' + days.toLocaleString('en-US') + ' days';
+    if (denom) title += ' (' + (days / denom * 100).toFixed(1) + '%)';
+    if (unlock) title += '. First reached ' + pretty(unlock.day) + ' (' + era.name + ')';
+    var html = '<rect class="seg" data-era="' + era.id + '" x="' + left + '" y="' + (cy - bh / 2) + '" width="' + bw + '" height="' + bh + '" rx="2" fill="' + era.color + '"><title>' + esc(title) + '</title></rect>';
+    return { html: html, bw: bw };
   }
 
   function eraAria(m, extra) {
     var bits = ERAS.map(function (er, i) {
-      return er.name + ' ' + (m.eraInfo[i].days || 0).toLocaleString('en-US') + ' days';
+      var n = (m.eraInfo[i].unlocked || []).length;
+      return er.name + ' unlocked ' + n + ' bracket' + (n === 1 ? '' : 's');
     }).join(', ');
-    return 'Horizontal bar chart of days Bitcoin closed in each ' + usd(size) + ' USD price bracket, split by halving period: ' + bits + '.' + (extra || '');
+    return 'Horizontal bar chart of days Bitcoin closed in each ' + usd(size) + ' USD price bracket. Each bar is one color for the halving period when Bitcoin first reached that price: ' + bits + '.' + (extra || '');
   }
 
   function paintLegend(m) {
@@ -183,7 +180,7 @@
     if (!box) return;
     if (!legendReady) {
       box.hidden = false;
-      box.innerHTML = '<p class="era-hint">Each bar is split by Bitcoin’s halving periods. Hover or tap a period to highlight it across every bracket.</p><div class="era-items" role="group" aria-label="Highlight a halving period"></div>';
+      box.innerHTML = '<p class="era-hint">Each bar is one color: the halving period when Bitcoin first reached that price. Hover or tap a period to highlight the brackets it unlocked.</p><div class="era-items" role="group" aria-label="Highlight brackets unlocked in a halving period"></div>';
       box.addEventListener('mouseover', function (ev) {
         var btn = ev.target.closest && ev.target.closest('button[data-era]');
         if (btn) previewEra(btn.getAttribute('data-era'));
@@ -198,19 +195,21 @@
     var items = box.querySelector('.era-items');
     if (!items) return;
     items.innerHTML = ERAS.map(function (er, i) {
-      var info = m.eraInfo[i] || { days: 0, first: null };
+      var info = m.eraInfo[i] || { first: null, unlocked: [] };
       var firstPx = info.first ? usd(Math.round(info.first[1])) : '';
       var meta;
       if (er.halving) meta = 'Halving ' + er.halving + (firstPx ? ' · from ' + firstPx : '');
       else meta = (firstPx ? 'from ' + firstPx + ' · ' : '') + (info.first ? shortDate(info.first[0]) : '');
-      var days = (info.days || 0).toLocaleString('en-US') + ' days';
+      var n = (info.unlocked || []).length;
+      var unlocked = n === 1 ? 'Unlocked 1 bracket' : 'Unlocked ' + n + ' brackets';
       var current = i === ERAS.length - 1;
-      var aria = er.name + (current ? ', current period' : '') + '. ' + meta + '. ' + days + '.';
+      var names = (info.unlocked || []).map(function (u) { return k(u.b) + '–' + k(u.b + size) + ' on ' + pretty(u.day); }).join('; ');
+      var aria = er.name + (current ? ', current period' : '') + '. ' + meta + '. ' + unlocked + (names ? ': ' + names : '') + '.';
       return '<button type="button" data-era="' + er.id + '" aria-pressed="false" aria-label="' + esc(aria) + '"' + (current ? ' class="is-current"' : '') + '>' +
         '<span class="era-name"><span class="swatch" style="background:' + er.color + '"></span>' + esc(er.name) +
         (current ? ' <em class="era-now">current</em>' : '') + '</span>' +
         '<span class="era-meta">' + esc(meta) + '</span>' +
-        '<span class="era-days">' + esc(days) + '</span></button>';
+        '<span class="era-days">' + esc(unlocked) + '</span></button>';
     }).join('');
     applyEraFocus();
   }
@@ -248,7 +247,7 @@
       grid += '<text x="' + x + '" y="' + (top + plotH + 16) + '" text-anchor="middle" fill="' + MUTED + '" font-size="11">' + tv + '</text>';
     }
     grid += '<text x="' + left + '" y="' + (top + plotH + 34) + '" text-anchor="start" fill="' + MUTED + '" font-size="11">bar length: square-root scale</text>';
-    var bars = '', defs = '', extra = m.tb != null ? 1 : 0;
+    var bars = '', extra = m.tb != null ? 1 : 0;
     var denom = m.rows.length + extra;
     var fs = narrow ? 11 : 12;
     for (i = 0; i < nKeys; i++) {
@@ -259,12 +258,11 @@
       var cy = top + i * rowH + rowH / 2;
       var bh = Math.max(10, rowH - 8);
       var label = k(b) + '–' + k(b + size);
-      var stack = stackBar(left, cy, bh, m.eraCnt[b] || [0, 0, 0, 0], days, xmax, plotW, true, label, 'barclip' + i);
+      var bar = solidBar(left, cy, bh, days, xmax, plotW, true, label, m.unlock[b], denom);
       bars += '<text x="' + (left - 8) + '" y="' + cy + '" text-anchor="end" dominant-baseline="middle" fill="' + INK + '" font-size="' + fs + '">' + esc(label) + '</text>';
-      defs += stack.defs;
-      bars += stack.html;
-      if (isNow && stack.bw) bars += '<rect class="now-ring" x="' + left + '" y="' + (cy - bh / 2) + '" width="' + stack.bw + '" height="' + bh + '" rx="2" fill="none" stroke="' + NOW + '" stroke-width="1.5"/>';
-      var bw = stack.bw;
+      bars += bar.html;
+      if (isNow && bar.bw) bars += '<rect class="now-ring" x="' + left + '" y="' + (cy - bh / 2) + '" width="' + bar.bw + '" height="' + bh + '" rx="2" fill="none" stroke="' + NOW + '" stroke-width="1.5"/>';
+      var bw = bar.bw;
       if (days && denom) {
         var count = days.toLocaleString('en-US') + ' days';
         var pct = '(' + (days / denom * 100).toFixed(1) + '%)';
@@ -284,7 +282,7 @@
       }
     }
     box.setAttribute('aria-label', eraAria(m, ' Bar length uses a square-root scale.'));
-    box.innerHTML = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="' + h + '" role="presentation" aria-hidden="true" style="font-family:Archivo,system-ui,sans-serif;display:block"><defs>' + defs + '</defs>' + grid + bars + '</svg>';
+    box.innerHTML = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="' + h + '" role="presentation" aria-hidden="true" style="font-family:Archivo,system-ui,sans-serif;display:block">' + grid + bars + '</svg>';
     bindSegments(box);
     applyEraFocus();
   }
@@ -309,7 +307,7 @@
       grid += '<line x1="' + x + '" y1="' + top + '" x2="' + x + '" y2="' + (top + plotH) + '" stroke="' + GRID + '" stroke-width="1" stroke-dasharray="3 4"/>';
       grid += '<text x="' + x + '" y="' + (top + plotH + 16) + '" text-anchor="middle" fill="' + MUTED + '" font-size="11">' + tv + '</text>';
     }
-    var bars = '', defs = '', extra = m.tb != null ? 1 : 0;
+    var bars = '', extra = m.tb != null ? 1 : 0;
     var denom = m.rows.length + extra;
     for (i = 0; i < nKeys; i++) {
       var row = nKeys - 1 - i;
@@ -319,12 +317,11 @@
       var cy = top + i * rowH + rowH / 2;
       var bh = Math.max(10, rowH - 8);
       var label = k(b) + '–' + k(b + size);
-      var stack = stackBar(left, cy, bh, m.eraCnt[b] || [0, 0, 0, 0], days, xmax, plotW, false, label, 'barclip' + i);
+      var bar = solidBar(left, cy, bh, days, xmax, plotW, false, label, m.unlock[b], denom);
       bars += '<text x="' + (left - 8) + '" y="' + cy + '" text-anchor="end" dominant-baseline="middle" fill="' + INK + '" font-size="12">' + esc(label) + '</text>';
-      defs += stack.defs;
-      bars += stack.html;
-      if (isNow && stack.bw) bars += '<rect class="now-ring" x="' + left + '" y="' + (cy - bh / 2) + '" width="' + stack.bw + '" height="' + bh + '" rx="2" fill="none" stroke="' + NOW + '" stroke-width="1.5"/>';
-      var bw = stack.bw;
+      bars += bar.html;
+      if (isNow && bar.bw) bars += '<rect class="now-ring" x="' + left + '" y="' + (cy - bh / 2) + '" width="' + bar.bw + '" height="' + bh + '" rx="2" fill="none" stroke="' + NOW + '" stroke-width="1.5"/>';
+      var bw = bar.bw;
       if (days && denom) {
         var end = days.toLocaleString('en-US') + ' days (' + (days / denom * 100).toFixed(1) + '%)';
         bars += '<text x="' + (left + bw + 8) + '" y="' + cy + '" dominant-baseline="middle" fill="' + INK + '" font-size="12">' + esc(end);
@@ -335,7 +332,7 @@
       }
     }
     box.setAttribute('aria-label', eraAria(m, ''));
-    box.innerHTML = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="' + h + '" role="presentation" aria-hidden="true" style="font-family:Archivo,system-ui,sans-serif;display:block">' + (defs ? '<defs>' + defs + '</defs>' : '') + grid + bars + '</svg>';
+    box.innerHTML = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="' + h + '" role="presentation" aria-hidden="true" style="font-family:Archivo,system-ui,sans-serif;display:block">' + grid + bars + '</svg>';
     bindSegments(box);
     applyEraFocus();
   }
@@ -360,10 +357,15 @@
     var maxD = 1;
     total.forEach(function (v) { if (v > maxD) maxD = v; });
     var xmax = niceMax(maxD);
+    var unlock = {};
+    m.keys.forEach(function (b) {
+      var u = m.unlock[b];
+      if (u) unlock[b] = { era: ERAS[u.era].id, eraName: ERAS[u.era].name, dayLabel: pretty(u.day) };
+    });
     view3d.update({
       keys: m.keys,
       totals: total,
-      eraCnt: m.eraCnt,
+      unlock: unlock,
       tb: m.tb,
       size: size,
       xmax: xmax,
@@ -423,7 +425,7 @@
     } else $('#pxs').textContent = 'Live price unavailable right now; chart shows completed days only.';
     if (!base.length) return; // history.json not loaded yet: keep the static table from the HTML
     if (!m.keys.length) { box.textContent = 'History is loading.'; return; }
-    var total = m.keys.map(function (b) { return eraSum(m.eraCnt[b]); });
+    var total = m.done.map(function (d, i) { return d + (m.keys[i] === m.tb ? 1 : 0); });
     var n = m.rows.length, first = n ? m.rows[0][0] : '', last = n ? m.rows[n - 1][0] : '';
     if (sub) {
       var totalDays = n + (m.tb != null ? 1 : 0);
@@ -434,10 +436,12 @@
     if (live) parts.push('Latest print: ' + usd(live.p) + ' (' + live.src + ', ' + pt(live.t) + ')' + (live.stale ? ' — last good price; retrying' : '') + '.');
     if (m.peak) parts.push('Series high: ' + usd(m.peak) + '.');
     $('#now').textContent = parts.join(' ');
-    var t = '<table class="bt"><caption>Days by daily close, ' + usd(size) + ' brackets (' + first + ' to ' + last + ', plus today at the live price)</caption><thead><tr><th scope="col">Price bracket (USD)</th><th scope="col" class="n">Days</th><th scope="col" class="n">Share</th></tr></thead><tbody>';
+    var t = '<table class="bt"><caption>Days by daily close, ' + usd(size) + ' brackets (' + first + ' to ' + last + ', plus today at the live price)</caption><thead><tr><th scope="col">Price bracket (USD)</th><th scope="col" class="n">Days</th><th scope="col" class="n">Share</th><th scope="col">First reached</th></tr></thead><tbody>';
     for (var j = m.keys.length - 1; j >= 0; j--) {
       if (!total[j]) continue;
-      t += '<tr' + (m.keys[j] === m.tb ? ' class="cur"' : '') + '><td>' + k(m.keys[j]) + '–' + k(m.keys[j] + size) + (m.keys[j] === m.tb ? ' (today)' : '') + '</td><td class="n">' + total[j] + '</td><td class="n">' + (total[j] / (n + (m.tb != null ? 1 : 0)) * 100).toFixed(1) + '%</td></tr>';
+      var u = m.unlock[m.keys[j]];
+      var reached = u ? pretty(u.day) + ' (' + ERAS[u.era].name + ')' : '';
+      t += '<tr' + (m.keys[j] === m.tb ? ' class="cur"' : '') + '><td>' + k(m.keys[j]) + '–' + k(m.keys[j] + size) + (m.keys[j] === m.tb ? ' (today)' : '') + '</td><td class="n">' + total[j] + '</td><td class="n">' + (total[j] / (n + (m.tb != null ? 1 : 0)) * 100).toFixed(1) + '%</td><td>' + esc(reached) + '</td></tr>';
     }
     $('#tbl').innerHTML = t + '</tbody></table>';
     paintLegend(m);
