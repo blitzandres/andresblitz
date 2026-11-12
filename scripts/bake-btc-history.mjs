@@ -10,6 +10,7 @@
 // the generated /bitcoin/* pages and the sitemap lastmod, all from history.json.
 // Usage: node scripts/bake-btc-history.mjs [--force] [--offline]   (--offline: re-render from the stored history only)
 import fs from 'node:fs';
+import { bake as bakeExtraPages } from './lib/btc-extra-pages.mjs';
 import { R, iso, esc, num, usd, k, pct, dl, pt, stats, sitemapLastmod, writeOg, OG } from './lib/btc-common.mjs';
 const FILE = 'bitcoin/history.json', PAGE = 'bitcoin/index.html';
 const UA = { 'User-Agent': 'andresblitz.com rates bot (+https://andresblitz.com/bitcoin/)', Accept: 'application/json' };
@@ -86,6 +87,6 @@ html = html.replace(/("dateModified":")[^"]*(")/g, `$1${out.generated}$2`).repla
 fs.writeFileSync(R(PAGE), html);
 
 if (await writeOg(s, write)) console.log('btc og image: wrote', OG);
-try { const extra = await import('./lib/btc-extra-pages.mjs'); extra.bake(out, s); } catch (e) { if (e.code !== 'ERR_MODULE_NOT_FOUND') throw e; }
+bakeExtraPages(out, s);
 sitemapLastmod(s.last[0]);
 console.log(`btc page: ${s.first[0]} → ${s.last[0]}, ${s.n} completed days, high ${usd(s.peak[1], 2)} on ${s.peak[0]}, last ${usd(s.last[1], 2)}`);
