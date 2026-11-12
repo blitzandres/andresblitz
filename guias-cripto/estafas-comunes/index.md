@@ -42,6 +42,7 @@ Abre una disputa en la plataforma de inmediato, guarda capturas y comprobantes, 
 
 ## Herramientas cripto
 
+-   [Historial del bitcoin: días en cada precio](https://andresblitz.com/bitcoin/es/)
 -   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
 -   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
 -   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)

@@ -95,6 +95,7 @@ main{{max-width:760px}}
 <section id="tabla" aria-labelledby="h-ref">
   <h2 id="h-ref">Tabla de referencia: <span id="refname">1 BTC</span></h2>
   <div class="tblwrap"><table class="ref"><thead><tr><th scope="col">Moneda</th><th scope="col" class="n">Valor</th><th scope="col">Tasa usada</th></tr></thead><tbody id="refbody"><!--ref:start--><!--ref:end--></tbody></table></div>
+  <p>Historial del bitcoin: <a href="/bitcoin/es/">días en cada precio desde 2014</a>, con el <a href="/bitcoin/">gráfico interactivo por rangos de precio</a> (en inglés).</p>
 </section>
 
 <section id="como" aria-labelledby="h-como">

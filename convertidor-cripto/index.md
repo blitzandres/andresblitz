@@ -2,7 +2,7 @@
 title: "Convertidor cripto: BTC, ETH y USDT a bolívares y pesos"
 description: "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa."
 url: "https://andresblitz.com/convertidor-cripto/"
-last_updated: "2026-11-11"
+last_updated: "2026-11-12"
 lang: "es"
 ---
 
@@ -35,6 +35,8 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 | Pesos chilenos | 72.093.588 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
 | Dólares estadounidenses | 73.787 USD | — |
 | Dólares canadienses | 104.637,34 CAD | Bank of Canada Valet API (FXUSDCAD) |
+
+Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
 ## Cómo se calcula
 

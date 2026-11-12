@@ -48,6 +48,7 @@ El precio P2P cambia minuto a minuto y varía por método de pago y monto; la ta
 
 ## Herramientas cripto
 
+-   [Historial del bitcoin: días en cada precio](https://andresblitz.com/bitcoin/es/)
 -   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
 -   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
 -   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)

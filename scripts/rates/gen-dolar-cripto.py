@@ -103,6 +103,7 @@ main{{max-width:980px}}
 <section id="cripto" aria-labelledby="h-coins">
   <h2 id="h-coins">Bitcoin y otras criptomonedas (USD)</h2>
   <!--coins:start--><!--coins:end-->
+  <p>Historial del bitcoin: <a href="/bitcoin/es/">días en cada precio desde 2014</a>, con el <a href="/bitcoin/">gráfico interactivo por rangos de precio</a> (en inglés).</p>
 </section>
 
 <section id="como" aria-labelledby="h-como">

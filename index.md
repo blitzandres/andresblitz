@@ -96,7 +96,7 @@ HTML
 
 ### More projects
 
-[NetWatch](https://andresblitz.com/projects/netwatch/) [BluthScan](https://andresblitz.com/projects/bluth-scan/) [SIGNET](https://andresblitz.com/projects/signet-thesis/) [Elevatron](https://andresblitz.com/projects/elevatron/) [Home History](https://andresblitz.com/projects/home-history/) [Quiniela 2026](https://andresblitz.com/projects/quiniela/) [Compute Share Pilot](https://andresblitz.com/projects/compute-share-pilot/) [Blitz Analytics](https://andresblitz.com/projects/blitz-analytics/) [Elite Island Movers](https://andresblitz.com/projects/elite-island-movers/) [All projects →](https://andresblitz.com/projects/)
+[NetWatch](https://andresblitz.com/projects/netwatch/) [BluthScan](https://andresblitz.com/projects/bluth-scan/) [SIGNET](https://andresblitz.com/projects/signet-thesis/) [Elevatron](https://andresblitz.com/projects/elevatron/) [Home History](https://andresblitz.com/projects/home-history/) [Quiniela 2026](https://andresblitz.com/projects/quiniela/) [Compute Share Pilot](https://andresblitz.com/projects/compute-share-pilot/) [Blitz Analytics](https://andresblitz.com/projects/blitz-analytics/) [Elite Island Movers](https://andresblitz.com/projects/elite-island-movers/) [Bitcoin price brackets](https://andresblitz.com/bitcoin/) [All projects →](https://andresblitz.com/projects/)
 
 About
 
