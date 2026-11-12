@@ -12,13 +12,13 @@ Markets · Bitcoin
 
 # How many days has Bitcoin closed above $50,000?
 
-**1,146 days.** Bitcoin closed above $50,000 on 1,146 of the 4,439 completed daily closes since September 17, 2014, which is 25.8% of all days. The first close above $50,000 was $52,149.01 on February 17, 2021; the most recent was $73,792.16 on November 11, 2026. The latest close, $73,792.16 on November 11, 2026, is above $50,000, and Bitcoin has now closed above it 1,002 days in a row.
+**1,146 days.** Bitcoin closed above $50,000 on 1,146 of the 4,439 completed daily closes since September 17, 2014, which is 25.8% of all days. The first close above $50,000 was $52,149.01 on February 17, 2021; the most recent was $73,964.47 on November 11, 2026. The latest close, $73,964.47 on November 11, 2026, is above $50,000, and Bitcoin has now closed above it 1,002 days in a row.
 
 ## Days Bitcoin closed above $50,000
 
 1,146 of 4,439 days · 25.8%
 
-<table class="bt"><caption>Bitcoin daily closes above $50,000, September 17, 2014 – November 11, 2026</caption><tbody><tr><th scope="row">Days closed above $50,000</th><td class="n">1,146</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">25.8%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,439</td></tr><tr><th scope="row">First close above</th><td class="n">February 17, 2021 ($52,149.01)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 11, 2026 ($73,792.16)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">1,002 days (Feb 14, 2024 – Nov 11, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">1,002 days</td></tr></tbody></table>
+<table class="bt"><caption>Bitcoin daily closes above $50,000, September 17, 2014 – November 11, 2026</caption><tbody><tr><th scope="row">Days closed above $50,000</th><td class="n">1,146</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">25.8%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,439</td></tr><tr><th scope="row">First close above</th><td class="n">February 17, 2021 ($52,149.01)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 11, 2026 ($73,964.47)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">1,002 days (Feb 14, 2024 – Nov 11, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">1,002 days</td></tr></tbody></table>
 
 Closes above $50,000 by calendar year
 | Year | Days above | Days in data | Share |

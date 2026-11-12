@@ -48,7 +48,7 @@ Each year at a glance (daily closes, USD)
 | 2023 | 365 | $16,625 | $44,167 | $42,265 | $20k–$30k (249 d) |
 | 2024 | 366 | $39,507 | $106,141 | $93,429 | $60k–$70k (191 d) |
 | 2025 | 365 | $76,272 | $124,753 | $87,509 | $100k–$110k (103 d) |
-| 2026 | 315 | $58,559 | $96,929 | $73,792 | $60k–$70k (119 d) |
+| 2026 | 315 | $58,559 | $96,929 | $73,964 | $60k–$70k (119 d) |
 
 2014 is partial (from September 17, 2014) and 2026 is year to date (through November 11, 2026). “Last” is the year’s final close, or the latest close for the current year.
 

@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-11-12T04:44:03.372Z",
+ "generated": "2026-11-12T10:10:16.249Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -61,41 +61,41 @@
   },
   "usdt-ve": {
    "title": "Venezuela: USDT P2P (VES)",
-   "value": 1078.375,
+   "value": 1078.88,
    "unit": "VES por USDT",
-   "extra": "brecha +21.27 % vs. Tasa BCV",
+   "extra": "brecha +21.32 % vs. Tasa BCV",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-12T04:43:54.000Z",
+   "time": "2026-11-12T10:10:06.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-ar": {
    "title": "Argentina: USDT P2P (ARS)",
-   "value": 1651.5075,
+   "value": 1655.25,
    "unit": "ARS por USDT",
-   "extra": "brecha +5.19 % vs. Dólar oficial",
+   "extra": "brecha +5.43 % vs. Dólar oficial",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-12T04:43:57.000Z",
+   "time": "2026-11-12T10:10:02.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-co": {
    "title": "Colombia: USDT P2P (COP)",
-   "value": 3267.51,
+   "value": 3267.415,
    "unit": "COP por USDT",
    "extra": "brecha -0.9 % vs. TRM",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-12T04:43:55.000Z",
+   "time": "2026-11-12T10:10:08.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 73609,
+   "value": 73373,
    "unit": "USD",
-   "change24h": -0.17,
-   "extra": "CAD 104960",
+   "change24h": -0.37,
+   "extra": "CAD 104579",
    "source": "CoinGecko",
-   "time": "2026-11-12T04:43:42.000Z",
+   "time": "2026-11-12T10:09:36.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-11-12T04:44:00.454Z"
+   "fetched": "2026-11-12T10:10:13.657Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",
@@ -118,7 +118,7 @@
    "value": 4,
    "unit": "%",
    "source": "Bank of England Database (IUDBEDR)",
-   "time": "2026-11-10T12:00:00.000Z",
+   "time": "2026-11-11T12:00:00.000Z",
    "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate"
   },
   "fed-funds-target": {

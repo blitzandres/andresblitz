@@ -2,7 +2,7 @@
 title: "Qué es USDT y qué son las stablecoins: guía básica"
 description: "Qué es USDT (Tether), qué es una stablecoin, cómo intenta valer un dólar, qué riesgos tiene y en qué se diferencia de un dólar en el banco. Guía en español para principiantes."
 url: "https://andresblitz.com/guias-cripto/que-es-usdt/"
-last_updated: "2026-11-11"
+last_updated: "2026-11-12"
 lang: "es"
 ---
 

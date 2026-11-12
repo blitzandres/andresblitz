@@ -2,7 +2,7 @@
 title: "Cómo funciona el P2P de criptomonedas: guía básica"
 description: "Qué es el mercado P2P de criptomonedas, cómo funciona una operación con custodia (escrow), qué son los anuncios, límites y métodos de pago, y qué cuidar. Explicado de forma neutral."
 url: "https://andresblitz.com/guias-cripto/como-funciona-p2p/"
-last_updated: "2026-11-11"
+last_updated: "2026-11-12"
 lang: "es"
 ---
 

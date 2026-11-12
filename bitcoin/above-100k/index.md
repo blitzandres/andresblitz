@@ -12,13 +12,13 @@ Markets · Bitcoin
 
 # How many days has Bitcoin closed above $100,000?
 
-**217 days.** Bitcoin closed above $100,000 on 217 of the 4,439 completed daily closes since September 17, 2014, which is 4.9% of all days. The first close above $100,000 was $101,236.02 on December 8, 2024; the most recent was $101,663.19 on November 12, 2025. The latest close, $73,792.16 on November 11, 2026, is 26.2% below $100,000.
+**217 days.** Bitcoin closed above $100,000 on 217 of the 4,439 completed daily closes since September 17, 2014, which is 4.9% of all days. The first close above $100,000 was $101,236.02 on December 8, 2024; the most recent was $101,663.19 on November 12, 2025. The latest close, $73,964.47 on November 11, 2026, is 26.0% below $100,000.
 
 ## Days Bitcoin closed above $100,000
 
 217 of 4,439 days · 4.9%
 
-<table class="bt"><caption>Bitcoin daily closes above $100,000, September 17, 2014 – November 11, 2026</caption><tbody><tr><th scope="row">Days closed above $100,000</th><td class="n">217</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">4.9%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,439</td></tr><tr><th scope="row">First close above</th><td class="n">December 8, 2024 ($101,236.02)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 12, 2025 ($101,663.19)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">189 days (May 8, 2025 – Nov 12, 2025)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $73,792.16)</td></tr></tbody></table>
+<table class="bt"><caption>Bitcoin daily closes above $100,000, September 17, 2014 – November 11, 2026</caption><tbody><tr><th scope="row">Days closed above $100,000</th><td class="n">217</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">4.9%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,439</td></tr><tr><th scope="row">First close above</th><td class="n">December 8, 2024 ($101,236.02)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 12, 2025 ($101,663.19)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">189 days (May 8, 2025 – Nov 12, 2025)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $73,964.47)</td></tr></tbody></table>
 
 Closes above $100,000 by calendar year
 | Year | Days above | Days in data | Share |

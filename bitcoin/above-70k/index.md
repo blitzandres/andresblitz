@@ -12,13 +12,13 @@ Markets · Bitcoin
 
 # How many days has Bitcoin closed above $70,000?
 
-**630 days.** Bitcoin closed above $70,000 on 630 of the 4,439 completed daily closes since September 17, 2014, which is 14.2% of all days. The first close above $70,000 was $72,123.91 on March 11, 2024; the most recent was $73,792.16 on November 11, 2026. The latest close, $73,792.16 on November 11, 2026, is above $70,000, and Bitcoin has now closed above it 84 days in a row.
+**630 days.** Bitcoin closed above $70,000 on 630 of the 4,439 completed daily closes since September 17, 2014, which is 14.2% of all days. The first close above $70,000 was $72,123.91 on March 11, 2024; the most recent was $73,964.47 on November 11, 2026. The latest close, $73,964.47 on November 11, 2026, is above $70,000, and Bitcoin has now closed above it 84 days in a row.
 
 ## Days Bitcoin closed above $70,000
 
 630 of 4,439 days · 14.2%
 
-<table class="bt"><caption>Bitcoin daily closes above $70,000, September 17, 2014 – November 11, 2026</caption><tbody><tr><th scope="row">Days closed above $70,000</th><td class="n">630</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">14.2%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,439</td></tr><tr><th scope="row">First close above</th><td class="n">March 11, 2024 ($72,123.91)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 11, 2026 ($73,792.16)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">456 days (Nov 6, 2024 – Feb 4, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">84 days</td></tr></tbody></table>
+<table class="bt"><caption>Bitcoin daily closes above $70,000, September 17, 2014 – November 11, 2026</caption><tbody><tr><th scope="row">Days closed above $70,000</th><td class="n">630</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">14.2%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,439</td></tr><tr><th scope="row">First close above</th><td class="n">March 11, 2024 ($72,123.91)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 11, 2026 ($73,964.47)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">456 days (Nov 6, 2024 – Feb 4, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">84 days</td></tr></tbody></table>
 
 Closes above $70,000 by calendar year
 | Year | Days above | Days in data | Share |

@@ -2,7 +2,7 @@
 title: "Redes cripto y comisiones: TRC20, ERC20, BEP20 y Lightning"
 description: "Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes."
 url: "https://andresblitz.com/guias-cripto/redes-y-comisiones/"
-last_updated: "2026-11-11"
+last_updated: "2026-11-12"
 lang: "es"
 ---
 

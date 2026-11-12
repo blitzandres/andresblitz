@@ -16,7 +16,7 @@ En pocas palabras: el bitcoin tiene 4.439 cierres diarios registrados desde el 1
 
 ## Días que el bitcoin cerró en cada rango de US$10.000
 
-Último cierre: **US$73.792,16** el 11 de noviembre de 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)). Cierre más alto: US$124.752,53 el 6 de octubre de 2025.
+Último cierre: **US$73.964,47** el 11 de noviembre de 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)). Cierre más alto: US$124.752,53 el 6 de octubre de 2025.
 
 Días por cierre diario, rangos de US$10.000 (17 de septiembre de 2014 – 11 de noviembre de 2026, 4.439 días completos)
 | Rango de precio (USD) | Días | Porcentaje | Barra |
