@@ -2,7 +2,7 @@
 title: "Site Map — Every Page on andresblitz.com | Andrés Blitz"
 description: "Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree."
 url: "https://andresblitz.com/site-map/"
-last_updated: "2026-11-10"
+last_updated: "2026-11-11"
 lang: "en-CA"
 ---
 

@@ -2,7 +2,7 @@
 title: "Guías cripto en español: USDT, P2P, redes y estafas"
 description: "Guías básicas en español sobre USDT y stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto."
 url: "https://andresblitz.com/guias-cripto/"
-last_updated: "2026-11-09"
+last_updated: "2026-11-11"
 lang: "es"
 ---
 

@@ -2,7 +2,7 @@
 title: "Cómo leer la brecha del dólar cripto vs. el oficial"
 description: "Qué es la brecha entre el dólar cripto (USDT P2P) y el dólar oficial, cómo se calcula, qué la mueve y cómo leer los colores y el historial de la página de dólar cripto."
 url: "https://andresblitz.com/guias-cripto/brecha-dolar-cripto/"
-last_updated: "2026-11-09"
+last_updated: "2026-11-11"
 lang: "es"
 ---
 

@@ -75,7 +75,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "ahorro en dólares",
         "devaluación",
@@ -244,7 +244,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "comisión cripto",
         "comisión de retiro",
@@ -264,7 +264,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "convertidor cripto",
         "bitcoin a bolívares",
@@ -301,7 +301,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CL",
       "summary": "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "dólar observado",
         "Banco Central de Chile",
@@ -336,7 +336,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "dólar cripto",
         "USDT",
@@ -356,7 +356,7 @@ export const site = {
       "kind": "page",
       "lang": "es-MX",
       "summary": "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "FIX",
         "Banxico",
@@ -374,7 +374,7 @@ export const site = {
       "kind": "page",
       "lang": "es-PE",
       "summary": "Tipo de cambio del dólar hoy en Perú en soles (S/), con la fuente indicada en cada actualización, explicación del tipo de cambio interbancario y conversor de soles a dólares.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "tipo de cambio",
         "dólar hoy",
@@ -392,7 +392,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "enviar dinero",
         "remesas",
@@ -412,7 +412,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Qué es la brecha entre el dólar cripto (USDT P2P) y el dólar oficial, cómo se calcula, qué la mueve y cómo leer los colores y el historial de la página de dólar cripto.",
-      "last_updated": "2026-11-09",
+      "last_updated": "2026-11-11",
       "topics": [
         "guías cripto",
         "Brecha del dólar cripto"
@@ -427,7 +427,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Qué es el mercado P2P de criptomonedas, cómo funciona una operación con custodia (escrow), qué son los anuncios, límites y métodos de pago, y qué cuidar. Explicado de forma neutral.",
-      "last_updated": "2026-11-09",
+      "last_updated": "2026-11-11",
       "topics": [
         "guías cripto",
         "Cómo funciona el P2P"
@@ -442,7 +442,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Las estafas más comunes con criptomonedas y P2P: comprobantes falsos, falsos soportes, promesas de ganancias, phishing, triangulación y más. Señales de alerta y cómo protegerte.",
-      "last_updated": "2026-11-09",
+      "last_updated": "2026-11-11",
       "topics": [
         "guías cripto",
         "Estafas cripto comunes"
@@ -457,7 +457,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Guías básicas en español sobre USDT y stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto.",
-      "last_updated": "2026-11-09",
+      "last_updated": "2026-11-11",
       "topics": [
         "guías cripto",
         "USDT",
@@ -478,7 +478,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Qué es USDT (Tether), qué es una stablecoin, cómo intenta valer un dólar, qué riesgos tiene y en qué se diferencia de un dólar en el banco. Guía en español para principiantes.",
-      "last_updated": "2026-11-09",
+      "last_updated": "2026-11-11",
       "topics": [
         "guías cripto",
         "Qué es USDT"
@@ -493,7 +493,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Qué es una red (TRC20, ERC20, BEP20, Solana, Lightning, Bitcoin), por qué las comisiones cambian según la red y cómo evitar enviar por la red equivocada. Guía para principiantes.",
-      "last_updated": "2026-11-09",
+      "last_updated": "2026-11-11",
       "topics": [
         "guías cripto",
         "Redes y comisiones"
@@ -508,7 +508,7 @@ export const site = {
       "kind": "home",
       "lang": "en-CA",
       "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
-      "last_updated": "2026-11-09"
+      "last_updated": "2026-11-11"
     },
     {
       "slug": "projects-blitz-analytics",
@@ -728,7 +728,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-11",
       "topics": [
         "salario en dólares",
         "sueldo en dólares",
@@ -746,7 +746,7 @@ export const site = {
       "kind": "page",
       "lang": "en-CA",
       "summary": "Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree.",
-      "last_updated": "2026-11-10",
+      "last_updated": "2026-11-11",
       "topics": [
         "site map",
         "sitemap",

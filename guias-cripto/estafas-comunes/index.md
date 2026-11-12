@@ -2,7 +2,7 @@
 title: "Estafas cripto comunes y cómo evitarlas"
 description: "Las estafas más comunes con criptomonedas y P2P: comprobantes falsos, falsos soportes, promesas de ganancias, phishing, triangulación y más. Señales de alerta y cómo protegerte."
 url: "https://andresblitz.com/guias-cripto/estafas-comunes/"
-last_updated: "2026-11-09"
+last_updated: "2026-11-11"
 lang: "es"
 ---
 
