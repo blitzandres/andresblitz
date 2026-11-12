@@ -310,14 +310,14 @@
   </url>
   <url>
     <loc>https://andresblitz.com/bitcoin/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://andresblitz.com/bitcoin/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://andresblitz.com/bitcoin/" />
     <image:image>
-      <image:loc>https://andresblitz.com/assets/og-cover.png</image:loc>
-      <image:title>Bitcoin price history brackets — days spent at each USD price</image:title>
+      <image:loc>https://andresblitz.com/bitcoin/og.png</image:loc>
+      <image:title>Bar chart of days Bitcoin closed in each $10,000 US-dollar price bracket since September 17, 2014</image:title>
     </image:image>
   </url>
   <url>
