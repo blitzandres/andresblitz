@@ -20,6 +20,7 @@
   var D = {}, base = [];
   var gap = [], live = null, size = 10000;
   var pinnedEra = null, hoverEra = null, legendReady = false;
+  var view = '2d', view3d = null, view3dLoading = false;
   var ls = { get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
   var iso = function (ms) { return new Date(ms).toISOString().slice(0, 10); };
   var usd = function (n, d) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
@@ -135,6 +136,7 @@
         btn.setAttribute('aria-pressed', String(btn.getAttribute('data-era') === pinnedEra));
       });
     }
+    if (view === '3d' && view3d && view3d.setEraFocus) view3d.setEraFocus(a);
   }
 
   function previewEra(id) { hoverEra = id; applyEraFocus(); }
@@ -338,6 +340,78 @@
     applyEraFocus();
   }
 
+  function hasWebGL() {
+    try {
+      var c = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl') || c.getContext('experimental-webgl')));
+    } catch (e) { return false; }
+  }
+
+  function paintSwitch() {
+    var box = $('#viewSwitch');
+    if (!box) return;
+    box.querySelectorAll('button[data-view]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === view));
+    });
+  }
+
+  function push3d(m, total) {
+    if (!view3d) return;
+    var maxD = 1;
+    total.forEach(function (v) { if (v > maxD) maxD = v; });
+    var xmax = niceMax(maxD);
+    view3d.update({
+      keys: m.keys,
+      totals: total,
+      eraCnt: m.eraCnt,
+      tb: m.tb,
+      size: size,
+      xmax: xmax,
+      useSqrt: size === 2000 || size === 3000 || size === 4000,
+      labels: m.keys.map(function (b) { return k(b) + '–' + k(b + size); })
+    });
+    view3d.setEraFocus(activeEra());
+  }
+
+  function setView(next, persist) {
+    var stage = $('#chart3d'), box = $('#chart'), sw = $('#viewSwitch');
+    if (next === '3d' && !hasWebGL()) {
+      if (sw) {
+        sw.setAttribute('data-nowebgl', '1');
+        sw.title = '3D needs WebGL in this browser, so the flat chart stays on.';
+      }
+      next = '2d';
+    }
+    view = next === '3d' ? '3d' : '2d';
+    if (persist !== false) ls.set('btc-chart-view', view);
+    paintSwitch();
+    if (view === '3d') {
+      if (box) box.hidden = true;
+      if (stage) { stage.hidden = false; stage.setAttribute('aria-busy', view3d ? 'false' : 'true'); }
+      if (!view3d && !view3dLoading) {
+        view3dLoading = true;
+        if (stage) stage.classList.add('is-loading');
+        import('/bitcoin/chart3d.js').then(function (mod) {
+          view3d = mod;
+          view3dLoading = false;
+          if (stage) { stage.classList.remove('is-loading'); stage.removeAttribute('aria-busy'); }
+          if (view !== '3d') return;
+          view3d.mount(stage, { onEraToggle: toggleEra, focus: activeEra() });
+          render();
+        }).catch(function () {
+          view3dLoading = false;
+          if (stage) stage.classList.remove('is-loading');
+          setView('2d', false);
+        });
+      }
+    } else {
+      if (view3d && view3d.dispose) { view3d.dispose(); view3d = null; }
+      if (stage) { stage.hidden = true; stage.classList.remove('is-loading'); }
+      if (box) box.hidden = false;
+    }
+    render();
+  }
+
   function render() {
     var m = model(), box = $('#chart'), title = $('#chartTitle'), sub = $('#chartSub');
     if (title) title.textContent = 'Days Bitcoin spent in each ' + usd(size) + ' bracket';
@@ -367,7 +441,13 @@
     }
     $('#tbl').innerHTML = t + '</tbody></table>';
     paintLegend(m);
-    draw(m, total);
+    if (view === '3d' && view3d) {
+      var stage = $('#chart3d');
+      if (stage) stage.setAttribute('aria-label', eraAria(m, ' Shown as a 3D column chart.'));
+      push3d(m, total);
+    } else if (view !== '3d') {
+      draw(m, total);
+    }
   }
 
   function setSize(i) {
@@ -381,6 +461,13 @@
     var c = ls.get('btc-live'); if (c && c.p > 0 && Date.now() - c.t < 15 * 6e4) { live = c; live.stale = true; }
     $('#size').addEventListener('input', function () { setSize(+this.value); });
     document.querySelectorAll('.ticks button').forEach(function (b) { b.addEventListener('click', function () { setSize(+b.dataset.i); }); });
+    var sw = $('#viewSwitch');
+    if (sw) sw.addEventListener('click', function (ev) {
+      var btn = ev.target.closest && ev.target.closest('button[data-view]');
+      if (btn) setView(btn.getAttribute('data-view'));
+    });
+    var saved = ls.get('btc-chart-view');
+    if (saved === '3d') setView('3d', false);
     setSize(4);
     (window.requestIdleCallback || function (f) { setTimeout(f, 1); })(function () { loadHistory().then(fillGap).then(render); }, { timeout: 1500 });
     getLive(); setInterval(getLive, POLL);
