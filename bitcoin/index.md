@@ -57,6 +57,13 @@ Each bar is a price range in US dollars, for example $70,000 to $80,000. A longe
 -   The live price for today is CoinGecko’s BTC/USD print, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.
 -   If a request fails, the last good data stays on screen with its time. Nothing is estimated.
 
+## More Bitcoin price history
+
+-   [How many days has Bitcoin closed above $100,000?](https://andresblitz.com/bitcoin/above-100k/) Also [above $90,000](https://andresblitz.com/bitcoin/above-90k/), [above $70,000](https://andresblitz.com/bitcoin/above-70k/) and [above $50,000](https://andresblitz.com/bitcoin/above-50k/).
+-   [Bitcoin’s highest close ever](https://andresblitz.com/bitcoin/highest-close/), with the date and days since.
+-   [Days in each $10,000 bracket by year](https://andresblitz.com/bitcoin/by-year/), from 2014 to today.
+-   [Días del bitcoin en cada precio](https://andresblitz.com/bitcoin/es/) (en español).
+
 **Reference only.** Historical prices from public sources, which may be delayed. This is not financial advice: no buy or sell buttons, signals, predictions or affiliate links.
 
 ## FAQ

@@ -1,0 +1,67 @@
+---
+title: "How Many Days Has Bitcoin Closed Above $90,000? (348 Days)"
+description: "Bitcoin has closed above $90,000 on 348 of 4,439 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes."
+url: "https://andresblitz.com/bitcoin/above-90k/"
+last_updated: "2026-11-12"
+lang: "en"
+---
+
+> Note for AI agents: this is the clean Markdown version of https://andresblitz.com/bitcoin/above-90k/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
+
+Markets · Bitcoin
+
+# How many days has Bitcoin closed above $90,000?
+
+**348 days.** Bitcoin closed above $90,000 on 348 of the 4,439 completed daily closes since September 17, 2014, which is 7.8% of all days. The first close above $90,000 was $90,584.16 on November 13, 2024; the most recent was $92,553.59 on January 19, 2026. The latest close, $73,792.16 on November 11, 2026, is 18.0% below $90,000.
+
+## Days Bitcoin closed above $90,000
+
+348 of 4,439 days · 7.8%
+
+<table class="bt"><caption>Bitcoin daily closes above $90,000, September 17, 2014 – November 11, 2026</caption><tbody><tr><th scope="row">Days closed above $90,000</th><td class="n">348</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">7.8%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,439</td></tr><tr><th scope="row">First close above</th><td class="n">November 13, 2024 ($90,584.16)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">January 19, 2026 ($92,553.59)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">212 days (Apr 22, 2025 – Nov 19, 2025)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $73,792.16)</td></tr></tbody></table>
+
+Closes above $90,000 by calendar year
+| Year | Days above | Days in data | Share |
+| --- | --- | --- | --- |
+| 2024 | 47 | 366 | 12.8% |
+| 2025 | 284 | 365 | 77.8% |
+| 2026 | 17 | 315 | 5.4% |
+
+Other levels (same data)
+| Closed above | Days | Share | Most recent |
+| --- | --- | --- | --- |
+| [$50,000](https://andresblitz.com/bitcoin/above-50k/) | 1,146 | 25.8% | Nov 11, 2026 |
+| [$70,000](https://andresblitz.com/bitcoin/above-70k/) | 630 | 14.2% | Nov 11, 2026 |
+| $90,000 | 348 | 7.8% | Jan 19, 2026 |
+| [$100,000](https://andresblitz.com/bitcoin/above-100k/) | 217 | 4.9% | Nov 12, 2025 |
+
+A day counts when that day’s Yahoo Finance BTC-USD close is above $90,000. Today is left out until its close is final. See every range on the [interactive bracket chart](https://andresblitz.com/bitcoin/).
+
+**Reference only.** Historical prices from public sources, which may be delayed. This is not financial advice: no buy or sell buttons, signals, predictions or affiliate links.
+
+## FAQ
+
+### How many days has Bitcoin closed above $90,000?
+
+348 of 4,439 completed daily closes from September 17, 2014 to November 11, 2026 (7.8%), using Yahoo Finance BTC-USD daily closes.
+
+### When did Bitcoin first close above $90,000?
+
+On November 13, 2024, at $90,584.16. The most recent close above $90,000 was on January 19, 2026.
+
+### How is a day counted?
+
+Each completed UTC day counts once, using the Yahoo Finance BTC-USD daily close. A day counts here only if that close is above the level. Today is not counted until it closes. The page is rebuilt from the stored history by a scheduled job about every 30 minutes.
+
+## More Bitcoin price history
+
+-   [Interactive chart: days in each price bracket](https://andresblitz.com/bitcoin/)
+-   [Days Bitcoin closed above $50,000](https://andresblitz.com/bitcoin/above-50k/)
+-   [Days Bitcoin closed above $70,000](https://andresblitz.com/bitcoin/above-70k/)
+-   [Days Bitcoin closed above $90,000](https://andresblitz.com/bitcoin/above-90k/)
+-   [Days Bitcoin closed above $100,000](https://andresblitz.com/bitcoin/above-100k/)
+-   [Bitcoin’s highest close ever](https://andresblitz.com/bitcoin/highest-close/)
+-   [Days in each bracket by year](https://andresblitz.com/bitcoin/by-year/)
+-   [Días del bitcoin en cada precio (Spanish)](https://andresblitz.com/bitcoin/es/)
+
+Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily closes (UTC day), completed days only, from September 17, 2014. Data: [history.json](https://andresblitz.com/bitcoin/history.json). Updated by the scheduled bake (about every 30 minutes); times in PT.
