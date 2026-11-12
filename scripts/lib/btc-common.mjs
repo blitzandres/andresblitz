@@ -97,3 +97,27 @@ export async function writeOg(s, force) {
     return true;
   } catch (e) { console.log('btc og image: skipped,', e.message); return false; }
 }
+
+// Inclusive UTC close-date bounds, same as /bitcoin/app.js. A bracket’s color is the era of the first close at or above its low.
+export function eraOf(day) {
+  if (day <= '2016-07-08') return 0;
+  if (day <= '2020-05-10') return 1;
+  if (day <= '2024-04-19') return 2;
+  return 3;
+}
+export const ERA_NAMES = ['2014–2016', '2016–2020', '2020–2024', '2024–now'];
+export function firstUnlocks(rows, size = 10000) {
+  const hi = Math.max(0, ...rows.map((r) => Math.floor(r[1] / size) * size));
+  const keys = [];
+  for (let b = 0; b <= hi; b += size) keys.push(b);
+  const unlock = new Map();
+  let pending = 0;
+  for (const r of rows) {
+    if (pending >= keys.length) break;
+    while (pending < keys.length && r[1] >= keys[pending]) {
+      unlock.set(keys[pending], { day: r[0], price: r[1], era: eraOf(r[0]) });
+      pending++;
+    }
+  }
+  return { keys, unlock };
+}
