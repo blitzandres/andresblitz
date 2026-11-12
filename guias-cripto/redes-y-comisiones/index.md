@@ -42,6 +42,7 @@ La red que eliges al enviar debe ser la misma que acepta la dirección de destin
 
 ## Herramientas cripto
 
+-   [Historial del bitcoin: días en cada precio](https://andresblitz.com/bitcoin/es/)
 -   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
 -   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
 -   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)

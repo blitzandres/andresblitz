@@ -124,7 +124,7 @@
 </main>
 <footer class="site">
   <div class="container">&copy; 2026 Andr&eacute;s Blitz &middot; British Columbia, Canada<br />
-    <a href="/">Home</a> &middot; <a href="/projects/">Projects</a> &middot; <a href="/sitemap.xml">sitemap.xml</a> &middot; <a href="https://github.com/blitzandres" target="_blank" rel="noopener">GitHub</a>
+    <a href="/">Home</a> &middot; <a href="/projects/">Projects</a> &middot; <a href="/bitcoin/">Bitcoin price brackets</a> &middot; <a href="/sitemap.xml">sitemap.xml</a> &middot; <a href="https://github.com/blitzandres" target="_blank" rel="noopener">GitHub</a>
   </div>
 </footer>
 
@@ -137,14 +137,14 @@
     { id: 'dolar', name: 'Dólar hoy', group: 'latam', color: '#34d399', test: function (s) { return s === 'tasa-bcv' || s.indexOf('dolar-') === 0; } },
     { id: 'calc', name: 'Calculadoras', group: 'latam', color: '#fbbf24', test: function (s) { return /^(enviar-dinero|salario-en-dolares|convertidor-cripto|comision-cripto|ahorro-en-dolares)$/.test(s); } },
     { id: 'guias', name: 'Guías cripto', group: 'latam', color: '#a78bfa', url: '/guias-cripto/', test: function (s) { return s.indexOf('guias-cripto') === 0; } },
-    { id: 'markets', name: 'Bitcoin', color: '#f472b6', test: function (s) { return s === 'bitcoin'; } },
+    { id: 'markets', name: 'Bitcoin', color: '#f472b6', url: '/bitcoin/', test: function (s) { return s === 'bitcoin' || s.indexOf('bitcoin-') === 0; } },
     { id: 'el70', name: 'El 70', color: '#f87171', test: function (s) { return s === '70'; } }
   ];
   // Groups wrap several sections under one branch.
   var GROUPS = { latam: { name: 'Latinoamérica', color: '#2dd4bf' } };
 
   // Labels where the page title reads badly in a tree.
-  var LABELS = { 'projects-blitzys-world-play': 'Play (full screen)', 'projects-blitzys-world-play-3d': '3D levels' };
+  var LABELS = { 'projects-blitzys-world-play': 'Play (full screen)', 'projects-blitzys-world-play-3d': '3D levels', 'bitcoin-above-50k': 'Above $50k', 'bitcoin-above-70k': 'Above $70k', 'bitcoin-above-90k': 'Above $90k', 'bitcoin-above-100k': 'Above $100k', 'bitcoin-highest-close': 'Highest close', 'bitcoin-by-year': 'By year', 'bitcoin-es': 'En español' };
 
   // "Name — tagline | Andrés Blitz" -> "Name"
   function short(t) {

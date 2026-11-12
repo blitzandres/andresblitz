@@ -5,7 +5,7 @@ O = 'https://andresblitz.com'
 src = open('enviar-dinero/index.html').read()
 base_style = src[src.index('<style>'):src.index('</style>')+8]
 analytics = re.search(r"<script>\n\(function\(\)\{var b='https://blitz-analytics.*?</script>\n", src, re.S).group(0)
-TOOLS = [('/dolar-cripto/','Dólar cripto (USDT P2P)'),('/convertidor-cripto/','Convertidor cripto (BTC, USDT)'),('/comision-cripto/','Calculadora de comisión cripto'),('/ahorro-en-dolares/','Ahorro en dólares: calculadora histórica'),('/enviar-dinero/','Calculadora del costo de enviar dinero'),('/salario-en-dolares/','Calculadora de salario en dólares')]
+TOOLS = [('/bitcoin/es/','Historial del bitcoin: días en cada precio'),('/dolar-cripto/','Dólar cripto (USDT P2P)'),('/convertidor-cripto/','Convertidor cripto (BTC, USDT)'),('/comision-cripto/','Calculadora de comisión cripto'),('/ahorro-en-dolares/','Ahorro en dólares: calculadora histórica'),('/enviar-dinero/','Calculadora del costo de enviar dinero'),('/salario-en-dolares/','Calculadora de salario en dólares')]
 RATES = [('/tasa-bcv/','Tasa BCV hoy (Venezuela)'),('/dolar-argentina/','Dólar hoy en Argentina'),('/dolar-colombia/','Dólar hoy en Colombia'),('/dolar-mexico/','Dólar hoy en México'),('/dolar-peru/','Dólar hoy en Perú'),('/dolar-chile/','Dólar hoy en Chile')]
 G = [
  dict(slug='que-es-usdt', short='Qué es USDT', title='Qué es USDT y qué son las stablecoins: guía básica',

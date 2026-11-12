@@ -44,6 +44,7 @@ Cada anunciante fija su precio. Influyen el método de pago, el monto, la reputa
 
 ## Herramientas cripto
 
+-   [Historial del bitcoin: días en cada precio](https://andresblitz.com/bitcoin/es/)
 -   [Dólar cripto (USDT P2P)](https://andresblitz.com/dolar-cripto/)
 -   [Convertidor cripto (BTC, USDT)](https://andresblitz.com/convertidor-cripto/)
 -   [Calculadora de comisión cripto](https://andresblitz.com/comision-cripto/)

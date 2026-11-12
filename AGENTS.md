@@ -6,6 +6,7 @@ If you were redirected here from the human homepage, you may continue to any pub
 
 ## Start here / continue crawling
 
+- Main research tool: https://andresblitz.com/bitcoin/ (Bitcoin price history: days at each USD price since 2014; Spanish: https://andresblitz.com/bitcoin/es/)
 - Human homepage: https://andresblitz.com/
 - HTML site map (every public page as a clickable tree): https://andresblitz.com/site-map/
 - XML sitemap: https://andresblitz.com/sitemap.xml
@@ -40,12 +41,29 @@ Exchange rates and related JSON are rebuilt about every 30 minutes. The material
 
 Each entry links to the live HTML page, notes the language (`en` or `es`), and gives the clean Markdown alternate (append `index.md` to any public directory URL). Only pages that exist on this site are listed.
 
+### Bitcoin price history (start here)
+
+- [Bitcoin price history brackets](https://andresblitz.com/bitcoin/) (en): Days-in-bracket chart of how many days BTC/USD closed in each $2k, $3k, $4k, $5k, $10k, or $15k US-dollar bracket since 17 September 2014. Completed days use Yahoo Finance BTC-USD daily closes, baked at https://andresblitz.com/bitcoin/history.json. The current unfinished day is counted at the live CoinGecko price, with Coinbase public spot as fallback. Prices are in USD and the page works from any country; times are in Pacific Time (PT). Historical reference, not financial advice.
+  Markdown: https://andresblitz.com/bitcoin/index.md
+- [Days Bitcoin closed above $100,000](https://andresblitz.com/bitcoin/above-100k/) (en): How many days Bitcoin (BTC/USD) has closed above $100,000 since 17 September 2014: count, share of all days, first and most recent close above, longest run, and a per-year table (English).
+  Markdown: https://andresblitz.com/bitcoin/above-100k/index.md
+- [Days Bitcoin closed above $90,000](https://andresblitz.com/bitcoin/above-90k/) (en): How many days Bitcoin (BTC/USD) has closed above $90,000 since 17 September 2014: count, share of all days, first and most recent close above, longest run, and a per-year table (English).
+  Markdown: https://andresblitz.com/bitcoin/above-90k/index.md
+- [Days Bitcoin closed above $70,000](https://andresblitz.com/bitcoin/above-70k/) (en): How many days Bitcoin (BTC/USD) has closed above $70,000 since 17 September 2014: count, share of all days, first and most recent close above, longest run, and a per-year table (English).
+  Markdown: https://andresblitz.com/bitcoin/above-70k/index.md
+- [Days Bitcoin closed above $50,000](https://andresblitz.com/bitcoin/above-50k/) (en): How many days Bitcoin (BTC/USD) has closed above $50,000 since 17 September 2014: count, share of all days, first and most recent close above, longest run, and a per-year table. Rebuilt from Yahoo Finance daily closes by the scheduled bake (English).
+  Markdown: https://andresblitz.com/bitcoin/above-50k/index.md
+- [Bitcoin’s highest close ever](https://andresblitz.com/bitcoin/highest-close/) (en): Bitcoin’s highest daily close in the Yahoo Finance BTC-USD series, its date, days since it as of the last completed close, how far the latest close is below it, the ten highest closes and each year’s highest close. Closing prices only, not intraday highs (English).
+  Markdown: https://andresblitz.com/bitcoin/highest-close/index.md
+- [Bitcoin days in each $10,000 bracket by year](https://andresblitz.com/bitcoin/by-year/) (en): Days Bitcoin closed in each $10,000 US-dollar bracket for every calendar year since 2014 (2014 partial from 17 September), plus each year’s low, high, last close and most common range (English).
+  Markdown: https://andresblitz.com/bitcoin/by-year/index.md
+- [Días del bitcoin en cada precio (Spanish)](https://andresblitz.com/bitcoin/es/) (es): Días del bitcoin en cada precio: cuántos días cerró el BTC/USD en cada rango de US$10.000 desde el 17 de septiembre de 2014, con el último cierre y el cierre más alto, a partir de los cierres diarios de Yahoo Finance (en español). Versión en español de /bitcoin/.
+  Markdown: https://andresblitz.com/bitcoin/es/index.md
+
 ### English — home, research, and navigation
 
 - [Home](https://andresblitz.com/) (en): Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.
   Markdown: https://andresblitz.com/index.md
-- [Bitcoin price history brackets](https://andresblitz.com/bitcoin/) (en): Days-in-bracket chart of how many days BTC/USD closed in each $2k, $3k, $4k, $5k, $10k, or $15k US-dollar bracket since 17 September 2014. Completed days use Yahoo Finance BTC-USD daily closes, baked at https://andresblitz.com/bitcoin/history.json. The current unfinished day is counted at the live CoinGecko price, with Coinbase public spot as fallback. Prices are in USD and the page works from any country; times are in Pacific Time (PT). Historical reference, not financial advice.
-  Markdown: https://andresblitz.com/bitcoin/index.md
 - [All projects](https://andresblitz.com/projects/) (en): Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.
   Markdown: https://andresblitz.com/projects/index.md
 - [Site map](https://andresblitz.com/site-map/) (en): Interactive site map of every public page on andresblitz.com as a clickable tree (in English).

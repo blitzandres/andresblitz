@@ -75,7 +75,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "ahorro en dólares",
         "devaluación",
@@ -100,6 +100,120 @@ export const site = {
         "PDF downloads",
         "Bitcoin brackets",
         "Tasa BCV"
+      ]
+    },
+    {
+      "slug": "bitcoin-above-100k",
+      "title": "How Many Days Has Bitcoin Closed Above $100,000? (217 Days)",
+      "url": "https://andresblitz.com/bitcoin/above-100k/",
+      "md": "https://andresblitz.com/bitcoin/above-100k/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin-above-100k.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "Bitcoin has closed above $100,000 on 217 of 4,439 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes.",
+      "last_updated": "2026-11-11",
+      "topics": [
+        "Bitcoin",
+        "days above $100,000",
+        "BTC/USD"
+      ]
+    },
+    {
+      "slug": "bitcoin-above-50k",
+      "title": "How Many Days Has Bitcoin Closed Above $50,000? (1,146 Days)",
+      "url": "https://andresblitz.com/bitcoin/above-50k/",
+      "md": "https://andresblitz.com/bitcoin/above-50k/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin-above-50k.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "Bitcoin has closed above $50,000 on 1,146 of 4,439 days since Sep 17, 2014 (25.8%). First close above: Feb 17, 2021. Most recent: Nov 11, 2026. Yahoo Finance BTC-USD daily closes.",
+      "last_updated": "2026-11-11",
+      "topics": [
+        "Bitcoin",
+        "days above $50,000",
+        "BTC/USD"
+      ]
+    },
+    {
+      "slug": "bitcoin-above-70k",
+      "title": "How Many Days Has Bitcoin Closed Above $70,000? (630 Days)",
+      "url": "https://andresblitz.com/bitcoin/above-70k/",
+      "md": "https://andresblitz.com/bitcoin/above-70k/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin-above-70k.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "Bitcoin has closed above $70,000 on 630 of 4,439 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 11, 2026. Yahoo Finance BTC-USD daily closes.",
+      "last_updated": "2026-11-11",
+      "topics": [
+        "Bitcoin",
+        "days above $70,000",
+        "BTC/USD"
+      ]
+    },
+    {
+      "slug": "bitcoin-above-90k",
+      "title": "How Many Days Has Bitcoin Closed Above $90,000? (348 Days)",
+      "url": "https://andresblitz.com/bitcoin/above-90k/",
+      "md": "https://andresblitz.com/bitcoin/above-90k/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin-above-90k.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "Bitcoin has closed above $90,000 on 348 of 4,439 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes.",
+      "last_updated": "2026-11-11",
+      "topics": [
+        "Bitcoin",
+        "days above $90,000",
+        "BTC/USD"
+      ]
+    },
+    {
+      "slug": "bitcoin-by-year",
+      "title": "Bitcoin Days in Each $10,000 Price Bracket by Year (2014–2026)",
+      "url": "https://andresblitz.com/bitcoin/by-year/",
+      "md": "https://andresblitz.com/bitcoin/by-year/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin-by-year.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 11, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes.",
+      "last_updated": "2026-11-11",
+      "topics": [
+        "Bitcoin",
+        "days per price bracket by year",
+        "BTC/USD"
+      ]
+    },
+    {
+      "slug": "bitcoin-es",
+      "title": "Días del bitcoin en cada precio: historial en dólares desde 2014",
+      "url": "https://andresblitz.com/bitcoin/es/",
+      "md": "https://andresblitz.com/bitcoin/es/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin-es.json",
+      "kind": "page",
+      "lang": "es",
+      "summary": "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.439 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes.",
+      "last_updated": "2026-11-11",
+      "topics": [
+        "bitcoin",
+        "días en cada precio",
+        "historial del bitcoin",
+        "BTC/USD"
+      ]
+    },
+    {
+      "slug": "bitcoin-highest-close",
+      "title": "Bitcoin’s Highest Close Ever: $124,752.53 on October 6, 2025",
+      "url": "https://andresblitz.com/bitcoin/highest-close/",
+      "md": "https://andresblitz.com/bitcoin/highest-close/index.md",
+      "json": "https://andresblitz.com/api/page/bitcoin-highest-close.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 11, 2026: 401 days since, latest close $73,792.16, 40.8% below it.",
+      "last_updated": "2026-11-11",
+      "topics": [
+        "Bitcoin",
+        "highest close",
+        "all-time high close",
+        "BTC/USD"
       ]
     },
     {
@@ -130,7 +244,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "comisión cripto",
         "comisión de retiro",
@@ -150,7 +264,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "convertidor cripto",
         "bitcoin a bolívares",
@@ -187,7 +301,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CL",
       "summary": "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "dólar observado",
         "Banco Central de Chile",
@@ -222,7 +336,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "dólar cripto",
         "USDT",
@@ -242,7 +356,7 @@ export const site = {
       "kind": "page",
       "lang": "es-MX",
       "summary": "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "FIX",
         "Banxico",
@@ -260,7 +374,7 @@ export const site = {
       "kind": "page",
       "lang": "es-PE",
       "summary": "Tipo de cambio del dólar hoy en Perú en soles (S/), con la fuente indicada en cada actualización, explicación del tipo de cambio interbancario y conversor de soles a dólares.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "tipo de cambio",
         "dólar hoy",
@@ -278,7 +392,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "enviar dinero",
         "remesas",
@@ -614,7 +728,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "salario en dólares",
         "sueldo en dólares",

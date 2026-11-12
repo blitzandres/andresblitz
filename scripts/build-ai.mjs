@@ -97,6 +97,13 @@ const EXTRA = {
   '/guias-cripto/': { topics: ['guías cripto', 'USDT', 'stablecoins', 'P2P', 'redes', 'comisiones', 'estafas', 'brecha'], note: 'Guías cripto en español para principiantes: qué es USDT y las stablecoins, cómo funciona el P2P, redes y comisiones (TRC20, ERC20, BEP20, Lightning), estafas comunes y cómo leer la brecha del dólar cripto. Informativo, no es asesoría financiera.' },
   '/bitcoin/': { topics: ['Bitcoin', 'BTC/USD', 'bitcoin price history brackets', 'days bitcoin spent at each price', 'bitcoin price range days since 2014', 'Yahoo Finance'], note: 'Bitcoin price history brackets (English, worldwide): how many days BTC/USD closed in each $2k, $3k, $4k, $5k, $10k or $15k US-dollar bracket since September 17, 2014, from Yahoo Finance daily closes, with today counted at the live CoinGecko price (Coinbase public spot as fallback). Prices are in USD and the chart is usable from any country; times in PT. Historical reference, not financial advice. No country restriction.' },
   '/dolar-colombia/': { topics: ['TRM', 'dólar hoy', 'tipo de cambio', 'Colombia'], note: 'Dólar hoy en Colombia — TRM certificada por la Superintendencia Financiera, precio de mercado y conversor COP ↔ USD (en español).' },
+  '/bitcoin/above-50k/': { topics: ['Bitcoin', 'days above $50,000', 'BTC/USD'], note: 'How many days Bitcoin (BTC/USD) has closed above $50,000 since 17 September 2014: count, share of all days, first and most recent close above, longest run, and a per-year table. Rebuilt from Yahoo Finance daily closes by the scheduled bake (English).' },
+  '/bitcoin/above-70k/': { topics: ['Bitcoin', 'days above $70,000', 'BTC/USD'], note: 'How many days Bitcoin (BTC/USD) has closed above $70,000 since 17 September 2014: count, share of all days, first and most recent close above, longest run, and a per-year table (English).' },
+  '/bitcoin/above-90k/': { topics: ['Bitcoin', 'days above $90,000', 'BTC/USD'], note: 'How many days Bitcoin (BTC/USD) has closed above $90,000 since 17 September 2014: count, share of all days, first and most recent close above, longest run, and a per-year table (English).' },
+  '/bitcoin/above-100k/': { topics: ['Bitcoin', 'days above $100,000', 'BTC/USD'], note: 'How many days Bitcoin (BTC/USD) has closed above $100,000 since 17 September 2014: count, share of all days, first and most recent close above, longest run, and a per-year table (English).' },
+  '/bitcoin/highest-close/': { topics: ['Bitcoin', 'highest close', 'all-time high close', 'BTC/USD'], note: 'Bitcoin’s highest daily close in the Yahoo Finance BTC-USD series, its date, days since it as of the last completed close, how far the latest close is below it, the ten highest closes and each year’s highest close. Closing prices only, not intraday highs (English).' },
+  '/bitcoin/by-year/': { topics: ['Bitcoin', 'days per price bracket by year', 'BTC/USD'], note: 'Days Bitcoin closed in each $10,000 US-dollar bracket for every calendar year since 2014 (2014 partial from 17 September), plus each year’s low, high, last close and most common range (English).' },
+  '/bitcoin/es/': { topics: ['bitcoin', 'días en cada precio', 'historial del bitcoin', 'BTC/USD'], note: 'Días del bitcoin en cada precio: cuántos días cerró el BTC/USD en cada rango de US$10.000 desde el 17 de septiembre de 2014, con el último cierre y el cierre más alto, a partir de los cierres diarios de Yahoo Finance (en español). Versión en español de /bitcoin/.' },
   '/site-map/': { topics: ['site map', 'sitemap', 'navigation'], note: 'Interactive site map of every public page on andresblitz.com as a clickable tree (in English).' },
   '/alerts/': { topics: ['email alerts', 'PDF downloads', 'Bitcoin brackets', 'Tasa BCV'], note: 'Email alerts and downloads hub: Bitcoin bracket alerts, daily Tasa BCV, crypto dollar gap alerts, weekly LatAm rates, PDF guides and more (in English). Off until connected.' },
 };
@@ -194,6 +201,7 @@ If you were redirected here from the human homepage, you may continue to any pub
 
 ## Start here / continue crawling
 
+- Main research tool: ${ORIGIN}/bitcoin/ (Bitcoin price history: days at each USD price since 2014; Spanish: ${ORIGIN}/bitcoin/es/)
 - Human homepage: ${ORIGIN}/
 - HTML site map (every public page as a clickable tree): ${ORIGIN}/site-map/
 - XML sitemap: ${ORIGIN}/sitemap.xml
@@ -228,9 +236,18 @@ Exchange rates and related JSON are rebuilt about every 30 minutes. The material
 
 Each entry links to the live HTML page, notes the language (\`en\` or \`es\`), and gives the clean Markdown alternate (append \`index.md\` to any public directory URL). Only pages that exist on this site are listed.
 
+${agentsGroup('Bitcoin price history (start here)', [
+  agentsLine('/bitcoin/', 'Bitcoin price history brackets', `Days-in-bracket chart of how many days BTC/USD closed in each $2k, $3k, $4k, $5k, $10k, or $15k US-dollar bracket since 17 September 2014. Completed days use Yahoo Finance BTC-USD daily closes, baked at ${ORIGIN}/bitcoin/history.json. The current unfinished day is counted at the live CoinGecko price, with Coinbase public spot as fallback. Prices are in USD and the page works from any country; times are in Pacific Time (PT). Historical reference, not financial advice.`),
+  agentsLine('/bitcoin/above-100k/', 'Days Bitcoin closed above $100,000'),
+  agentsLine('/bitcoin/above-90k/', 'Days Bitcoin closed above $90,000'),
+  agentsLine('/bitcoin/above-70k/', 'Days Bitcoin closed above $70,000'),
+  agentsLine('/bitcoin/above-50k/', 'Days Bitcoin closed above $50,000'),
+  agentsLine('/bitcoin/highest-close/', 'Bitcoin’s highest close ever'),
+  agentsLine('/bitcoin/by-year/', 'Bitcoin days in each $10,000 bracket by year'),
+  agentsLine('/bitcoin/es/', 'Días del bitcoin en cada precio (Spanish)'),
+])}
 ${agentsGroup('English — home, research, and navigation', [
   agentsLine('/', 'Home'),
-  agentsLine('/bitcoin/', 'Bitcoin price history brackets', `Days-in-bracket chart of how many days BTC/USD closed in each $2k, $3k, $4k, $5k, $10k, or $15k US-dollar bracket since 17 September 2014. Completed days use Yahoo Finance BTC-USD daily closes, baked at ${ORIGIN}/bitcoin/history.json. The current unfinished day is counted at the live CoinGecko price, with Coinbase public spot as fallback. Prices are in USD and the page works from any country; times are in Pacific Time (PT). Historical reference, not financial advice.`),
   agentsLine('/projects/', 'All projects'),
   agentsLine('/site-map/', 'Site map'),
   agentsLine('/alerts/', 'Alerts & Downloads', 'Hub describing planned email alerts and downloads (Bitcoin brackets, Tasa BCV, crypto-dollar gap, weekly LatAm rates, PDF guides). Sign-up is not currently connected; do not submit the form or treat alert endpoints as a public API.'),
@@ -333,6 +350,11 @@ const llms = `# Andrés Blitz
 
 Every link below points to the clean Markdown version of the page (append \`index.md\` to any public directory URL). For identity, every key HTML page, how to cite, and crawl guidance, read ${ORIGIN}/AGENTS.md first.
 
+## Bitcoin price history (start here)
+
+${byPath('/bitcoin/') ? `- [Bitcoin price brackets](${byPath('/bitcoin/').mdUrl}): ${EXTRA['/bitcoin/'].note}` : ''}
+${[['/bitcoin/above-100k/', 'Days above $100,000'], ['/bitcoin/above-90k/', 'Days above $90,000'], ['/bitcoin/above-70k/', 'Days above $70,000'], ['/bitcoin/above-50k/', 'Days above $50,000'], ['/bitcoin/highest-close/', 'Highest close ever'], ['/bitcoin/by-year/', 'Days in each bracket by year'], ['/bitcoin/es/', 'Días del bitcoin en cada precio (español)']].filter(([x]) => byPath(x)).map(([x, label]) => `  - [${label}](${byPath(x).mdUrl}): ${EXTRA[x].note}`).join('\n')}
+
 ## Main pages
 
 ${line(byPath('/'), 'Home')}
@@ -360,7 +382,6 @@ ${byPath('/guias-cripto/que-es-usdt/') ? `  - [Qué es USDT](${byPath('/guias-cr
 ${byPath('/ahorro-en-dolares/') ? `- [Ahorro en dólares](${byPath('/ahorro-en-dolares/').mdUrl}): ${EXTRA['/ahorro-en-dolares/'].note}` : ''}
 ${byPath('/comision-cripto/') ? `- [Comisión cripto](${byPath('/comision-cripto/').mdUrl}): ${EXTRA['/comision-cripto/'].note}` : ''}
 ${byPath('/convertidor-cripto/') ? `- [Convertidor cripto](${byPath('/convertidor-cripto/').mdUrl}): ${EXTRA['/convertidor-cripto/'].note}` : ''}
-${byPath('/bitcoin/') ? `- [Bitcoin price brackets](${byPath('/bitcoin/').mdUrl}): ${EXTRA['/bitcoin/'].note}` : ''}
 ${byPath('/dolar-cripto/') ? `- [Dólar cripto](${byPath('/dolar-cripto/').mdUrl}): ${EXTRA['/dolar-cripto/'].note}` : ''}
 ${byPath('/salario-en-dolares/') ? `- [Salario en dólares](${byPath('/salario-en-dolares/').mdUrl}): ${EXTRA['/salario-en-dolares/'].note}` : ''}
 ${byPath('/enviar-dinero/') ? `- [Enviar dinero](${byPath('/enviar-dinero/').mdUrl}): ${EXTRA['/enviar-dinero/'].note}` : ''}
