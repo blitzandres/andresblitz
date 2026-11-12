@@ -109,6 +109,21 @@ page = f'''<!doctype html>
 .era-items button.is-current .swatch{{box-shadow:inset 0 0 0 1px rgba(234,88,12,.35),0 0 0 1px rgba(234,88,12,.2)}}
 .era-now{{font-weight:500;font-style:normal;color:#EA580C;font-size:.68rem;letter-spacing:.02em}}
 .era-meta,.era-days{{font-size:.7rem;color:#A8A29E;font-variant-numeric:tabular-nums}}
+.view-switch-wrap{{margin:1rem 0 0}}
+.view-switch{{display:inline-flex;border:1px solid #E7E5E4;border-radius:999px;background:#FFFBF6;padding:3px;gap:2px}}
+.view-switch button{{border:0;background:transparent;color:#78716C;font:inherit;font-size:.82rem;font-weight:600;padding:.35rem .95rem;border-radius:999px;cursor:pointer;min-height:36px;min-width:3.2rem}}
+.view-switch button[aria-pressed=true]{{background:#FFF7ED;color:#1C1917;box-shadow:inset 0 0 0 1px #E8A15A}}
+.view-switch button:focus-visible{{outline:2px solid #E8A15A;outline-offset:2px}}
+.view-switch[data-nowebgl] button[data-view="3d"]{{opacity:.45}}
+.chart3d{{position:relative;margin:1rem 0 .25rem;height:min(620px,78vw);min-height:360px;background:#FFFBF6;border-radius:.5rem;overflow:hidden}}
+.chart3d canvas{{display:block;width:100%;height:100%;touch-action:none}}
+.chart3d.is-loading::after{{content:"Loading 3D view…";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#78716C;font-size:.9rem}}
+.chart3d-label{{font:11px Archivo,system-ui,sans-serif;color:#44403C;white-space:nowrap;pointer-events:none;text-shadow:0 0 6px #FFFBF6,0 0 6px #FFFBF6}}
+.chart3d-label.now{{color:#EA580C;font-weight:600}}
+.chart3d-label.count{{color:#57534E}}
+.chart3d-hint{{position:absolute;left:10px;bottom:8px;margin:0;font-size:.72rem;color:#A8A29E;pointer-events:none}}
+.chart3d-tip{{position:absolute;z-index:2;max-width:16rem;padding:.35rem .5rem;border-radius:.4rem;background:#1C1917;color:#FFFBF6;font-size:.75rem;pointer-events:none;box-shadow:0 4px 16px rgba(28,25,23,.18)}}
+.chart3d-tip strong{{font-weight:600}}
 .now{{margin:.75rem 0 0;font-size:.88rem;color:#78716C}}
 table.bt{{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums;margin-top:.85rem;color:#44403C}}
 table.bt caption{{text-align:left;color:#78716C;font-size:.82rem;padding-bottom:.4rem}}
@@ -118,6 +133,7 @@ nav.site .links a.btn{{background:#2F62CC}}nav.site .links a.btn:hover{{backgrou
 .explain{{font-size:1.02rem;max-width:46rem}}.last{{margin:.6rem 0 0;font-size:.92rem;color:#44403C}}
 details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:pointer;font-weight:600}}summary h3{{display:inline;font-size:1rem;margin:0}}details p{{margin:.4rem 0 0}}
 </style>
+<script type="importmap">{{"imports":{{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}}}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -142,6 +158,12 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
     <p class="explain"><!--btc-explain:start--><!--btc-explain:end--></p>
     <p class="lede">How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $2,000, $3,000, $4,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.</p>
     <p class="nota" id="meta"><!--btc-meta:start--><!--btc-meta:end--></p>
+    <div class="view-switch-wrap">
+      <div class="view-switch" id="viewSwitch" role="group" aria-label="Chart view">
+        <button type="button" data-view="2d" aria-pressed="true">2D</button>
+        <button type="button" data-view="3d" aria-pressed="false">3D</button>
+      </div>
+    </div>
   </header>
 
   <section class="btc" aria-labelledby="chartTitle">
@@ -157,7 +179,8 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
       <div class="ticks" role="group" aria-label="Bracket size presets"><button type="button" data-i="0">$2k</button><button type="button" data-i="1">$3k</button><button type="button" data-i="2">$4k</button><button type="button" data-i="3">$5k</button><button type="button" data-i="4">$10k</button><button type="button" data-i="5">$15k</button></div>
     </div>
     <div id="chart" role="img" aria-label="Bar chart of days Bitcoin spent in each USD price bracket since 2014" aria-describedby="tbl"></div>
-    <div id="eraLegend" class="era-legend" hidden></div>
+        <div id="chart3d" class="chart3d" hidden role="img" aria-label="3D column chart of days Bitcoin closed in each USD price bracket, split by halving period"></div>
+<div id="eraLegend" class="era-legend" hidden></div>
     <p class="now" id="now"></p>
     <div id="tbl"><!--btc-table:start--><!--btc-table:end--></div>
     <p class="nota">Daily closes: <a href="https://finance.yahoo.com/quote/BTC-USD/" rel="noopener">Yahoo Finance BTC-USD</a>, from <!--btc-start:start--><!--btc-start:end-->. Live price: <a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a> (Coinbase public spot as fallback). Prices are in USD and the chart is usable from any country. Times shown in PT.</p>
@@ -165,7 +188,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
 
   <div class="p-body" style="padding-top:1rem">
     <div>
-      <section><h2>How to read the Bitcoin price range days</h2><p>Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($2,000) show detail; wide brackets ($15,000) show the big picture. Each bar is softly color-coded by Bitcoin’s halving periods; a key under the chart names each period, and hovering or tapping one highlights it across every bracket. Today’s bracket is marked with a deeper-orange outline and a “← now” label, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.</p></section>
+      <section><h2>How to read the Bitcoin price range days</h2><p>Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($2,000) show detail; wide brackets ($15,000) show the big picture. Each bar is softly color-coded by Bitcoin’s halving periods; a key under the chart names each period, and hovering or tapping one highlights it across every bracket. A 2D/3D switch after the description at the top opens an optional three-dimensional view of the same counts; 2D stays the default. Today’s bracket is marked with a deeper-orange outline and a “← now” label, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.</p></section>
       <section><h2>Where the numbers come from</h2><ul class="built">
         <li>Completed days use Yahoo Finance’s BTC-USD daily close, from September 17, 2014 onward. A scheduled GitHub Action stores each new close in <a href="/bitcoin/history.json">/bitcoin/history.json</a> and pre-renders the table above.</li>
         <li>The live price for today is CoinGecko’s BTC/USD print, checked about once a minute. If CoinGecko rate-limits, Coinbase’s public BTC-USD spot price is used instead and named as the source.</li>
