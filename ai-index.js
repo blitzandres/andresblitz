@@ -242,7 +242,7 @@ export const site = {
       "kind": "page",
       "lang": "es-MX",
       "summary": "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.",
-      "last_updated": "2026-11-10",
+      "last_updated": "2026-11-11",
       "topics": [
         "FIX",
         "Banxico",
@@ -758,6 +758,6 @@ export const site = {
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
     }
   ],
-  "generated": "2026-11-11"
+  "generated": "2026-11-12"
 };
 export default site;

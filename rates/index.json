@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-11-11T21:12:48.008Z",
+ "generated": "2026-11-12T02:28:06.601Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -37,18 +37,18 @@
   },
   "dolar-peru": {
    "title": "Perú: Dólar de referencia (mercado internacional)",
-   "value": 3.41557,
+   "value": 3.417777,
    "unit": "PEN por USD",
    "source": "open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)",
-   "time": "2026-11-11T00:02:32.000Z",
+   "time": "2026-11-12T00:02:31.000Z",
    "url": "https://andresblitz.com/dolar-peru/"
   },
   "dolar-chile": {
-   "title": "Chile: Dólar de cierre de mercado",
-   "value": 983.85,
+   "title": "Chile: Dólar observado (Banco Central de Chile)",
+   "value": 977.05,
    "unit": "CLP por USD",
-   "source": "cl.dolarapi.com",
-   "time": "2026-11-11T20:01:14.108Z",
+   "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
+   "time": "2026-11-11T03:00:00.000Z",
    "url": "https://andresblitz.com/dolar-chile/"
   },
   "tasa-bcv": {
@@ -61,41 +61,41 @@
   },
   "usdt-ve": {
    "title": "Venezuela: USDT P2P (VES)",
-   "value": 1075.5017,
+   "value": 1078.0375,
    "unit": "VES por USDT",
-   "extra": "brecha +20.94 % vs. Tasa BCV",
+   "extra": "brecha +21.23 % vs. Tasa BCV",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-11T21:12:03.000Z",
+   "time": "2026-11-12T02:27:57.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-ar": {
    "title": "Argentina: USDT P2P (ARS)",
-   "value": 1650.6475,
+   "value": 1652.285,
    "unit": "ARS por USDT",
-   "extra": "brecha +5.14 % vs. Dólar oficial",
+   "extra": "brecha +5.24 % vs. Dólar oficial",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-11T21:12:07.000Z",
+   "time": "2026-11-12T02:27:57.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-co": {
    "title": "Colombia: USDT P2P (COP)",
-   "value": 3283.8,
+   "value": 3269.665,
    "unit": "COP por USDT",
-   "extra": "brecha +0.99 % vs. TRM",
+   "extra": "brecha -0.83 % vs. TRM",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-11T21:12:39.000Z",
+   "time": "2026-11-12T02:28:00.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 74582,
+   "value": 73787,
    "unit": "USD",
-   "change24h": 0.93,
-   "extra": "CAD 106296",
+   "change24h": 0.53,
+   "extra": "CAD 105184",
    "source": "CoinGecko",
-   "time": "2026-11-11T21:12:36.000Z",
+   "time": "2026-11-12T02:28:00.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-11-11T21:12:45.211Z"
+   "fetched": "2026-11-12T02:28:03.835Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",

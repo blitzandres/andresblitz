@@ -215,4 +215,4 @@ Sample citations:
 - The lowercase path `/agents.md` is a 404; this file is https://andresblitz.com/AGENTS.md (uppercase). GitHub Pages serves it as raw Markdown.
 
 ---
-Generated 2026-11-11 by scripts/build-ai.mjs from the public HTML. Do not hand-edit this file.
+Generated 2026-11-12 by scripts/build-ai.mjs from the public HTML. Do not hand-edit this file.

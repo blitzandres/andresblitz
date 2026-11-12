@@ -68,12 +68,12 @@ footer{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute)
 <section id="cotizaciones" aria-labelledby="h-cot">
   <h2 id="h-cot" class="sr">Dólar hoy en Chile: dólar observado y precio de mercado</h2>
   <div class="grid">
-    <article class="card tasa big" data-k="ref"><h3><span data-label>Dólar de cierre de mercado</span></h3><p class="v" data-bake="ref-venta">$ 983,85</p><p class="s">pesos por 1 dólar · fecha <time data-vig datetime="2026-11-11T20:01:14.108Z">11 de noviembre de 2026</time></p></article>
+    <article class="card tasa big" data-k="ref"><h3><span data-label>Dólar observado (Banco Central de Chile)</span></h3><p class="v" data-bake="ref-venta">$ 977,05</p><p class="s">pesos por 1 dólar · fecha <time data-vig datetime="2026-11-11T03:00:00.000Z">11 de noviembre de 2026</time></p></article>
     <article class="card tasa" data-k="mercado-c"><h3>Mercado · compra</h3><p class="v" data-bake="mercado-compra">$ 982,53</p><p class="s">lo que pagan por un dólar</p></article>
     <article class="card tasa" data-k="mercado-v"><h3>Mercado · venta</h3><p class="v" data-bake="mercado-venta">$ 983,97</p><p class="s">lo que cuesta un dólar</p></article>
   </div>
   <p class="ab-bell" data-topic="rates-weekly" hidden></p>
-  <p class="fuente" id="fuente">Fuente: <span data-src>cl.dolarapi.com</span>, actualizado <time data-upd datetime="2026-11-11T20:01:14.108Z">11-11-2026, 5:01 p. m. (hora de Chile)</time><span id="estado"></span></p>
+  <p class="fuente" id="fuente">Fuente: <span data-src>mindicador.cl (dólar observado, Banco Central de Chile)</span>, actualizado <time data-upd datetime="2026-11-11T20:01:14.108Z">11-11-2026, 5:01 p. m. (hora de Chile)</time><span id="estado"></span></p>
 </section>
 
 <section id="conversor" class="card calc" aria-labelledby="h-conv">
@@ -113,12 +113,12 @@ footer{max-width:760px;margin:0 auto;padding:0 var(--pad) 20px;color:var(--mute)
 </section>
 </main>
 <footer>
-  <p style="margin:0">Datos: <span data-src>cl.dolarapi.com</span>. Información de referencia, no constituye asesoría financiera. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a></p>
+  <p style="margin:0">Datos: <span data-src>mindicador.cl (dólar observado, Banco Central de Chile)</span>. Información de referencia, no constituye asesoría financiera. Contacto: <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a></p>
   <nav aria-label="Enlaces del sitio"><a href="/">Inicio de andresblitz.com</a> · <a href="/dolar-argentina/">Dólar Argentina</a> · <a href="/dolar-colombia/">Dólar Colombia</a> · <a href="/dolar-mexico/">Dólar México</a> · <a href="/dolar-peru/">Dólar Perú</a> · <a href="/enviar-dinero/">Enviar dinero</a> · <a href="/salario-en-dolares/">Salario en dólares</a> · <a href="/dolar-cripto/">Dólar cripto</a> · <a href="/convertidor-cripto/">Convertidor cripto</a> · <a href="/comision-cripto/">Comisión cripto</a> · <a href="/ahorro-en-dolares/">Ahorro en dólares</a> · <a href="/guias-cripto/">Guías cripto</a> · <a href="/tasa-bcv/">Tasa BCV (Venezuela)</a> · <a href="/rates/feed.xml">Feed de tasas (RSS)</a></nav>
 </footer>
 <script>
 (function(){
-var FB={"country":"dolar-chile","currency":"CLP","base":"USD","source":"cl.dolarapi.com","label":"Dólar de cierre de mercado","updated":"2026-11-11T20:01:14.108Z","rates":{"ref":{"compra":null,"venta":983.85,"f":"2026-11-11T20:01:14.108Z"},"mercado":{"compra":982.53,"venta":983.97,"f":"2026-11-11T20:01:14.108Z"}}};/*fb*/
+var FB={"country":"dolar-chile","currency":"CLP","base":"USD","source":"mindicador.cl (dólar observado, Banco Central de Chile)","label":"Dólar observado (Banco Central de Chile)","updated":"2026-11-11T20:01:14.108Z","rates":{"ref":{"compra":null,"venta":977.05,"f":"2026-11-11T03:00:00.000Z"},"mercado":{"compra":982.53,"venta":983.97,"f":"2026-11-11T20:01:14.108Z"}}};/*fb*/
 var L='es-CL',TZ='America/Santiago',KEY='rates:dolar-chile',R=FB.rates||{};
 var $=function(s){return document.querySelector(s)};
 var nf=function(n){return n==null?'—':'$ '+n.toLocaleString(L,{minimumFractionDigits:2,maximumFractionDigits:2})};

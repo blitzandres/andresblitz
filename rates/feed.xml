@@ -6,8 +6,48 @@
 <atom:link href="https://andresblitz.com/rates/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Tipos de cambio de Venezuela, Argentina, Colombia, México, Perú y Chile, bitcoin, USD/CAD y tasas de política monetaria, con fuente y hora de cada dato.</description>
 <language>es</language>
-<lastBuildDate>Wed, 11 Nov 2026 21:12:39 GMT</lastBuildDate>
+<lastBuildDate>Thu, 12 Nov 2026 02:28:00 GMT</lastBuildDate>
 <ttl>30</ttl>
+<item>
+<title>Bitcoin (BTC/USD): 73.787 USD</title>
+<link>https://www.coingecko.com/es/monedas/bitcoin</link>
+<guid isPermaLink="false">bitcoin:2026-11-12T02:28:00.000Z:73787</guid>
+<pubDate>Thu, 12 Nov 2026 02:28:00 GMT</pubDate>
+<description>Bitcoin (BTC/USD): 73.787 USD (+0.53 % en 24 h) · CAD 105184. Fuente: CoinGecko. Dato del 2026-11-12T02:28:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
+</item>
+<item>
+<title>Colombia: USDT P2P (COP): 3.269,665 COP por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-co:2026-11-12T02:28:00.000Z:3269.665</guid>
+<pubDate>Thu, 12 Nov 2026 02:28:00 GMT</pubDate>
+<description>Colombia: USDT P2P (COP): 3.269,665 COP por USDT · brecha -0.83 % vs. TRM. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-12T02:28:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Argentina: USDT P2P (ARS): 1.652,285 ARS por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ar:2026-11-12T02:27:57.000Z:1652.285</guid>
+<pubDate>Thu, 12 Nov 2026 02:27:57 GMT</pubDate>
+<description>Argentina: USDT P2P (ARS): 1.652,285 ARS por USDT · brecha +5.24 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-12T02:27:57Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Venezuela: USDT P2P (VES): 1.078,0375 VES por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ve:2026-11-12T02:27:57.000Z:1078.0375</guid>
+<pubDate>Thu, 12 Nov 2026 02:27:57 GMT</pubDate>
+<description>Venezuela: USDT P2P (VES): 1.078,0375 VES por USDT · brecha +21.23 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-12T02:27:57Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Perú: Dólar de referencia (mercado internacional): 3,4178 PEN por USD</title>
+<link>https://andresblitz.com/dolar-peru/</link>
+<guid isPermaLink="false">dolar-peru:2026-11-12T00:02:31.000Z:3.417777</guid>
+<pubDate>Thu, 12 Nov 2026 00:02:31 GMT</pubDate>
+<description>Perú: Dólar de referencia (mercado internacional): 3,4178 PEN por USD. Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia). Dato del 2026-11-12T00:02:31Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)</source>
+</item>
 <item>
 <title>Colombia: USDT P2P (COP): 3.283,8 COP por USDT</title>
 <link>https://andresblitz.com/dolar-cripto/</link>
@@ -367,46 +407,6 @@
 <pubDate>Tue, 10 Nov 2026 02:38:36 GMT</pubDate>
 <description>Argentina: USDT P2P (ARS): 1.662,78 ARS por USDT · brecha +5.91 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-10T02:38:36Z.</description>
 <source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Venezuela: USDT P2P (VES): 1.053,875 VES por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-ve:2026-11-10T02:38:27.000Z:1053.875</guid>
-<pubDate>Tue, 10 Nov 2026 02:38:27 GMT</pubDate>
-<description>Venezuela: USDT P2P (VES): 1.053,875 VES por USDT · brecha +18.51 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-10T02:38:27Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Bitcoin (BTC/USD): 74.762 USD</title>
-<link>https://www.coingecko.com/es/monedas/bitcoin</link>
-<guid isPermaLink="false">bitcoin:2026-11-10T02:38:14.000Z:74762</guid>
-<pubDate>Tue, 10 Nov 2026 02:38:14 GMT</pubDate>
-<description>Bitcoin (BTC/USD): 74.762 USD (-0.83 % en 24 h) · CAD 105574. Fuente: CoinGecko. Dato del 2026-11-10T02:38:14Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
-</item>
-<item>
-<title>Perú: Dólar de referencia (mercado internacional): 3,4215 PEN por USD</title>
-<link>https://andresblitz.com/dolar-peru/</link>
-<guid isPermaLink="false">dolar-peru:2026-11-10T00:02:31.000Z:3.421491</guid>
-<pubDate>Tue, 10 Nov 2026 00:02:31 GMT</pubDate>
-<description>Perú: Dólar de referencia (mercado internacional): 3,4215 PEN por USD. Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia). Dato del 2026-11-10T00:02:31Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)</source>
-</item>
-<item>
-<title>Argentina: Dólar blue: 1.555 ARS por USD</title>
-<link>https://andresblitz.com/dolar-argentina/</link>
-<guid isPermaLink="false">dolar-argentina-blue:2026-11-09T20:58:00.000Z:1555</guid>
-<pubDate>Mon, 09 Nov 2026 20:58:00 GMT</pubDate>
-<description>Argentina: Dólar blue: 1.555 ARS por USD. Fuente: dolarapi.com. Dato del 2026-11-09T20:58:00Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">dolarapi.com</source>
-</item>
-<item>
-<title>USD/CAD (Banco de Canadá): 1,4123 CAD por USD</title>
-<link>https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/</link>
-<guid isPermaLink="false">usdcad:2026-11-09T20:30:00.000Z:1.4123</guid>
-<pubDate>Mon, 09 Nov 2026 20:30:00 GMT</pubDate>
-<description>USD/CAD (Banco de Canadá): 1,4123 CAD por USD. Fuente: Bank of Canada Valet API (FXUSDCAD). Dato del 2026-11-09T20:30:00Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">Bank of Canada Valet API (FXUSDCAD)</source>
 </item>
 </channel>
 </rss>
