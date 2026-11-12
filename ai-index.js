@@ -283,7 +283,7 @@ export const site = {
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -319,7 +319,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CO",
       "summary": "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "TRM",
         "dólar hoy",

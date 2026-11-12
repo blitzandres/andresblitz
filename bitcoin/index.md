@@ -31,27 +31,27 @@ Bitcoin now (BTC/USD)—Live price loads in your browser.
 Bracket size: **$10,000** 
 
 Days by daily close, $10,000 brackets (September 17, 2014 – November 11, 2026, 4,439 completed days)
-| Price bracket (USD) | Days | Share |
-| --- | --- | --- |
-| $120k–$130k | 10 | 0.2% |
-| $110k–$120k | 95 | 2.1% |
-| $100k–$110k | 112 | 2.5% |
-| $90k–$100k | 131 | 3.0% |
-| $80k–$90k | 148 | 3.3% |
-| $70k–$80k | 134 | 3.0% |
-| $60k–$70k | 350 | 7.9% |
-| $50k–$60k | 166 | 3.7% |
-| $40k–$50k | 258 | 5.8% |
-| $30k–$40k | 250 | 5.6% |
-| $20k–$30k | 382 | 8.6% |
-| $10k–$20k | 431 | 9.7% |
-| $0–$10k | 1,972 | 44.4% |
+| Price bracket (USD) | Days | Share | First reached |
+| --- | --- | --- | --- |
+| $120k–$130k | 10 | 0.2% | August 12, 2025 (2024–now) |
+| $110k–$120k | 95 | 2.1% | May 22, 2025 (2024–now) |
+| $100k–$110k | 112 | 2.5% | December 8, 2024 (2024–now) |
+| $90k–$100k | 131 | 3.0% | November 13, 2024 (2024–now) |
+| $80k–$90k | 148 | 3.3% | November 10, 2024 (2024–now) |
+| $70k–$80k | 134 | 3.0% | March 11, 2024 (2020–2024) |
+| $60k–$70k | 350 | 7.9% | March 13, 2021 (2020–2024) |
+| $50k–$60k | 166 | 3.7% | February 17, 2021 (2020–2024) |
+| $40k–$50k | 258 | 5.8% | January 8, 2021 (2020–2024) |
+| $30k–$40k | 250 | 5.6% | January 2, 2021 (2020–2024) |
+| $20k–$30k | 382 | 8.6% | December 16, 2020 (2020–2024) |
+| $10k–$20k | 431 | 9.7% | November 28, 2017 (2016–2020) |
+| $0–$10k | 1,972 | 44.4% | September 17, 2014 (2014–2016) |
 
 Daily closes: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/), from September 17, 2014. Live price: [CoinGecko](https://www.coingecko.com/en/coins/bitcoin) (Coinbase public spot as fallback). Prices are in USD and the chart is usable from any country. Times shown in PT.
 
 ## How to read the Bitcoin price range days
 
-Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($2,000) show detail; wide brackets ($15,000) show the big picture. Each bar is softly color-coded by Bitcoin’s halving periods; a key under the chart names each period, and hovering or tapping one highlights it across every bracket. A 2D/3D switch after the description at the top opens an optional three-dimensional view of the same counts; 2D stays the default. Today’s bracket is marked with a deeper-orange outline and a “← now” label, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.
+Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($2,000) show detail; wide brackets ($15,000) show the big picture. Each bar is one solid color for the halving period when Bitcoin first closed at or above that bracket’s low price; a key under the chart names each period, and hovering or tapping one highlights the brackets it unlocked. A 2D/3D switch after the description at the top opens an optional three-dimensional view of the same counts; 2D stays the default. Today’s bracket is marked with a deeper-orange outline and a “← now” label, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.
 
 ## Where the numbers come from
 
@@ -80,7 +80,7 @@ A completed day counts once, in the bracket that contains that day’s Yahoo Fin
 
 ### Why does the current bar move?
 
-Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today’s day moves to that bar. Today’s bracket is marked with a deeper-orange outline and a “← now” label until the day closes. The bar itself stays color-coded by halving period.
+Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today’s day moves to that bar. Today’s bracket is marked with a deeper-orange outline and a “← now” label until the day closes. The bar itself stays the color of the period when that bracket was first reached.
 
 ### Where does the data come from?
 
