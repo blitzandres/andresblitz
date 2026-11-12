@@ -4,6 +4,8 @@ import json, html
 U = 'https://andresblitz.com/bitcoin/'
 T = 'Bitcoin Price History Brackets: Days Spent at Each Price'
 D = 'Days Bitcoin spent at each USD price since 2014, in $2k, $3k, $4k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country.'
+OG = 'https://andresblitz.com/bitcoin/og.png'
+OGALT = 'Bar chart of days Bitcoin closed in each $10,000 US-dollar price bracket since September 17, 2014'
 faq = [
  ('What does this chart show?', 'Each bar is a US dollar price bracket, for example $70,000 to $80,000. Its length is the number of days Bitcoin closed inside that bracket since September 17, 2014. Use the slider to switch between $2,000, $3,000, $4,000, $5,000, $10,000 and $15,000 bitcoin price history brackets.'),
  ('How is a day counted?', 'A completed day counts once, in the bracket that contains that day\u2019s Yahoo Finance BTC-USD close. Days follow the Yahoo daily series. Times on the page are shown in PT.'),
@@ -17,10 +19,9 @@ faqld = {'@context':'https://schema.org','@type':'FAQPage','@id':U+'#faq','inLan
 earth = {'@type':'Place','name':'Earth','sameAs':'https://www.wikidata.org/wiki/Q2'}
 person = {'@type':'Person','name':'Andrés Blitz','url':'https://andresblitz.com/'}
 pageld = {'@context':'https://schema.org','@graph':[
- {'@type':'WebPage','@id':U+'#webpage','url':U,'name':T,'description':D,'inLanguage':'en','isPartOf':{'@type':'WebSite','name':'andresblitz.com','url':'https://andresblitz.com/'},'primaryImageOfPage':{'@type':'ImageObject','url':'https://andresblitz.com/assets/og-cover.png','width':1200,'height':630,'caption':'Bitcoin price history brackets — days spent at each USD price'},'datePublished':'2026-11-07','dateModified':'2026-11-07','author':person,'about':{'@id':U+'#dataset'},'mainEntity':{'@id':U+'#app'},'spatialCoverage':earth},
- {'@type':'WebApplication','@id':U+'#app','name':T,'url':U,'description':D,'applicationCategory':'FinanceApplication','operatingSystem':'Any','browserRequirements':'Requires JavaScript','offers':{'@type':'Offer','price':'0','priceCurrency':'USD','areaServed':'Worldwide'},'areaServed':'Worldwide','inLanguage':'en','isAccessibleForFree':True,'datePublished':'2026-11-07','dateModified':'2026-11-07','author':person,'isBasedOn':'https://finance.yahoo.com/quote/BTC-USD/','isPartOf':{'@id':U+'#webpage'}},
- {'@type':'Dataset','@id':U+'#dataset','name':'Bitcoin price history brackets: days spent at each USD range','description':D,'url':U,'creator':person,'inLanguage':'en','keywords':['bitcoin price history brackets','days bitcoin spent at each price','bitcoin price range days since 2014','BTC/USD','Bitcoin'],'temporalCoverage':'2014-09-17/..','spatialCoverage':earth,'variableMeasured':['BTC/USD daily close','days in price bracket'],'measurementTechnique':'Yahoo Finance BTC-USD daily closes; CoinGecko BTC/USD for the unfinished day (Coinbase public spot as fallback)','distribution':{'@type':'DataDownload','encodingFormat':'application/json','contentUrl':'https://andresblitz.com/bitcoin/history.json'},'isBasedOn':'https://finance.yahoo.com/quote/BTC-USD/','license':'https://andresblitz.com/bitcoin/','isAccessibleForFree':True},
- {'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':'https://andresblitz.com/'},{'@type':'ListItem','position':2,'name':'Projects','item':'https://andresblitz.com/projects/'},{'@type':'ListItem','position':3,'name':'Bitcoin days in each price bracket','item':U}]}]}
+ {'@type':'WebPage','@id':U+'#webpage','url':U,'name':T,'description':D,'inLanguage':'en','isPartOf':{'@type':'WebSite','name':'andresblitz.com','url':'https://andresblitz.com/'},'primaryImageOfPage':{'@type':'ImageObject','url':OG,'width':1200,'height':630,'caption':OGALT},'datePublished':'2026-11-07','dateModified':'2026-11-07','author':person,'about':{'@id':U+'#dataset'},'mainEntity':{'@id':U+'#dataset'},'spatialCoverage':earth},
+ {'@type':'Dataset','@id':U+'#dataset','name':'Bitcoin price history brackets: days spent at each USD range','description':D,'url':U,'creator':person,'inLanguage':'en','keywords':['bitcoin price history brackets','days bitcoin spent at each price','bitcoin price range days since 2014','BTC/USD','Bitcoin'],'temporalCoverage':'2014-09-17/..','spatialCoverage':earth,'variableMeasured':['BTC/USD daily close','days in price bracket'],'measurementTechnique':'Yahoo Finance BTC-USD daily closes; CoinGecko BTC/USD for the unfinished day (Coinbase public spot as fallback)','distribution':{'@type':'DataDownload','encodingFormat':'application/json','contentUrl':'https://andresblitz.com/bitcoin/history.json'},'isBasedOn':'https://finance.yahoo.com/quote/BTC-USD/','isAccessibleForFree':True,'image':OG,'datePublished':'2026-11-07','dateModified':'2026-11-07'},
+ {'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':'https://andresblitz.com/'},{'@type':'ListItem','position':2,'name':'Projects','item':'https://andresblitz.com/projects/'},{'@type':'ListItem','position':3,'name':'Bitcoin price brackets','item':U}]}]}
 j = lambda o: json.dumps(o, ensure_ascii=False, separators=(',',':')).replace('</','<\\/')
 e = html.escape
 faqhtml = '\n'.join(f'  <details><summary><h3>{e(q)}</h3></summary><p>{e(a)}</p></details>' for q,a in faq)
@@ -49,23 +50,24 @@ page = f'''<!doctype html>
 <meta property="og:title" content="{e(T)}">
 <meta property="og:description" content="{e(D)}">
 <meta property="og:url" content="{U}">
-<meta property="og:image" content="https://andresblitz.com/assets/og-cover.png">
+<meta property="og:image" content="{OG}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Bitcoin price history brackets — days spent at each USD price">
+<meta property="og:image:alt" content="{e(OGALT)}">
 <meta property="article:modified_time" content="2026-11-07">
 <link rel="alternate" type="application/rss+xml" title="Feed de tasas" href="https://andresblitz.com/rates/feed.xml">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{e(T)}">
 <meta name="twitter:description" content="{e(D)}">
-<meta name="twitter:image" content="https://andresblitz.com/assets/og-cover.png">
-<meta name="twitter:image:alt" content="Bitcoin price history brackets — days spent at each USD price">
+<meta name="twitter:image" content="{OG}">
+<meta name="twitter:image:alt" content="{e(OGALT)}">
 <script type="application/ld+json">{j(pageld)}</script>
 <script type="application/ld+json">{j(faqld)}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/projects.css">
 <style>
 .btc{{background:#FFFBF6;color:#292524;border:1px solid #E7E5E4;border-radius:1rem;padding:clamp(16px,3vw,28px);margin:0 0 1.5rem}}
@@ -77,7 +79,7 @@ page = f'''<!doctype html>
 .live .s,.nota{{font-size:.85rem;color:#78716C}}
 .ctl{{margin:1rem 0 .5rem}}.ctl label{{display:block;font-size:.85rem;color:#78716C;margin-bottom:.35rem}}
 .ctl input[type=range]{{width:100%;max-width:26rem;accent-color:#F59E0B;min-height:32px}}
-.ticks{{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:nowrap;gap:0 .15rem;max-width:26rem;font-size:.78rem;color:#A8A29E;font-variant-numeric:tabular-nums}}
+.ticks{{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:nowrap;gap:0 .15rem;max-width:26rem;font-size:.78rem;color:#78716C;font-variant-numeric:tabular-nums}}
 .ticks button{{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:4px 2px;white-space:nowrap}}.ticks button[aria-pressed=true]{{color:#1C1917;font-weight:600}}
 @media (max-width:400px){{.ticks{{font-size:.7rem;gap:0}}.ticks button{{padding:4px 0}}}}
 #chart{{margin:1rem 0 .25rem;overflow:visible}}
@@ -86,6 +88,8 @@ table.bt{{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numer
 table.bt caption{{text-align:left;color:#78716C;font-size:.82rem;padding-bottom:.4rem}}
 table.bt th,table.bt td{{border-bottom:1px solid #E7E5E4;padding:.4rem .5rem;text-align:left}}table.bt .n{{text-align:right}}
 table.bt tr.cur td{{color:#9A3412;font-weight:600;background:#FFEDD5}}
+nav.site .links a.btn{{background:#2F62CC}}nav.site .links a.btn:hover{{background:#3563D6}}
+.explain{{font-size:1.02rem;max-width:46rem}}.last{{margin:.6rem 0 0;font-size:.92rem;color:#44403C}}
 details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:pointer;font-weight:600}}summary h3{{display:inline;font-size:1rem;margin:0}}details p{{margin:.4rem 0 0}}
 </style>
 </head>
@@ -93,7 +97,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
 <a class="skip-link" href="#main">Skip to content</a>
 <nav class="site" aria-label="Main">
   <div class="inner">
-    <a class="logo" href="/" aria-label="Andrés Blitz home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> andresblitz</a>
+    <a class="logo" href="/" aria-label="andresblitz home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> andresblitz</a>
     <div class="links">
       <a class="keep" href="/projects/">Projects</a>
       <a href="/#about">About</a>
@@ -109,6 +113,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
   <header class="p-head">
     <p class="kicker">Markets · Bitcoin</p>
     <h1>Bitcoin: days spent at each price</h1>
+    <p class="explain"><!--btc-explain:start--><!--btc-explain:end--></p>
     <p class="lede">How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $2,000, $3,000, $4,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.</p>
     <p class="nota" id="meta"><!--btc-meta:start--><!--btc-meta:end--></p>
   </header>
@@ -116,6 +121,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
   <section class="btc" aria-labelledby="chartTitle">
     <h2 id="chartTitle">Days Bitcoin spent in each $10,000 bracket</h2>
     <p class="chart-sub" id="chartSub">Yahoo Finance BTC-USD daily closes</p>
+    <p class="last" id="lastClose"><!--btc-last:start--><!--btc-last:end--></p>
     <div class="live" aria-live="polite"><span class="s">Bitcoin now (BTC/USD)</span><span class="v" id="px">—</span><span class="s" id="pxs">Live price loads in your browser.</span></div>
     <p class="ab-bell" data-topic="btc-bracket" hidden></p>
     <div class="ctl">
@@ -124,7 +130,7 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
       <datalist id="sizes"><option value="0" label="$2k"></option><option value="1" label="$3k"></option><option value="2" label="$4k"></option><option value="3" label="$5k"></option><option value="4" label="$10k"></option><option value="5" label="$15k"></option></datalist>
       <div class="ticks" role="group" aria-label="Bracket size presets"><button type="button" data-i="0">$2k</button><button type="button" data-i="1">$3k</button><button type="button" data-i="2">$4k</button><button type="button" data-i="3">$5k</button><button type="button" data-i="4">$10k</button><button type="button" data-i="5">$15k</button></div>
     </div>
-    <div id="chart" role="img" aria-label="Bar chart of days Bitcoin spent in each USD price bracket since 2014"></div>
+    <div id="chart" role="img" aria-label="Bar chart of days Bitcoin spent in each USD price bracket since 2014" aria-describedby="tbl"></div>
     <p class="now" id="now"></p>
     <div id="tbl"><!--btc-table:start--><!--btc-table:end--></div>
     <p class="nota">Daily closes: <a href="https://finance.yahoo.com/quote/BTC-USD/" rel="noopener">Yahoo Finance BTC-USD</a>, from <!--btc-start:start--><!--btc-start:end-->. Live price: <a href="https://www.coingecko.com/en/coins/bitcoin" rel="noopener">CoinGecko</a> (Coinbase public spot as fallback). Prices are in USD and the chart is usable from any country. Times shown in PT.</p>
@@ -167,7 +173,6 @@ details{{border-bottom:1px solid var(--border);padding:.6rem 0}}summary{{cursor:
     <a href="/">Home</a> &middot; <a href="/projects/">Projects</a> &middot; <a href="/dolar-cripto/">Dólar cripto</a> &middot; <a href="/convertidor-cripto/">Convertidor cripto</a> &middot; <a href="/projects/currency-rss/">Rates feed (RSS)</a> &middot; <a href="https://github.com/blitzandres" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://x.com/andresblitz" target="_blank" rel="noopener">X</a> &middot; <a href="mailto:blitz@mail.grokbot.com">blitz@mail.grokbot.com</a>
   </div>
 </footer>
-<script type="application/json" id="btc-data">{{}}</script>
 <script src="/bitcoin/app.js" defer></script>
 <script src="/assets/alerts.js" defer></script>
 <script>

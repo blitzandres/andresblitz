@@ -12,19 +12,23 @@ Markets · Bitcoin
 
 # Bitcoin: days spent at each price
 
+In plain English: Bitcoin has 4,439 daily closes on record since September 17, 2014, and this page sorts every one of them into US-dollar price ranges and counts the days in each. That shows where the price has actually spent its time: 44.4% of those days closed below $10,000, and 134 closed in the $70k–$80k range where the last close sits. It is a record of the past only, with no forecasts.
+
 How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $2,000, $3,000, $4,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.
 
-History starts **September 17, 2014** and runs through **November 11, 2026** (4,437 daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Series high $124,753. History baked Nov 10, 2026, 9:51 p.m. PT.
+History starts **September 17, 2014** and runs through **November 11, 2026** (4,439 completed daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Highest close $124,752.53 on October 6, 2025. History baked Nov 11, 2026, 9:32 p.m. PT.
 
 ## Days Bitcoin spent in each $10,000 bracket
 
 Yahoo Finance BTC-USD daily closes
 
+Last close: **$73,792.16** on November 11, 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)).
+
 Bitcoin now (BTC/USD)—Live price loads in your browser.
 
 Bracket size: **$10,000** 
 
-Days by daily close, $10,000 brackets (September 17, 2014 – November 11, 2026)
+Days by daily close, $10,000 brackets (September 17, 2014 – November 11, 2026, 4,439 completed days)
 | Price bracket (USD) | Days | Share |
 | --- | --- | --- |
 | $120k–$130k | 10 | 0.2% |
@@ -32,7 +36,7 @@ Days by daily close, $10,000 brackets (September 17, 2014 – November 11, 2026)
 | $100k–$110k | 112 | 2.5% |
 | $90k–$100k | 131 | 3.0% |
 | $80k–$90k | 148 | 3.3% |
-| $70k–$80k | 132 | 3.0% |
+| $70k–$80k | 134 | 3.0% |
 | $60k–$70k | 350 | 7.9% |
 | $50k–$60k | 166 | 3.7% |
 | $40k–$50k | 258 | 5.8% |

@@ -1,5 +1,6 @@
 // /bitcoin/ — days Bitcoin spent in each USD price bracket.
-// Completed days: baked Yahoo Finance BTC-USD daily closes (inline JSON from /bitcoin/history.json), from 2014-09-17.
+// Completed days: baked Yahoo Finance BTC-USD daily closes, fetched from /bitcoin/history.json after first paint, from 2014-09-17.
+// Until it loads, the page shows the static $10k table and last close that the bake writes into the HTML.
 // Today: live BTC/USD print, CoinGecko simple/price, polled ~60 s. Coinbase public spot is a fallback for the live print only.
 (function () {
   'use strict';
@@ -8,8 +9,7 @@
   var CB_LIVE = 'https://api.coinbase.com/v2/prices/BTC-USD/spot';
   var BAR = '#F59E0B', NOW = '#EA580C', INK = '#44403C', MUTED = '#A8A29E', GRID = '#E7E5E4';
   var $ = function (s) { return document.querySelector(s); };
-  var D = {}; try { D = JSON.parse($('#btc-data').textContent) || {}; } catch (e) {}
-  var base = (D.c || []).filter(function (r) { return r && r[1] > 0; });
+  var D = {}, base = [];
   var gap = [], live = null, size = 10000;
   var ls = { get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
   var iso = function (ms) { return new Date(ms).toISOString().slice(0, 10); };
@@ -39,6 +39,14 @@
   // Do not fill gaps from CoinGecko: that 365-day series would mix with the Yahoo history and distort shares.
   // The scheduled bake appends new Yahoo daily closes. If the bake lags, show the stored series until it catches up.
   function fillGap() { return Promise.resolve(); }
+
+  // Load the daily history after the page has painted; the static table stays visible meanwhile.
+  function loadHistory() {
+    return fetch('/bitcoin/history.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw r.status; return r.json(); }).then(function (j) {
+      D = j || {};
+      base = (D.closes || D.c || []).filter(function (r) { return r && r[1] > 0; });
+    }, function () {});
+  }
 
   function getLive() {
     if (document.hidden && live) return Promise.resolve();
@@ -201,6 +209,7 @@
       var a = document.createElement('a'); a.href = live.url; a.rel = 'noopener'; a.textContent = live.src;
       $('#pxs').append(a, document.createTextNode(' · as of ' + pt(live.t) + (live.stale ? ' (last good price; retrying)' : '')));
     } else $('#pxs').textContent = 'Live price unavailable right now; chart shows completed days only.';
+    if (!base.length) return; // history.json not loaded yet: keep the static table from the HTML
     if (!m.keys.length) { box.textContent = 'History is loading.'; return; }
     var total = m.done.map(function (d, i) { return d + (m.keys[i] === m.tb ? 1 : 0); });
     var n = m.rows.length, first = n ? m.rows[0][0] : '', last = n ? m.rows[n - 1][0] : '';
@@ -234,7 +243,7 @@
     $('#size').addEventListener('input', function () { setSize(+this.value); });
     document.querySelectorAll('.ticks button').forEach(function (b) { b.addEventListener('click', function () { setSize(+b.dataset.i); }); });
     setSize(4);
-    fillGap().then(render);
+    (window.requestIdleCallback || function (f) { setTimeout(f, 1); })(function () { loadHistory().then(fillGap).then(render); }, { timeout: 1500 });
     getLive(); setInterval(getLive, POLL);
     document.addEventListener('visibilitychange', function () { if (!document.hidden && (!live || Date.now() - live.t > POLL)) getLive(); });
     var rw; addEventListener('resize', function () { clearTimeout(rw); rw = setTimeout(render, 150); });
