@@ -18,6 +18,8 @@ How many days has Bitcoin spent at each price? This chart splits the BTC/USD pri
 
 History starts **September 17, 2014** and runs through **November 11, 2026** (4,439 completed daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Highest close $124,752.53 on October 6, 2025. History baked Nov 12, 2026, 2:10 a.m. PT.
 
+ 
+
 ## Days Bitcoin spent in each $10,000 bracket
 
 Yahoo Finance BTC-USD daily closes
@@ -49,7 +51,7 @@ Daily closes: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/),
 
 ## How to read the Bitcoin price range days
 
-Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($2,000) show detail; wide brackets ($15,000) show the big picture. The deeper-orange bar marked “← now” is today, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.
+Each bar is a price range in US dollars, for example $70,000 to $80,000. A longer bar means Bitcoin finished more days inside that range since 2014. Lower prices sit at the bottom. Narrow brackets ($2,000) show detail; wide brackets ($15,000) show the big picture. Each bar is softly color-coded by Bitcoin’s halving periods; a key under the chart names each period, and hovering or tapping one highlights it across every bracket. A 2D/3D switch after the description at the top opens an optional three-dimensional view of the same counts; 2D stays the default. Today’s bracket is marked with a deeper-orange outline and a “← now” label, counted at the live price until the UTC day closes. This bitcoin price history is in USD and is the same worldwide.
 
 ## Where the numbers come from
 
@@ -78,7 +80,7 @@ A completed day counts once, in the bracket that contains that day’s Yahoo Fin
 
 ### Why does the current bar move?
 
-Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today’s day moves to that bar. It is shown in a deeper orange with a “← now” label until the day closes.
+Today is not finished yet, so it is counted with the live Bitcoin price instead of a close. The page checks the price about once a minute, and if it crosses into another bracket, today’s day moves to that bar. Today’s bracket is marked with a deeper-orange outline and a “← now” label until the day closes. The bar itself stays color-coded by halving period.
 
 ### Where does the data come from?
 

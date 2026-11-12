@@ -111,7 +111,7 @@ export const site = {
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin has closed above $100,000 on 217 of 4,439 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "Bitcoin",
         "days above $100,000",
@@ -127,7 +127,7 @@ export const site = {
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin has closed above $50,000 on 1,146 of 4,439 days since Sep 17, 2014 (25.8%). First close above: Feb 17, 2021. Most recent: Nov 11, 2026. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "Bitcoin",
         "days above $50,000",
@@ -143,7 +143,7 @@ export const site = {
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin has closed above $70,000 on 630 of 4,439 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 11, 2026. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "Bitcoin",
         "days above $70,000",
@@ -159,7 +159,7 @@ export const site = {
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin has closed above $90,000 on 348 of 4,439 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "Bitcoin",
         "days above $90,000",
@@ -175,7 +175,7 @@ export const site = {
       "kind": "page",
       "lang": "en",
       "summary": "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 11, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "Bitcoin",
         "days per price bracket by year",
@@ -191,7 +191,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.439 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "bitcoin",
         "días en cada precio",
@@ -208,7 +208,7 @@ export const site = {
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 11, 2026: 401 days since, latest close $73,964.47, 40.7% below it.",
-      "last_updated": "2026-11-11",
+      "last_updated": "2026-11-12",
       "topics": [
         "Bitcoin",
         "highest close",

@@ -16,7 +16,7 @@ El tipo de cambio FIX que publica el Banco de México y una cotización de merca
 
 ### Tipo de cambio FIX (Banxico)
 
-$ 18.6192
+$ 18.6188
 
 pesos por 1 dólar · fecha 11 de noviembre de 2026
 
