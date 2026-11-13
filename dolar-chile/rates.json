@@ -4,17 +4,17 @@
  "base": "USD",
  "source": "cl.dolarapi.com",
  "label": "Dólar de cierre de mercado",
- "updated": "2026-11-12T20:01:21.400Z",
+ "updated": "2026-11-13T12:01:39.014Z",
  "rates": {
   "ref": {
    "compra": null,
-   "venta": 982.08,
-   "f": "2026-11-12T20:01:21.400Z"
+   "venta": 994.76,
+   "f": "2026-11-13T12:01:39.014Z"
   },
   "mercado": {
-   "compra": 994.66,
-   "venta": 996.1,
-   "f": "2026-11-12T20:01:21.400Z"
+   "compra": 998.97,
+   "venta": 1000.06,
+   "f": "2026-11-13T12:01:39.014Z"
   }
  }
 }

@@ -1,6 +1,6 @@
 ---
 title: "Bitcoin Days in Each $10,000 Price Bracket by Year (2014–2026)"
-description: "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 11, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes."
+description: "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 12, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/by-year/"
 last_updated: "2026-11-12"
 lang: "en"
@@ -12,7 +12,7 @@ Markets · Bitcoin
 
 # Bitcoin days in each $10,000 bracket, by year
 
-Each row is a calendar year and each column a $10,000 price range; the number is how many days that year Bitcoin closed inside the range. 2014 starts on September 17, 2014, the first day of the Yahoo Finance series, and 2026 runs through November 11, 2026 (315 days so far), with most of its closes in the $60k–$70k range.
+Each row is a calendar year and each column a $10,000 price range; the number is how many days that year Bitcoin closed inside the range. 2014 starts on September 17, 2014, the first day of the Yahoo Finance series, and 2026 runs through November 12, 2026 (316 days so far), with most of its closes in the $60k–$70k range.
 
 ## Days per $10,000 bracket per year
 
@@ -31,7 +31,7 @@ Days Bitcoin closed in each $10,000 USD bracket, by calendar year (“·” = no
 | 2023 | · | 13 | 249 | 75 | 28 | · | · | · | · | · | · | · | · | **365** |
 | 2024 | · | · | · | 3 | 41 | 58 | 191 | 21 | 5 | 38 | 9 | · | · | **366** |
 | 2025 | · | · | · | · | · | · | · | 5 | 76 | 76 | 103 | 95 | 10 | **365** |
-| 2026 | · | · | · | · | · | 4 | 119 | 108 | 67 | 17 | · | · | · | **315** |
+| 2026 | · | · | · | · | · | 4 | 119 | 109 | 67 | 17 | · | · | · | **316** |
 
 Each year at a glance (daily closes, USD)
 | Year | Days | Low | High | Last | Most common range |
@@ -48,9 +48,9 @@ Each year at a glance (daily closes, USD)
 | 2023 | 365 | $16,625 | $44,167 | $42,265 | $20k–$30k (249 d) |
 | 2024 | 366 | $39,507 | $106,141 | $93,429 | $60k–$70k (191 d) |
 | 2025 | 365 | $76,272 | $124,753 | $87,509 | $100k–$110k (103 d) |
-| 2026 | 315 | $58,559 | $96,929 | $73,964 | $60k–$70k (119 d) |
+| 2026 | 316 | $58,559 | $96,929 | $71,343 | $60k–$70k (119 d) |
 
-2014 is partial (from September 17, 2014) and 2026 is year to date (through November 11, 2026). “Last” is the year’s final close, or the latest close for the current year.
+2014 is partial (from September 17, 2014) and 2026 is year to date (through November 12, 2026). “Last” is the year’s final close, or the latest close for the current year.
 
 **Reference only.** Historical prices from public sources, which may be delayed. This is not financial advice: no buy or sell buttons, signals, predictions or affiliate links.
 
