@@ -2,8 +2,8 @@
   {
     "path": "/blitzandres/andresblitz",
     "title": "Overview",
-    "count": 10,
-    "uniques": 4
+    "count": 9,
+    "uniques": 3
   },
   {
     "path": "/blitzandres/andresblitz/blob/main/README.md",
@@ -20,6 +20,12 @@
   {
     "path": "/blitzandres/andresblitz/tree/main/dolar-cripto",
     "title": "/tree/main/dolar-cripto",
+    "count": 1,
+    "uniques": 1
+  },
+  {
+    "path": "/blitzandres/andresblitz/tree/main/projects/blitzys-world",
+    "title": "/tree/main/projects/blitzys-world",
     "count": 1,
     "uniques": 1
   }
