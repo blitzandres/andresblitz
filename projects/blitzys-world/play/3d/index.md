@@ -1,8 +1,8 @@
 ---
-title: "Blitzy's World — 3D Levels (v0.3) | Andrés Blitz"
-description: "Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL."
+title: "Blitzy's World — Odyssey: 3D Space Game (v1.0) | Andrés Blitz"
+description: "Blitzy's World v1.0 — fly an orb of light through 8 sectors built on real space phenomena: gravity assists, planetary rings, comets, binary stars, a pulsar, wormholes and a black hole. WebGL, procedural shaders, synthesised sound."
 url: "https://andresblitz.com/projects/blitzys-world/play/3d/"
-last_updated: "2026-10-31"
+last_updated: "2026-11-14"
 lang: "en-CA"
 ---
 
@@ -10,28 +10,40 @@ lang: "en-CA"
 
 # BLITZY'S WORLD
 
-DEEP SPACE · v0.3 · 4 LEVELS
+ODYSSEY · v1.0 · 8 SECTORS
 
-Catch stars. Evade aliens. Dodge asteroids.
+Fly an orb of light through eight real space phenomena, from a quiet home orbit to the edge of a black hole.
 
-W A S D — MOVE  ·  MOUSE — LOOK  
-SPACE — UP  ·  SHIFT — DOWN  
-P / ESC — PAUSE  ·  T — ERASE TRACE
+**W A S D** FLY WHERE YOU LOOK  ·  **MOUSE** LOOK  
+**SHIFT** BOOST  ·  **F** / **CLICK** PULSE  ·  **SPACE** / **C** UP / DOWN  
+**P** PAUSE  ·  **M** MUTE  ·  GAMEPAD SUPPORTED **LEFT THUMB** FLY  ·  **RIGHT THUMB** LOOK  
+**BOOST** HOLD  ·  **PULSE** SHATTERS ROCKS, STUNS HUNTERS
 
-L1TRAINING ORBIT
+ 
+
+SECTOR 1/8HOME ORBIT
 
 000000
 
-STARS0/0
+CRYSTALS0/0
 
-LIVES●●●
+SHIELD◆◆◆
+
+ENERGY
+
+HEAT
+
+TIME×1.00
 
 0.0s
 
-WASD MOVE · MOUSE LOOK · SPACE/SHIFT UP/DOWN
+WASD FLY · SHIFT BOOST · F PULSE  
+P PAUSE · M MUTE
 
-UP
+BOOST
 
-DOWN
+PULSE
+
+II
 
 [← Blitzy's World](https://andresblitz.com/projects/blitzys-world/)

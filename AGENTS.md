@@ -128,7 +128,7 @@ The Play item in the English site nav goes to the Space Invaders section on the 
   Markdown: https://andresblitz.com/projects/blitzys-world/index.md
 - [Play Blitzy's World — Full Screen](https://andresblitz.com/projects/blitzys-world/play/) (en): Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch.
   Markdown: https://andresblitz.com/projects/blitzys-world/play/index.md
-- [Blitzy's World — 3D Levels (v0.3)](https://andresblitz.com/projects/blitzys-world/play/3d/) (en): Blitzy's World v0.3 — 4 levels. Catch stars, evade aliens, dodge asteroids around a purple planet. Three.js WebGL.
+- [Blitzy's World — Odyssey: 3D Space Game (v1.0)](https://andresblitz.com/projects/blitzys-world/play/3d/) (en): Blitzy's World v1.0 — fly an orb of light through 8 sectors built on real space phenomena: gravity assists, planetary rings, comets, binary stars, a pulsar, wormholes and a black hole. WebGL, procedural shaders, synthesised sound.
   Markdown: https://andresblitz.com/projects/blitzys-world/play/3d/index.md
 - [BluthScan — Real-Time Bluetooth Scanner in 3D](https://andresblitz.com/projects/bluth-scan/) (en): BluthScan is a real-time Bluetooth Low Energy scanner by Andrés Blitz that renders nearby devices as a living 3D neural graph with bleak, Flask-SocketIO and 3d-force-graph. Demo uses simulated devices.
   Markdown: https://andresblitz.com/projects/bluth-scan/index.md

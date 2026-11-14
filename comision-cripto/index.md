@@ -2,7 +2,7 @@
 title: "Calculadora de comisión cripto: cuánto llega al enviar USDT"
 description: "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa."
 url: "https://andresblitz.com/comision-cripto/"
-last_updated: "2026-11-13"
+last_updated: "2026-11-14"
 lang: "es"
 ---
 
@@ -52,12 +52,12 @@ Tasa que ofrece (VES por USD)
 
 | Prioridad | sat/vB | Envío típico (~140 vB) |
 | --- | --- | --- |
-| Rápida (~10 min) | 3 | 420 sats ≈ 0,29 USD |
-| Media (~30 min) | 3 | 420 sats ≈ 0,29 USD |
-| Normal (~1 h) | 1 | 140 sats ≈ 0,1 USD |
-| Económica | 1 | 140 sats ≈ 0,1 USD |
+| Rápida (~10 min) | 1 | 140 sats ≈ 0,09 USD |
+| Media (~30 min) | 1 | 140 sats ≈ 0,09 USD |
+| Normal (~1 h) | 1 | 140 sats ≈ 0,09 USD |
+| Económica | 1 | 140 sats ≈ 0,09 USD |
 
-Fuente: [mempool.space](https://mempool.space/), 14 nov 2026, 1:40 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
+Fuente: [mempool.space](https://mempool.space/), 14 nov 2026, 8:51 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
 
 ## Cómo se calcula
 

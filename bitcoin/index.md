@@ -12,11 +12,11 @@ Markets · Bitcoin
 
 # Bitcoin: days spent at each price
 
-In plain English: Bitcoin has 4,440 daily closes on record since September 17, 2014, and this page sorts every one of them into US-dollar price ranges and counts the days in each. That shows where the price has actually spent its time: 44.4% of those days closed below $10,000, and 135 closed in the $70k–$80k range where the last close sits. It is a record of the past only, with no forecasts.
+In plain English: Bitcoin has 4,441 daily closes on record since September 17, 2014, and this page sorts every one of them into US-dollar price ranges and counts the days in each. That shows where the price has actually spent its time: 44.4% of those days closed below $10,000, and 351 closed in the $60k–$70k range where the last close sits. It is a record of the past only, with no forecasts.
 
 How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $2,000, $3,000, $4,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.
 
-History starts **September 17, 2014** and runs through **November 12, 2026** (4,440 completed daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Highest close $124,752.53 on October 6, 2025. History baked Nov 13, 2026, 6:51 a.m. PT.
+History starts **September 17, 2014** and runs through **November 13, 2026** (4,441 completed daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Highest close $124,752.53 on October 6, 2025. History baked Nov 14, 2026, 12:51 a.m. PT.
 
  
 
@@ -24,22 +24,22 @@ History starts **September 17, 2014** and runs through **November 12, 2026** (4,
 
 Yahoo Finance BTC-USD daily closes
 
-Last close: **$71,342.97** on November 12, 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)).
+Last close: **$68,249.27** on November 13, 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)).
 
 Bitcoin now (BTC/USD)—Live price loads in your browser.
 
 Bracket size: **$10,000** 
 
-Days by daily close, $10,000 brackets (September 17, 2014 – November 12, 2026, 4,440 completed days)
+Days by daily close, $10,000 brackets (September 17, 2014 – November 13, 2026, 4,441 completed days)
 | Price bracket (USD) | Days | Share | First reached |
 | --- | --- | --- | --- |
 | $120k–$130k | 10 | 0.2% | August 12, 2025 (2024–now) |
 | $110k–$120k | 95 | 2.1% | May 22, 2025 (2024–now) |
 | $100k–$110k | 112 | 2.5% | December 8, 2024 (2024–now) |
-| $90k–$100k | 131 | 3.0% | November 13, 2024 (2024–now) |
+| $90k–$100k | 131 | 2.9% | November 13, 2024 (2024–now) |
 | $80k–$90k | 148 | 3.3% | November 10, 2024 (2024–now) |
 | $70k–$80k | 135 | 3.0% | March 11, 2024 (2020–2024) |
-| $60k–$70k | 350 | 7.9% | March 13, 2021 (2020–2024) |
+| $60k–$70k | 351 | 7.9% | March 13, 2021 (2020–2024) |
 | $50k–$60k | 166 | 3.7% | February 17, 2021 (2020–2024) |
 | $40k–$50k | 258 | 5.8% | January 8, 2021 (2020–2024) |
 | $30k–$40k | 250 | 5.6% | January 2, 2021 (2020–2024) |

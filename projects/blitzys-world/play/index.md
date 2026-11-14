@@ -2,7 +2,7 @@
 title: "Play Blitzy's World — Full Screen | Andrés Blitz"
 description: "Play Blitzy's World full screen: fly a glowing orb through an endless universe, slingshot around planets and collect stardust. Keyboard, mouse and touch."
 url: "https://andresblitz.com/projects/blitzys-world/play/"
-last_updated: "2026-11-01"
+last_updated: "2026-11-14"
 lang: "en-CA"
 ---
 

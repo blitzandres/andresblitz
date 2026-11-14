@@ -2,7 +2,7 @@
 title: "Blitzy's World — Playable Space Game in the Browser | Andrés Blitz"
 description: "Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch."
 url: "https://andresblitz.com/projects/blitzys-world/"
-last_updated: "2026-11-09"
+last_updated: "2026-11-14"
 lang: "en-CA"
 ---
 
@@ -14,9 +14,9 @@ Game · Playable
 
 A glowing orb cruising through an endless universe. Fly it, slingshot around planets and collect stardust — right here in the browser.
 
-Local prototypeJavaScriptPlayable · v0.3
+Local prototypeJavaScriptPlayable · v1.0
 
-[Play 3D Levels](https://andresblitz.com/projects/blitzys-world/play/3d/) [Classic 2D](https://andresblitz.com/projects/blitzys-world/play/) Ships with andresblitz.com
+[Play Odyssey (3D)](https://andresblitz.com/projects/blitzys-world/play/3d/) [Classic 2D](https://andresblitz.com/projects/blitzys-world/play/) Ships with andresblitz.com
 
 Click or tap the board to play. W A S D or arrow keys to fly, Shift or Space to boost, T to erase the trace, H to go home. On a phone, drag anywhere to steer.
 
@@ -35,6 +35,17 @@ Version 0.2 keeps that idea and turns it into something you can actually cruise 
 -   Framerate-independent physics, a three-layer parallax starfield, auto-pause when you switch tabs, and a calmer mode for reduced-motion settings.
 -   The 3D build now has four levels: collect stars, evade aliens, dodge asteroids, and a professional HUD (v0.3).
 
+## Odyssey (v1.0, 3D)
+
+The 3D build was rebuilt from scratch as an eight-sector campaign. Each sector is built around one real space phenomenon, and every pixel and every sound is generated in the browser: there are no image or audio files.
+
+-   Eight sectors: gravity assists around the home planet, the rings of a gas giant, a dense asteroid belt, comets you can surf, a binary star that overheats you, a pulsar sweeping beams of radiation, three star systems linked by wormholes, and a black hole with gravitational lensing and time dilation.
+-   Real gravity from every body, so slingshots and orbits work. Near misses, slingshots and combos pay score; a three-star rating per sector rewards a clean, fast run.
+-   An energy system: boost drains it, stardust and comet tails refill it, and a Pulse shockwave shatters rocks and stuns hunters so you can ram them.
+-   Procedural shaders for planets, suns, rings, nebulae, the accretion disk and the warp gate, with a hand-written HDR pipeline: bloom, lensing, hyperspace streaks, chromatic aberration, tone mapping and film grain.
+-   A generative soundtrack and sound effects synthesised live with the Web Audio API, in a different key for each sector.
+-   Keyboard and mouse, touch (twin thumbs, boost and pulse buttons) and gamepad with rumble. Resolution adapts on the fly to hold the frame rate.
+
 ## What was broken in v0.1
 
 -   The camera spawned _inside_ the planet, so the first thing you saw was a murky purple blur instead of the world.
@@ -47,7 +58,7 @@ Version 0.2 keeps that idea and turns it into something you can actually cruise 
 
 Stack
 
-HTML5 CanvasJavaScript (no dependencies)Pointer EventsThree.js / WebGL (v0.1 prototype)
+HTML5 CanvasJavaScript (no dependencies)Pointer EventsThree.js / WebGL 2GLSL shadersWeb Audio APIGamepad API
 
 Source
 
@@ -59,8 +70,8 @@ June 2026
 
 Last updated
 
-October 2026
+November 2026
 
 Status
 
-Playable · v0.3 · 4 levels
+Playable · v1.0 · 8 sectors
