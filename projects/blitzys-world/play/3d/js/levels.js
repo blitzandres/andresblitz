@@ -162,4 +162,64 @@ export const LEVELS = [
     aliens: [{ n: 5, center: [0, 500, 0], speed: 330, agro: 1.0, shooters: 3 }],
     dust: 300, dustR: 1150, timeLimit: 170, par: 120, dilation: true,
   },
+  {
+    name: 'SUPERNOVA', tag: 'SUPERNOVA',
+    blurb: 'A giant star has just collapsed. Outrun the shock front.',
+    tip: 'The crystals spiral outward. Never stop, and never look back for long.',
+    sky: { a: 0x5a0a2a, b: 0x0a2a5a, c: 0xffd0a0, seed: 66.6, intensity: 0.9 },
+    sunDir: [0, 0.2, -1], sunColor: 0xffe8d8, starLit: true,
+    bodies: [
+      { kind: 'sun', r: 150, pos: [0, 0, 0], g: 620, c1: 0xeaf2ff, c2: 0x6aa8ff, light: 0xbfd8ff },
+    ],
+    spawn: [0, 120, 620], gate: [2050, 300, -2820],
+    nova: { start: 190, speed: 21, accel: 0.13, delay: 5 },
+    stars: [{ mode: 'spiral', n: 12, center: [0, 0, 0], rmin: 760, rmax: 3000, turns: 0.85, rise: 520 }],
+    asteroids: [{ mode: 'shell', n: 150, center: [0, 0, 0], rmin: 520, rmax: 3300, speed: 0.05, size: [9, 30], tint: 0x8a7a8c }],
+    aliens: [{ n: 3, center: [300, 200, 1500], speed: 330, agro: 1.0, shooters: 1 }],
+    dust: 320, dustR: 3000, timeLimit: 0, par: 85, powerups: 4,
+  },
 ];
+
+// ── Daily Run: one procedurally generated sector per calendar day, the same for everyone ──
+function rng32(seed) {
+  let a = seed >>> 0;
+  return () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+const hsl = (h, s, l) => {
+  const f = (n) => { const k = (n + h * 12) % 12, a = s * Math.min(l, 1 - l); return Math.round(255 * (l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)))); };
+  return (f(0) << 16) | (f(8) << 8) | f(4);
+};
+export function dailyKey(d = new Date()) { return d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0') + '-' + String(d.getUTCDate()).padStart(2, '0'); }
+export function dailyLevel(key = dailyKey()) {
+  let seed = 2166136261; for (const ch of key) seed = Math.imul(seed ^ ch.charCodeAt(0), 16777619);
+  const r = rng32(seed), pick = (a) => a[(r() * a.length) | 0], rr = (a, b) => a + r() * (b - a);
+  const unit = () => { const th = r() * 6.2832, y = r() * 2 - 1, s = Math.sqrt(1 - y * y); return [Math.cos(th) * s, y, Math.sin(th) * s]; };
+  const type = pick(['rock', 'gas', 'ice', 'lava', 'rock', 'gas']);
+  const hue = r(), R = type === 'gas' ? rr(220, 290) : rr(120, 190);
+  const colors = type === 'lava' ? [0x160c0a, hsl(hue, 0.4, 0.2), hsl(rr(0, 0.09), 1, 0.55)]
+    : [hsl(hue, 0.55, type === 'ice' ? 0.35 : 0.16), hsl((hue + rr(-0.08, 0.08) + 1) % 1, 0.6, type === 'ice' ? 0.75 : 0.5), hsl((hue + 0.1) % 1, 0.5, 0.85)];
+  const normal = [rr(-0.4, 0.4), 1, rr(-0.4, 0.4)];
+  const rings = (type === 'gas' && r() < 0.75) || r() < 0.2 ? { inner: R * 1.4, outer: R * rr(2.2, 2.8), c1: hsl(hue, 0.25, 0.4), c2: hsl(hue, 0.3, 0.85), normal } : undefined;
+  const bodies = [{ kind: 'planet', type, r: R, pos: [0, 0, 0], g: rr(380, 520), colors, atmo: hsl(hue, 0.9, 0.7), seed: r() * 90, rings }];
+  if (r() < 0.6) { const u = unit(), d = R + rr(380, 560); bodies.push({ kind: 'planet', type: pick(['ice', 'rock', 'lava']), r: rr(40, 70), pos: [u[0] * d, u[1] * d * 0.4, u[2] * d], g: 240, colors: [hsl(r(), 0.3, 0.25), hsl(r(), 0.3, 0.6), 0xff5a10], atmo: hsl(r(), 0.7, 0.7), seed: r() * 90 }); }
+  const belt = r() < 0.55, rmin = R + 150, rmax = R + rr(640, 820);
+  const hue2 = (hue + rr(0.3, 0.7)) % 1;
+  const lv = {
+    name: 'DAILY RUN', tag: key, daily: key,
+    blurb: 'One new sector every day, the same for every pilot.',
+    tip: 'Same sector for everyone today. Beat your own best.',
+    sky: { a: hsl(hue2, 0.75, 0.22), b: hsl((hue2 + 0.25) % 1, 0.7, 0.2), c: hsl((hue2 + 0.5) % 1, 0.9, 0.7), seed: r() * 80, intensity: rr(0.7, 1.0) },
+    sunDir: unit().map((v, i) => (i === 1 ? Math.abs(v) * 0.6 + 0.1 : v)), sunColor: 0xfff4e8,
+    bodies, spawn: [0, R * 0.5 + 60, R + rr(420, 620)], gate: unit().map((v) => v * (R + 760)),
+    stars: [belt ? { mode: 'ring', n: 9, center: [0, 0, 0], rmin: rmin + 20, rmax: rmax - 20, normal, jitter: 40 } : { mode: 'shell', n: 9, center: [0, 0, 0], rmin, rmax }, { mode: 'shell', n: 3, center: [0, 0, 0], rmin: rmax, rmax: rmax + 200 }],
+    asteroids: [belt ? { mode: 'belt', n: Math.round(rr(140, 260)), center: [0, 0, 0], rmin, rmax, thick: rr(20, 70), normal, speed: 0.1, size: [6, 28], tint: hsl(hue, 0.15, 0.55) }
+      : { mode: 'shell', n: Math.round(rr(50, 90)), center: [0, 0, 0], rmin, rmax: rmax + 200, speed: 0.08, size: [8, 26], tint: hsl(hue, 0.15, 0.55) }],
+    aliens: [{ n: 3 + ((r() * 3) | 0), center: [0, 0, 0], speed: rr(270, 320), agro: rr(0.7, 1.0), shooters: 1 + ((r() * 2) | 0) }],
+    dust: 280, dustR: rmax + 200, timeLimit: 0, par: 110, powerups: 3,
+  };
+  if (r() < 0.45) {
+    lv.comets = [{ a: rmax + 150, b: rmax * 0.6, normal: unit(), phase: r() * 6, speed: 0.2 }, { a: rmax, b: rmax * 0.75, normal: unit(), phase: r() * 6, speed: -0.22 }];
+    lv.stars.push({ mode: 'comet', n: 2 });
+  }
+  return lv;
+}

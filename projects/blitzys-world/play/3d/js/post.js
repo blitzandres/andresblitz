@@ -64,11 +64,12 @@ export class Post {
       uBH: { value: new THREE.Vector3(0.5, 0.5, 0) }, uBHStrength: { value: 0 },
       uWarp: { value: 0 }, uWarpCenter: { value: new THREE.Vector2(0.5, 0.5) },
       uFlash: { value: new THREE.Vector4(0, 0, 0, 0) },
+      uSun: { value: new THREE.Vector3(0.5, 0.5, 0) },
     };
     this.mComposite = pass(/* glsl */`
       uniform sampler2D tScene, tBloom;
       uniform float uBloom, uExposure, uTime, uAspect, uAberration, uVignette, uGrain, uBHStrength, uWarp;
-      uniform vec3 uBH; uniform vec2 uWarpCenter; uniform vec4 uFlash;
+      uniform vec3 uBH, uSun; uniform vec2 uWarpCenter; uniform vec4 uFlash;
       varying vec2 vUv;
       float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
       vec3 aces(vec3 x){ return clamp((x * (2.51 * x + 0.03)) / (x * (2.43 * x + 0.59) + 0.14), 0.0, 1.0); }
@@ -98,6 +99,14 @@ export class Post {
         } else {
           vec2 ab = fromC * uAberration * (0.4 + dot(fromC, fromC) * 4.0);
           c = vec3(sampleHDR(uv + ab).r, sampleHDR(uv).g, sampleHDR(uv - ab).b);
+        }
+        // god rays: smear the bloom buffer along rays from the light source
+        // (after the radial-blur light shafts in three.js's GodRaysShader, Sousa 2008)
+        if (uSun.z > 0.001) {
+          vec2 stepv = (uSun.xy - uv) / 14.0 * 0.92;
+          vec2 p = uv; vec3 g = vec3(0.0); float decay = 1.0;
+          for (int i = 0; i < 14; i++) { p += stepv; g += texture2D(tBloom, p).rgb * decay; decay *= 0.9; }
+          c += g * (uSun.z / 14.0);
         }
         c += uFlash.rgb * uFlash.a;
         c = aces(c * uExposure);

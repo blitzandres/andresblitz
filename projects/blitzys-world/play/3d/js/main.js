@@ -3,7 +3,8 @@ import * as THREE from 'three';
 import * as SH from './shaders.js';
 import { Post } from './post.js';
 import { Sound } from './audio.js';
-import { LEVELS } from './levels.js';
+import { LEVELS, dailyLevel, dailyKey } from './levels.js';
+import { STAR_COUNT, STAR_DATA } from './stars.js';
 
 const $ = (id) => document.getElementById(id);
 const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
@@ -104,15 +105,19 @@ function bakeSky(cfg) {
   scene.background = cubeRT.texture;
 }
 const starPoints = (() => {
-  const N = LOW() ? 2200 : 4200, r = mulberry(99);
+  // The real night sky: naked-eye stars from the HYG catalogue (see stars.js), brightest first.
+  const raw = atob(STAR_DATA), dv = new DataView(Uint8Array.from(raw, (ch) => ch.charCodeAt(0)).buffer);
+  const N = Math.min(STAR_COUNT, LOW() ? 3200 : STAR_COUNT);
   const pos = new Float32Array(N * 3), colr = new Float32Array(N * 3), size = new Float32Array(N);
-  const pal = [[1, 1, 1], [0.8, 0.88, 1], [1, 0.9, 0.75], [0.75, 0.8, 1], [1, 0.75, 0.65]];
   for (let i = 0; i < N; i++) {
-    const th = r() * Math.PI * 2, ph = Math.acos(2 * r() - 1), R = 20000;
-    pos[i * 3] = R * Math.sin(ph) * Math.cos(th); pos[i * 3 + 1] = R * Math.cos(ph); pos[i * 3 + 2] = R * Math.sin(ph) * Math.sin(th);
-    const c = pal[(r() * pal.length) | 0];
-    colr.set(c, i * 3);
-    size[i] = 0.6 + Math.pow(r(), 6) * 3.4;
+    const ra = dv.getUint16(i * 6, true) / 65535 * Math.PI * 2, dec = dv.getInt16(i * 6 + 2, true) / 32767 * Math.PI / 2;
+    const mag = dv.getUint8(i * 6 + 4) / 30 - 2, ci = dv.getUint8(i * 6 + 5) / 100 - 0.5, R = 20000;
+    pos[i * 3] = R * Math.cos(dec) * Math.cos(ra); pos[i * 3 + 1] = R * Math.sin(dec); pos[i * 3 + 2] = -R * Math.cos(dec) * Math.sin(ra);
+    // B-V colour index → star colour: blue-white giants to orange-red
+    const k = ci < 0.4 ? clamp((ci + 0.3) / 0.7, 0, 1) : clamp((ci - 0.4) / 1.2, 0, 1);
+    if (ci < 0.4) { colr[i * 3] = lerp(0.6, 1, k); colr[i * 3 + 1] = lerp(0.72, 1, k); colr[i * 3 + 2] = 1; }
+    else { colr[i * 3] = 1; colr[i * 3 + 1] = lerp(1, 0.7, k); colr[i * 3 + 2] = lerp(1, 0.42, k); }
+    size[i] = clamp(4.2 - 0.6 * (mag + 1.5), 0.15, 4.2);
   }
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
@@ -127,6 +132,11 @@ const speedDust = (() => {
   const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
   const p = new THREE.Points(g, speedDustMat); p.frustumCulled = false; scene.add(p); return p;
 })();
+
+// The sector's sun, far away, for sectors that have no star of their own up close.
+const farSun = new THREE.Group();
+farSun.add(glowSprite(hdr(0xffffff, 3.2), 900, 1), glowSprite(hdr(0xffffff, 0.8), 4200, 0.8));
+scene.add(farSun);
 
 // ── Lights ──────────────────────────────────────────────────────────────────
 const ambient = new THREE.AmbientLight(0x2a2440, 0.9); scene.add(ambient);
@@ -240,6 +250,8 @@ let L = LEVELS[0], levelIndex = 0;
 const bodies = [], crystals = [], aliens = [], comets = [], portals = [], shots = [];
 let asteroidSets = [], pulsar = null, blackhole = null, gate = null, dust = null;
 const timeMats = []; // materials with a uTime uniform
+const powerups = [];
+let nova = null, isDaily = false;
 
 function disposeWorld() {
   world.traverse((o) => {
@@ -286,8 +298,11 @@ function buildBody(cfg, sunDir) {
     const mat = SH.sunMaterial(cfg.c1, cfg.c2);
     b.mesh = new THREE.Mesh(new THREE.SphereGeometry(cfg.r, seg, seg / 2), mat);
     group.add(b.mesh); timeMats.push(mat);
-    group.add(glowSprite(hdr(cfg.c2, 0.7), cfg.r * 7.5, 0.9));
-    group.add(glowSprite(hdr(cfg.c1, 0.45), cfg.r * 3.4, 0.8));
+    group.add(glowSprite(hdr(cfg.c2, 0.4), cfg.r * 7.5, 0.9));
+    const cm = SH.coronaMaterial(cfg.c1, 1 / 3.4);
+    b.corona = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), cm);
+    b.corona.scale.setScalar(cfg.r * 3.4);
+    group.add(b.corona); timeMats.push(cm);
     group.add(new THREE.PointLight(cfg.light, 2.2, 0, 0));
     b.hot = true;
   } else if (cfg.kind === 'blackhole') {
@@ -395,7 +410,10 @@ function buildCrystals(groups, r) {
     const center = V3(g.center), bs = g.normal ? basis(V3(g.normal)) : null;
     for (let k = 0; k < g.n; k++) {
       const p = new THREE.Vector3();
-      if (g.mode === 'ring') {
+      if (g.mode === 'spiral') {
+        const f = k / (g.n - 1), ang = f * g.turns * Math.PI * 2, R = g.rmin + f * (g.rmax - g.rmin);
+        p.set(Math.cos(ang) * R, Math.sin(f * 7) * g.rise * (0.3 + 0.7 * f), Math.sin(ang) * R).add(center);
+      } else if (g.mode === 'ring') {
         const ang = (k / g.n) * Math.PI * 2 + r() * 0.5, R = g.rmin + r() * (g.rmax - g.rmin);
         p.copy(center).addScaledVector(bs.u, Math.cos(ang) * R).addScaledVector(bs.v, Math.sin(ang) * R).addScaledVector(bs.n, (r() * 2 - 1) * g.jitter);
       } else {
@@ -403,6 +421,8 @@ function buildCrystals(groups, r) {
       }
       // keep clear of solid bodies
       for (const b of bodies) { const d = p.distanceTo(b.pos); if (d < b.r + 60) p.sub(b.pos).setLength(b.r + 80).add(b.pos); }
+      // never right on top of the spawn point
+      _p.set(L.spawn[0], L.spawn[1], L.spawn[2]); if (p.distanceTo(_p) < 220) p.sub(_p).setLength(240).add(_p);
       addCrystal(p, {});
     }
   }
@@ -484,10 +504,34 @@ function makePortal(pos, color, radius) {
   return { grp, mat, pos: grp.position, radius };
 }
 
+// Power-ups: shield cell, crystal magnet, overdrive
+const POWER = { shield: { color: 0x66ddff, label: 'SHIELD CELL' }, magnet: { color: 0xff66dd, label: 'MAGNET' }, over: { color: 0xfff066, label: 'OVERDRIVE' } };
+const powerGeo = new THREE.IcosahedronGeometry(11, 0);
+function buildPowerups(r) {
+  const n = L.powerups === undefined ? 3 : L.powerups, anchors = crystals.filter((c) => !c.comet);
+  if (!anchors.length) return;
+  const types = ['shield', 'magnet', 'over'];
+  for (let k = 0; k < n; k++) {
+    const type = types[k % 3], def = POWER[type];
+    const p = randUnit(r).multiplyScalar(110 + r() * 80).add(anchors[(r() * anchors.length) | 0].pos);
+    for (const b of bodies) { const d = p.distanceTo(b.pos); if (d < b.r + 50) p.sub(b.pos).setLength(b.r + 70).add(b.pos); }
+    const mesh = new THREE.Mesh(powerGeo, new THREE.MeshBasicMaterial({ color: hdr(def.color, 2.4), wireframe: true }));
+    mesh.userData.sharedGeo = true;
+    const core = glowSprite(hdr(def.color, 1.1), 46, 0.9);
+    mesh.position.copy(p); core.position.copy(p);
+    world.add(mesh, core);
+    powerups.push({ type, def, mesh, core, pos: mesh.position, alive: true });
+  }
+}
+
 function buildLevel(idx) {
   disposeWorld();
-  levelIndex = idx; L = LEVELS[idx];
-  const r = mulberry(1000 + idx * 7919);
+  powerups.length = 0; nova = null;
+  isDaily = idx === 'daily';
+  if (isDaily) L = dailyLevel(); else { levelIndex = idx; L = LEVELS[idx]; }
+  let seed = 1000 + (isDaily ? 0 : idx * 7919);
+  if (isDaily) for (const ch of L.daily) seed = Math.imul(seed ^ ch.charCodeAt(0), 16777619) >>> 0;
+  const r = mulberry(seed);
   bakeSky(L.sky);
   const sunDir = V3(L.sunDir).normalize();
   sunLight.position.copy(sunDir).multiplyScalar(1000);
@@ -504,16 +548,32 @@ function buildLevel(idx) {
   }
   gate = makePortal(V3(L.gate), 0xfff0b0, 78);
   gate.grp.visible = false; gate.open = 0; gate.active = false;
-  sound.setMood(idx);
+  buildPowerups(r);
+  if (L.nova) {
+    const mat = SH.shockMaterial();
+    const mesh = new THREE.Mesh(new THREE.SphereGeometry(1, 96, 64), mat);
+    mesh.scale.setScalar(L.nova.start); mesh.renderOrder = 5;
+    world.add(mesh); timeMats.push(mat);
+    nova = { mesh, R: L.nova.start };
+  }
+  farSun.visible = !L.bodies.some((b) => b.kind === 'sun');
+  for (const s of farSun.children) s.material.color.set(L.sunColor).multiplyScalar(s === farSun.children[0] ? 3.2 : 0.8);
+  sound.setMood(isDaily ? 3 : idx);
   updateWorld(0);
 }
 
 // ── Game state ──────────────────────────────────────────────────────────────
-let mode = 'title'; // title | playing | warping | paused | levelclear | gameover | victory
+let mode = 'title'; // title | playing | warping | paused | photo | levelclear | gameover | victory
 let score = 0, shields = 3, energy = 100, combo = 0, lastPickup = -99, invuln = 0;
 let levelTime = 0, clockTime = 0, starsGot = 0, starsTotal = 0, tookDamage = false;
 let heat = 0, dilation = 1, mult = 1, pulseCd = 0, pulseT = -1, portalCd = 0, slingCd = 0;
 let warpIn = 0, warpOut = 0, shake = 0, hitFlash = 0, shieldFlash = 0, t = 0, surfT = 0, alarmT = 0;
+let magnetT = 0, overT = 0, camDist = 150, wantShot = false, lastResult = null;
+// ghost of your best run: positions sampled every GHOST_DT seconds
+const GHOST_DT = 0.2;
+let rec = [], recT = 0, ghost = null;
+const ghostOrb = glowSprite(hdr(0x66ffe0, 0.7), 46, 0.55); ghostOrb.visible = false; scene.add(ghostOrb);
+const ghostKey = () => 'bw1_ghost_' + (isDaily ? 'daily' : levelIndex);
 const flashCol = new THREE.Vector4(0, 0, 0, 0);
 const progress = store.get('bw1_progress', { cleared: 0, medals: [], best: [] });
 progress.cleared = Math.max(progress.cleared || 0, store.get('bw_cleared', 0) > 0 ? 1 : 0);
@@ -526,6 +586,7 @@ const ui = {
   level: $('h-level'), name: $('h-name'), score: $('h-score'), combo: $('h-combo'), stars: $('h-stars'), shield: $('h-shield'),
   energy: $('h-energy'), timer: $('h-timer'), heatRow: $('h-heat-row'), heat: $('h-heat'), dilRow: $('h-dil-row'), dil: $('h-dil'),
   obj: $('h-obj'), mute: $('b-mute'), qual: $('b-qual'), fx: $('fx').getContext('2d'),
+  photo: $('b-photo'), share: $('b-share'), photoBar: $('photo-bar'),
 };
 function toast(msg, ms = 1500) {
   ui.toast.textContent = msg; ui.toast.classList.add('on');
@@ -537,10 +598,11 @@ function flash(msg, ms = 1700) {
 }
 const pad6 = (n) => String(Math.floor(n)).padStart(6, '0');
 function hudStatic() {
-  ui.level.textContent = `SECTOR ${levelIndex + 1}/${LEVELS.length}`;
+  ui.level.textContent = isDaily ? 'DAILY RUN' : `SECTOR ${levelIndex + 1}/${LEVELS.length}`;
   ui.name.textContent = `${L.name} · ${L.tag}`;
   ui.heatRow.style.display = L.heat ? '' : 'none';
-  ui.dilRow.style.display = L.dilation ? '' : 'none';
+  ui.dilRow.style.display = L.dilation || L.nova ? '' : 'none';
+  ui.dilRow.firstElementChild.textContent = L.nova ? 'SHOCK' : 'TIME'; ui.dil.style.color = '';
   ui.timer.style.display = L.timeLimit ? '' : 'none';
   hudDynamic(true);
 }
@@ -559,7 +621,13 @@ function hudDynamic(force) {
   }
   if (L.heat) { const h = Math.round(heat); if (_hs.h !== h) { ui.heat.style.width = h + '%'; ui.heat.classList.toggle('low', h > 70); _hs.h = h; } }
   if (L.dilation) { const d = dilation.toFixed(2); if (_hs.d !== d) { ui.dil.textContent = `×${d} · PTS ×${mult.toFixed(1)}`; _hs.d = d; } }
-  const obj = gate && gate.active ? 'WARP GATE OPEN — FLY THROUGH IT' : `COLLECT ${starsTotal - starsGot} STAR CRYSTAL${starsTotal - starsGot === 1 ? '' : 'S'}`;
+  if (L.nova && nova) {
+    const d = Math.max(0, Math.round((ball.length() - nova.R) / 10) * 10);
+    if (_hs.nv !== d) { ui.dil.textContent = d + ' AWAY'; ui.dil.style.color = d < 320 ? '#ff6b8a' : ''; _hs.nv = d; }
+  }
+  let obj = gate && gate.active ? 'WARP GATE OPEN — FLY THROUGH IT' : `COLLECT ${starsTotal - starsGot} STAR CRYSTAL${starsTotal - starsGot === 1 ? '' : 'S'}`;
+  if (magnetT > 0) obj += ` · MAGNET ${Math.ceil(magnetT)}s`;
+  if (overT > 0) obj += ` · OVERDRIVE ${Math.ceil(overT)}s`;
   if (force || _hs.obj !== obj) { ui.obj.textContent = obj; _hs.obj = obj; }
 }
 function setPlayingUI(on) {
@@ -578,6 +646,12 @@ function buildCards() {
     else b.disabled = true;
     ui.cards.appendChild(b);
   });
+  const key = dailyKey(), d = progress.daily && progress.daily.key === key ? progress.daily : null;
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'lcard daily' + (isDaily ? ' cur' : '');
+  b.innerHTML = `<span class="ln">DAILY · ${key}</span><span class="nm">DAILY RUN</span><span class="md">${d ? medalStr(d.medals) + ' ' + d.best : 'NEW TODAY'}</span>`;
+  b.addEventListener('click', (e) => { e.stopPropagation(); sound.start(); startLevel('daily', false); });
+  ui.cards.appendChild(b);
 }
 function showOverlay({ title, sub = '', blurb = '', btn = 'PLAY', keys = false, cards = false, stats = '' }) {
   ui.overlay.classList.add('on');
@@ -587,6 +661,9 @@ function showOverlay({ title, sub = '', blurb = '', btn = 'PLAY', keys = false, 
   ui.stats.innerHTML = stats; ui.stats.style.display = stats ? 'block' : 'none';
   ui.toast.classList.remove('on'); ui.flash.classList.remove('on');
   if (cards) buildCards();
+  ui.fx.clearRect(0, 0, innerWidth, innerHeight);
+  ui.photo.style.display = mode === 'paused' ? '' : 'none';
+  ui.share.style.display = (mode === 'levelclear' || mode === 'victory') && lastResult ? '' : 'none';
   setPlayingUI(false);
   ui.btn.focus({ preventScroll: true });
 }
@@ -594,7 +671,11 @@ const tapWord = isTouch ? 'TAP' : 'CLICK';
 
 // ── Flow ────────────────────────────────────────────────────────────────────
 function startLevel(idx, keepScore) {
-  buildLevel(clamp(idx, 0, LEVELS.length - 1));
+  buildLevel(idx === 'daily' ? 'daily' : clamp(idx, 0, LEVELS.length - 1));
+  magnetT = overT = 0; camDist = 150; rec = []; recT = 0;
+  ghost = store.get(ghostKey(), null);
+  if (ghost && isDaily && ghost.key !== L.daily) ghost = null;
+  ui.photoBar.classList.remove('on');
   if (!keepScore) score = 0;
   shields = 3; energy = 100; combo = 0; lastPickup = -99; invuln = 1.5; tookDamage = false;
   levelTime = clockTime = 0; starsGot = 0; starsTotal = crystals.length; heat = 0; dilation = 1; mult = 1;
@@ -619,7 +700,19 @@ function pauseGame() {
   for (const k in keys) keys[k] = false;
   if (document.pointerLockElement) document.exitPointerLock();
   sound.suspend(true);
-  showOverlay({ title: 'PAUSED', sub: `SECTOR ${levelIndex + 1} · ${L.name}`, blurb: L.tip, btn: `${tapWord} TO RESUME`, keys: true, cards: true });
+  showPause();
+}
+function showPause() {
+  mode = 'paused'; camDist = 150;
+  ui.photoBar.classList.remove('on');
+  showOverlay({ title: 'PAUSED', sub: isDaily ? `DAILY RUN · ${L.daily}` : `SECTOR ${levelIndex + 1} · ${L.name}`, blurb: L.tip, btn: `${tapWord} TO RESUME`, keys: true, cards: true });
+}
+function enterPhoto() {
+  if (mode !== 'paused') return;
+  mode = 'photo';
+  ui.overlay.classList.remove('on');
+  ui.fx.clearRect(0, 0, innerWidth, innerHeight);
+  ui.photoBar.classList.add('on');
 }
 function resume() {
   mode = 'playing'; ui.overlay.classList.remove('on'); setPlayingUI(true); sound.suspend(false); requestLock();
@@ -636,19 +729,30 @@ function levelClear() {
   const shieldBonus = shields * 300;
   score += timeBonus + shieldBonus;
   const medals = 1 + (tookDamage ? 0 : 1) + (levelTime <= L.par ? 1 : 0);
-  progress.medals[levelIndex] = Math.max(progress.medals[levelIndex] || 0, medals);
-  progress.best[levelIndex] = Math.max(progress.best[levelIndex] || 0, Math.floor(score));
-  progress.cleared = Math.max(progress.cleared, levelIndex + 1);
+  if (isDaily) {
+    const d = progress.daily && progress.daily.key === L.daily ? progress.daily : { key: L.daily, best: 0, medals: 0 };
+    d.best = Math.max(d.best, Math.floor(score)); d.medals = Math.max(d.medals, medals); progress.daily = d;
+  } else {
+    progress.medals[levelIndex] = Math.max(progress.medals[levelIndex] || 0, medals);
+    progress.best[levelIndex] = Math.max(progress.best[levelIndex] || 0, Math.floor(score));
+    progress.cleared = Math.max(progress.cleared, levelIndex + 1);
+  }
   saveProgress();
+  // keep the fastest run as the ghost to race next time
+  const old = store.get(ghostKey(), null);
+  if (!old || (isDaily && old.key !== L.daily) || levelTime < old.t) store.set(ghostKey(), { t: +levelTime.toFixed(2), key: L.daily || '', p: rec });
+  lastResult = { name: L.name + (isDaily ? ' ' + L.daily : ''), score: Math.floor(score), medals, time: levelTime };
   sound.clear(); sound.suspend(true);
-  const last = levelIndex + 1 >= LEVELS.length;
+  const last = !isDaily && levelIndex + 1 >= LEVELS.length;
   const stats = `<div><span>TIME</span><b>${levelTime.toFixed(1)}s <i>par ${L.par}s</i></b></div>`
     + `<div><span>TIME BONUS</span><b>+${timeBonus}</b></div><div><span>SHIELD BONUS</span><b>+${shieldBonus}</b></div>`
     + `<div><span>SCORE</span><b>${pad6(score)}</b></div><div class="medals">${medalStr(medals)}</div>`
     + `<div class="mnote">★ clear · ★ no damage · ★ under par</div>`;
-  if (last) {
+  if (isDaily) {
+    showOverlay({ title: 'DAILY RUN CLEAR', sub: `${L.daily} · BEST ${pad6(progress.daily.best)}`, blurb: 'A new sector arrives at midnight UTC. Your fastest run is saved as a ghost to race.', btn: 'RUN IT AGAIN', cards: true, stats });
+  } else if (last) {
     mode = 'victory';
-    showOverlay({ title: 'ODYSSEY COMPLETE', sub: `FINAL SCORE ${pad6(score)}`, blurb: 'Blitzy crossed the event horizon of the map and came back. Every sector is open for a three-star run.', btn: 'PLAY AGAIN', cards: true, stats });
+    showOverlay({ title: 'ODYSSEY COMPLETE', sub: `FINAL SCORE ${pad6(score)}`, blurb: 'Blitzy outran a supernova and came home. Every sector is open for a three-star run, and the Daily Run changes every day.', btn: 'PLAY AGAIN', cards: true, stats });
   } else {
     showOverlay({ title: 'SECTOR CLEAR', sub: `NEXT · ${LEVELS[levelIndex + 1].name} · ${LEVELS[levelIndex + 1].tag}`, blurb: LEVELS[levelIndex + 1].blurb, btn: 'JUMP TO NEXT SECTOR', stats });
   }
@@ -660,16 +764,31 @@ function gameOver(reason) {
   burst(ball, 90, 420, 0.9, 0.5, 1.4, 14, 1.6);
   orb.visible = orbGlow.visible = false;
   sound.over(); sound.suspend(true);
-  progress.best[levelIndex] = Math.max(progress.best[levelIndex] || 0, Math.floor(score)); saveProgress();
+  if (!isDaily) { progress.best[levelIndex] = Math.max(progress.best[levelIndex] || 0, Math.floor(score)); saveProgress(); }
   showOverlay({ title: reason || 'SIGNAL LOST', sub: `SCORE ${pad6(score)} · ${L.name}`, blurb: L.tip, btn: 'RETRY SECTOR', keys: false, cards: true });
 }
 function overlayAction() {
   sound.start();
   if (mode === 'paused') resume();
-  else if (mode === 'levelclear') startLevel(levelIndex + 1, true);
+  else if (mode === 'photo') showPause();
+  else if (mode === 'levelclear') startLevel(isDaily ? 'daily' : levelIndex + 1, !isDaily);
   else if (mode === 'victory') startLevel(0, false);
-  else if (mode === 'gameover' || mode === 'title') startLevel(levelIndex, false);
+  else if (mode === 'gameover' || mode === 'title') startLevel(isDaily ? 'daily' : levelIndex, false);
 }
+ui.photo.addEventListener('click', (e) => { e.stopPropagation(); enterPhoto(); });
+$('p-save').addEventListener('click', () => { wantShot = true; });
+$('p-back').addEventListener('click', () => showPause());
+ui.share.addEventListener('click', async (e) => {
+  e.stopPropagation();
+  if (!lastResult) return;
+  const url = 'https://andresblitz.com/projects/blitzys-world/play/3d/';
+  const text = `Blitzy's World · ${lastResult.name}: ${lastResult.score} pts in ${lastResult.time.toFixed(1)}s ${medalStr(lastResult.medals)}`;
+  try {
+    if (navigator.share) await navigator.share({ title: "Blitzy's World", text, url });
+    else { await navigator.clipboard.writeText(text + ' ' + url); ui.share.textContent = 'COPIED'; setTimeout(() => { ui.share.textContent = 'SHARE SCORE'; }, 1600); }
+  } catch (_) {}
+});
+addEventListener('wheel', (e) => { if (mode === 'photo') camDist = clamp(camDist * (e.deltaY > 0 ? 1.12 : 0.89), 40, 1400); }, { passive: true });
 ui.btn.addEventListener('click', (e) => { e.stopPropagation(); overlayAction(); });
 ui.mute.addEventListener('click', (e) => { e.stopPropagation(); sound.start(); ui.mute.textContent = sound.toggleMute() ? 'SOUND OFF' : 'SOUND ON'; });
 ui.mute.textContent = sound.muted ? 'SOUND OFF' : 'SOUND ON';
@@ -695,13 +814,14 @@ function look(dx, dy, k) { yaw -= dx * k; pitch = clamp(pitch + dy * k, -1.35, 1
 document.addEventListener('mousemove', (e) => { if (locked && mode === 'playing') look(e.movementX, e.movementY, 0.0023); });
 let drag = null;
 renderer.domElement.addEventListener('mousedown', (e) => {
+  if (mode === 'photo') { drag = { x: e.clientX, y: e.clientY }; return; }
   if (mode !== 'playing') return;
   if (locked) { if (e.button === 0 || e.button === 2) wantPulse = true; }
   else { drag = { x: e.clientX, y: e.clientY }; requestLock(); }
 });
 addEventListener('mouseup', () => { drag = null; });
 addEventListener('mousemove', (e) => {
-  if (!drag || locked || mode !== 'playing') return;
+  if (!drag || locked || (mode !== 'playing' && mode !== 'photo')) return;
   look(e.clientX - drag.x, e.clientY - drag.y, 0.005); drag.x = e.clientX; drag.y = e.clientY;
 });
 renderer.domElement.addEventListener('contextmenu', (e) => e.preventDefault());
@@ -710,8 +830,10 @@ document.addEventListener('keydown', (e) => {
   keys[e.code] = true;
   if (e.code === 'KeyF' || e.code === 'KeyE') wantPulse = true;
   if (e.code === 'KeyM') ui.mute.textContent = sound.toggleMute() ? 'SOUND OFF' : 'SOUND ON';
+  if (e.code === 'Escape' && mode === 'photo') { showPause(); return; }
   if ((e.code === 'KeyP' || e.code === 'Escape') && mode === 'playing') pauseGame();
   else if (e.code === 'KeyP' && mode === 'paused') resume();
+  else if (e.code === 'Enter' && mode === 'photo') wantShot = true;
   else if (e.code === 'Enter' && mode !== 'playing' && mode !== 'warping') overlayAction();
   if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) e.preventDefault();
 });
@@ -722,9 +844,9 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) pause
 const stickEl = $('stick'), knob = stickEl.firstElementChild;
 const tMove = { id: null, sx: 0, sy: 0, x: 0, y: 0 }, tLook = { id: null, x: 0, y: 0 };
 renderer.domElement.addEventListener('touchstart', (e) => {
-  if (mode !== 'playing') return;
+  if (mode !== 'playing' && mode !== 'photo') return;
   for (const tc of e.changedTouches) {
-    if (tc.clientX < innerWidth / 2 && tMove.id === null) {
+    if (mode === 'playing' && tc.clientX < innerWidth / 2 && tMove.id === null) {
       Object.assign(tMove, { id: tc.identifier, sx: tc.clientX, sy: tc.clientY, x: tc.clientX, y: tc.clientY });
       stickEl.style.left = tc.clientX + 'px'; stickEl.style.top = tc.clientY + 'px'; stickEl.style.display = 'block'; knob.style.transform = '';
     } else if (tLook.id === null) Object.assign(tLook, { id: tc.identifier, x: tc.clientX, y: tc.clientY });
@@ -882,6 +1004,19 @@ function updateWorld(dt) {
     c.glow.scale.setScalar(56 + Math.sin(t * 4 + c.spin * 7) * 10);
   }
   for (const p of portals) { p.grp.lookAt(camera.position); }
+  for (const b of bodies) if (b.corona) b.corona.lookAt(camera.position);
+  for (const p of powerups) if (p.alive) { p.mesh.rotation.y += dt * 1.4; p.mesh.rotation.x += dt * 0.9; p.core.scale.setScalar(42 + Math.sin(t * 5) * 8); }
+  if (nova) {
+    // the shock front accelerates outward and sweeps everything before it
+    const tt = mode === 'title' ? 0 : Math.max(0, levelTime - L.nova.delay);
+    nova.R = L.nova.start + L.nova.speed * tt + L.nova.accel * tt * tt;
+    nova.mesh.scale.setScalar(nova.R);
+    const R2 = nova.R * nova.R;
+    for (const set of asteroidSets) for (let i = 0; i < set.items.length; i++) { const a = set.items[i]; if (a.alive && a.pos.lengthSq() < R2) killAsteroid(set, i); }
+    for (const c of crystals) if (c.alive && c.pos.lengthSq() < (nova.R + 45) ** 2) c.pos.setLength(nova.R + 45);
+    for (const p of powerups) if (p.alive && p.pos.lengthSq() < (nova.R + 45) ** 2) { p.pos.setLength(nova.R + 45); p.core.position.copy(p.pos); }
+    for (const al of aliens) if (al.alive && al.pos.lengthSq() < R2) { al.alive = false; world.remove(al.grp); burst(al.pos, 50, 300, 1.6, 0.8, 0.3, 12, 1); }
+  }
   if (gate && gate.active) {
     gate.open = Math.min(1, gate.open + dt * 1.5);
     gate.mat.uniforms.uOpen.value = gate.open;
@@ -920,8 +1055,27 @@ function updatePlayer(dt) {
   const thrusting = acc.lengthSq() > 0.001;
   const wantBoost = keys.ShiftLeft || keys.ShiftRight || touchBoost || gp.boost;
   const boosting = wantBoost && thrusting && energy > 0;
-  if (thrusting) { if (acc.lengthSq() > 1) acc.normalize(); acc.multiplyScalar(boosting ? BOOST_THRUST : THRUST); }
-  energy = clamp(energy + (boosting ? -17 : 3.5) * dt, 0, 100);
+  if (thrusting) { if (acc.lengthSq() > 1) acc.normalize(); acc.multiplyScalar((boosting ? BOOST_THRUST : THRUST) * (overT > 0 ? 1.25 : 1)); }
+  energy = clamp(energy + (overT > 0 ? 45 : boosting ? -17 : 3.5) * dt, 0, 100);
+  if (magnetT > 0) magnetT -= dt;
+  if (overT > 0) overT -= dt;
+  // record this run for the ghost
+  if ((recT -= dt) <= 0 && rec.length < 7500) { recT += GHOST_DT; rec.push(Math.round(ball.x), Math.round(ball.y), Math.round(ball.z)); }
+  if (nova) {
+    const gap = ball.length() - nova.R;
+    if (gap < 8) { gameOver('VAPORISED'); return; }
+    if (gap < 320 && (alarmT -= dt) <= 0) { alarmT = 0.2 + gap / 800; sound.alarm(); }
+  }
+  for (const p of powerups) {
+    if (!p.alive || p.pos.distanceToSquared(ball) > 38 * 38) continue;
+    p.alive = false; world.remove(p.mesh, p.core); p.mesh.material.dispose(); p.core.material.dispose();
+    const cc = new THREE.Color(p.def.color);
+    burst(p.pos, 40, 240, cc.r * 1.6, cc.g * 1.6, cc.b * 1.6, 9, 1);
+    if (p.type === 'shield') { if (shields < 3) { shields++; toast('SHIELD CELL · +1 SHIELD'); } else addScore(500, 'SHIELD CELL'); shieldFlash = 1; }
+    else if (p.type === 'magnet') { magnetT = 14; toast('MAGNET · CRYSTALS AND DUST COME TO YOU'); }
+    else { overT = 9; toast('OVERDRIVE · FREE BOOST'); }
+    sound.gateOpen(); rumble(0.4, 120);
+  }
   if (wantPulse) { wantPulse = false; doPulse(); }
 
   // gravity from every body
@@ -992,6 +1146,7 @@ function updatePlayer(dt) {
     if (!c.alive) continue;
     const d = c.pos.distanceTo(ball);
     if (d < BALL_R + 22) collect(c);
+    else if (magnetT > 0 && d < 480 && !c.comet) c.pos.lerp(ball, dt * 3.2 * (1 - d / 480));
     else if (d < 150 && !c.comet) c.pos.lerp(ball, dt * 2.2 * (1 - d / 150));
   }
   // stardust
@@ -1000,7 +1155,7 @@ function updatePlayer(dt) {
     for (let i = 0; i < dust.n; i++) {
       if (!dust.alive[i]) continue;
       const dx = dust.pos[i * 3] - ball.x, dy = dust.pos[i * 3 + 1] - ball.y, dz = dust.pos[i * 3 + 2] - ball.z;
-      if (dx * dx + dy * dy + dz * dz < 2100) {
+      if (dx * dx + dy * dy + dz * dz < (magnetT > 0 ? 32000 : 2100)) {
         dust.alive[i] = 0; dust.data[i * 2 + 1] = 0; changed = true;
         energy = Math.min(100, energy + 5); score += Math.round(10 * mult); sound.dust();
         burst(_t1.set(dust.pos[i * 3], dust.pos[i * 3 + 1], dust.pos[i * 3 + 2]), 6, 90, 0.5, 1.4, 1.8, 5, 0.5);
@@ -1098,7 +1253,7 @@ const camTarget = new THREE.Vector3(), lookAt = new THREE.Vector3();
 let fov = 62;
 function placeCamera(dt, boosting) {
   viewBasis();
-  const dist = 150;
+  const dist = camDist;
   camTarget.copy(ball).addScaledVector(camOff, dist).addScaledVector(upv, 46);
   _t1.copy(vel).multiplyScalar(-0.03); if (_t1.length() > 40) _t1.setLength(40);
   camTarget.add(_t1);
@@ -1159,6 +1314,48 @@ function drawFx() {
   }
   for (const al of aliens) if (al.alive && al.stun <= 0 && al.pos.distanceToSquared(ball) < 800 * 800) pointer(ctx, al.pos, '#ff4a6a', '', false);
   ctx.globalAlpha = 1;
+  drawRadar(ctx);
+}
+// Radar: a heading-up map of the plane you are flying in.
+const _rf = new THREE.Vector3();
+function drawRadar(ctx) {
+  const R = isTouch ? 44 : 64, cx = innerWidth - R - (isTouch ? 14 : 22), cy = isTouch ? 176 : innerHeight - R - 64;
+  const range = nova ? 2400 : 1500, k = R / range;
+  _rf.set(fwd.x, 0, fwd.z); if (_rf.lengthSq() < 1e-4) _rf.set(upv.x, 0, upv.z); _rf.normalize();
+  const put = (p) => {
+    const dx = p.x - ball.x, dz = p.z - ball.z;
+    let x = (dx * right.x + dz * right.z) * k, y = -(dx * _rf.x + dz * _rf.z) * k;
+    const d = Math.hypot(x, y), edge = d > R - 4;
+    if (edge) { x *= (R - 4) / d; y *= (R - 4) / d; }
+    return [cx + x, cy + y, edge];
+  };
+  const dot = (p, color, s, square) => {
+    const [x, y, edge] = put(p);
+    ctx.globalAlpha = edge ? 0.4 : 0.95; ctx.fillStyle = color;
+    if (square) ctx.fillRect(x - s, y - s, s * 2, s * 2); else { ctx.beginPath(); ctx.arc(x, y, s, 0, 6.2832); ctx.fill(); }
+  };
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832);
+  ctx.fillStyle = 'rgba(12,6,28,0.5)'; ctx.fill();
+  ctx.strokeStyle = 'rgba(150,100,255,0.4)'; ctx.lineWidth = 1; ctx.stroke();
+  ctx.clip();
+  ctx.strokeStyle = 'rgba(150,100,255,0.15)'; ctx.beginPath(); ctx.arc(cx, cy, R * 0.5, 0, 6.2832); ctx.stroke();
+  if (nova) { const [x, y] = [cx + (-ball.x * right.x - ball.z * right.z) * k, cy + (ball.x * _rf.x + ball.z * _rf.z) * k]; ctx.globalAlpha = 0.8; ctx.strokeStyle = '#ff7a3c'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, nova.R * k, 0, 6.2832); ctx.stroke(); }
+  for (const b of bodies) {
+    const [x, y, edge] = put(b.pos);
+    if (edge) continue;
+    ctx.globalAlpha = 0.75; ctx.fillStyle = b.kind === 'sun' ? '#ffc060' : b.kind === 'blackhole' ? '#000' : b.kind === 'pulsar' ? '#bfd8ff' : '#8a6ad8';
+    ctx.beginPath(); ctx.arc(x, y, Math.max(2.5, b.r * k), 0, 6.2832); ctx.fill();
+    if (b.kind === 'blackhole') { ctx.strokeStyle = '#ff9a50'; ctx.lineWidth = 1.5; ctx.stroke(); }
+  }
+  for (const p of portals) dot(p.pos, '#7fdcff', 2.5, false);
+  for (const p of powerups) if (p.alive) dot(p.pos, '#' + p.def.color.toString(16).padStart(6, '0'), 2.2, true);
+  for (const c of crystals) if (c.alive) dot(c.pos, '#ffd060', 2, false);
+  for (const al of aliens) if (al.alive) dot(al.pos, al.stun > 0 ? '#6aa0ff' : '#ff4a6a', 2.6, false);
+  if (gate.active) dot(gate.pos, '#ffffff', 3.5, true);
+  ctx.globalAlpha = 1; ctx.fillStyle = '#e8dcff';
+  ctx.beginPath(); ctx.moveTo(cx, cy - 6); ctx.lineTo(cx + 4.5, cy + 5); ctx.lineTo(cx - 4.5, cy + 5); ctx.closePath(); ctx.fill();
+  ctx.restore();
 }
 
 // ── Main loop ───────────────────────────────────────────────────────────────
@@ -1234,6 +1431,29 @@ function frame() {
   u.uGrain.value = reduceMotion ? 0 : 0.035;
   u.uFlash.value.copy(flashCol);
   u.uBHStrength.value = 0;
+  // ghost of the best run
+  ghostOrb.visible = false;
+  if (ghost && ghost.p && mode === 'playing') {
+    const gi = levelTime / GHOST_DT, i0 = Math.floor(gi), n = ghost.p.length / 3;
+    if (i0 < n - 1) {
+      const f = gi - i0, p = ghost.p, a = i0 * 3;
+      ghostOrb.position.set(lerp(p[a], p[a + 3], f), lerp(p[a + 1], p[a + 4], f), lerp(p[a + 2], p[a + 5], f));
+      ghostOrb.visible = ghostOrb.position.distanceToSquared(ball) > 900;
+    }
+  }
+  // light shafts from the nearest star
+  farSun.position.copy(camera.position).addScaledVector(sunLight.position, 15);
+  let src = farSun.visible ? farSun.position : null, sd = Infinity, rays = 0.7;
+  for (const b of bodies) if (b.kind === 'sun') { const d = b.pos.distanceToSquared(camera.position); if (d < sd) { sd = d; src = b.pos; rays = 0.2; } }
+  u.uSun.value.z = 0;
+  if (src && !reduceMotion) {
+    camera.updateMatrixWorld(); camera.getWorldDirection(_camDir);
+    if (_t1.subVectors(src, camera.position).dot(_camDir) > 0) {
+      _ndc.copy(src).project(camera);
+      const off = Math.max(Math.abs(_ndc.x), Math.abs(_ndc.y));
+      u.uSun.value.set(_ndc.x * 0.5 + 0.5, _ndc.y * 0.5 + 0.5, rays * (LOW() ? 0.65 : 1) * clamp(1.6 - off, 0, 1));
+    }
+  }
   if (blackhole) {
     camera.updateMatrixWorld();
     _ndc.copy(blackhole.pos).project(camera);
@@ -1258,6 +1478,16 @@ function frame() {
   }
 
   post.render(scene, camera);
+  if (wantShot) {
+    // photo mode: grab the frame that was just drawn, before the browser presents it
+    wantShot = false;
+    renderer.domElement.toBlob((blob) => {
+      if (!blob) return;
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = `blitzys-world-${L.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+      a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    }, 'image/png');
+  }
   drawFx();
   sound.update(dt, {
     thrust: st.thrusting ? 1 : 0, boost: st.boosting ? 1 : 0, speed: clamp(st.speed / 1800, 0, 1), playing: mode === 'playing' || mode === 'warping',
@@ -1273,10 +1503,10 @@ levelIndex = clamp(progress.cleared, 0, LEVELS.length - 1);
 buildLevel(levelIndex);
 ball.copy(V3(L.spawn));
 showOverlay({
-  title: "BLITZY'S WORLD", sub: 'ODYSSEY · v1.0 · 8 SECTORS',
-  blurb: 'Fly an orb of light through eight real space phenomena, from a quiet home orbit to the edge of a black hole.',
+  title: "BLITZY'S WORLD", sub: 'ODYSSEY · v1.1 · 9 SECTORS + DAILY RUN',
+  blurb: 'Fly an orb of light through nine real space phenomena, under the real night sky, from a quiet home orbit to an exploding star.',
   btn: progress.cleared > 0 ? `CONTINUE · SECTOR ${levelIndex + 1}` : `${tapWord} TO PLAY`, keys: true, cards: true,
 });
 // debugging hook for automated checks
-window.__bw = { camera, post, scene, bodies, takeHit, start: (i) => startLevel(i, false), state: () => ({ mode, levelIndex, score, shields, energy, starsGot, starsTotal, pr, particles: P.n }), ball, vel, crystals, collect, openGate, gate: () => gate };
+window.__bw = { camera, post, scene, bodies, takeHit, powerups, nova: () => nova, enterPhoto, shot: () => { wantShot = true; }, start: (i) => startLevel(i, false), state: () => ({ mode, levelIndex, score, shields, energy, starsGot, starsTotal, pr, particles: P.n }), ball, vel, crystals, collect, openGate, gate: () => gate };
 frame();

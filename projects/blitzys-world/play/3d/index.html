@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Blitzy's World — Odyssey: 3D Space Game (v1.0) | Andrés Blitz</title>
-  <meta name="description" content="Blitzy's World v1.0 — fly an orb of light through 8 sectors built on real space phenomena: gravity assists, planetary rings, comets, binary stars, a pulsar, wormholes and a black hole. WebGL, procedural shaders, synthesised sound.">
+  <title>Blitzy's World — Odyssey: 3D Space Game (v1.1) | Andrés Blitz</title>
+  <meta name="description" content="Blitzy's World v1.1 — fly an orb of light through 9 sectors built on real space phenomena, under the real night sky: gravity assists, planetary rings, comets, binary stars, a pulsar, wormholes, a black hole and a supernova. Plus a new Daily Run every day.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#01000a">
   <link rel="canonical" href="https://andresblitz.com/projects/blitzys-world/play/3d/">
@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="Andrés Blitz">
   <meta property="og:url" content="https://andresblitz.com/projects/blitzys-world/play/3d/">
   <meta property="og:title" content="Blitzy's World — Odyssey">
-  <meta property="og:description" content="8 sectors: slingshots, rings, comets, twin suns, a pulsar, wormholes and a black hole.">
+  <meta property="og:description" content="9 sectors and a Daily Run: slingshots, rings, comets, twin suns, a pulsar, wormholes, a black hole and a supernova.">
   <meta property="og:image" content="https://andresblitz.com/assets/projects/blitzys-world.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@andresblitz">
@@ -105,7 +105,8 @@
     #ov-keys b { color:#e8dcff; font-weight:700; }
     body.touch #ov-keys .kb { display:none; }
     body:not(.touch) #ov-keys .tc { display:none; }
-    #level-cards { display:none; grid-template-columns:repeat(4,minmax(0,170px)); gap:10px; margin-top:26px; width:min(94vw,720px); justify-content:center; }
+    #level-cards { display:none; grid-template-columns:repeat(5,minmax(0,170px)); gap:10px; margin-top:26px; width:min(96vw,900px); justify-content:center; }
+    @media (max-width:900px) { #level-cards { grid-template-columns:repeat(3,minmax(0,1fr)); } }
     @media (max-width:640px) { #level-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     .lcard {
       font:inherit; text-align:left; cursor:pointer; border-radius:8px;
@@ -115,11 +116,22 @@
     }
     .lcard:hover:not(.locked) { background:rgba(80,30,160,0.6); border-color:rgba(200,150,255,0.8); transform:translateY(-2px); }
     .lcard.cur { border-color:rgba(255,208,96,0.7); }
+    .lcard.daily { border-color:rgba(92,225,255,0.55); background:rgba(12,40,70,0.55); }
+    .lcard.daily .md { color:#7fe0ff; letter-spacing:.06em; font:600 10px system-ui,sans-serif; }
     .lcard.locked { opacity:0.35; cursor:default; }
     .lcard .ln { display:block; font:600 9px system-ui,sans-serif; letter-spacing:0.14em; color:rgba(180,150,255,0.7); margin-bottom:5px; }
     .lcard .nm { display:block; font-size:11px; letter-spacing:0.1em; margin-bottom:5px; }
     .lcard .md { display:block; font-size:12px; color:#ffd060; letter-spacing:.15em; }
-    #ov-opts { display:flex; gap:10px; margin-top:20px; }
+    #ov-opts { display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; justify-content:center; }
+    #photo-bar { position:fixed; left:50%; bottom:max(22px,env(safe-area-inset-bottom)); transform:translateX(-50%); z-index:110; display:none; gap:10px; align-items:center; }
+    #photo-bar.on { display:flex; }
+    #photo-bar span { font:600 10px system-ui,sans-serif; letter-spacing:.14em; color:rgba(210,190,255,.6); text-shadow:0 1px 6px #000; }
+    #photo-bar button {
+      font:700 10px system-ui,sans-serif; letter-spacing:.16em; color:#efe6ff; cursor:pointer;
+      background:rgba(20,8,50,.7); border:1px solid rgba(170,120,255,.5); padding:10px 16px; border-radius:999px;
+    }
+    #photo-bar button:hover { border-color:rgba(220,180,255,.9); color:#fff; }
+    body.touch #photo-bar span { display:none; }
     #ov-opts button {
       font:600 10px system-ui,sans-serif; letter-spacing:.16em; color:rgba(210,190,255,.8); cursor:pointer;
       background:rgba(20,8,50,.55); border:1px solid rgba(150,100,255,.3); padding:8px 14px; border-radius:999px;
@@ -190,8 +202,8 @@
 
   <div id="overlay" class="on">
     <h1 id="ov-title">BLITZY'S WORLD</h1>
-    <div id="ov-sub">ODYSSEY · v1.0 · 8 SECTORS</div>
-    <p id="ov-blurb">Fly an orb of light through eight real space phenomena, from a quiet home orbit to the edge of a black hole.</p>
+    <div id="ov-sub">ODYSSEY · v1.1 · 9 SECTORS + DAILY RUN</div>
+    <p id="ov-blurb">Fly an orb of light through nine real space phenomena, under the real night sky, from a quiet home orbit to an exploding star.</p>
     <div id="ov-stats"></div>
     <button type="button" id="ov-btn">PLAY</button>
     <div id="ov-keys">
@@ -204,7 +216,14 @@
     <div id="ov-opts">
       <button type="button" id="b-mute">SOUND ON</button>
       <button type="button" id="b-qual">QUALITY HIGH</button>
+      <button type="button" id="b-photo" style="display:none">PHOTO MODE</button>
+      <button type="button" id="b-share" style="display:none">SHARE SCORE</button>
     </div>
+  </div>
+  <div id="photo-bar">
+    <span>DRAG TO ORBIT · SCROLL TO ZOOM</span>
+    <button type="button" id="p-save">SAVE PNG</button>
+    <button type="button" id="p-back">BACK</button>
   </div>
 
   <div id="flash" role="status"></div>
@@ -224,7 +243,7 @@
       <div class="stat" id="h-dil-row"><span>TIME</span><span id="h-dil">×1.00</span></div>
       <div id="h-timer">0.0s</div>
     </div>
-    <div id="hud-hint">WASD FLY · SHIFT BOOST · F PULSE<br>P PAUSE · M MUTE</div>
+    <div id="hud-hint">WASD FLY · SHIFT BOOST · F PULSE · P PAUSE · M MUTE</div>
   </div>
   <div class="tbtn" id="t-boost">BOOST</div>
   <div class="tbtn" id="t-pulse">PULSE</div>
