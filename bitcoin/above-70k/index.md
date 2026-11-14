@@ -2,7 +2,7 @@
 title: "How Many Days Has Bitcoin Closed Above $70,000? (631 Days)"
 description: "Bitcoin has closed above $70,000 on 631 of 4,441 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-70k/"
-last_updated: "2026-11-13"
+last_updated: "2026-11-14"
 lang: "en"
 ---
 
