@@ -2,7 +2,7 @@
 title: "Bitcoin’s Highest Close Ever: $124,752.53 on October 6, 2025"
 description: "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 14, 2026: 404 days since, latest close $64,128.05, 48.6% below it."
 url: "https://andresblitz.com/bitcoin/highest-close/"
-last_updated: "2026-11-14"
+last_updated: "2026-11-15"
 lang: "en"
 ---
 
