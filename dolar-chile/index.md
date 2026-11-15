@@ -32,7 +32,7 @@ $ 995,88
 
 lo que cuesta un dólar
 
-Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 14-11-2026, 9:01 a. m. (hora de Chile)
+Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 15-11-2026, 9:01 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 

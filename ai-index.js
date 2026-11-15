@@ -116,7 +116,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-above-100k.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin has closed above $100,000 on 217 of 4,441 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes.",
+      "summary": "Bitcoin has closed above $100,000 on 217 of 4,442 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-14",
       "topics": [
         "Bitcoin",
@@ -126,13 +126,13 @@ export const site = {
     },
     {
       "slug": "bitcoin-above-50k",
-      "title": "How Many Days Has Bitcoin Closed Above $50,000? (1,148 Days)",
+      "title": "How Many Days Has Bitcoin Closed Above $50,000? (1,149 Days)",
       "url": "https://andresblitz.com/bitcoin/above-50k/",
       "md": "https://andresblitz.com/bitcoin/above-50k/index.md",
       "json": "https://andresblitz.com/api/page/bitcoin-above-50k.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin has closed above $50,000 on 1,148 of 4,441 days since Sep 17, 2014 (25.9%). First close above: Feb 17, 2021. Most recent: Nov 13, 2026. Yahoo Finance BTC-USD daily closes.",
+      "summary": "Bitcoin has closed above $50,000 on 1,149 of 4,442 days since Sep 17, 2014 (25.9%). First close above: Feb 17, 2021. Most recent: Nov 14, 2026. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-14",
       "topics": [
         "Bitcoin",
@@ -148,7 +148,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-above-70k.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin has closed above $70,000 on 631 of 4,441 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes.",
+      "summary": "Bitcoin has closed above $70,000 on 631 of 4,442 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-14",
       "topics": [
         "Bitcoin",
@@ -164,7 +164,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-above-90k.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin has closed above $90,000 on 348 of 4,441 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes.",
+      "summary": "Bitcoin has closed above $90,000 on 348 of 4,442 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-14",
       "topics": [
         "Bitcoin",
@@ -180,7 +180,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-by-year.json",
       "kind": "page",
       "lang": "en",
-      "summary": "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 13, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes.",
+      "summary": "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 14, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-14",
       "topics": [
         "Bitcoin",
@@ -196,7 +196,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-es.json",
       "kind": "page",
       "lang": "es",
-      "summary": "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.441 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes.",
+      "summary": "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.442 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes.",
       "last_updated": "2026-11-14",
       "topics": [
         "bitcoin",
@@ -213,7 +213,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-highest-close.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 13, 2026: 403 days since, latest close $68,249.27, 45.3% below it.",
+      "summary": "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 14, 2026: 404 days since, latest close $64,128.05, 48.6% below it.",
       "last_updated": "2026-11-14",
       "topics": [
         "Bitcoin",
@@ -380,7 +380,7 @@ export const site = {
       "kind": "page",
       "lang": "es-PE",
       "summary": "Tipo de cambio del dólar hoy en Perú en soles (S/), con la fuente indicada en cada actualización, explicación del tipo de cambio interbancario y conversor de soles a dólares.",
-      "last_updated": "2026-11-14",
+      "last_updated": "2026-11-15",
       "topics": [
         "tipo de cambio",
         "dólar hoy",
@@ -635,7 +635,7 @@ export const site = {
       "kind": "projects-index",
       "lang": "en-CA",
       "summary": "Every project by Andrés Blitz, each with its own page: a playable space game, a real estate portfolio dashboard, trading indicators, signal and network tools, research and web apps.",
-      "last_updated": "2026-11-14"
+      "last_updated": "2026-11-15"
     },
     {
       "slug": "projects-iptv-player",
