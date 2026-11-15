@@ -14,7 +14,7 @@ Projects
 
 Trading tools, dashboards, a game, signal experiments and a few research rabbit holes. Each project has its own page with what it does, how it’s built and a visual. Private projects are described at a high level. Demos built on invented data are labelled as mock data; live apps are labelled live.
 
-Live rate pages (in Spanish): [Venezuela (Tasa BCV)](https://andresblitz.com/tasa-bcv/) · [Argentina](https://andresblitz.com/dolar-argentina/) · [Colombia](https://andresblitz.com/dolar-colombia/) · [México](https://andresblitz.com/dolar-mexico/) · [Perú](https://andresblitz.com/dolar-peru/) · [Chile](https://andresblitz.com/dolar-chile/). They all feed the [Currency RSS](https://andresblitz.com/projects/currency-rss/) project and its [RSS feed](https://andresblitz.com/rates/feed.xml). Bitcoin: [days in each price bracket](https://andresblitz.com/bitcoin/).
+Live rate pages (in Spanish): [Venezuela (Tasa BCV)](https://andresblitz.com/tasa-bcv/) · [Argentina](https://andresblitz.com/dolar-argentina/) · [Colombia](https://andresblitz.com/dolar-colombia/) · [México](https://andresblitz.com/dolar-mexico/) · [Perú](https://andresblitz.com/dolar-peru/) · [Chile](https://andresblitz.com/dolar-chile/). They all feed the [Currency RSS](https://andresblitz.com/projects/currency-rss/) project and its [RSS feed](https://andresblitz.com/rates/feed.xml). Bitcoin: [days in each price bracket](https://andresblitz.com/bitcoin/). Family farm in Zulia, Venezuela: [El 70 farm (Finca El 70)](https://andresblitz.com/70/), a cattle farm and silvopasture project in Rosario de Perijá.
 
 [
 

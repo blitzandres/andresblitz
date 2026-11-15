@@ -46,17 +46,23 @@ export const site = {
   "pages": [
     {
       "slug": "70",
-      "title": "Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela",
+      "title": "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia",
       "url": "https://andresblitz.com/70/",
       "md": "https://andresblitz.com/70/index.md",
       "json": "https://andresblitz.com/api/page/70.json",
       "kind": "page",
       "lang": "es-VE",
-      "summary": "Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia.",
-      "last_updated": "2026-11-09",
+      "summary": "El 70 farm (Finca El 70): finca familiar de ganadería y silvopastoreo en el km 70 de la Carretera de Perijá, Rosario de Perijá, Zulia, Venezuela.",
+      "last_updated": "2026-11-14",
       "topics": [
         "El 70",
+        "El 70 farm",
+        "Finca El 70",
+        "Agropecuaria Blimar",
         "ganadería",
+        "silvopastoreo",
+        "Carretera de Perijá",
+        "Rosario de Perijá",
         "Zulia",
         "Venezuela"
       ],

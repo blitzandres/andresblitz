@@ -77,7 +77,7 @@ for (const file of walk(ROOT).sort()) {
 
 // Extra context for special pages
 const EXTRA = {
-  '/70/': { topics: ['El 70', 'ganadería', 'Zulia', 'Venezuela'], geo: { place: 'La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela', lat: 10.4165941, lng: -72.2108835 }, note: 'El 70 — finca ganadera (en español). La Villa del Rosario, Rosario de Perijá, Zulia. Geo: 10.4165941,-72.2108835.' },
+  '/70/': { topics: ['El 70', 'El 70 farm', 'Finca El 70', 'Agropecuaria Blimar', 'ganadería', 'silvopastoreo', 'Carretera de Perijá', 'Rosario de Perijá', 'Zulia', 'Venezuela'], geo: { place: 'La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela', lat: 10.4165941, lng: -72.2108835 }, note: 'El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). Km 70 Carretera de Perijá (Troncal 6), near La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela. Geo: 10.4165941,-72.2108835.' },
   '/tasa-bcv/': { topics: ['Tasa BCV', 'tipo de cambio', 'Venezuela', 'Maracaibo'], geo: { place: 'Maracaibo, Zulia, Venezuela' }, note: 'Tasa BCV — tipo de cambio oficial del Banco Central de Venezuela (en español). Maracaibo, Zulia.' },
   '/dolar-argentina/': { topics: ['Dólar hoy', 'dólar blue', 'dólar MEP', 'tipo de cambio', 'Argentina'], note: 'Dólar hoy en Argentina — oficial, blue, MEP, CCL, cripto y tarjeta, con conversor ARS ↔ USD (en español).' },
   '/dolar-mexico/': { topics: ['FIX', 'Banxico', 'dólar hoy', 'tipo de cambio', 'México'], note: 'Dólar hoy en México — tipo de cambio FIX de Banxico, compra y venta de mercado y conversor MXN ↔ USD (en español).' },
@@ -420,7 +420,7 @@ const rfc822 = (d) => new Date(d + 'T12:00:00Z').toUTCString();
 const rss = (title, link, desc, items) => `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n<title>${esc(title)}</title>\n<link>${link}</link>\n<description>${esc(desc)}</description>\n<atom:link href="${link}feed.xml" rel="self" type="application/rss+xml" />\n<lastBuildDate>${rfc822(site.generated)}</lastBuildDate>\n` + items.map((p) => `<item>\n<title>${esc(p.title)}</title>\n<link>${p.url}</link>\n<guid isPermaLink="true">${p.url}</guid>\n<description>${esc(p.description)}</description>\n<pubDate>${rfc822(p.last_updated)}</pubDate>\n</item>`).join('\n') + '\n</channel>\n</rss>\n';
 const feedPages = pages.filter((p) => p.kind !== 'project-subpage').sort((a, b) => b.last_updated.localeCompare(a.last_updated));
 write('feed.xml', rss('Andrés Blitz', `${ORIGIN}/`, 'Main pages of andresblitz.com', feedPages));
-write('70/feed.xml', rss('El 70 · Agropecuaria Blimar', `${ORIGIN}/70/`, 'El 70 — finca ganadera, La Villa del Rosario, Zulia', pages.filter((p) => p.pathname === '/70/')));
+write('70/feed.xml', rss('El 70 farm · Agropecuaria Blimar', `${ORIGIN}/70/`, 'El 70 farm (Finca El 70) — cattle farm and silvopasture project, Rosario de Perijá, Zulia', pages.filter((p) => p.pathname === '/70/')));
 
 // /ai/ entry
 const aiList = pages.map((p) => ({ p, md: p.mdUrl }));

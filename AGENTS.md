@@ -115,7 +115,7 @@ Each entry links to the live HTML page, notes the language (`en` or `es`), and g
 
 ### El 70 (Spanish)
 
-- [El 70](https://andresblitz.com/70/) (es): El 70 — finca ganadera (en español). La Villa del Rosario, Rosario de Perijá, Zulia. Geo: 10.4165941,-72.2108835.
+- [El 70](https://andresblitz.com/70/) (es): El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). Km 70 Carretera de Perijá (Troncal 6), near La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela. Geo: 10.4165941,-72.2108835.
   Markdown: https://andresblitz.com/70/index.md
 
 ### Projects and Play (English)
@@ -233,4 +233,4 @@ Sample citations:
 - The lowercase path `/agents.md` is a 404; this file is https://andresblitz.com/AGENTS.md (uppercase). GitHub Pages serves it as raw Markdown.
 
 ---
-Generated 2026-11-15 by scripts/build-ai.mjs from the public HTML. Do not hand-edit this file.
+Generated 2026-11-14 by scripts/build-ai.mjs from the public HTML. Do not hand-edit this file.

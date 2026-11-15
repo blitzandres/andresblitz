@@ -9,7 +9,7 @@ last_updated: "2026-11-15"
 
 # Markdown pages
 
-- [Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela](https://andresblitz.com/70/index.md) — Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia.
+- [Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia](https://andresblitz.com/70/index.md) — El 70 farm (Finca El 70): finca familiar de ganadería y silvopastoreo en el km 70 de la Carretera de Perijá, Rosario de Perijá, Zulia, Venezuela.
 - [Ahorro en dólares: qué valdrían hoy tus bolívares o pesos](https://andresblitz.com/ahorro-en-dolares/index.md) — Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.
 - [Alerts & Downloads | Andrés Blitz](https://andresblitz.com/alerts/index.md) — Email alerts and downloads from andresblitz.com: Bitcoin bracket alerts, the daily Tasa BCV, crypto dollar gap alerts, weekly LatAm rates, PDF guides and more.
 - [How Many Days Has Bitcoin Closed Above $100,000? (217 Days)](https://andresblitz.com/bitcoin/above-100k/index.md) — Bitcoin has closed above $100,000 on 217 of 4,441 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes.
