@@ -136,7 +136,7 @@ English project pages use the shared chrome nav (Projects, About, Play, Site map
 
 | Path | Source | Lang | Purpose | Main content / sections | Data sources | Alert | Nav / sitemap | Status |
 |------|--------|------|---------|-------------------------|--------------|-------|---------------|--------|
-| `/70/` | `70/index.html` | es-VE | Public page for the El 70 cattle farm in Zulia, Venezuela (Agropecuaria Blimar C.A.) | La finca, dairy, beef, gallery, infrastructure, land, employment, contact, messages | Static page content; updates also appear in `/70/feed.xml`. Own `70/sitemap.xml` | `el70` is offered on `/alerts/` (new items in `/70/feed.xml`), not as an inline bell on this page | Linked from rate-page footers and the site map; sitemap | live |
+| `/70/` | `70/index.html` | es-VE (English summary on the same page) | Public page for El 70 farm / Finca El 70, a family cattle farm and silvopasture project in Rosario de Perijá, Zulia, Venezuela (Agropecuaria Blimar C.A.) | La finca, dairy, beef, silvopastoreo, English summary (“El 70 farm”), gallery, infrastructure, land, employment, contact, messages | Static page content; updates also appear in `/70/feed.xml`. Own `70/sitemap.xml` | `el70` is offered on `/alerts/` (new items in `/70/feed.xml`), not as an inline bell on this page | Linked from `/projects/`, `/site-map/`, and rate-page footers; sitemap | live |
 
 ---
 

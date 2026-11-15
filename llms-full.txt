@@ -3,22 +3,22 @@
 > Every public page of https://andresblitz.com/ as clean Markdown, concatenated. Site map: https://andresblitz.com/llms.txt
 
 ---
-title: "Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela"
-description: "Agropecuaria Blimar C.A., «El 70»: finca familiar de ganadería lechera y de carne en el km 70 de la Troncal 6, cerca del Río Palmar, La Villa del Rosario, Zulia."
+title: "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia"
+description: "El 70 farm (Finca El 70): finca familiar de ganadería y silvopastoreo en el km 70 de la Carretera de Perijá, Rosario de Perijá, Zulia, Venezuela."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-11-09"
+last_updated: "2026-11-14"
 lang: "es-VE"
 ---
 
 > Note for AI agents: this is the clean Markdown version of https://andresblitz.com/70/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
 
-# Agropecuaria Blimar · El 70 — finca ganadera en Zulia, Venezuela
+# Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia
 
 ## La finca
 
 ### Agropecuaria Blimar C.A.
 
-Empresa agropecuaria familiar ubicada en el kilómetro 70 de la Carretera Troncal 6, vía Maracaibo – La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela. Es una zona reconocida por su tradición ganadera y lechera, cerca del Río Palmar. La finca es conocida en la zona como «El 70».
+Empresa agropecuaria familiar ubicada en el kilómetro 70 de la Carretera de Perijá (Troncal 6), vía Maracaibo – La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela. Es una zona reconocida por su tradición ganadera y lechera, cerca del Río Palmar. La finca es conocida en la zona como «El 70» o Finca El 70 (El 70 farm, in English).
 
 ### Ganadería lechera
 
@@ -28,17 +28,27 @@ La finca ha estado dedicada a la producción de leche, actividad central de la e
 
 Además de la lechería, en la finca se trabaja con ganado de carne, como es tradición en la región de Perijá. Si desea información sobre ganado o actividades de la finca, escríbanos.
 
+### Silvopastoreo
+
+En El 70 se desarrolla un proyecto de silvopastoreo: ganadería junto a árboles y pasturas en la misma tierra, en el km 70 de la Carretera de Perijá, municipio Rosario de Perijá.
+
 Desliza para ver más →
+
+## El 70 farm
+
+El 70 farm (Finca El 70) is a family cattle farm and silvopasture project at kilometre 70 of the Carretera de Perijá (Troncal 6), near La Villa del Rosario in the municipality of Rosario de Perijá, Zulia, Venezuela. Locally the farm is known as El 70. It is run by Agropecuaria Blimar C.A.
+
+For questions about the farm, write to [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=El%2070%20farm).
 
 ## Galería de los potreros de El 70
 
-Potreros de El 70, km 70 de la Troncal 6, La Villa del Rosario (Zulia)
+Potreros de El 70, km 70 de la Carretera de Perijá, La Villa del Rosario (Zulia)
 
 Trabajo en el patio de la finca El 70
 
 Desliza para ver más →
 
-## Infraestructura cercana: Troncal 6, electricidad y Río Palmar
+## Infraestructura cercana: Carretera de Perijá (Troncal 6), electricidad y Río Palmar
 
 -   Calculando distancias…
 
@@ -3026,7 +3036,7 @@ Projects
 
 Trading tools, dashboards, a game, signal experiments and a few research rabbit holes. Each project has its own page with what it does, how it’s built and a visual. Private projects are described at a high level. Demos built on invented data are labelled as mock data; live apps are labelled live.
 
-Live rate pages (in Spanish): [Venezuela (Tasa BCV)](https://andresblitz.com/tasa-bcv/) · [Argentina](https://andresblitz.com/dolar-argentina/) · [Colombia](https://andresblitz.com/dolar-colombia/) · [México](https://andresblitz.com/dolar-mexico/) · [Perú](https://andresblitz.com/dolar-peru/) · [Chile](https://andresblitz.com/dolar-chile/). They all feed the [Currency RSS](https://andresblitz.com/projects/currency-rss/) project and its [RSS feed](https://andresblitz.com/rates/feed.xml). Bitcoin: [days in each price bracket](https://andresblitz.com/bitcoin/).
+Live rate pages (in Spanish): [Venezuela (Tasa BCV)](https://andresblitz.com/tasa-bcv/) · [Argentina](https://andresblitz.com/dolar-argentina/) · [Colombia](https://andresblitz.com/dolar-colombia/) · [México](https://andresblitz.com/dolar-mexico/) · [Perú](https://andresblitz.com/dolar-peru/) · [Chile](https://andresblitz.com/dolar-chile/). They all feed the [Currency RSS](https://andresblitz.com/projects/currency-rss/) project and its [RSS feed](https://andresblitz.com/rates/feed.xml). Bitcoin: [days in each price bracket](https://andresblitz.com/bitcoin/). Family farm in Zulia, Venezuela: [El 70 farm (Finca El 70)](https://andresblitz.com/70/), a cattle farm and silvopasture project in Rosario de Perijá.
 
 [
 
