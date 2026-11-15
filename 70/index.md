@@ -1,8 +1,8 @@
 ---
 title: "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia"
-description: "El 70 farm (Finca El 70): finca familiar de ganadería y silvopastoreo en el km 70 de la Carretera de Perijá, Rosario de Perijá, Zulia, Venezuela."
+description: "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en el km 70 Perijá, Rosario de Perijá, Zulia, Venezuela."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-11-14"
+last_updated: "2026-11-15"
 lang: "es-VE"
 ---
 

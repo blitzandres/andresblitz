@@ -52,8 +52,8 @@ export const site = {
       "json": "https://andresblitz.com/api/page/70.json",
       "kind": "page",
       "lang": "es-VE",
-      "summary": "El 70 farm (Finca El 70): finca familiar de ganadería y silvopastoreo en el km 70 de la Carretera de Perijá, Rosario de Perijá, Zulia, Venezuela.",
-      "last_updated": "2026-11-14",
+      "summary": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en el km 70 Perijá, Rosario de Perijá, Zulia, Venezuela.",
+      "last_updated": "2026-11-15",
       "topics": [
         "El 70",
         "El 70 farm",
@@ -752,7 +752,7 @@ export const site = {
       "kind": "page",
       "lang": "en-CA",
       "summary": "Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree.",
-      "last_updated": "2026-11-12",
+      "last_updated": "2026-11-15",
       "topics": [
         "site map",
         "sitemap",

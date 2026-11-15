@@ -2,7 +2,7 @@
 title: "Site Map — Every Page on andresblitz.com | Andrés Blitz"
 description: "Interactive site map of andresblitz.com: projects, exchange-rate pages, crypto calculators and guides, and El 70 — shown as a clickable tree."
 url: "https://andresblitz.com/site-map/"
-last_updated: "2026-11-12"
+last_updated: "2026-11-15"
 lang: "en-CA"
 ---
 
@@ -10,7 +10,7 @@ lang: "en-CA"
 
 # Site map
 
-Every page on andresblitz.com as a tree. Click a section to open or close it, or click a page to preview it.
+Every page on andresblitz.com as a tree, including projects, exchange-rate tools, and [El 70 farm (Agropecuaria Blimar)](https://andresblitz.com/70/) in Rosario de Perijá, Zulia. Click a section to open or close it, or click a page to preview it.
 
   
 
