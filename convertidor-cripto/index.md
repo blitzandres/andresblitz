@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 16 nov 2026, 7:10 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 16 nov 2026, 17:21 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 57.511.697 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 101.538.180 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 101.861.550 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 214.504.256 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.199.864 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 220.493,26 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 64.615.793 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 64.674 USD | — |
-| Dólares canadienses | 92.205,72 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 57.839.832 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 102.442.725 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 103.093.155 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 215.728.118 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.206.710 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 221.751,3 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 64.663.149 CLP | cl.dolarapi.com |
+| Dólares estadounidenses | 65.043 USD | — |
+| Dólares canadienses | 92.731,81 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
