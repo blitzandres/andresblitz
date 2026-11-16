@@ -16,9 +16,9 @@ El dólar observado que informa el Banco Central de Chile y una cotización de c
 
 ### Dólar observado (Banco Central de Chile)
 
-$ 992,48
+$ 999,10
 
-pesos por 1 dólar · fecha 13 de noviembre de 2026
+pesos por 1 dólar · fecha 16 de noviembre de 2026
 
 ### Mercado · compra
 
@@ -32,7 +32,7 @@ $ 995,88
 
 lo que cuesta un dólar
 
-Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 15-11-2026, 9:01 a. m. (hora de Chile)
+Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 16-11-2026, 12:00 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
