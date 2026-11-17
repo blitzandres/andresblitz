@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 17 nov 2026, 8:58 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 17 nov 2026, 18:24 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 57.150.660 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 101.222.100 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 102.828.800 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 213.157.676 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.192.332 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 219.220,27 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 64.343.194 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 64.268 USD | — |
-| Dólares canadienses | 91.890,39 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 56.734.488 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 100.485.000 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 102.399.000 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 211.605.460 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.178.239 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 217.623,91 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 63.874.646 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 63.800 USD | — |
+| Dólares canadienses | 91.221,24 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
