@@ -325,7 +325,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CO",
       "summary": "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.",
-      "last_updated": "2026-11-15",
+      "last_updated": "2026-11-16",
       "topics": [
         "TRM",
         "dólar hoy",
@@ -878,6 +878,6 @@ export const site = {
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
     }
   ],
-  "generated": "2026-11-16"
+  "generated": "2026-11-17"
 };
 export default site;

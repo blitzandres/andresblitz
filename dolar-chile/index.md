@@ -22,17 +22,17 @@ pesos por 1 dólar · fecha 16 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 996,98
+$ 997,43
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 998,82
+$ 998,87
 
 lo que cuesta un dólar
 
-Fuente: cl.dolarapi.com, actualizado 16-11-2026, 9:01 a. m. (hora de Chile)
+Fuente: cl.dolarapi.com, actualizado 16-11-2026, 5:01 p. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
