@@ -51,7 +51,7 @@
       "json": "https://andresblitz.com/api/page/70.json",
       "kind": "page",
       "lang": "es-VE",
-      "summary": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en el km 70 Perijá, Rosario de Perijá, Zulia, Venezuela.",
+      "summary": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela.",
       "last_updated": "2026-11-18",
       "topics": [
         "El 70",
@@ -61,12 +61,13 @@
         "ganadería",
         "silvopastoreo",
         "Carretera de Perijá",
+        "Villa del Rosario",
         "Rosario de Perijá",
         "Zulia",
         "Venezuela"
       ],
       "geo": {
-        "place": "La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela",
+        "place": "Villa del Rosario, 4033, Zulia, Venezuela",
         "lat": 10.4165941,
         "lng": -72.2108835
       }
@@ -249,7 +250,7 @@
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa.",
-      "last_updated": "2026-11-18",
+      "last_updated": "2026-11-17",
       "topics": [
         "comisión cripto",
         "comisión de retiro",

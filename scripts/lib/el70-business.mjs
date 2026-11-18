@@ -16,26 +16,60 @@ export function extraFromEl70(biz) {
   if (!biz) return null;
   const geo = biz.geo || {};
   const addr = biz.address || {};
-  const place = [addr.nearby, addr.addressLocality, addr.addressRegion, 'Venezuela'].filter(Boolean).join(', ');
+  const place = [addr.addressLocality, addr.postalCode, addr.addressRegion, 'Venezuela'].filter(Boolean).join(', ');
+  const formatted = addr.formatted || [addr.streetAddress, addr.addressLocality, addr.postalCode, addr.addressRegion, 'Venezuela'].filter(Boolean).join(', ');
   const map = biz.hasMap ? ` Maps: ${biz.hasMap}.` : '';
   const social = (biz.sameAs || []).filter((u) => !/maps\.google/.test(u)).join(', ');
   const socialNote = social ? ` Social: ${social}.` : '';
+  const hoursNote = formatHoursNote(biz.openingHours);
+  const alt = addr.alternateLocality ? ` Alternate locality / municipality: ${addr.alternateLocality}.` : '';
   return {
-    topics: ['El 70', 'El 70 farm', 'Finca El 70', 'Agropecuaria Blimar', 'ganadería', 'silvopastoreo', 'Carretera de Perijá', 'Rosario de Perijá', 'Zulia', 'Venezuela'],
+    topics: ['El 70', 'El 70 farm', 'Finca El 70', 'Agropecuaria Blimar', 'ganadería', 'silvopastoreo', 'Carretera de Perijá', 'Villa del Rosario', 'Rosario de Perijá', 'Zulia', 'Venezuela'],
     geo: { place, lat: geo.latitude, lng: geo.longitude },
-    note: `El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). ${addr.streetAddress}, near ${addr.nearby}, ${addr.addressLocality}, ${addr.addressRegion}, Venezuela. Geo: ${geo.latitude},${geo.longitude}.${map}${socialNote} Contact: ${biz.email}. Source: ${biz.url} and 70/business.json.`,
+    note: `El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). ${formatted}.${alt}${hoursNote} Geo: ${geo.latitude},${geo.longitude}.${map}${socialNote} Contact: ${biz.email}. No public phone. Source: ${biz.url} and 70/business.json.`,
   };
+}
+
+function formatHoursNote(hours) {
+  if (!hours?.length) return '';
+  const bits = hours.map((h) => {
+    const days = Array.isArray(h.dayOfWeek) ? h.dayOfWeek.join('/') : h.dayOfWeek;
+    return `${days} ${h.opens}–${h.closes}`;
+  });
+  return ` Hours: ${bits.join('; ')}.`;
 }
 
 function addressBlock(addr, indent) {
   const pad = ' '.repeat(indent);
+  const postal = addr.postalCode
+    ? `
+${pad} "postalCode": ${JSON.stringify(addr.postalCode)},`
+    : '';
   return `{
 ${pad} "@type": "PostalAddress",
 ${pad} "streetAddress": ${JSON.stringify(addr.streetAddress)},
-${pad} "addressLocality": ${JSON.stringify(addr.addressLocality)},
+${pad} "addressLocality": ${JSON.stringify(addr.addressLocality)},${postal}
 ${pad} "addressRegion": ${JSON.stringify(addr.addressRegion)},
 ${pad} "addressCountry": ${JSON.stringify(addr.addressCountry)}
 ${pad}}`;
+}
+
+function hoursBlock(hours, indent) {
+  if (!hours?.length) return '';
+  const pad = ' '.repeat(indent);
+  const inner = ' '.repeat(indent + 1);
+  const keyPad = ' '.repeat(Math.max(indent - 1, 0));
+  const specs = hours.map((h) => {
+    return [
+      '{',
+      inner + '"@type": "OpeningHoursSpecification",',
+      inner + '"dayOfWeek": ' + JSON.stringify(h.dayOfWeek) + ',',
+      inner + '"opens": ' + JSON.stringify(h.opens) + ',',
+      inner + '"closes": ' + JSON.stringify(h.closes),
+      pad + '}',
+    ].join('\n');
+  }).join(',\n' + pad);
+  return ',\n' + keyPad + '"openingHoursSpecification": [\n' + pad + specs + '\n' + keyPad + ']';
 }
 
 function faqJson(faq, origin) {
@@ -120,7 +154,7 @@ export function renderEl70BusinessBlock(biz, origin = 'https://andresblitz.com')
     "contactType": "customer service",
     "email": ${JSON.stringify(biz.email)},
     "availableLanguage": ["es", "en"]
-   }
+   }${hoursBlock(biz.openingHours, 4)}
   },
   {
    "@type": "Place",
@@ -133,10 +167,10 @@ export function renderEl70BusinessBlock(biz, origin = 'https://andresblitz.com')
     "latitude": ${geo.latitude},
     "longitude": ${geo.longitude}
    },
-   "hasMap": ${JSON.stringify(biz.hasMap)},
+   "hasMap": ${JSON.stringify(biz.hasMap)}${hoursBlock(biz.openingHours, 4)},
    "containedInPlace": {
     "@type": "City",
-    "name": ${JSON.stringify(addr.nearby || addr.addressLocality)},
+    "name": ${JSON.stringify(addr.addressLocality)},
     "containedInPlace": {
      "@type": "AdministrativeArea",
      "name": ${JSON.stringify(addr.addressRegion)}
@@ -154,7 +188,7 @@ export function renderEl70BusinessBlock(biz, origin = 'https://andresblitz.com')
    "@id": "${origin}/70/#webpage",
    "url": "${origin}/70/",
    "name": "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia",
-   "description": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en el km 70 Perijá, Rosario de Perijá, Zulia, Venezuela.",
+   "description": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela.",
    "inLanguage": "es-VE",
    "dateModified": ${JSON.stringify(biz.dateModified)},
    "isPartOf": { "@id": "${origin}/#website" },
@@ -163,7 +197,7 @@ export function renderEl70BusinessBlock(biz, origin = 'https://andresblitz.com')
    "contentLocation": { "@id": "${origin}/70/#place" },
    "primaryImageOfPage": { "@id": "${origin}/70/img/og-el70.jpg#img" },
    "breadcrumb": { "@id": "${origin}/70/#breadcrumb" },
-   "keywords": "El 70 farm, Finca El 70, ganadería, silvopastoreo, silvopasture, Rosario de Perijá, La Villa del Rosario, Carretera de Perijá, Zulia, Río Palmar, Troncal 6"
+   "keywords": "El 70 farm, Finca El 70, ganadería, silvopastoreo, silvopasture, Villa del Rosario, Villa del Rosario 4033, Rosario de Perijá, Carretera de Perijá, Zulia, Río Palmar, Troncal 6"
   },
   {
    "@type": "BreadcrumbList",
