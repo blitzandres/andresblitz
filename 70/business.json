@@ -1,0 +1,73 @@
+{
+  "name": "Agropecuaria Blimar C.A.",
+  "legalName": "Agropecuaria Blimar C.A.",
+  "alternateName": [
+    "El 70",
+    "Finca El 70",
+    "El 70 farm",
+    "Agroblimar"
+  ],
+  "url": "https://andresblitz.com/70/",
+  "email": "blitz@mail.grokbot.com",
+  "telephone": null,
+  "description": "Finca familiar de ganadería y silvopastoreo (El 70 farm, Finca El 70) en el km 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, municipio Rosario de Perijá, Zulia, Venezuela.",
+  "address": {
+    "streetAddress": "KM 70 Carretera de Perijá (Troncal 6)",
+    "addressLocality": "Rosario de Perijá",
+    "nearby": "La Villa del Rosario",
+    "addressRegion": "Zulia",
+    "addressCountry": "VE",
+    "geoRegion": "VE-V",
+    "placeName": "Rosario de Perijá, Zulia, Venezuela"
+  },
+  "geo": {
+    "latitude": 10.4165941,
+    "longitude": -72.2108835
+  },
+  "cid": "17434179994800704762",
+  "hasMap": "https://maps.google.com/?cid=17434179994800704762",
+  "placeId": null,
+  "openingHours": null,
+  "rif": null,
+  "sameAs": [
+    "https://maps.google.com/?cid=17434179994800704762",
+    "https://www.facebook.com/agropecuariablimar"
+  ],
+  "knowsAbout": [
+    "ganadería lechera",
+    "producción de leche",
+    "ganado de carne",
+    "ganadería bovina",
+    "silvopastoreo",
+    "silvopasture",
+    "El 70 farm",
+    "Finca El 70"
+  ],
+  "products": [],
+  "dateModified": "2026-11-18",
+  "sources": {
+    "name": "Live /70/ page and public Facebook page title",
+    "address": "Published on the live /70/ page; confirm against Google Business Profile",
+    "geo": "Live /70/ page, image EXIF/XMP, and the published Google Business pin",
+    "cid": "Published on the live /70/ page (hasMap)",
+    "facebook": "Public page https://www.facebook.com/agropecuariablimar (About lists city as Maracaibo)",
+    "placeId": "Not available without a Business Profile login",
+    "telephone": "Intentionally omitted; site rule is no public phone",
+    "openingHours": "Not published; needs the Business Profile",
+    "rif": "Not published; needs the owner"
+  },
+  "faq": [
+    {
+      "q": "¿Dónde queda Agropecuaria Blimar?",
+      "a": "Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en el kilómetro 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela."
+    },
+    {
+      "q": "¿A qué se dedica Agropecuaria Blimar?",
+      "a": "Agropecuaria Blimar C.A. es una finca familiar de ganadería — lechera y de carne — y un proyecto de silvopastoreo en El 70."
+    },
+    {
+      "q": "¿Cómo se contacta a Agropecuaria Blimar?",
+      "a": "Agropecuaria Blimar C.A. recibe consultas en blitz@mail.grokbot.com. No publicamos un teléfono en esta página."
+    }
+  ]
+}

@@ -2,13 +2,15 @@
 title: "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia"
 description: "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en el km 70 Perijá, Rosario de Perijá, Zulia, Venezuela."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-11-15"
+last_updated: "2026-11-18"
 lang: "es-VE"
 ---
 
 > Note for AI agents: this is the clean Markdown version of https://andresblitz.com/70/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
 
 # Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia
+
+Actualizado: 18 de noviembre de 2026
 
 ## La finca
 
@@ -62,9 +64,31 @@ Si usted es el comprador interesado y desea presentar una propuesta seria, con g
 
 En El 70 el trabajo se hace en equipo y con cariño por la tierra y los animales. Si te interesa sumarte, en el ordeño, con el ganado, en el campo y la maquinaria o en la administración, cuéntanos un poco de ti. Leemos cada mensaje y te responderemos.
 
+## Quiénes somos
+
+Agropecuaria Blimar C.A. es una empresa agropecuaria familiar. La finca, conocida en la zona como El 70 o Finca El 70, está en el kilómetro 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela.
+
+El 70 es parte de nuestra historia familiar y no está a la venta. Valoramos el interés de quienes ven en esta tierra lo mismo que nosotros: su potencial y su valor, y preferimos tratar de forma directa, no a través de intermediarios.
+
+## Preguntas frecuentes
+
+### ¿Dónde queda Agropecuaria Blimar?
+
+Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en el kilómetro 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela.
+
+### ¿A qué se dedica Agropecuaria Blimar?
+
+Agropecuaria Blimar C.A. es una finca familiar de ganadería — lechera y de carne — y un proyecto de silvopastoreo en El 70.
+
+### ¿Cómo se contacta a Agropecuaria Blimar?
+
+Agropecuaria Blimar C.A. recibe consultas en [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070). No publicamos un teléfono en esta página.
+
 ## Contacto
 
 Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070)
+
+[Cómo llegar — ver en Google Maps](https://maps.google.com/?cid=17434179994800704762)
 
 ## Tablero de mensajes
 

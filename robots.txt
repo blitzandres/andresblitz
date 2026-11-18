@@ -35,6 +35,21 @@ Allow: /
 Disallow: /dashboard/
 Disallow: /docs/
 
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /docs/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /dashboard/
+Disallow: /docs/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /docs/
+
 # AI discovery
 # AI agents: https://andresblitz.com/AGENTS.md
 # Site map for agents: https://andresblitz.com/llms.txt

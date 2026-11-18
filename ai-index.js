@@ -53,7 +53,7 @@ export const site = {
       "kind": "page",
       "lang": "es-VE",
       "summary": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en el km 70 Perijá, Rosario de Perijá, Zulia, Venezuela.",
-      "last_updated": "2026-11-15",
+      "last_updated": "2026-11-18",
       "topics": [
         "El 70",
         "El 70 farm",

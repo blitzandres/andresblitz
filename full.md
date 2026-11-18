@@ -6,13 +6,15 @@
 title: "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia"
 description: "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en el km 70 Perijá, Rosario de Perijá, Zulia, Venezuela."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-11-15"
+last_updated: "2026-11-18"
 lang: "es-VE"
 ---
 
 > Note for AI agents: this is the clean Markdown version of https://andresblitz.com/70/. The site map for agents is https://andresblitz.com/llms.txt (full content: https://andresblitz.com/llms-full.txt).
 
 # Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia
+
+Actualizado: 18 de noviembre de 2026
 
 ## La finca
 
@@ -66,9 +68,31 @@ Si usted es el comprador interesado y desea presentar una propuesta seria, con g
 
 En El 70 el trabajo se hace en equipo y con cariño por la tierra y los animales. Si te interesa sumarte, en el ordeño, con el ganado, en el campo y la maquinaria o en la administración, cuéntanos un poco de ti. Leemos cada mensaje y te responderemos.
 
+## Quiénes somos
+
+Agropecuaria Blimar C.A. es una empresa agropecuaria familiar. La finca, conocida en la zona como El 70 o Finca El 70, está en el kilómetro 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela.
+
+El 70 es parte de nuestra historia familiar y no está a la venta. Valoramos el interés de quienes ven en esta tierra lo mismo que nosotros: su potencial y su valor, y preferimos tratar de forma directa, no a través de intermediarios.
+
+## Preguntas frecuentes
+
+### ¿Dónde queda Agropecuaria Blimar?
+
+Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en el kilómetro 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela.
+
+### ¿A qué se dedica Agropecuaria Blimar?
+
+Agropecuaria Blimar C.A. es una finca familiar de ganadería — lechera y de carne — y un proyecto de silvopastoreo en El 70.
+
+### ¿Cómo se contacta a Agropecuaria Blimar?
+
+Agropecuaria Blimar C.A. recibe consultas en [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070). No publicamos un teléfono en esta página.
+
 ## Contacto
 
 Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070)
+
+[Cómo llegar — ver en Google Maps](https://maps.google.com/?cid=17434179994800704762)
 
 ## Tablero de mensajes
 
@@ -210,7 +234,7 @@ Your email is only used for what you sign up for, and it is never sold or shared
 title: "How Many Days Has Bitcoin Closed Above $100,000? (217 Days)"
 description: "Bitcoin has closed above $100,000 on 217 of 4,445 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-100k/"
-last_updated: "2026-11-17"
+last_updated: "2026-11-18"
 lang: "en"
 ---
 
@@ -280,7 +304,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "How Many Days Has Bitcoin Closed Above $50,000? (1,152 Days)"
 description: "Bitcoin has closed above $50,000 on 1,152 of 4,445 days since Sep 17, 2014 (25.9%). First close above: Feb 17, 2021. Most recent: Nov 17, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-50k/"
-last_updated: "2026-11-17"
+last_updated: "2026-11-18"
 lang: "en"
 ---
 
@@ -352,7 +376,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "How Many Days Has Bitcoin Closed Above $70,000? (631 Days)"
 description: "Bitcoin has closed above $70,000 on 631 of 4,445 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-70k/"
-last_updated: "2026-11-17"
+last_updated: "2026-11-18"
 lang: "en"
 ---
 
@@ -423,7 +447,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "How Many Days Has Bitcoin Closed Above $90,000? (348 Days)"
 description: "Bitcoin has closed above $90,000 on 348 of 4,445 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-90k/"
-last_updated: "2026-11-17"
+last_updated: "2026-11-18"
 lang: "en"
 ---
 
@@ -494,7 +518,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "Bitcoin Days in Each $10,000 Price Bracket by Year (2014–2026)"
 description: "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 17, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/by-year/"
-last_updated: "2026-11-17"
+last_updated: "2026-11-18"
 lang: "en"
 ---
 
@@ -576,7 +600,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "Días del bitcoin en cada precio: historial en dólares desde 2014"
 description: "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.445 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes."
 url: "https://andresblitz.com/bitcoin/es/"
-last_updated: "2026-11-17"
+last_updated: "2026-11-18"
 lang: "es"
 ---
 
@@ -647,7 +671,7 @@ Fuente: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) cierre
 title: "Bitcoin’s Highest Close Ever: $124,752.53 on October 6, 2025"
 description: "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 17, 2026: 407 days since, latest close $64,893.95, 48.0% below it."
 url: "https://andresblitz.com/bitcoin/highest-close/"
-last_updated: "2026-11-17"
+last_updated: "2026-11-18"
 lang: "en"
 ---
 
@@ -734,7 +758,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "Bitcoin Price History Brackets: Days Spent at Each Price"
 description: "Days Bitcoin spent at each USD price since 2014, in $2k, $3k, $4k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country."
 url: "https://andresblitz.com/bitcoin/"
-last_updated: "2026-11-17"
+last_updated: "2026-11-18"
 lang: "en"
 ---
 
@@ -3229,6 +3253,18 @@ Public repoJavaScriptLive
 ](https://andresblitz.com/bitcoin/)
 
 [Daily closes (JSON)](https://andresblitz.com/bitcoin/history.json)[Source](https://github.com/blitzandres/andresblitz/blob/main/scripts/bake-btc-history.mjs)
+
+[
+
+## El 70 farm · Agropecuaria Blimar
+
+Family cattle farm and silvopasture project at km 70 Carretera de Perijá, Rosario de Perijá, Zulia, Venezuela.
+
+Family farmZulia, Venezuela
+
+](https://andresblitz.com/70/)
+
+[Visit the page](https://andresblitz.com/70/)[Google Maps](https://maps.google.com/?cid=17434179994800704762)
 
 [
 

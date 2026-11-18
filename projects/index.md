@@ -210,6 +210,18 @@ Public repoJavaScriptLive
 
 [
 
+## El 70 farm · Agropecuaria Blimar
+
+Family cattle farm and silvopasture project at km 70 Carretera de Perijá, Rosario de Perijá, Zulia, Venezuela.
+
+Family farmZulia, Venezuela
+
+](https://andresblitz.com/70/)
+
+[Visit the page](https://andresblitz.com/70/)[Google Maps](https://maps.google.com/?cid=17434179994800704762)
+
+[
+
 ## Elite Island Movers
 
 One-page site for a local moving company.
