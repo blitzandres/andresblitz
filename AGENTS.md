@@ -115,7 +115,7 @@ Each entry links to the live HTML page, notes the language (`en` or `es`), and g
 
 ### El 70 (Spanish)
 
-- [El 70](https://andresblitz.com/70/) (es): El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). Km 70 Carretera de Perijá (Troncal 6), near La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela. Geo: 10.4165941,-72.2108835.
+- [El 70](https://andresblitz.com/70/) (es): El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). KM 70 Carretera de Perijá (Troncal 6), near La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela. Geo: 10.4165941,-72.2108835. Maps: https://maps.google.com/?cid=17434179994800704762. Social: https://www.facebook.com/agropecuariablimar. Contact: blitz@mail.grokbot.com. Source: https://andresblitz.com/70/ and 70/business.json.
   Markdown: https://andresblitz.com/70/index.md
 
 ### Projects and Play (English)

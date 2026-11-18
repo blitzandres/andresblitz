@@ -7,6 +7,7 @@ import { execSync } from 'node:child_process';
 import { parseHTML } from 'linkedom';
 import TurndownService from 'turndown';
 import { gfm } from 'turndown-plugin-gfm';
+import { applyEl70Business } from './lib/el70-business.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const ORIGIN = 'https://andresblitz.com';
@@ -49,6 +50,8 @@ function kindFor(pathname) {
   return 'page';
 }
 
+const el70 = applyEl70Business(ROOT, ORIGIN);
+
 const pages = [];
 for (const file of walk(ROOT).sort()) {
   const original = fs.readFileSync(file, 'utf8');
@@ -77,7 +80,7 @@ for (const file of walk(ROOT).sort()) {
 
 // Extra context for special pages
 const EXTRA = {
-  '/70/': { topics: ['El 70', 'El 70 farm', 'Finca El 70', 'Agropecuaria Blimar', 'ganadería', 'silvopastoreo', 'Carretera de Perijá', 'Rosario de Perijá', 'Zulia', 'Venezuela'], geo: { place: 'La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela', lat: 10.4165941, lng: -72.2108835 }, note: 'El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). Km 70 Carretera de Perijá (Troncal 6), near La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela. Geo: 10.4165941,-72.2108835.' },
+  '/70/': el70?.extra || { topics: ['El 70', 'El 70 farm', 'Finca El 70', 'Agropecuaria Blimar', 'ganadería', 'silvopastoreo', 'Carretera de Perijá', 'Rosario de Perijá', 'Zulia', 'Venezuela'], geo: { place: 'La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela', lat: 10.4165941, lng: -72.2108835 }, note: 'El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). Km 70 Carretera de Perijá (Troncal 6), near La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela. Geo: 10.4165941,-72.2108835.' },
   '/tasa-bcv/': { topics: ['Tasa BCV', 'tipo de cambio', 'Venezuela', 'Maracaibo'], geo: { place: 'Maracaibo, Zulia, Venezuela' }, note: 'Tasa BCV — tipo de cambio oficial del Banco Central de Venezuela (en español). Maracaibo, Zulia.' },
   '/dolar-argentina/': { topics: ['Dólar hoy', 'dólar blue', 'dólar MEP', 'tipo de cambio', 'Argentina'], note: 'Dólar hoy en Argentina — oficial, blue, MEP, CCL, cripto y tarjeta, con conversor ARS ↔ USD (en español).' },
   '/dolar-mexico/': { topics: ['FIX', 'Banxico', 'dólar hoy', 'tipo de cambio', 'México'], note: 'Dólar hoy en México — tipo de cambio FIX de Banxico, compra y venta de mercado y conversor MXN ↔ USD (en español).' },
