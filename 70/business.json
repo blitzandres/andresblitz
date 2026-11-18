@@ -10,15 +10,17 @@
   "url": "https://andresblitz.com/70/",
   "email": "blitz@mail.grokbot.com",
   "telephone": null,
-  "description": "Finca familiar de ganadería y silvopastoreo (El 70 farm, Finca El 70) en el km 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, municipio Rosario de Perijá, Zulia, Venezuela.",
+  "description": "Finca familiar de ganadería y silvopastoreo (El 70 farm, Finca El 70) en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el municipio.",
   "address": {
-    "streetAddress": "KM 70 Carretera de Perijá (Troncal 6)",
-    "addressLocality": "Rosario de Perijá",
-    "nearby": "La Villa del Rosario",
+    "streetAddress": "KM 70 Carretera de Perijá",
+    "addressLocality": "Villa del Rosario",
+    "postalCode": "4033",
     "addressRegion": "Zulia",
     "addressCountry": "VE",
     "geoRegion": "VE-V",
-    "placeName": "Rosario de Perijá, Zulia, Venezuela"
+    "placeName": "Villa del Rosario, Zulia, Venezuela",
+    "formatted": "KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela",
+    "alternateLocality": "Rosario de Perijá"
   },
   "geo": {
     "latitude": 10.4165941,
@@ -27,7 +29,27 @@
   "cid": "17434179994800704762",
   "hasMap": "https://maps.google.com/?cid=17434179994800704762",
   "placeId": null,
-  "openingHours": null,
+  "openingHours": [
+    {
+      "dayOfWeek": [
+        "Monday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    {
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "18:30"
+    }
+  ],
   "rif": null,
   "sameAs": [
     "https://maps.google.com/?cid=17434179994800704762",
@@ -47,23 +69,27 @@
   "dateModified": "2026-11-18",
   "sources": {
     "name": "Live /70/ page and public Facebook page title",
-    "address": "Published on the live /70/ page; confirm against Google Business Profile",
+    "address": "Google Maps public listing, 18 Nov 2026 (Andrés approved matching the page). Formatted: KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela.",
     "geo": "Live /70/ page, image EXIF/XMP, and the published Google Business pin",
     "cid": "Published on the live /70/ page (hasMap)",
     "facebook": "Public page https://www.facebook.com/agropecuariablimar (About lists city as Maracaibo)",
     "placeId": "Not available without a Business Profile login",
     "telephone": "Intentionally omitted; site rule is no public phone",
-    "openingHours": "Not published; needs the Business Profile",
+    "openingHours": "Google Maps public listing, 18 Nov 2026 (Andrés approved matching the page): Mon 09:00–17:00, Tue–Sun 09:00–18:30.",
     "rif": "Not published; needs the owner"
   },
   "faq": [
     {
       "q": "¿Dónde queda Agropecuaria Blimar?",
-      "a": "Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en el kilómetro 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela."
+      "a": "Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el nombre del municipio."
     },
     {
       "q": "¿A qué se dedica Agropecuaria Blimar?",
       "a": "Agropecuaria Blimar C.A. es una finca familiar de ganadería — lechera y de carne — y un proyecto de silvopastoreo en El 70."
+    },
+    {
+      "q": "¿Cuál es el horario de Agropecuaria Blimar?",
+      "a": "Agropecuaria Blimar C.A. atiende los lunes de 09:00 a 17:00 y de martes a domingo de 09:00 a 18:30."
     },
     {
       "q": "¿Cómo se contacta a Agropecuaria Blimar?",

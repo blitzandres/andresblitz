@@ -4,9 +4,9 @@
 
 ---
 title: "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia"
-description: "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en el km 70 Perijá, Rosario de Perijá, Zulia, Venezuela."
+description: "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-11-18"
+last_updated: "2026-11-15"
 lang: "es-VE"
 ---
 
@@ -20,7 +20,7 @@ Actualizado: 18 de noviembre de 2026
 
 ### Agropecuaria Blimar C.A.
 
-Empresa agropecuaria familiar ubicada en el kilómetro 70 de la Carretera de Perijá (Troncal 6), vía Maracaibo – La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela. Es una zona reconocida por su tradición ganadera y lechera, cerca del Río Palmar. La finca es conocida en la zona como «El 70» o Finca El 70 (El 70 farm, in English).
+Empresa agropecuaria familiar ubicada en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá, Troncal 6, vía Maracaibo). Rosario de Perijá es el municipio. Es una zona reconocida por su tradición ganadera y lechera, cerca del Río Palmar. La finca es conocida en la zona como «El 70» o Finca El 70 (El 70 farm, in English).
 
 ### Ganadería lechera
 
@@ -32,13 +32,13 @@ Además de la lechería, en la finca se trabaja con ganado de carne, como es tra
 
 ### Silvopastoreo
 
-En El 70 se desarrolla un proyecto de silvopastoreo: ganadería junto a árboles y pasturas en la misma tierra, en el km 70 de la Carretera de Perijá, municipio Rosario de Perijá.
+En El 70 se desarrolla un proyecto de silvopastoreo: ganadería junto a árboles y pasturas en la misma tierra, en KM 70 Carretera, Villa del Rosario 4033 (municipio Rosario de Perijá).
 
 Desliza para ver más →
 
 ## El 70 farm
 
-El 70 farm (Finca El 70) is a family cattle farm and silvopasture project at kilometre 70 of the Carretera de Perijá (Troncal 6), near La Villa del Rosario in the municipality of Rosario de Perijá, Zulia, Venezuela. Locally the farm is known as El 70. It is run by Agropecuaria Blimar C.A.
+El 70 farm (Finca El 70) is a family cattle farm and silvopasture project at KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá / Troncal 6). Rosario de Perijá is the municipality. Locally the farm is known as El 70. It is run by Agropecuaria Blimar C.A.
 
 For questions about the farm, write to [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=El%2070%20farm).
 
@@ -70,7 +70,7 @@ En El 70 el trabajo se hace en equipo y con cariño por la tierra y los animales
 
 ## Quiénes somos
 
-Agropecuaria Blimar C.A. es una empresa agropecuaria familiar. La finca, conocida en la zona como El 70 o Finca El 70, está en el kilómetro 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela.
+Agropecuaria Blimar C.A. es una empresa agropecuaria familiar. La finca, conocida en la zona como El 70 o Finca El 70, está en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el municipio.
 
 El 70 es parte de nuestra historia familiar y no está a la venta. Valoramos el interés de quienes ven en esta tierra lo mismo que nosotros: su potencial y su valor, y preferimos tratar de forma directa, no a través de intermediarios.
 
@@ -78,11 +78,15 @@ El 70 es parte de nuestra historia familiar y no está a la venta. Valoramos el 
 
 ### ¿Dónde queda Agropecuaria Blimar?
 
-Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en el kilómetro 70 de la Carretera de Perijá (Troncal 6), cerca de La Villa del Rosario, en el municipio Rosario de Perijá, estado Zulia, Venezuela.
+Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el nombre del municipio.
 
 ### ¿A qué se dedica Agropecuaria Blimar?
 
 Agropecuaria Blimar C.A. es una finca familiar de ganadería — lechera y de carne — y un proyecto de silvopastoreo en El 70.
+
+### ¿Cuál es el horario de Agropecuaria Blimar?
+
+Agropecuaria Blimar C.A. atiende los lunes de 09:00 a 17:00 y de martes a domingo de 09:00 a 18:30.
 
 ### ¿Cómo se contacta a Agropecuaria Blimar?
 
@@ -90,7 +94,16 @@ Agropecuaria Blimar C.A. recibe consultas en [blitz@mail.grokbot.com](mailto:bli
 
 ## Contacto
 
+Dirección: KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela
+
+Horario:
+
+-   Lunes: 09:00–17:00
+-   Martes a domingo: 09:00–18:30
+
 Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070)
+
+No publicamos un teléfono en esta página.
 
 [Cómo llegar — ver en Google Maps](https://maps.google.com/?cid=17434179994800704762)
 
