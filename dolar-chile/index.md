@@ -16,23 +16,23 @@ El dólar observado que informa el Banco Central de Chile y una cotización de c
 
 ### Dólar de cierre de mercado
 
-$ 999,05
+$ 992,30
 
-pesos por 1 dólar · fecha 17 de noviembre de 2026
+pesos por 1 dólar · fecha 18 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 991,63
+$ 1.001,15
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 993,07
+$ 1.002,99
 
 lo que cuesta un dólar
 
-Fuente: cl.dolarapi.com, actualizado 17-11-2026, 5:01 p. m. (hora de Chile)
+Fuente: cl.dolarapi.com, actualizado 18-11-2026, 9:01 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
