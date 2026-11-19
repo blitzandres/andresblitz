@@ -28,21 +28,21 @@ Compra $ 1.620,00
 
 ### Dólar MEP (bolsa)
 
-$ 1.632,20
+$ 1.649,80
 
-Compra $ 1.629,40
+Compra $ 1.631,90
 
 ### Contado con liqui (CCL)
 
-$ 1.730,80
+$ 1.748,20
 
-Compra $ 1.729,90
+Compra $ 1.739,80
 
 ### Dólar cripto (USDT)
 
-$ 1.728,58
+$ 1.735,00
 
-Compra $ 1.722,53
+Compra $ 1.730,43
 
 ### Dólar tarjeta
 
@@ -50,7 +50,7 @@ $ 2.060,50
 
 Compra $ 1.995,50
 
-Fuente: dolarapi.com, actualizado 19 nov 2026, 2:00 p. m. (hora de Buenos Aires)
+Fuente: dolarapi.com, actualizado 19 nov 2026, 5:59 p. m. (hora de Buenos Aires)
 
 ## Conversor de pesos a dólares (ARS ↔ USD)
 
