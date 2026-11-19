@@ -1,6 +1,6 @@
 ---
 title: "Bitcoin’s Highest Close Ever: $124,752.53 on October 6, 2025"
-description: "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 17, 2026: 407 days since, latest close $64,893.95, 48.0% below it."
+description: "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 18, 2026: 408 days since, latest close $62,987.27, 49.5% below it."
 url: "https://andresblitz.com/bitcoin/highest-close/"
 last_updated: "2026-11-18"
 lang: "en"
@@ -12,13 +12,13 @@ Markets · Bitcoin
 
 # Bitcoin’s highest close ever
 
-Bitcoin’s highest daily close is **$124,752.53** on October 6, 2025. As of November 17, 2026, that was **407 days** ago, and the latest close of $64,893.95 is 48.0% below it. This counts closing prices only, not intraday highs.
+Bitcoin’s highest daily close is **$124,752.53** on October 6, 2025. As of November 18, 2026, that was **408 days** ago, and the latest close of $62,987.27 is 49.5% below it. This counts closing prices only, not intraday highs.
 
 ## Highest daily close (Yahoo Finance BTC-USD)
 
 $124,752.53 October 6, 2025
 
-<table class="bt"><caption>As of November 17, 2026 (last completed close)</caption><tbody><tr><th scope="row">Highest close</th><td class="n">$124,752.53</td></tr><tr><th scope="row">Date of highest close</th><td class="n">October 6, 2025</td></tr><tr><th scope="row">Days since the highest close</th><td class="n">407</td></tr><tr><th scope="row">Latest close</th><td class="n">$64,893.95 (November 17, 2026)</td></tr><tr><th scope="row">Latest close vs. highest close</th><td class="n">48.0% below ($59,858.58)</td></tr><tr><th scope="row">Lowest close in the record</th><td class="n">$178.10 (January 14, 2015)</td></tr></tbody></table>
+<table class="bt"><caption>As of November 18, 2026 (last completed close)</caption><tbody><tr><th scope="row">Highest close</th><td class="n">$124,752.53</td></tr><tr><th scope="row">Date of highest close</th><td class="n">October 6, 2025</td></tr><tr><th scope="row">Days since the highest close</th><td class="n">408</td></tr><tr><th scope="row">Latest close</th><td class="n">$62,987.27 (November 18, 2026)</td></tr><tr><th scope="row">Latest close vs. highest close</th><td class="n">49.5% below ($61,765.26)</td></tr><tr><th scope="row">Lowest close in the record</th><td class="n">$178.10 (January 14, 2015)</td></tr></tbody></table>
 
 Ten highest daily closes
 | Rank | Date | Close (USD) |
@@ -63,7 +63,7 @@ $124,752.53 on October 6, 2025, using Yahoo Finance BTC-USD daily closes since S
 
 ### How many days since Bitcoin’s highest close?
 
-407 days as of November 17, 2026. The latest close then was $64,893.95, 48.0% below the high.
+408 days as of November 18, 2026. The latest close then was $62,987.27, 49.5% below the high.
 
 ### Why is this lower than the all-time high I see elsewhere?
 
