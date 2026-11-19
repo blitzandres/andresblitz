@@ -1,5 +1,81 @@
 [
  {
+  "guid": "usdt-ar:2026-11-19T17:15:36.000Z:1716.5",
+  "key": "usdt-ar",
+  "title": "Argentina: USDT P2P (ARS)",
+  "value": 1716.5,
+  "unit": "ARS por USDT",
+  "extra": "brecha +8.64 % vs. Dólar oficial",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-19T17:15:36.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "usdt-ve:2026-11-19T17:15:26.000Z:1076",
+  "key": "usdt-ve",
+  "title": "Venezuela: USDT P2P (VES)",
+  "value": 1076,
+  "unit": "VES por USDT",
+  "extra": "brecha +21 % vs. Tasa BCV",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-19T17:15:26.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "usdt-co:2026-11-19T17:15:15.000Z:3380.69",
+  "key": "usdt-co",
+  "title": "Colombia: USDT P2P (COP)",
+  "value": 3380.69,
+  "unit": "COP por USDT",
+  "extra": "brecha +1.61 % vs. TRM",
+  "source": "CriptoYa (mediana P2P)",
+  "time": "2026-11-19T17:15:15.000Z",
+  "url": "https://andresblitz.com/dolar-cripto/"
+ },
+ {
+  "guid": "bitcoin:2026-11-19T17:14:22.000Z:62371",
+  "key": "bitcoin",
+  "title": "Bitcoin (BTC/USD)",
+  "value": 62371,
+  "unit": "USD",
+  "change24h": -0.32,
+  "extra": "CAD 89319",
+  "source": "CoinGecko",
+  "time": "2026-11-19T17:14:22.000Z",
+  "url": "https://www.coingecko.com/es/monedas/bitcoin",
+  "fetched": "2026-11-19T17:15:40.227Z"
+ },
+ {
+  "guid": "dolar-argentina-blue:2026-11-19T17:00:00.000Z:1640",
+  "key": "dolar-argentina-blue",
+  "title": "Argentina: Dólar blue",
+  "value": 1640,
+  "unit": "ARS por USD",
+  "source": "dolarapi.com",
+  "time": "2026-11-19T17:00:00.000Z",
+  "url": "https://andresblitz.com/dolar-argentina/"
+ },
+ {
+  "guid": "dolar-argentina:2026-11-19T14:00:00.000Z:1585",
+  "key": "dolar-argentina",
+  "title": "Argentina: Dólar oficial",
+  "value": 1585,
+  "unit": "ARS por USD",
+  "source": "dolarapi.com",
+  "time": "2026-11-19T14:00:00.000Z",
+  "url": "https://andresblitz.com/dolar-argentina/"
+ },
+ {
+  "guid": "dolar-chile:2026-11-19T12:01:24.768Z:1007.38",
+  "key": "dolar-chile",
+  "title": "Chile: Dólar de cierre de mercado",
+  "value": 1007.38,
+  "unit": "CLP por USD",
+  "source": "cl.dolarapi.com",
+  "time": "2026-11-19T12:01:24.768Z",
+  "url": "https://andresblitz.com/dolar-chile/"
+ },
+ {
   "guid": "usdt-ve:2026-11-19T07:49:28.000Z:1073.918",
   "key": "usdt-ve",
   "title": "Venezuela: USDT P2P (VES)",
@@ -218,6 +294,27 @@
   "url": "https://andresblitz.com/dolar-argentina/"
  },
  {
+  "guid": "boc-policy:2026-11-18T16:00:00.000Z:2.5",
+  "key": "boc-policy",
+  "title": "Tasa de política: Banco de Canadá",
+  "value": 2.5,
+  "unit": "%",
+  "source": "Bank of Canada Valet API (V39079)",
+  "time": "2026-11-18T16:00:00.000Z",
+  "url": "https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/"
+ },
+ {
+  "guid": "fed-funds-target:2026-11-18T16:00:00.000Z:3,75–4,00",
+  "key": "fed-funds-target",
+  "title": "Tasa de política: Reserva Federal (rango objetivo)",
+  "value": "3,75–4,00",
+  "unit": "%",
+  "extra": "EFFR 3.88%",
+  "source": "Federal Reserve Bank of New York Markets API (EFFR)",
+  "time": "2026-11-18T16:00:00.000Z",
+  "url": "https://www.newyorkfed.org/markets/reference-rates/effr"
+ },
+ {
   "guid": "dolar-argentina:2026-11-18T14:00:00.000Z:1580",
   "key": "dolar-argentina",
   "title": "Argentina: Dólar oficial",
@@ -236,6 +333,16 @@
   "source": "cl.dolarapi.com",
   "time": "2026-11-18T12:01:07.298Z",
   "url": "https://andresblitz.com/dolar-chile/"
+ },
+ {
+  "guid": "boe-bank-rate:2026-11-18T12:00:00.000Z:4",
+  "key": "boe-bank-rate",
+  "title": "Tasa de política: Banco de Inglaterra (Bank Rate)",
+  "value": 4,
+  "unit": "%",
+  "source": "Bank of England Database (IUDBEDR)",
+  "time": "2026-11-18T12:00:00.000Z",
+  "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate"
  },
  {
   "guid": "usdt-co:2026-11-18T09:00:21.000Z:3280.2375",
@@ -434,109 +541,5 @@
   "time": "2026-11-17T18:23:12.000Z",
   "url": "https://www.coingecko.com/es/monedas/bitcoin",
   "fetched": "2026-11-17T18:24:26.207Z"
- },
- {
-  "guid": "dolar-argentina:2026-11-17T18:00:00.000Z:1575",
-  "key": "dolar-argentina",
-  "title": "Argentina: Dólar oficial",
-  "value": 1575,
-  "unit": "ARS por USD",
-  "source": "dolarapi.com",
-  "time": "2026-11-17T18:00:00.000Z",
-  "url": "https://andresblitz.com/dolar-argentina/"
- },
- {
-  "guid": "dolar-mexico:2026-11-17T18:00:00.000Z:18.4677",
-  "key": "dolar-mexico",
-  "title": "México: Tipo de cambio FIX (Banxico)",
-  "value": 18.4677,
-  "unit": "MXN por USD",
-  "source": "mx.dolarapi.com (FIX de Banxico)",
-  "time": "2026-11-17T18:00:00.000Z",
-  "url": "https://andresblitz.com/dolar-mexico/"
- },
- {
-  "guid": "dolar-argentina-blue:2026-11-17T17:57:00.000Z:1605",
-  "key": "dolar-argentina-blue",
-  "title": "Argentina: Dólar blue",
-  "value": 1605,
-  "unit": "ARS por USD",
-  "source": "dolarapi.com",
-  "time": "2026-11-17T17:57:00.000Z",
-  "url": "https://andresblitz.com/dolar-argentina/"
- },
- {
-  "guid": "boc-policy:2026-11-17T16:00:00.000Z:2.5",
-  "key": "boc-policy",
-  "title": "Tasa de política: Banco de Canadá",
-  "value": 2.5,
-  "unit": "%",
-  "source": "Bank of Canada Valet API (V39079)",
-  "time": "2026-11-17T16:00:00.000Z",
-  "url": "https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/"
- },
- {
-  "guid": "fed-funds-target:2026-11-17T16:00:00.000Z:3,75–4,00",
-  "key": "fed-funds-target",
-  "title": "Tasa de política: Reserva Federal (rango objetivo)",
-  "value": "3,75–4,00",
-  "unit": "%",
-  "extra": "EFFR 3.88%",
-  "source": "Federal Reserve Bank of New York Markets API (EFFR)",
-  "time": "2026-11-17T16:00:00.000Z",
-  "url": "https://www.newyorkfed.org/markets/reference-rates/effr"
- },
- {
-  "guid": "dolar-argentina:2026-11-17T15:00:00.000Z:1575",
-  "key": "dolar-argentina",
-  "title": "Argentina: Dólar oficial",
-  "value": 1575,
-  "unit": "ARS por USD",
-  "source": "dolarapi.com",
-  "time": "2026-11-17T15:00:00.000Z",
-  "url": "https://andresblitz.com/dolar-argentina/"
- },
- {
-  "guid": "boe-bank-rate:2026-11-17T12:00:00.000Z:4",
-  "key": "boe-bank-rate",
-  "title": "Tasa de política: Banco de Inglaterra (Bank Rate)",
-  "value": 4,
-  "unit": "%",
-  "source": "Bank of England Database (IUDBEDR)",
-  "time": "2026-11-17T12:00:00.000Z",
-  "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate"
- },
- {
-  "guid": "usdt-ve:2026-11-17T08:58:53.000Z:1070.1275",
-  "key": "usdt-ve",
-  "title": "Venezuela: USDT P2P (VES)",
-  "value": 1070.1275,
-  "unit": "VES por USDT",
-  "extra": "brecha +20.34 % vs. Tasa BCV",
-  "source": "CriptoYa (mediana P2P)",
-  "time": "2026-11-17T08:58:53.000Z",
-  "url": "https://andresblitz.com/dolar-cripto/"
- },
- {
-  "guid": "usdt-co:2026-11-17T08:58:39.000Z:3281",
-  "key": "usdt-co",
-  "title": "Colombia: USDT P2P (COP)",
-  "value": 3281,
-  "unit": "COP por USDT",
-  "extra": "brecha -1.08 % vs. TRM",
-  "source": "CriptoYa (mediana P2P)",
-  "time": "2026-11-17T08:58:39.000Z",
-  "url": "https://andresblitz.com/dolar-cripto/"
- },
- {
-  "guid": "usdt-ar:2026-11-17T08:58:38.000Z:1675.08",
-  "key": "usdt-ar",
-  "title": "Argentina: USDT P2P (ARS)",
-  "value": 1675.08,
-  "unit": "ARS por USDT",
-  "extra": "brecha +6.35 % vs. Dólar oficial",
-  "source": "CriptoYa (mediana P2P)",
-  "time": "2026-11-17T08:58:38.000Z",
-  "url": "https://andresblitz.com/dolar-cripto/"
  }
 ]
