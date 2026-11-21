@@ -1,6 +1,6 @@
 ---
-title: "How Many Days Has Bitcoin Closed Above $50,000? (1,154 Days)"
-description: "Bitcoin has closed above $50,000 on 1,154 of 4,447 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 19, 2026. Yahoo Finance BTC-USD daily closes."
+title: "How Many Days Has Bitcoin Closed Above $50,000? (1,155 Days)"
+description: "Bitcoin has closed above $50,000 on 1,155 of 4,448 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 20, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-50k/"
 last_updated: "2026-11-20"
 lang: "en"
@@ -12,13 +12,13 @@ Markets · Bitcoin
 
 # How many days has Bitcoin closed above $50,000?
 
-**1,154 days.** Bitcoin closed above $50,000 on 1,154 of the 4,447 completed daily closes since September 17, 2014, which is 26.0% of all days. The first close above $50,000 was $52,149.01 on February 17, 2021; the most recent was $61,901.82 on November 19, 2026. The latest close, $61,901.82 on November 19, 2026, is above $50,000, and Bitcoin has now closed above it 1,010 days in a row.
+**1,155 days.** Bitcoin closed above $50,000 on 1,155 of the 4,448 completed daily closes since September 17, 2014, which is 26.0% of all days. The first close above $50,000 was $52,149.01 on February 17, 2021; the most recent was $58,798.98 on November 20, 2026. The latest close, $58,798.98 on November 20, 2026, is above $50,000, and Bitcoin has now closed above it 1,011 days in a row.
 
 ## Days Bitcoin closed above $50,000
 
-1,154 of 4,447 days · 26.0%
+1,155 of 4,448 days · 26.0%
 
-<table class="bt"><caption>Bitcoin daily closes above $50,000, September 17, 2014 – November 19, 2026</caption><tbody><tr><th scope="row">Days closed above $50,000</th><td class="n">1,154</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">26.0%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,447</td></tr><tr><th scope="row">First close above</th><td class="n">February 17, 2021 ($52,149.01)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 19, 2026 ($61,901.82)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">1,010 days (Feb 14, 2024 – Nov 19, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">1,010 days</td></tr></tbody></table>
+<table class="bt"><caption>Bitcoin daily closes above $50,000, September 17, 2014 – November 20, 2026</caption><tbody><tr><th scope="row">Days closed above $50,000</th><td class="n">1,155</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">26.0%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,448</td></tr><tr><th scope="row">First close above</th><td class="n">February 17, 2021 ($52,149.01)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 20, 2026 ($58,798.98)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">1,011 days (Feb 14, 2024 – Nov 20, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">1,011 days</td></tr></tbody></table>
 
 Closes above $50,000 by calendar year
 | Year | Days above | Days in data | Share |
@@ -26,12 +26,12 @@ Closes above $50,000 by calendar year
 | 2021 | 144 | 365 | 39.5% |
 | 2024 | 322 | 366 | 88.0% |
 | 2025 | 365 | 365 | 100.0% |
-| 2026 | 323 | 323 | 100.0% |
+| 2026 | 324 | 324 | 100.0% |
 
 Other levels (same data)
 | Closed above | Days | Share | Most recent |
 | --- | --- | --- | --- |
-| $50,000 | 1,154 | 26.0% | Nov 19, 2026 |
+| $50,000 | 1,155 | 26.0% | Nov 20, 2026 |
 | [$70,000](https://andresblitz.com/bitcoin/above-70k/) | 631 | 14.2% | Nov 12, 2026 |
 | [$90,000](https://andresblitz.com/bitcoin/above-90k/) | 348 | 7.8% | Jan 19, 2026 |
 | [$100,000](https://andresblitz.com/bitcoin/above-100k/) | 217 | 4.9% | Nov 12, 2025 |
@@ -44,11 +44,11 @@ A day counts when that day’s Yahoo Finance BTC-USD close is above $50,000. Tod
 
 ### How many days has Bitcoin closed above $50,000?
 
-1,154 of 4,447 completed daily closes from September 17, 2014 to November 19, 2026 (26.0%), using Yahoo Finance BTC-USD daily closes.
+1,155 of 4,448 completed daily closes from September 17, 2014 to November 20, 2026 (26.0%), using Yahoo Finance BTC-USD daily closes.
 
 ### When did Bitcoin first close above $50,000?
 
-On February 17, 2021, at $52,149.01. The most recent close above $50,000 was on November 19, 2026.
+On February 17, 2021, at $52,149.01. The most recent close above $50,000 was on November 20, 2026.
 
 ### How is a day counted?
 

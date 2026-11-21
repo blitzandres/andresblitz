@@ -117,7 +117,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-above-100k.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin has closed above $100,000 on 217 of 4,447 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes.",
+      "summary": "Bitcoin has closed above $100,000 on 217 of 4,448 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-20",
       "topics": [
         "Bitcoin",
@@ -127,13 +127,13 @@ export const site = {
     },
     {
       "slug": "bitcoin-above-50k",
-      "title": "How Many Days Has Bitcoin Closed Above $50,000? (1,154 Days)",
+      "title": "How Many Days Has Bitcoin Closed Above $50,000? (1,155 Days)",
       "url": "https://andresblitz.com/bitcoin/above-50k/",
       "md": "https://andresblitz.com/bitcoin/above-50k/index.md",
       "json": "https://andresblitz.com/api/page/bitcoin-above-50k.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin has closed above $50,000 on 1,154 of 4,447 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 19, 2026. Yahoo Finance BTC-USD daily closes.",
+      "summary": "Bitcoin has closed above $50,000 on 1,155 of 4,448 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 20, 2026. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-20",
       "topics": [
         "Bitcoin",
@@ -149,7 +149,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-above-70k.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin has closed above $70,000 on 631 of 4,447 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes.",
+      "summary": "Bitcoin has closed above $70,000 on 631 of 4,448 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-20",
       "topics": [
         "Bitcoin",
@@ -165,7 +165,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-above-90k.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin has closed above $90,000 on 348 of 4,447 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes.",
+      "summary": "Bitcoin has closed above $90,000 on 348 of 4,448 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-20",
       "topics": [
         "Bitcoin",
@@ -181,7 +181,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-by-year.json",
       "kind": "page",
       "lang": "en",
-      "summary": "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 19, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes.",
+      "summary": "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 20, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes.",
       "last_updated": "2026-11-20",
       "topics": [
         "Bitcoin",
@@ -197,7 +197,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-es.json",
       "kind": "page",
       "lang": "es",
-      "summary": "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.447 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes.",
+      "summary": "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.448 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes.",
       "last_updated": "2026-11-20",
       "topics": [
         "bitcoin",
@@ -214,7 +214,7 @@ export const site = {
       "json": "https://andresblitz.com/api/page/bitcoin-highest-close.json",
       "kind": "page",
       "lang": "en",
-      "summary": "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 19, 2026: 409 days since, latest close $61,901.82, 50.4% below it.",
+      "summary": "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 20, 2026: 410 days since, latest close $58,798.98, 52.9% below it.",
       "last_updated": "2026-11-20",
       "topics": [
         "Bitcoin",
@@ -251,7 +251,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "comisión cripto",
         "comisión de retiro",
@@ -271,7 +271,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "convertidor cripto",
         "bitcoin a bolívares",
@@ -326,7 +326,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CO",
       "summary": "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "TRM",
         "dólar hoy",
@@ -343,7 +343,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "dólar cripto",
         "USDT",
@@ -363,7 +363,7 @@ export const site = {
       "kind": "page",
       "lang": "es-MX",
       "summary": "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "FIX",
         "Banxico",
