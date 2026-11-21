@@ -118,7 +118,7 @@ No publicamos un teléfono en esta página.
 title: "Ahorro en dólares: qué valdrían hoy tus bolívares o pesos"
 description: "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones."
 url: "https://andresblitz.com/ahorro-en-dolares/"
-last_updated: "2026-11-20"
+last_updated: "2026-11-21"
 lang: "es"
 ---
 
@@ -1012,7 +1012,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 21 nov 2026, 19:02 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 21 nov 2026, 23:44 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -1028,15 +1028,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 53.404.227 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 96.088.000 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 100.592.125 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 207.905.606 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.142.414 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 205.981,44 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 60.582.883 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 60.055 USD | — |
-| Dólares canadienses | 86.028,79 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 53.477.146 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 96.219.200 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 100.729.475 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 208.189.483 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.143.974 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 206.262,69 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 60.665.604 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 60.137 USD | — |
+| Dólares canadienses | 86.146,25 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
@@ -1083,7 +1083,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto"
 description: "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio."
 url: "https://andresblitz.com/dolar-argentina/"
-last_updated: "2026-11-20"
+last_updated: "2026-11-21"
 lang: "es-AR"
 ---
 
@@ -1121,9 +1121,9 @@ Compra $ 1.801,40
 
 ### Dólar cripto (USDT)
 
-$ 1.775,19
+$ 1.768,62
 
-Compra $ 1.757,75
+Compra $ 1.761,25
 
 ### Dólar tarjeta
 
@@ -1131,7 +1131,7 @@ $ 2.080,00
 
 Compra $ 2.015,00
 
-Fuente: dolarapi.com, actualizado 21 nov 2026, 2:59 p. m. (hora de Buenos Aires)
+Fuente: dolarapi.com, actualizado 21 nov 2026, 5:59 p. m. (hora de Buenos Aires)
 
 ## Conversor de pesos a dólares (ARS ↔ USD)
 
@@ -1199,7 +1199,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Dólar hoy en Chile: dólar observado y conversor de pesos"
 description: "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares."
 url: "https://andresblitz.com/dolar-chile/"
-last_updated: "2026-11-20"
+last_updated: "2026-11-21"
 lang: "es-CL"
 ---
 
@@ -1388,13 +1388,13 @@ lang: "es"
 
 # Dólar cripto hoy: USDT P2P vs. tasa oficial
 
-Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 21 nov, 19:01 UTC.
+Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 21 nov, 23:44 UTC.
 
 Referencial, no es asesoría financiera.
 
--   En Venezuela, USDT está 21,8 % sobre la tasa BCV hoy, casi igual que la semana pasada (21,4 %).
--   En Argentina, USDT está 10,8 % sobre el dólar oficial hoy, más alto que la semana pasada (7,1 %).
--   En Colombia, USDT está 0,6 % bajo la TRM hoy, casi igual que la semana pasada (-0,6 %).
+-   En Venezuela, USDT está 22,5 % sobre la tasa BCV hoy, más alto que la semana pasada (21,2 %).
+-   En Argentina, USDT está 10,5 % sobre el dólar oficial hoy, más alto que la semana pasada (7,0 %).
+-   En Colombia, USDT está 0,7 % bajo la TRM hoy, casi igual que la semana pasada (-0,9 %).
 
   
 
@@ -1406,7 +1406,7 @@ USDT/VES
 
 USDT P2P
 
-1.083,45
+1.089,39
 
 lo que se paga por un dólar digital entre personas
 
@@ -1418,11 +1418,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+21,84 %
++22,51 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)21 nov, 19:01 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)21 nov, 23:44 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
 
 ### Argentina
 
@@ -1430,7 +1430,7 @@ USDT/ARS
 
 USDT P2P
 
-1.772,99
+1.767,26
 
 lo que se paga por un dólar digital entre personas
 
@@ -1442,11 +1442,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+10,81 %
++10,45 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)21 nov, 19:01 UTCOficial: dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)21 nov, 23:44 UTCOficial: dolarapi.com
 
 ### Colombia
 
@@ -1454,7 +1454,7 @@ USDT/COP
 
 USDT P2P
 
-3.442,98
+3.438,92
 
 lo que se paga por un dólar digital entre personas
 
@@ -1466,11 +1466,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-\-0,55 %
+\-0,66 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)21 nov, 19:01 UTCOficial: datos.gov.co (Superintendencia Financiera)
+[CriptoYa (mediana P2P)](https://criptoya.com/)21 nov, 23:44 UTCOficial: datos.gov.co (Superintendencia Financiera)
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
@@ -1481,26 +1481,26 @@ Cada punto es una actualización (se actualiza varias veces al día). La tabla t
 USDT P2P frente a la tasa oficial
 | País | USDT P2P | Oficial | Brecha | Fuente y hora |
 | --- | --- | --- | --- | --- |
-| Venezuela VES | 1.083,45 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +21,84 % | CriptoYa (mediana P2P) · 21 nov, 19:01 UTC  
+| Venezuela VES | 1.089,39 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +22,51 % | CriptoYa (mediana P2P) · 21 nov, 23:44 UTC  
 Oficial: Banco Central de Venezuela vía ve.dolarapi.com · 30 oct, 04:00 UTC |
-| Argentina ARS | 1.772,99 | [1.600,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +10,81 % | CriptoYa (mediana P2P) · 21 nov, 19:01 UTC  
-Oficial: dolarapi.com · 20 nov, 18:00 UTC |
-| Colombia COP | 3.442,98 | [3.461,92](https://andresblitz.com/dolar-colombia/) TRM | \-0,55 % | CriptoYa (mediana P2P) · 21 nov, 19:01 UTC  
+| Argentina ARS | 1.767,26 | [1.600,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +10,45 % | CriptoYa (mediana P2P) · 21 nov, 23:44 UTC  
+Oficial: dolarapi.com · 20 nov, 18:55 UTC |
+| Colombia COP | 3.438,92 | [3.461,92](https://andresblitz.com/dolar-colombia/) TRM | \-0,66 % | CriptoYa (mediana P2P) · 21 nov, 23:44 UTC  
 Oficial: datos.gov.co (Superintendencia Financiera) · 21 nov, 05:00 UTC |
 
 ## Bitcoin y otras criptomonedas (USD)
 
 | Moneda | USD | 24 h |
 | --- | --- | --- |
-| BTC | 58.106,00 | \-5,88 % |
-| ETH | 1.680,12 | +3,89 % |
-| USDT | 0,9985 | \-0,05 % |
-| USDC | 0,9992 | \-0,04 % |
-| SOL | 70,69 | +2,69 % |
-| XRP | 0,9345 | +3,24 % |
-| BNB | 547,36 | +1,66 % |
+| BTC | 60.055,00 | +2,95 % |
+| ETH | 1.681,32 | +3,72 % |
+| USDT | 0,9986 | +0,03 % |
+| USDC | 0,9993 | +0,01 % |
+| SOL | 70,27 | +1,69 % |
+| XRP | 0,9329 | +2,40 % |
+| BNB | 547,19 | +1,47 % |
 
-Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 21 nov, 19:01 UTC.
+Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 21 nov, 23:44 UTC.
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
@@ -1723,7 +1723,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Calculadora del costo de enviar dinero: comisión y margen"
 description: "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia."
 url: "https://andresblitz.com/enviar-dinero/"
-last_updated: "2026-11-20"
+last_updated: "2026-11-21"
 lang: "es"
 ---
 
@@ -3810,7 +3810,7 @@ Private · in use
 title: "Salario en dólares: convierte pesos, bolívares o soles a USD"
 description: "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas."
 url: "https://andresblitz.com/salario-en-dolares/"
-last_updated: "2026-11-20"
+last_updated: "2026-11-21"
 lang: "es"
 ---
 

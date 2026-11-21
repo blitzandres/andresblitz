@@ -6,8 +6,48 @@
 <atom:link href="https://andresblitz.com/rates/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Tipos de cambio de Venezuela, Argentina, Colombia, México, Perú y Chile, bitcoin, USD/CAD y tasas de política monetaria, con fuente y hora de cada dato.</description>
 <language>es</language>
-<lastBuildDate>Sat, 21 Nov 2026 19:01:53 GMT</lastBuildDate>
+<lastBuildDate>Sat, 21 Nov 2026 23:44:37 GMT</lastBuildDate>
 <ttl>30</ttl>
+<item>
+<title>Colombia: USDT P2P (COP): 3.438,9175 COP por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-co:2026-11-21T23:44:37.000Z:3438.9175</guid>
+<pubDate>Sat, 21 Nov 2026 23:44:37 GMT</pubDate>
+<description>Colombia: USDT P2P (COP): 3.438,9175 COP por USDT · brecha -0.66 % vs. TRM. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-21T23:44:37Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Venezuela: USDT P2P (VES): 1.089,3875 VES por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ve:2026-11-21T23:44:29.000Z:1089.3875</guid>
+<pubDate>Sat, 21 Nov 2026 23:44:29 GMT</pubDate>
+<description>Venezuela: USDT P2P (VES): 1.089,3875 VES por USDT · brecha +22.51 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-21T23:44:29Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Argentina: USDT P2P (ARS): 1.767,255 ARS por USDT</title>
+<link>https://andresblitz.com/dolar-cripto/</link>
+<guid isPermaLink="false">usdt-ar:2026-11-21T23:44:26.000Z:1767.255</guid>
+<pubDate>Sat, 21 Nov 2026 23:44:26 GMT</pubDate>
+<description>Argentina: USDT P2P (ARS): 1.767,255 ARS por USDT · brecha +10.45 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-21T23:44:26Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
+</item>
+<item>
+<title>Bitcoin (BTC/USD): 60.137 USD</title>
+<link>https://www.coingecko.com/es/monedas/bitcoin</link>
+<guid isPermaLink="false">bitcoin:2026-11-21T23:43:46.000Z:60137</guid>
+<pubDate>Sat, 21 Nov 2026 23:43:46 GMT</pubDate>
+<description>Bitcoin (BTC/USD): 60.137 USD (+2.08 % en 24 h) · CAD 86311. Fuente: CoinGecko. Dato del 2026-11-21T23:43:46Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
+</item>
+<item>
+<title>Argentina: Dólar blue: 1.675 ARS por USD</title>
+<link>https://andresblitz.com/dolar-argentina/</link>
+<guid isPermaLink="false">dolar-argentina-blue:2026-11-21T20:59:00.000Z:1675</guid>
+<pubDate>Sat, 21 Nov 2026 20:59:00 GMT</pubDate>
+<description>Argentina: Dólar blue: 1.675 ARS por USD. Fuente: dolarapi.com. Dato del 2026-11-21T20:59:00Z.</description>
+<source url="https://andresblitz.com/rates/feed.xml">dolarapi.com</source>
+</item>
 <item>
 <title>Venezuela: USDT P2P (VES): 1.083,445 VES por USDT</title>
 <link>https://andresblitz.com/dolar-cripto/</link>
@@ -367,46 +407,6 @@
 <pubDate>Thu, 19 Nov 2026 18:00:00 GMT</pubDate>
 <description>Argentina: Dólar oficial: 1.585 ARS por USD. Fuente: dolarapi.com. Dato del 2026-11-19T18:00:00Z.</description>
 <source url="https://andresblitz.com/rates/feed.xml">dolarapi.com</source>
-</item>
-<item>
-<title>México: Tipo de cambio FIX (Banxico): 19,027 MXN por USD</title>
-<link>https://andresblitz.com/dolar-mexico/</link>
-<guid isPermaLink="false">dolar-mexico:2026-11-19T18:00:00.000Z:19.027</guid>
-<pubDate>Thu, 19 Nov 2026 18:00:00 GMT</pubDate>
-<description>México: Tipo de cambio FIX (Banxico): 19,027 MXN por USD. Fuente: mx.dolarapi.com (FIX de Banxico). Dato del 2026-11-19T18:00:00Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">mx.dolarapi.com (FIX de Banxico)</source>
-</item>
-<item>
-<title>Argentina: USDT P2P (ARS): 1.716,5 ARS por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-ar:2026-11-19T17:15:36.000Z:1716.5</guid>
-<pubDate>Thu, 19 Nov 2026 17:15:36 GMT</pubDate>
-<description>Argentina: USDT P2P (ARS): 1.716,5 ARS por USDT · brecha +8.64 % vs. Dólar oficial. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-19T17:15:36Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Venezuela: USDT P2P (VES): 1.076 VES por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-ve:2026-11-19T17:15:26.000Z:1076</guid>
-<pubDate>Thu, 19 Nov 2026 17:15:26 GMT</pubDate>
-<description>Venezuela: USDT P2P (VES): 1.076 VES por USDT · brecha +21 % vs. Tasa BCV. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-19T17:15:26Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Colombia: USDT P2P (COP): 3.380,69 COP por USDT</title>
-<link>https://andresblitz.com/dolar-cripto/</link>
-<guid isPermaLink="false">usdt-co:2026-11-19T17:15:15.000Z:3380.69</guid>
-<pubDate>Thu, 19 Nov 2026 17:15:15 GMT</pubDate>
-<description>Colombia: USDT P2P (COP): 3.380,69 COP por USDT · brecha +1.61 % vs. TRM. Fuente: CriptoYa (mediana P2P). Dato del 2026-11-19T17:15:15Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CriptoYa (mediana P2P)</source>
-</item>
-<item>
-<title>Bitcoin (BTC/USD): 62.371 USD</title>
-<link>https://www.coingecko.com/es/monedas/bitcoin</link>
-<guid isPermaLink="false">bitcoin:2026-11-19T17:14:22.000Z:62371</guid>
-<pubDate>Thu, 19 Nov 2026 17:14:22 GMT</pubDate>
-<description>Bitcoin (BTC/USD): 62.371 USD (-0.32 % en 24 h) · CAD 89319. Fuente: CoinGecko. Dato del 2026-11-19T17:14:22Z.</description>
-<source url="https://andresblitz.com/rates/feed.xml">CoinGecko</source>
 </item>
 </channel>
 </rss>

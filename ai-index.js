@@ -82,7 +82,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "ahorro en dólares",
         "devaluación",
@@ -290,7 +290,7 @@ export const site = {
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -308,7 +308,7 @@ export const site = {
       "kind": "page",
       "lang": "es-CL",
       "summary": "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "dólar observado",
         "Banco Central de Chile",
@@ -399,7 +399,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "enviar dinero",
         "remesas",
@@ -735,7 +735,7 @@ export const site = {
       "kind": "page",
       "lang": "es",
       "summary": "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.",
-      "last_updated": "2026-11-20",
+      "last_updated": "2026-11-21",
       "topics": [
         "salario en dólares",
         "sueldo en dólares",
