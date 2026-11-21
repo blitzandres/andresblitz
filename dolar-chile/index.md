@@ -22,17 +22,17 @@ pesos por 1 dólar · fecha 20 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 1.022,53
+$ 1.022,08
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 1.023,97
+$ 1.023,52
 
 lo que cuesta un dólar
 
-Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 20-11-2026, 5:06 p. m. (hora de Chile)
+Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 21-11-2026, 9:01 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
