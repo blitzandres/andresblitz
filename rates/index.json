@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-11-22T06:24:16.566Z",
+ "generated": "2026-11-22T14:50:23.266Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -16,7 +16,7 @@
    "value": 1675,
    "unit": "ARS por USD",
    "source": "dolarapi.com",
-   "time": "2026-11-21T20:59:00.000Z",
+   "time": "2026-11-22T11:59:00.000Z",
    "url": "https://andresblitz.com/dolar-argentina/"
   },
   "dolar-colombia": {
@@ -61,41 +61,41 @@
   },
   "usdt-ve": {
    "title": "Venezuela: USDT P2P (VES)",
-   "value": 1090.9997,
+   "value": 1093.375,
    "unit": "VES por USDT",
-   "extra": "brecha +22.69 % vs. Tasa BCV",
+   "extra": "brecha +22.95 % vs. Tasa BCV",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-22T06:24:00.000Z",
+   "time": "2026-11-22T14:50:11.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-ar": {
    "title": "Argentina: USDT P2P (ARS)",
-   "value": 1773.5,
+   "value": 1770.7,
    "unit": "ARS por USDT",
-   "extra": "brecha +10.84 % vs. Dólar oficial",
+   "extra": "brecha +10.67 % vs. Dólar oficial",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-22T06:24:04.000Z",
+   "time": "2026-11-22T14:50:10.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-co": {
    "title": "Colombia: USDT P2P (COP)",
-   "value": 3439.1,
+   "value": 3430.7475,
    "unit": "COP por USDT",
-   "extra": "brecha -0.66 % vs. TRM",
+   "extra": "brecha -0.9 % vs. TRM",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-22T06:24:10.000Z",
+   "time": "2026-11-22T14:50:12.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 58916,
+   "value": 60798,
    "unit": "USD",
-   "change24h": 5.55,
-   "extra": "CAD 84559",
+   "change24h": 0.94,
+   "extra": "CAD 87260",
    "source": "CoinGecko",
-   "time": "2026-11-22T06:23:28.000Z",
+   "time": "2026-11-22T14:49:02.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-11-22T06:24:14.490Z"
+   "fetched": "2026-11-22T14:50:21.508Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",
