@@ -40,9 +40,9 @@ Compra $ 1.801,40
 
 ### Dólar cripto (USDT)
 
-$ 1.769,64
+$ 1.769,79
 
-Compra $ 1.757,58
+Compra $ 1.759,98
 
 ### Dólar tarjeta
 
@@ -50,7 +50,7 @@ $ 2.080,00
 
 Compra $ 2.015,00
 
-Fuente: dolarapi.com, actualizado 22 nov 2026, 5:59 p. m. (hora de Buenos Aires)
+Fuente: dolarapi.com, actualizado 23 nov 2026, 6:03 p. m. (hora de Buenos Aires)
 
 ## Conversor de pesos a dólares (ARS ↔ USD)
 
