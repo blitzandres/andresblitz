@@ -5,7 +5,7 @@
 <link>https://andresblitz.com/</link>
 <description>Main pages of andresblitz.com</description>
 <atom:link href="https://andresblitz.com/feed.xml" rel="self" type="application/rss+xml" />
-<lastBuildDate>Mon, 23 Nov 2026 12:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 24 Nov 2026 12:00:00 GMT</lastBuildDate>
 <item>
 <title>Ahorro en dólares: qué valdrían hoy tus bolívares o pesos</title>
 <link>https://andresblitz.com/ahorro-en-dolares/</link>
@@ -98,10 +98,24 @@
 <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
+<title>Dólar hoy en Colombia: TRM oficial y conversor de pesos</title>
+<link>https://andresblitz.com/dolar-colombia/</link>
+<guid isPermaLink="true">https://andresblitz.com/dolar-colombia/</guid>
+<description>TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.</description>
+<pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
 <title>Dólar cripto hoy: USDT P2P Venezuela, Argentina y Colombia</title>
 <link>https://andresblitz.com/dolar-cripto/</link>
 <guid isPermaLink="true">https://andresblitz.com/dolar-cripto/</guid>
 <description>Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato.</description>
+<pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Dólar hoy en México: tipo de cambio FIX de Banxico y conversor</title>
+<link>https://andresblitz.com/dolar-mexico/</link>
+<guid isPermaLink="true">https://andresblitz.com/dolar-mexico/</guid>
+<description>Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.</description>
 <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
@@ -124,20 +138,6 @@
 <guid isPermaLink="true">https://andresblitz.com/salario-en-dolares/</guid>
 <description>Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas.</description>
 <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Dólar hoy en Colombia: TRM oficial y conversor de pesos</title>
-<link>https://andresblitz.com/dolar-colombia/</link>
-<guid isPermaLink="true">https://andresblitz.com/dolar-colombia/</guid>
-<description>TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares.</description>
-<pubDate>Sat, 21 Nov 2026 12:00:00 GMT</pubDate>
-</item>
-<item>
-<title>Dólar hoy en México: tipo de cambio FIX de Banxico y conversor</title>
-<link>https://andresblitz.com/dolar-mexico/</link>
-<guid isPermaLink="true">https://andresblitz.com/dolar-mexico/</guid>
-<description>Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares.</description>
-<pubDate>Sat, 21 Nov 2026 12:00:00 GMT</pubDate>
 </item>
 <item>
 <title>Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia</title>
