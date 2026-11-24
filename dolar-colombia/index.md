@@ -2,7 +2,7 @@
 title: "Dólar hoy en Colombia: TRM oficial y conversor de pesos"
 description: "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares."
 url: "https://andresblitz.com/dolar-colombia/"
-last_updated: "2026-11-23"
+last_updated: "2026-11-24"
 lang: "es-CO"
 ---
 
@@ -22,17 +22,17 @@ pesos por 1 dólar · vigente desde 24 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 3.480,96
+$ 3.528,76
 
 lo que pagan por tu dólar
 
 ### Mercado · venta
 
-$ 3.484,46
+$ 3.532,26
 
 lo que cuesta comprar un dólar
 
-Fuente: datos.gov.co (Superintendencia Financiera), actualizado 24/11/2026, 12:00 a. m. (hora de Colombia)
+Fuente: datos.gov.co (Superintendencia Financiera), actualizado 24/11/2026, 7:03 a. m. (hora de Colombia)
 
 ## Conversor de pesos colombianos a dólares (COP ↔ USD)
 
