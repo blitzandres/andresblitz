@@ -14,7 +14,7 @@ lang: "es-VE"
 
 # Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia
 
-Actualizado: 18 de noviembre de 2026
+Actualizado: 24 de noviembre de 2026
 
 ## La finca
 
@@ -94,6 +94,8 @@ Agropecuaria Blimar C.A. recibe consultas en [blitz@mail.grokbot.com](mailto:bli
 
 ## Contacto
 
+Agropecuaria Blimar C.A. · Finca El 70 (El 70 farm)
+
 Dirección: KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela
 
 Horario:
@@ -105,7 +107,7 @@ Correo: [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%
 
 No publicamos un teléfono en esta página.
 
-[Cómo llegar — ver en Google Maps](https://maps.google.com/?cid=17434179994800704762)
+[Cómo llegar — ver en Google Maps](https://maps.google.com/?cid=17434179994800704762) · [Facebook](https://www.facebook.com/agropecuariablimar)
 
 ## Tablero de mensajes
 

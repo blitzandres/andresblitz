@@ -51,7 +51,7 @@
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": ["Organization", "Farm"],
+   "@type": ["LocalBusiness", "Organization"],
    "@id": "https://andresblitz.com/70/#org",
    "name": "Agropecuaria Blimar C.A.",
    "alternateName": [
@@ -63,7 +63,7 @@
    "legalName": "Agropecuaria Blimar C.A.",
    "url": "https://andresblitz.com/70/",
    "description": "Finca familiar de ganadería y silvopastoreo (El 70 farm, Finca El 70) en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el municipio.",
-   "dateModified": "2026-11-18",
+   "dateModified": "2026-11-24",
    "logo": {
     "@type": "ImageObject",
     "@id": "https://andresblitz.com/70/img/logo-512.png#logo",
@@ -119,6 +119,35 @@
     "email": "blitz@mail.grokbot.com",
     "availableLanguage": ["es", "en"]
    },
+   "makesOffer": [
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "url": "https://andresblitz.com/70/#leche",
+      "name": "Ganadería lechera",
+      "description": "La finca ha estado dedicada a la producción de leche, actividad central de la economía de Rosario de Perijá."
+     }
+    },
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "url": "https://andresblitz.com/70/#carne",
+      "name": "Ganado de carne",
+      "description": "Además de la lechería, en la finca se trabaja con ganado de carne, como es tradición en la región de Perijá."
+     }
+    },
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "url": "https://andresblitz.com/70/#silvopastoreo",
+      "name": "Silvopastoreo",
+      "description": "En El 70 se desarrolla un proyecto de silvopastoreo: ganadería junto a árboles y pasturas en la misma tierra, en KM 70 Carretera, Villa del Rosario 4033 (municipio Rosario de Perijá)."
+     }
+    }
+   ],
    "openingHoursSpecification": [
     {
      "@type": "OpeningHoursSpecification",
@@ -189,7 +218,7 @@
    "name": "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia",
    "description": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela.",
    "inLanguage": "es-VE",
-   "dateModified": "2026-11-18",
+   "dateModified": "2026-11-24",
    "isPartOf": { "@id": "https://andresblitz.com/#website" },
    "about": { "@id": "https://andresblitz.com/70/#org" },
    "mainEntity": { "@id": "https://andresblitz.com/70/#org" },
@@ -504,7 +533,7 @@ body.con-pm.con-tasas .leaflet-top{top:calc(28px + var(--pmh))}
   <div id="mapa" role="application" aria-label="Mapa satelital interactivo de la zona de El 70"></div>
   <div class="titulo">
     <h1><picture><source srcset="img/logo-256.webp" type="image/webp"><img class="logo" src="img/logo-256.png" alt="Logo de Agropecuaria Blimar, Finca El 70" title="Agropecuaria Blimar · Finca El 70" width="56" height="56" fetchpriority="high" decoding="async"></picture><span>Agropecuaria Blimar · El 70</span></h1>
-    <p>Finca El 70 · km 70 Carretera de Perijá · La Villa del Rosario, Zulia</p>
+    <p>Finca El 70 · ganadería y silvopastoreo · km 70 Carretera de Perijá · Villa del Rosario, Zulia</p>
   </div>
   <div class="hud datos" id="datos" aria-live="polite"></div>
   <div class="hud leyenda" id="leyenda" hidden>
@@ -536,7 +565,7 @@ body.con-pm.con-tasas .leaflet-top{top:calc(28px + var(--pmh))}
   <a href="#contacto">Contacto</a>
   <a href="https://maps.google.com/?cid=17434179994800704762" rel="noopener">Cómo llegar</a>
 </nav>
-<p class="actualizado">Actualizado: 18 de noviembre de 2026</p>
+<p class="actualizado">Actualizado: 24 de noviembre de 2026</p>
 <nav class="jump" aria-label="En esta página">
   <strong>En esta página</strong>
   <ol>
@@ -658,15 +687,18 @@ f.addEventListener('submit',function(ev){ev.preventDefault();st.className='estad
 </section>
 <section id="contacto" aria-labelledby="h-contacto">
   <h2 id="h-contacto">Contacto</h2>
-  <p>Dirección: KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela</p>
-  <p>Horario:</p>
-  <ul class="horarios">
-    <li>Lunes: 09:00–17:00</li>
-    <li>Martes a domingo: 09:00–18:30</li>
-  </ul>
-  <p>Correo: <a href="mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070">blitz@mail.grokbot.com</a></p>
+  <address style="font-style:normal">
+    <p>Agropecuaria Blimar C.A. · Finca El 70 (El 70 farm)</p>
+    <p>Dirección: KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela</p>
+    <p>Horario:</p>
+    <ul class="horarios">
+      <li>Lunes: 09:00–17:00</li>
+      <li>Martes a domingo: 09:00–18:30</li>
+    </ul>
+    <p>Correo: <a href="mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070">blitz@mail.grokbot.com</a></p>
+  </address>
   <p>No publicamos un teléfono en esta página.</p>
-  <p><a href="https://maps.google.com/?cid=17434179994800704762" rel="noopener">Cómo llegar — ver en Google Maps</a></p>
+  <p><a href="https://maps.google.com/?cid=17434179994800704762" rel="noopener">Cómo llegar — ver en Google Maps</a> · <a href="https://www.facebook.com/agropecuariablimar" rel="noopener">Facebook</a></p>
 </section>
 <section id="mensajes" aria-labelledby="h-mensajes">
   <h2 id="h-mensajes">Tablero de mensajes</h2>
