@@ -2,7 +2,7 @@
 title: "Convertidor cripto: BTC, ETH y USDT a bolívares y pesos"
 description: "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa."
 url: "https://andresblitz.com/convertidor-cripto/"
-last_updated: "2026-11-24"
+last_updated: "2026-11-25"
 lang: "es"
 ---
 
@@ -10,7 +10,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 25 nov 2026, 1:32 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 25 nov 2026, 10:20 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -26,15 +26,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 52.798.644 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 95.889.010 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 100.935.800 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 213.273.189 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.149.884 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 206.187,56 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 60.422.545 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 59.374 USD | — |
-| Dólares canadienses | 84.881,07 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 52.402.036 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 95.168.720 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 100.177.600 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 211.671.144 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.141.247 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 204.638,74 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 60.404.736 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 58.928 USD | — |
+| Dólares canadienses | 84.243,47 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
