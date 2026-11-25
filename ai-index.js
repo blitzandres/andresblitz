@@ -52,8 +52,8 @@ export const site = {
       "json": "https://andresblitz.com/api/page/70.json",
       "kind": "page",
       "lang": "es-VE",
-      "summary": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela.",
-      "last_updated": "2026-11-18",
+      "summary": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia. Abiertos a ofertas serias de compra o arrendamiento.",
+      "last_updated": "2026-11-25",
       "topics": [
         "El 70",
         "El 70 farm",

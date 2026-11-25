@@ -4,9 +4,9 @@
 
 ---
 title: "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia"
-description: "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela."
+description: "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia. Abiertos a ofertas serias de compra o arrendamiento."
 url: "https://andresblitz.com/70/"
-last_updated: "2026-11-18"
+last_updated: "2026-11-25"
 lang: "es-VE"
 ---
 
@@ -14,7 +14,9 @@ lang: "es-VE"
 
 # Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia
 
-Actualizado: 24 de noviembre de 2026
+[Abiertos a ofertas serias de compra o arrendamiento, incluidas empresas de energía](https://andresblitz.com/70/#oportunidad)
+
+Actualizado: 25 de noviembre de 2026
 
 ## La finca
 
@@ -40,6 +42,8 @@ Desliza para ver más →
 
 El 70 farm (Finca El 70) is a family cattle farm and silvopasture project at KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá / Troncal 6). Rosario de Perijá is the municipality. Locally the farm is known as El 70. It is run by Agropecuaria Blimar C.A.
 
+We will consider exceptional offers to buy, and we are open to leases or partnerships, including with energy companies (oil and gas, or solar). See [serious offers](https://andresblitz.com/70/#oportunidad).
+
 For questions about the farm, write to [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=El%2070%20farm).
 
 ## Galería de los potreros de El 70
@@ -56,13 +60,19 @@ Desliza para ver más →
 
 Distancias en línea recta desde la finca, salvo las indicadas por carretera (calculadas con OSRM). Los datos provienen de OpenStreetMap (consulta de octubre de 2026) y pueden estar incompletos o desactualizados. No hay datos abiertos verificados de torres de telefonía celular en la zona.
 
-## Conversemos sobre El 70
+## Abiertos a ofertas serias
 
-El 70 es parte de nuestra historia familiar y no está a la venta. Aun así, valoramos sinceramente el interés de quienes ven en esta tierra lo mismo que nosotros: su potencial y su valor.
+El 70 es parte de nuestra historia familiar. Agropecuaria Blimar C.A. considerará ofertas excepcionales de compra — aquellas que verdaderamente estén a la altura de esta tierra — y está abierta a arrendamientos o alianzas, en particular con empresas de energía: petróleo y gas, o proyectos de energía solar.
 
-Si usted es el comprador interesado y desea presentar una propuesta seria, con gusto la escucharemos de forma directa y personal. Para cuidar la relación y la confianza, preferimos no tratar a través de intermediarios.
+La familia es dueña de ambos lados de la carretera: el lote mayor (~462 ha), al norte de la Troncal 6, y el lote menor (~40 ha), al sur, hacia el Río Palmar. En el lote mayor hay caminos de acceso a ambos lados, de modo que se puede entrar a conocer la finca en un vehículo particular; no hace falta un 4x4.
 
-[Escríbanos con su propuesta](mailto:blitz@mail.grokbot.com?subject=Consulta%20sobre%20la%20tierra%20-%20El%2070)
+Agropecuaria Blimar · El 70Linderos aproximados
+
+Linderos aproximados, trazados sobre imagen satelital (no son un plano catastral ni un levantamiento legal). Lote mayor: ~462 ha, ~8.541 m de perímetro, al norte de la Troncal 6. Lote menor: ~40 ha, ~3.070 m de perímetro, al sur, hacia el Río Palmar. Imágenes © Esri, Maxar, Earthstar Geographics. Trazado de la Troncal 6: datos © OpenStreetMap.
+
+Si su interés es serio, escríbanos de forma directa y personal a [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Oferta%20seria%20-%20El%2070). Preferimos no tratar a través de intermediarios. No publicamos un precio.
+
+[Escríbanos con su propuesta](mailto:blitz@mail.grokbot.com?subject=Oferta%20seria%20-%20El%2070)
 
 ## ¿Quieres trabajar con nosotros?
 
@@ -72,7 +82,7 @@ En El 70 el trabajo se hace en equipo y con cariño por la tierra y los animales
 
 Agropecuaria Blimar C.A. es una empresa agropecuaria familiar. La finca, conocida en la zona como El 70 o Finca El 70, está en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el municipio.
 
-El 70 es parte de nuestra historia familiar y no está a la venta. Valoramos el interés de quienes ven en esta tierra lo mismo que nosotros: su potencial y su valor, y preferimos tratar de forma directa, no a través de intermediarios.
+El 70 es parte de nuestra historia familiar. Estamos abiertos a ofertas serias de compra o arrendamiento; vea [Abiertos a ofertas serias](https://andresblitz.com/70/#oportunidad). Preferimos tratar de forma directa, no a través de intermediarios.
 
 ## Preguntas frecuentes
 
@@ -91,6 +101,14 @@ Agropecuaria Blimar C.A. atiende los lunes de 09:00 a 17:00 y de martes a doming
 ### ¿Cómo se contacta a Agropecuaria Blimar?
 
 Agropecuaria Blimar C.A. recibe consultas en [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Consulta%20-%20El%2070). No publicamos un teléfono en esta página.
+
+### ¿Está a la venta la finca?
+
+Agropecuaria Blimar C.A. considerará ofertas excepcionales de compra. No publicamos un precio. Las consultas serias se reciben en [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Oferta%20seria%20-%20El%2070).
+
+### ¿Se puede arrendar para energía solar o petróleo?
+
+Sí. Estamos abiertos a arrendamientos o alianzas con empresas de energía — petróleo y gas, o proyectos de energía solar — y a otras propuestas serias. Escríbanos a [blitz@mail.grokbot.com](mailto:blitz@mail.grokbot.com?subject=Oferta%20seria%20-%20El%2070).
 
 ## Contacto
 

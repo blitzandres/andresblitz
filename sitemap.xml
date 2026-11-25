@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://andresblitz.com/70/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -39,6 +39,12 @@
       <image:loc>https://andresblitz.com/70/img/mapa-estatico.jpg</image:loc>
       <image:title>Vista satelital de El 70 farm</image:title>
       <image:caption>Imagen satelital de El 70 farm, km 70 Carretera de Perijá, Rosario de Perijá, Zulia</image:caption>
+      <image:geo_location>Rosario de Perijá, Zulia, Venezuela</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://andresblitz.com/70/img/mapa-lotes.jpg</image:loc>
+      <image:title>Mapa de los lotes de Agropecuaria Blimar · El 70</image:title>
+      <image:caption>Linderos aproximados del lote mayor y el lote menor a ambos lados de la Troncal 6, El 70 farm, Rosario de Perijá, Zulia</image:caption>
       <image:geo_location>Rosario de Perijá, Zulia, Venezuela</image:geo_location>
     </image:image>
     <image:image>

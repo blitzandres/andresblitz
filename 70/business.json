@@ -10,7 +10,7 @@
   "url": "https://andresblitz.com/70/",
   "email": "blitz@mail.grokbot.com",
   "telephone": null,
-  "description": "Finca familiar de ganadería y silvopastoreo (El 70 farm, Finca El 70) en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el municipio.",
+  "description": "Finca familiar de ganadería y silvopastoreo (El 70 farm, Finca El 70) en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el municipio. Agropecuaria Blimar C.A. considera ofertas excepcionales de compra y está abierta a arrendamientos o alianzas, en particular con empresas de energía.",
   "address": {
     "streetAddress": "KM 70 Carretera de Perijá",
     "addressLocality": "Villa del Rosario",
@@ -66,7 +66,7 @@
     "Finca El 70"
   ],
   "products": [],
-  "dateModified": "2026-11-24",
+  "dateModified": "2026-11-25",
   "sources": {
     "name": "Live /70/ page and public Facebook page title",
     "address": "Google Maps public listing, 18 Nov 2026 (Andrés approved matching the page). Formatted: KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela.",
@@ -77,7 +77,8 @@
     "telephone": "Intentionally omitted; site rule is no public phone",
     "openingHours": "Google Maps public listing, 18 Nov 2026 (Andrés approved matching the page): Mon 09:00–17:00, Tue–Sun 09:00–18:30.",
     "rif": "Not published; needs the owner",
-    "services": "Visible /70/ sections already published (Ganadería lechera, Ganado de carne, Silvopastoreo). No new claims."
+    "services": "Visible /70/ sections already published (Ganadería lechera, Ganado de carne, Silvopastoreo). No new claims.",
+    "lots": "Andrés traced Lot 1 and Lot 2 on satellite imagery in el70-tracer (2026-11-09); copied from blitzandres/el70 data/location/el70.geojson via Agry (el70-lots-and-road.geojson). Approximate only; not a legal survey. Public page shows ~462 ha / ~40 ha and ~8,541 m / ~3,070 m perimeters. No paddock or flood layers."
   },
   "faq": [
     {
@@ -95,6 +96,14 @@
     {
       "q": "¿Cómo se contacta a Agropecuaria Blimar?",
       "a": "Agropecuaria Blimar C.A. recibe consultas en blitz@mail.grokbot.com. No publicamos un teléfono en esta página."
+    },
+    {
+      "q": "¿Está a la venta la finca?",
+      "a": "Agropecuaria Blimar C.A. considerará ofertas excepcionales de compra. No publicamos un precio. Las consultas serias se reciben en blitz@mail.grokbot.com."
+    },
+    {
+      "q": "¿Se puede arrendar para energía solar o petróleo?",
+      "a": "Sí. Estamos abiertos a arrendamientos o alianzas con empresas de energía — petróleo y gas, o proyectos de energía solar — y a otras propuestas serias. Escríbanos a blitz@mail.grokbot.com."
     }
   ],
   "services": [
