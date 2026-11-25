@@ -737,7 +737,8 @@ footer {
   #about .strip { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
-  nav .links a:not(.btn) { display: none; }
+  nav .links a:not(.btn):not([href="/site-map/"]) { display: none; }
+  nav .links a[href="/site-map/"] { white-space: nowrap; padding-left: 0.45rem; padding-right: 0.45rem; }
   #projects .grid { grid-template-columns: 1fr; }
   section { padding: 4rem 0; }
 }
