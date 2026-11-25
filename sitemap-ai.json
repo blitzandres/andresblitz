@@ -202,7 +202,7 @@
       "url": "https://andresblitz.com/projects/blitz-analytics/",
       "md": "https://andresblitz.com/projects/blitz-analytics/index.md",
       "title": "Blitz Analytics — Privacy-Minded Web Analytics | Andrés Blitz",
-      "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.",
+      "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database and first-party visitor ids. Visitor IPs and basic device info are kept for up to 12 months for security and analytics. Demo uses sample data.",
       "lastmod": "2026-11-09"
     },
     {

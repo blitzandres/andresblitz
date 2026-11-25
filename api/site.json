@@ -557,7 +557,7 @@
       "json": "https://andresblitz.com/api/page/projects-blitz-analytics.json",
       "kind": "project",
       "lang": "en-CA",
-      "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.",
+      "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database and first-party visitor ids. Visitor IPs and basic device info are kept for up to 12 months for security and analytics. Demo uses sample data.",
       "last_updated": "2026-11-09"
     },
     {
@@ -818,7 +818,7 @@
       "name": "Blitz Analytics — Privacy-Minded Web Analytics",
       "url": "https://andresblitz.com/projects/blitz-analytics/",
       "md": "https://andresblitz.com/projects/blitz-analytics/index.md",
-      "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data."
+      "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database and first-party visitor ids. Visitor IPs and basic device info are kept for up to 12 months for security and analytics. Demo uses sample data."
     },
     {
       "name": "Blitzy's World — Playable Space Game in the Browser",
