@@ -1,5 +1,7 @@
 // Source of truth for /70/: reads 70/business.json and rewrites the marked
 // geo-meta + JSON-LD block in 70/index.html. Also supplies the AI-layer EXTRA.
+// Use official schema.org types only: LocalBusiness + Organization.
+// schema.org/Farm does not exist (404); Google local rich results expect LocalBusiness.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -72,6 +74,32 @@ function hoursBlock(hours, indent) {
   return ',\n' + keyPad + '"openingHoursSpecification": [\n' + pad + specs + '\n' + keyPad + ']';
 }
 
+
+function servicesBlock(services, origin, indent) {
+  if (!services?.length) return '';
+  const pad = ' '.repeat(indent);
+  const inner = ' '.repeat(indent + 1);
+  const deeper = ' '.repeat(indent + 2);
+  const keyPad = ' '.repeat(Math.max(indent - 1, 0));
+  const offers = services.map((svc) => {
+    const url = svc.url
+      ? (svc.url.startsWith('http') ? svc.url : `${origin}${svc.url}`)
+      : '';
+    const urlLine = url ? `\n${deeper}"url": ${JSON.stringify(url)},` : '';
+    return [
+      '{',
+      inner + '"@type": "Offer",',
+      inner + '"itemOffered": {',
+      deeper + '"@type": "Service",' + urlLine,
+      deeper + '"name": ' + JSON.stringify(svc.name) + ',',
+      deeper + '"description": ' + JSON.stringify(svc.description),
+      inner + '}',
+      pad + '}',
+    ].join('\n');
+  }).join(',\n' + pad);
+  return ',\n' + keyPad + '"makesOffer": [\n' + pad + offers + '\n' + keyPad + ']';
+}
+
 function faqJson(faq, origin) {
   if (!faq?.length) return '';
   const els = faq.map((q, i) => `    {
@@ -112,7 +140,7 @@ export function renderEl70BusinessBlock(biz, origin = 'https://andresblitz.com')
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": ["Organization", "Farm"],
+   "@type": ["LocalBusiness", "Organization"],
    "@id": "${origin}/70/#org",
    "name": ${JSON.stringify(biz.name)},
    "alternateName": ${JSON.stringify(biz.alternateName, null, 1).replace(/\n/g, '\n   ')},
@@ -154,7 +182,7 @@ export function renderEl70BusinessBlock(biz, origin = 'https://andresblitz.com')
     "contactType": "customer service",
     "email": ${JSON.stringify(biz.email)},
     "availableLanguage": ["es", "en"]
-   }${hoursBlock(biz.openingHours, 4)}
+   }${servicesBlock(biz.services, origin, 4)}${hoursBlock(biz.openingHours, 4)}
   },
   {
    "@type": "Place",

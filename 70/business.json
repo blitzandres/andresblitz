@@ -66,7 +66,7 @@
     "Finca El 70"
   ],
   "products": [],
-  "dateModified": "2026-11-18",
+  "dateModified": "2026-11-24",
   "sources": {
     "name": "Live /70/ page and public Facebook page title",
     "address": "Google Maps public listing, 18 Nov 2026 (Andrés approved matching the page). Formatted: KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela.",
@@ -76,7 +76,8 @@
     "placeId": "Not available without a Business Profile login",
     "telephone": "Intentionally omitted; site rule is no public phone",
     "openingHours": "Google Maps public listing, 18 Nov 2026 (Andrés approved matching the page): Mon 09:00–17:00, Tue–Sun 09:00–18:30.",
-    "rif": "Not published; needs the owner"
+    "rif": "Not published; needs the owner",
+    "services": "Visible /70/ sections already published (Ganadería lechera, Ganado de carne, Silvopastoreo). No new claims."
   },
   "faq": [
     {
@@ -94,6 +95,23 @@
     {
       "q": "¿Cómo se contacta a Agropecuaria Blimar?",
       "a": "Agropecuaria Blimar C.A. recibe consultas en blitz@mail.grokbot.com. No publicamos un teléfono en esta página."
+    }
+  ],
+  "services": [
+    {
+      "name": "Ganadería lechera",
+      "description": "La finca ha estado dedicada a la producción de leche, actividad central de la economía de Rosario de Perijá.",
+      "url": "https://andresblitz.com/70/#leche"
+    },
+    {
+      "name": "Ganado de carne",
+      "description": "Además de la lechería, en la finca se trabaja con ganado de carne, como es tradición en la región de Perijá.",
+      "url": "https://andresblitz.com/70/#carne"
+    },
+    {
+      "name": "Silvopastoreo",
+      "description": "En El 70 se desarrolla un proyecto de silvopastoreo: ganadería junto a árboles y pasturas en la misma tierra, en KM 70 Carretera, Villa del Rosario 4033 (municipio Rosario de Perijá).",
+      "url": "https://andresblitz.com/70/#silvopastoreo"
     }
   ]
 }
