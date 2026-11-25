@@ -83,44 +83,72 @@
   "faq": [
     {
       "q": "¿Dónde queda Agropecuaria Blimar?",
-      "a": "Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el nombre del municipio."
+      "a": "Agropecuaria Blimar C.A., conocida como Finca El 70 o El 70 farm, está en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá es el nombre del municipio.",
+      "q_en": "Where is Agropecuaria Blimar?",
+      "a_en": "Agropecuaria Blimar C.A., known as Finca El 70 or El 70 farm, is at KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá is the name of the municipality."
     },
     {
       "q": "¿A qué se dedica Agropecuaria Blimar?",
-      "a": "Agropecuaria Blimar C.A. es una finca familiar de ganadería — lechera y de carne — y un proyecto de silvopastoreo en El 70."
+      "a": "Agropecuaria Blimar C.A. es una finca familiar de ganadería — lechera y de carne — y un proyecto de silvopastoreo en El 70.",
+      "q_en": "What does Agropecuaria Blimar do?",
+      "a_en": "Agropecuaria Blimar C.A. is a family cattle ranch — dairy and beef — and a silvopasture project at El 70."
     },
     {
       "q": "¿Cuál es el horario de Agropecuaria Blimar?",
-      "a": "Agropecuaria Blimar C.A. atiende los lunes de 09:00 a 17:00 y de martes a domingo de 09:00 a 18:30."
+      "a": "Agropecuaria Blimar C.A. atiende los lunes de 09:00 a 17:00 y de martes a domingo de 09:00 a 18:30.",
+      "q_en": "What are Agropecuaria Blimar's hours?",
+      "a_en": "Agropecuaria Blimar C.A. is open Monday from 09:00 to 17:00, and Tuesday to Sunday from 09:00 to 18:30."
     },
     {
       "q": "¿Cómo se contacta a Agropecuaria Blimar?",
-      "a": "Agropecuaria Blimar C.A. recibe consultas en blitz@mail.grokbot.com. No publicamos un teléfono en esta página."
+      "a": "Agropecuaria Blimar C.A. recibe consultas en blitz@mail.grokbot.com. No publicamos un teléfono en esta página.",
+      "q_en": "How can I contact Agropecuaria Blimar?",
+      "a_en": "Agropecuaria Blimar C.A. takes inquiries at blitz@mail.grokbot.com. We don't publish a phone number on this page."
     },
     {
       "q": "¿Está a la venta la finca?",
-      "a": "Agropecuaria Blimar C.A. considerará ofertas excepcionales de compra. No publicamos un precio. Las consultas serias se reciben en blitz@mail.grokbot.com."
+      "a": "Agropecuaria Blimar C.A. considerará ofertas excepcionales de compra. No publicamos un precio. Las consultas serias se reciben en blitz@mail.grokbot.com.",
+      "q_en": "Is the farm for sale?",
+      "a_en": "Agropecuaria Blimar C.A. will consider exceptional offers to buy. We don't publish a price. Serious inquiries are welcome at blitz@mail.grokbot.com."
     },
     {
       "q": "¿Se puede arrendar para energía solar o petróleo?",
-      "a": "Sí. Estamos abiertos a arrendamientos o alianzas con empresas de energía — petróleo y gas, o proyectos de energía solar — y a otras propuestas serias. Escríbanos a blitz@mail.grokbot.com."
+      "a": "Sí. Estamos abiertos a arrendamientos o alianzas con empresas de energía — petróleo y gas, o proyectos de energía solar — y a otras propuestas serias. Escríbanos a blitz@mail.grokbot.com.",
+      "q_en": "Can it be leased for solar energy or oil and gas?",
+      "a_en": "Yes. We are open to leases or partnerships with energy companies — oil and gas, or solar energy projects — and to other serious proposals. Write to us at blitz@mail.grokbot.com."
     }
   ],
   "services": [
     {
       "name": "Ganadería lechera",
       "description": "La finca ha estado dedicada a la producción de leche, actividad central de la economía de Rosario de Perijá.",
-      "url": "https://andresblitz.com/70/#leche"
+      "url": "https://andresblitz.com/70/#leche",
+      "name_en": "Dairy cattle",
+      "description_en": "The farm has been dedicated to milk production, a core part of the economy of Rosario de Perijá.",
+      "url_en": "https://andresblitz.com/70/en/#leche"
     },
     {
       "name": "Ganado de carne",
       "description": "Además de la lechería, en la finca se trabaja con ganado de carne, como es tradición en la región de Perijá.",
-      "url": "https://andresblitz.com/70/#carne"
+      "url": "https://andresblitz.com/70/#carne",
+      "name_en": "Beef cattle",
+      "description_en": "Besides the dairy, the farm also raises beef cattle, as is traditional in the Perijá region.",
+      "url_en": "https://andresblitz.com/70/en/#carne"
     },
     {
       "name": "Silvopastoreo",
       "description": "En El 70 se desarrolla un proyecto de silvopastoreo: ganadería junto a árboles y pasturas en la misma tierra, en KM 70 Carretera, Villa del Rosario 4033 (municipio Rosario de Perijá).",
-      "url": "https://andresblitz.com/70/#silvopastoreo"
+      "url": "https://andresblitz.com/70/#silvopastoreo",
+      "name_en": "Silvopasture",
+      "description_en": "At El 70 we are developing a silvopasture project: cattle together with trees and pasture on the same land, at KM 70 Carretera, Villa del Rosario 4033 (Rosario de Perijá municipality).",
+      "url_en": "https://andresblitz.com/70/en/#silvopastoreo"
     }
-  ]
+  ],
+  "url_en": "https://andresblitz.com/70/en/",
+  "description_en": "Family cattle ranch and silvopasture (El 70 farm, Finca El 70) at KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá). Rosario de Perijá is the municipality. Agropecuaria Blimar C.A. will consider exceptional offers to buy and is open to leases or partnerships, especially with energy companies.",
+  "pageTitle": "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia",
+  "pageTitle_en": "El 70 farm · Agropecuaria Blimar, Zulia, Venezuela",
+  "metaDescription": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia. Abiertos a ofertas serias de compra o arrendamiento.",
+  "metaDescription_en": "El 70 farm, Agropecuaria Blimar: a family cattle ranch and silvopasture in Zulia, Venezuela. Land for sale or lease; open to solar and oil and gas. KM 70, Villa del Rosario 4033.",
+  "keywords_en": "El 70 farm, Agropecuaria Blimar, Zulia, Venezuela, cattle ranch, silvopasture, land for sale or lease, solar, oil and gas, Finca El 70, Villa del Rosario, Rosario de Perijá, Carretera de Perijá, Troncal 6, Río Palmar"
 }

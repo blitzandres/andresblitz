@@ -45,6 +45,37 @@ export const site = {
   ],
   "pages": [
     {
+      "slug": "70-en",
+      "title": "El 70 farm · Agropecuaria Blimar, Zulia, Venezuela",
+      "url": "https://andresblitz.com/70/en/",
+      "md": "https://andresblitz.com/70/en/index.md",
+      "json": "https://andresblitz.com/api/page/70-en.json",
+      "kind": "page",
+      "lang": "en",
+      "summary": "El 70 farm, Agropecuaria Blimar: a family cattle ranch and silvopasture in Zulia, Venezuela. Land for sale or lease; open to solar and oil and gas. KM 70, Villa del Rosario 4033.",
+      "last_updated": "2026-11-25",
+      "topics": [
+        "El 70",
+        "El 70 farm",
+        "Finca El 70",
+        "Agropecuaria Blimar",
+        "ganadería",
+        "silvopastoreo",
+        "silvopasture",
+        "cattle ranch",
+        "Carretera de Perijá",
+        "Villa del Rosario",
+        "Rosario de Perijá",
+        "Zulia",
+        "Venezuela"
+      ],
+      "geo": {
+        "place": "Villa del Rosario, 4033, Zulia, Venezuela",
+        "lat": 10.4165941,
+        "lng": -72.2108835
+      }
+    },
+    {
       "slug": "70",
       "title": "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia",
       "url": "https://andresblitz.com/70/",
@@ -61,6 +92,8 @@ export const site = {
         "Agropecuaria Blimar",
         "ganadería",
         "silvopastoreo",
+        "silvopasture",
+        "cattle ranch",
         "Carretera de Perijá",
         "Villa del Rosario",
         "Rosario de Perijá",

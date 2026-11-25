@@ -17,6 +17,9 @@
     <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-VE" href="https://andresblitz.com/70/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andresblitz.com/70/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andresblitz.com/70/" />
     <image:image>
       <image:loc>https://andresblitz.com/70/img/og-el70.jpg</image:loc>
       <image:title>Agropecuaria Blimar · El 70 farm (Finca El 70)</image:title>
@@ -50,6 +53,27 @@
     <image:image>
       <image:loc>https://andresblitz.com/70/img/logo-512.png</image:loc>
       <image:title>Logo de Agropecuaria Blimar · El 70 farm</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://andresblitz.com/70/en/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-VE" href="https://andresblitz.com/70/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://andresblitz.com/70/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andresblitz.com/70/" />
+    <image:image>
+      <image:loc>https://andresblitz.com/70/img/og-el70.jpg</image:loc>
+      <image:title>Agropecuaria Blimar · El 70 farm (Finca El 70)</image:title>
+      <image:caption>El 70 farm at km 70 Carretera de Perijá, Rosario de Perijá, Zulia, Venezuela</image:caption>
+      <image:geo_location>Rosario de Perijá, Zulia, Venezuela</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://andresblitz.com/70/img/mapa-lotes.jpg</image:loc>
+      <image:title>Map of the Agropecuaria Blimar · El 70 lots</image:title>
+      <image:caption>Approximate boundaries of the larger lot and the smaller lot on both sides of Troncal 6, El 70 farm, Rosario de Perijá, Zulia</image:caption>
+      <image:geo_location>Rosario de Perijá, Zulia, Venezuela</image:geo_location>
     </image:image>
   </url>
   <url>

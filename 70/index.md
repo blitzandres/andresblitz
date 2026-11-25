@@ -36,6 +36,8 @@ Desliza para ver más →
 
 ## El 70 farm
 
+A full English version of this page is available: [Read in English](https://andresblitz.com/70/en/).
+
 El 70 farm (Finca El 70) is a family cattle farm and silvopasture project at KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela (Carretera de Perijá / Troncal 6). Rosario de Perijá is the municipality. Locally the farm is known as El 70. It is run by Agropecuaria Blimar C.A.
 
 We will consider exceptional offers to buy, and we are open to leases or partnerships, including with energy companies (oil and gas, or solar). See [serious offers](https://andresblitz.com/70/#oportunidad).

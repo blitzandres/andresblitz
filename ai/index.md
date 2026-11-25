@@ -9,6 +9,7 @@ last_updated: "2026-11-25"
 
 # Markdown pages
 
+- [El 70 farm · Agropecuaria Blimar, Zulia, Venezuela](https://andresblitz.com/70/en/index.md) — El 70 farm, Agropecuaria Blimar: a family cattle ranch and silvopasture in Zulia, Venezuela. Land for sale or lease; open to solar and oil and gas. KM 70, Villa del Rosario 4033.
 - [Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia](https://andresblitz.com/70/index.md) — Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia. Abiertos a ofertas serias de compra o arrendamiento.
 - [Ahorro en dólares: qué valdrían hoy tus bolívares o pesos](https://andresblitz.com/ahorro-en-dolares/index.md) — Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones.
 - [Alerts & Downloads | Andrés Blitz](https://andresblitz.com/alerts/index.md) — Email alerts and downloads from andresblitz.com: Bitcoin bracket alerts, the daily Tasa BCV, crypto dollar gap alerts, weekly LatAm rates, PDF guides and more.

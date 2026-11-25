@@ -81,6 +81,7 @@ for (const file of walk(ROOT).sort()) {
 // Extra context for special pages
 const EXTRA = {
   '/70/': el70?.extra || { topics: ['El 70', 'El 70 farm', 'Finca El 70', 'Agropecuaria Blimar', 'ganadería', 'silvopastoreo', 'Carretera de Perijá', 'Rosario de Perijá', 'Zulia', 'Venezuela'], geo: { place: 'La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela', lat: 10.4165941, lng: -72.2108835 }, note: 'El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). Km 70 Carretera de Perijá (Troncal 6), near La Villa del Rosario, Rosario de Perijá, Zulia, Venezuela. Geo: 10.4165941,-72.2108835.' },
+  '/70/en/': el70?.extraEn || { topics: ['El 70', 'El 70 farm', 'Finca El 70', 'Agropecuaria Blimar', 'cattle ranch', 'silvopasture', 'Carretera de Perijá', 'Villa del Rosario', 'Rosario de Perijá', 'Zulia', 'Venezuela'], geo: { place: 'Villa del Rosario, Rosario de Perijá, Zulia, Venezuela', lat: 10.4165941, lng: -72.2108835 }, note: 'El 70 farm (Finca El 70) — family cattle ranch and silvopasture project (English page; Spanish original at https://andresblitz.com/70/). KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela. Geo: 10.4165941,-72.2108835. Contact: blitz@mail.grokbot.com. No public phone.' },
   '/tasa-bcv/': { topics: ['Tasa BCV', 'tipo de cambio', 'Venezuela', 'Maracaibo'], geo: { place: 'Maracaibo, Zulia, Venezuela' }, note: 'Tasa BCV — tipo de cambio oficial del Banco Central de Venezuela (en español). Maracaibo, Zulia.' },
   '/dolar-argentina/': { topics: ['Dólar hoy', 'dólar blue', 'dólar MEP', 'tipo de cambio', 'Argentina'], note: 'Dólar hoy en Argentina — oficial, blue, MEP, CCL, cripto y tarjeta, con conversor ARS ↔ USD (en español).' },
   '/dolar-mexico/': { topics: ['FIX', 'Banxico', 'dólar hoy', 'tipo de cambio', 'México'], note: 'Dólar hoy en México — tipo de cambio FIX de Banxico, compra y venta de mercado y conversor MXN ↔ USD (en español).' },
@@ -236,7 +237,7 @@ andresblitz.com is Andrés's personal site. It publishes:
 - Reference Latin American dollar and FX rates, converters, and calculators (in Spanish)
 - Beginner crypto guides and crypto tools (in Spanish)
 - A directory of open-source projects, including a playable browser game
-- A page about El 70, a cattle ranch in Zulia, Venezuela (in Spanish)
+- A page about El 70, a cattle ranch in Zulia, Venezuela (in Spanish, with a full English version at /70/en/)
 
 Exchange rates and related JSON are rebuilt about every 30 minutes. The material is factual reference and is **not financial advice**.
 
@@ -282,8 +283,9 @@ ${agentsGroup('Crypto tools and guides (Spanish)', [
   agentsLine('/guias-cripto/estafas-comunes/', 'Estafas cripto comunes'),
   agentsLine('/guias-cripto/brecha-dolar-cripto/', 'Brecha del dólar cripto'),
 ])}
-${agentsGroup('El 70 (Spanish)', [
+${agentsGroup('El 70', [
   agentsLine('/70/', 'El 70'),
+  agentsLine('/70/en/', 'El 70 farm (English)'),
 ])}
 ${projectLines ? `### Projects and Play (English)
 
@@ -408,6 +410,7 @@ ${pages.filter((p) => p.kind === 'project-subpage').map((p) => line(p)).join('\n
 ## Other pages (Spanish unless noted)
 
 ${byPath('/70/') ? `- [El 70](${byPath('/70/').mdUrl}): ${EXTRA['/70/'].note}` : ''}
+${byPath('/70/en/') ? `  - [El 70 farm (English)](${byPath('/70/en/').mdUrl}): ${EXTRA['/70/en/'].note}` : ''}
 ${byPath('/tasa-bcv/') ? `- [Tasa BCV](${byPath('/tasa-bcv/').mdUrl}): ${EXTRA['/tasa-bcv/'].note}` : ''}
 ${byPath('/dolar-argentina/') ? `- [Dólar Argentina](${byPath('/dolar-argentina/').mdUrl}): ${EXTRA['/dolar-argentina/'].note}` : ''}
 ${byPath('/dolar-colombia/') ? `- [Dólar Colombia](${byPath('/dolar-colombia/').mdUrl}): ${EXTRA['/dolar-colombia/'].note}` : ''}

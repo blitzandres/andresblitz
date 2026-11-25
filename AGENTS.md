@@ -33,7 +33,7 @@ andresblitz.com is Andrés's personal site. It publishes:
 - Reference Latin American dollar and FX rates, converters, and calculators (in Spanish)
 - Beginner crypto guides and crypto tools (in Spanish)
 - A directory of open-source projects, including a playable browser game
-- A page about El 70, a cattle ranch in Zulia, Venezuela (in Spanish)
+- A page about El 70, a cattle ranch in Zulia, Venezuela (in Spanish, with a full English version at /70/en/)
 
 Exchange rates and related JSON are rebuilt about every 30 minutes. The material is factual reference and is **not financial advice**.
 
@@ -113,10 +113,12 @@ Each entry links to the live HTML page, notes the language (`en` or `es`), and g
 - [Brecha del dólar cripto](https://andresblitz.com/guias-cripto/brecha-dolar-cripto/) (es): Guía: cómo se calcula y cómo leer la brecha entre el USDT P2P y la tasa oficial (en español).
   Markdown: https://andresblitz.com/guias-cripto/brecha-dolar-cripto/index.md
 
-### El 70 (Spanish)
+### El 70
 
-- [El 70](https://andresblitz.com/70/) (es): El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page with an English summary). KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela. Alternate locality / municipality: Rosario de Perijá. Hours: Monday 09:00–17:00; Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday 09:00–18:30. Geo: 10.4165941,-72.2108835. Maps: https://maps.google.com/?cid=17434179994800704762. Social: https://www.facebook.com/agropecuariablimar. Contact: blitz@mail.grokbot.com. No public phone. Source: https://andresblitz.com/70/ and 70/business.json.
+- [El 70](https://andresblitz.com/70/) (es): El 70 farm (Finca El 70) — family cattle farm and silvopasture project (Spanish page; full English version at https://andresblitz.com/70/en/). KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela. Alternate locality / municipality: Rosario de Perijá. Hours: Monday 09:00–17:00; Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday 09:00–18:30. Geo: 10.4165941,-72.2108835. Maps: https://maps.google.com/?cid=17434179994800704762. Social: https://www.facebook.com/agropecuariablimar. Contact: blitz@mail.grokbot.com. No public phone. Source: https://andresblitz.com/70/ and 70/business.json.
   Markdown: https://andresblitz.com/70/index.md
+- [El 70 farm (English)](https://andresblitz.com/70/en/) (en): El 70 farm (Finca El 70) — family cattle ranch and silvopasture project. English page; Spanish original at https://andresblitz.com/70/. KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela. Alternate locality / municipality: Rosario de Perijá. Hours: Monday 09:00–17:00; Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday 09:00–18:30. Geo: 10.4165941,-72.2108835. Maps: https://maps.google.com/?cid=17434179994800704762. Social: https://www.facebook.com/agropecuariablimar. Contact: blitz@mail.grokbot.com. No public phone. Source: https://andresblitz.com/70/en/ and 70/business.json.
+  Markdown: https://andresblitz.com/70/en/index.md
 
 ### Projects and Play (English)
 
