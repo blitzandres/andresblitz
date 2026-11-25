@@ -2,7 +2,7 @@
 title: "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto"
 description: "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio."
 url: "https://andresblitz.com/dolar-argentina/"
-last_updated: "2026-11-23"
+last_updated: "2026-11-24"
 lang: "es-AR"
 ---
 
@@ -22,27 +22,27 @@ Compra $ 1.565,00
 
 ### Dólar blue
 
-$ 1.690,00
+$ 1.700,00
 
-Compra $ 1.670,00
+Compra $ 1.680,00
 
 ### Dólar MEP (bolsa)
 
-$ 1.691,80
+$ 1.695,10
 
-Compra $ 1.688,60
+Compra $ 1.677,60
 
 ### Contado con liqui (CCL)
 
-$ 1.793,30
+$ 1.797,10
 
-Compra $ 1.792,20
+Compra $ 1.793,40
 
 ### Dólar cripto (USDT)
 
-$ 1.790,18
+$ 1.777,74
 
-Compra $ 1.783,18
+Compra $ 1.749,06
 
 ### Dólar tarjeta
 
@@ -50,7 +50,7 @@ $ 2.099,50
 
 Compra $ 2.034,50
 
-Fuente: dolarapi.com, actualizado 24 nov 2026, 1:56 p. m. (hora de Buenos Aires)
+Fuente: dolarapi.com, actualizado 24 nov 2026, 6:02 p. m. (hora de Buenos Aires)
 
 ## Conversor de pesos a dólares (ARS ↔ USD)
 

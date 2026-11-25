@@ -117,7 +117,7 @@
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin has closed above $100,000 on 217 of 4,451 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "Bitcoin",
         "days above $100,000",
@@ -133,7 +133,7 @@
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin has closed above $50,000 on 1,158 of 4,451 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 23, 2026. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "Bitcoin",
         "days above $50,000",
@@ -149,7 +149,7 @@
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin has closed above $70,000 on 631 of 4,451 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "Bitcoin",
         "days above $70,000",
@@ -165,7 +165,7 @@
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin has closed above $90,000 on 348 of 4,451 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "Bitcoin",
         "days above $90,000",
@@ -181,7 +181,7 @@
       "kind": "page",
       "lang": "en",
       "summary": "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 23, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "Bitcoin",
         "days per price bracket by year",
@@ -197,7 +197,7 @@
       "kind": "page",
       "lang": "es",
       "summary": "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.451 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "bitcoin",
         "días en cada precio",
@@ -214,7 +214,7 @@
       "kind": "page",
       "lang": "en",
       "summary": "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 23, 2026: 413 days since, latest close $61,210.98, 50.9% below it.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "Bitcoin",
         "highest close",
@@ -231,7 +231,7 @@
       "kind": "page",
       "lang": "en",
       "summary": "Days Bitcoin spent at each USD price since 2014, in $2k, $3k, $4k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "Bitcoin",
         "BTC/USD",
@@ -289,7 +289,7 @@
       "kind": "page",
       "lang": "es-AR",
       "summary": "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio.",
-      "last_updated": "2026-11-23",
+      "last_updated": "2026-11-24",
       "topics": [
         "Dólar hoy",
         "dólar blue",
@@ -878,5 +878,5 @@
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
     }
   ],
-  "generated": "2026-11-24"
+  "generated": "2026-11-25"
 }

@@ -16,23 +16,23 @@ El tipo de cambio FIX que publica el Banco de México y una cotización de merca
 
 ### Tipo de cambio FIX (Banxico)
 
-$ 19.1648
+$ 19.3668
 
-pesos por 1 dólar · fecha 23 de noviembre de 2026
+pesos por 1 dólar · fecha 24 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 19.1400
+$ 19.3175
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 19.1470
+$ 19.3240
 
 lo que cuesta un dólar
 
-Fuente: mx.dolarapi.com (FIX de Banxico), actualizado 23 nov 2026, 12:00 p.m. (hora del centro de México)
+Fuente: mx.dolarapi.com (FIX de Banxico), actualizado 24 nov 2026, 12:00 p.m. (hora del centro de México)
 
 ## Conversor de pesos mexicanos a dólares (MXN ↔ USD)
 

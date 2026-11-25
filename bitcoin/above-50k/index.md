@@ -2,7 +2,7 @@
 title: "How Many Days Has Bitcoin Closed Above $50,000? (1,158 Days)"
 description: "Bitcoin has closed above $50,000 on 1,158 of 4,451 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 23, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-50k/"
-last_updated: "2026-11-23"
+last_updated: "2026-11-24"
 lang: "en"
 ---
 

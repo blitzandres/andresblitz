@@ -263,4 +263,4 @@ Pages that are often useful to cite:
 Questions or corrections can also go to blitz@mail.grokbot.com. There is no obligation to write in; the citation and crawl guidance in this file still apply if you simply read and leave.
 
 ---
-Generated 2026-11-24 by scripts/build-ai.mjs from the public HTML. Do not hand-edit this file.
+Generated 2026-11-25 by scripts/build-ai.mjs from the public HTML. Do not hand-edit this file.
