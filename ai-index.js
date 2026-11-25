@@ -548,7 +548,7 @@ export const site = {
       "kind": "home",
       "lang": "en-CA",
       "summary": "Andrés Blitz is a full-time trader and investor in British Columbia, Canada — markets, portfolio construction, and capital allocation. Sharp instincts from years in high-stakes sales and operations.",
-      "last_updated": "2026-11-12"
+      "last_updated": "2026-11-25"
     },
     {
       "slug": "projects-blitz-analytics",
@@ -559,7 +559,7 @@ export const site = {
       "kind": "project",
       "lang": "en-CA",
       "summary": "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database and first-party visitor ids. Visitor IPs and basic device info are kept for up to 12 months for security and analytics. Demo uses sample data.",
-      "last_updated": "2026-11-09"
+      "last_updated": "2026-11-25"
     },
     {
       "slug": "projects-blitzys-world",

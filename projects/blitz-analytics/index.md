@@ -2,7 +2,7 @@
 title: "Blitz Analytics — Privacy-Minded Web Analytics | Andrés Blitz"
 description: "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database and first-party visitor ids. Visitor IPs and basic device info are kept for up to 12 months for security and analytics. Demo uses sample data."
 url: "https://andresblitz.com/projects/blitz-analytics/"
-last_updated: "2026-11-09"
+last_updated: "2026-11-25"
 lang: "en-CA"
 ---
 
