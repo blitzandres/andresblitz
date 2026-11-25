@@ -2626,7 +2626,7 @@ Alerts and downloads from this page. You confirm first, and you can unsubscribe 
 
 ---
 title: "Blitz Analytics — Privacy-Minded Web Analytics | Andrés Blitz"
-description: "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data."
+description: "Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database and first-party visitor ids. Visitor IPs and basic device info are kept for up to 12 months for security and analytics. Demo uses sample data."
 url: "https://andresblitz.com/projects/blitz-analytics/"
 last_updated: "2026-11-09"
 lang: "en-CA"
@@ -2655,7 +2655,7 @@ A way to see which pages get read without a heavy third-party tracker. Blitz Ana
 ## What I built
 
 -   A tiny tracker script with engagement time that pauses when the tab is hidden, and scroll depth.
--   A first-party, opaque visitor id instead of an IP address; the fallback is a daily-salted hash, and raw IPs are never stored.
+-   A first-party, opaque visitor id (with a daily-salted hash as the cookieless fallback); visitor IPs and basic device info are kept for up to 12 months for security and analytics.
 -   Page journeys, sessions with a heartbeat and coarse location from Cloudflare’s edge metadata.
 -   A private dashboard with charts and a globe, plus the chat widget and inbox you can use on this site.
 

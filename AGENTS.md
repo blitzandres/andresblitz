@@ -124,7 +124,7 @@ Each entry links to the live HTML page, notes the language (`en` or `es`), and g
 
 The Play item in the English site nav goes to the Space Invaders section on the homepage (https://andresblitz.com/#play), not to Blitzy's World. Playable builds are listed below.
 
-- [Blitz Analytics — Privacy-Minded Web Analytics](https://andresblitz.com/projects/blitz-analytics/) (en): Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database, first-party visitor ids and no raw IP storage. Demo uses sample data.
+- [Blitz Analytics — Privacy-Minded Web Analytics](https://andresblitz.com/projects/blitz-analytics/) (en): Blitz Analytics is the small private analytics and chat backend behind andresblitz.com: a Cloudflare Worker with a D1 database and first-party visitor ids. Visitor IPs and basic device info are kept for up to 12 months for security and analytics. Demo uses sample data.
   Markdown: https://andresblitz.com/projects/blitz-analytics/index.md
 - [Blitzy's World — Playable Space Game in the Browser](https://andresblitz.com/projects/blitzys-world/) (en): Play Blitzy's World: fly a glowing orb through an endless procedural universe, slingshot around planets and collect stardust. Built with HTML5 Canvas; works with keyboard, mouse and touch.
   Markdown: https://andresblitz.com/projects/blitzys-world/index.md
