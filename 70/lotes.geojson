@@ -1,0 +1,224 @@
+{
+  "type": "FeatureCollection",
+  "_meta": {
+    "title": "Lotes de Agropecuaria Blimar · El 70",
+    "note": "Linderos aproximados trazados por Andrés sobre imagen satelital (2026-11-09). No es un plano catastral ni un levantamiento legal.",
+    "source": "blitzandres/el70 data/location/el70.geojson",
+    "attribution": "Troncal 6: datos © OpenStreetMap. Imágenes del mapa: Esri, Maxar, Earthstar Geographics."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "farm-pin",
+        "name": "El 70 (Agropecuaria Blimar)",
+        "source": "Google Business pin (público)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.2108835,
+          10.4165941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "troncal-6",
+        "name": "Troncal 6 (Carretera de Perijá)",
+        "source": "OpenStreetMap",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -72.21977,
+            10.41388
+          ],
+          [
+            -72.2098927,
+            10.4159067
+          ],
+          [
+            -72.2084667,
+            10.4162688
+          ],
+          [
+            -72.2006342,
+            10.4186373
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lot-1",
+        "name": "Lote mayor",
+        "side": "norte de la Troncal 6, tierra adentro",
+        "area_ha_approx": 462,
+        "perimeter_m_approx": 8541,
+        "note": "Linderos aproximados; no es un plano catastral."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -72.2034037,
+              10.4179551
+            ],
+            [
+              -72.2033823,
+              10.4203926
+            ],
+            [
+              -72.203393,
+              10.4251832
+            ],
+            [
+              -72.2033286,
+              10.4286335
+            ],
+            [
+              -72.2026205,
+              10.4307966
+            ],
+            [
+              -72.2026849,
+              10.4319678
+            ],
+            [
+              -72.2025776,
+              10.4368742
+            ],
+            [
+              -72.2058821,
+              10.4370009
+            ],
+            [
+              -72.2109032,
+              10.4369587
+            ],
+            [
+              -72.2204304,
+              10.4371275
+            ],
+            [
+              -72.2204196,
+              10.4327275
+            ],
+            [
+              -72.2204947,
+              10.431377
+            ],
+            [
+              -72.2208703,
+              10.4302268
+            ],
+            [
+              -72.2217607,
+              10.4281165
+            ],
+            [
+              -72.2223294,
+              10.4268609
+            ],
+            [
+              -72.222029,
+              10.4252992
+            ],
+            [
+              -72.2209561,
+              10.4201183
+            ],
+            [
+              -72.2203767,
+              10.4172693
+            ],
+            [
+              -72.2197866,
+              10.4139559
+            ],
+            [
+              -72.2134566,
+              10.4151589
+            ],
+            [
+              -72.2084355,
+              10.4162985
+            ],
+            [
+              -72.2034037,
+              10.4179551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lot-2",
+        "name": "Lote menor",
+        "side": "sur de la Troncal 6, hacia el Río Palmar",
+        "area_ha_approx": 40,
+        "perimeter_m_approx": 3070,
+        "note": "Linderos aproximados; no es un plano catastral."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -72.215023,
+              10.4147262
+            ],
+            [
+              -72.2116971,
+              10.415391
+            ],
+            [
+              -72.2127914,
+              10.4119827
+            ],
+            [
+              -72.2143096,
+              10.4072394
+            ],
+            [
+              -72.2146261,
+              10.4060312
+            ],
+            [
+              -72.2160906,
+              10.4050973
+            ],
+            [
+              -72.2177911,
+              10.4048915
+            ],
+            [
+              -72.2186977,
+              10.4051553
+            ],
+            [
+              -72.2168791,
+              10.4096876
+            ],
+            [
+              -72.2156453,
+              10.4129482
+            ],
+            [
+              -72.215023,
+              10.4147262
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

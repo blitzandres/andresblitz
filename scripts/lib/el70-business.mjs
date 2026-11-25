@@ -216,7 +216,7 @@ export function renderEl70BusinessBlock(biz, origin = 'https://andresblitz.com')
    "@id": "${origin}/70/#webpage",
    "url": "${origin}/70/",
    "name": "Agropecuaria Blimar · El 70 farm, km 70 Perijá, Zulia",
-   "description": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia, Venezuela.",
+   "description": "Agropecuaria Blimar · El 70 farm: finca familiar de ganadería y silvopastoreo en KM 70 Carretera, Villa del Rosario 4033, Zulia. Abiertos a ofertas serias de compra o arrendamiento.",
    "inLanguage": "es-VE",
    "dateModified": ${JSON.stringify(biz.dateModified)},
    "isPartOf": { "@id": "${origin}/#website" },
@@ -296,6 +296,22 @@ export function renderEl70BusinessBlock(biz, origin = 'https://andresblitz.com')
    "contentLocation": { "@id": "${origin}/70/#place" },
    "copyrightHolder": { "@id": "${origin}/70/#org" },
    "creditText": "Agropecuaria Blimar C.A.",
+   "geo": { "@type": "GeoCoordinates", "latitude": ${geo.latitude}, "longitude": ${geo.longitude} }
+  },
+  {
+   "@type": "ImageObject",
+   "@id": "${origin}/70/img/mapa-lotes.jpg#img",
+   "contentUrl": "${origin}/70/img/mapa-lotes.jpg",
+   "url": "${origin}/70/img/mapa-lotes.jpg",
+   "width": 1400,
+   "height": 1600,
+   "name": "Mapa de los lotes de El 70",
+   "caption": "Linderos aproximados de Agropecuaria Blimar (El 70): lote mayor al norte de la Troncal 6 y lote menor al sur, hacia el Río Palmar, La Villa del Rosario, Zulia",
+   "description": "Linderos aproximados de Agropecuaria Blimar (El 70): lote mayor al norte de la Troncal 6 y lote menor al sur, hacia el Río Palmar, La Villa del Rosario, Zulia. Trazado satelital, no es un plano catastral.",
+   "inLanguage": "es-VE",
+   "contentLocation": { "@id": "${origin}/70/#place" },
+   "copyrightHolder": { "@id": "${origin}/70/#org" },
+   "creditText": "Agropecuaria Blimar C.A. Imágenes © Esri, Maxar, Earthstar Geographics. Troncal 6: datos © OpenStreetMap.",
    "geo": { "@type": "GeoCoordinates", "latitude": ${geo.latitude}, "longitude": ${geo.longitude} }
   }${faqJson(biz.faq, origin)}
  ]

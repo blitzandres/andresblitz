@@ -5,7 +5,7 @@
   <!-- Agropecuaria Blimar · El 70 farm — KM 70 Carretera de Perijá (Troncal 6), Rosario de Perijá, Zulia, VE (10.4165941, -72.2108835) -->
   <url>
     <loc>https://andresblitz.com/70/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es-VE" href="https://andresblitz.com/70/" />
@@ -13,6 +13,7 @@
     <image:image><image:loc>https://andresblitz.com/70/img/potrero.jpg</image:loc><image:title>Potreros de El 70 farm</image:title><image:caption>Potrero con samán en El 70 farm, Agropecuaria Blimar, Rosario de Perijá, Zulia</image:caption><image:geo_location>Rosario de Perijá, Zulia, Venezuela</image:geo_location></image:image>
     <image:image><image:loc>https://andresblitz.com/70/img/patio-tractor.jpg</image:loc><image:title>Patio de El 70 farm</image:title><image:caption>Tractor en el patio de El 70 farm, Agropecuaria Blimar, Rosario de Perijá, Zulia</image:caption><image:geo_location>Rosario de Perijá, Zulia, Venezuela</image:geo_location></image:image>
     <image:image><image:loc>https://andresblitz.com/70/img/mapa-estatico.jpg</image:loc><image:title>Vista satelital de El 70 farm</image:title><image:caption>Imagen satelital de El 70 farm, km 70 Carretera de Perijá, Rosario de Perijá, Zulia</image:caption><image:geo_location>Rosario de Perijá, Zulia, Venezuela</image:geo_location></image:image>
+    <image:image><image:loc>https://andresblitz.com/70/img/mapa-lotes.jpg</image:loc><image:title>Mapa de los lotes de Agropecuaria Blimar · El 70</image:title><image:caption>Linderos aproximados del lote mayor y el lote menor a ambos lados de la Troncal 6, El 70 farm, Rosario de Perijá, Zulia</image:caption><image:geo_location>Rosario de Perijá, Zulia, Venezuela</image:geo_location></image:image>
     <image:image><image:loc>https://andresblitz.com/70/img/logo-512.png</image:loc><image:title>Logo de Agropecuaria Blimar · El 70 farm</image:title></image:image>
   </url>
 </urlset>
