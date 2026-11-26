@@ -1,6 +1,6 @@
 ---
 title: "Días del bitcoin en cada precio: historial en dólares desde 2014"
-description: "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.452 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes."
+description: "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.453 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes."
 url: "https://andresblitz.com/bitcoin/es/"
 last_updated: "2026-11-25"
 lang: "es"
@@ -12,13 +12,13 @@ Mercados · Bitcoin
 
 # Días del bitcoin en cada precio
 
-En pocas palabras: el bitcoin tiene 4.452 cierres diarios registrados desde el 17 de septiembre de 2014. Esta página los agrupa por rangos de precio en dólares y cuenta los días de cada rango: el 44,3 % de esos días cerró por debajo de US$10.000 y en 217 días cerró por encima de US$100.000. Es solo un registro del pasado, sin pronósticos.
+En pocas palabras: el bitcoin tiene 4.453 cierres diarios registrados desde el 17 de septiembre de 2014. Esta página los agrupa por rangos de precio en dólares y cuenta los días de cada rango: el 44,3 % de esos días cerró por debajo de US$10.000 y en 217 días cerró por encima de US$100.000. Es solo un registro del pasado, sin pronósticos.
 
 ## Días que el bitcoin cerró en cada rango de US$10.000
 
-Último cierre: **US$59.747,77** el 24 de noviembre de 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)). Cierre más alto: US$124.752,53 el 6 de octubre de 2025.
+Último cierre: **US$60.378,20** el 25 de noviembre de 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)). Cierre más alto: US$124.752,53 el 6 de octubre de 2025.
 
-Días por cierre diario, rangos de US$10.000 (17 de septiembre de 2014 – 24 de noviembre de 2026, 4.452 días completos)
+Días por cierre diario, rangos de US$10.000 (17 de septiembre de 2014 – 25 de noviembre de 2026, 4.453 días completos)
 | Rango de precio (USD) | Días | Porcentaje | Barra |
 | --- | --- | --- | --- |
 | US$120.000–US$130.000 | 10 | 0,2 % |  |
@@ -27,8 +27,8 @@ Días por cierre diario, rangos de US$10.000 (17 de septiembre de 2014 – 24 de
 | US$90.000–US$100.000 | 131 | 2,9 % |  |
 | US$80.000–US$90.000 | 148 | 3,3 % |  |
 | US$70.000–US$80.000 | 135 | 3,0 % |  |
-| US$60.000–US$70.000 | 360 | 8,1 % |  |
-| US$50.000–US$60.000 (último cierre) | 168 | 3,8 % |  |
+| US$60.000–US$70.000 (último cierre) | 361 | 8,1 % |  |
+| US$50.000–US$60.000 | 168 | 3,8 % |  |
 | US$40.000–US$50.000 | 258 | 5,8 % |  |
 | US$30.000–US$40.000 | 250 | 5,6 % |  |
 | US$20.000–US$30.000 | 382 | 8,6 % |  |
@@ -43,7 +43,7 @@ Cada día completo cuenta una vez, en el rango que contiene su cierre diario (d�
 
 ### ¿Qué muestra esta tabla?
 
-Cuántos días cerró el bitcoin dentro de cada rango de US$10.000, desde el 17 de septiembre de 2014 hasta el 24 de noviembre de 2026, con los cierres diarios BTC-USD de Yahoo Finance.
+Cuántos días cerró el bitcoin dentro de cada rango de US$10.000, desde el 17 de septiembre de 2014 hasta el 25 de noviembre de 2026, con los cierres diarios BTC-USD de Yahoo Finance.
 
 ### ¿Los precios están en dólares?
 

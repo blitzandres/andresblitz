@@ -268,7 +268,7 @@ No publicamos un teléfono en esta página.
 title: "Ahorro en dólares: qué valdrían hoy tus bolívares o pesos"
 description: "Calculadora histórica: si guardaste bolívares, pesos o soles hace N meses, cuánto valen hoy en dólares (USD/USDT) frente a haberlos cambiado ese día. Datos con fuente y fecha, sin proyecciones."
 url: "https://andresblitz.com/ahorro-en-dolares/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es"
 ---
 
@@ -395,7 +395,7 @@ Your email is only used for what you sign up for, and it is never sold or shared
 
 ---
 title: "How Many Days Has Bitcoin Closed Above $100,000? (217 Days)"
-description: "Bitcoin has closed above $100,000 on 217 of 4,452 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes."
+description: "Bitcoin has closed above $100,000 on 217 of 4,453 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-100k/"
 last_updated: "2026-11-25"
 lang: "en"
@@ -407,13 +407,13 @@ Markets · Bitcoin
 
 # How many days has Bitcoin closed above $100,000?
 
-**217 days.** Bitcoin closed above $100,000 on 217 of the 4,452 completed daily closes since September 17, 2014, which is 4.9% of all days. The first close above $100,000 was $101,236.02 on December 8, 2024; the most recent was $101,663.19 on November 12, 2025. The latest close, $59,747.77 on November 24, 2026, is 40.3% below $100,000.
+**217 days.** Bitcoin closed above $100,000 on 217 of the 4,453 completed daily closes since September 17, 2014, which is 4.9% of all days. The first close above $100,000 was $101,236.02 on December 8, 2024; the most recent was $101,663.19 on November 12, 2025. The latest close, $60,378.20 on November 25, 2026, is 39.6% below $100,000.
 
 ## Days Bitcoin closed above $100,000
 
-217 of 4,452 days · 4.9%
+217 of 4,453 days · 4.9%
 
-<table class="bt"><caption>Bitcoin daily closes above $100,000, September 17, 2014 – November 24, 2026</caption><tbody><tr><th scope="row">Days closed above $100,000</th><td class="n">217</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">4.9%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,452</td></tr><tr><th scope="row">First close above</th><td class="n">December 8, 2024 ($101,236.02)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 12, 2025 ($101,663.19)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">189 days (May 8, 2025 – Nov 12, 2025)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $59,747.77)</td></tr></tbody></table>
+<table class="bt"><caption>Bitcoin daily closes above $100,000, September 17, 2014 – November 25, 2026</caption><tbody><tr><th scope="row">Days closed above $100,000</th><td class="n">217</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">4.9%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,453</td></tr><tr><th scope="row">First close above</th><td class="n">December 8, 2024 ($101,236.02)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 12, 2025 ($101,663.19)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">189 days (May 8, 2025 – Nov 12, 2025)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $60,378.20)</td></tr></tbody></table>
 
 Closes above $100,000 by calendar year
 | Year | Days above | Days in data | Share |
@@ -424,7 +424,7 @@ Closes above $100,000 by calendar year
 Other levels (same data)
 | Closed above | Days | Share | Most recent |
 | --- | --- | --- | --- |
-| [$50,000](https://andresblitz.com/bitcoin/above-50k/) | 1,159 | 26.0% | Nov 24, 2026 |
+| [$50,000](https://andresblitz.com/bitcoin/above-50k/) | 1,160 | 26.0% | Nov 25, 2026 |
 | [$70,000](https://andresblitz.com/bitcoin/above-70k/) | 631 | 14.2% | Nov 12, 2026 |
 | [$90,000](https://andresblitz.com/bitcoin/above-90k/) | 348 | 7.8% | Jan 19, 2026 |
 | $100,000 | 217 | 4.9% | Nov 12, 2025 |
@@ -437,7 +437,7 @@ A day counts when that day’s Yahoo Finance BTC-USD close is above $100,000. To
 
 ### How many days has Bitcoin closed above $100,000?
 
-217 of 4,452 completed daily closes from September 17, 2014 to November 24, 2026 (4.9%), using Yahoo Finance BTC-USD daily closes.
+217 of 4,453 completed daily closes from September 17, 2014 to November 25, 2026 (4.9%), using Yahoo Finance BTC-USD daily closes.
 
 ### When did Bitcoin first close above $100,000?
 
@@ -464,8 +464,8 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 ---
 
 ---
-title: "How Many Days Has Bitcoin Closed Above $50,000? (1,159 Days)"
-description: "Bitcoin has closed above $50,000 on 1,159 of 4,452 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 24, 2026. Yahoo Finance BTC-USD daily closes."
+title: "How Many Days Has Bitcoin Closed Above $50,000? (1,160 Days)"
+description: "Bitcoin has closed above $50,000 on 1,160 of 4,453 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 25, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-50k/"
 last_updated: "2026-11-25"
 lang: "en"
@@ -477,13 +477,13 @@ Markets · Bitcoin
 
 # How many days has Bitcoin closed above $50,000?
 
-**1,159 days.** Bitcoin closed above $50,000 on 1,159 of the 4,452 completed daily closes since September 17, 2014, which is 26.0% of all days. The first close above $50,000 was $52,149.01 on February 17, 2021; the most recent was $59,747.77 on November 24, 2026. The latest close, $59,747.77 on November 24, 2026, is above $50,000, and Bitcoin has now closed above it 1,015 days in a row.
+**1,160 days.** Bitcoin closed above $50,000 on 1,160 of the 4,453 completed daily closes since September 17, 2014, which is 26.0% of all days. The first close above $50,000 was $52,149.01 on February 17, 2021; the most recent was $60,378.20 on November 25, 2026. The latest close, $60,378.20 on November 25, 2026, is above $50,000, and Bitcoin has now closed above it 1,016 days in a row.
 
 ## Days Bitcoin closed above $50,000
 
-1,159 of 4,452 days · 26.0%
+1,160 of 4,453 days · 26.0%
 
-<table class="bt"><caption>Bitcoin daily closes above $50,000, September 17, 2014 – November 24, 2026</caption><tbody><tr><th scope="row">Days closed above $50,000</th><td class="n">1,159</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">26.0%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,452</td></tr><tr><th scope="row">First close above</th><td class="n">February 17, 2021 ($52,149.01)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 24, 2026 ($59,747.77)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">1,015 days (Feb 14, 2024 – Nov 24, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">1,015 days</td></tr></tbody></table>
+<table class="bt"><caption>Bitcoin daily closes above $50,000, September 17, 2014 – November 25, 2026</caption><tbody><tr><th scope="row">Days closed above $50,000</th><td class="n">1,160</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">26.0%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,453</td></tr><tr><th scope="row">First close above</th><td class="n">February 17, 2021 ($52,149.01)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 25, 2026 ($60,378.20)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">1,016 days (Feb 14, 2024 – Nov 25, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">1,016 days</td></tr></tbody></table>
 
 Closes above $50,000 by calendar year
 | Year | Days above | Days in data | Share |
@@ -491,12 +491,12 @@ Closes above $50,000 by calendar year
 | 2021 | 144 | 365 | 39.5% |
 | 2024 | 322 | 366 | 88.0% |
 | 2025 | 365 | 365 | 100.0% |
-| 2026 | 328 | 328 | 100.0% |
+| 2026 | 329 | 329 | 100.0% |
 
 Other levels (same data)
 | Closed above | Days | Share | Most recent |
 | --- | --- | --- | --- |
-| $50,000 | 1,159 | 26.0% | Nov 24, 2026 |
+| $50,000 | 1,160 | 26.0% | Nov 25, 2026 |
 | [$70,000](https://andresblitz.com/bitcoin/above-70k/) | 631 | 14.2% | Nov 12, 2026 |
 | [$90,000](https://andresblitz.com/bitcoin/above-90k/) | 348 | 7.8% | Jan 19, 2026 |
 | [$100,000](https://andresblitz.com/bitcoin/above-100k/) | 217 | 4.9% | Nov 12, 2025 |
@@ -509,11 +509,11 @@ A day counts when that day’s Yahoo Finance BTC-USD close is above $50,000. Tod
 
 ### How many days has Bitcoin closed above $50,000?
 
-1,159 of 4,452 completed daily closes from September 17, 2014 to November 24, 2026 (26.0%), using Yahoo Finance BTC-USD daily closes.
+1,160 of 4,453 completed daily closes from September 17, 2014 to November 25, 2026 (26.0%), using Yahoo Finance BTC-USD daily closes.
 
 ### When did Bitcoin first close above $50,000?
 
-On February 17, 2021, at $52,149.01. The most recent close above $50,000 was on November 24, 2026.
+On February 17, 2021, at $52,149.01. The most recent close above $50,000 was on November 25, 2026.
 
 ### How is a day counted?
 
@@ -537,7 +537,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 
 ---
 title: "How Many Days Has Bitcoin Closed Above $70,000? (631 Days)"
-description: "Bitcoin has closed above $70,000 on 631 of 4,452 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes."
+description: "Bitcoin has closed above $70,000 on 631 of 4,453 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-70k/"
 last_updated: "2026-11-25"
 lang: "en"
@@ -549,25 +549,25 @@ Markets · Bitcoin
 
 # How many days has Bitcoin closed above $70,000?
 
-**631 days.** Bitcoin closed above $70,000 on 631 of the 4,452 completed daily closes since September 17, 2014, which is 14.2% of all days. The first close above $70,000 was $72,123.91 on March 11, 2024; the most recent was $71,342.97 on November 12, 2026. The latest close, $59,747.77 on November 24, 2026, is 14.6% below $70,000.
+**631 days.** Bitcoin closed above $70,000 on 631 of the 4,453 completed daily closes since September 17, 2014, which is 14.2% of all days. The first close above $70,000 was $72,123.91 on March 11, 2024; the most recent was $71,342.97 on November 12, 2026. The latest close, $60,378.20 on November 25, 2026, is 13.7% below $70,000.
 
 ## Days Bitcoin closed above $70,000
 
-631 of 4,452 days · 14.2%
+631 of 4,453 days · 14.2%
 
-<table class="bt"><caption>Bitcoin daily closes above $70,000, September 17, 2014 – November 24, 2026</caption><tbody><tr><th scope="row">Days closed above $70,000</th><td class="n">631</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">14.2%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,452</td></tr><tr><th scope="row">First close above</th><td class="n">March 11, 2024 ($72,123.91)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 12, 2026 ($71,342.97)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">456 days (Nov 6, 2024 – Feb 4, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $59,747.77)</td></tr></tbody></table>
+<table class="bt"><caption>Bitcoin daily closes above $70,000, September 17, 2014 – November 25, 2026</caption><tbody><tr><th scope="row">Days closed above $70,000</th><td class="n">631</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">14.2%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,453</td></tr><tr><th scope="row">First close above</th><td class="n">March 11, 2024 ($72,123.91)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">November 12, 2026 ($71,342.97)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">456 days (Nov 6, 2024 – Feb 4, 2026)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $60,378.20)</td></tr></tbody></table>
 
 Closes above $70,000 by calendar year
 | Year | Days above | Days in data | Share |
 | --- | --- | --- | --- |
 | 2024 | 73 | 366 | 19.9% |
 | 2025 | 365 | 365 | 100.0% |
-| 2026 | 193 | 328 | 58.8% |
+| 2026 | 193 | 329 | 58.7% |
 
 Other levels (same data)
 | Closed above | Days | Share | Most recent |
 | --- | --- | --- | --- |
-| [$50,000](https://andresblitz.com/bitcoin/above-50k/) | 1,159 | 26.0% | Nov 24, 2026 |
+| [$50,000](https://andresblitz.com/bitcoin/above-50k/) | 1,160 | 26.0% | Nov 25, 2026 |
 | $70,000 | 631 | 14.2% | Nov 12, 2026 |
 | [$90,000](https://andresblitz.com/bitcoin/above-90k/) | 348 | 7.8% | Jan 19, 2026 |
 | [$100,000](https://andresblitz.com/bitcoin/above-100k/) | 217 | 4.9% | Nov 12, 2025 |
@@ -580,7 +580,7 @@ A day counts when that day’s Yahoo Finance BTC-USD close is above $70,000. Tod
 
 ### How many days has Bitcoin closed above $70,000?
 
-631 of 4,452 completed daily closes from September 17, 2014 to November 24, 2026 (14.2%), using Yahoo Finance BTC-USD daily closes.
+631 of 4,453 completed daily closes from September 17, 2014 to November 25, 2026 (14.2%), using Yahoo Finance BTC-USD daily closes.
 
 ### When did Bitcoin first close above $70,000?
 
@@ -608,7 +608,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 
 ---
 title: "How Many Days Has Bitcoin Closed Above $90,000? (348 Days)"
-description: "Bitcoin has closed above $90,000 on 348 of 4,452 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes."
+description: "Bitcoin has closed above $90,000 on 348 of 4,453 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-90k/"
 last_updated: "2026-11-25"
 lang: "en"
@@ -620,25 +620,25 @@ Markets · Bitcoin
 
 # How many days has Bitcoin closed above $90,000?
 
-**348 days.** Bitcoin closed above $90,000 on 348 of the 4,452 completed daily closes since September 17, 2014, which is 7.8% of all days. The first close above $90,000 was $90,584.16 on November 13, 2024; the most recent was $92,553.59 on January 19, 2026. The latest close, $59,747.77 on November 24, 2026, is 33.6% below $90,000.
+**348 days.** Bitcoin closed above $90,000 on 348 of the 4,453 completed daily closes since September 17, 2014, which is 7.8% of all days. The first close above $90,000 was $90,584.16 on November 13, 2024; the most recent was $92,553.59 on January 19, 2026. The latest close, $60,378.20 on November 25, 2026, is 32.9% below $90,000.
 
 ## Days Bitcoin closed above $90,000
 
-348 of 4,452 days · 7.8%
+348 of 4,453 days · 7.8%
 
-<table class="bt"><caption>Bitcoin daily closes above $90,000, September 17, 2014 – November 24, 2026</caption><tbody><tr><th scope="row">Days closed above $90,000</th><td class="n">348</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">7.8%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,452</td></tr><tr><th scope="row">First close above</th><td class="n">November 13, 2024 ($90,584.16)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">January 19, 2026 ($92,553.59)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">212 days (Apr 22, 2025 – Nov 19, 2025)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $59,747.77)</td></tr></tbody></table>
+<table class="bt"><caption>Bitcoin daily closes above $90,000, September 17, 2014 – November 25, 2026</caption><tbody><tr><th scope="row">Days closed above $90,000</th><td class="n">348</td></tr><tr><th scope="row">Share of all completed days</th><td class="n">7.8%</td></tr><tr><th scope="row">Days in the record</th><td class="n">4,453</td></tr><tr><th scope="row">First close above</th><td class="n">November 13, 2024 ($90,584.16)</td></tr><tr><th scope="row">Most recent close above</th><td class="n">January 19, 2026 ($92,553.59)</td></tr><tr><th scope="row">Longest run of closes above</th><td class="n">212 days (Apr 22, 2025 – Nov 19, 2025)</td></tr><tr><th scope="row">Current run above</th><td class="n">0 (latest close $60,378.20)</td></tr></tbody></table>
 
 Closes above $90,000 by calendar year
 | Year | Days above | Days in data | Share |
 | --- | --- | --- | --- |
 | 2024 | 47 | 366 | 12.8% |
 | 2025 | 284 | 365 | 77.8% |
-| 2026 | 17 | 328 | 5.2% |
+| 2026 | 17 | 329 | 5.2% |
 
 Other levels (same data)
 | Closed above | Days | Share | Most recent |
 | --- | --- | --- | --- |
-| [$50,000](https://andresblitz.com/bitcoin/above-50k/) | 1,159 | 26.0% | Nov 24, 2026 |
+| [$50,000](https://andresblitz.com/bitcoin/above-50k/) | 1,160 | 26.0% | Nov 25, 2026 |
 | [$70,000](https://andresblitz.com/bitcoin/above-70k/) | 631 | 14.2% | Nov 12, 2026 |
 | $90,000 | 348 | 7.8% | Jan 19, 2026 |
 | [$100,000](https://andresblitz.com/bitcoin/above-100k/) | 217 | 4.9% | Nov 12, 2025 |
@@ -651,7 +651,7 @@ A day counts when that day’s Yahoo Finance BTC-USD close is above $90,000. Tod
 
 ### How many days has Bitcoin closed above $90,000?
 
-348 of 4,452 completed daily closes from September 17, 2014 to November 24, 2026 (7.8%), using Yahoo Finance BTC-USD daily closes.
+348 of 4,453 completed daily closes from September 17, 2014 to November 25, 2026 (7.8%), using Yahoo Finance BTC-USD daily closes.
 
 ### When did Bitcoin first close above $90,000?
 
@@ -679,7 +679,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 
 ---
 title: "Bitcoin Days in Each $10,000 Price Bracket by Year (2014–2026)"
-description: "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 24, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes."
+description: "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 25, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/by-year/"
 last_updated: "2026-11-25"
 lang: "en"
@@ -691,7 +691,7 @@ Markets · Bitcoin
 
 # Bitcoin days in each $10,000 bracket, by year
 
-Each row is a calendar year and each column a $10,000 price range; the number is how many days that year Bitcoin closed inside the range. 2014 starts on September 17, 2014, the first day of the Yahoo Finance series, and 2026 runs through November 24, 2026 (328 days so far), with most of its closes in the $60k–$70k range.
+Each row is a calendar year and each column a $10,000 price range; the number is how many days that year Bitcoin closed inside the range. 2014 starts on September 17, 2014, the first day of the Yahoo Finance series, and 2026 runs through November 25, 2026 (329 days so far), with most of its closes in the $60k–$70k range.
 
 ## Days per $10,000 bracket per year
 
@@ -710,7 +710,7 @@ Days Bitcoin closed in each $10,000 USD bracket, by calendar year (“·” = no
 | 2023 | · | 13 | 249 | 75 | 28 | · | · | · | · | · | · | · | · | **365** |
 | 2024 | · | · | · | 3 | 41 | 58 | 191 | 21 | 5 | 38 | 9 | · | · | **366** |
 | 2025 | · | · | · | · | · | · | · | 5 | 76 | 76 | 103 | 95 | 10 | **365** |
-| 2026 | · | · | · | · | · | 6 | 129 | 109 | 67 | 17 | · | · | · | **328** |
+| 2026 | · | · | · | · | · | 6 | 130 | 109 | 67 | 17 | · | · | · | **329** |
 
 Each year at a glance (daily closes, USD)
 | Year | Days | Low | High | Last | Most common range |
@@ -727,9 +727,9 @@ Each year at a glance (daily closes, USD)
 | 2023 | 365 | $16,625 | $44,167 | $42,265 | $20k–$30k (249 d) |
 | 2024 | 366 | $39,507 | $106,141 | $93,429 | $60k–$70k (191 d) |
 | 2025 | 365 | $76,272 | $124,753 | $87,509 | $100k–$110k (103 d) |
-| 2026 | 328 | $58,559 | $96,929 | $59,748 | $60k–$70k (129 d) |
+| 2026 | 329 | $58,559 | $96,929 | $60,378 | $60k–$70k (130 d) |
 
-2014 is partial (from September 17, 2014) and 2026 is year to date (through November 24, 2026). “Last” is the year’s final close, or the latest close for the current year.
+2014 is partial (from September 17, 2014) and 2026 is year to date (through November 25, 2026). “Last” is the year’s final close, or the latest close for the current year.
 
 **Reference only.** Historical prices from public sources, which may be delayed. This is not financial advice: no buy or sell buttons, signals, predictions or affiliate links.
 
@@ -761,7 +761,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 
 ---
 title: "Días del bitcoin en cada precio: historial en dólares desde 2014"
-description: "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.452 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes."
+description: "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.453 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes."
 url: "https://andresblitz.com/bitcoin/es/"
 last_updated: "2026-11-25"
 lang: "es"
@@ -773,13 +773,13 @@ Mercados · Bitcoin
 
 # Días del bitcoin en cada precio
 
-En pocas palabras: el bitcoin tiene 4.452 cierres diarios registrados desde el 17 de septiembre de 2014. Esta página los agrupa por rangos de precio en dólares y cuenta los días de cada rango: el 44,3 % de esos días cerró por debajo de US$10.000 y en 217 días cerró por encima de US$100.000. Es solo un registro del pasado, sin pronósticos.
+En pocas palabras: el bitcoin tiene 4.453 cierres diarios registrados desde el 17 de septiembre de 2014. Esta página los agrupa por rangos de precio en dólares y cuenta los días de cada rango: el 44,3 % de esos días cerró por debajo de US$10.000 y en 217 días cerró por encima de US$100.000. Es solo un registro del pasado, sin pronósticos.
 
 ## Días que el bitcoin cerró en cada rango de US$10.000
 
-Último cierre: **US$59.747,77** el 24 de noviembre de 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)). Cierre más alto: US$124.752,53 el 6 de octubre de 2025.
+Último cierre: **US$60.378,20** el 25 de noviembre de 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)). Cierre más alto: US$124.752,53 el 6 de octubre de 2025.
 
-Días por cierre diario, rangos de US$10.000 (17 de septiembre de 2014 – 24 de noviembre de 2026, 4.452 días completos)
+Días por cierre diario, rangos de US$10.000 (17 de septiembre de 2014 – 25 de noviembre de 2026, 4.453 días completos)
 | Rango de precio (USD) | Días | Porcentaje | Barra |
 | --- | --- | --- | --- |
 | US$120.000–US$130.000 | 10 | 0,2 % |  |
@@ -788,8 +788,8 @@ Días por cierre diario, rangos de US$10.000 (17 de septiembre de 2014 – 24 de
 | US$90.000–US$100.000 | 131 | 2,9 % |  |
 | US$80.000–US$90.000 | 148 | 3,3 % |  |
 | US$70.000–US$80.000 | 135 | 3,0 % |  |
-| US$60.000–US$70.000 | 360 | 8,1 % |  |
-| US$50.000–US$60.000 (último cierre) | 168 | 3,8 % |  |
+| US$60.000–US$70.000 (último cierre) | 361 | 8,1 % |  |
+| US$50.000–US$60.000 | 168 | 3,8 % |  |
 | US$40.000–US$50.000 | 258 | 5,8 % |  |
 | US$30.000–US$40.000 | 250 | 5,6 % |  |
 | US$20.000–US$30.000 | 382 | 8,6 % |  |
@@ -804,7 +804,7 @@ Cada día completo cuenta una vez, en el rango que contiene su cierre diario (d�
 
 ### ¿Qué muestra esta tabla?
 
-Cuántos días cerró el bitcoin dentro de cada rango de US$10.000, desde el 17 de septiembre de 2014 hasta el 24 de noviembre de 2026, con los cierres diarios BTC-USD de Yahoo Finance.
+Cuántos días cerró el bitcoin dentro de cada rango de US$10.000, desde el 17 de septiembre de 2014 hasta el 25 de noviembre de 2026, con los cierres diarios BTC-USD de Yahoo Finance.
 
 ### ¿Los precios están en dólares?
 
@@ -832,7 +832,7 @@ Fuente: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) cierre
 
 ---
 title: "Bitcoin’s Highest Close Ever: $124,752.53 on October 6, 2025"
-description: "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 24, 2026: 414 days since, latest close $59,747.77, 52.1% below it."
+description: "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 25, 2026: 415 days since, latest close $60,378.20, 51.6% below it."
 url: "https://andresblitz.com/bitcoin/highest-close/"
 last_updated: "2026-11-25"
 lang: "en"
@@ -844,13 +844,13 @@ Markets · Bitcoin
 
 # Bitcoin’s highest close ever
 
-Bitcoin’s highest daily close is **$124,752.53** on October 6, 2025. As of November 24, 2026, that was **414 days** ago, and the latest close of $59,747.77 is 52.1% below it. This counts closing prices only, not intraday highs.
+Bitcoin’s highest daily close is **$124,752.53** on October 6, 2025. As of November 25, 2026, that was **415 days** ago, and the latest close of $60,378.20 is 51.6% below it. This counts closing prices only, not intraday highs.
 
 ## Highest daily close (Yahoo Finance BTC-USD)
 
 $124,752.53 October 6, 2025
 
-<table class="bt"><caption>As of November 24, 2026 (last completed close)</caption><tbody><tr><th scope="row">Highest close</th><td class="n">$124,752.53</td></tr><tr><th scope="row">Date of highest close</th><td class="n">October 6, 2025</td></tr><tr><th scope="row">Days since the highest close</th><td class="n">414</td></tr><tr><th scope="row">Latest close</th><td class="n">$59,747.77 (November 24, 2026)</td></tr><tr><th scope="row">Latest close vs. highest close</th><td class="n">52.1% below ($65,004.76)</td></tr><tr><th scope="row">Lowest close in the record</th><td class="n">$178.10 (January 14, 2015)</td></tr></tbody></table>
+<table class="bt"><caption>As of November 25, 2026 (last completed close)</caption><tbody><tr><th scope="row">Highest close</th><td class="n">$124,752.53</td></tr><tr><th scope="row">Date of highest close</th><td class="n">October 6, 2025</td></tr><tr><th scope="row">Days since the highest close</th><td class="n">415</td></tr><tr><th scope="row">Latest close</th><td class="n">$60,378.20 (November 25, 2026)</td></tr><tr><th scope="row">Latest close vs. highest close</th><td class="n">51.6% below ($64,374.33)</td></tr><tr><th scope="row">Lowest close in the record</th><td class="n">$178.10 (January 14, 2015)</td></tr></tbody></table>
 
 Ten highest daily closes
 | Rank | Date | Close (USD) |
@@ -895,7 +895,7 @@ $124,752.53 on October 6, 2025, using Yahoo Finance BTC-USD daily closes since S
 
 ### How many days since Bitcoin’s highest close?
 
-414 days as of November 24, 2026. The latest close then was $59,747.77, 52.1% below the high.
+415 days as of November 25, 2026. The latest close then was $60,378.20, 51.6% below the high.
 
 ### Why is this lower than the all-time high I see elsewhere?
 
@@ -931,11 +931,11 @@ Markets · Bitcoin
 
 # Bitcoin: days spent at each price
 
-In plain English: Bitcoin has 4,452 daily closes on record since September 17, 2014, and this page sorts every one of them into US-dollar price ranges and counts the days in each. That shows where the price has actually spent its time: 44.3% of those days closed below $10,000, and 168 closed in the $50k–$60k range where the last close sits. It is a record of the past only, with no forecasts.
+In plain English: Bitcoin has 4,453 daily closes on record since September 17, 2014, and this page sorts every one of them into US-dollar price ranges and counts the days in each. That shows where the price has actually spent its time: 44.3% of those days closed below $10,000, and 361 closed in the $60k–$70k range where the last close sits. It is a record of the past only, with no forecasts.
 
 How many days has Bitcoin spent at each price? This chart splits the BTC/USD price into equal brackets and counts the days Bitcoin closed inside each one, from September 17, 2014. Pick a bracket size of $2,000, $3,000, $4,000, $5,000, $10,000 or $15,000. Today counts at the live price, so its bar can move while the day is still open. Prices are in US dollars and the chart can be used from any country.
 
-History starts **September 17, 2014** and runs through **November 24, 2026** (4,452 completed daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Highest close $124,752.53 on October 6, 2025. History baked Nov 25, 2026, 2:20 a.m. PT.
+History starts **September 17, 2014** and runs through **November 25, 2026** (4,453 completed daily closes). With $10,000 brackets, Bitcoin closed most often between **$0 and $10k** (1,972 days). Highest close $124,752.53 on October 6, 2025. History baked Nov 26, 2026, 4:11 a.m. PT.
 
  
 
@@ -943,13 +943,13 @@ History starts **September 17, 2014** and runs through **November 24, 2026** (4,
 
 Yahoo Finance BTC-USD daily closes
 
-Last close: **$59,747.77** on November 24, 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)).
+Last close: **$60,378.20** on November 25, 2026 ([Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/)).
 
 Bitcoin now (BTC/USD)—Live price loads in your browser.
 
 Bracket size: **$10,000** 
 
-Days by daily close, $10,000 brackets (September 17, 2014 – November 24, 2026, 4,452 completed days)
+Days by daily close, $10,000 brackets (September 17, 2014 – November 25, 2026, 4,453 completed days)
 | Price bracket (USD) | Days | Share | First reached |
 | --- | --- | --- | --- |
 | $120k–$130k | 10 | 0.2% | August 12, 2025 (2024–now) |
@@ -958,7 +958,7 @@ Days by daily close, $10,000 brackets (September 17, 2014 – November 24, 2026,
 | $90k–$100k | 131 | 2.9% | November 13, 2024 (2024–now) |
 | $80k–$90k | 148 | 3.3% | November 10, 2024 (2024–now) |
 | $70k–$80k | 135 | 3.0% | March 11, 2024 (2020–2024) |
-| $60k–$70k | 360 | 8.1% | March 13, 2021 (2020–2024) |
+| $60k–$70k | 361 | 8.1% | March 13, 2021 (2020–2024) |
 | $50k–$60k | 168 | 3.8% | February 17, 2021 (2020–2024) |
 | $40k–$50k | 258 | 5.8% | January 8, 2021 (2020–2024) |
 | $30k–$40k | 250 | 5.6% | January 2, 2021 (2020–2024) |
@@ -1054,7 +1054,7 @@ Source
 title: "Calculadora de comisión cripto: cuánto llega al enviar USDT"
 description: "Calcula cuánto llega al retirar o enviar USDT, USDC o Bitcoin por TRC20, ERC20, BEP20, Solana, Lightning o la red de Bitcoin: comisión en %, valor en bolívares, pesos, soles o dólares y comparación con una remesa."
 url: "https://andresblitz.com/comision-cripto/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es"
 ---
 
@@ -1154,7 +1154,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Convertidor cripto: BTC, ETH y USDT a bolívares y pesos"
 description: "Convierte Bitcoin, satoshis, Ethereum, USDT y otras criptomonedas a bolívares, pesos argentinos (oficial y blue), colombianos, mexicanos y chilenos, soles, dólares y dólares canadienses, y al revés. Fuente y hora de cada tasa."
 url: "https://andresblitz.com/convertidor-cripto/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es"
 ---
 
@@ -1162,7 +1162,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 26 nov 2026, 2:45 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 26 nov 2026, 12:11 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -1178,15 +1178,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 54.213.449 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 99.372.950 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 104.250.150 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 221.357.209 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.201.254 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 211.712,61 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 62.492.783 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
-| Dólares estadounidenses | 60.965 USD | — |
-| Dólares canadienses | 86.686,13 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 54.022.259 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 99.022.500 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 103.882.500 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 220.576.568 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.197.018 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 210.965,98 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 63.062.752 CLP | cl.dolarapi.com |
+| Dólares estadounidenses | 60.750 USD | — |
+| Dólares canadienses | 86.380,43 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
@@ -1233,7 +1233,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Dólar hoy en Argentina: oficial, blue, MEP, CCL y cripto"
 description: "Cotización del dólar hoy en Argentina: oficial, blue, MEP, contado con liquidación, cripto y tarjeta, con conversor de pesos a dólares y explicación de cada tipo de cambio."
 url: "https://andresblitz.com/dolar-argentina/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es-AR"
 ---
 
@@ -1271,9 +1271,9 @@ Compra $ 1.765,60
 
 ### Dólar cripto (USDT)
 
-$ 1.762,53
+$ 1.762,96
 
-Compra $ 1.756,49
+Compra $ 1.756,12
 
 ### Dólar tarjeta
 
@@ -1281,7 +1281,7 @@ $ 2.119,00
 
 Compra $ 2.054,00
 
-Fuente: dolarapi.com, actualizado 25 nov 2026, 5:55 p. m. (hora de Buenos Aires)
+Fuente: dolarapi.com, actualizado 26 nov 2026, 8:59 a. m. (hora de Buenos Aires)
 
 ## Conversor de pesos a dólares (ARS ↔ USD)
 
@@ -1349,7 +1349,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Dólar hoy en Chile: dólar observado y conversor de pesos"
 description: "Dólar observado de hoy en Chile según el Banco Central, precio de compra y venta en el mercado y conversor de pesos chilenos a dólares."
 url: "https://andresblitz.com/dolar-chile/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es-CL"
 ---
 
@@ -1361,25 +1361,25 @@ El dólar observado que informa el Banco Central de Chile y una cotización de c
 
 ## Dólar hoy en Chile: dólar observado y precio de mercado
 
-### Dólar observado (Banco Central de Chile)
+### Dólar de cierre de mercado
 
-$ 1.025,06
+$ 1.038,07
 
-pesos por 1 dólar · fecha 25 de noviembre de 2026
+pesos por 1 dólar · fecha 26 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 1.038,15
+$ 1.040,72
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 1.039,95
+$ 1.042,52
 
 lo que cuesta un dólar
 
-Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 25-11-2026, 5:01 p. m. (hora de Chile)
+Fuente: cl.dolarapi.com, actualizado 26-11-2026, 9:01 a. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
@@ -1436,7 +1436,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Dólar hoy en Colombia: TRM oficial y conversor de pesos"
 description: "TRM de hoy en Colombia: tasa representativa del mercado certificada por la Superintendencia Financiera, precio del dólar en casas de cambio y conversor de pesos colombianos a dólares."
 url: "https://andresblitz.com/dolar-colombia/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es-CO"
 ---
 
@@ -1530,7 +1530,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Dólar cripto hoy: USDT P2P Venezuela, Argentina y Colombia"
 description: "Precio del USDT en el mercado P2P en bolívares, pesos argentinos y pesos colombianos (mediana), con la brecha frente a la tasa BCV, el dólar oficial y la TRM, fuente y hora de cada dato."
 url: "https://andresblitz.com/dolar-cripto/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es"
 ---
 
@@ -1538,13 +1538,13 @@ lang: "es"
 
 # Dólar cripto hoy: USDT P2P vs. tasa oficial
 
-Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 26 nov, 02:45 UTC.
+Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 26 nov, 12:11 UTC.
 
 Referencial, no es asesoría financiera.
 
--   En Venezuela, USDT está 24,3 % sobre la tasa BCV hoy, más alto que la semana pasada (20,6 %).
--   En Argentina, USDT está 8,1 % sobre el dólar oficial hoy, más bajo que la semana pasada (9,0 %).
--   En Colombia, USDT está 1,7 % bajo la TRM hoy, más bajo que la semana pasada (1,8 %).
+-   En Venezuela, USDT está 24,3 % sobre la tasa BCV hoy, más alto que la semana pasada (20,0 %).
+-   En Argentina, USDT está 8,0 % sobre el dólar oficial hoy, más bajo que la semana pasada (9,0 %).
+-   En Colombia, USDT está 2,6 % bajo la TRM hoy, más bajo que la semana pasada (-0,8 %).
 
   
 
@@ -1556,7 +1556,7 @@ USDT/VES
 
 USDT P2P
 
-1.105,35
+1.105,22
 
 lo que se paga por un dólar digital entre personas
 
@@ -1568,11 +1568,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+24,30 %
++24,29 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 02:44 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 12:11 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
 
 ### Argentina
 
@@ -1580,7 +1580,7 @@ USDT/ARS
 
 USDT P2P
 
-1.761,33
+1.760,13
 
 lo que se paga por un dólar digital entre personas
 
@@ -1592,11 +1592,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+8,06 %
++7,98 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 02:44 UTCOficial: dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 12:11 UTCOficial: dolarapi.com
 
 ### Colombia
 
@@ -1604,23 +1604,23 @@ USDT/COP
 
 USDT P2P
 
-3.531,99
+3.538,47
 
 lo que se paga por un dólar digital entre personas
 
 TRM
 
-[3.592,03](https://andresblitz.com/dolar-colombia/)
+[3.630,89](https://andresblitz.com/dolar-colombia/)
 
 la referencia de bancos y trámites
 
 Brecha
 
-\-1,67 %
+\-2,55 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 02:44 UTCOficial: datos.gov.co (Superintendencia Financiera)
+[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 12:11 UTCOficial: datos.gov.co (Superintendencia Financiera)
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
@@ -1631,26 +1631,26 @@ Cada punto es una actualización (se actualiza varias veces al día). La tabla t
 USDT P2P frente a la tasa oficial
 | País | USDT P2P | Oficial | Brecha | Fuente y hora |
 | --- | --- | --- | --- | --- |
-| Venezuela VES | 1.105,35 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +24,30 % | CriptoYa (mediana P2P) · 26 nov, 02:44 UTC  
+| Venezuela VES | 1.105,22 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +24,29 % | CriptoYa (mediana P2P) · 26 nov, 12:11 UTC  
 Oficial: Banco Central de Venezuela vía ve.dolarapi.com · 30 oct, 04:00 UTC |
-| Argentina ARS | 1.761,33 | [1.630,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +8,06 % | CriptoYa (mediana P2P) · 26 nov, 02:44 UTC  
-Oficial: dolarapi.com · 25 nov, 17:00 UTC |
-| Colombia COP | 3.531,99 | [3.592,03](https://andresblitz.com/dolar-colombia/) TRM | \-1,67 % | CriptoYa (mediana P2P) · 26 nov, 02:44 UTC  
-Oficial: datos.gov.co (Superintendencia Financiera) · 25 nov, 05:00 UTC |
+| Argentina ARS | 1.760,13 | [1.630,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +7,98 % | CriptoYa (mediana P2P) · 26 nov, 12:11 UTC  
+Oficial: dolarapi.com · 25 nov, 18:00 UTC |
+| Colombia COP | 3.538,47 | [3.630,89](https://andresblitz.com/dolar-colombia/) TRM | \-2,55 % | CriptoYa (mediana P2P) · 26 nov, 12:11 UTC  
+Oficial: datos.gov.co (Superintendencia Financiera) · 26 nov, 05:00 UTC |
 
 ## Bitcoin y otras criptomonedas (USD)
 
 | Moneda | USD | 24 h |
 | --- | --- | --- |
-| BTC | 59.905,00 | +0,54 % |
-| ETH | 1.702,35 | +2,92 % |
-| USDT | 0,9989 | \-0,00 % |
-| USDC | 0,9994 | \-0,01 % |
-| SOL | 71,30 | +3,94 % |
-| XRP | 0,9572 | +4,53 % |
-| BNB | 558,99 | +3,39 % |
+| BTC | 60.965,00 | +3,09 % |
+| ETH | 1.702,76 | +4,00 % |
+| USDT | 0,9990 | +0,01 % |
+| USDC | 0,9995 | +0,01 % |
+| SOL | 70,93 | +5,02 % |
+| XRP | 0,9528 | +5,04 % |
+| BNB | 551,93 | +2,57 % |
 
-Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 26 nov, 02:45 UTC.
+Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 26 nov, 12:11 UTC.
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
@@ -1699,7 +1699,7 @@ Feed de tasas: [RSS](https://andresblitz.com/rates/feed.xml)
 title: "Dólar hoy en México: tipo de cambio FIX de Banxico y conversor"
 description: "Tipo de cambio FIX del Banco de México para hoy, precio de compra y venta del dólar en el mercado y conversor de pesos mexicanos a dólares."
 url: "https://andresblitz.com/dolar-mexico/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es-MX"
 ---
 
@@ -1873,7 +1873,7 @@ Todas estas tasas también se publican juntas en el [feed RSS de tasas](https://
 title: "Calculadora del costo de enviar dinero: comisión y margen"
 description: "Calcula cuánto recibe tu familiar y cuánto te cuesta realmente un envío de dinero desde Canadá o EE. UU. a Venezuela, Colombia, México, Argentina, Perú o Chile: comisión más margen sobre la tasa de referencia."
 url: "https://andresblitz.com/enviar-dinero/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es"
 ---
 
@@ -3960,7 +3960,7 @@ Private · in use
 title: "Salario en dólares: convierte pesos, bolívares o soles a USD"
 description: "Convierte tu salario mensual o anual en bolívares, pesos colombianos, mexicanos, argentinos (oficial y blue), soles, pesos chilenos o dólares canadienses a dólares estadounidenses con tasas de referencia actualizadas."
 url: "https://andresblitz.com/salario-en-dolares/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es"
 ---
 
