@@ -22,13 +22,13 @@ pesos por 1 dólar · fecha 25 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 19.3175
+$ 19.7360
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 19.3240
+$ 19.7430
 
 lo que cuesta un dólar
 
