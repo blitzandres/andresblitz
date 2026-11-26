@@ -16,9 +16,9 @@ Cotizaciones del dólar estadounidense en pesos argentinos (ARS). Valores de ven
 
 ### Dólar oficial
 
-$ 1.630,00
+$ 1.625,00
 
-Compra $ 1.580,00
+Compra $ 1.575,00
 
 ### Dólar blue
 
@@ -28,9 +28,9 @@ Compra $ 1.690,00
 
 ### Dólar MEP (bolsa)
 
-$ 1.688,70
+$ 1.666,40
 
-Compra $ 1.664,00
+Compra $ 1.657,20
 
 ### Contado con liqui (CCL)
 
@@ -40,17 +40,17 @@ Compra $ 1.765,60
 
 ### Dólar cripto (USDT)
 
-$ 1.762,96
+$ 1.752,96
 
-Compra $ 1.756,12
+Compra $ 1.747,94
 
 ### Dólar tarjeta
 
-$ 2.119,00
+$ 2.112,50
 
-Compra $ 2.054,00
+Compra $ 2.047,50
 
-Fuente: dolarapi.com, actualizado 26 nov 2026, 8:59 a. m. (hora de Buenos Aires)
+Fuente: dolarapi.com, actualizado 26 nov 2026, 5:56 p. m. (hora de Buenos Aires)
 
 ## Conversor de pesos a dólares (ARS ↔ USD)
 

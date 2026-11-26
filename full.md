@@ -397,7 +397,7 @@ Your email is only used for what you sign up for, and it is never sold or shared
 title: "How Many Days Has Bitcoin Closed Above $100,000? (217 Days)"
 description: "Bitcoin has closed above $100,000 on 217 of 4,453 days since Sep 17, 2014 (4.9%). First close above: Dec 8, 2024. Most recent: Nov 12, 2025. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-100k/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "en"
 ---
 
@@ -467,7 +467,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "How Many Days Has Bitcoin Closed Above $50,000? (1,160 Days)"
 description: "Bitcoin has closed above $50,000 on 1,160 of 4,453 days since Sep 17, 2014 (26.0%). First close above: Feb 17, 2021. Most recent: Nov 25, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-50k/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "en"
 ---
 
@@ -539,7 +539,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "How Many Days Has Bitcoin Closed Above $70,000? (631 Days)"
 description: "Bitcoin has closed above $70,000 on 631 of 4,453 days since Sep 17, 2014 (14.2%). First close above: Mar 11, 2024. Most recent: Nov 12, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-70k/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "en"
 ---
 
@@ -610,7 +610,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "How Many Days Has Bitcoin Closed Above $90,000? (348 Days)"
 description: "Bitcoin has closed above $90,000 on 348 of 4,453 days since Sep 17, 2014 (7.8%). First close above: Nov 13, 2024. Most recent: Jan 19, 2026. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/above-90k/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "en"
 ---
 
@@ -681,7 +681,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "Bitcoin Days in Each $10,000 Price Bracket by Year (2014–2026)"
 description: "How many days Bitcoin closed in each $10,000 USD bracket, year by year from Sep 17, 2014 to Nov 25, 2026, with each year’s low, high and most common range. Yahoo Finance BTC-USD daily closes."
 url: "https://andresblitz.com/bitcoin/by-year/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "en"
 ---
 
@@ -763,7 +763,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "Días del bitcoin en cada precio: historial en dólares desde 2014"
 description: "Cuántos días cerró el bitcoin en cada rango de US$10.000 desde el 17 de septiembre de 2014: 4.453 cierres diarios de Yahoo Finance (BTC-USD). Tabla, último cierre y fuentes."
 url: "https://andresblitz.com/bitcoin/es/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "es"
 ---
 
@@ -834,7 +834,7 @@ Fuente: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) cierre
 title: "Bitcoin’s Highest Close Ever: $124,752.53 on October 6, 2025"
 description: "Bitcoin’s highest daily close is $124,752.53 on Oct 6, 2025 (Yahoo Finance BTC-USD). As of Nov 25, 2026: 415 days since, latest close $60,378.20, 51.6% below it."
 url: "https://andresblitz.com/bitcoin/highest-close/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "en"
 ---
 
@@ -921,7 +921,7 @@ Source: [Yahoo Finance BTC-USD](https://finance.yahoo.com/quote/BTC-USD/) daily 
 title: "Bitcoin Price History Brackets: Days Spent at Each Price"
 description: "Days Bitcoin spent at each USD price since 2014, in $2k, $3k, $4k, $5k, $10k or $15k brackets. BTC/USD close history. Prices in US dollars, usable from any country."
 url: "https://andresblitz.com/bitcoin/"
-last_updated: "2026-11-25"
+last_updated: "2026-11-26"
 lang: "en"
 ---
 
@@ -1104,12 +1104,12 @@ Tasa que ofrece (VES por USD)
 
 | Prioridad | sat/vB | Envío típico (~140 vB) |
 | --- | --- | --- |
-| Rápida (~10 min) | 1 | 140 sats ≈ 0,08 USD |
-| Media (~30 min) | 1 | 140 sats ≈ 0,08 USD |
-| Normal (~1 h) | 1 | 140 sats ≈ 0,08 USD |
-| Económica | 1 | 140 sats ≈ 0,08 USD |
+| Rápida (~10 min) | 3 | 420 sats ≈ 0,26 USD |
+| Media (~30 min) | 3 | 420 sats ≈ 0,26 USD |
+| Normal (~1 h) | 3 | 420 sats ≈ 0,26 USD |
+| Económica | 2 | 280 sats ≈ 0,17 USD |
 
-Fuente: [mempool.space](https://mempool.space/), 25 nov 2026, 20:06 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
+Fuente: [mempool.space](https://mempool.space/), 26 nov 2026, 21:51 UTC. Solo como referencia: tu plataforma o billetera fija la comisión real, y las plataformas suelen cobrar un monto fijo distinto.
 
 ## Cómo se calcula
 
@@ -1162,7 +1162,7 @@ lang: "es"
 
 # Convertidor cripto a bolívares, pesos y dólares
 
-Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 26 nov 2026, 12:11 UTC.
+Bitcoin, sats, Ethereum, USDT y otras criptomonedas ↔ VES, ARS (oficial y blue), COP, MXN, PEN, CLP, USD y CAD con tasas de referencia. Actualizado 26 nov 2026, 21:51 UTC.
 
 Referencial, no es asesoría financiera.
 
@@ -1178,15 +1178,15 @@ Activa JavaScript para usar el convertidor; abajo está la tabla de referencia.
 
 | Moneda | Valor | Tasa usada |
 | --- | --- | --- |
-| Bolívares (tasa BCV) | 54.022.259 VES | Banco Central de Venezuela vía ve.dolarapi.com |
-| Pesos argentinos (oficial) | 99.022.500 ARS | dolarapi.com |
-| Pesos argentinos (blue) | 103.882.500 ARS | dolarapi.com |
-| Pesos colombianos (TRM) | 220.576.568 COP | datos.gov.co (Superintendencia Financiera) |
-| Pesos mexicanos (FIX) | 1.197.018 MXN | mx.dolarapi.com (FIX de Banxico) |
-| Soles peruanos | 210.965,98 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
-| Pesos chilenos | 63.062.752 CLP | cl.dolarapi.com |
-| Dólares estadounidenses | 60.750 USD | — |
-| Dólares canadienses | 86.380,43 CAD | Bank of Canada Valet API (FXUSDCAD) |
+| Bolívares (tasa BCV) | 54.121.856 VES | Banco Central de Venezuela vía ve.dolarapi.com |
+| Pesos argentinos (oficial) | 98.900.750 ARS | dolarapi.com |
+| Pesos argentinos (blue) | 104.074.020 ARS | dolarapi.com |
+| Pesos colombianos (TRM) | 220.983.227 COP | datos.gov.co (Superintendencia Financiera) |
+| Pesos mexicanos (FIX) | 1.200.217 MXN | mx.dolarapi.com (FIX de Banxico) |
+| Soles peruanos | 211.863,06 PEN | open.er-api.com (ExchangeRate-API, tasa de mercado de referencia) |
+| Pesos chilenos | 63.544.797 CLP | mindicador.cl (dólar observado, Banco Central de Chile) |
+| Dólares estadounidenses | 60.862 USD | — |
+| Dólares canadienses | 86.685,75 CAD | Bank of Canada Valet API (FXUSDCAD) |
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
@@ -1247,9 +1247,9 @@ Cotizaciones del dólar estadounidense en pesos argentinos (ARS). Valores de ven
 
 ### Dólar oficial
 
-$ 1.630,00
+$ 1.625,00
 
-Compra $ 1.580,00
+Compra $ 1.575,00
 
 ### Dólar blue
 
@@ -1259,9 +1259,9 @@ Compra $ 1.690,00
 
 ### Dólar MEP (bolsa)
 
-$ 1.688,70
+$ 1.666,40
 
-Compra $ 1.664,00
+Compra $ 1.657,20
 
 ### Contado con liqui (CCL)
 
@@ -1271,17 +1271,17 @@ Compra $ 1.765,60
 
 ### Dólar cripto (USDT)
 
-$ 1.762,96
+$ 1.752,96
 
-Compra $ 1.756,12
+Compra $ 1.747,94
 
 ### Dólar tarjeta
 
-$ 2.119,00
+$ 2.112,50
 
-Compra $ 2.054,00
+Compra $ 2.047,50
 
-Fuente: dolarapi.com, actualizado 26 nov 2026, 8:59 a. m. (hora de Buenos Aires)
+Fuente: dolarapi.com, actualizado 26 nov 2026, 5:56 p. m. (hora de Buenos Aires)
 
 ## Conversor de pesos a dólares (ARS ↔ USD)
 
@@ -1361,25 +1361,25 @@ El dólar observado que informa el Banco Central de Chile y una cotización de c
 
 ## Dólar hoy en Chile: dólar observado y precio de mercado
 
-### Dólar de cierre de mercado
+### Dólar observado (Banco Central de Chile)
 
-$ 1.038,07
+$ 1.044,08
 
 pesos por 1 dólar · fecha 26 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 1.040,72
+$ 1.040,30
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 1.042,52
+$ 1.041,00
 
 lo que cuesta un dólar
 
-Fuente: cl.dolarapi.com, actualizado 26-11-2026, 9:01 a. m. (hora de Chile)
+Fuente: mindicador.cl (dólar observado, Banco Central de Chile), actualizado 26-11-2026, 5:01 p. m. (hora de Chile)
 
 ## Conversor de pesos chilenos a dólares (CLP ↔ USD)
 
@@ -1538,13 +1538,13 @@ lang: "es"
 
 # Dólar cripto hoy: USDT P2P vs. tasa oficial
 
-Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 26 nov, 12:11 UTC.
+Precio mediano del USDT en el mercado entre personas (P2P) en Venezuela, Argentina y Colombia, y su brecha con la tasa oficial. Actualizado 26 nov, 21:51 UTC.
 
 Referencial, no es asesoría financiera.
 
--   En Venezuela, USDT está 24,3 % sobre la tasa BCV hoy, más alto que la semana pasada (20,0 %).
--   En Argentina, USDT está 8,0 % sobre el dólar oficial hoy, más bajo que la semana pasada (9,0 %).
--   En Colombia, USDT está 2,6 % bajo la TRM hoy, más bajo que la semana pasada (-0,8 %).
+-   En Venezuela, USDT está 23,3 % sobre la tasa BCV hoy, más alto que la semana pasada (20,1 %).
+-   En Argentina, USDT está 7,0 % sobre el dólar oficial hoy, más bajo que la semana pasada (10,1 %).
+-   En Colombia, USDT está 3,1 % bajo la TRM hoy, más bajo que la semana pasada (-0,3 %).
 
   
 
@@ -1556,7 +1556,7 @@ USDT/VES
 
 USDT P2P
 
-1.105,22
+1.096,40
 
 lo que se paga por un dólar digital entre personas
 
@@ -1568,11 +1568,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+24,29 %
++23,29 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 12:11 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 21:51 UTCOficial: Banco Central de Venezuela vía ve.dolarapi.com
 
 ### Argentina
 
@@ -1580,7 +1580,7 @@ USDT/ARS
 
 USDT P2P
 
-1.760,13
+1.744,49
 
 lo que se paga por un dólar digital entre personas
 
@@ -1592,11 +1592,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-+7,98 %
++7,02 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 12:11 UTCOficial: dolarapi.com
+[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 21:51 UTCOficial: dolarapi.com
 
 ### Colombia
 
@@ -1604,7 +1604,7 @@ USDT/COP
 
 USDT P2P
 
-3.538,47
+3.518,81
 
 lo que se paga por un dólar digital entre personas
 
@@ -1616,11 +1616,11 @@ la referencia de bancos y trámites
 
 Brecha
 
-\-2,55 %
+\-3,09 %
 
 cuánto más cuesta el dólar fuera del canal oficial
 
-[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 12:11 UTCOficial: datos.gov.co (Superintendencia Financiera)
+[CriptoYa (mediana P2P)](https://criptoya.com/)26 nov, 21:51 UTCOficial: datos.gov.co (Superintendencia Financiera)
 
 ## Brecha USDT vs. oficial, últimos 7 días (%)
 
@@ -1631,26 +1631,26 @@ Cada punto es una actualización (se actualiza varias veces al día). La tabla t
 USDT P2P frente a la tasa oficial
 | País | USDT P2P | Oficial | Brecha | Fuente y hora |
 | --- | --- | --- | --- | --- |
-| Venezuela VES | 1.105,22 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +24,29 % | CriptoYa (mediana P2P) · 26 nov, 12:11 UTC  
+| Venezuela VES | 1.096,40 | [889,26](https://andresblitz.com/tasa-bcv/) Tasa BCV | +23,29 % | CriptoYa (mediana P2P) · 26 nov, 21:51 UTC  
 Oficial: Banco Central de Venezuela vía ve.dolarapi.com · 30 oct, 04:00 UTC |
-| Argentina ARS | 1.760,13 | [1.630,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +7,98 % | CriptoYa (mediana P2P) · 26 nov, 12:11 UTC  
-Oficial: dolarapi.com · 25 nov, 18:00 UTC |
-| Colombia COP | 3.538,47 | [3.630,89](https://andresblitz.com/dolar-colombia/) TRM | \-2,55 % | CriptoYa (mediana P2P) · 26 nov, 12:11 UTC  
+| Argentina ARS | 1.744,49 | [1.630,00](https://andresblitz.com/dolar-argentina/) Dólar oficial | +7,02 % | CriptoYa (mediana P2P) · 26 nov, 21:51 UTC  
+Oficial: dolarapi.com · 25 nov, 18:55 UTC |
+| Colombia COP | 3.518,81 | [3.630,89](https://andresblitz.com/dolar-colombia/) TRM | \-3,09 % | CriptoYa (mediana P2P) · 26 nov, 21:51 UTC  
 Oficial: datos.gov.co (Superintendencia Financiera) · 26 nov, 05:00 UTC |
 
 ## Bitcoin y otras criptomonedas (USD)
 
 | Moneda | USD | 24 h |
 | --- | --- | --- |
-| BTC | 60.965,00 | +3,09 % |
-| ETH | 1.702,76 | +4,00 % |
-| USDT | 0,9990 | +0,01 % |
-| USDC | 0,9995 | +0,01 % |
-| SOL | 70,93 | +5,02 % |
-| XRP | 0,9528 | +5,04 % |
-| BNB | 551,93 | +2,57 % |
+| BTC | 60.750,00 | +3,94 % |
+| ETH | 1.707,38 | +1,22 % |
+| USDT | 0,9990 | \-0,01 % |
+| USDC | 0,9996 | 0,00 % |
+| SOL | 71,69 | +1,38 % |
+| XRP | 0,9542 | +1,31 % |
+| BNB | 556,85 | +0,60 % |
 
-Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 26 nov, 12:11 UTC.
+Precios: [CoinGecko](https://www.coingecko.com/es) · actualizado 26 nov, 21:51 UTC.
 
 Historial del bitcoin: [días en cada precio desde 2014](https://andresblitz.com/bitcoin/es/), con el [gráfico interactivo por rangos de precio](https://andresblitz.com/bitcoin/) (en inglés).
 
@@ -1713,23 +1713,23 @@ El tipo de cambio FIX que publica el Banco de México y una cotización de merca
 
 ### Tipo de cambio FIX (Banxico)
 
-$ 19.7040
+$ 19.7203
 
-pesos por 1 dólar · fecha 25 de noviembre de 2026
+pesos por 1 dólar · fecha 26 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 19.7360
+$ 19.6595
 
 lo que pagan por un dólar
 
 ### Mercado · venta
 
-$ 19.7430
+$ 19.6660
 
 lo que cuesta un dólar
 
-Fuente: mx.dolarapi.com (FIX de Banxico), actualizado 25 nov 2026, 12:00 p.m. (hora del centro de México)
+Fuente: mx.dolarapi.com (FIX de Banxico), actualizado 26 nov 2026, 12:00 p.m. (hora del centro de México)
 
 ## Conversor de pesos mexicanos a dólares (MXN ↔ USD)
 
@@ -1800,9 +1800,9 @@ Cuántos soles (PEN) cuesta un dólar estadounidense hoy, con la fuente de cada 
 
 ### Dólar de referencia (mercado internacional)
 
-$ 3.4727
+$ 3.4810
 
-soles por 1 dólar · fecha 24 de noviembre de 2026
+soles por 1 dólar · fecha 25 de noviembre de 2026
 
 ### Mercado · compra
 
@@ -1816,7 +1816,7 @@ lo que pagan por un dólar
 
 lo que cuesta un dólar
 
-Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia), actualizado 24 nov. 2026, 7:02 p. m. (hora de Lima)
+Fuente: open.er-api.com (ExchangeRate-API, tasa de mercado de referencia), actualizado 25 nov. 2026, 7:02 p. m. (hora de Lima)
 
 ## Conversor de soles a dólares (PEN ↔ USD)
 
