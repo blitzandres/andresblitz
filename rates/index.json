@@ -1,6 +1,6 @@
 {
  "feed": "https://andresblitz.com/rates/feed.xml",
- "generated": "2026-11-26T21:51:37.968Z",
+ "generated": "2026-11-27T04:02:18.079Z",
  "skipped": [],
  "series": {
   "dolar-argentina": {
@@ -37,18 +37,18 @@
   },
   "dolar-peru": {
    "title": "Perú: Dólar de referencia (mercado internacional)",
-   "value": 3.48104,
+   "value": 3.469812,
    "unit": "PEN por USD",
    "source": "open.er-api.com (ExchangeRate-API, tasa de mercado de referencia)",
-   "time": "2026-11-26T00:02:31.000Z",
+   "time": "2026-11-27T00:02:31.000Z",
    "url": "https://andresblitz.com/dolar-peru/"
   },
   "dolar-chile": {
    "title": "Chile: Dólar observado (Banco Central de Chile)",
-   "value": 1044.08,
+   "value": 1037.91,
    "unit": "CLP por USD",
    "source": "mindicador.cl (dólar observado, Banco Central de Chile)",
-   "time": "2026-11-26T03:00:00.000Z",
+   "time": "2026-11-27T03:00:00.000Z",
    "url": "https://andresblitz.com/dolar-chile/"
   },
   "tasa-bcv": {
@@ -61,41 +61,41 @@
   },
   "usdt-ve": {
    "title": "Venezuela: USDT P2P (VES)",
-   "value": 1096.4,
+   "value": 1088.9995,
    "unit": "VES por USDT",
-   "extra": "brecha +23.29 % vs. Tasa BCV",
+   "extra": "brecha +22.46 % vs. Tasa BCV",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-26T21:51:24.000Z",
+   "time": "2026-11-27T04:01:58.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-ar": {
    "title": "Argentina: USDT P2P (ARS)",
-   "value": 1744.49,
+   "value": 1747.9875,
    "unit": "ARS por USDT",
-   "extra": "brecha +7.02 % vs. Dólar oficial",
+   "extra": "brecha +7.57 % vs. Dólar oficial",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-26T21:51:09.000Z",
+   "time": "2026-11-27T04:02:01.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "usdt-co": {
    "title": "Colombia: USDT P2P (COP)",
-   "value": 3518.8125,
+   "value": 3513.57,
    "unit": "COP por USDT",
-   "extra": "brecha -3.09 % vs. TRM",
+   "extra": "brecha -3.23 % vs. TRM",
    "source": "CriptoYa (mediana P2P)",
-   "time": "2026-11-26T21:51:20.000Z",
+   "time": "2026-11-27T04:02:04.000Z",
    "url": "https://andresblitz.com/dolar-cripto/"
   },
   "bitcoin": {
    "title": "Bitcoin (BTC/USD)",
-   "value": 60862,
+   "value": 61360,
    "unit": "USD",
-   "change24h": 1.02,
-   "extra": "CAD 86720",
+   "change24h": 1,
+   "extra": "CAD 87392",
    "source": "CoinGecko",
-   "time": "2026-11-26T21:51:06.000Z",
+   "time": "2026-11-27T04:01:52.000Z",
    "url": "https://www.coingecko.com/es/monedas/bitcoin",
-   "fetched": "2026-11-26T21:51:36.058Z"
+   "fetched": "2026-11-27T04:02:12.665Z"
   },
   "usdcad": {
    "title": "USD/CAD (Banco de Canadá)",

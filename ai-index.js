@@ -414,7 +414,7 @@ export const site = {
       "kind": "page",
       "lang": "es-PE",
       "summary": "Tipo de cambio del dólar hoy en Perú en soles (S/), con la fuente indicada en cada actualización, explicación del tipo de cambio interbancario y conversor de soles a dólares.",
-      "last_updated": "2026-11-25",
+      "last_updated": "2026-11-26",
       "topics": [
         "tipo de cambio",
         "dólar hoy",
@@ -912,6 +912,6 @@ export const site = {
       "summary": "Weinstein Stage Matrix is a Pine Script indicator by Andrés Blitz that classifies charts into Stan Weinstein's four stages on a weekly-first 30-period MA engine. Demo uses synthetic prices."
     }
   ],
-  "generated": "2026-11-26"
+  "generated": "2026-11-27"
 };
 export default site;
