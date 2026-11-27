@@ -22,17 +22,17 @@ pesos por 1 dólar · vigente desde 26 de noviembre de 2026
 
 ### Mercado · compra
 
-$ 3.528,76
+$ 3.547,52
 
 lo que pagan por tu dólar
 
 ### Mercado · venta
 
-$ 3.532,26
+$ 3.551,02
 
 lo que cuesta comprar un dólar
 
-Fuente: datos.gov.co (Superintendencia Financiera), actualizado 26/11/2026, 12:00 a. m. (hora de Colombia)
+Fuente: datos.gov.co (Superintendencia Financiera), actualizado 27/11/2026, 7:02 a. m. (hora de Colombia)
 
 ## Conversor de pesos colombianos a dólares (COP ↔ USD)
 
